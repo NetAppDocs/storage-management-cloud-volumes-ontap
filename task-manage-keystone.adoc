@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: task-manage-keystone.html
+keywords: license, licensing, install, keystone, request capacity, link subscription, add keystone subscription, keystone subscription, digital wallet, keystone flex
+summary: Manage your Keystone subscriptions by enabling subscriptions for use with Cloud Volumes ONTAP and by requesting changes to the committed capacity for your subscription's service levels. Requesting additional capacity for a service level provides more storage for on-premises ONTAP clusters or for Cloud Volumes ONTAP systems.
+---
+
+= Manage Keystone subscriptions for Cloud Volumes ONTAP through NetApp Console
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::https://raw.githubusercontent.com/NetAppDocs/bluexp-digital-wallet/main/task-manage-keystone.adoc[lines=15..-1]

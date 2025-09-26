@@ -1,0 +1,224 @@
+---
+sidebar: sidebar
+permalink: task-create-volumes.html
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, cloud backup
+summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from the NetApp Console.
+---
+
+= Create a FlexVol volume on a Cloud Volumes ONTAP system
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from the NetApp Console.
+
+You have several ways to create a new volume:
+
+* Specify details for a new volume and let the Console handle the underlying data aggregates for you. <<create-a-volume,Learn more>>
+* Create a volume on a data aggregate of your choice. <<create-a-volume,Learn more>>
+* Create a volume on the second node in an HA configuration. <<create-volume-second-node,Learn more>>
+
+== Before you begin
+
+A few notes about volume provisioning:
+
+* When you create an iSCSI volume, the Console automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-connect-lun.html[use the IQN to connect to the LUN from your hosts^].
+
+* You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
+
+ifdef::aws[]
+* If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+
+* If your Cloud Volumes ONTAP configuration supports the Amazon EBS Elastic Volumes feature, you might want to link:concept-aws-elastic-volumes.html[learn more about what happens when you create a volume].
+endif::aws[]
+
+== Create a volume
+
+The most common way to create a volume is to specify the type of volume that you need and then let the Console handle the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
+
+.Steps
+
+. From the left navigation menu, select *Storage > Management*.
+
+. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
++
+You can create a volume by letting the Console handle the disk allocation for you, or choose a specific aggregate for the volume. Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.
++
+[role="tabbed-block"]
+====
+
+.Any aggregate
+--
+Select the Volumes tab, and click *Add Volume*.
+image:screenshot_add_volume_button.png[A screenshot of the Add Volume button under the Overview tab.]
+
+--
+
+.Specific aggregate
+--
+. On the *Aggregates* tab, go to the required the aggregate and click the image:icon-action.png[] icon.
+. Select *Add Volume*. 
+image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
+
+--
+
+====
+
+. Follow the steps in the wizard to create the volume.
+
+.. *Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
++
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="2,6"]
+|===
+| Field
+| Description
+
+| Volume Name | The identifiable name you can enter for the new volume.
+
+| Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
+
+| Storage VM (SVM) | A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs. You can specify the Storage VM for the new volume.  
+
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
+|===
+
+.. *Protocol*: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.
++
+If you select CIFS and a server isn't set up, the Console prompts you to set up CIFS connectivity after you click *Next*.
++
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
++
+The following sections describe fields for which you might need guidance. The descriptions are organized by protocol.
++
+[role="tabbed-block"]
+====
+
+.NFS
+--
+
+Access control:: Choose a custom export policy to make the volume available to clients.
+
+Export policy:: Defines the clients in the subnet that can access the volume. By default, the Console enters a value that provides access to all instances in the subnet.
+
+--
+
+.CIFS
+--
+
+Permissions and users/groups:: Enables you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
+
+DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
++
+ifdef::gcp[]
+If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+endif::gcp[]
+
+Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+Credentials authorized to join the domain:: The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
+
+Organizational Unit:: The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
+ifdef::aws[]
+* To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
+endif::aws[]
+ifdef::azure[]
+* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
+https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+endif::azure[]
+ifdef::gcp[]
+* To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
+https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
+endif::gcp[]
+
+DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[NetApp Console automation docs^].
++
+Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
+
+--
+
+.iSCSI
+--
+
+LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, the Console automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, link:task-connect-lun.html[use the IQN to connect to the LUN from your hosts].
+
+Initiator group:: Initiator groups (igroups) specify which hosts can access specified LUNs on the storage system
+
+Host initiator (IQN):: iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
+
+--
+
+====
+
+.. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
++
+ifdef::aws[]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws[Sizing your system in AWS^]
+endif::aws[]
+ifdef::azure[]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^]
+endif::azure[]
+ifdef::gcp[]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp[Sizing your system in Google Cloud^]
+endif::gcp[]
+
+.. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].
++
+ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. NetApp storage efficiency features provide the following benefits:
++
+Thin provisioning:: Presents more logical storage to hosts or users than you actually have in your physical storage pool. Instead of preallocating storage space, storage space is allocated dynamically to each volume as data is written.
+
+Deduplication:: Improves efficiency by locating identical blocks of data and replacing them with references to a single shared block. This technique reduces storage capacity requirements by eliminating redundant blocks of data that reside in the same volume.
+
+Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
+
+.. *Review*: Review details about the volume and then click *Add*.
+
+.Result
+
+The Console creates the volume on the Cloud Volumes ONTAP system.
+
+[[create-volume-second-node]]
+== Create a volume on the second node in an HA configuration
+
+By default, the Console creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
+
+.Steps
+
+. From the left navigation menu, select *Storage > Management*.
+
+. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
+
+. On the Aggregates tab, click *Add Aggregate*, and create the aggregate.
++
+image:screenshot_add_aggregate_cvo.png[A screenshot showing the progress of adding an aggregate.]
+
+. For Home Node, choose the second node in the HA pair.
+
+. After the Console creates the aggregate, select it and then click *Create volume*.
+
+. Enter details for the new volume, and then click *Create*.
+
+.Result
+
+The Console creates the volume on the second node in the HA pair.
+
+ifdef::aws[]
+TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
+endif::aws[]
+
+== After you create a volume
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+If you want to apply quotas to volumes, you must use ONTAP System Manager or the ONTAP CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

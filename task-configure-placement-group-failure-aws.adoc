@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: task-configure-placement-group-failure-aws.html
+keywords: placement group, failure, HA single zone, app.conf, rollback, AWS
+summary: Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use service endpoints instead.
+---
+
+= Configure placement group creation for Cloud Volumes ONTAP HA pairs in AWS single AZs
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Volumes ONTAP high-availability (HA) deployments in AWS single availability Zone (AZ) can fail and roll back if the creation of the placement group fails. Creation of the placement group also fails and the deployment rolls back if the Cloud Volumes ONTAP node and mediator instance are not available. To avoid this, you can modify the configuration to allow the deployment to finish even if the placement group creation fails.
+
+On bypassing the rollback process, the Cloud Volumes ONTAP deployment process completes successfully, and notifies you that the placement group creation is incomplete.
+
+.Steps
+
+. Use SSH to connect to the NetApp Console agent host and log in.
+
+. Navigate to `/opt/application/netapp/cloudmanager/docker_occm/data`.
+
+. Edit `app.conf` by changing the value of the `rollback-on-placement-group-failure` parameter to `false`. The default value of this parameter is `true`.
++
+----
+{
+    "occm" : {
+        "aws" : {
+            "rollback-on-placement-group-failure" : false
+        }
+    }
+}
+----
++
+. Save the file and log off the Console agent. You don't need to restart the Console agent.

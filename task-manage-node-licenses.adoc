@@ -1,0 +1,261 @@
+---
+sidebar: sidebar
+permalink: task-manage-node-licenses.html
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering
+summary: Manage your node-based licenses in the NetApp Console to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
+---
+
+= Manage node-based licensing for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+:target: _blank
+
+[.lead]
+Manage node-based licenses in the NetApp Console to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
+
+//The contents of this page are reused in the bluexp-digital-wallet doc site. As a result, any links from this page to other pages must use absolute URLs so that the links resolve from the bluexp-NetApp Console doc site.
+
+_Node-based licenses_ are the previous generation licensing model (and not available for new customers):
+
+* Bring your own license (BYOL) licenses purchased from NetApp
+* Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace
+
+You can manage node-based Cloud Volumes ONTAP licenses licenses from the NetApp Console.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+
+== Manage PAYGO licenses
+
+The Licenses and subscriptions menu enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *PAYGO*.
+
+. View details in the table about each of your PAYGO licenses.
++
+image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Licenses and subscriptions page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
+
+. If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
+
+== Manage BYOL licenses
+
+Manage licenses that you purchased directly from NetApp by adding and removing system licenses and extra capacity licenses.
+
+[NOTE]
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+
+=== Add unassigned licenses
+
+Add a node-based license to the Console so that you can select the license when you create a new Cloud Volumes ONTAP system. The Console identifies these licenses as _unassigned_.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Add Unassigned Licenses*.
+
+. Enter the serial number of the license or upload the license file.
++
+If you don't have the license file yet, refer to the section below.
+
+. Click *Add License*.
+
+.Result
+
+The Console adds the license. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in *Licenses and subscriptions*.
+
+=== Exchange unassigned node-based licenses
+
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a NetApp Backup and Recovery license, a NetApp Data Classification license, or a NetApp Cloud Tiering license.
+
+Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service:
+
+* Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB direct license
+* Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB direct license
+
+The converted license has the same expiration date as the Cloud Volumes ONTAP license.
+
+:target: _blank
+
+link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app[View walkthrough of how to exchange node-based licenses.^]
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Exchange License*.
++
+image:screenshot-exchange-license.png[A screenshot of the Exchange License option that appears on the Unassigned license page.]
+
+. Select the service that you'd like to exchange the license with.
+
+. If you're prompted, select an additional license for the HA pair.
+
+. Read the legal consent and click *Agree*.
+
+.Result
+
+The Console converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
+
+=== Obtain a system license file
+
+In most cases, the Console can automatically obtain your license file using your NetApp Support Site account. But if it can't, then you'll need to manually upload the license file. If you don't have the license file, you can obtain it from netapp.com.
+
+.Steps
+
+. Go to the https://register.netapp.com/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
+
+. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
++
+*Example*
++
+image:screenshot-license-generator.png[Screen shot: Shows an example of the NetApp License Generator web page with the available product lines.]
+
+. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
+
+=== Update a system license
+
+When you renew a BYOL subscription by contacting a NetApp representative, the Console automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system. If the Console can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the system license and select *Update License*.
+
+. Upload the license file (or files if you have an HA pair).
+
+. Click *Update License*.
+
+.Result
+
+The Console updates the license on the Cloud Volumes ONTAP system.
+
+=== Manage extra capacity licenses
+
+You can purchase extra capacity licenses for a Cloud Volumes ONTAP BYOL system to allocate more than the 368 TiB of capacity that's provided with a BYOL system license. For example, you might purchase one extra license capacity to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase three extra capacity licenses to get up to 1.4 PiB.
+
+The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+
+==== Add capacity licenses
+
+Purchase an extra capacity license by contacting us through the chat icon in the lower-right of the Console. After you purchase the license, you can apply it to a Cloud Volumes ONTAP system.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click *Add Capacity License*.
+
+. Enter the serial number or upload the license file (or files if you have an HA pair).
+
+. Click *Add Capacity License*.
+
+==== Update capacity licenses
+
+If you extended the term of an extra capacity license, you'll need to update the license in the Console.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the capacity license and select *Update License*.
+
+. Upload the license file (or files if you have an HA pair).
+
+. Click *Update License*.
+
+==== Remove capacity licenses
+
+If an extra capacity license expired and is no longer in use, then you can remove it at any time.
+
+.Steps
+
+. From the left navigation pane, select *Administration > 	Licenses and subscriptions*.
+
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the capacity license and select *Remove License*.
+
+. Click *Remove*.
+
+//Here was the eval-byol license section. 
+
+== Change between PAYGO and BYOL
+
+Converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn't supported. If you want to switch between a pay-as-you-go subscription and a BYOL subscription, then you need to deploy a new system and replicate data from the existing system to the new system.
+
+.Steps
+
+. Create a new Cloud Volumes ONTAP system.
+
+. Set up a one-time data replication between the systems for each volume that you need to replicate.
++
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Learn how to replicate data between systems^]
+
+. Terminate the Cloud Volumes ONTAP system that you no longer need by deleting the original system.
++
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-system.html[Learn how to delete a Cloud Volumes ONTAP system].
+
+.Related links
+
+link: link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses]
+link:task-convert-node-capacity.html[Convert node-based licenses to capacity based]

@@ -1,0 +1,142 @@
+---
+sidebar: sidebar
+permalink: reference-versions.html
+keywords: versions, supported versions, new versions, cloud volumes ontap version
+summary: NetApp Console enables you to choose from several different ONTAP versions when you create a new Cloud Volumes ONTAP system.
+---
+
+= Supported ONTAP versions for Cloud Volumes ONTAP deployments
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The NetApp Console enables you to choose from several different ONTAP versions when you add a Cloud Volumes ONTAP system.
+
+Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
+
+ifdef::aws[]
+== AWS
+
+Single node::
+
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.12.0 P1
+* 9.11.1 P3
+* 9.10.1
+* 9.9.1 P6
+* 9.8
+* 9.7 P5
+* 9.5 P6
+
+HA pair::
+
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.12.0 P1
+* 9.11.1 P3
+* 9.10.1
+* 9.9.1 P6
+* 9.8
+* 9.7 P5
+* 9.5 P6
+endif::aws[]
+
+ifdef::azure[]
+== Azure
+
+Single node::
+
+* 9.17.1 RC1
+* 9.16.1 GA
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.11.1 P3
+* 9.10.1 P3
+* 9.9.1 P8
+* 9.9.1 P7
+* 9.8 P10
+* 9.7 P6
+* 9.5 P6
+
+HA pair::
+
+* 9.17.1 RC1
+* 9.16.1 GA
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.11.1 P3
+* 9.10.1 P3
+* 9.9.1 P8
+* 9.9.1 P7
+* 9.8 P10
+* 9.7 P6
+endif::azure[]
+
+ifdef::gcp[]
+== Google Cloud
+
+Single node::
+
+* 9.17.1 RC1
+* 9.16.1 GA
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.12.0 P1
+* 9.11.1 P3
+* 9.10.1
+* 9.9.1 P6
+* 9.8
+* 9.7 P5
+
+HA pair::
+
+* 9.17.1 RC1
+* 9.16.1 GA
+* 9.15.1 GA
+* 9.15.0 P1
+* 9.14.1 GA
+* 9.14.1 RC1
+* 9.14.0 GA
+* 9.13.1 GA
+* 9.12.1 GA
+* 9.12.1 RC1
+* 9.12.0 P1
+* 9.11.1 P3
+* 9.10.1
+* 9.9.1 P6
+* 9.8
+endif::gcp[]

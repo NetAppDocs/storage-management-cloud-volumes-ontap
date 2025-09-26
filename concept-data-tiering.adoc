@@ -1,0 +1,166 @@
+---
+sidebar: sidebar 
+permalink: concept-data-tiering.html
+keywords: storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, s3 endpoint, fabric pool, fabricpool, s3 bucket, requirement, vpc endpoint, policy, policies, tiering policies, auto, snapshot only, backup, none, cooling period, volume tiering policies, blob, standard, infrequent access, hot, cool, tiering level, storage tier, storage class
+summary: Reduce your storage costs by enabling automated tiering of cold data to low-cost object storage.
+---
+
+= Learn about data tiering with Cloud Volumes ONTAP in AWS, Azure, or Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Reduce your storage costs by enabling automated tiering of inactive data to low-cost object storage. Active data remains in high-performance SSDs or HDDs, while inactive data is tiered to low-cost object storage. This enables you to reclaim space on your primary storage and shrink secondary storage.
+
+image:diagram_data_tiering.png[This is a conceptual image that shows hot data going to EBS storage and inactive data going to S3 storage.]
+
+Data tiering is powered by FabricPool technology. Cloud Volumes ONTAP provides data tiering for all Cloud Volumes ONTAP clusters without an additional license. When you enable data tiering, data tiered to object storage incurs charges. Refer to your cloud provider's documentation for details about object storage costs.
+
+ifdef::aws[]
+== Data tiering in AWS
+
+When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data.
+
+Performance tier:: The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
++
+Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
+
+Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single S3 bucket.
++
+The NetApp Console creates a single S3 bucket for each system and names it fabric-pool-_cluster unique identifier_. A different S3 bucket is not created for each volume.
++
+When the Console creates the S3 bucket, it uses the following default settings:
+
+* Storage class: Standard
+* Default encryption: Disabled
+* Block public access: Block all public access
+* Object ownership: ACLs enabled
+* Bucket versioning: Disabled
+* Object lock: Disabled
+
+Storage classes:: The default storage class for tiered data in AWS is _Standard_. Standard is ideal for frequently accessed data stored across multiple Availability Zones.
++
+If you don't plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, _Standard-Infrequent Access_, or _S3 Glacier Instant Retrieval_. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.
++
+Access costs are higher if you access the data, so consider this before changing the storage class. https://aws.amazon.com/s3/storage-classes[Amazon S3 documentation: Learn more about Amazon S3 storage classes^].
++
+You can select a storage class when you create the system and you can change it any time afterwards. For instructions on changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
++
+The storage class for data tiering is system wide--it's not per volume.
+endif::aws[]
+
+ifdef::azure[]
+== Data tiering in Azure
+
+When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data.
+
+Performance tier:: The performance tier can be either SSDs or HDDs.
+
+Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Blob container.
++
+The Console creates a new storage account with a container for each Cloud Volumes ONTAP system. The name of the storage account is random. A different container is not created for each volume.
++
+The Console creates the storage account with the following settings:
+
+* Access tier: Hot
+* Performance: Standard
+* Redundancy: Accordingly to Cloud Volume ONTAP Deployment 
+** Single availability zone: Locally-redundant storage (LRS)
+** Multiple availability zone: Zone-redundant storage (ZRS) 
+* Account: StorageV2 (general purpose v2)
+* Require secure transfer for REST API operations: Enabled
+* Storage account key access: Enabled
+* Minimum TLS version: Version 1.2
+* Infrastructure encryption: Disabled
+
+Storage access tiers:: The default storage access tier for tiered data in Azure is the _hot_ tier. The hot tier is ideal for frequently accessed data in the capacity tier.
++
+If you don't plan to access the inactive data in the capacity tier, you can choose the _cool_ storage tier, where the inactive data is retained for a minimum of 30 days. You can also opt for the _cold_ tier, where the inactive data is stored for a minimum of 90 days. Based on your storage requirements and cost considerations, you can select the tier that best suits your needs. When you change the storage tier to _cool_ or _cold_, the inactive capacity tier data moves directly to the cool or cold storage tier. The cool and cold tiers offer lower storage costs compared to the hot tier, but they come with higher access costs, so take that into consideration before you change the storage tier. Refer to https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Microsoft Azure documentation: Learn more about Azure Blob storage access tiers^].
++
+You can select a storage tier when you add a Cloud Volumes ONTAP system and you can change it any time afterwards. For details about changing the storage tier, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
++
+The storage access tier for data tiering is system wide--it's not per volume.
+endif::azure[]
+
+ifdef::gcp[]
+== Data tiering in Google Cloud
+
+When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data.
+
+Performance tier:: The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
+
+Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Google Cloud Storage bucket.
++
+The Console creates a bucket for each system and names it fabric-pool-_cluster unique identifier_. A different bucket is not created for each volume.
++
+When the Console creates the bucket, it uses the following default settings:
+
+* Location type: Region
+* Storage class: Standard
+* Public access: Subject to object ACLs
+* Access control: Fine-grained
+* Protection: None
+* Data encryption: Google-managed key
+
+Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, subsequent inactive data moves directly to the class that you selected.
+NOTE: Any existing inactive data will maintain the default storage class when you change the storage class. To change the storage class for existing inactive data, you must perform the designation manually.     
++
+The access costs are higher if you do access the data, so take that into consideration before you change the storage class. To learn more, refer to the https://cloud.google.com/storage/docs/storage-classes[Google Cloud documentation: Storage classes^].
++
+You can select a storage tier when you create the system and you can change it any time afterwards. For details about changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
++
+The storage class for data tiering is system wide--it's not per volume.
+endif::gcp[]
+
+== Data tiering and capacity limits
+
+If you enable data tiering, a system's capacity limit stays the same. The limit is spread across the performance tier and the capacity tier.
+
+== Volume tiering policies
+
+To enable data tiering, you must select a volume tiering policy when you create, modify, or replicate a volume. You can select a different policy for each volume.
+
+Some tiering policies have an associated minimum cooling period, which sets the time that user data in a volume must remain inactive for the data to be considered "cold" and moved to the capacity tier. The cooling period starts when data is written to the aggregate.
+
+TIP: You can change the minimum cooling period and default aggregate threshold of 50% (more on that below). http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-AD522711-01F9-4413-A254-929EAE871EBF.html[Learn how to change the cooling period^] and http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8FC4BFD5-F258-4AA6-9FCB-663D42D92CAA.html[learn how to change the threshold^].
+
+The Console enables you to choose from the following volume tiering policies when you create or modify a volume:
+
+Snapshot Only:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP tiers cold user data of Snapshot copies that are not associated with the active file system to the capacity tier. The cooling period is approximately 2 days.
++
+If read, cold data blocks on the capacity tier become hot and are moved to the performance tier.
+
+All:: All data (not including metadata) is immediately marked as cold and tiered to object storage as soon as possible. There is no need to wait 48 hours for new blocks in a volume to become cold. Note that blocks located in the volume prior to the All policy being set require 48 hours to become cold.
++
+If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier. This policy is available starting with ONTAP 9.6.
+
+Auto:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP tiers cold data blocks in a volume to a capacity tier. The cold data includes not just Snapshot copies but also cold user data from the active file system. The cooling period is approximately 31 days.
++
+This policy is supported starting with Cloud Volumes ONTAP 9.4.
++
+If read by random reads, the cold data blocks in the capacity tier become hot and move to the performance tier. If read by sequential reads, such as those associated with index and antivirus scans, the cold data blocks stay cold and do not move to the performance tier.
+
+None:: Keeps data of a volume in the performance tier, preventing it from being moved to the capacity tier.
+
+When you replicate a volume, you can choose whether to tier the data to object storage. If you do, the Console applies the *Backup* policy to the data protection volume. Starting with Cloud Volumes ONTAP 9.6, the *All* tiering policy replaces the backup policy.
+
+=== Turning off Cloud Volumes ONTAP impacts the cooling period
+
+Data blocks are cooled by cooling scans. During this process, blocks that haven't been used have their block temperature moved (cooled) to the next lower value. The default cooling time depends on the volume tiering policy:
+
+* Auto: 31 days
+* Snapshot Only: 2 days
+
+Cloud Volumes ONTAP must be running for the cooling scan to work. If Cloud Volumes ONTAP is turned off, cooling will stop, as well. As a result, you can experience longer cooling times.
+
+TIP: When Cloud Volumes ONTAP is turned off, the temperature of each block is preserved until you restart the system. For example, if the temperature of a block is 5 when you turn the system off, the temp is still 5 when you turn the system back on.
+
+== Setting up data tiering
+
+For instructions and a list of supported configurations, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
+
+
+//GH-415
