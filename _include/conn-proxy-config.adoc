@@ -1,0 +1,12 @@
+=== Network proxy configuration of NetApp Console agent 
+
+You can use the proxy servers configuration of the NetApp Console agent to enable outbound internet access from Cloud Volumes ONTAP. The Console supports two types of proxies: 
+
+* *Explicit proxy*: The outbound traffic from Cloud Volumes ONTAP uses the HTTP address of the proxy server specified during the proxy configuration of the Console agent. The administrator might also have configured user credentials and root CA certificates for additional authentication. If a root CA certificate is available for the explicit proxy, make sure to obtain and upload the same certificate to your Cloud Volumes ONTAP system using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+
+* *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the proxy for the Console agent. When setting up a transparent proxy, the administrator needs to provide only a root CA certificate for connectivity from Cloud Volumes ONTAP, not the HTTP address of the proxy server. Make sure that you obtain and upload the same root CA certificate to your Cloud Volumes ONTAP system using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+
+For information about configuring proxy servers, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure the Console agent to use a proxy server^]. 
+
+
+

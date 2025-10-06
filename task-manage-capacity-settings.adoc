@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: task-manage-capacity-settings.html
+keywords: aggregates, delete aggregates, add disks, view aggregates
+summary: Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
+---
+
+= Manage the Cloud Volumes ONTAP aggregate capacity on a Console agent
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Each Console agent has settings that determines how it manages aggregate capacity for Cloud Volumes ONTAP. 
+
+These settings affect all Cloud Volumes ONTAP systems managed by a Console agent. If you have another Console agent, it can be configured differently.
+
+.Required permissions
+
+You need the organization or account admin privileges of the NetApp Console to modify Cloud Volumes ONTAP Settings.
+
+.Steps
+
+. From the left navigation pane, go to *Administration > Agents*. 
+. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select *Cloud Volumes ONTAP Settings*.
++
+image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
++
+.	Under *Capacity*, modify any of the following settings:
++
+image:screenshot-cvo-settings-page.png[An overview of the capacity settings of Cloud Volumes ONTAP.]
++
+Capacity Management Mode::
+Choose whether the Console should notify you of storage capacity decisions or whether it should automatically manage capacity requirements for you.
++
+link:concept-storage-management.html#capacity-management[Learn how Capacity Management Mode works].
+
+Aggregate Capacity Threshold - Free Space Ratio::
+This ratio is a key parameter in capacity management decisions, and understanding its impact is essential regardless of whether you are in an automatic or manual mode of capacity management. It is recommended to set this threshold with consideration of your specific storage needs and anticipated growth to maintain a balance between resource utilization and cost.
++
+In the manual mode, if the free space ratio on an aggregate drops below the specified threshold, it triggers a notification, alerting you that you should take actions to address the low free space ratio. It is important to monitor these notifications and manually manage the aggregate capacity to avoid service disruption and ensure optimal performance.
++
+The free space ratio is calculated as follows:
+(aggregate capacity - total used capacity on the aggregate) / aggregate capacity
++
+Refer to link:concept-storage-management.html#automatic-capacity-management[Automatic capacity management] to learn now capacity is automatically managed in Cloud Volumes ONTAP.
+
+Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering::
+Defines how much free space is required on the performance tier (disks) when tiering data to a capacity tier (object storage).
++
+The ratio is important for disaster recovery scenarios. As data is read from the capacity tier, Cloud Volumes ONTAP moves data to the performance tier to provide better performance. If there isn't sufficient space, then Cloud Volumes ONTAP can't move the data.
+
+. Click *Save*.

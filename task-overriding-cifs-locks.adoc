@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: task-overriding-cifs-locks.html
+keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback
+summary: The organization or account admin can enable a setting in the NetApp Console that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+---
+
+= Override CIFS locks for Cloud Volumes ONTAP HA pairs in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The organization or account admin can enable a setting in the NetApp Console that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+
+.About this task
+
+Microsoft Azure schedules periodic maintenance events on its virtual machines. When a maintenance event occurs on a Cloud Volumes ONTAP HA pair, the HA pair initiates storage takeover. If there are active CIFS sessions during this maintenance event, the locks on CIFS files can prevent storage giveback.
+
+If you enable this setting, Cloud Volumes ONTAP will veto the locks and reset the active CIFS sessions. As a result, the HA pair can complete storage giveback during these maintenance events.
+
+CAUTION: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
+
+.Before you begin
+
+You need to create a Console agent before you can change the Console settings. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
+
+.Steps
+
+. From the left navigation pane, go to *Administration > Agents*. 
+. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select *Cloud Volumes ONTAP Settings*.
++
+image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
+
+. Under *Azure*, click *Azure CIFS locks for Azure HA systems*.
+
+. Click the checkbox to enable the feature and then click *Save*.

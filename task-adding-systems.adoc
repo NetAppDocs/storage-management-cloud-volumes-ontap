@@ -1,0 +1,47 @@
+---
+sidebar: sidebar
+permalink: task-adding-systems.html
+keywords: discover, discovering, add, adding, existing
+summary: You can discover and add existing Cloud Volumes ONTAP systems to the Console. You might do this if you deployed a new system.
+---
+
+= Add an existing Cloud Volumes ONTAP system to NetApp Console
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can discover and add existing Cloud Volumes ONTAP systems to NetApp Console. You might do this if you deployed a new system.
+
+.Before you begin
+
+You must know the password for the Cloud Volumes ONTAP admin user account.
+
+.Steps
+
+. From the left navigation menu, select *Storage > Management*.
+
+. On the *System* page, click *Add System*.
+
+. Select the cloud provider in which the system resides.
+
+. Choose the type of Cloud Volumes ONTAP system to add.
+
+. Click the link to discover an existing system.
+ifdef::aws[]
++
+image:screenshot_discover_redesign.png[A screenshot that shows a link to discover an existing Cloud Volumes ONTAP system.]
+endif::aws[]
+
+. On the Region page, select a region. You can see the systems that are running in the selected region. 
++
+[NOTE]
+Cloud Volumes ONTAP systems are represented as instances on this page. From the list, you can select only those instances that are registered with the current account.
++
+. On the Credentials page, enter the password for the Cloud Volumes ONTAP admin user, and then select *Go*.
+
+.Result
+
+The Console adds the Cloud Volumes ONTAP systems to the *Systems* page.

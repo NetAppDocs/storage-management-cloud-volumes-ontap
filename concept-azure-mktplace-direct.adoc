@@ -1,0 +1,54 @@
+---
+sidebar: sidebar
+permalink: concept-azure-mktplace-direct.html
+keywords: azure marketplace direct, cvo in azure marketplace
+summary: 
+---
+
+= Learn about Cloud Volumes ONTAP deployment options in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp provides two options for deploying Cloud Volumes ONTAP on Azure. Cloud Volumes ONTAP traditionally relies on the NetApp Console for deployment and orchestration. Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful set of Cloud Volumes ONTAP features and options. 
+
+When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the Console agent or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through the Console. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment.
+
+On completing the deployment in the Azure marketplace, you can discover these systems in the Console. After discovery, you can manage them as Cloud Volumes ONTAP systems and take advantage of all the Console capabilities. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in the Console].
+
+Here is the feature comparison between the two options. Note that the features of a standalone instance deployed through the Azure marketplace change when it is discovered in the Console.
+
+[cols=3*,options="header,autowidth"]
+|===
+|  | Azure marketplace | NetApp Console
+| *Onboarding* | Shorter and easier, minimal preparation required for direct deployment | Longer onboarding process, including the installation of the Console agent
+| *Supported virtual machine (VM) types* a| Eds_v5 and Ls_v3 instance types
+| Full range of VM types.
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
+| *License*   | Free license | Any capacity-based license. 
+link:concept-licensing.html[Cloud Volumes ONTAP licensing]
+| *NetApp support* | Not included | Available, based on the license type
+| *Capacity* | Up to 500 GiB | Expandable by configuration
+| *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
+| *Supported disk type* | Premium SSD v2 Managed Disks | Wider support.
+link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
+|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
+link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
+| *Orchestration capabilities* | Not available | Available through NetApp Console, based on the license type
+| *Number of supported storage VMs* | One  per deployment | Multiple storage VMs, based on your configuration. 
+link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported number of storage VMs]
+| *Changing the instance type* | Not supported | Supported
+| *FabricPool tiering* | Not supported | Supported
+
+|===
+
+
+.Related links
+
+* Azure marketplace direct deployment: link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace]
+* Deployment through the Console: link:task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Azure]
+* https://docs.netapp.com/us-en/bluexp-family/index.html[NetApp Console documentation^]
+

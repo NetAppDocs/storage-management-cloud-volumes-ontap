@@ -1,12 +1,328 @@
 settings:
-  name: "Product Name"
+  name: Cloud Volumes ONTAP
+  harmony_integration: maestro
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  rss_page: "whats-new.html"
 
-sidebar: 
+  filter:
+    label: Cloud provider
+    default: All cloud providers
+    options:
+      - name: Amazon Web Services
+        alias: AWS
+        id: aws
+      - name: Google Cloud
+        alias: Google Cloud
+        id: gcp
+      - name: Microsoft Azure
+        alias: Azure
+        id: azure
+sidebar:
   entries:
-  - title: Legal notices
-    url: /legal-notices.html
+    - title: Cloud Volumes ONTAP docs
+      url: /index.html
+    - title: Release notes
+      entries:
+        - title: What's new
+          url: /whats-new.html
+        - title: Known limitations
+          url: /reference-limitations.html
+        - title: Cloud Volumes ONTAP Release Notes
+          url: /whats-new-ontap.html
+    - title: Get started
+      entries:
+        - title: Learn about Cloud Volumes ONTAP
+          url: /concept-overview-cvo.html
+        - title: Supported ONTAP versions for new deployments
+          url: /reference-versions.html
+        - title: Get started in Amazon Web Services
+          flavor: aws
+          entries:
+            - title: Quick start
+              url: /task-getting-started-aws.html
+            - title: Plan your configuration
+              url: /task-planning-your-config.html
+            - title: Set up your networking
+              entries:
+                - title: Set up AWS networking
+                  url: /reference-networking-aws.html
+                - title: Set up an AWS transit gateway
+                  url: /task-setting-up-transit-gateway.html
+                - title: Deploy an HA pair in a shared subnet
+                  url: /task-deploy-aws-shared-vpc.html
+                - title: Configure Cloud Volumes ONTAP for AWS placement group creation
+                  url: /task-configure-placement-group-failure-aws.html                   
+                - title: Security group rules for AWS
+                  url: /reference-security-groups.html
+            - title: Set up the AWS KMS
+              url: /task-setting-up-kms.html
+            - title: Set up IAM roles
+              url: /task-set-up-iam-roles.html
+            - title: Set up licensing
+              url: /task-set-up-licensing-aws.html
+            - title: Use quick deployment method for Cloud Volumes ONTAP in AWS
+              url: /task-quick-deploy-aws.html
+            - title: Use advanced deployment method for Cloud Volumes ONTAP in AWS
+              url: /task-deploying-otc-aws.html
+            - title: Deploy Cloud Volumes ONTAP in AWS Secret regions
+              url: /task-getting-started-aws-c2s.html
+        - title: Get started in Microsoft Azure
+          flavor: azure
+          entries:
+            - title: Learn about Cloud Volumes ONTAP deployment options in Azure
+              url: /concept-azure-mktplace-direct.html
+            - title: Get started in NetApp Console
+              entries:
+                - title: Quick start
+                  url: /task-getting-started-azure.html
+                - title: Plan your configuration
+                  url: /task-planning-your-config-azure.html
+                - title: Set up your networking
+                  url: /reference-networking-azure.html
+                - title: Set up encryption using your key
+                  url: /task-set-up-azure-encryption.html
+                - title: Set up licensing
+                  url: /task-set-up-licensing-azure.html
+                - title: Enable high-availability mode
+                  url: /task-azure-high-availability-mode.html
+                - title: Enable VMOrchestratorZonalMultiFD for single availability zones
+                  url: /task-saz-feature.html  
+                - title: Launch Cloud Volumes ONTAP in Azure
+                  url: /task-deploying-otc-azure.html
+                - title: Verify Azure platform image
+                  entries:
+                    - title: Overview
+                      url: /concept-azure-image-verification.html
+                    - title: Download the Azure image file
+                      url: /task-azure-download-digest-file.html
+                    - title: Export the Azure image file
+                      url: /task-azure-image-export.html
+                    - title: Verify file signature
+                      entries:
+                        - title: Learn about file signature verification
+                          url: /concept-azure-file-sig-verify.html
+                        - title: Verify file signature on Linux
+                          url: /task-file-verification-linux.html
+                        - title: Verify file signature on macOS 
+                          url: /task-file-verification-mac.html
+            - title: Get started in the marketplace
+              url: /task-deploy-cvo-azure-mktplc.html                                   
+        - title: Get started in Google Cloud
+          flavor: gcp
+          entries:
+            - title: Quick start
+              url: /task-getting-started-gcp.html
+            - title: Plan your configuration
+              url: /task-planning-your-config-gcp.html
+            - title: Set up your networking
+              url: /reference-networking-gcp.html
+            - title: Plan for VPC Service Controls
+              url: /reference-vpc-service-controls-gcp.html
+            - title: Create a service account
+              url: /task-creating-gcp-service-account.html
+            - title: Use customer-managed encryption keys
+              url: /task-setting-up-gcp-encryption.html
+            - title: Set up licensing
+              url: /task-set-up-licensing-google.html
+            - title: Launch Cloud Volumes ONTAP in Google Cloud
+              url: /task-deploying-gcp.html
+            - title: Google Cloud Platform Image Verification
+              entries:
+                - title: Overview
+                  url: /concept-gcp-image-verification.html
+                - title: Convert image to Raw format on GCP
+                  url: /task-gcp-convert-image-raw.html
+                - title: Image signature verification
+                  entries:
+                    - title: Verify GCP signed images
+                      url: /concept-gcp-verify-signed-image.html
+                    - title: Verify contents using OpenSSL
+                      url: /task-verify-openssl-gcp.html
+    - title: Use Cloud Volumes ONTAP
+      entries:
+        - title: License management
+          entries:
+            - title: Manage capacity-based licenses
+              url: /task-manage-capacity-licenses.html
+            - title: Manage Keystone subscriptions
+              url: /task-manage-keystone.html
+            - title: Manage node-based licenses
+              url: /task-manage-node-licenses.html
+        - title: Volume and LUN administration
+          entries:
+            - title: Create volumes
+              url: /task-create-volumes.html
+            - title: Manage existing volumes
+              url: /task-manage-volumes.html
+            - title: Tier inactive data to object storage
+              url: /task-tiering.html
+            - title: Connect a LUN to a host
+              url: /task-connect-lun.html
+            - title: Accelerate data access with FlexCache
+              url: /task-accelerate-data-access.html
+        - title: Aggregate administration
+          entries:
+            - title: Create aggregates
+              url: /task-create-aggregates.html
+            - title: Manage existing aggregates
+              url: /task-manage-aggregates.html
+            - title: Manage capacity settings
+              url: /task-manage-capacity-settings.html
+        - title: Storage VM administration
+          entries:
+            - title: Work with storage VMs
+              url: /task-managing-svms.html
+            - title: Manage storage VMs in AWS
+              flavor: aws
+              url: /task-managing-svms-aws.html
+            - title: Manage storage VMs in Azure
+              flavor: azure
+              url: /task-managing-svms-azure.html
+            - title: Manage storage VMs in Google Cloud
+              flavor: gcp
+              url: /task-managing-svms-gcp.html
+            - title: Set up SVM disaster recovery
+              url: /task-manage-svm-dr.html
+        - title: Security and data encryption
+          entries:
+            - title: Encrypt volumes with NetApp encryption
+              url: /task-encrypting-volumes.html
+            - title: Manage keys with AWS Key Management Service
+              flavor: aws
+              url: /task-aws-key-management.html
+            - title: Manage keys with Azure Key Vault
+              flavor: azure
+              url: /task-azure-key-vault.html
+            - title: Manage keys with Google Cloud KMS
+              flavor: gcp
+              url: /task-google-key-manager.html
+            - title: Improve ransomware protection
+              url: /task-protecting-ransomware.html
+            - title: Create tamperproof Snapshot copies for WORM storage
+              url: /reference-worm-snaplock.html  
+        - title: System administration
+          entries:
+            - title: Upgrade Cloud Volumes ONTAP
+              url: /task-updating-ontap-cloud.html
+            - title: Register pay-as-you-go systems
+              url: /task-registering.html
+            - title: Convert node-based licenses
+              url: /task-convert-node-capacity.html                
+            - title: Stop and start a system
+              url: /task-managing-state.html
+            - title: Synchronize system time
+              url: /task-sync-time.html
+            - title: Modify system write speed
+              url: /task-modify-write-speed.html
+            - title: Change the system password
+              url: /task-change-password.html
+            - title: Add, remove, or delete systems
+              entries:
+                - title: Add an existing system
+                  url: /task-adding-systems.html
+                - title: Remove a system
+                  url: /task-removing.html
+                - title: Delete a system
+                  url: /task-deleting-system.html
+            - title: AWS administration
+              flavor: aws
+              entries:
+                - title: Work with EC2 instances in AWS
+                  url: /task-change-ec2-instance.html
+                - title: Change route tables for HA pairs
+                  url: /task-change-route-tables.html
+                - title: Configure placement group creation
+                  url: task-configure-placement-group-failure-aws.html      
+            - title: Azure administration
+              flavor: azure
+              entries:
+                - title: Change the Azure VM type
+                  url: /task-change-azure-vm.html
+                - title: Override CIFS locks
+                  url: /task-overriding-cifs-locks.html
+                - title: Use an Azure Private Link or service endpoints
+                  url: /task-enabling-private-link.html
+                - title: Move resource groups 
+                  url: /task-moving-resource-groups-azure.html 
+                - title: Segregate SnapMirror traffic in Azure
+                  url: /task-segregate-snapmirror-azure.html  
+            - title: Google Cloud administration
+              flavor: gcp
+              entries:
+                - title: Change the machine type
+                  url: /task-change-gcp-machine.html
+            - title: Administration from System Manager
+              url: /task-administer-advanced-view.html
+            - title: Administration from the CLI
+              url: /task-connecting-to-otc.html
+        - title: System health and events
+          entries:
+            - title: Verify AutoSupport setup
+              url: /task-verify-autosupport.html
+            - title: Configure EMS
+              url: /task-configure-ems.html
+    - title: Concepts
+      entries:
+        - title: Licensing
+          entries:
+            - title: Licensing in Cloud Volumes ONTAP
+              url: /concept-licensing.html
+            - title: Learn more about capacity-based licenses
+              url: /concept-licensing-charging.html  
+        - title: Storage
+          entries:
+            - title: Client protocols
+              url: /concept-client-protocols.html
+            - title: Disks and aggregates
+              url: /concept-storage.html
+            - title: Elastic Volumes in AWS
+              flavor: aws
+              url: /concept-aws-elastic-volumes.html
+            - title: Data tiering
+              url: /concept-data-tiering.html
+            - title: Storage management
+              url: /concept-storage-management.html
+            - title: Write speed
+              url: /concept-write-speed.html
+            - title: Flash Cache
+              url: /concept-flash-cache.html
+            - title: WORM storage
+              url: /concept-worm.html
+        - title: High-availability pairs
+          entries:
+            - title: HA pairs in AWS
+              flavor: aws
+              url: /concept-ha.html
+            - title: HA pairs in Azure
+              flavor: azure
+              url: /concept-ha-azure.html
+            - title: HA pairs in GCP
+              flavor: gcp
+              url: /concept-ha-google-cloud.html
+            - title: Actions during storage takeover
+              url: /concept-degraded-ha-pair.html
+        - title: Security
+          url: /concept-security.html
+        - title: Performance
+          url: /concept-performance.html
+        - title: Management of node-based BYOL
+          url: /concept-license-management.html
+        - title: AutoSupport and Digital Advisor
+          url: /concept-active-iq.html
+        - title: Default configurations
+          url: /reference-default-configs.html
+    - title: Knowledge and support
+      entries:
+        - title: Register for support
+          url: /task-support-registration.html
+        - title: Get help
+          url: /task-get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
+product-family:
+  name: Storage Management
+  repo: storage-management-family
