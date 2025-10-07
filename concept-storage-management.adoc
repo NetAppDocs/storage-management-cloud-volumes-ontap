@@ -1,0 +1,107 @@
+---
+sidebar: sidebar
+permalink: concept-storage-management.html
+keywords: provisioning, capacity management, storage provisioning, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, BlueXP, NetApp Consolecloud manager
+summary: The Console provides simplified and advanced management of Cloud Volumes ONTAP storage.
+---
+
+= Cloud Volumes ONTAP storage management
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The NetApp Console provides simplified and advanced management of Cloud Volumes ONTAP storage.
+
+CAUTION: You must create and delete all disks and aggregates directly from the Console. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+
+== Storage provisioning
+
+The Console makes storage provisioning for Cloud Volumes ONTAP easy by purchasing disks and managing aggregates for you. You only need to create volumes. You can use an advanced allocation option to provision aggregates yourself, if you want.
+
+=== Simplified provisioning
+
+Aggregates provide cloud storage to volumes. The Console creates aggregates for you when you launch an instance, and when you provision additional volumes.
+
+When you create a volume, the Console does one of three things:
+
+* It places the volume on an existing aggregate that has sufficient free space.
+
+* It places the volume on an existing aggregate by purchasing more disks for that aggregate.
+ifdef::aws[]
++
+In the case of an aggregate in AWS that supports Elastic Volumes, it also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+endif::aws[]
+
+* It purchases disks for a new aggregate and places the volume on that aggregate.
+
+The Console determines where to place a new volume by looking at several factors: an aggregate's maximum size, whether thin provisioning is enabled, and free space thresholds for aggregates.
+
+ifdef::aws[]
+==== Disk size selection for aggregates in AWS
+
+When the Console creates new aggregates for Cloud Volumes ONTAP in AWS, it gradually increases disk sizes as aggregate numbers increase to maximize system capacity before reaching AWS data disk limits.
+
+For example, the Console might choose the following disk sizes:
+
+[cols=3*,options="header",width=60%]
+|===
+
+| Aggregate number
+| Disk size
+| Max aggregate capacity
+
+| 1 |	500 GiB | 3 TiB
+| 4 | 1 TiB | 6 TiB
+| 6 | 2 TiB | 12 TiB
+
+|===
+
+NOTE: This behavior does not apply to aggregates that support the Amazon EBS Elastic Volumes feature. Aggregates that have Elastic Volumes enabled are comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+
+You can choose the disk size yourself by using the advanced allocation option.
+endif::aws[]
+
+=== Advanced allocation
+
+You can also manage aggregates. link:task-create-aggregates.html[From the *Advanced allocation* page], you can create new aggregates that include a specific number of disks, add disks to an existing aggregate, and create volumes in specific aggregates.
+
+== Capacity management
+
+The organization or account admin can configure the Console to notify you of storage capacity decisions or whether to automatically manage capacity requirements for you.
+
+This behavior is determined by the _Capacity Management Mode_ on a Console agent. The Capacity Management Mode affects all Cloud Volumes ONTAP systems managed by that Console agent. If you have another Console agent, it can be configured differently.
+
+=== Automatic capacity management
+
+The Capacity Management Mode is set to automatic by default. In this mode, the Console checks the free space ratio every 15 minutes to determine if the free space ratio falls below the specified threshold. If more capacity is needed, it initiates purchase of new disks, deletes unused collections of disks (aggregates), moves volumes between aggregates as required, and attempts to prevent disk failure.
+
+The following examples illustrate how this mode works:
+
+* If an aggregate reaches the capacity threshold and it has room for more disks, the Console automatically purchases new disks for that aggregate so volumes can continue to grow.
++
+ifdef::aws[]
+In the case of an aggregate in AWS that supports Elastic Volumes, it also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+endif::aws[]
++
+* If an aggregate reaches the capacity threshold and it can't support any additional disks, the Console automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.
++
+If the Console creates a new aggregate for the volume, it chooses a disk size that accommodates the size of that volume.
++
+Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can't be returned to the cloud provider in this scenario.
+
+* If an aggregate contains no volumes for more than 12 hours, the Console deletes it.
+
+==== Management of LUNs with automatic capacity management
+
+The Console's automatic capacity management doesn't apply to LUNs. When it creates a LUN, it disables the autogrow feature.
+
+=== Manual capacity management
+
+If the organization or account admin sets the Capacity Management Mode to manual, the Console informs you to take appropriate actions for capacity decisions. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
+
+=== Learn more
+
+link:task-manage-capacity-settings.html[Learn how to modify the capacity management mode].

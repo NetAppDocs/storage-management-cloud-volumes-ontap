@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: concept-flash-cache.html
+keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme
+summary: Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
+---
+
+= Flash Cache
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
+
+== What's Flash Cache?
+
+Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It's effective for random read-intensive workloads, including databases, email, and file services.
+
+== Supported configurations
+
+Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View supported configurations in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^]
+
+
+== Limitations
+ifdef::aws[]
+* When configuring Flash Cache for Cloud Volumes ONTAP 9.12.0 or earlier in AWS, compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements. When you deploy or upgrade to Cloud Volumes ONTAP 9.12.1 or later, you don't need to disable compression.
++
+Skip selecting storage efficiency settings when creating a volume from the NetApp Console, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
+endif::aws[]
+* Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
+

@@ -1,0 +1,126 @@
+---
+sidebar: sidebar
+permalink: task-managing-svms-gcp.html
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported, create svm, create storage vm, create vserver
+summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
+---
+
+= Manage data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
+
+To create and manage additional data-serving storage VMs in Google Cloud, you should use the APIs. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. When creating the storage VMs, the NetApp Console configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communications from the storage VM.
+
+For information about running Cloud Volumes ONTAP API calls, refer to https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
+
+== Supported number of storage VMs
+
+Beginning with Cloud Volumes ONTAP 9.11.1, based on your license, multiple storage VMs are supported with specific configurations. Refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+
+All versions of Cloud Volumes ONTAP prior to 9.11.1 support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
+
+== Create a storage VM
+
+Based on your configuration and license type, you can create multiple storage VMs on a single node system or in a high-availability (HA) configuration by using the APIs.
+
+.About this task
+
+When you create storage VMs using the APIs, along with configuring the required network interfaces, the Console also modifies the `default-data-files` policies on the data storage VMs by removing the following services from the NAS data LIF and adding them to the iSCSI data LIF that's used for outbound management connections:
+
+* `data-fpolicy-client`
+* `management-ad-client`
+* `management-dns-client`
+* `management-ldap-client`
+* `management-nis-client`
+
+
+.Before you begin
+
+The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+
+=== Single node system
+Use the following API call to create a storage VM on a single node system. 
+
+`POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
+
+Include the following parameters in the request body:
+
+[source,json]
+{ "svmName": "NewSvmName" 
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+
+=== HA pair
+Use the following API call to create a storage VM on an HA pair:
+
+`POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
+
+Include the following parameters in the request body:
+
+[source,json]
+{ "svmName": "NewSvmName" 
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+}
+
+== Manage storage VMs 
+
+Using the APIs, you can rename and delete storage VMs in both single node and HA configurations.
+
+.Before you begin
+
+The Console agent requires specific permissions to manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+
+=== Rename a storage VM
+
+To rename a storage VM, you should provide the names of the existing storage VM and new storage VM as parameters.
+
+.Steps
+
+* Use the following API call to rename a storage VM on a single node system:
++
+`PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
++
+Include the following parameters in the request body:
++
+[source,json]
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+* Use the following API call to rename a storage VM on an HA pair:
++
+`PUT /gcp/ha/working-environments/{workingEnvironmentId}/svm`
++
+Include the following parameters in the request body:
++
+[source,json]
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+
+=== Delete a storage VM
+
+In a single node or HA configuration, you can remove a storage VM if it doesn't have any active volumes.
+
+.Steps
+
+* Use the following API call to delete a storage VM on a single node system:
++
+`DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+*  Use the following API call to delete a storage VM on an HA pair:
++
+`DELETE /gcp/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+.Related information
+
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use the REST APIs for the NetApp Console^]

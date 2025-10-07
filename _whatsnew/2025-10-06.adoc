@@ -1,0 +1,11 @@
+=== BlueXP is now NetApp Console
+
+The NetApp Console, built on the enhanced and restructured BlueXP foundation, provides centralized management of NetApp storage and NetApp Data Services across on-premises and cloud environments at enterprise grade—delivering real-time insights, faster workflows, and simplified administration, that is highly secure and compliant.
+
+For details on what has changed, see the https://docs.netapp.com/us-en/bluexp-relnotes/index.html[NetApp Console release notes^].
+
+=== Simplified Cloud Volumes ONTAP deployment in AWS
+
+You can now deploy Cloud Volumes ONTAP in AWS using a quick deployment method for both single-node and high-availability (HA) configurations. This streamlined process reduces the number of steps compared to the advanced method, automatically sets default values on a single page, and minimizes navigation, making deployment faster and easier.
+
+For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP in AWS using quick deployment^].
