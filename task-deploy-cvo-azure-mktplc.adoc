@@ -139,6 +139,8 @@ Ensure that the deployment is complete on the Azure marketplace. The Console age
 
 .Steps
 In the Console, you follow the standard procedure for discovering existing systems. Refer to link:task-adding-systems.html[Add an existing Cloud Volumes ONTAP system to the Console].
+[CAUTION]
+During discovery, you might see failure messages, but you can ignore them until the discovery process is complete. Do not modify the configuration of the Cloud Volumes ONTAP systems in the Azure marketplace portal during discovery, especially the system tags. Any changes made to these configurations may lead to unexpected system behavior.
 
 .After you finish
 After the discovery is complete, you can view the systems listed on the  *Systems* page in the Console. You can perform various management tasks, such as link:task-manage-aggregates.html[expanding the aggregate], link:task-create-volumes.html[adding volumes], link:task-managing-svms-azure.html[provisioning additional storage VMs], and link:task-change-azure-vm.html[changing the instance types].
