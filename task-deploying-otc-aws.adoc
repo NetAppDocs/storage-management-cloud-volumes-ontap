@@ -472,7 +472,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 [CAUTION]
-After the deployment process completes, do not modify the system-generated configuration details in the AWS cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
 .Related links 
 
