@@ -129,10 +129,10 @@ ifdef::azure[]
 
 If you have a lower version of Cloud Volumes ONTAP in Azure, you must first upgrade to the next version and follow the supported upgrade paths to reach your target version. For example, if you have Cloud Volumes ONTAP 9.7 P7, follow this upgrade path:
 
-* 9.7 P7 > 9.8 P18
-* 9.8 P18 > 9.9.1 P15
-* 9.9.1 P15 > 9.10.1 P12
-* 9.10.1 P12 > 9.11.1 P20
+* 9.7 P7 -> 9.8 P18
+* 9.8 P18 -> 9.9.1 P15
+* 9.9.1 P15 -> 9.10.1 P12
+* 9.10.1 P12 -> 9.11.1 P20
 
 endif::azure[]
 
@@ -226,14 +226,16 @@ For example, if you're running version 9.8 and you want to upgrade to 9.10.1, yo
 === Patch releases
 Starting in January 2024, patch upgrades are only available if there's a patch release for the three latest versions of Cloud Volumes ONTAP. Patch versions are occasionally available for deployment, when the RC or GA version isn't available for deployment.
 
-We use the latest GA release to determine the three latest versions to display in the Console. For example, if the current GA release is 9.13.1, patches for 9.11.1-9.13.1 appear in the Console. If you want to upgrade to a patch release for versions 9.11.1 or below, you will need to use the manual upgrade procedure by <<Upgrade from an image available at a URL,downloading the ONTAP image>>.
+We use the latest GA release to determine the three latest versions to display in the Console. For example, if the current GA release is 9.13.1, patches for 9.11.1-9.13.1 appear in the Console. 
 
-As a general rule for patch (P) releases, you can upgrade from one version release to any P-release of the current version you're running or the next version. 
+For patch versions 9.11.1 or below, you will need to use a manual upgrade procedure by <<Upgrade from an image available at a URL,downloading the ONTAP image>>.
+
+As a general rule for patch releases, you can upgrade from a lower patch version to any higher patch version in the same or the next Cloud Volumes ONTAP release. 
 
 Here are a couple of examples:
 
-*	9.13.0 > 9.13.1P15
-*	9.12.1 > 9.13.1P2
+*	9.13.0 -> 9.13.1 P15
+*	9.12.1 -> 9.13.1 P2
 
 === Reverting or downgrading
 
