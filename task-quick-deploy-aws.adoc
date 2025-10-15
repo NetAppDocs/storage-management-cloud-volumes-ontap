@@ -110,6 +110,9 @@ TIP: If you want to utilize WORM and data tiering, you must disable Backup and R
 .Summary
 Check or edit the details you entered, and then click *Create*.
 
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+
 .Related links
 
 * link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration]
