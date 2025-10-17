@@ -231,6 +231,9 @@ If you experience any issues deploying the Cloud Volumes ONTAP system, review th
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+
 .After you finish
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
@@ -433,4 +436,12 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 * If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+
+.Related links
+
+* link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration in Google Cloud]
+
 
