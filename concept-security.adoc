@@ -39,7 +39,7 @@ Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-d
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-Cloud Volumes ONTAP supports both NVE and NAE with external key management services (EKMs) provided by AWS, Azure, and Google Cloud, including third-party solutions, such as Fortanix. Unlike ONTAP, for Cloud Volumes ONTAP, encryption keys are generated at the cloud provider's side, not in ONTAP.
+Cloud Volumes ONTAP supports both NVE and NAE with external key management services (EKMs) provided by AWS, Azure, and Google Cloud, including third-party solutions, such as Fortanix. Unlike ONTAP, for Cloud Volumes ONTAP, encryption keys are generated at the cloud provider's side, not in ONTAP. Cloud Volumes ONTAP doesn't support https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-onboard-key-management-96-later-nve-task.html[Onboard Key Manager^].
 
 Cloud Volumes ONTAP uses the standard Key Management Interoperability Protocol (KMIP) services that ONTAP uses. For more information about the supported services, refer to the https://imt.netapp.com/imt/#welcome[Interoperability Matrix Tool^].
 
@@ -108,3 +108,6 @@ Snapshot copies are read-only, which prevents ransomware corruption. They can al
 image:screenshot_ransomware_protection.gif[A screenshot that shows the Ransomware Protection page that is available from within a system. The screen shows the number of volumes without a Snapshot Policy and the ability to block ransomware file extensions.]
 
 link:task-protecting-ransomware.html[Learn how to implement the NetApp solution for ransomware].
+
+
+//OKM: https://github.com/NetAppDocs/storage-management-cloud-volumes-ontap/issues/5
