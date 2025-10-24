@@ -13,7 +13,7 @@ summary: Be familiar with the charging, consumption model, pricing, and configur
 :imagesdir: ./media/
 
 [.lead]
-You should be familiar with the charging and capacity usage for capacity-based licenses
+You should be familiar with the charging and capacity usage for capacity-based licenses.
 
 == Consumption models
 
@@ -123,9 +123,12 @@ If you haven't provisioned any volumes yet, then the minimum charge doesn't appl
 
 For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With the Professional package type, the minimum capacity charging of 4 TiB applies regardless of the volume type. 
 
-=== Overages
+=== Billing and overages
 
-If you exceed your BYOL capacity, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first. If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.
+##You can select the method by which you want to be charged in the *Licenses and subscriptions* section in the Console. Overages are charges incurred when you exceed the specified capacity for your license package or annual subscription.## 
+
+* ##*NetApp licenses first, marketplace subscriptions for extra usage*: In this model, your consumption is charged against the specified capacity of your license package (BYOL). If you exceed your license capacity, you'll be charged for overages based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.##
+* ## *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO). Any unused license capacity is disregarded for billing.##
 
 === Essentials package
 
