@@ -22,7 +22,7 @@ The enhancements described on this page are specific to managing Cloud Volumes O
 // tag::whats-new[]
 
 == 17 October 2025
-include::_whatsnew/2015-10-17.adoc[]
+include::_whatsnew/2025-10-17.adoc[]
 
 == 06 October 2025
 include::_whatsnew/2025-10-06.adoc[]
