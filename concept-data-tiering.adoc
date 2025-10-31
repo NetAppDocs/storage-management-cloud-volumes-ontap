@@ -146,10 +146,8 @@ If read by random reads, the cold data blocks in the capacity tier become hot an
 None:: Keeps data of a volume in the performance tier, preventing it from being moved to the capacity tier.
 
 .Replication
-When you replicate a volume, you can choose whether to tier the data to object storage. If you do, the Console applies the *Backup* policy to the data protection volume. Starting with Cloud Volumes ONTAP 9.6, the *All* tiering policy replaces the backup policy.
+When you replicate a volume, you can choose whether to tier the data to object storage. If you do, the Console applies the *Backup* policy to the data protection volume. Starting with Cloud Volumes ONTAP 9.6, the *All* tiering policy replaces the backup policy. When a replication relationship is deleted, the destination volume retains the tiering policy that was in effect during replication.
 
-[NOTE]
-When a replication relationship is deleted, the destination volume retains the tiering policy that was in effect during replication. It does not revert to a default policy.
 
 === Turning off Cloud Volumes ONTAP impacts the cooling period
 
