@@ -104,9 +104,9 @@ This system counts as three systems: one for the HA pair and two for the additio
 
 That's six systems in total. You would then have room for an additional 14 systems in your account.
 
-If you have a large deployment that requires more then 24 systems, contact your account rep or sales team.
+If you have a large deployment that requires more then 24 systems, contact your accounts representative or sales team.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about Console accounts^].
+https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html[Manage NSS credentials associated with NetApp Console^].
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
