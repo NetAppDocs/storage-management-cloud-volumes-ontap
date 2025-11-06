@@ -86,7 +86,7 @@ For information about the capacity limits of each cloud provider, refer to their
 
 == Max number of systems
 
-With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per NetApp Console account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
+With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per NetApp Console organization. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
 
 For example, let's say you have three systems:
 
@@ -102,11 +102,9 @@ This system counts as two systems: one for the single node system and one for th
 +
 This system counts as three systems: one for the HA pair and two for the additional storage VMs.
 
-That's six systems in total. You would then have room for an additional 14 systems in your account.
+That's six systems in total. You would then have room for an additional 14 systems in your organization.
 
 If you have a large deployment that requires more then 24 systems, contact your accounts representative or sales team.
-
-https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html[Manage NSS credentials associated with NetApp Console^].
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
