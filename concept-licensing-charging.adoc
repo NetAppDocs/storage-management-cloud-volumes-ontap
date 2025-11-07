@@ -110,7 +110,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn abou
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
 
 == Charging for read/write volumes
-If you create or use a writable (read/write) volume, they are considered as primary volumes and charged based on their minimum capacity. Examples include any FlexVol primary volumes, SnapLock audit volumes,  data protection (DP) volumes, and CIFS audit volumes. All data-storing volumes that you create are charged based on your subscription and package. ONTAP-internal volumes that are automatically created and inaccessible to you are not charged.
+If you create or use a writable (read/write) volume, it is considered primary volume and charged based on its minimum capacity. Examples include any FlexVol primary volumes, SnapLock audit volumes, data protection (DP) volumes, and CIFS audit volumes. Data-storing volumes that you create are charged based on your subscription and package. ONTAP-internal volumes that are automatically created and inaccessible to you are not charged.
 
 == Notes about charging
 
