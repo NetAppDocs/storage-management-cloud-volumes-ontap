@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-licensing-charging.html
-keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging
+keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging, SnapLock charging, CIFS charging, audit volumes, primary volumes, volume-based charging
 summary: Be familiar with the charging, consumption model, pricing, and configurations of capacity-based licenses.
 ---
 
@@ -52,11 +52,11 @@ link:task-manage-capacity-licenses.html[Learn how to change charging methods].
 
 For information about converting node-based licenses to capacity-based, see 
 
-== Pricing and supported configurations
+== Charging and supported configurations in capacity-based licenses
+
+Charging in Cloud Volumes ONTAP is based on a number of factors, such as packages and volume types. Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
 For details about pricing, go to the https://bluexp.netapp.com/pricing/[NetApp Console website^].
-
-Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
 === Storage VMs
 
@@ -108,6 +108,9 @@ If you have a large deployment that requires more then 24 systems, contact your 
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
+
+== Charging for read/write volumes
+If you create or use a writable (read/write) volume, they are considered as primary volumes and charged based on their minimum capacity. Examples include any FlexVol primary volumes, SnapLock audit volumes,  data protection (DP) volumes, and CIFS audit volumes. All data-storing volumes that you create are charged based on your subscription and package. ONTAP-internal volumes that are automatically created and inaccessible to you are not charged.
 
 == Notes about charging
 
