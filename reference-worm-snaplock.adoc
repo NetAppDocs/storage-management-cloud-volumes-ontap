@@ -29,3 +29,9 @@ The Snapshot copies inherit the WORM properties of the volume, making them tampe
 
 [NOTE]
 Even though a Snapshot copy is protected for a specific retention period, the source volume can be deleted by a cluster administrator, as WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. Additionally, a trusted cloud administrator can delete the WORM data by operating on the cloud storage resources.
+
+
+.Related links
+
+* For more information about WORM, refer to link:concept-worm.html[Learn about WORM storage on Cloud Volumes ONTAP].
+* For information about charging of SnapLock volumes, refer to link:concept-licensing-charging.html[Licensing and charging in Cloud Volumes ONTAP].
