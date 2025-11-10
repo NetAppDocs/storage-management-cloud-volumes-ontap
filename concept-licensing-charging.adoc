@@ -110,7 +110,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn abou
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
 
 == Charging for read/write volumes
-If you create or use a writable (read/write) volume, it is considered a primary volume and is charged based on the provisioned capacity considering the minimum charge per storage VM (SVM). Examples include FlexVol read/write volumes, SnapLock audit volumes, and CIFS/NFS audit volumes. Data-storing volumes that you create are charged based on your subscription and package type. ONTAP-internal volumes that are automatically created and cannot host store data, such as SVM root volumes, are not charged.
+If you create or use a writable (read/write) volume, it is considered a primary volume and is charged for the provisioned capacity based on the minimum charge per storage VM (SVM). Examples include FlexVol read/write volumes, SnapLock audit volumes, and CIFS/NFS audit volumes. All user-created data volumes are charged per your subscription and package type. ONTAP internal volumes that are automatically created and cannot store data, such as SVM root volumes, are not charged.
 
 == Notes about charging
 
