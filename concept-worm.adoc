@@ -95,3 +95,6 @@ You should understand the following about enabling both data tiering and WORM st
 .Related link
 
 * link:reference-worm-snaplock.html[Create tamperproof Snapshot copies for WORM storage]
+
+* link:concept-licensing-charging.html[Licensing and charging in Cloud Volumes ONTAP]
+
