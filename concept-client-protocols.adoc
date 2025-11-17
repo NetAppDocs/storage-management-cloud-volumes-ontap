@@ -38,6 +38,8 @@ link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ON
 
 == NVMe-TCP
 
-Beginning with ONTAP version 9.12.1, NVMe-TCP is supported for cloud providers. NetApp Console does not provide any management capabilities for NVMe-TCP. 
+Beginning with ONTAP version 9.12.1, NVMe-TCP is supported for all cloud providers. Cloud Volumes ONTAP supports NVMe-TCP as a block protocol for storage VMs (SVMs) during deployment, and installs the required NVMe licenses automatically. 
+
+NetApp Console does not provide any management capabilities for NVMe-TCP. 
 
 For more information on configuring NVMe through ONTAP, refer to the https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html[ONTAP documentation: Configure a storage VM for NVMe^].
