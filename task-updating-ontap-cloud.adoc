@@ -42,6 +42,8 @@ ifdef::aws[]
 | Current version
 | Versions that you can directly upgrade to
 
+|9.16.1  | 9.17.1 P1
+|9.15.1  | 9.16.1
 |9.15.0  | 9.15.1 
 .2+|9.14.1  
 | 9.15.1
