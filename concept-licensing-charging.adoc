@@ -15,9 +15,9 @@ summary: Be familiar with the charging, consumption model, pricing, and configur
 [.lead]
 You should be familiar with the charging and capacity usage for capacity-based licenses.
 
-== Consumption models
+== Consumption models or license purchase options
 
-Capacity-based licensing packages are available with the following consumption models:
+Capacity-based licensing packages are available with the following consumption models or purchase options:
 
 * *BYOL*: Bring your own license (BYOL). A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 [NOTE]
@@ -129,7 +129,7 @@ For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to s
 You can select the method by which you want to be charged in the *Licenses and subscriptions* section in the Console. Overages are charges incurred when you exceed the specified capacity for your license package or annual subscription. You can choose from the following billing methods:
 
 * *NetApp licenses first, marketplace subscriptions for extra usage*: In this model, your consumption is charged against the specified capacity of your license package (BYOL), with a preference for using available capacity from other licenses first. If you exceed your licenses capacity, you'll be charged for overages based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.
-* *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO). Any unused license capacity is disregarded for billing.
+* *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO).
 
 === Essentials package
 

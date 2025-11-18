@@ -41,7 +41,7 @@ link:task-deploying-otc-azure.html[View step-by-step instructions to launch Clou
 
 Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. Capacity-based licensing is available in the form of a _package_: the Essentials package or the Professional package.
 
-The Essentials and Professional packages are available with the following consumption models:
+The Essentials and Professional packages are available with the following consumption models or purchase options:
 
 * A license (bring your own license (BYOL)) purchased from NetApp
 * An hourly, pay-as-you-go (PAYGO) subscription from the Azure Marketplace
