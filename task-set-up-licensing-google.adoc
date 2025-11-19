@@ -58,7 +58,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 
 .Steps
 
-. https://bluexp.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
+. https://www.netapp.com/forms/sales-contact/[Contact NetApp Sales to obtain a license^]
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to the NetApp Console^]
 +

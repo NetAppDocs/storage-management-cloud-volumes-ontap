@@ -67,7 +67,7 @@ indexpage:
         - title: Supported cloud regions
           url: https://bluexp.netapp.com/cloud-volumes-global-regions
         - title: Calculators
-          url: https://www.netapp.com/console/calculator-hub
+          url: https://www.netapp.com/ontap-cloud/pricing/
     - title: Blogs & community
       links:
         - title: NetApp Console
