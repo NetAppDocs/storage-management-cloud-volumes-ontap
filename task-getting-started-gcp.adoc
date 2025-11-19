@@ -18,7 +18,7 @@ Get started with Cloud Volumes ONTAP in Google Cloud in a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Console agent
 
 [role="quick-margin-para"]
-If you don't have a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Console agent^] yet, you need to create one. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Learn how to create a Console agent in Google Cloud^]
+If you don't have a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Console agent^] yet, you need to create one. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Learn how to create a Console agent in Google Cloud^]
 
 [role="quick-margin-para"]
 Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, then you need to manually install the Console agent and access the NetApp Console that's running on that Console agent. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Learn how to manually install the Console agent in a location without internet access^]
