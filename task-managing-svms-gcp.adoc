@@ -42,7 +42,7 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 .Before you begin
 
-The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
 
 === Single node system
 Use the following API call to create a storage VM on a single node system. 
@@ -74,7 +74,7 @@ Using the APIs, you can rename and delete storage VMs in both single node and HA
 
 .Before you begin
 
-The Console agent requires specific permissions to manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+The Console agent requires specific permissions to manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
 
 === Rename a storage VM
 

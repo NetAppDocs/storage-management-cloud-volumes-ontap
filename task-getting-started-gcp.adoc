@@ -81,5 +81,5 @@ Click *Add System*, select the type of system that you would like to deploy, and
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Creating a Console agent^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Console agent software on a Linux host^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[What the Console does with Google Cloud permissions^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[Google Cloud permissions for the Console agent^]
 
