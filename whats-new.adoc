@@ -19,11 +19,16 @@ The enhancements described on this page are specific to managing Cloud Volumes O
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This Cis required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
+== 10 November 2025
+include::_whatsnew/2025-11-10.adoc[]
 
-== 6 October 2025
+== 17 October 2025
+include::_whatsnew/2025-10-17.adoc[]
+
+== 06 October 2025
 include::_whatsnew/2025-10-06.adoc[]
 
-== 4 September 2025
+== 04 September 2025
 include::_whatsnew/2025-09-04-917.adoc[]
 
 == 11 August 2025
@@ -47,7 +52,7 @@ include::_whatsnew/2025-04-16.adoc[]
 == 14 April 2025
 include::_whatsnew/2025-04-14.adoc[]
 
-== 3 April 2025
+== 03 April 2025
 include::_whatsnew/2025-04-03.adoc[]
 
 == 28 March 2025
@@ -59,7 +64,7 @@ include::_whatsnew/2025-03-12.adoc[]
 == 10 March 2025
 include::_whatsnew/2025-03-10.adoc[]
 
-== 6 March 2025
+== 06 March 2025
 include::_whatsnew/2025-03-06-916.adoc[]
 
 
@@ -72,7 +77,7 @@ include::_whatsnew/2025-02-18.adoc[]
 == 10 February 2025
 include::_whatsnew/2025-02-10.adoc[]
 
-== 9 December 2024
+== 09 December 2024
 include::_whatsnew/2024-12-09.adoc[]
 
 == 11 November 2024
@@ -81,10 +86,10 @@ include::_whatsnew/2024-11-11.adoc[]
 == 25 October 2024
 include::_whatsnew/2024-10-25.adoc[]
 
-== 7 October 2024
+== 07 October 2024
 include::_whatsnew/2024-10-07.adoc[]
 
-== 9 September 2024
+== 09 September 2024
 include::_whatsnew/2024-09-09.adoc[]
 
 
@@ -101,7 +106,7 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 8 August 2024
+== 08 August 2024
 
 === Edge Cache licensing packages deprecated
 Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
@@ -154,21 +159,21 @@ For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-
 You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
 
 
-== 8 March 2024
+== 08 March 2024
 
 === Amazon Instant Metadata Service v2 support
 In AWS, Cloud Volumes ONTAP, the Mediator, and the Connector now support Amazon Instant Metadata Service v2 (IMDSv2) for all functions. IMDSv2 provides enhanced protection against vulnerabilities. Only IMDSv1 was previously supported.
 
 If required by your security policies, you can configure your EC2 instances to use IMDSv2. For instructions, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-require-imdsv2.html[BlueXP setup and administration documentation for managing existing Connectors^].
 
-== 5 March 2024
+== 05 March 2024
 
 === Cloud Volumes ONTAP 9.14.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 2 February 2024
+== 02 February 2024
 === Support for Edv5-series VMs in Azure
 Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the 9.14.1 release. 
 
@@ -188,7 +193,7 @@ Patch releases are available in BlueXP only for the latest three versions of Clo
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Upgrade Cloud Volumes ONTAP^]
 
-== 8 January 2024
+== 08 January 2024
 
 === New VMs for Azure multiple availability zones
 
@@ -201,7 +206,7 @@ Starting from Cloud Volumes ONTAP 9.13.1, the following VM types support Azure m
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 
-== 6 December 2023
+== 06 December 2023
 
 === Cloud Volumes ONTAP 9.14.1 RC1
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 in AWS, Azure, and Google Cloud.
@@ -215,7 +220,7 @@ You can now create a FlexVol volume up to the maximum size of 300 TiB with Syste
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html#file-and-volume-limits[Storage limits in Azure]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#logical-storage-limits[Storage limits in Google Cloud]
 
-== 5 December 2023
+== 05 December 2023
 The following changes were introduced. 
 
 === New region support in Azure
@@ -245,7 +250,7 @@ The Berlin region is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.
 
 For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
 
-== 8 November 2023
+== 08 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
 
 === Tel Aviv region now supported in AWS
@@ -253,7 +258,7 @@ The Tel Aviv region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA an
 
 For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
 
-== 1 November 2023
+== 01 November 2023
 The following change was introduced with the 3.9.34 release of the Connector.
 
 === Saudi Arabia region now supported in Google Cloud
@@ -279,7 +284,7 @@ The following regions in Azure now support highly-available multiple availabilit
 
 For a list of all regions that support multiple availability zones, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
-== 6 October 2023
+== 06 October 2023
 The following change was introduced with the 3.9.34 release of the Connector.
 
 === Cloud Volumes ONTAP 9.14.0
@@ -331,7 +336,7 @@ BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.13.1 General Availabi
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9131-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 2 July 2023
+== 02 July 2023
 The following changes were introduced with the 3.9.31 release of the Connector.
 
 === Support for HA multiple availability zone deployments in Azure
@@ -352,7 +357,7 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.1 in AWS, Azure, and G
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9131-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 4 June 2023
+== 04 June 2023
 The following change was introduced with the 3.9.30 release of the Connector. 
 
 === Cloud Volumes ONTAP upgrade version selector update
@@ -360,7 +365,7 @@ Through the Upgrade Cloud Volumes ONTAP page, you can now choose to upgrade to t
 
 To learn more about upgrading Cloud Volumes ONTAP through BlueXP, refer to https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-cloud-volumes-ontap[Upgrade Cloud Volumes ONTAP^].
 
-== 7 May 2023
+== 07 May 2023
 The following changes were introduced with the 3.9.29 release of the Connector. 
 
 === Qatar region now supported in Google Cloud
@@ -385,7 +390,7 @@ For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volume
 === Notification now displays when accessing BlueXP without a marketplace subscription
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
 
-== 4 April 2023
+== 04 April 2023
 
 === Support for China regions for AWS
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
@@ -433,7 +438,7 @@ Fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 
 For regional availability, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
 
 
-== 5 March 2023
+== 05 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
 
 === Cloud Volumes ONTAP 9.13.0
@@ -469,7 +474,7 @@ Support for Flash Cache, high write speed, and a high maximum transmission unit 
 
 Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[supported configurations by license for Google Cloud^].
 
-== 5 February 2023
+== 05 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
 
 === Placement group creation in AWS
@@ -508,7 +513,7 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.0 in AWS and Google Cl
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9120-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 8 December 2022
+== 08 December 2022
 
 === Cloud Volumes ONTAP 9.12.1
 
@@ -516,7 +521,7 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.1, which includes supp
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9121-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
 
-== 4 December 2022
+== 04 December 2022
 The following changes were introduced with the 3.9.24 release of the Connector.
 
 === WORM + Cloud Backup now available during Cloud Volumes ONTAP creation 
@@ -537,7 +542,7 @@ An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP syst
 
 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP documentation: Learn how to configure and manage S3 object storage services^]
 
-== 6 November 2022
+== 06 November 2022
 The following changes were introduced with the 3.9.23 release of the Connector.
 
 === Moving resource groups in Azure
@@ -664,7 +669,7 @@ An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP syst
 
 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP documentation: Learn how to configure and manage S3 object storage services^]
 
-== 7 June 2022
+== 07 June 2022
 
 The following changes were introduced with the 3.9.19 release of the Connector.
 
@@ -726,7 +731,7 @@ Note that you must use the ONTAP CLI or System Manager to create a storage VM on
 
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud]
 
-== 2 May 2022
+== 02 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
 
@@ -824,7 +829,7 @@ The create new volume wizard that we recently introduced is now available when c
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-create-volumes.html[Learn how to create volumes on a specific aggregate].
 
-== 9 February 2022
+== 09 February 2022
 
 === Marketplace updates
 
@@ -842,7 +847,7 @@ This charging method is still available for existing customers who have an activ
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
 
-== 6 February 2022
+== 06 February 2022
 
 === Exchange unassigned licenses
 
@@ -864,7 +869,7 @@ We redesigned the licensing selection screen when creating a new Cloud Volumes O
 
 We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
 
-== 2 January 2022
+== 02 January 2022
 
 The following changes were introduced with the 3.9.14 release of the Connector.
 
@@ -936,7 +941,7 @@ Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure 
 
 This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.13 release of the Connector.
 
-== 4 October 2021
+== 04 October 2021
 
 The following changes were introduced with the 3.9.11 release of the Connector.
 
@@ -950,7 +955,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9100-relnotes[Learn about the 
 
 We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
 
-== 2 September 2021
+== 02 September 2021
 
 The following changes were introduced with the 3.9.10 release of the Connector.
 
@@ -964,7 +969,7 @@ Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://le
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-azure-encryption.html[Learn more about these steps].
 
-== 7 July 2021
+== 07 July 2021
 
 The following changes were introduced with the 3.9.8 release of the Connector.
 
@@ -1103,7 +1108,7 @@ Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks.
 
 When BlueXP creates storage accounts in Azure for Cloud Volumes ONTAP, the TLS version for the storage account is now version 1.2.
 
-== 8 Mar 2021
+== 08 Mar 2021
 
 The following changes were introduced with the 3.9.4 release of the Connector.
 
@@ -1143,7 +1148,7 @@ When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choos
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html[Learn more about Google Cloud networking requirements].
 
-== 4 Jan 2021
+== 04 January 2021
 
 The following changes were introduced with the 3.9.2 release of the Connector.
 
@@ -1185,7 +1190,7 @@ Cloud Volumes ONTAP now supports the following machine types:
 * n2-standard-8 with the Standard license and with BYOL
 * n2-standard-32 with the Premium license and with BYOL
 
-== 3 Nov 2020
+== 03 Nov 2020
 
 The following changes were introduced with the 3.9.0 release of the Connector.
 

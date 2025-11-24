@@ -1,0 +1,8 @@
+=== Enhanced NVMe-TCP Support
+
+Earlier, when deploying Cloud Volumes ONTAP instances over NVMe-TCP, you would have to to manually obtain and apply NVMe licenses before deployment. With this update, Cloud Volumes ONTAP now automatically installs the required NVMe licenses during deployment, simplifying the setup process.
+
+For existing NVMe-TCP deployments that lack licenses, Cloud Volumes ONTAP applies the licenses automatically. You must restart the system for the licenses to take effect.
+
+For more information, see https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-client-protocols.html#nvme-tcp[Supported client protocols for Cloud Volumes ONTAP: NVMe-TCP^].
+

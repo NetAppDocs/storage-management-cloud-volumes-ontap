@@ -96,7 +96,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable Backup
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Console agent and the target location.
 +
 [NOTE]
-For China regions, single node deployments are supported only in Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support. Only licenses purchased directly from NetApp are supported in China regions, marketplace subscriptions are not available.
+For China regions, single node deployments are supported only in Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP as link:task-updating-ontap-cloud.html[supported in Azure]. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support. Only licenses purchased directly from NetApp are supported in China regions, marketplace subscriptions are not available.
 +
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
@@ -133,7 +133,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version if required, and select a virtual machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then the Console updates the system to that version when creating it. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14. 
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.16.1 P3 and 9.16.1 P4 is available. The update does not occur from one release to another—for example, from 9.15 to 9.16.
 
 . *Subscribe from the Azure Marketplace*: You see this page if the Console could not enable programmatic deployments of Cloud Volumes ONTAP. Follow the steps listed on the screen. refer to https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products[Programmatic deployment of Marketplace products^] for more information.
 
@@ -225,6 +225,9 @@ The Console deploys the Cloud Volumes ONTAP system. You can track the progress o
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
+
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Azure portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
 .After you finish
 
@@ -439,3 +442,11 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 * If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Azure portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+
+.Related links
+
+*link:task-planning-your-config-azure.html[Planning your Cloud Volumes ONTAP configuration in Azure^]
+*link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP in Azure from the Azure Marketplace^]
