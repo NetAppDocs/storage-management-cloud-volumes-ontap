@@ -26,7 +26,7 @@ You need the following before you begin.
 
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^].
 
-** The service account associated with the Console agent https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
+** The service account associated with the Console agent https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
 
 * An understanding of the configuration that you want to use.
 +
