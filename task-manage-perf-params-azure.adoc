@@ -42,6 +42,9 @@ Note these points before configuring the IOPS and throughput parameters for Prem
 
 * Use the following API call to alter the attribute values for IOPS and throughput:
 +
+[NOTE]
+You can invoke this API a maximum of four times within a 24-hour period.
++
 `PUT /azure/vsa/aggregates/{workingEnvironmentId}/{aggregateName}`
 +
 Include the following parameters in the request body:
