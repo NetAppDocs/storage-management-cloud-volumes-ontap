@@ -44,7 +44,7 @@ Your license is always charged first, but you'll be charged from the hourly rate
 
 * Only single node systems with BYOL are supported in China regions. China region deployments are exempt from BYOL licensing restrictions.
 
-== Changing packages
+== Changing of license packages
 
 After deployment, you can change the package for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
 
@@ -52,7 +52,7 @@ link:task-manage-capacity-licenses.html[Learn how to change charging methods].
 
 For information about converting node-based licenses to capacity-based, see 
 
-== Charging and supported configurations in capacity-based licenses
+== How you are charged for supported storage types and packages
 
 Charging in Cloud Volumes ONTAP is based on a number of factors, such as packages and volume types. Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
@@ -74,6 +74,23 @@ For HA pairs, you're only charged for the provisioned capacity on a node. You ar
 
 * Source and destination FlexCache volumes are considered primary data and charged according to the provisioned space.
 
+=== Read/write volumes
+If you create or use a writable (read/write) volume, it is considered a primary volume and is charged for the provisioned capacity based on the minimum charge per storage VM (SVM). Examples include FlexVol read/write volumes, SnapLock audit volumes, and CIFS/NFS audit volumes. All user-created data volumes are charged per your subscription and package type. ONTAP internal volumes that are automatically created and cannot store data, such as SVM root volumes, are not charged.
+
+=== Essentials package
+
+With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). Pricing from high to low is in the following order: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, and _Essentials Secondary Single Node_. Alternately, when you purchase a marketplace contract or accept a private offer, capacity charges are the same for any deployment or volume type.
+
+Licensing is based entirely on the volume type created within Cloud Volumes ONTAP systems:
+
+* Essentials Single Node: Read/write volumes created on a Cloud Volumes ONTAP system using one ONTAP node only.
+* Essentials HA: Read/write volumes using two ONTAP nodes that can fail over to each other for non-disruptive data access.
+* Essentials Secondary Single Node: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using one ONTAP node only.
++
+[NOTE]
+If a read-only/DP volume becomes a primary volume, the Console considers it as primary data and the charging costs are calculated based on the time the volume was in read/write mode. When the volume is again made read-only/DP, it considers the volume as secondary data again and charges accordingly using the best matching license in the Console.
++
+* Essentials Secondary HA: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using two ONTAP nodes that can fail over to each other for non-disruptive data access.
 
 == Capacity limit
 In the capacity-based licensing model, each Cloud Volumes ONTAP system supports tiering to object storage, and the total tiered capacity can scale up to the cloud provider's bucket limit. Although the license does not impose capacity restrictions, follow the https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf[FabricPool Best Practices^] to ensure optimal performance, reliability, and cost efficiency when configuring and managing tiering.
@@ -109,14 +126,7 @@ If you have a large deployment that requires more then 24 systems, contact your 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
 //https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
 
-== Charging for read/write volumes
-If you create or use a writable (read/write) volume, it is considered a primary volume and is charged for the provisioned capacity based on the minimum charge per storage VM (SVM). Examples include FlexVol read/write volumes, SnapLock audit volumes, and CIFS/NFS audit volumes. All user-created data volumes are charged per your subscription and package type. ONTAP internal volumes that are automatically created and cannot store data, such as SVM root volumes, are not charged.
-
-== Notes about charging
-
-The following details can help you understand how charging works with capacity-based licensing.
-
-=== Minimum charge
+== Minimum charge
 
 There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then the Console applies the 4 TiB minimum charge to that storage VM.
 
@@ -124,32 +134,15 @@ If you haven't provisioned any volumes yet, then the minimum charge doesn't appl
 
 For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With the Professional package type, the minimum capacity charging of 4 TiB applies regardless of the volume type. 
 
-=== ##Billing and overages##
+== ##How overages are charged##
 
-You can select the method by which you want to be charged in the *Licenses and subscriptions* section in the Console. Overages are charges incurred when you exceed the specified capacity for your license package or annual subscription. You can choose from the following billing methods:
+If you exceed your BYOL capacity, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first. If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.
 
-* *NetApp licenses first, marketplace subscriptions for extra usage*: In this model, your consumption is charged against the specified capacity of your license package (BYOL), with a preference for using available capacity from other licenses first. If you exceed your licenses capacity, you'll be charged for overages based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.
-* *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO).
 
-=== Essentials package
+=== ##How overages are charged for Essentials licenses##
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Console charges overages against a higher priced Essentials license (if you have one and there is available capacity). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. If there is no available capacity with your BYOL license, the exceeded capacity will be charged at marketplace on-demand hourly rates (PAYGO) and will add costs to your monthly bill.
 
-With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). Pricing from high to low is in the following order: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, and _Essentials Secondary Single Node_. Alternately, when you purchase a marketplace contract or accept a private offer, capacity charges are the same for any deployment or volume type.
-
-Licensing is based entirely on the volume type created within Cloud Volumes ONTAP systems:
-
-* Essentials Single Node: Read/write volumes created on a Cloud Volumes ONTAP system using one ONTAP node only.
-* Essentials HA: Read/write volumes using two ONTAP nodes that can fail over to each other for non-disruptive data access.
-* Essentials Secondary Single Node: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using one ONTAP node only.
-+
-[NOTE]
-If a read-only/DP volume becomes a primary volume, the Console considers it as primary data and the charging costs are calculated based on the time the volume was in read/write mode. When the volume is again made read-only/DP, it considers the volume as secondary data again and charges accordingly using the best matching license in the Console.
-+
-* Essentials Secondary HA: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using two ONTAP nodes that can fail over to each other for non-disruptive data access.
-
-.##Essentials charging with BYOL or marketplace contracts/private offers##
-##If you purchase multiple Essentials licenses from NetApp (BYOL) and exceed the committed capacity for a deployment and volume type, the Console first consumes any available capacity from a higher-priced Essentials license that you have already purchased, before charging against the marketplace. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.##
-
-##If you purchase multiple Essentials licenses through a marketplace contract or private offer, and exceed the committed capacity for a deployment and volume type, the Console first consumes any available capacity from a higher-priced Essentials license. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.##
+##If you purchase multiple Essentials licenses through a marketplace contract or private offer, and exceed the committed capacity for a deployment and volume type, the Console charges overages against a higher priced Essentials license. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.##
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
