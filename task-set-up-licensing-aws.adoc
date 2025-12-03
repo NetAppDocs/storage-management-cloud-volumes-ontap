@@ -142,5 +142,13 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service. link:co
 .. Select the Keystone Subscription charging method when prompted to choose a charging method.
 +
 image:screenshot-keystone.png[A screenshot of the Keystone Subscription option when creating a Cloud Volumes ONTAP system.]
-
++
 link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
+
+== Node-based license
+
+A node-based license is the previous generation license for Cloud Volumes ONTAP. A node-based license could be procured from NetApp (BYOL) and is available for license renewals, only in specific cases. For information, refer to:
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses[End of availability for node-based licenses^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert a node-based license to a capacity-based license^]
