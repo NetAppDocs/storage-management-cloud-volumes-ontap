@@ -1,0 +1,14 @@
+=== Overage charging for Essentials licenses simplified
+
+For Cloud Volumes ONTAP marketplace annual contracts/private offers, overage calculations for Essentials licenses is now aligned with Bring Your Own License (BYOL) packages. Previously, overages were billed at hourly (PAYGO) rates for the exact Essentials package. Now, if your marketplace annual contract includes multiple Essentials packages, the NetApp Console charges overages for an Essentials package against the available capacity of a higher-priced Essentials package in your subscription. This simplifies overage calculations for Essentials packages and ensures a smooth transition from BYOL licensing to a subscription-based model.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#how-overages-are-charged-for-essentials-licenses[How overages are charged for Essentials licenses^]
+
+=== Support for Azure Edsv6 sizes series
+
+Azure Edsv6 series VMs are supported for new deployments of Cloud Volumes ONTAP 9.17.1 and later. These Generation 2 machines are compatible with the latest technologies, such as Unified Extensible Firmware Interface (UEFI), Azure Boost systems, and NVMe. They are ideal for memory-intensive enterprise systems and applications demanding low latency and high-speed local storage, such as relational database servers, large databases, data analytics engines, and in-memory caches.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#supported-configurations-by-license[Supported configurations for Cloud Volumes ONTAP in Azure^] 
+
+
+
