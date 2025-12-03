@@ -77,7 +77,6 @@ For HA pairs, you're only charged for the provisioned capacity on a node. You ar
 === Read/write volumes
 If you create or use a writable (read/write) volume, it is considered a primary volume and is charged for the provisioned capacity based on the minimum charge per storage VM (SVM). Examples include FlexVol read/write volumes, SnapLock audit volumes, and CIFS/NFS audit volumes. All user-created data volumes are charged per your subscription and package type. ONTAP internal volumes that are automatically created and cannot store data, such as SVM root volumes, are not charged.
 
-[[essentialscharging]]
 === Essentials packages
 
 With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). Pricing from high to low is in the following order: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, and _Essentials Secondary Single Node_. Alternately, when you purchase a marketplace contract or accept a private offer, capacity charges are the same for any deployment or volume type.
@@ -145,7 +144,7 @@ If you purchased an Essentials license from NetApp (BYOL) and you exceed the lic
 
 Similarly, if you have an annual marketplace contract or a private offer with multiple Essentials packages, and your usage exceeds the committed capacity for a deployment and volume type of any specific package, the Console charges overages against a higher-priced Essentials package. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.
 
-For information about Essentials licenses charging, refer to link:concept-licensing-charging.html/essentialscharging[Essentials packages].
+For information about Essentials licenses charging, refer to link:concept-licensing-charging.html#essentialscharging[Essentials packages].
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
