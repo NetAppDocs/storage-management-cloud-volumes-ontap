@@ -100,7 +100,7 @@ The Console's automatic capacity management doesn't apply to LUNs. When it creat
 
 === Manual capacity management
 
-If the organization or account admin sets the Capacity Management Mode to manual, the Console informs you to take appropriate actions for capacity decisions. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
+If the organization or account admin sets the *Capacity Management Mode* to manual, the Console informs you to take appropriate actions for capacity decisions. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
 
 === Learn more
 
