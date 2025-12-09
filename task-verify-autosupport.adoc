@@ -151,7 +151,11 @@ Here's an example:
 . After editing the config file, restart the proxy container as sudo:
 +
 `docker restart squid`
-
++
+If you are using Podman, use this command instead:
++
+`podman restart squid`
++
 . Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
