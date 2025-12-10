@@ -1,0 +1,21 @@
+=== Ability to enhance performance of Premium SSD v2 disks in Azure
+
+You can now enhance the performance of Premium SSD v2 Managed Disks in Azure by modifying the IOPS and throughput parameters. Using this capability, you can optimize the storage performance of your systems based on your workload requirements.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-perf-params-azure.html[Manage Premium SSD v2 disk performance for Cloud Volumes ONTAP in Azure^].
+
+
+=== Overage charging for Essentials licenses simplified
+
+For Cloud Volumes ONTAP marketplace annual contracts/private offers, overage calculations for Essentials licenses is now aligned with Bring Your Own License (BYOL) packages. Previously, overages were billed at hourly marketplace rates for the exact Essentials package. Now, if your marketplace annual contract includes multiple Essentials packages, the NetApp Console charges overages for an Essentials package against the available capacity of a higher-priced Essentials package in your subscription. This simplifies overage calculations for Essentials packages and ensures a smooth transition from BYOL licensing to a subscription-based model.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#how-overages-are-charged-for-essentials-licenses[How overages are charged for Essentials licenses^]
+
+=== Support for Azure Edsv6 sizes series
+
+Beginning with Cloud Volumes ONTAP 9.17.1, you can deploy Azure Edsv6 series VMs through the NetApp Console for new Cloud Volumes ONTAP instances. Cloud Volumes ONTAP 9.17.1 and later will support only Generation 2 VMs for new deployments. These Generation 2 machines are compatible with the latest technologies, such as Unified Extensible Firmware Interface (UEFI), Azure Boost systems, and NVMe. They are ideal for memory-intensive systems and applications that need fast, local storage, such as database servers and analytics engines.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#supported-configurations-by-license[Supported configurations for Cloud Volumes ONTAP in Azure^] 
+
+
+

@@ -1,0 +1,7 @@
+=== Preferred billing option for Cloud Volumes ONTAP
+ 
+You can now choose your preferred billing option for calculating your usage and overages. Following the restricted availability of BYOL licensing from June 25, 2025, NetApp offers preferred charging methods in the *Licensing and Subscriptions* section of the NetApp Console. You can use either your annual marketplace subscription for billing and overages, or the existing licensing (BYOL) model. This provides you with the flexibility to choose the charging method that best fits your organization's financial strategy and usage patterns.
+
+For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#minimum-charge[Billing and overages^].
+
+
