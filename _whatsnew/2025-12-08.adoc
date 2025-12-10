@@ -1,6 +1,6 @@
 === Ability to enhance performance of Premium SSD v2 disks in Azure
 
-You can now enhance the performance of Premium SSD v2 disks in Azure by modifying the IOPS and throughput parameters. Using this capability, you can optimize the storage performance of your systems based on your workload requirements.
+You can now enhance the performance of Premium SSD v2 Managed Disks in Azure by modifying the IOPS and throughput parameters. Using this capability, you can optimize the storage performance of your systems based on your workload requirements.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-perf-params-azure.html[Manage Premium SSD v2 disk performance for Cloud Volumes ONTAP in Azure^].
 
