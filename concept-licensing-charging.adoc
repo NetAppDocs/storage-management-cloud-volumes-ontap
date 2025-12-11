@@ -132,12 +132,16 @@ There is a 4 TiB minimum charge for each data-serving storage VM that has least 
 
 If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
 
-For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With the Professional package type, the minimum capacity charging of 4 TiB applies regardless of the volume type. 
+For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With the Professional package type, the minimum capacity charging of 4 TiB applies regardless of the volume type.
 
-== How overages are charged
+== Billing preferences and overages
 
-If you exceed your BYOL capacity, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first. If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces. For information, refer to link:task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license].
+You can select the method by which you want to be charged in the *Licenses and subscriptions* section in the Console. Overages are charges incurred when you exceed the specified capacity for your license package or annual subscription. 
 
+* *NetApp licenses first, marketplace subscriptions for extra usage*: In this model, your consumption is charged against the specified capacity of your license package (BYOL). If you exceed your license capacity, you'll be charged for overages based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces. For information, refer to link:task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license].
+* *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO). Any unused license capacity is disregarded for billing.
+
+For more information about billing preferences, refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html[Learn about billing preferences for licenses and subscriptions^].
 
 === How overages are charged for Essentials licenses
 If you purchase an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for a specific Essentials package, the Console charges overages against a higher-priced Essentials license (if you have one with available capacity). The Console first uses the available capacity that you've paid for before charging against the marketplace. If there is no available capacity with your BYOL license, the exceeded capacity is charged at marketplace on-demand hourly rates (PAYGO) and added to your monthly bill.
