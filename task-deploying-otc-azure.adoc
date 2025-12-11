@@ -75,7 +75,7 @@ The following table describes fields for which you might need guidance:
 
 You can add up to four tags from the user interface when creating a system, and then you can add more after it's created. Note that the API does not limit you to four tags when creating a system.
 
-For information about tags, refer to the https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
+For information about tags, refer to the https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
@@ -264,7 +264,7 @@ The following table describes fields for which you might need guidance:
 
 You can add up to four tags from the user interface when creating a system, and then you can add more after it's created. Note that the API does not limit you to four tags when creating a system.
 
-For information about tags, refer to the https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
+For information about tags, refer to the https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
