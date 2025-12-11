@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: task-upgrade-disk-perf-azure.html
+keywords: azure, premium ssd v2, Premium SSDv2, performance parameters, cloud volumes ontap
+summary: Configure performance parameters in Premium SSD v2 disks in Azure.
+---
+
+= Change performance tier of Premium SSD disks in Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can upgrade the performance tier of Premium SSD managed disks in Cloud Volumes ONTAP in Azure by using the Azure portal. This is a manual process that involves changing the disk type of each Premium SSD disk to a higher performance tier. Upgrading the performance tier can help improve the overall performance of your Cloud Volumes ONTAP deployment by providing higher IOPS and throughput capabilities.
+
+.About this task
+
+By default, Cloud Volumes ONTAP in Azure deploys Premium SSD disks for NVRAM in P20 tier. The P20 tier provides a balanced performance suitable for most workloads. However, if your workload demands higher performance, you can upgrade the NVRAM disk to a higher tier such as P30. Changing the performance tier of the NVRAM disk can help alleviate performance bottlenecks and enhance the overall efficiency of your Cloud Volumes ONTAP system.
+
+[TIP]
+Currently, you can only upgrade the NVRAM disk from P20 to P30 tier, only through the Azure portal. 
+
+.Before you begin
+Before making this manual reconfiguration, ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue. Upgrading the NVRAM disk to a higher performance tier incurs additional costs, so it is important to assess the need for this change carefully.
+
+.Steps
+
+* Use the following API call to alter the attribute values for IOPS and throughput:
++
+[NOTE]
+You can invoke this API a maximum of four times within a 24-hour period.
++
+`PUT /azure/vsa/aggregates/{workingEnvironmentId}/{aggregateName}`
++
+Include the following parameters in the request body:
++
+[source,json]
+{
+  "aggregateName": "aggr_name",
+  "iops": "modified_iops_value",
+  "throughput": "modified_throughput_value",
+  "workingEnvironmentId": "we_id"
+}
+
+.After you finish
+After the API returns a response indicating the operation is successful, verify the modified parameters by checking the disk details in the Azure portal for your Cloud Volumes ONTAP system.
+
+.Related information
+
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use REST APIs for Cloud Volumes ONTAP^]
+* https://learn.microsoft.com/en-us/azure/virtual-machines/use-premium-ssd-v2-with-availability-set?tabs=CLI[Use Premium SSD v2 with VMs in availability set^]
