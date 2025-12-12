@@ -13,44 +13,48 @@ summary: Configure performance parameters in Premium SSD v2 disks in Azure.
 :imagesdir: ./media/
 
 [.lead]
-You can upgrade the performance tier of Premium SSD managed disks in Cloud Volumes ONTAP in Azure by using the Azure portal. This is a manual process that involves changing the disk type of each Premium SSD disk to a higher performance tier. Upgrading the performance tier can help improve the overall performance of your Cloud Volumes ONTAP deployment by providing higher IOPS and throughput capabilities.
+You can upgrade the performance tier of Premium SSD managed disks in Cloud Volumes ONTAP in Azure by using the Azure portal. This is a manual process that involves changing the disk tier of each Premium SSD disk to a higher performance tier. Changing the performance tier of your NVRAM disk can help alleviate performance bottlenecks and enhance the efficiency of your Cloud Volumes ONTAP system by providing higher IOPS and throughput capabilities.
 
 .About this task
 
-By default, Cloud Volumes ONTAP in Azure deploys Premium SSD disks for NVRAM in P20 tier. The P20 tier provides a balanced performance suitable for most workloads. However, if your workload demands higher performance, you can upgrade the NVRAM disk to a higher tier such as P30. Changing the performance tier of the NVRAM disk can help alleviate performance bottlenecks and enhance the overall efficiency of your Cloud Volumes ONTAP system.
-
+* By default, Cloud Volumes ONTAP in Azure deploys Premium SSD disks for NVRAM in P20 tier. The P20 tier provides a balanced performance suitable for most workloads. However, if your workload demands higher performance, you can upgrade the NVRAM disk to a higher tier such as P30.
 [TIP]
-Currently, you can only upgrade the NVRAM disk from P20 to P30 tier, only through the Azure portal. 
+Currently, you can upgrade an NVRAM disk from P20 to P30 tier, only through the Azure portal.
++
+* You do not change the size of the disk. It continues to remain 512 GB. This procedure only changes the disk's performance tier.
 
 .Before you begin
-Before making this manual reconfiguration, ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue. Upgrading the NVRAM disk to a higher performance tier incurs additional costs, so it is important to assess the need for this change carefully.
+
+Ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue.
+[NOTE]
+Upgrading the NVRAM disk to a higher performance tier incurs additional costs, so it is important to assess the need for this change carefully.
 
 .Steps
 
-* Use the following API call to alter the attribute values for IOPS and throughput:
+This scenario assumes that there are two nodes `node01` and `node02` in the Cloud Volumes ONTAP high-availability (HA) deployment. Use the Azure portal to upgrade the tier.
+
+. Run this command to make `node1` the active node. Manually fail over `node02`.
 +
-[NOTE]
-You can invoke this API a maximum of four times within a 24-hour period.
+`storage failover takeover -ofnode <Node02>`
 +
-`PUT /azure/vsa/aggregates/{workingEnvironmentId}/{aggregateName}`
+. Sign in to the Azure portal.
+. When the takeover is complete, go to the VM instance for `node02`, and click the *Stop* button to switch it off.
+. Navigate to the resource group for `node02` and from the list of disks, select the NVRAM disk to change the tier.
+. Select *Size + Performance*.
+. In the *Performance tier* dropdown, select `P30 - 5000 IOPS, 200MB/s`.
+. Select *Resize*.
+. Switch on the `node02` instance.
+. Check the  Azure serial console until you can see the message: `waiting for giveback`.
+. Run this command to give back `node02`:
 +
-Include the following parameters in the request body:
+`storage failover giveback -ofnode <Node02>`
 +
-[source,json]
-{
-  "aggregateName": "aggr_name",
-  "iops": "modified_iops_value",
-  "throughput": "modified_throughput_value",
-  "workingEnvironmentId": "we_id"
-}
+. Repeat these steps on `node01` to make `node02` take over `node01`, so that you can upgrade the NVRAM disk tier for `node01`.
 
 .After you finish
-After the API returns a response indicating the operation is successful, verify the modified parameters by checking the disk details in the Azure portal for your Cloud Volumes ONTAP system.
+When you have switched on both the nodes, verify the modified parameters by checking the disk details in the Azure portal for your Cloud Volumes ONTAP system.
 
 .Related information
 
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use REST APIs for Cloud Volumes ONTAP^]
-* https://learn.microsoft.com/en-us/azure/virtual-machines/use-premium-ssd-v2-with-availability-set?tabs=CLI[Use Premium SSD v2 with VMs in availability set^]
+* Azure documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance-tiers?tabs=portal[Change your performance tier without downtime^]
+* Knowledge base for the support team: https://kb.netapp.com/Cloud/Azure_NetApp_Files/How_to_upgrade_performance_tier_of_NVRAM_disk_in_Azure_CVO[How to upgrade performance tier of NVRAM disk in Azure CVO^]
