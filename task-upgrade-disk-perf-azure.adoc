@@ -25,7 +25,8 @@ Currently, you can upgrade an NVRAM disk from P20 to P30 tier, only through the 
 
 .Before you begin
 
-Ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue.
+* Your Cloud Volumes ONTAP version must be 9.11.1 or later. For lower versions, you can upgrade to 9.11.1 or later, or raise a Feature Policy Variation Request (FPVR) with NetApp support.
+* Ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue.
 [NOTE]
 Upgrading the NVRAM disk to a higher performance tier incurs additional costs, so it is important to assess the need for this change carefully.
 
@@ -58,3 +59,4 @@ When you have switched on both the nodes, verify the modified parameters by chec
 
 * Azure documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance-tiers?tabs=portal[Change your performance tier without downtime^]
 * Knowledge base for the support team: https://kb.netapp.com/Cloud/Azure_NetApp_Files/How_to_upgrade_performance_tier_of_NVRAM_disk_in_Azure_CVO[How to upgrade performance tier of NVRAM disk in Azure CVO^]
+* link:task-updating-ontap-cloud.html[Upgrade Cloud Volumes ONTAP software versions]
