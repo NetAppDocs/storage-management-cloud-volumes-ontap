@@ -165,7 +165,7 @@ sidebar:
             - title: Connect a LUN to a host
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
-              url: /task-accelerate-data-access.html/task-manage-perf-params-azure.html
+              url: /task-accelerate-data-access.html
         - title: Aggregate administration
           entries:
             - title: Create aggregates
@@ -174,13 +174,13 @@ sidebar:
               url: /task-manage-aggregates.html
             - title: Manage capacity settings
               url: /task-manage-capacity-settings.html
-        - title: Manage Azure disk performance
-          flavor: azure
-          entries:
-            - title: Manage Premium SSD v2 disk performance in Azure
-              url: /task-manage-perf-params-azure.html
-            - title: Upgrade disk performance tier in Azure
-              url: /task-upgrade-disk-perf-azure.html                              
+            - title: Manage disk performance in Azure
+              flavor: azure
+              entries:
+              - title: Manage Premium SSD v2 disk performance in Azure
+                url: /task-manage-perf-params-azure.html
+              - title: Upgrade disk performance tier in Azure
+                url: /task-upgrade-disk-perf-azure.html                              
         - title: Storage VM administration
           entries:
             - title: Work with storage VMs
