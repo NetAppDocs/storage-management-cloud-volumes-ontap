@@ -5,7 +5,7 @@ keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading
 summary: Upgrade Cloud Volumes ONTAP from the NetApp Console to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
-= Upgrade Cloud Volumes ONTAP software
+= Upgrade Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
