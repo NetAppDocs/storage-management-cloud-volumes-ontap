@@ -52,7 +52,7 @@ link:task-connecting-to-otc.html[Learn how to SSH to Cloud Volumes ONTAP].
 +
 `autosupport check show-details`
 +
-The response should be similar to the following:
+The response looks like this:
 +
 ----
     Category: smtp
@@ -106,24 +106,20 @@ If the status of the http-https category is "ok" then it means AutoSupport is co
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Console agent^]
 
-. Go to `/opt/application/netapp/cloudmanager/docker_occm/data/`
-
-. Open the proxy configuration file `squid.conf`
-+
-The basic structure of the file is as follows:
+. Go to `/opt/application/netapp/cloudmanager/docker_occm/data/`.
+. Open the proxy configuration file `squid.conf`. This is the structure of the file:
 +
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        acl netapp_support dst support.netapp.com
+        http_access allow netapp_support
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
+        httpd_suppress_version_string on
 ----
 +
-The localnet src value is the CIDR of the Cloud Volumes ONTAP system.
+The `localnet src` value is the CIDR of the Cloud Volumes ONTAP system.
 
 . If the CIDR block of the Cloud Volumes ONTAP system isn't in the range that's specified in the file, either update the value or add a new entry as follows:
 +
@@ -137,25 +133,23 @@ Here's an example:
 +
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl cvonet src 172.33.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
+        acl netapp_support dst support.netapp.com
+        acl cvonet src <cidr>
+        http_access allow netapp_support
         http_access allow cvonet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
+        httpd_suppress_version_string on
+
 ----
 
-. After editing the config file, restart the proxy container as sudo:
+. After editing the config file, restart the proxy container as `sudo`. Then, depending on whether you're using Docker or Podman, run these commands:
 +
-`docker restart squid`
+For Docker, run `docker restart squid`.
 +
-//If you are using Podman, use this command instead:
-//+
-//`podman restart squid`
-//+
+If you are using Podman, run `podman restart squid`.
++
 . Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
