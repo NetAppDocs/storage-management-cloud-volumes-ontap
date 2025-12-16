@@ -119,13 +119,9 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#c
         httpd_suppress_version_string on
 ----
 +
-The `localnet src` value is the CIDR of the Cloud Volumes ONTAP system.
-
-. If the CIDR block of the Cloud Volumes ONTAP system isn't in the range that's specified in the file, either update the value or add a new entry as follows:
+. If your file doesn't have an entry for the CIDR block of the Cloud Volumes ONTAP system, add a new entry and allow access:
 +
 `acl cvonet src <cidr>`
-+
-If you add this new entry, don't forget to also add an allow entry:
 +
 `http_access allow cvonet`
 +
