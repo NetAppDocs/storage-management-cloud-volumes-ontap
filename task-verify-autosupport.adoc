@@ -36,19 +36,15 @@ After you've verified that outbound internet access is available, you can test A
 
 == Troubleshoot your AutoSupport configuration
 
-If an outbound connection isn't available and the Console can't configure your Cloud Volumes ONTAP system to use the Console agent as a proxy server, you'll receive a notification from the Console titled "<system name> is unable to send AutoSupport messages."
-
-You're most likely receiving this message because of networking issues.
-
-Follow these steps to address this problem.
+If an outbound connection isn't available and the Console can't configure your Cloud Volumes ONTAP system to use the Console agent as a proxy server, you'll receive a notification from the Console that your system is unable to send AutoSupport messages. Follow these steps to address this issue.
 
 .Steps
 
-. SSH to the Cloud Volumes ONTAP system so that you can administer the system from the ONTAP CLI.
+. Connect securely (using SSH) to the Cloud Volumes ONTAP system to use the ONTAP CLI.
 +
 link:task-connecting-to-otc.html[Learn how to SSH to Cloud Volumes ONTAP].
 
-. Display the detailed status of the AutoSupport subsystem:
+. Check the detailed status of the AutoSupport subsystem:
 +
 `autosupport check show-details`
 +
@@ -86,9 +82,9 @@ The response looks like this:
     5 entries were displayed.
 ----
 +
-If the status of the http-https category is "ok" then it means AutoSupport is configured properly and messages can be sent.
+If the status of the http-https category is `OK` it means that AutoSupport is configured properly and messages can be sent.
 
-. If the status is not ok, verify the proxy URL for each Cloud Volumes ONTAP node:
+. If not, verify the proxy URL for each Cloud Volumes ONTAP node:
 +
 `autosupport show -fields proxy-url`
 +
@@ -96,13 +92,13 @@ If the status of the http-https category is "ok" then it means AutoSupport is co
 +
 `autosupport modify -proxy-url \http://<console agent private ip>:3128`
 +
-. Verify AutoSupport status again:
+. Verify the AutoSupport status again:
 +
 `autosupport check show-details`
 
-. If the status is still is failed, validate that there is connectivity between Cloud Volumes ONTAP and the Console agent over port 3128.
+. If the status is still failed, validate that there is connectivity between Cloud Volumes ONTAP and the Console agent over port `3128`.
 
-. If the status ID is still failed after verifying that there is connectivity, SSH to the Console agent.
+. If the status is still failed after verification, SSH to the Console agent.
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Console agent^]
 
@@ -146,7 +142,7 @@ For Docker, run `docker restart squid`.
 +
 If you are using Podman, run `podman restart squid`.
 +
-. Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
+. Go back to the ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
 
