@@ -15,6 +15,9 @@ summary: Configure performance parameters in Premium SSD v2 disks in Azure.
 [.lead]
 You can upgrade the performance tier of Premium SSD managed disks in Cloud Volumes ONTAP in Azure by using the Azure portal. This is a manual process that involves changing the disk tier of each Premium SSD disk to a higher performance tier. Changing the performance tier of your NVRAM disk can help alleviate performance bottlenecks and enhance the efficiency of your Cloud Volumes ONTAP system by providing higher IOPS and throughput capabilities.
 
+[NOTE]
+Ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue.
+
 .About this task
 
 * By default, Cloud Volumes ONTAP in Azure deploys Premium SSD disks for NVRAM in P20 tier. The P20 tier provides a balanced performance suitable for most workloads. However, if your workload demands higher performance, you can upgrade the NVRAM disk to a higher tier such as P30.
@@ -25,10 +28,8 @@ Currently, you can upgrade an NVRAM disk from P20 to P30 tier, only through the 
 
 .Before you begin
 
+* Assess the need for this change carefully, because upgrading the NVRAM disk to a higher performance tier incurs additional costs. 
 * Your Cloud Volumes ONTAP version must be 9.11.1 or later. For lower versions, you can upgrade to 9.11.1 or later, or raise a Feature Policy Variation Request (FPVR) with NetApp support.
-* Ensure that you work with NetApp support to determine that the bottleneck that you experience in your environment is due to the NVRAM disk, and upgrading the tier resolves the issue.
-[NOTE]
-Upgrading the NVRAM disk to a higher performance tier incurs additional costs, so it is important to assess the need for this change carefully.
 
 .Steps
 
