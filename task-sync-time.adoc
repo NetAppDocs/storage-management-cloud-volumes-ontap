@@ -13,6 +13,14 @@ summary: Specifying an NTP server synchronizes the time between the systems in y
 :imagesdir: ./media/
 
 [.lead]
-Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
+Specifying an NTP server synchronizes the time between the systems in your network. When you create a CIFS server, you should also configure an NTP server to synchronize the time between your Cloud Volumes ONTAP system and the Active Directory server. This helps prevent service disruptions and ensures seamless time synchronization, maintaining optimal system performance.
 
 Specify an NTP server using the https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html[NetApp Console API^] or from the user interface when you link:task-create-volumes.html#create-a-volume[create a CIFS server].
+
+.Related links
+
+* Knowledge base (KB) article: https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs/How_does_a_CVO_cluster_use_NTP[How does a CVO cluster use NTP?]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use the REST APIs for NetApp Console^]
