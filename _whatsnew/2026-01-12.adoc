@@ -1,0 +1,11 @@
+=== Support for Google Cloud Infrastructure Manager
+
+Cloud Volumes ONTAP now uses https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager] for all new deployments in Google Cloud. This change has been made because Google will deprecate Google Cloud Deployment Manager in the near future. 
+
+For your existing Cloud Volumes ONTAP deployments in Google Cloud, you need to run a transition tool for migrating from Cloud Deployment Manager to Cloud Infrastructure Manager. 
+
+* Tools link
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes] 
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
+
+
