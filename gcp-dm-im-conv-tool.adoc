@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: gcp-dm-im-conv-tool.html
+keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im migration
+summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
+---
+
+= Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Google is about to sunset Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, for your existing Cloud Volumes ONTAP deployments in Google Cloud, you need to manually run a transition tool for migrating from Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your system will automatically start using Cloud Infrastructure Manager. 
+
+Beginning on January 12, 2026, all new Cloud Volumes ONTAP deployments in Google Cloud use Cloud Infrastructure Manager by default.
+
+The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^]. 
+
+.Before you begin
+
+* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
+* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+* Ensure that the service account attached to the Console agent has all the required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
+
+.Steps
+
+
