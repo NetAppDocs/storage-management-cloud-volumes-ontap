@@ -13,7 +13,7 @@ summary: For your existing deployments in Google Cloud, you need to upgrade your
 :imagesdir: ./media/
 
 [.lead]
-Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to migrate your existing Cloud Volumes ONTAP deployments in Google Cloud from Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Cloud Infrastructure Manager. 
+Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to migrate your existing Cloud Volumes ONTAP deployments in Google Cloud from Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Cloud Infrastructure Manager.
 
 Beginning on January 12, 2026, all new Cloud Volumes ONTAP deployments in Google Cloud use Cloud Infrastructure Manager by default.
 
@@ -25,9 +25,14 @@ The Cloud Volumes ONTAP conversion tool built on GCP-provided conversion methods
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
 * Debug logs, saved in the `logs` directory.
-[CAUTION]
-The tool creates additional buckets and records. You must not delete the Deployment Manager record and netapp-dm-to-im-convert-tool created and managed by NetApp to store terraform file for CVOs and SVMs or name containing '<gcp project number>-<region>-blueprint-config' created and managed by GCP for terraform related artifact's and logs. You might incur additional costs for these storage buckets.
 
+[CAUTION]
+====
+The conversion tool creates Deployment Manager records, and buckets to store them, for which you might incur additional costs. However, you must not delete the records and buckets. 
+
+* The `netapp-dm-to-im-convert-tool` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
+* The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
+====
 .Before you begin
 
 * Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
@@ -80,6 +85,8 @@ includedPermissions:
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
 .. Attach this role to the service account that you'll use to create the VM.
 .. Add attach the `roles/iam.serviceAccountUser` to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
++
+[[VM that you created for running the tool]]
 . Create a VM with following configurations:
 +
 Machine Type: Google Compute Engine machine type e2-medium
@@ -139,3 +146,19 @@ dmconvert \
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. On completion, the tool displays the statuses of the converted systems.
 
 == Rolling back the conversion
+If you don't want to proceed with the conversion, you can roll back to Cloud Deployment Manager by following these steps:
+
+.Steps
+. On the same <<VM that you created for running the tool>>, run this command:
++
+[source,cli]
+----
+dmconvert \
+--project-id=<gcp project id where CVO is deployed> \
+--cvo-name=<cvo name> \
+--service-account=<service account attached to Agent> \
+--rollback
+----
++
+. Accept the EULA to proceed with the rollback. The tool displays the statuses of all converted Cloud Volumes ONTAP deployments.
+. After the rollback is complete, verify that your Cloud Volumes ONTAP system is using
