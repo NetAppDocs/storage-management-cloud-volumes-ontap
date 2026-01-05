@@ -5,7 +5,7 @@ keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager t
 summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
 ---
 
-= Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager
+= Configure existing Cloud Volumes ONTAP deployments for Google Infrastructure Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,14 +13,12 @@ summary: For your existing deployments in Google Cloud, you need to upgrade your
 :imagesdir: ./media/
 
 [.lead]
-Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to migrate your existing Cloud Volumes ONTAP deployments in Google Cloud from Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Cloud Infrastructure Manager.
+Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to migrate your existing Cloud Volumes ONTAP deployments in Google Cloud from Deployment Manager to Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Infrastructure Manager.
 
-Beginning on January 12, 2026, all new Cloud Volumes ONTAP deployments in Google Cloud use Cloud Infrastructure Manager by default.
-
-The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^].
+Beginning on January 12, 2026, all new Cloud Volumes ONTAP deployments in Google Cloud use Infrastructure Manager by default.
 
 .About this task
-The Cloud Volumes ONTAP conversion tool built on GCP-provided conversion methods and tools that facilitates the conversion. The tool creates the following artifacts: 
+The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^], and creates the following artifacts: 
 
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
@@ -28,20 +26,21 @@ The Cloud Volumes ONTAP conversion tool built on GCP-provided conversion methods
 
 [CAUTION]
 ====
-The conversion tool creates Deployment Manager records, and buckets to store them, for which you might incur additional costs. However, you must not delete the records and buckets. 
+The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
 
 * The `netapp-dm-to-im-convert-tool` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
 ====
+
 .Before you begin
 
 * Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
 * Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
-* Ensure that the service account attached to the Console agent has all the required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
-* Ensure that your system has 
+* Verify that the Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
+
 
 .Steps
-These steps prepare your system for the transition from Cloud Deployment Manager to Cloud Infrastructure Manager and help you run the transition tool for your existing Cloud Volumes ONTAP deployments in Google Cloud.
+Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
 
 . Create a role and attach it to a service account:
 .. Create a YAML file with the following permissions:
@@ -85,9 +84,7 @@ includedPermissions:
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
 .. Attach this role to the service account that you'll use to create the VM.
 .. Add attach the `roles/iam.serviceAccountUser` to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
-+
-[[VM that you created for running the tool]]
-. Create a VM with following configurations:
+. [[create-vm]]Create a VM with following configurations:
 +
 Machine Type: Google Compute Engine machine type e2-medium
 OS: Ubuntu 25.10 ARM64 Minimal (image: ubuntu-minimal-2510-arm64)
@@ -97,18 +94,18 @@ Security: Service accounts: service account created in step 2.3
 Security: Access Scope - access set for each API:
 
 * Cloud Platform: Enabled
-* Compute Engine: Read Only
-* Storage: Read Only (Will be set by default)
-* Stackdriver Logging API: Write Only (Will be set by default)
-* Stackdriver Monitoring API: Write Only (Will be set by default)
-* Service Management: Read Only (Will be set by default)
-* Service Control: Enabled (Will be set by default)
-* Stackdriver Trace: Write Only (Will be set by default)
+* Compute Engine: Read only
+* Storage: Read only (set by default)
+* Google Cloud Logging (previously Stackdriver Logging) API: Write only (set by default)
+* Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (oset by default)
+* Service Management: Read only (set by default)
+* Service Control: Enabled (set by default)
+* Google Cloud Trace (previously Stackdriver Trace): Write only (set by default)
 +
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
-. Download the conversion tool from the NetApp Support site: `wget <download link from NetApp Support site>`
-. Extract the downloaded tar file: `tar -xvf <downloaded file name>`
-. Download and install pre-requisite packages. Google Cloud CLI `gcloud` is preinstalled on the VM.
+. Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
+. Extract the downloaded the TAR file: `tar -xvf <downloaded file name>`
+. Download and install the required packages.
 +
 [source,cli]
 ----
@@ -121,7 +118,8 @@ sudo apt-get install -y docker.io
 sudo systemctl start docker
 ----
 +
-.  Add the current user to the Docker group, so that tool can use Docker without using `sudo` privilege.
+Google Cloud CLI `gcloud` is preinstalled on the VM.
+.  Add the current user to the Docker group, so that the tool can use Docker without `sudo` privileges.
 +
 [source,cli]
 ----
@@ -129,36 +127,43 @@ sudo usermod -aG docker $USER
 newgrp docker
 ----
 +
-. Install the tool: `./install.sh`
-. Run this command to install the tool in an isolated environment `dmconvert-venv`, and to validate if all the required software packages are installed. When installed, you can see a confirmation message.
+. Install the conversion tool: `./install.sh`
+. Run `dmconvert-venv` to install the tool in an isolated environment and to validate if all the required software packages are installed. When installed, you can see a confirmation message.
 . Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
 . Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[permissions required for Google Cloud Infrastructure Manager^].
 +
 [source,cli]
 ----
 dmconvert \
---project-id=<gcp project id where CVO is deployed> \
---cvo-name=<cvo name> \
---service-account=<service account attached to Agent>
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent>
 ----
 
 .After you finish
-The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. On completion, the tool displays the statuses of the converted systems.
+The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When the tool finishes running, it displays the statuses of the converted systems.
+You might need the VM that you created to run the tool for rollback. If you have converted all the systems and don't need to roll back to Deployment Manager, you can delete the VM.
 
 == Rolling back the conversion
-If you don't want to proceed with the conversion, you can roll back to Cloud Deployment Manager by following these steps:
+If you don't want to continue with the conversion, you can roll back to Deployment Manager by following these steps:
 
 .Steps
-. On the same <<VM that you created for running the tool>>, run this command:
+. On the same <<create-vm,VM that you created for running the tool>>, run this command:
 +
 [source,cli]
 ----
 dmconvert \
---project-id=<gcp project id where CVO is deployed> \
---cvo-name=<cvo name> \
---service-account=<service account attached to Agent> \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
 --rollback
 ----
 +
 . Accept the EULA to proceed with the rollback. The tool displays the statuses of all converted Cloud Volumes ONTAP deployments.
-. After the rollback is complete, verify that your Cloud Volumes ONTAP system is using
+. Wait till the rollback is complete.
+
+
+.Related links
+
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]

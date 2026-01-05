@@ -264,7 +264,7 @@ sidebar:
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
-                - title: Convert existing deployments to Google Cloud Infrastructure Manager
+                - title: Convert existing deployments to Google Infrastructure Manager
                   url: /task-gcp-dm-im-conv.html
             - title: Administration from System Manager
               url: /task-administer-advanced-view.html
