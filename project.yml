@@ -220,7 +220,7 @@ sidebar:
             - title: Register pay-as-you-go systems
               url: /task-registering.html
             - title: Convert node-based licenses
-              url: /task-convert-node-capacity.html                
+              url: /task-convert-node-capacity.html  
             - title: Stop and start a system
               url: /task-managing-state.html
             - title: Synchronize system time
@@ -264,6 +264,8 @@ sidebar:
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
+                - title: Convert existing deployments to Google Cloud Infrastructure Manager
+                  url: /task-gcp-dm-im-conv.html
             - title: Administration from System Manager
               url: /task-administer-advanced-view.html
             - title: Administration from the CLI

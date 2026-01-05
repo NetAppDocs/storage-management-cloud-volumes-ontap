@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: gcp-dm-im-conv-tool.html
+permalink: task-gcp-dm-im-conv.html
 keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im migration
 summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
 ---

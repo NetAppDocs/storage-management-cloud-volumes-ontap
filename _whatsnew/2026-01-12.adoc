@@ -1,8 +1,8 @@
 === Support for Google Cloud Infrastructure Manager
 
-Cloud Volumes ONTAP now uses https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager] for all new deployments in Google Cloud. This change has been made because Google will deprecate Google Cloud Deployment Manager in the near future. 
+Cloud Volumes ONTAP now uses https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for all new deployments in Google Cloud. This is because Google will deprecate Google Cloud Deployment Manager in the near future. 
 
-For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your system will automatically start using Cloud Infrastructure Manager. Refer to 
+For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager. This is a one-time process, after which your system will automatically start using Cloud Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
 
 For the converted systems and new deployments, note these points:
 
