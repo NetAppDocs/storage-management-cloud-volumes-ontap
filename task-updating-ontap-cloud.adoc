@@ -23,16 +23,14 @@ You should be aware of the following before you start the Cloud Volumes ONTAP up
 
 You should not upgrade Cloud Volumes ONTAP by using ONTAP System Manager or the ONTAP CLI, but only the Console. Otherwise, it might impact system stability.
 
-=== How to upgrade
-
 The Console provides two ways to upgrade Cloud Volumes ONTAP:
 
-* By following upgrade notifications that appear in the system
+* By following upgrade notifications that appear on the system
 * By placing the upgrade image at an HTTPS location and then providing the Console with the URL
 
 === Supported upgrade paths
 
-The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running.
+The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running. Unless any specific patch or release version is mentioned, the generic versions mentioned in the following tables indicate the highest patch available for that version to upgrade. 
 
 ifdef::aws[]
 .Supported upgrade paths for AWS
@@ -42,6 +40,7 @@ ifdef::aws[]
 | Current version
 | Versions that you can directly upgrade to
 
+|9.17.1 P1  | 9.18.1 
 |9.16.1  | 9.17.1 P1
 |9.15.1  | 9.16.1
 |9.15.0  | 9.15.1 
@@ -115,6 +114,8 @@ ifdef::azure[]
 | Current version
 | Versions that you can directly upgrade to
 
+|9.17.1 RC1  | 9.18.1 GA
+
 | 9.16.1 P3 | 9.17.1 RC1
 
 |9.15.1 P10 | 9.16.1 P3
@@ -147,6 +148,7 @@ ifdef::gcp[]
 | Current version
 | Versions that you can directly upgrade to
 
+|9.17.1   | 9.18.1 
 | 9.16.1 
 | 9.17.1 
 | 9.15.1 
