@@ -8,7 +8,7 @@ For your existing Cloud Volumes ONTAP deployments in Google Cloud, you need to u
 ====
 The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
 
-* The `netapp-dm-to-im-convert-tool` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
+* The `gs://netapp-cvo-infrastructure-manager/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
 ====
 

@@ -27,7 +27,7 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 ====
 The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
 
-* The `gs://netapp-cvo-infrastructure-manager/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
+* The `gs://netapp-cvo-infrastructure-manager/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
 ====
 
