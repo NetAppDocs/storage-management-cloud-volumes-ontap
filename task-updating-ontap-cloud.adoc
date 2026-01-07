@@ -5,7 +5,7 @@ keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading
 summary: Upgrade Cloud Volumes ONTAP from the NetApp Console to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
-= Upgrade Cloud Volumes ONTAP software
+= Upgrade Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -147,10 +147,10 @@ ifdef::gcp[]
 | Current version
 | Versions that you can directly upgrade to
 
-| 9.16.1 (for Azure and Google Cloud only)
-| 9.17.1 (for Azure and Google Cloud only)
+| 9.16.1 
+| 9.17.1 
 | 9.15.1 
-| 9.16.1 (for Azure and Google Cloud only)
+| 9.16.1 
 |9.15.0  | 9.15.1 
 .2+|9.14.1  
 | 9.15.1

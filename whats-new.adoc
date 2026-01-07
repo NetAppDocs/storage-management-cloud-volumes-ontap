@@ -398,6 +398,14 @@ For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volume
 === Notification now displays when accessing BlueXP without a marketplace subscription
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
 
+=== New permissions added to AWS IAM policy for HA mediators
+These new AWS permissions have been added to the IAM policy for HA mediators in Cloud Volumes ONTAP high-availability (HA) environments:
+
+* sts:AssumeRole
+* ec2:DescribeSubnets
+
+//This was added at the behest of Paul Vincent upon a lengthy discussion on issue NOC-35555. Manini: 11 Dec, 2025.NetApp Doc change history  - 2010496957  || AWS HA mediator IAM role changes || RCA
+
 == 04 April 2023
 
 === Support for China regions for AWS
