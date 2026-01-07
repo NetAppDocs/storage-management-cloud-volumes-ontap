@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-gcp-dm-im-conv.html
-keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im migration
-summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for migrating from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
+keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion
+summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for converting from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
 ---
 
 = Configure existing Cloud Volumes ONTAP deployments for Google Infrastructure Manager
@@ -13,9 +13,9 @@ summary: For your existing deployments in Google Cloud, you need to upgrade your
 :imagesdir: ./media/
 
 [.lead]
-Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to migrate your existing Cloud Volumes ONTAP deployments in Google Cloud from Deployment Manager to Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Infrastructure Manager.
+Google is about to deprecate Google Cloud Deployment Manager in favor of Cloud Infrastructure Manager. Therefore, you need to manually run a transition tool to convert your existing Cloud Volumes ONTAP deployments in Google Cloud from Deployment Manager to Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Infrastructure Manager.
 
-Beginning on January 12, 2026, all new Cloud Volumes ONTAP deployments in Google Cloud use Infrastructure Manager by default.
+Beginning on January 12, 2026, new Cloud Volumes ONTAP deployments in Google Cloud can use Infrastructure Manager.
 
 .About this task
 The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^], and creates the following artifacts: 
@@ -28,7 +28,7 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 ====
 The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
 
-* The `netapp-dm-to-im-convert-tool` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
+* The `gs://netapp-cvo-infrastructure-manager/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP, .
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
 ====
 
@@ -105,7 +105,11 @@ Security: Access Scope - access set for each API:
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
 . Extract the downloaded the TAR file: `tar -xvf <downloaded file name>`
-. Download and install the required packages.
+. Download and install the required packages: 
+** Docker: 28.2.2 and later 
+** Ubuntu: build 28.2.2-0ubuntu1 
+** Terraform: 1.14.1 and later
+** Python: 3.13.7, python3-pip, python3 venv
 +
 [source,cli]
 ----
@@ -127,7 +131,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 ----
 +
-. Install the conversion tool: `./install.sh`
+. Install the conversion tool: `./install.sh`. This validates the required software packages and installs the tool in an isolated python environment `dmconvert-venv`.
 . Run `dmconvert-venv` to install the tool in an isolated environment and to validate if all the required software packages are installed. When installed, you can see a confirmation message.
 . Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
 . Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[permissions required for Google Cloud Infrastructure Manager^].
@@ -159,7 +163,6 @@ dmconvert \
 --rollback
 ----
 +
-. Accept the EULA to proceed with the rollback. The tool displays the statuses of all converted Cloud Volumes ONTAP deployments.
 . Wait till the rollback is complete.
 
 
