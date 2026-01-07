@@ -1,3 +1,9 @@
+=== Preferred billing option for Cloud Volumes ONTAP
+ 
+You can now choose your preferred billing option for calculating your usage and overages. Following the restricted availability of BYOL licensing from June 25, 2025, NetApp offers preferred charging methods in the *Licensing and Subscriptions* section of the NetApp Console. You can use either your annual marketplace subscription for billing and overages, or the existing licensing (BYOL) model. This provides you with the flexibility to choose the charging method that best fits your organization's financial strategy and usage patterns.
+
+For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#minimum-charge[Billing and overages^].
+
 === Support for Google Cloud Infrastructure Manager
 
 Cloud Volumes ONTAP now supports https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new deployments in Google Cloud. This is because Google will deprecate Deployment Manager as an infrastructure deployment service in the near future. 
@@ -7,5 +13,7 @@ For your existing Cloud Volumes ONTAP deployments in Google Cloud, you need to u
 https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
 
 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
+
+
 
 
