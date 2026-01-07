@@ -81,9 +81,9 @@ includedPermissions:
 `gcloud iam roles create dmtoim-convert-tool-role --project=PROJECT_ID \
     --file=YAML_FILE_PATH`
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
-.. Attach this role to the service account that you'll use to create the VM.
-.. Add attach the `roles/iam.serviceAccountUser` to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
-. [[create-vm]]Create a VM with following configurations. You run the tool on this VM.
+.. Attach the custom role to the service account that you'll use to create the VM.
+.. Add the `roles/iam.serviceAccountUser` role to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
+. [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 Machine Type: Google Compute Engine machine type e2-medium
 OS: Ubuntu 25.10 ARM64 Minimal (image: ubuntu-minimal-2510-arm64)
@@ -96,14 +96,14 @@ Security: Access Scope - access set for each API:
 * Compute Engine: Read only
 * Storage: Read only (set by default)
 * Google Cloud Logging (previously Stackdriver Logging) API: Write only (set by default)
-* Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (oset by default)
+* Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (set by default)
 * Service Management: Read only (set by default)
 * Service Control: Enabled (set by default)
 * Google Cloud Trace (previously Stackdriver Trace): Write only (set by default)
 +
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
-. Extract the downloaded the TAR file: `tar -xvf <downloaded file name>`
+. Extract the downloaded TAR file: `tar -xvf <downloaded file name>`
 . Download and install these prerequisite packages: 
 ** Docker: 28.2.2 and later 
 ** Ubuntu: build 28.2.2-0ubuntu1 
@@ -130,9 +130,9 @@ sudo usermod -aG docker $USER
 newgrp docker
 ----
 +
-. Install the conversion tool: `./install.sh`. This installs the tool in an isolated environment, `dmconvert-venv`, and validates if all the required software packages are installed.
+. Install the conversion tool: `./install.sh`. This installs the tool in an isolated environment, `dmconvert-venv`, and verifies that all required software packages are installed.
 . Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
-. Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[permissions required for Google Cloud Infrastructure Manager^].
+. Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and that the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[necessary permissions for Google Cloud Infrastructure Manager^].
 +
 [source,cli]
 ----
