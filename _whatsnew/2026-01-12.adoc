@@ -4,15 +4,6 @@ Cloud Volumes ONTAP now supports https://docs.cloud.google.com/infrastructure-ma
 
 For your existing Cloud Volumes ONTAP deployments in Google Cloud, you need to upgrade your systems to 9.16.1 or later, and then manually run a transition tool for the conversion of Deployment Manager to Infrastructure Manager. This is a one-time process, after which your system will automatically start using Cloud Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
 
-[CAUTION]
-====
-The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
-
-* The `gs://netapp-cvo-infrastructure-manager/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
-* The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
-====
-
-
 https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
 
 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
