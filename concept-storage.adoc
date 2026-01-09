@@ -37,7 +37,7 @@ In AWS, an aggregate can contain up to 6 disks that are all the same size. But i
 +
 The maximum disk size is 16 TiB.
 +
-The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to link:concept-data-tiering.html[low-cost object storage].
+The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon Simple Storage Service (Amazon S3) to link:concept-data-tiering.html[low-cost object storage].
 +
 NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
 

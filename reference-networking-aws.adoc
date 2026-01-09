@@ -88,7 +88,7 @@ a|
 * Identity and Access Management (IAM)
 * Key Management Service (KMS)
 * Security Token Service (STS)
-* Simple Storage Service (S3)
+* Amazon Simple Storage Service (S3)
 
 | Communication with AWS services.
 
@@ -207,7 +207,7 @@ TIP: Looking for information about the Console agent? https://docs.netapp.com/us
 
 === Connection for data tiering
 
-If you want to use EBS as a performance tier and AWS S3 as a capacity tier, you must ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, refer to the https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+If you want to use EBS as a performance tier and Amazon S3 as a capacity tier, you must ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, refer to the https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 
 When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 

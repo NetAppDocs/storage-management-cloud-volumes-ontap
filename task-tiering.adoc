@@ -26,7 +26,7 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP system runn
 
 [role="quick-margin-list"]
 ifdef::aws[]
-* For AWS, you'll need a VPC Endpoint to S3. <<Requirements to tier cold data to AWS S3,Learn more>>.
+* For AWS, you'll need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
 endif::aws[]
 
 ifdef::azure[]
@@ -104,9 +104,9 @@ endif::gcp[]
 Depending on your cloud provider, certain connections and permissions must be set up so that Cloud Volumes ONTAP can tier cold data to object storage.
 
 ifdef::aws[]
-=== Requirements to tier cold data to AWS S3
+=== Requirements to tier cold data to Amazon S3
 
-Ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, refer to the https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+Ensure that Cloud Volumes ONTAP has a connection to Amazon S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, refer to the https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 
 When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 

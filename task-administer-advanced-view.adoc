@@ -27,7 +27,7 @@ You can perform various storage management functions using ONTAP System Manager 
 * Events and jobs: View event logs, system alerts, jobs, and audit logs.
 * Advanced data protection: Protect storage VMs, LUNs, and consistency groups.
 * Host management: Set up SAN initiator groups and NFS clients.
-* S3 object storage management: S3 storage management capabilities in Cloud Volumes ONTAP are available only in System Manager, and not in the Console.
+* ONTAP S3 object storage management: ONTAP S3 storage management capabilities in Cloud Volumes ONTAP are available only in System Manager, and not in the Console.
 
 == Supported configurations
 

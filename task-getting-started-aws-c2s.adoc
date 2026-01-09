@@ -41,7 +41,7 @@ Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
 
 . Ensure that your VPC and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
 
-. Set up a VPC endpoint to the S3 service.
+. Set up a VPC endpoint to the Amazon Simple Storage Service (Amazon S3) service.
 +
 A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 

@@ -157,7 +157,7 @@ The only supported disk type is GP2. The following EC2 instance type families wi
 * R5d
 
 [NOTE]
-Cloud Volumes ONTAP supports only these configurations. Selecting unsupported disk types or unqualified instances in AWS Local Zone configuration might result in deployment failure. Data tiering to AWS S3 is not available in AWS Local Zones due to lack of connectivity.
+Cloud Volumes ONTAP supports only these configurations. Selecting unsupported disk types or unqualified instances in AWS Local Zone configuration might result in deployment failure. Data tiering to Amazon Simple Storage Service (Amazon S3) is not supported if your Cloud Volumes ONTAP system is in an AWS Local Zone, because accessing the Amazon S3 buckets outside of the Local Zone involves higher latency and impacts Cloud Volumes ONTAP activities.
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[AWS Documentation: EC2 instance types in Local Zones^].
 
