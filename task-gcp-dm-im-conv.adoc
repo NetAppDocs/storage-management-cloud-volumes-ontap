@@ -5,7 +5,7 @@ keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager t
 summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for converting from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
 ---
 
-= Convert existing Cloud Volumes ONTAP deployments to Google Infrastructure Manager
+= Convert existing Cloud Volumes ONTAP deployments to Infrastructure Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -25,7 +25,7 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 
 [CAUTION]
 ====
-The conversion tool creates Deployment Manager records and buckets to store them, which might cost you extra. However, you must not delete the records and buckets. 
+The conversion tool and Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. Though these buckets might cost you extra, they are necessary, so you must not delete them or their records:
 
 * The `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
@@ -77,10 +77,14 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-[NOTE]
-If you are running the tool in private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
+.Include additional permission for private mode deployments
+[%collapsible]
+====
+If you are running the tool in a private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
+====
 .. Create a custom role in Google Cloud with the permissions defined in the YAML file. 
-`gcloud iam roles create dmtoim-convert-tool-role --project=PROJECT_ID \
+`gcloud iam roles crea
+te dmtoim-convert-tool-role --project=PROJECT_ID \
     --file=YAML_FILE_PATH`
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
 .. Attach the custom role to the service account that you'll use to create the VM.
@@ -102,6 +106,15 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Service Control: Enabled (set by default)
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (set by default)
 +
+.Additional VM specification for private mode deployments
+[%collapsible]
+====
+In a private mode, create a private worker pool with this configuration in the same region as the Cloud Volumes ONTAP deployments:
+
+* Machine type: e2-medium
+* Disk size: 100 GB
+For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
+====
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
 . Extract the downloaded TAR file: `tar -xvf <downloaded file name>`
@@ -141,12 +154,25 @@ dmconvert \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent>
 ----
-
++
+.Run the tool in private mode deployments
+[%collapsible]
+====
+Specify the `--worker-pool` parameter to run the tool in private mode deployments.
+[source,cli]
+----
+dmconvert \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+--worker-pool=<worker pool name>
+----
+====
 .After you finish
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems.
 If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
 
-== Rolling back the conversion
+== Roll back the conversion
 If you don't want to continue with the conversion, you can roll back to Deployment Manager by following these steps:
 
 .Steps
