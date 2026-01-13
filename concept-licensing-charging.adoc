@@ -136,10 +136,10 @@ For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to s
 
 == Billing preferences and overages
 
-You can select the method by which you want to be charged in the *Licenses and subscriptions* section in the Console. Overages are charges incurred when you exceed the specified capacity for your license package or annual subscription. 
+You can choose how you want to be charged in the *Licenses and subscriptions* section in the Console. Overages occur when your usage exceeds the capacity specified in your license package or annual subscription. 
 
-* *NetApp licenses first*: In this model, your consumption is charged against the specified capacity of your license package (BYOL). If you exceed your license capacity, you'll be charged for overages based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces. For information, refer to link:task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license].
-* *Marketplace subscriptions only*: In this model, your consumption is charged first against your annual marketplace subscription. For any additional usage, you'll be charged at marketplace on-demand hourly rates (PAYGO). Any unused license capacity is disregarded for billing.
+* *NetApp licenses first*: In this model, your usage is first charged against the capacity of your license package (BYOL). If you exceed your license capacity, overages are charged based on your annual marketplace subscription or marketplace on-demand hourly rates (PAYGO). If your BYOL license expires, you must transition to a capacity-based licensing model through the cloud marketplaces. For information, refer to link:task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license].
+* *Marketplace subscriptions only*: In this model, your usage is first charged against your annual marketplace subscription. Any additional usage is charged at marketplace on-demand hourly rates (PAYGO). Any unused license capacity is disregarded for billing.
 
 For more information about billing preferences, refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html[Learn about billing preferences for licenses and subscriptions^].
 
@@ -166,5 +166,5 @@ Here's another example. Let's say you have the following licenses for the Essent
 
 Another 100 TiB is provisioned on an HA pair with primary volumes. The license you purchased doesn't have _Essentials Primary HA_ committed capacity. The _Essentials Primary HA_ license is priced higher than both the _Essentials Primary Single Node_ and _Essentials Secondary HA_ licenses. 
 
-In this example, the Console charges overages at the marketplace rate for the additional 100 TiB. The overage charges will appear on your monthly bill.  
+In this example, the Console charges overages at the marketplace rate for the additional 100 TiB. The overage charges will appear on your monthly bill.
 
