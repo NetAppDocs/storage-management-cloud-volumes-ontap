@@ -30,7 +30,7 @@ The Console provides two ways to upgrade Cloud Volumes ONTAP:
 
 === Supported upgrade paths
 
-The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running. Unless any specific patch or release version is mentioned, the generic versions mentioned in the following tables indicate the highest patch available for that version to upgrade. 
+The Cloud Volumes ONTAP version you can upgrade to depends on the version you are currently running. Unless a specific patch or release is listed, each generic version in the following tables represents the highest patch level available for that release that you can upgrade to.
 
 ifdef::aws[]
 .Supported upgrade paths for AWS
@@ -114,7 +114,7 @@ ifdef::azure[]
 | Current version
 | Versions that you can directly upgrade to
 
-|9.17.1 RC1  | 9.18.1 GA
+|9.17.1  | 9.18.1 
 
 | 9.16.1 P3 | 9.17.1 RC1
 
