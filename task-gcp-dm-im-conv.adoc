@@ -21,7 +21,7 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
-* Debug logs, saved in the `logs` directory.
+* Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. ##You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.##
 
 [CAUTION]
 ====
@@ -35,6 +35,7 @@ The conversion tool and Cloud Volumes ONTAP systems that use Infrastructure Mana
 
 * Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
 * Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+* ##Set up the Google Cloud Quotas API. Refer to the Google documentation: https://docs.cloud.google.com/docs/quotas/development-environment#console[https://docs.cloud.google.com/docs/quotas/development-environment#console^].##
 * Verify that the Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
 
 
@@ -83,8 +84,7 @@ includedPermissions:
 If you are running the tool in a private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
 ====
 .. Create a custom role in Google Cloud with the permissions defined in the YAML file. 
-`gcloud iam roles crea
-te dmtoim-convert-tool-role --project=PROJECT_ID \
+`gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
     --file=YAML_FILE_PATH`
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
 .. Attach the custom role to the service account that you'll use to create the VM.
@@ -92,7 +92,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 * Machine Type: Google Compute Engine machine type e2-medium
-* OS: Ubuntu 25.10 ARM64 Minimal (image: ubuntu-minimal-2510-arm64)
+* OS: ##Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)##
 * Networking:  Firewall allowing HTTP and HTTPs
 * Disk Size: 20GB
 * Security: Service accounts: service account created in step 2.3
@@ -113,6 +113,8 @@ In a private mode, create a private worker pool with this configuration in the s
 
 * Machine type: e2-medium
 * Disk size: 100 GB
+* ##Network: Default or a private network in which http://googleapis.com/[Google APIs] is reachable.## 
+* ##`Private Google Access` enabled on the subnet.##
 For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
 ====
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
@@ -143,7 +145,14 @@ sudo usermod -aG docker $USER
 newgrp docker
 ----
 +
-. Install the conversion tool: `./install.sh`. This installs the tool in an isolated environment, `dmconvert-venv`, and verifies that all required software packages are installed.
+. Install the conversion tool:
+[source,cli]
+----
+cd <folder where you extracted the tool>
+ ./install.sh
+----
++
+This installs the tool in an isolated environment, `dmconvert-venv`, and verifies that all required software packages are installed.
 . Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
 . Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and that the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[necessary permissions for Google Cloud Infrastructure Manager^].
 +
@@ -170,6 +179,9 @@ dmconvert \
 ====
 .After you finish
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems.
+[NOTE]
+#For each converted system, a record appears in the Google Console under Infrastructure Manager with the _<converted system name-imdeploy>_ format, indicating that the NetApp Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.#
+
 If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
 
 == Roll back the conversion

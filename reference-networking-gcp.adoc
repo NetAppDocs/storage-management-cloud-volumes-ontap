@@ -413,6 +413,28 @@ During the transparent proxy configuration of the Console agent, the administrat
 . Go to *Details > Networking > Network tags*.
 . Add the tag used for the Console agent and save the configuration.
 
+=== ##Infrastructure Manager configurations for private mode deployments##
+If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
+
+.Before you begin
+
+* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
+* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+* Ensure that the Cloud Build API is enabled. Refer to https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com&redirect=https://console.cloud.google.com/build/docs/private-pools/set-up-private-pool-environment[Enable the Cloud Build API here^]. 
+* Verify that the Console agent's service account has all standard permissions. Additionally, ensure that the service account has the `cloudbuild.workerpools.get` and `cloudbuild.workerpools.list` permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
+
+.Steps
+. Create a private worker pool with this configuration in the same region as the Cloud Volumes ONTAP deployments:
+
+* Machine type: e2-medium
+* Disk size: 100 GB
+* Network: Default or a private network in which http://googleapis.com/[Google APIs] is reachable. 
+* `Private Google Access` enabled on the subnet.
+* `Assign external IPs`: False
++
+For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
+. Deploy this worker pool and keep it running for Cloud Volumes ONTAP management. Google Cloud uses this worker pool to run all Terraform operations in an isolated environment.
+. When deploying Cloud Volumes ONTAP in private mode, select the name of this worker pool in the *GCP Worker Pool* field.
 
 .Related topics
 
