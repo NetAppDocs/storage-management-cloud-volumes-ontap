@@ -413,12 +413,12 @@ During the transparent proxy configuration of the Console agent, the administrat
 . Go to *Details > Networking > Network tags*.
 . Add the tag used for the Console agent and save the configuration.
 
-=== ##Infrastructure Manager configurations for private mode deployments##
+=== ##Infrastructure Manager configuration for private mode deployments##
 If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
 
 .Before you begin
 
-* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
+* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later. If it isn't, upgrade your system. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html[Upgrade Cloud Volumes ONTAP] for instructions.
 * Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Ensure that the Cloud Build API is enabled. Refer to https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com&redirect=https://console.cloud.google.com/build/docs/private-pools/set-up-private-pool-environment[Enable the Cloud Build API here^]. 
 * Verify that the Console agent's service account has all standard permissions. Additionally, ensure that the service account has the `cloudbuild.workerpools.get` and `cloudbuild.workerpools.list` permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
