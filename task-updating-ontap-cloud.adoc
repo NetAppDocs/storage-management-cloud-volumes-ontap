@@ -35,7 +35,7 @@ The Console provides two ways to upgrade Cloud Volumes ONTAP:
 The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running.
 
 ifdef::aws[]
-.Supported upgrade paths for AWS
+==== Supported upgrade paths for AWS
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -108,7 +108,7 @@ endif::aws[]
 
 ifdef::azure[]
 
-.Supported upgrade paths for Azure
+==== Supported upgrade paths for Azure
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -140,7 +140,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-.Supported upgrade paths for Google Cloud
+==== Supported upgrade paths for Google Cloud
 
 [cols=2*,options="header,autowidth"]
 |===
