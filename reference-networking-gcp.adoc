@@ -217,16 +217,20 @@ AutoSupport
 
 | AutoSupport information remains undelivered. 
 
-| 
-\https://www.googleapis.com/compute/v1/projects/
-\https://cloudresourcemanager.googleapis.com/v1/projects
-\https://www.googleapis.com/compute/beta
-\https://storage.googleapis.com/storage/v1
-\https://www.googleapis.com/storage/v1
-\https://iam.googleapis.com/v1
+|
+\https://cloudbuild.googleapis.com/v1 (for only private mode deployments)
 \https://cloudkms.googleapis.com/v1
-\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://cloudresourcemanager.googleapis.com/v1/projects
 \https://compute.googleapis.com/compute/v1
+\https://www.googleapis.com/compute/beta
+\https://www.googleapis.com/compute/v1/projects/
+\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://www.googleapis.com/storage/v1
+\https://www.googleapis.com/upload/storage/v1
+\https://config.googleapis.com/v1
+\https://iam.googleapis.com/v1
+\https://storage.googleapis.com/storage/v1
+
 
 | 
 Google Cloud (Commercial use).
