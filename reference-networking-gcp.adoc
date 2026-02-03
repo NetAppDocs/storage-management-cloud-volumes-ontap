@@ -413,7 +413,7 @@ For information about configuring proxy servers for the Console agent, refer to 
 .Configure network tags for Cloud Volumes ONTAP in Google Cloud
 During the transparent proxy configuration of the Console agent, the administrator adds a network tag for Google Cloud. You need to obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary for the proxy server to function correctly.
 
-. In the Google Cloud console, locate your Cloud Volumes ONTAP system.
+. In the Google Cloud Console, locate your Cloud Volumes ONTAP system.
 . Go to *Details > Networking > Network tags*.
 . Add the tag used for the Console agent and save the configuration.
 

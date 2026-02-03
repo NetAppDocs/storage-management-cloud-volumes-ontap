@@ -144,7 +144,7 @@ link:task-creating-gcp-service-account.html[Learn how to set up this service acc
 +
 You're prompted to select this service account when you create a Cloud Volumes ONTAP system.
 +
-If you don't select a service account during deployment, you'll need to shut down Cloud Volumes ONTAP, go to the Google Cloud console, and then attach the service account to the Cloud Volumes ONTAP instances. You can then enable data tiering as described in the next section.
+If you don't select a service account during deployment, you'll need to shut down Cloud Volumes ONTAP, go to the Google Cloud Console, and then attach the service account to the Cloud Volumes ONTAP instances. You can then enable data tiering as described in the next section.
 
 * To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
 +

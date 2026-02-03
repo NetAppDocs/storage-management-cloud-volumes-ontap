@@ -21,14 +21,15 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
-* Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. ##You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.##
+* Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.
 
 [CAUTION]
 ====
-The conversion tool and Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. Though these buckets might cost you extra, they are necessary, so you must not delete them or their records:
+##Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:##
 
 * The `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
+* ##After you have converted the existing systems to Infrastructure Manager, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.##
 ====
 
 .Before you begin
@@ -113,8 +114,8 @@ In a private mode, create a private worker pool with this configuration in the s
 
 * Machine type: e2-medium
 * Disk size: 100 GB
-* ##Network: Default or a private network in which http://googleapis.com/[Google APIs] is reachable.## 
-* ##`Private Google Access` enabled on the subnet.##
+* Network: Default or a private network in which http://googleapis.com/[Google APIs] is reachable.
+* `Private Google Access` enabled on the subnet.
 For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
 ====
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
