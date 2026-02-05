@@ -1,0 +1,14 @@
+=== Cloud Volumes ONTAP support for next generation Google Cloud VMs
+
+You can now use the next generation Google Cloud C3 series VMs when deploying or upgrading Cloud Volumes ONTAP 9.18.1 and later in Google Cloud.
+The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced volumes that ensure dynamic performance for intensive workloads.
+
+[NOTE]
+For now, support for C3 series VMs is available only for single node Cloud Volumes ONTAP deployments.
+
+We offer preconfigured packages for easy Cloud Volumes ONTAP deployments, while enabling you to customize the IOPS and throughput parameters based on your workload requirements. 
+
+You can also add Hyperdisk Balanced volumes to your aggregates to achieve better performance and scalability in Google Cloud.
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
+ 
