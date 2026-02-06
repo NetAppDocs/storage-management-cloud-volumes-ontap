@@ -25,18 +25,18 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 
 [CAUTION]
 ====
-##Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:##
+Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
 
 * The `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
 * The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
-* ##After you have converted the existing systems to Infrastructure Manager, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.##
+* After you have converted the existing systems to Infrastructure Manager, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.
 ====
 
 .Before you begin
 
 * Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
 * Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
-* ##Set up the Google Cloud Quotas API. Refer to the Google documentation: https://docs.cloud.google.com/docs/quotas/development-environment#console[https://docs.cloud.google.com/docs/quotas/development-environment#console^].##
+* Set up the Google Cloud Quotas API. Refer to the Google documentation: https://docs.cloud.google.com/docs/quotas/development-environment#console[https://docs.cloud.google.com/docs/quotas/development-environment#console^].
 * Verify that the Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
 
 
@@ -93,7 +93,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 * Machine Type: Google Compute Engine machine type e2-medium
-* OS: ##Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)##
+* OS: Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
 * Networking:  Firewall allowing HTTP and HTTPs
 * Disk Size: 20GB
 * Security: Service accounts: service account created in step 2.3

@@ -417,7 +417,7 @@ During the transparent proxy configuration of the Console agent, the administrat
 . Go to *Details > Networking > Network tags*.
 . Add the tag used for the Console agent and save the configuration.
 
-=== ##Infrastructure Manager configuration for private mode deployments##
+=== Infrastructure Manager configuration for private mode deployments
 If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
 
 .Before you begin
