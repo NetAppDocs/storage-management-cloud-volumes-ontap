@@ -15,24 +15,26 @@ summary: NetApp Console enables you to choose from several different ONTAP versi
 [.lead]
 The NetApp Console enables you to choose from several different ONTAP versions when you add a Cloud Volumes ONTAP system.
 
-Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
+Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. The patch or the generic (General Availability) version in a release here represents the base version available for deployment. For details about the available patches, refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[versioned release notes^] for each release.
+
+For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 
 ifdef::aws[]
 == AWS
 
 Single node::
 
-* ##9.18.1 GA##
+* 9.18.1
 * 9.17.1 P1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -43,17 +45,17 @@ Single node::
 
 HA pair::
 
-* ##9.18.1 GA##
+* 9.18.1
 * 9.17.1 P1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -68,8 +70,8 @@ ifdef::azure[]
 
 Single node::
 
-* ##9.18.1 GA##
-* 9.17.1 RC1
+* 9.18.1
+* 9.17.1 P1
 * 9.16.1 P3
 * 9.15.1 P10
 * 9.14.1 P13
@@ -78,8 +80,8 @@ Single node::
 
 HA pair::
 
-* ##9.18.1 GA##
-* 9.17.1 RC1
+* 9.18.1
+* 9.17.1 P1
 * 9.16.1 P3
 * 9.15.1 P10
 * 9.14.1 P13
@@ -93,17 +95,17 @@ ifdef::gcp[]
 
 Single node::
 
-* ##9.18.1 GA##
-* 9.17.1 RC1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.18.1
+* 9.17.1 P1
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -113,17 +115,17 @@ Single node::
 
 HA pair::
 
-* ##9.18.1 GA##
-* 9.17.1 RC1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.18.1
+* 9.17.1 P1   
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
