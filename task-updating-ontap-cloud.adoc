@@ -30,7 +30,7 @@ The Console provides two ways to upgrade Cloud Volumes ONTAP:
 
 === Supported upgrade paths
 
-The Cloud Volumes ONTAP version you can upgrade to depends on the version you are currently running. Each generic or patch version in a release in the following tables represents the base version available for upgrade.
+The Cloud Volumes ONTAP version you can upgrade to depends on the version you are currently running. Each generic or patch version in a release in the following tables represents the base version available for upgrade. For details about the available patches, refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[versioned release notes^] for each release.
 
 ifdef::aws[]
 ==== Supported upgrade paths for AWS
