@@ -15,9 +15,7 @@ Cloud Volumes ONTAP systems that use Infrastructure Manager use Google Cloud Sto
 //In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
-
 https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
-
 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
 
 
