@@ -38,12 +38,12 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 * Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^]. Ensure that along with the other APIs, you enable the Google Cloud Quotas API.
 * Verify that the NetApp Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
 +
-.For private mode deployments, ensure these additional prerequisites:
-[%collapsible]
-====
-* If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
-* Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
-====
+//.For private mode deployments, ensure these additional prerequisites:
+//[%collapsible]
+//====
+//* If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+//* Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
+//====
 * The conversion tool uses the following domains. Enable them on port 443 in your network:
 +
 [cols="1,1,1,1,2", options="header"]
@@ -86,11 +86,11 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Compute API calls used by Google Cloud and Terraform Import and Plan
 
-| cloudbuild.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Build operations only required for private mode
+//| cloudbuild.googleapis.com
+//| 443
+//| TCP
+//| EGRESS
+//| Build operations only required for private mode
 
 | openidconnect.googleapis.com
 | 443
@@ -174,11 +174,11 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-.Include additional permission for private mode deployments
-[%collapsible]
-====
-If you are running the tool in a private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
-====
+//.Include additional permission for private mode deployments
+//[%collapsible]
+//====
+//If you are running the tool in a private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
+//====
 .. Create a custom role in Google Cloud with the permissions defined in the YAML file. 
 `gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
     --file=YAML_FILE_PATH`
@@ -247,20 +247,20 @@ dmconvert \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent>
 ----
-
-.Run the tool in private mode deployments
-[%collapsible]
-====
-Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
-[source,cli]
-----
-dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
---cvo-name=<Cloud Volumes ONTAP system name> \
---service-account=<the service account attached to the Console agent> \
---worker-pool=<worker pool name>
-----
-====
++
+//.Run the tool in private mode deployments
+//[%collapsible]
+//====
+//Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
+//[source,cli]
+//----
+//dmconvert \
+//--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+//--cvo-name=<Cloud Volumes ONTAP system name> \
+//--service-account=<the service account attached to the Console agent> \
+//--worker-pool=<worker pool name>
+//----
+//====
 .After you finish
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<converted system name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
 [CAUTION]

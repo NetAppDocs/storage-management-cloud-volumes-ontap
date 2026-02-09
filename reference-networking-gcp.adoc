@@ -393,35 +393,6 @@ Communication from the HA nodes to the HA mediator takes place over port 3260 (i
 
 NOTE: To enable high write speed for new Google Cloud HA pair deployments, a maximum transmission unit (MTU) of at least 8,896 bytes is required for VPC-1, VPC-2, and VPC-3. If you choose to upgrade existing VPC-1, VPC-2, and VPC-3 to an MTU of 8,896 bytes, you must shutdown all existing HA systems using these VPCs during the configuration process.
 
-=== Infrastructure Manager configuration for private mode deployments
-If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
-
-.Before you begin
-
-* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later. If it isn't, upgrade your system. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html[Upgrade Cloud Volumes ONTAP] for instructions.
-* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
-* Ensure that the Cloud Build API is enabled. Refer to https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com&redirect=https://console.cloud.google.com/build/docs/private-pools/set-up-private-pool-environment[Enable the Cloud Build API here^]. 
-* Verify that the Console agent's service account has all standard permissions. Additionally, ensure that the service account has the `cloudbuild.workerpools.get` and `cloudbuild.workerpools.list` permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
-
-.Steps
-. Create a private worker pool with this configuration in the same region as the Cloud Volumes ONTAP deployments. For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
-+
-The worker pool must have the following configuration:
-
-* Machine type: e2-medium
-* Disk size: 100 GB
-* Assign external IP: False
-* Network: Default or a private. 
-* The subnet configured to access http://googleapis.com/[Google APIs]. Perform these steps to ensure that the subnet can access Google APIs:
-.. Ensure "Private Google Access" is turned on for the subnet.
-.. Go to *VPC Network level > Private Service Access Tab > Allocated IP ranges for services*.
-..  Select *Allocate IP range* and allocate the internal IP range for the private connection to the Google Compute Service.
-.. On *Private connection to services*, select *Create Connection*.
-.. Select *Connected service producer = Google Cloud Platform*.
-.. Assign the allocation for the private connection IP range you created in the previous step.
-. Deploy this worker pool and keep it running for Cloud Volumes ONTAP management. Google Cloud uses this worker pool to run all Terraform operations in an isolated environment.
-. When deploying Cloud Volumes ONTAP in private mode, select the name of this worker pool in the *GCP Worker Pool* field. Refer to link:task-deploying-gcp.html[Launch Cloud Volumes ONTAP in Google Cloud] for instructions.
-
 == Requirements for the Console agent
 
 If you haven't created a Console agent yet, you should review networking requirements.
