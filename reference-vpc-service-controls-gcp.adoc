@@ -25,7 +25,7 @@ Depending on the deployment style of the Console agent, certain exceptions may h
 
 == Images
 
-Both Cloud Volumes ONTAP and the Console use images from a project within GCP that is managed by NetApp. This can affect the deployment of the Console agent and Cloud Volumes ONTAP, if your organization has a policy that blocks the use of images that are not hosted within the organization.
+Both Cloud Volumes ONTAP and the Console use images from a project within Google Cloud that is managed by NetApp. This can affect the deployment of the Console agent and Cloud Volumes ONTAP, if your organization has a policy that blocks the use of images that are not hosted within the organization.
 
 You can deploy a Console agent manually using the manual installation method, but Cloud Volumes ONTAP will also need to pull images from the NetApp project. You must provide an allowed list in order to deploy a Console agent and Cloud Volumes ONTAP.
 
@@ -43,7 +43,7 @@ Examples of the rules needed for pulling these images with VPC Service Controls 
 
 == VPC Service Controls perimeter policies
 
-Policies allow exceptions to the VPC Service Controls rule sets. For more information about policies, please visit the https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model[GCP VPC Service Controls Policy Documentation^].
+Policies allow exceptions to the VPC Service Controls rule sets. For more information about policies, please visit the https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model[Google Cloud VPC Service Controls Policy Documentation^].
 
 To set the policies that the Console requires, navigate to your VPC Service Controls Perimeter within your organization and add the following policies. The fields should match the options given in the VPC Service Controls policy page. Also note that *all* rules are required and the *OR* parameters should be used in the rule set.
 

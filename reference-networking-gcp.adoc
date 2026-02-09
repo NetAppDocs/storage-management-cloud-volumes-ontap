@@ -217,16 +217,20 @@ AutoSupport
 
 | AutoSupport information remains undelivered. 
 
-| 
-\https://www.googleapis.com/compute/v1/projects/
-\https://cloudresourcemanager.googleapis.com/v1/projects
-\https://www.googleapis.com/compute/beta
-\https://storage.googleapis.com/storage/v1
-\https://www.googleapis.com/storage/v1
-\https://iam.googleapis.com/v1
+|
+\https://cloudbuild.googleapis.com/v1 (for only private mode deployments)
 \https://cloudkms.googleapis.com/v1
-\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://cloudresourcemanager.googleapis.com/v1/projects
 \https://compute.googleapis.com/compute/v1
+\https://www.googleapis.com/compute/beta
+\https://www.googleapis.com/compute/v1/projects/
+\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://www.googleapis.com/storage/v1
+\https://www.googleapis.com/upload/storage/v1
+\https://config.googleapis.com/v1
+\https://iam.googleapis.com/v1
+\https://storage.googleapis.com/storage/v1
+
 
 | 
 Google Cloud (Commercial use).
@@ -409,9 +413,10 @@ For information about configuring proxy servers for the Console agent, refer to 
 .Configure network tags for Cloud Volumes ONTAP in Google Cloud
 During the transparent proxy configuration of the Console agent, the administrator adds a network tag for Google Cloud. You need to obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary for the proxy server to function correctly.
 
-. In the Google Cloud console, locate your Cloud Volumes ONTAP system.
+. In the Google Cloud Console, locate your Cloud Volumes ONTAP system.
 . Go to *Details > Networking > Network tags*.
 . Add the tag used for the Console agent and save the configuration.
+
 
 
 .Related topics

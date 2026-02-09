@@ -25,9 +25,9 @@ NOTE: The ability to create FlexGroup volumes in the Console is planned for a fu
 
 == Console doesn't support S3 with Cloud Volumes ONTAP
 
-While Cloud Volumes ONTAP supports S3 as an option for scale-out storage, the Console doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[S3 Configuration Power Guide^].
+While Cloud Volumes ONTAP supports S3 as an option for scale-out storage, the Console doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[ONTAP S3 Configuration Power Guide^].
 
-link:concept-client-protocols.html[Learn more about Cloud Volumes ONTAP support for S3 and other client protocols].
+link:concept-client-protocols.html[Learn more about Cloud Volumes ONTAP support for ONTAP S3 and other client protocols].
 
 == Console doesn't support disaster recovery for storage VMs
 
