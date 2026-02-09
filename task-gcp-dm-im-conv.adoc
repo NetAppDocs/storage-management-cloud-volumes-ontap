@@ -25,20 +25,115 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 
 [CAUTION]
 ====
-Cloud Volumes ONTAP systems that use Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
+Cloud Volumes ONTAP systems using Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
 
-* The `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert` bucket that the conversion tool creates to store Terraform files for Cloud Volumes ONTAP.
-* The `<gcp project number>-<region>-blueprint-config` bucket that Google Cloud uses for Terraform artifacts.
-* After you have converted the existing systems to Infrastructure Manager, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.
+* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files
+* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
 ====
 
 .Before you begin
 
 * Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
-* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
-* Set up the Google Cloud Quotas API. Refer to the Google documentation: https://docs.cloud.google.com/docs/quotas/development-environment#console[https://docs.cloud.google.com/docs/quotas/development-environment#console^].
-* Verify that the Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
+* Ensure that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
+* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^]. Ensure that along with the other APIs, you enable the Google Cloud Quotas API.
+* Verify that the NetApp Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
++
+.For private mode deployments, ensure these additional prerequisites:
+[%collapsible]
+====
+* If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+* Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
+====
+* The conversion tool uses the following domains. Enable them on port 443 in your network:
++
+[cols="1,1,1,1,2", options="header"]
+|===
+| Domain | Port | Protocol | Direction | Purpose
 
+| cloudresourcemanager.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Project validation
+
+| deploymentmanager.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Deployment discovery
+
+| config.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Infrastructure Manager API
+
+| storage.googleapis.com
+| 443
+| TCP
+| EGRESS
+| GCS bucket operations
+
+| iam.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Service account validation
+
+| compute.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Compute API calls used by Google Cloud and Terraform Import and Plan
+
+| cloudbuild.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Build operations only required for private mode
+
+| openidconnect.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Authentication
+
+| oauth2.googleapis.com
+| 443
+| TCP
+| EGRESS
+| OAuth2 token exchange
+
+| registry.terraform.io
+| 443
+| TCP
+| EGRESS
+| Terraform provider registry
+
+| releases.hashicorp.com
+| 443
+| TCP
+| EGRESS
+| Terraform binary downloads
+
+| apt.releases.hashicorp.com
+| 443
+| TCP
+| EGRESS
+| HashiCorp APT repository
+
+| us-central1-docker.pkg.dev
+| 443
+| TCP
+| EGRESS
+| GCP Artifact Registry
+
+| metadata.google.internal
+| 80
+| HTTP
+| Internal
+| VM metadata & auth tokens
+|===
 
 .Steps
 Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
@@ -96,28 +191,16 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 * OS: Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
 * Networking:  Firewall allowing HTTP and HTTPs
 * Disk Size: 20GB
-* Security: Service accounts: service account created in step 2.3
+* Security: Service accounts: the service account you created
 * Security: Access Scope - access set for each API:
 ** Cloud Platform: Enabled
 ** Compute Engine: Read only
-** Storage: Read only (set by default)
-** Google Cloud Logging (previously Stackdriver Logging) API: Write only (set by default)
-** Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (set by default)
-** Service Management: Read only (set by default)
-** Service Control: Enabled (set by default)
-** Google Cloud Trace (previously Stackdriver Trace): Write only (set by default)
-+
-.Additional VM specification for private mode deployments
-[%collapsible]
-====
-In a private mode, create a private worker pool with this configuration in the same region as the Cloud Volumes ONTAP deployments:
-
-* Machine type: e2-medium
-* Disk size: 100 GB
-* Network: Default or a private network in which http://googleapis.com/[Google APIs] is reachable.
-* `Private Google Access` enabled on the subnet.
-For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
-====
+** Storage: Read only (default)
+** Google Cloud Logging (previously Stackdriver Logging) API: Write only (default)
+** Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (default)
+** Service Management: Read only (default)
+** Service Control: Enabled (default)
+** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
 . Extract the downloaded TAR file: `tar -xvf <downloaded file name>`
@@ -147,12 +230,12 @@ newgrp docker
 ----
 +
 . Install the conversion tool:
++
 [source,cli]
 ----
 cd <folder where you extracted the tool>
  ./install.sh
 ----
-+
 This installs the tool in an isolated environment, `dmconvert-venv`, and verifies that all required software packages are installed.
 . Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
 . Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and that the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[necessary permissions for Google Cloud Infrastructure Manager^].
@@ -164,11 +247,11 @@ dmconvert \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent>
 ----
-+
+
 .Run the tool in private mode deployments
 [%collapsible]
 ====
-Specify the `--worker-pool` parameter to run the tool in private mode deployments.
+Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
 [source,cli]
 ----
 dmconvert \
@@ -179,9 +262,9 @@ dmconvert \
 ----
 ====
 .After you finish
-The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems.
-[NOTE]
-#For each converted system, a record appears in the Google Console under Infrastructure Manager with the _<converted system name-imdeploy>_ format, indicating that the NetApp Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.#
+The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<converted system name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
+[CAUTION]
+Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.
 
 If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
 
