@@ -20,7 +20,7 @@ You can launch Cloud Volumes ONTAP in a single-node configuration or as an HA pa
 You need the following before you begin.
 
 [[licensing]]
-* A Console agent that's up and running.
+* A NetApp Console agent that's up and running.
 
 ** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Console agent that is associated with your system^].
 
@@ -81,7 +81,7 @@ For information about labels, refer to the https://cloud.google.com/compute/docs
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where of the Console.
 
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
 
 NOTE: This is the service account that you set up for the Console, link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
@@ -97,7 +97,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above.
 
-. *Location & Connectivity*: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
+. *Location & Connectivity*: Select the Google Cloud region and zone for your system, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -162,7 +162,7 @@ Note the following:
 * The Console sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Console agent service account as a user of the tiering service account, otherwise, you can't select it from the Console.
 * For help with adding a Google Cloud account, refer to  https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
-* If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
+* If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud Console.
 +
 link:concept-data-tiering.html[Learn more about data tiering^].
 
@@ -231,9 +231,6 @@ If you experience any issues deploying the Cloud Volumes ONTAP system, review th
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
-[CAUTION]
-After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
-
 .After you finish
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
@@ -241,6 +238,9 @@ After the deployment process completes, do not modify the system-generated Cloud
 * If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+[CAUTION]
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, such as the system tags, and the labels set in the Google Cloud resources. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
 == Launch an HA pair in Google Cloud
 
@@ -277,7 +277,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project of the Console.
 
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
 
 NOTE: This is the service account that you set up for the Console, link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
@@ -293,7 +293,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above. 
 
-. *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
+. *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zone.
 +
 link:concept-ha-google-cloud.html[Learn more about HA deployment models^].
 
@@ -314,6 +314,7 @@ The following table describes fields for which you might need guidance:
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
 | Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules[Learn about firewall rules for Cloud Volumes ONTAP^].
+//| GCP Worker Pool |  For private deployments, you must select the link:reference-networking-gcp.html#infrastructure-manager-configurations-for-private-mode-deployments[worker pool] that you configured for your Cloud Volumes ONTAP system.
 
 |===
 
@@ -360,7 +361,7 @@ Note the following:
 +
 * The Console sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Console agent service account as a user of the tiering service account, otherwise, you can't select it from the Console.
 * You can choose a specific volume tiering policy when you create or edit a volume.
-* If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
+* If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud Console.
 +
 link:concept-data-tiering.html[Learn more about data tiering^].
 
@@ -438,7 +439,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
 [CAUTION]
-After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
+After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, such as the system tags, and the labels set in the Google Cloud resources. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
 .Related links
 
