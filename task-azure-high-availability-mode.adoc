@@ -34,7 +34,9 @@ An Azure user who has "Owner" privileges can enable the feature from the Azure C
 
 == Enable the high-availability mode in Cloud Volumes ONTAP 9.18.1 and later
 
+.Steps
 
+. https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
 
 == Enable the high-availability mode in Cloud Volumes ONTAP 9.10.1  to 9.17.1
 ##These steps apply to all Cloud Volumes ONTAP versions starting with 9.10.1  to 9.17.1. You only need to enable the high-availability mode once per Azure subscription. After you enable the feature, the Console automatically detects that the feature is enabled and configures the internal Azure Load Balancer for your Cloud Volumes ONTAP HA pairs.##
