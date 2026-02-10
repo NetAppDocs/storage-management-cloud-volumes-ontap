@@ -97,7 +97,7 @@ For additional details about this process, refer to the https://docs.aws.amazon.
 
 . If you are using a customer-managed CMK, modify the key policy for the CMK by adding the Cloud Volumes ONTAP IAM role as a _key user_.
 +
-This step is required if you enabled data tiering on Cloud Volumes ONTAP and want to encrypt the data stored in the S3 bucket.
+This step is required if you enabled data tiering on Cloud Volumes ONTAP and want to encrypt the data stored in the Amazon Simple Storage Service (Amazon S3) bucket.
 
 You'll need to perform this step _after_ you deploy Cloud Volumes ONTAP because the IAM role is created when you create a Cloud Volumes ONTAP system. (Of course, you do have the option to use an existing Cloud Volumes ONTAP IAM role, so it's possible to perform this step before.)
 

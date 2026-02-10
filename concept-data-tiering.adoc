@@ -22,7 +22,7 @@ Data tiering is powered by FabricPool technology. Cloud Volumes ONTAP provides d
 ifdef::aws[]
 == Data tiering in AWS
 
-When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data.
+When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and Amazon Simple Storage Service (Amazon S3) as a capacity tier for inactive data.
 
 Performance tier:: The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
 +

@@ -1,0 +1,292 @@
+---
+sidebar: sidebar
+permalink: task-gcp-dm-im-conv.html
+keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion
+summary: For your existing deployments in Google Cloud, you need to upgrade your systems to Cloud Volumes ONTAP 9.16.1 or later, and then manually run a transition tool for converting from Google Cloud Deployment Manager to Cloud Infrastructure Manager.
+---
+
+= Convert existing Cloud Volumes ONTAP deployments to Infrastructure Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Beginning on January 12, 2026, new Cloud Volumes ONTAP deployments in Google Cloud can use Google Cloud Infrastructure Manager. Google is about to deprecate Google Cloud Deployment Manager in favor of Infrastructure Manager. Therefore, you need to manually run a transition tool to convert your existing Cloud Volumes ONTAP deployments from Deployment Manager to Infrastructure Manager. This is a one-time process, after which your systems will automatically start using Infrastructure Manager.
+
+
+.About this task
+The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^], and creates the following artifacts: 
+
+* Terraform artifacts, saved in `conversion_output/deployment_name`.
+* Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
+* Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.
+
+[CAUTION]
+====
+Cloud Volumes ONTAP systems using Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
+
+* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files
+* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
+====
+
+.Before you begin
+
+* Ensure that your Cloud Volumes ONTAP system is 9.16.1 or later.
+* Ensure that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
+* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^]. Ensure that along with the other APIs, you enable the Google Cloud Quotas API.
+* Verify that the NetApp Console agent's service account has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
++
+//.For private mode deployments, ensure these additional prerequisites:
+//[%collapsible]
+//====
+//* If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
+//* Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
+//====
+* The conversion tool uses the following domains. Enable them on port 443 in your network:
++
+[cols="1,1,1,1,2", options="header"]
+|===
+| Domain | Port | Protocol | Direction | Purpose
+
+| cloudresourcemanager.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Project validation
+
+| deploymentmanager.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Deployment discovery
+
+| config.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Infrastructure Manager API
+
+| storage.googleapis.com
+| 443
+| TCP
+| EGRESS
+| GCS bucket operations
+
+| iam.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Service account validation
+
+| compute.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Compute API calls used by Google Cloud and Terraform Import and Plan
+
+//| cloudbuild.googleapis.com
+//| 443
+//| TCP
+//| EGRESS
+//| Build operations only required for private mode
+
+| openidconnect.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Authentication
+
+| oauth2.googleapis.com
+| 443
+| TCP
+| EGRESS
+| OAuth2 token exchange
+
+| registry.terraform.io
+| 443
+| TCP
+| EGRESS
+| Terraform provider registry
+
+| releases.hashicorp.com
+| 443
+| TCP
+| EGRESS
+| Terraform binary downloads
+
+| apt.releases.hashicorp.com
+| 443
+| TCP
+| EGRESS
+| HashiCorp APT repository
+
+| us-central1-docker.pkg.dev
+| 443
+| TCP
+| EGRESS
+| GCP Artifact Registry
+
+| metadata.google.internal
+| 80
+| HTTP
+| Internal
+| VM metadata & auth tokens
+|===
+
+.Steps
+Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
+
+. Create a role and attach it to a service account:
+.. Create a YAML file with the following permissions:
++
+[source,cli]
+----
+title: NetApp Dm TO IM Convert Solution
+description: Permissions for the service account associated with the VM where the tool will run.
+stage: GA
+includedPermissions:
+- compute.addresses.get
+- compute.disks.get
+- compute.forwardingRules.get
+- compute.healthChecks.get
+- compute.instanceGroups.get
+- compute.instances.get
+- compute.regionBackendServices.get
+- config.deployments.create
+- config.deployments.get
+- config.deployments.getLock
+- config.deployments.lock
+- config.deployments.unlock
+- config.deployments.update
+- config.deployments.delete
+- config.deployments.updateState
+- config.operations.get
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- iam.serviceAccounts.get
+- storage.buckets.create
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.list
+----
++
+//.Include additional permission for private mode deployments
+//[%collapsible]
+//====
+//If you are running the tool in a private mode, add the `cloudbuild.workerpools.get` permission also to the YAML file.
+//====
+.. Create a custom role in Google Cloud with the permissions defined in the YAML file. 
+`gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
+    --file=YAML_FILE_PATH`
+For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
+.. Attach the custom role to the service account that you'll use to create the VM.
+.. Add the `roles/iam.serviceAccountUser` role to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
+. [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
++
+* Machine Type: Google Compute Engine machine type e2-medium
+* OS: Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
+* Networking:  Firewall allowing HTTP and HTTPs
+* Disk Size: 20GB
+* Security: Service accounts: the service account you created
+* Security: Access Scope - access set for each API:
+** Cloud Platform: Enabled
+** Compute Engine: Read only
+** Storage: Read only (default)
+** Google Cloud Logging (previously Stackdriver Logging) API: Write only (default)
+** Stackdriver Monitoring (now part of Google Cloud Operations) API: Write only (default)
+** Service Management: Read only (default)
+** Service Control: Enabled (default)
+** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
+. Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
+. Download the conversion tool from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
+. Extract the downloaded TAR file: `tar -xvf <downloaded file name>`
+. Download and install these prerequisite packages: 
+** Docker: 28.2.2 build 28.2.2-0ubuntu1 or later
+** Terraform: 1.14.1 or later
+** Python: 3.13.7, python3-pip, python3 venv
++
+[source,cli]
+----
+sudo apt-get update
+sudo apt-get install python3-pip python3-venv -y
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com noble main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+----
++
+Google Cloud CLI `gcloud` is preinstalled on the VM.
+.  Add the current user to the Docker group, so that the tool can use Docker without `sudo` privileges.
++
+[source,cli]
+----
+sudo usermod -aG docker $USER
+newgrp docker
+----
++
+. Install the conversion tool:
++
+[source,cli]
+----
+cd <folder where you extracted the tool>
+ ./install.sh
+----
+This installs the tool in an isolated environment, `dmconvert-venv`, and verifies that all required software packages are installed.
+. Enter the environment where the tool is installed: `source dmconvert-venv/bin/activate`
+. Run the conversion tool as a `non-sudo` user. Ensure that you use the same service account as the Console agent's service account, and that the service account has all the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[necessary permissions for Google Cloud Infrastructure Manager^].
++
+[source,cli]
+----
+dmconvert \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent>
+----
++
+//.Run the tool in private mode deployments
+//[%collapsible]
+//====
+//Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
+//[source,cli]
+//----
+//dmconvert \
+//--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+//--cvo-name=<Cloud Volumes ONTAP system name> \
+//--service-account=<the service account attached to the Console agent> \
+//--worker-pool=<worker pool name>
+//----
+//====
+.After you finish
+The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<converted system name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
+[CAUTION]
+Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.
+
+If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
+
+== Roll back the conversion
+If you don't want to continue with the conversion, you can roll back to Deployment Manager by following these steps:
+
+.Steps
+. On the same <<create-vm,VM that you created for running the tool>>, run this command:
++
+[source,cli]
+----
+dmconvert \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+--rollback
+----
++
+. Wait till the rollback is complete.
+
+
+.Related links
+
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]

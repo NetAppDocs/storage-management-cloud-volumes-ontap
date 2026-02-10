@@ -80,7 +80,7 @@ Note that Cloud Volumes ONTAP supports the Amazon EBS Elastic Volumes feature wi
 
 * _Throughput Optimized HDD (st1)_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
 +
-NOTE: Data tiering to AWS S3 is not available in AWS Local Zones due to lack of connectivity.
+NOTE: Data tiering to Amazon Simple Storage Service (Amazon S3) is not supported if your Cloud Volumes ONTAP system is in an AWS Local Zone, because accessing the Amazon S3 buckets outside of the Local Zone involves higher latency and impacts Cloud Volumes ONTAP activities.
 
 EBS disk size::
 If you choose a configuration that doesn't support the link:concept-aws-elastic-volumes.html[Amazon EBS Elastic Volumes feature], then you need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let the Console manage a system's capacity for you], but if you want to link:task-create-aggregates.html[create aggregates yourself], be aware of the following:
