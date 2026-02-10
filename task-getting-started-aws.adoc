@@ -37,7 +37,7 @@ The Console offers preconfigured packages that match your workload requirements,
 +
 This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
 
-.. Set up a VPC endpoint to the S3 service.
+.. Set up a VPC endpoint to the Amazon Simple Storage Service (Amazon S3) service.
 +
 A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 

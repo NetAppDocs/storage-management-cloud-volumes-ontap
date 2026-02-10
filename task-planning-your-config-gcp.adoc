@@ -30,15 +30,15 @@ Cloud Volumes ONTAP is supported in most Google Cloud regions. https://bluexp.ne
 
 Cloud Volumes ONTAP supports several machine types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
 
 == Understand storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Storage limits for Cloud Volumes ONTAP in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Storage limits for Cloud Volumes ONTAP in Google Cloud^]
 
-== Size your system in GCP
+== Size your system in Google Cloud
 
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a machine type, disk type, and disk size:
 
@@ -50,7 +50,7 @@ Refer to the following for more details:
 ** https://cloud.google.com/compute/docs/machine-types#n1_machine_types[Google Cloud documentation: N1 standard machine types^]
 ** https://cloud.google.com/docs/compare/data-centers/networking#performance[Google Cloud documentation: Performance^]
 
-GCP disk type::
+Disk types::
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses for a disk. The disk type can be any of the following:
 +
 * _Zonal SSD persistent disks_: SSD persistent disks are best for workloads that require high rates of random IOPS.
@@ -59,7 +59,7 @@ When you create volumes for Cloud Volumes ONTAP, you need to choose the underlyi
 +
 For more details, refer to the https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
 
-GCP disk size::
+Disk size::
 You need to choose an initial disk size when you deploy a Cloud Volumes ONTAP system. After that you can let the NetApp Console manage a system's capacity for you, but if you want to build aggregates yourself, be aware of the following:
 +
 * All disks in an aggregate must be the same size.
@@ -84,14 +84,14 @@ TIP: The Console agent also requires a system disk. https://docs.netapp.com/us-e
 
 == Collect networking information
 
-When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
+When you deploy Cloud Volumes ONTAP in Google Cloud, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
 
 *Network information for a single-node system*
 
 [cols=2*,options="header",cols="30,70"]
 |===
 
-| GCP information
+| Google Cloud information
 | Your value
 
 | Region |
@@ -107,7 +107,7 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 [cols=2*,options="header",cols="30,70"]
 |===
 
-| GCP information
+| Google Cloud information
 | Your value
 
 | Region |
@@ -127,7 +127,7 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 [cols=2*,options="header",cols="30,70"]
 |===
 
-| GCP information
+| Google Cloud information
 | Your value
 
 | Region |

@@ -1,0 +1,23 @@
+=== Support for Google Cloud Infrastructure Manager
+
+Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
+
+Now, automatically deploy Cloud Volumes ONTAP to use Infrastructure Manager or switch your existing deployments in Deployment Manager to Infrastructure Manager by running a conversion tool. The conversion is a one-time process, after which your systems will automatically start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
+
+Cloud Volumes ONTAP systems that use Infrastructure Manager use Google Cloud Storage buckets to store data and records in the zone of the first deployment to store deployment records, which are reused for subsequent deployments. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
+
+* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files
+* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
+
+
+//In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
+
+
+
+
