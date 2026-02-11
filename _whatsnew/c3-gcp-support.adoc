@@ -6,9 +6,13 @@ The C3 series machines offer improved performance and higher capacity limits by 
 [NOTE]
 For now, support for C3 series VMs is available only for single node Cloud Volumes ONTAP deployments.
 
-We offer preconfigured packages for easy Cloud Volumes ONTAP deployments, while enabling you to customize the IOPS and throughput parameters based on your workload requirements. 
+We offer preconfigured packages for easy Cloud Volumes ONTAP deployments, while enabling you to customize the IOPS and throughput parameters based on your workload needs. 
 
 You can also add Hyperdisk Balanced volumes to your aggregates to achieve better performance and scalability in Google Cloud.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations-gcp.html[Known limitations for Cloud Volumes ONTAP in Google Cloud^]
 
 https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
  
