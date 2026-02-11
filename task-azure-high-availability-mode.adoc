@@ -15,14 +15,13 @@ summary: Microsoft Azure's high-availability mode should be enabled to reduce un
 [.lead]
 Microsoft Azure's high-availability (HA) mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP. In this mode, your Cloud Volumes ONTAP HA nodes can achieve a low (60 seconds) recovery time objective (RTO) during unplanned failovers on CIFS and NFSv4 clients.
 
-
 Beginning with Cloud Volumes ONTAP 9.10.1, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high-availability feature on your Azure subscription.
+
+Beginning with Cloud Volumes ONTAP 9.18.1, Azure Virtual Network (VNet)-powered, network-level encryption secures data between ONTAP nodes in both single- and multiple-availability-zone HA configurations. 
 
 .About this task
 
-NetApp Console prompts you with these details when the feature needs to be enabled on an Azure subscription. 
-
-Note the following:
+NetApp Console prompts you with these details when the feature needs to be enabled on an Azure subscription. Note the following:
 
 *	There are no problems with the high availability of your Cloud Volumes ONTAP HA pair. This Azure feature works in concert with ONTAP to reduce the client observed application outage time for NFS protocols that result from unplanned failover events.
 *	Enabling this feature is non-disruptive to Cloud Volumes ONTAP HA pairs.
@@ -30,16 +29,27 @@ Note the following:
 * Cloud Volumes ONTAP uses an internal Azure Load Balancer during failovers of cluster and SVM management LIFs on CIFS and NFS clients. 
 * When the HA mode is enabled, the Console scans the system every 12 hours to update the internal Azure Load Balancer rules.
 
-An Azure user who has "Owner" privileges can enable the feature from the Azure CLI.
+
 
 == Enable the high-availability mode in Cloud Volumes ONTAP 9.18.1 and later
+Follow these steps to configure the VNet and the Internal Load Balancer (ILB) for your Cloud Volumes ONTAP HA pairs to be able to use the encrypted data. Perform these steps on the Azure portal as an Azure admin user. You only need to enable the high-availability mode once per Azure subscription. After you enable the feature, the Console automatically detects that the feature is enabled and configures the internal Azure Load Balancer for your Cloud Volumes ONTAP HA pairs.
 
 .Steps
 
-. https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
+
+
+. As an Azure (non-admin) user https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[access the Azure Cloud Shell from the Azure Portal^] and view the VNet encryption status: `az network vnet show -g <resource group name> -n <vnet name>`
+. As an Azure admin user, change the VNet encryption configuration:
++
+[source,azurecli]
+az network vnet update -g <resource group name> -n <VNET name> --enable-encryption <true/false> --encryption-enforcement-policy <AllowUnencrypted/DropUnencrypted>
++
+. Register your ILB
 
 == Enable the high-availability mode in Cloud Volumes ONTAP 9.10.1  to 9.17.1
 ##These steps apply to all Cloud Volumes ONTAP versions starting with 9.10.1  to 9.17.1. You only need to enable the high-availability mode once per Azure subscription. After you enable the feature, the Console automatically detects that the feature is enabled and configures the internal Azure Load Balancer for your Cloud Volumes ONTAP HA pairs.##
+
+An Azure user who has _Owner_ privileges can enable the feature from the Azure CLI.
 
 .Steps
 
@@ -71,3 +81,8 @@ The Azure CLI should return a result similar to the following:
 ----
 //BLUEXPDOC-207
 //This topic is linked to the UI.
+
+.Related links
+
+. https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview[Microsoft Azure documentation: High availability ports overview^]
+. https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest[Microsoft Azure documentation: Get started with Azure CLI^]
