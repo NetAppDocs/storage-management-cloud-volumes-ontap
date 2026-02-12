@@ -3,3 +3,12 @@
 Beginning with Cloud Volumes ONTAP 9.18.1, high-availability (HA) configurations in Azure single and multiple availability zones support Azure Virtual Network (VNet) encryption as part of its layered security strategy to protect data in transit. Cloud Volumes ONTAP leverages Azure's native Datagram Transport Layer Security (DTLS) protocol to secure communication between ONTAP nodes, management interfaces, and other Azure services, preventing interception and unauthorized access. This network-level encryption complements ONTAP's built-in storage and data-at-rest protections to deliver end-to-end security of your data. 
 
 For ensuring that your Cloud Volumes ONTAP HA deployments can use this security feature, you need to configure the HA mode for your subscriptions. Refer to 
+
+== Support for Ebdsv5 and E104ids_v5 VMs in Azure
+
+Beginning with Cloud Volumes ONTAP 9.18.1, you can deploy Ebdsv5 and E104ids_v5 VMs for single-node and high-availability (HA) deployments and upgrades.
+
+Ebdsv5 VMs within the Eb family of Azure virtual machines are optimized for higher remote storage performance. You can use these VMs for memory-intensive and I/O-heavy enterprise workloads, such as relational databases, in-memory analytics, and other demanding business-critical applications.
+
+E104ids_v5 is an isolated VM instance that helps you better handle scheduled maintenance windows. Compared to E80ids_v4, it offers much higher disk throughput and IOPS, along with better overall network performance.
+
