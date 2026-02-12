@@ -140,12 +140,9 @@ For help choosing a disk type and size, refer to  link:task-planning-your-config
 
 . *Flash Cache, Write Speed & WORM*: 
 
-.. Enable *Flash Cache*, if desired.
+.. Enable *Flash Cache* or choose *Normal* or *High* write speed if you need.
 +
-NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. You cannot disable Flash Cache after deployment. 
-.. Choose *Normal* or *High* write speed, if desired.
-+
-link:concept-write-speed.html[Learn more about write speed].
+Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#flash-cache-support[Flash Cache^] and link:concept-write-speed.html[write speed].
 +
 NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
@@ -340,12 +337,9 @@ The disk size is for all disks in the initial aggregate and for any additional a
 For help choosing a disk type and size, refer to  link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
 . *Flash Cache, Write Speed & WORM*: 
-.. Enable *Flash Cache*, if desired.
+.. Enable *Flash Cache* or choose *Normal* or *High* write speed if you need.
 +
-NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. You cannot disable Flash Cache after deployment. 
-.. Choose *Normal* or *High* write speed, if desired.
-+
-link:concept-write-speed.html[Learn more about write speed^].
+Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#flash-cache-support[Flash Cache^] and link:concept-write-speed.html[write speed].
 +
 NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
