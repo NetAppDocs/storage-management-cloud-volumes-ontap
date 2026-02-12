@@ -21,17 +21,17 @@ If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[l
 
 The following requirements must be met in Google Cloud.
 
-=== Requirements specific to single node systems
+=== Requirements specific to single-node systems
 
-If you want to deploy a single node system, ensure that your networking meets the following requirements.
+If you want to deploy a single-node system, ensure that your networking meets the following requirements.
 
 ==== One VPC
 
-One Virtual Private Cloud (VPC) is required for a single node system.
+One Virtual Private Cloud (VPC) is required for a single-node system.
 
 ==== Private IP addresses
 
-For a single node system in Google Cloud, the Console allocates private IP addresses to the following:
+For a single-node system in Google Cloud, the Console allocates private IP addresses to the following:
 
 * Node
 * Cluster
@@ -86,10 +86,10 @@ The subnets in these VPCs must have distinct CIDR ranges. They can't have overla
 
 The Console automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in Google Cloud. You need to make sure that your networking has enough private addresses available.
 
-The number of LIFs allocated for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+The number of LIFs allocated for Cloud Volumes ONTAP depends on whether you deploy a single-node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
 * *Single node*
-The Console allocates 4 IP addresses to a single node system:
+The Console allocates 4 IP addresses to a single-node system:
 
 ** Node management LIF
 ** Cluster management LIF
@@ -145,7 +145,7 @@ Even though global access is disabled by default, enabling it post deployment is
 
 Cloud Volumes ONTAP and the Console agent are supported in a Google Cloud shared VPC and also in standalone VPCs.
 
-For a single node system, the VPC can be either a shared VPC or a standalone VPC.
+For a single-node system, the VPC can be either a shared VPC or a standalone VPC.
 
 For an HA pair, four VPCs are required. Each of those VPCs can be either shared or standalone. For example, VPC-0 could be a shared VPC, while VPC-1, VPC-2, and VPC-3 could be standalone VPCs.
 

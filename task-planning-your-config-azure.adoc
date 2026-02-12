@@ -48,10 +48,10 @@ Look at the supported virtual machine types in the https://docs.netapp.com/us-en
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes^]
 
-Azure disk type with single node systems:: 
+Azure disk type with single-node systems:: 
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
 +
-Single node systems can use these types of Azure Managed Disks:
+Single-node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
