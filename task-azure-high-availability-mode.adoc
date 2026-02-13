@@ -17,7 +17,10 @@ Microsoft Azure's high-availability (HA) mode should be enabled to reduce unplan
 
 Beginning with Cloud Volumes ONTAP 9.10.1, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high-availability feature on your Azure subscription.
 
-Beginning with Cloud Volumes ONTAP 9.18.1, Azure Virtual Network (VNet)-powered, network-level encryption secures data between ONTAP nodes in both single- and multiple-availability-zone HA configurations. 
+.Networking considerations with Azure VNet encryption
+Cloud Volumes ONTAP supports Azure Virtual Network (VNet) encryption for encrypting VM to VM traffic inside a VNet or across peered VNets. This feature is configured at the Azure VNet layer and is independent of Cloud Volumes ONTAP topology (single node or HA). 
+[NOTE]
+Ensure that Accelerated Networking is enabled on the VM's NICs and review Azure VNet encryption requirements and limitations before enabling the feature. You should not modify NetApp managed load balancer objects.
 
 .About this task
 
@@ -30,28 +33,9 @@ NetApp Console prompts you with these details when the feature needs to be enabl
 * When the HA mode is enabled, the Console scans the system every 12 hours to update the internal Azure Load Balancer rules.
 
 
-
-== Enable the high-availability mode in Cloud Volumes ONTAP 9.18.1 and later
-Follow these steps to configure the VNet and the Internal Load Balancer (ILB) for your Cloud Volumes ONTAP HA pairs to be able to use the encrypted data. Perform these steps on the Azure portal as an Azure admin user. You only need to enable the high-availability mode once per Azure subscription. After you enable the feature, the Console automatically detects that the feature is enabled and configures the internal Azure Load Balancer for your Cloud Volumes ONTAP HA pairs.
-
 .Steps
-
-
-
-. As an Azure (non-admin) user https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[access the Azure Cloud Shell from the Azure Portal^] and view the VNet encryption status: `az network vnet show -g <resource group name> -n <vnet name>`
-. As an Azure admin user, change the VNet encryption configuration:
-+
-[source,azurecli]
-az network vnet update -g <resource group name> -n <VNET name> --enable-encryption <true/false> --encryption-enforcement-policy <AllowUnencrypted/DropUnencrypted>
-+
-. Register your ILB
-
-== Enable the high-availability mode in Cloud Volumes ONTAP 9.10.1  to 9.17.1
-##These steps apply to all Cloud Volumes ONTAP versions starting with 9.10.1  to 9.17.1. You only need to enable the high-availability mode once per Azure subscription. After you enable the feature, the Console automatically detects that the feature is enabled and configures the internal Azure Load Balancer for your Cloud Volumes ONTAP HA pairs.##
 
 An Azure user who has _Owner_ privileges can enable the feature from the Azure CLI.
-
-.Steps
 
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
 
