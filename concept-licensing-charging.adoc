@@ -42,7 +42,7 @@ Your license is always charged first, but you'll be charged from the hourly rate
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
-* Only single node systems with BYOL are supported in China regions. China region deployments are exempt from BYOL licensing restrictions.
+* Only single-node systems with BYOL are supported in China regions. China region deployments are exempt from BYOL licensing restrictions.
 
 == Changing of license packages
 
@@ -103,7 +103,7 @@ For information about the capacity limits of each cloud provider, refer to their
 
 == Max number of systems
 
-With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per NetApp Console organization. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
+With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per NetApp Console organization. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single-node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
 
 For example, let's say you have three systems:
 
@@ -113,7 +113,7 @@ This system counts as one system.
 
 * A single node Cloud Volumes ONTAP system with two storage VMs (the default storage VM, plus one additional storage VM that you created)
 +
-This system counts as two systems: one for the single node system and one for the additional storage VM.
+This system counts as two systems: one for the single-node system and one for the additional storage VM.
 
 * A Cloud Volumes ONTAP HA pair with three storage VMs (the default storage VM, plus two additional storage VMs that you created)
 +

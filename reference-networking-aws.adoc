@@ -127,11 +127,11 @@ include::_include/conn-proxy-config.adoc[]
 
 The Console automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP. You need to ensure that your networking has enough private IP addresses available.
 
-The number of LIFs that the Console allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port.
+The number of LIFs that the Console allocates for Cloud Volumes ONTAP depends on whether you deploy a single-node system or an HA pair. A LIF is an IP address associated with a physical port.
 
-==== IP addresses for a single node system
+==== IP addresses for a single-node system
 
-The Console allocates 6 IP addresses to a single node system.
+The Console allocates 6 IP addresses to a single-node system.
 
 The following table provides details about the LIFs that are associated with each private IP address.
 
@@ -150,7 +150,7 @@ The following table provides details about the LIFs that are associated with eac
 
 ==== IP addresses for HA pairs
 
-HA pairs require more IP addresses than a single node system does. These IP addresses are spread across different ethernet interfaces, as shown in the following image:
+HA pairs require more IP addresses than a single-node system does. These IP addresses are spread across different ethernet interfaces, as shown in the following image:
 
 image:diagram_cvo_aws_networking_ha.png["A diagram that shows eth0, eth1, eth2 on a Cloud Volumes ONTAP HA configuration in AWS."]
 

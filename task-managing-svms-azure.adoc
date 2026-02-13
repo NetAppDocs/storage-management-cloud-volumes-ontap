@@ -26,7 +26,7 @@ Beginning with Cloud Volumes ONTAP 9.9.0, based on your license, multiple storag
 All versions of Cloud Volumes ONTAP prior to 9.9.0 support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
 == Create a storage VM
-Based on your configuration and license type, you can create multiple storage VMs on a single node system or in a high-availability (HA) configuration by using the APIs for the NetApp Console.
+Based on your configuration and license type, you can create multiple storage VMs on a single-node system or in a high-availability (HA) configuration by using the APIs for the NetApp Console.
 
 .About this task
 
@@ -42,9 +42,9 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
 
-=== Single node system
+=== single-node system
 
-Use the following API call to create a storage VM on a single node system. 
+Use the following API call to create a storage VM on a single-node system. 
 
 
 `POST /azure/vsa/working-environments/{workingEnvironmentId}/svm`
@@ -70,7 +70,7 @@ Include the following parameters in the request body:
    "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 
-== Manage storage VMs on single node systems and HA pairs
+== Manage storage VMs on single-node systems and HA pairs
 
 Using the APIs, you can rename and delete storage VMs in both single node and HA configurations.
 
@@ -84,7 +84,7 @@ To rename a storage VM, you should provide the names of the existing storage VM 
 
 .Steps
 
-* Use the following API call to rename a storage VM on a single node system:
+* Use the following API call to rename a storage VM on a single-node system:
 +
 `PUT /azure/vsa/working-environments/{workingEnvironmentId}/svm`
 +
@@ -114,7 +114,7 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 
 .Steps
 
-* Use the following API call to delete a storage VM on a single node system:
+* Use the following API call to delete a storage VM on a single-node system:
 +
 `DELETE /azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
 *  Use the following API call to delete a storage VM on an HA pair:
