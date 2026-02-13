@@ -27,7 +27,7 @@ All versions of Cloud Volumes ONTAP prior to 9.11.1 support one data-serving sto
 
 == Create a storage VM
 
-Based on your configuration and license type, you can create multiple storage VMs on a single node system or in a high-availability (HA) configuration by using the APIs.
+Based on your configuration and license type, you can create multiple storage VMs on a single-node system or in a high-availability (HA) configuration by using the APIs.
 
 .About this task
 
@@ -44,8 +44,8 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
 
-=== Single node system
-Use the following API call to create a storage VM on a single node system. 
+=== single-node system
+Use the following API call to create a storage VM on a single-node system. 
 
 `POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
@@ -82,7 +82,7 @@ To rename a storage VM, you should provide the names of the existing storage VM 
 
 .Steps
 
-* Use the following API call to rename a storage VM on a single node system:
+* Use the following API call to rename a storage VM on a single-node system:
 +
 `PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 +
@@ -111,7 +111,7 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 
 .Steps
 
-* Use the following API call to delete a storage VM on a single node system:
+* Use the following API call to delete a storage VM on a single-node system:
 +
 `DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
 *  Use the following API call to delete a storage VM on an HA pair:

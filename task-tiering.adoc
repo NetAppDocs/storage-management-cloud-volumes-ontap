@@ -79,7 +79,7 @@ ifdef::azure[]
 === Support in Azure
 
 * Data tiering is supported in Azure as follows:
-** Version 9.4 in with single node systems
+** Version 9.4 in with single-node systems
 ** Version 9.6 in with HA pairs
 * The performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 * The inactive data is tiered to Microsoft Azure Blob. Tiering to other providers is not supported.

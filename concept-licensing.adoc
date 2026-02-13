@@ -123,7 +123,7 @@ link:https://docs.netapp.com/us-en/keystone-staas/index.html[Learn more about Ne
 
 === Supported configurations
 
-Keystone Subscriptions are supported with HA pairs. This licensing option isn't supported with single node systems at this time.
+Keystone Subscriptions are supported with HA pairs. This licensing option isn't supported with single-node systems at this time.
 
 === Capacity limit
 

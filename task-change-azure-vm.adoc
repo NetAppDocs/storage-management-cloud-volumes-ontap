@@ -25,7 +25,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 
 * The operation restarts Cloud Volumes ONTAP.
 +
-For single node systems, I/O is interrupted.
+For single-node systems, I/O is interrupted.
 +
 For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 +
