@@ -122,7 +122,7 @@ The following table describes fields for which you might need guidance:
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^]
 * link:task-set-up-licensing-google.html[Learn how to set up licensing^]
 
-. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*. ##The preconfigured packages vary with the selected Cloud Volumes ONTAP version. For example, for Cloud Volumes ONTAP 9.18.1 and later, the Console shows packages with C3 VMs, including Hyperdisk Balanced disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.##
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*. The preconfigured packages vary with the selected Cloud Volumes ONTAP version. For example, for Cloud Volumes ONTAP 9.18.1 and later, the Console shows packages with C3 VMs, including Hyperdisk Balanced disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
