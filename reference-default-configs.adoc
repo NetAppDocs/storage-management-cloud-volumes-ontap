@@ -54,7 +54,7 @@ ifdef::gcp[]
 ** An SVM management LIF on HA systems in Google Cloud
 endif::gcp[]
 ifdef::aws[]
-** An SVM management LIF on single node systems in AWS
+** An SVM management LIF on single-node systems in AWS
 endif::aws[]
 ** A node management LIF
 ifdef::gcp[]

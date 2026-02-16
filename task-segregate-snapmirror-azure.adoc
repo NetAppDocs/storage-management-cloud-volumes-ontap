@@ -121,7 +121,7 @@ dest::> network ipspace create -ipspace <new_ipspace>
 ----
 dest::> network port show
 ----
-. For single node systems, the newly added port is _e0b_. For HA-pair deployments with managed disks, the newly added port is _e0d_. For HA-pair deployments with page blobs, the newly added port is _e0e_. Use the node name not the VM name. Find the node name by running `node show`.  
+. For single-node systems, the newly added port is _e0b_. For HA-pair deployments with managed disks, the newly added port is _e0d_. For HA-pair deployments with page blobs, the newly added port is _e0e_. Use the node name not the VM name. Find the node name by running `node show`.  
 +
 [source,cli]
 ----
