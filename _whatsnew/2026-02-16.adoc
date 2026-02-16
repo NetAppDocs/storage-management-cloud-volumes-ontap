@@ -13,4 +13,8 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
 
+=== VNet security for Cloud Volumes ONTAP in Azure
+
+Cloud Volumes ONTAP 9.18.1 and later deployments in Azure single and multiple availability zones support Azure Virtual Network (VNet) encryption as part of its layered security strategy to protect data in transit. Cloud Volumes ONTAP leverages Azure's native Datagram Transport Layer Security (DTLS) protocol to secure communication between ONTAP nodes, management interfaces, and other Azure services, preventing interception and unauthorized access. This network-level encryption complements ONTAP's built-in storage and data-at-rest protections to deliver end-to-end security of your data. 
  
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-high-availability-mode.html[Enable high-availability mode for Cloud Volumes ONTAP in Azure^]
