@@ -116,7 +116,7 @@ Note the following requirements for the key vault:
 * The following options should be enabled:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
-** *Azure Disk Encryption for volume encryption* (for single node systems, HA pairs in multiple zones, and HA single AZ deployments)
+** *Azure Disk Encryption for volume encryption* (for single-node systems, HA pairs in multiple zones, and HA single AZ deployments)
 +
 NOTE: Usage of Azure customer-managed encryption keys is contingent upon having Azure Disk encryption enabled for the key vault.
 * The following option should be enabled if you created a user-assigned managed identity:
@@ -200,7 +200,7 @@ NOTE: Include the `"userAssignedIdentity": " userAssignedIdentityId"` field if y
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn more about this API call^].
 
-.. For a single node system:
+.. For a single-node system:
 +
 `POST /azure/vsa/working-environments`
 +
