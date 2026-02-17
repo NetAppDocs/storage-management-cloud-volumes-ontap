@@ -232,12 +232,11 @@ You can also disable the Private Link connection, if required by your business n
 
 link:task-enabling-private-link.html[Learn more about using Azure Private Links or service endpoints with Cloud Volumes ONTAP].
 
-=== Networking considerations with Azure VNet encryption
-Cloud Volumes ONTAP supports https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview[Azure Virtual Network (VNet) encryption^] for encrypting VM to VM traffic inside a VNet or across peered VNets. This feature is configured at the Azure VNet layer and is independent of Cloud Volumes ONTAP topology (single node or HA). 
+=== Networking for Azure VNet encryption
+Cloud Volumes ONTAP supports https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview[Azure Virtual Network (VNet) encryption^] for encrypting VM-to-VM traffic inside a VNet or across peered VNets. This feature is configured at the Azure VNet layer and is independent of Cloud Volumes ONTAP topology (single node or HA). 
 
 You only need to ensure that Accelerated Networking is enabled on the VM's NICs and review Azure VNet encryption requirements and limitations before enabling the feature. You should not modify NetApp managed load balancer objects.
 
-link:task-azure-high-availability-mode.html[Enable high-availability mode for Cloud Volumes ONTAP in Azure]
 https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview?tabs=NetworkManager[Azure documentation: VNet encryption and Accelerated Networking^].
 
 === Connections to other ONTAP systems
