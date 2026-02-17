@@ -13,14 +13,13 @@ summary: Microsoft Azure's high-availability mode should be enabled to reduce un
 :imagesdir: ./media/
 
 [.lead]
-Microsoft Azure's high-availability (HA) mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP. In this mode, your Cloud Volumes ONTAP HA nodes can achieve a low (60 seconds) recovery time objective (RTO) during unplanned failovers on CIFS and NFSv4 clients.
-
+You should enable Microsoft Azure's high-availability (HA) mode to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP. If you enable this mode, your Cloud Volumes ONTAP HA nodes can achieve a low (60 seconds) recovery time objective (RTO) during unplanned failovers on CIFS and NFSv4 clients.
 
 Beginning with Cloud Volumes ONTAP 9.10.1, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high-availability feature on your Azure subscription.
 
-NetApp Console prompts you with these details when the feature needs to be enabled on an Azure subscription. 
+.About this task
 
-Note the following:
+NetApp Console prompts you with these details when the feature needs to be enabled on an Azure subscription. Note the following:
 
 *	There are no problems with the high availability of your Cloud Volumes ONTAP HA pair. This Azure feature works in concert with ONTAP to reduce the client observed application outage time for NFS protocols that result from unplanned failover events.
 *	Enabling this feature is non-disruptive to Cloud Volumes ONTAP HA pairs.
@@ -28,9 +27,10 @@ Note the following:
 * Cloud Volumes ONTAP uses an internal Azure Load Balancer during failovers of cluster and SVM management LIFs on CIFS and NFS clients. 
 * When the HA mode is enabled, the Console scans the system every 12 hours to update the internal Azure Load Balancer rules.
 
-An Azure user who has "Owner" privileges can enable the feature from the Azure CLI.
 
 .Steps
+
+An Azure user who has _Owner_ privileges can enable the feature from the Azure CLI.
 
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
 
@@ -60,3 +60,8 @@ The Azure CLI should return a result similar to the following:
 ----
 //BLUEXPDOC-207
 //This topic is linked to the UI.
+
+.Related links
+
+. https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview[Microsoft Azure documentation: High availability ports overview^]
+. https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest[Microsoft Azure documentation: Get started with Azure CLI^]
