@@ -13,14 +13,9 @@ summary: Microsoft Azure's high-availability mode should be enabled to reduce un
 :imagesdir: ./media/
 
 [.lead]
-Microsoft Azure's high-availability (HA) mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP. In this mode, your Cloud Volumes ONTAP HA nodes can achieve a low (60 seconds) recovery time objective (RTO) during unplanned failovers on CIFS and NFSv4 clients.
+You should enable Microsoft Azure's high-availability (HA) mode to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP. If you enable this mode, your Cloud Volumes ONTAP HA nodes can achieve a low (60 seconds) recovery time objective (RTO) during unplanned failovers on CIFS and NFSv4 clients.
 
 Beginning with Cloud Volumes ONTAP 9.10.1, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high-availability feature on your Azure subscription.
-
-.Networking considerations with Azure VNet encryption
-Cloud Volumes ONTAP supports Azure Virtual Network (VNet) encryption for encrypting VM to VM traffic inside a VNet or across peered VNets. This feature is configured at the Azure VNet layer and is independent of Cloud Volumes ONTAP topology (single node or HA). 
-[NOTE]
-Ensure that Accelerated Networking is enabled on the VM's NICs and review Azure VNet encryption requirements and limitations before enabling the feature. You should not modify NetApp managed load balancer objects.
 
 .About this task
 
