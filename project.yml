@@ -10,19 +10,19 @@ settings:
     harmony_enabled: true
   rss_page: "whats-new.html"
 
-  filter:
-    label: Cloud provider
-    default: All cloud providers
-    options:
-      - name: Amazon Web Services
-        alias: AWS
-        id: aws
-      - name: Google Cloud
-        alias: Google Cloud
-        id: gcp
-      - name: Microsoft Azure
-        alias: Azure
-        id: azure
+  #filter:
+    #label: Cloud provider
+    #default: All cloud providers
+    #options:
+    #  - name: Amazon Web Services
+    #    alias: AWS
+    #    id: aws
+    #  - name: Google Cloud
+    #    alias: Google Cloud
+    #    id: gcp
+    #  - name: Microsoft Azure
+    #    alias: Azure
+    #    id: azure
 sidebar:
   entries:
     - title: Cloud Volumes ONTAP docs
