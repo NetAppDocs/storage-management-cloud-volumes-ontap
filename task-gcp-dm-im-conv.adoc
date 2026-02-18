@@ -27,8 +27,8 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 ====
 Cloud Volumes ONTAP systems using Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files for ONTAP versions, and SVM Terraform Templated used for new CVO deployments
-* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: for storing  for ONTAP versions and SVM Terraform Templated used for new CVO deployments. Inside this, the `dm-to-im-convert` bucket contains the Cloud Volumes ONTAP Terraform files.
+* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts.
 ====
 
 .Before you begin
@@ -41,6 +41,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 .For private mode deployments, ensure these additional prerequisites:
 [%collapsible]
 ====
+* Ensure that you have the latest https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html#agent-upgrades[Console agent version^] before conversion to use Infrastructure Manager APIs.
 * If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
 ====
@@ -50,41 +51,23 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 |===
 | Domain | Port | Protocol | Direction | Purpose
 
-| cloudresourcemanager.googleapis.com
-| 443
+| *.gce.archive.ubuntu.com
+| 80
 | TCP
 | EGRESS
-| Project validation
+| Ubuntu package mirror
 
-| deploymentmanager.googleapis.com
+| apt.releases.hashicorp.com
 | 443
 | TCP
 | EGRESS
-| Deployment discovery
+| HashiCorp APT repository
 
-| config.googleapis.com
+| checkpoint-api.hashicorp.com
 | 443
 | TCP
 | EGRESS
-| Infrastructure Manager API
-
-| storage.googleapis.com
-| 443
-| TCP
-| EGRESS
-| GCS bucket operations
-
-| iam.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Service account validation
-
-| compute.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Compute API calls used by Google Cloud and Terraform Import and Plan
+| Terraform version check
 
 | cloudbuild.googleapis.com
 | 443
@@ -92,17 +75,71 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Build operations only required for private mode
 
-| openidconnect.googleapis.com
+| cloudresourcemanager.googleapis.com
 | 443
 | TCP
 | EGRESS
-| Authentication
+| Project validation
+
+| compute.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Compute API calls used by Google Cloud and Terraform Import and Plan
+
+| config.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Infrastructure Manager API
+
+| deploymentmanager.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Deployment discovery
+
+| download.docker.com
+| 443
+| TCP
+| EGRESS
+| Docker APT repository
+
+| files.pythonhosted.org
+| 443
+| TCP
+| EGRESS
+| Python package downloads
+
+| iam.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Service account validation
+
+| metadata.google.internal
+| 80
+| HTTP
+| Internal
+| VM metadata & auth tokens
 
 | oauth2.googleapis.com
 | 443
 | TCP
 | EGRESS
 | OAuth2 token exchange
+
+| openidconnect.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Authentication
+
+| pypi.org
+| 443
+| TCP
+| EGRESS
+| Python package index
 
 | registry.terraform.io
 | 443
@@ -116,24 +153,25 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Terraform binary downloads
 
-| apt.releases.hashicorp.com
+| security.ubuntu.com
+| 80/443
+| TCP
+| EGRESS
+| Ubuntu security updates
+
+| storage.googleapis.com
 | 443
 | TCP
 | EGRESS
-| HashiCorp APT repository
+| GCS bucket operations
 
 | us-central1-docker.pkg.dev
 | 443
 | TCP
 | EGRESS
 | GCP Artifact Registry
-
-| metadata.google.internal
-| 80
-| HTTP
-| Internal
-| VM metadata & auth tokens
 |===
+
 
 .Steps
 Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
@@ -203,7 +241,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
-. Extract the downloaded TAR file: `tar -xvf <downloaded file name>`
+. Extract the downloaded TAR file: `unzip <downloaded file name>`
 . Download and install these prerequisite packages: 
 ** Docker: 28.2.2 build 28.2.2-0ubuntu1 or later
 ** Terraform: 1.14.1 or later
@@ -262,9 +300,9 @@ dmconvert \
 ----
 ====
 .After you finish
-The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<converted system name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
+The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<system-name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
 [CAUTION]
-Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains metadata that Infrastructure Manager uses to manage the Cloud Volumes ONTAP systems.
+Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains information of the Cloud Volumes ONTAP system that can be used to roll back the converted system.
 
 If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
 
