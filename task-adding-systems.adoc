@@ -13,10 +13,12 @@ summary: You can discover and add existing Cloud Volumes ONTAP systems to the Co
 :imagesdir: ./media/
 
 [.lead]
-You can discover and add existing Cloud Volumes ONTAP systems to the NetApp Console. You might do this if you deployed a new system.
+You can discover and add existing Cloud Volumes ONTAP systems to the NetApp Console for centralized management. When you onboard a system with an account, the system is registered with that account. In environments with multiple accounts or organizations, you can only discover and manage systems registered with your Console login account. 
 
-[NOTE]
-You can only add systems that are registered with the account you used to log in to the Console. If you have multiple accounts or organizations, ensure that you are logged in to the correct account before adding systems. You can't discover, view, or manage systems that are registered with a different account or organization.
+When working with system registrations, ensure that all actions are performed within the same organization and account where the systems were originally onboarded. For example,  you can move a Cloud Volumes ONTAP system to a new Console agent when the migration stays within the same organization. 
+
+[CAUTION]
+You can't discover, view, or manage systems that are registered with a different account or organization.
 
 .Before you begin
 
@@ -48,3 +50,5 @@ Cloud Volumes ONTAP systems are represented as instances on this page. From the 
 .Result
 
 The Console adds the Cloud Volumes ONTAP systems to the *Systems* page.
+
+//BLUEXPDOC-1090
