@@ -41,7 +41,7 @@ a| https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_d
 a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent from Google Cloud^]
 *  https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_dm-im-tool/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
 
-|Existing agent and existing private deployment
+|Existing agent and existing deployment in private mode  
 | Upgrade to the latest agent by downloading the product installer from the NetApp Support Site and then manually installing the agent on your host, so that the agent can use the Infrastructure Manager APIs. Then convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
 a| * Cloud Infrastructure Manager API 
 * Cloud Quotas API
@@ -69,7 +69,7 @@ Cloud Volumes ONTAP systems that use Infrastructure Manager use Google Cloud Sto
 * `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
 
 
-//In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
+In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
 
 .Related links
 
