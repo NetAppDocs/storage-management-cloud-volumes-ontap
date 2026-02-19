@@ -41,7 +41,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 .For private mode deployments, ensure these additional prerequisites:
 [%collapsible]
 ====
-* Ensure that you have the latest https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html#agent-upgrades[Console agent version^] before conversion to use Infrastructure Manager APIs.
+* Ensure that you have the latest Console agent version. Download the product installer from the NetApp Support Site and then manually install the agent on your host so that the agent can use Infrastructure Manager APIs.
 * If you are running the tool in a private mode, ensure that along with the other APIs, you have enabled the Cloud Build API. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Ensure that you have completed the network configurations and created the worker pool for private mode deployments. Refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
 ====
@@ -51,47 +51,11 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 |===
 | Domain | Port | Protocol | Direction | Purpose
 
-| *.gce.archive.ubuntu.com
-| 80
-| TCP
-| EGRESS
-| Ubuntu package mirror
-
-| apt.releases.hashicorp.com
-| 443
-| TCP
-| EGRESS
-| HashiCorp APT repository
-
-| checkpoint-api.hashicorp.com
-| 443
-| TCP
-| EGRESS
-| Terraform version check
-
-| cloudbuild.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Build operations only required for private mode
-
 | cloudresourcemanager.googleapis.com
 | 443
 | TCP
 | EGRESS
 | Project validation
-
-| compute.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Compute API calls used by Google Cloud and Terraform Import and Plan
-
-| config.googleapis.com
-| 443
-| TCP
-| EGRESS
-| Infrastructure Manager API
 
 | deploymentmanager.googleapis.com
 | 443
@@ -99,17 +63,17 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Deployment discovery
 
-| download.docker.com
+| config.googleapis.com
 | 443
 | TCP
 | EGRESS
-| Docker APT repository
+| Infrastructure Manager API
 
-| files.pythonhosted.org
+| storage.googleapis.com
 | 443
 | TCP
 | EGRESS
-| Python package downloads
+| GCS bucket operations
 
 | iam.googleapis.com
 | 443
@@ -117,17 +81,17 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Service account validation
 
-| metadata.google.internal
-| 80
-| HTTP
-| Internal
-| VM metadata & auth tokens
-
-| oauth2.googleapis.com
+| compute.googleapis.com
 | 443
 | TCP
 | EGRESS
-| OAuth2 token exchange
+| Compute API calls used by Google Cloud and Terraform Import and Plan
+
+| cloudbuild.googleapis.com
+| 443
+| TCP
+| EGRESS
+| Build operations only required for private mode
 
 | openidconnect.googleapis.com
 | 443
@@ -135,11 +99,11 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Authentication
 
-| pypi.org
+| oauth2.googleapis.com
 | 443
 | TCP
 | EGRESS
-| Python package index
+| OAuth2 token exchange
 
 | registry.terraform.io
 | 443
@@ -153,23 +117,59 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | EGRESS
 | Terraform binary downloads
 
-| security.ubuntu.com
-| 80/443
-| TCP
-| EGRESS
-| Ubuntu security updates
-
-| storage.googleapis.com
+| apt.releases.hashicorp.com
 | 443
 | TCP
 | EGRESS
-| GCS bucket operations
+| HashiCorp APT repository
 
 | us-central1-docker.pkg.dev
 | 443
 | TCP
 | EGRESS
 | GCP Artifact Registry
+
+| metadata.google.internal
+| 80
+| HTTP
+| Internal
+| VM metadata & auth tokens
+
+| pypi.org
+| 443
+| TCP
+| EGRESS
+| Python package index
+
+| files.pythonhosted.org
+| 443
+| TCP
+| EGRESS
+| Python package downloads
+
+| checkpoint-api.hashicorp.com
+| 443
+| TCP
+| EGRESS
+| Terraform version check
+
+| download.docker.com
+| 443
+| TCP
+| EGRESS
+| Docker APT repository
+
+| security.ubuntu.com
+| 80/443
+| TCP
+| EGRESS
+| Ubuntu security updates
+
+| *.gce.archive.ubuntu.com
+| 80
+| TCP
+| EGRESS
+| Ubuntu package mirror
 |===
 
 
@@ -226,7 +226,9 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 * Machine Type: Google Compute Engine machine type e2-medium
-* OS: Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
+* OS: ##Based on your requirement, select either:##
+** Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
+** ##SUSE Linux Enterprise Server 15 SP7 x86_64##
 * Networking:  Firewall allowing HTTP and HTTPs
 * Disk Size: 20GB
 * Security: Service accounts: the service account you created
@@ -239,6 +241,9 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Service Management: Read only (default)
 ** Service Control: Enabled (default)
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
+[role="tabbed-block"]
+====
+.For Ubuntu
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
 . Extract the downloaded TAR file: `unzip <downloaded file name>`
@@ -288,7 +293,7 @@ dmconvert \
 +
 .Run the tool in private mode deployments
 [%collapsible]
-====
+
 Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
 [source,cli]
 ----
@@ -298,7 +303,13 @@ dmconvert \
 --service-account=<the service account attached to the Console agent> \
 --worker-pool=<worker pool name>
 ----
-====
+--
+--
+.For SUSE Linux Enterprise Server
+asds
+--
+
+
 .After you finish
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<system-name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
 [CAUTION]

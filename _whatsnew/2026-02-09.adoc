@@ -2,55 +2,63 @@
 
 Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
 
-Beginning fberuary 9, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing deployments. This table explains a few workflows for you:
+Beginning February 09, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing deployments. This table explains a few workflows for you:
 
+[cols=6*,options="header",width=100%]
 |===
-|Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Resources
+|Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Doc resources
 
 |Existing agent and existing Cloud Volumes ONTAP deployment
-| Add new APIs and permissions to the existing agent and use the system the usual way.
-| Cloud Quotas API
-|
-| https://www.googleapis.com/upload/storage/v1
-https://config.googleapis.com/v1
-|
+| Add new APIs and permissions to the existing agent and convert the existing Cloud Volumes ONTAP system.
+a| * Cloud Infrastructure Manager API
+* Cloud Quotas API
+a| All the permissions listed for the Console release on:
+
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
+
+| \https://www.googleapis.com/upload/storage/v1
+\https://config.googleapis.com/v1
+a| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^]
+
 
 |Existing agent and new Cloud Volumes ONTAP deployment
 | Add new APIs and permissions to the existing agent and deploy a new system.
-| Cloud Quotas API
-|
+a| * Cloud Infrastructure Manager API
+* Cloud Quotas API
+a| All the permissions listed for the Console release on:
+
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
 | All the steps for new deployment
-|
+a| https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_dm-im-tool/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
 
 |New agent and new deployment
+| Create a new agent with and deploy a new Cloud Volumes ONTAP system.
 |
 |
-|
-| All the steps for new agent and new deployment
 | 
+a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent from Google Cloud^]
+*  https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_dm-im-tool/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
 
 |Existing agent and existing private deployment
-|
-|Cloud Quotas API
-Cloud Build API
-| cloudbuild.workerpools.get
-cloudbuild.workerpools.get
-| https://cloudbuild.googleapis.com/v1 (Required only for private mode deployment)
-https://www.googleapis.com/upload/storage/v1
-https://config.googleapis.com/v1
-|
+| Upgrade to the latest agent by downloading the product installer from the NetApp Support Site and then manually installing the agent on your host, so that the agent can use the Infrastructure Manager APIs. Then convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
+a| * Cloud Infrastructure Manager API 
+* Cloud Quotas API
+* Cloud Build API
 
-|Existing agent and new private deployment
-|
-|
-|
-| All the steps for new deployment
-|
+a| All the permissions listed for the Console release on:
 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
+ * cloudbuild.workerpools.get  
+ * cloudbuild.workerpools.get 
+a| * \https://cloudbuild.googleapis.com/v1
+* \https://www.googleapis.com/upload/storage/v1
+* \https://config.googleapis.com/v1
+| https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Quick start for private mode deployments^]
 
 |===
-
-
 
 
 Now, automatically deploy Cloud Volumes ONTAP to use Infrastructure Manager or switch your existing deployments in Deployment Manager to Infrastructure Manager by running a conversion tool. The conversion is a one-time process, after which your systems will automatically start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
