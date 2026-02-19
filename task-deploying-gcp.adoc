@@ -272,7 +272,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project of the Console.
+| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. 
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
 
