@@ -241,9 +241,11 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Service Management: Read only (default)
 ** Service Control: Enabled (default)
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
+
 [role="tabbed-block"]
-====
-.For Ubuntu
+=====
+[tab="Ubuntu"]
+
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
 . Extract the downloaded TAR file: `unzip <downloaded file name>`
@@ -293,7 +295,7 @@ dmconvert \
 +
 .Run the tool in private mode deployments
 [%collapsible]
-
+====
 Specify the `--worker-pool` parameter to run the tool in private mode deployments. For worker pool configuration, refer to link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments].
 [source,cli]
 ----
@@ -303,11 +305,17 @@ dmconvert \
 --service-account=<the service account attached to the Console agent> \
 --worker-pool=<worker pool name>
 ----
---
---
-.For SUSE Linux Enterprise Server
-asds
---
+==== 
+
+[tab="SUSE Linux Enterprise Server"]
+
+
+.SUSE Linux Enterprise Server
+ . do this
+ . do that
+
+=====
+
 
 
 .After you finish
