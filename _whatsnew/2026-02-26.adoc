@@ -4,7 +4,7 @@ Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/i
 
 Beginning February 09, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing private mode deployments. This table explains the basic workflows for you:
 
-[cols=6*,options="header",width=100%]
+[cols="1,4,1,1,1,1",options="header"]
 |===
 |Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Doc resources
 |Existing agent and existing deployment in private mode  
