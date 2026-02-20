@@ -172,7 +172,8 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 | Ubuntu package mirror
 |===
 
-
+== Prepare the environment for running the tool
+Run these steps before running the tool.
 .Steps
 Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
 
@@ -241,14 +242,15 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Service Management: Read only (default)
 ** Service Control: Enabled (default)
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
+. Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
+. Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
+. Extract the downloaded TAR file: `unzip <downloaded file name>`
 
 [role="tabbed-block"]
 =====
 [tab="Ubuntu"]
 
-. Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
-. Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
-. Extract the downloaded TAR file: `unzip <downloaded file name>`
+.Ubuntu
 . Download and install these prerequisite packages: 
 ** Docker: 28.2.2 build 28.2.2-0ubuntu1 or later
 ** Terraform: 1.14.1 or later
@@ -266,6 +268,35 @@ sudo systemctl start docker
 ----
 +
 Google Cloud CLI `gcloud` is preinstalled on the VM.
+
+[tab="SUSE Linux Enterprise Server"]
+
+.SUSE Linux Enterprise Server
+. Set up Python: `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2`
+. Install pip3 for installing the package: `python3.11 -m ensurepip --upgrade`
+. Install Terraform:
++
+[source,cli]
+----
+wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
+unzip terraform_1.7.4_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+rm terraform_1.7.4_linux_amd64.zip
+----
++
+. Install Google Cloud SDK (gcloud)
++
+[source,cli]
+----
+curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+----
+=====
+
+== Run the conversion tool
+These steps are for both Ubuntu and SUSE Linux Enterprise Server for running the conversion tool.
+
+.Steps
 .  Add the current user to the Docker group, so that the tool can use Docker without `sudo` privileges.
 +
 [source,cli]
@@ -306,16 +337,6 @@ dmconvert \
 --worker-pool=<worker pool name>
 ----
 ==== 
-
-[tab="SUSE Linux Enterprise Server"]
-
-
-.SUSE Linux Enterprise Server
- . do this
- . do that
-
-=====
-
 
 
 .After you finish
