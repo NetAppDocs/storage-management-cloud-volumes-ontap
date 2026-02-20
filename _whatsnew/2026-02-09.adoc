@@ -21,7 +21,6 @@ a| All the permissions listed for the Console release on:
 \https://config.googleapis.com/v1
 a| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^]
 
-
 |Existing agent and new Cloud Volumes ONTAP deployment
 | Add new APIs and permissions to the existing agent and deploy a new system.
 a| * Cloud Infrastructure Manager API
@@ -31,7 +30,7 @@ a| All the permissions listed for the Console release on:
  * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
  * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
 | All the steps for new deployment
-a| https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_dm-im-tool/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
+a| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
 
 |New agent and new deployment
 | Create a new agent with and deploy a new Cloud Volumes ONTAP system.
@@ -39,27 +38,9 @@ a| https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_d
 |
 | 
 a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent from Google Cloud^]
-*  https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_dm-im-tool/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
-
-|Existing agent and existing deployment in private mode  
-| Upgrade to the latest agent by downloading the product installer from the NetApp Support Site and then manually installing the agent on your host, so that the agent can use the Infrastructure Manager APIs. Then convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
-a| * Cloud Infrastructure Manager API 
-* Cloud Quotas API
-* Cloud Build API
-
-a| All the permissions listed for the Console release on:
-
- * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
- * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
- * cloudbuild.workerpools.get  
- * cloudbuild.workerpools.get 
-a| * \https://cloudbuild.googleapis.com/v1
-* \https://www.googleapis.com/upload/storage/v1
-* \https://config.googleapis.com/v1
-| https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Quick start for private mode deployments^]
+*  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
 
 |===
-
 
 Now, automatically deploy Cloud Volumes ONTAP to use Infrastructure Manager or switch your existing deployments in Deployment Manager to Infrastructure Manager by running a conversion tool. The conversion is a one-time process, after which your systems will automatically start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
 
@@ -67,9 +48,6 @@ Cloud Volumes ONTAP systems that use Infrastructure Manager use Google Cloud Sto
 
 * `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files
 * `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
-
-
-In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
 
 .Related links
 
