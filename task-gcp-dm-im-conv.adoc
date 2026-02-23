@@ -27,7 +27,7 @@ The transition tool is available in the https://mysupport.netapp.com/site/produc
 ====
 Cloud Volumes ONTAP systems using Infrastructure Manager store data and records in Google Cloud Storage buckets. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>`: for storing  for ONTAP versions and SVM Terraform Templated used for new CVO deployments. Inside this, the `dm-to-im-convert` bucket contains the Cloud Volumes ONTAP Terraform files.
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: for ONTAP versions and SVM Terraform Templates used for new Cloud Volumes ONTAP deployments. Inside this, the `dm-to-im-convert` bucket contains the Cloud Volumes ONTAP Terraform files.
 * `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts.
 ====
 
@@ -174,8 +174,8 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 
 == Prepare the environment for running the tool
 Run these steps before running the tool.
+
 .Steps
-Follow these steps to transition from Deployment Manager to Infrastructure Manager and run the tool for existing Cloud Volumes ONTAP deployments.
 
 . Create a role and attach it to a service account:
 .. Create a YAML file with the following permissions:
@@ -227,9 +227,9 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 * Machine Type: Google Compute Engine machine type e2-medium
-* OS: ##Based on your requirement, select either:##
+* OS: Based on your requirement, select either of these images:
 ** Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
-** ##SUSE Linux Enterprise Server 15 SP7 x86_64##
+** SUSE Linux Enterprise Server 15 SP7 x86_64
 * Networking:  Firewall allowing HTTP and HTTPs
 * Disk Size: 20GB
 * Security: Service accounts: the service account you created
@@ -294,7 +294,7 @@ exec -l $SHELL
 =====
 
 == Run the conversion tool
-These steps are for both Ubuntu and SUSE Linux Enterprise Server for running the conversion tool.
+These steps are for both Ubuntu and SUSE Linux Enterprise Server for running the conversion tool. 
 
 .Steps
 .  Add the current user to the Docker group, so that the tool can use Docker without `sudo` privileges.
@@ -342,7 +342,7 @@ dmconvert \
 .After you finish
 The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Console under Infrastructure Manager in a _<system-name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
 [CAUTION]
-Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains information of the Cloud Volumes ONTAP system that can be used to roll back the converted system.
+Post conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains information that you might need to roll back the converted system.
 
 If you need to roll back the conversion, you must use the same VM. If you have converted all systems and do not need to roll back to Deployment Manager, you can delete the VM.
 

@@ -2,13 +2,13 @@
 
 Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new private mode deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
 
-Beginning February 09, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing private mode deployments. This table explains the basic workflows for you:
+Beginning February 25, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing private mode deployments. This table explains the basic workflows for you:
 
 [cols="1,4,1,1,1,1",options="header"]
 |===
 |Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Doc resources
 |Existing agent and existing deployment in private mode  
-| Upgrade to the latest agent by downloading the product installer from the NetApp Support Site and then manually installing the agent on your host, so that the agent can use the Infrastructure Manager APIs. Then convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
+| Upgrade to the latest version of NetApp Console agent by downloading the installer from the NetApp Support Site and then manually installing the agent on your host, so that it can use Infrastructure Manager APIs. Thereafter, convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
 a| * Cloud Infrastructure Manager API 
 * Cloud Quotas API
 * Cloud Build API
@@ -24,7 +24,7 @@ a| * \https://cloudbuild.googleapis.com/v1
 * \https://config.googleapis.com/v1
 | https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^]
 |New agent and new deployment
-| Create a new agent with and deploy a new Cloud Volumes ONTAP system in private mode.
+| Create a new agent and deploy a new Cloud Volumes ONTAP system in private mode.
 |
 |
 | 
