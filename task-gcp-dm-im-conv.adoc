@@ -20,7 +20,7 @@ Beginning on February 09, 2026, new Cloud Volumes ONTAP deployments in Google Cl
 The transition tool is available in the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NetApp Support site^], and creates the following artifacts: 
 
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
-* Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
+* Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
 * Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.
 
 [CAUTION]
