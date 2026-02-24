@@ -13,15 +13,16 @@ summary: Specifying an NTP server synchronizes the time between the systems in y
 :imagesdir: ./media/
 
 [.lead]
-##Network Time Protocol (NTP) servers ensure that the time on your Cloud Volumes ONTAP systems is accurate and synchronized with other systems in your network and external servers. Syncing time with external NTP servers helps maintain consistency across your infrastructure. NetApp configures NTP servers by default for new Cloud Volumes ONTAP deployments. If they are not configured for your existing Cloud Volumes ONTAP deployments, you must configure an NTP server for existing systems for accurate time synchronization within and outside of your network.##
-
-[NOTE]
-If you don't configure an NTP server, you might experience service disruptions and inaccurate time synchronization.
+##Configuring Network Time Protocol (NTP) servers for your Cloud Volumes ONTAP clusters ensures accurate time synchronization of your cluster time with other systems in your network and external servers. Syncing your cluster time with external NTP servers helps maintain consistency across your infrastructure. NetApp configures NTP servers by default for new Cloud Volumes ONTAP deployments. However, if they are not configured for your existing Cloud Volumes ONTAP clusters, you must configure NTP servers for accurate time synchronization within and outside of your network.##
 
 You can specify an NTP server using:
 
 * https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html[The NetApp Console API^].
 * The ONTAP CLI command https://docs.netapp.com/us-en/ontap-cli//cluster-time-service-ntp-server-create.html[cluster time-service ntp server create^].
+
+[NOTE]
+If you don't configure an NTP server, you might experience service disruptions and inaccurate time synchronization.
+
 
 .Related links
 
