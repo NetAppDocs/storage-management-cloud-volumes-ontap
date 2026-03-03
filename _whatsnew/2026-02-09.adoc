@@ -2,15 +2,52 @@
 
 Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
 
-Now, automatically deploy Cloud Volumes ONTAP to use Infrastructure Manager or switch your existing deployments in Deployment Manager to Infrastructure Manager by running a conversion tool. The conversion is a one-time process, after which your systems will automatically start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the transition tool.
+Beginning February 09, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing deployments. This table explains a few workflows for you:
+
+[cols="1,4,1,1,1,1",options="header"]
+|===
+|Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Doc resources
+
+|Existing agent and existing Cloud Volumes ONTAP deployment
+| Add new APIs and permissions to the existing agent and convert the existing Cloud Volumes ONTAP system.
+a| * Cloud Infrastructure Manager API
+* Cloud Quotas API
+a| All the permissions listed for the Console release on:
+
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
+
+| \https://www.googleapis.com/upload/storage/v1
+\https://config.googleapis.com/v1
+a| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^]
+
+|Existing agent and new Cloud Volumes ONTAP deployment
+| Add new APIs and permissions to the existing agent and deploy a new Cloud Volumes ONTAP system.
+a| * Cloud Infrastructure Manager API
+* Cloud Quotas API
+a| All the permissions listed for the Console release on:
+
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025[8 December 2025^] 
+ * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026[09 February 2026^] 
+| All the steps for new deployment
+a| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
+
+|New agent and new deployment
+| Create a new agent and deploy a new Cloud Volumes ONTAP system.
+|
+|
+| 
+a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent from Google Cloud^]
+*  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud^]
+
+|===
+
+Now, deploy Cloud Volumes ONTAP to automatically use Infrastructure Manager or switch your existing deployments in Deployment Manager to Infrastructure Manager by running a conversion tool. The conversion is a one-time process, after which your systems will start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html[Configure existing Cloud Volumes ONTAP deployments for Google Cloud Infrastructure Manager^] for instructions on running the conversion tool.
 
 Cloud Volumes ONTAP systems that use Infrastructure Manager use Google Cloud Storage buckets to store data and records in the zone of the first deployment to store deployment records, which are reused for subsequent deployments. You might incur extra costs for these buckets, but do not edit or delete the buckets or their content:
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: for storing Cloud Volumes ONTAP Terraform files
-* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts
-
-
-//In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: for ONTAP versions and SVM Terraform Templates used for new Cloud Volumes ONTAP deployments. Inside this, the `dm-to-im-convert` bucket contains the Cloud Volumes ONTAP Terraform files.
+* `<gcp project number>-<region>-blueprint-config`: for storing Google Cloud Terraform artifacts.
 
 .Related links
 
