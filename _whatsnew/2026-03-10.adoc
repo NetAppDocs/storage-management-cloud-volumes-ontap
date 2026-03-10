@@ -1,0 +1,16 @@
+=== Ability to manage Console agent proxy settings for Cloud Volumes ONTAP 
+
+You can now manage proxy settings on the NetApp Console agent for Cloud Volumes ONTAP, even if you lose connection or the proxy is set up incorrectly. Previously, if the Console agent could not connect to Cloud Volumes ONTAP for 20 minutes, it overwrote your manual proxy settings with default settings. This caused communication failures, including issues with AutoSupport messages. To retain your proxy settings for existing systems, run the following API call: 
+
+`PUT /occm/config` 
+
+Include the following parameter in the request body:
+
+[source,json]
+{
+  "proxyMode": "No_Overwrites"
+}
+
+The default mode is standard, which means the Console agent overwrites your proxy settings with defaults if it cannot connect to Cloud Volumes ONTAP for 20 minutes.
+
+https://docs.netapp.com/us-en/console-automation/cvo/put-occm-config.html[Configure modifiable NetApp Console parameters^]
