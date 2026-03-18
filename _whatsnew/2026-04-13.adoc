@@ -1,0 +1,20 @@
+=== Cloud Volumes ONTAP support for next generation Google Cloud VMs
+
+With 9.18.1, NetApp transitions new Cloud Volumes ONTAP deployments off N2 VMs to the next generation Google Cloud C3 series VMs for a faster and more scalable experience. You can now take advantage of C3 series VMs while deploying Cloud Volumes ONTAP 9.18.1 and later in Google Cloud. The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
+
+[NOTE]
+For now, Cloud Volumes ONTAP supports the C3 series only in single-node deployments.
+
+If your Cloud Volumes ONTAP system runs 9.18.1 or later, the preconfigured packages that you use for easy single node deployments automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. Additionally, you can select the LSSD variants of the C3 series machines for default Flash Cache support.
+
+You can't change the disk type for C3 VMs when adding volumes to aggregates because C3 supports only Hyperdisk Balanced disks. Similarly, when replicating a system with N2 VM types to a C3 VM, the disk type is set by default to Hyperdisk Balanced.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
+
+=== VNet security for Cloud Volumes ONTAP in Azure
+
+Cloud Volumes ONTAP 9.18.1 and later deployments in Azure single and multiple availability zones support Azure Virtual Network (VNet) encryption as part of its layered security strategy to protect data in transit. Cloud Volumes ONTAP leverages Azure's native Datagram Transport Layer Security (DTLS) protocol to secure communication between ONTAP nodes, management interfaces, and other Azure services, preventing interception and unauthorized access. This network-level encryption complements ONTAP's built-in storage and data-at-rest protections to deliver end-to-end security of your data. 
+ 
+https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_gcp-sn-c3-support/reference-networking-azure.html#networking-for-azure-vnet-encryption[Networking for Azure VNet encryption^]
