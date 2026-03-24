@@ -1,0 +1,16 @@
+=== Cloud Volumes ONTAP integration with Microsoft OneLake
+
+Cloud Volumes ONTAP now supports integration with https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] in public preview for Azure environments. This integration enables S3-based access from OneLake to access the existing NAS data managed by Cloud Volumes ONTAP without data migration or storage re-architecture. Organizations can connect current NFS and SMB datasets directly to Microsoft Fabric AI and analytics workflows, reducing data duplication and the costs associated with data movement and storage.
+
+This integration provides the following benefits:
+
+* Consistent data management across hybrid and multi-cloud environments through ONTAP controls.
+* Built-in ONTAP protections, including Snapshot copies, SnapMirror replication, and encryption, to support governance and compliance requirements.
+* Storage efficiency features such as deduplication, compression, thin provisioning, and tiering.
+
+
+Related articles and resources:
+
+* https://www.netapp.com/media/160786-na-1263-netapp-cloud-volumes-ontap-azure-onelake.pdf[Cloud Volumes ONTAP integration with Microsoft OneLake - White Paper^]
+* https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/?utm_content=nativelink&utm_medium=internal&utm_source=linkedin&utm_campaign=b2d-port-all-na-ww-digi-blog-1747859361262&es_id=956c739202[Optimize AI and analytics with Microsoft OneLake and NetApp Cloud Volumes ONTAP^]
+* KB: nnn[Knowledge Base article on how to set up Cloud Volumes ONTAP integration with Microsoft OneLake^]
