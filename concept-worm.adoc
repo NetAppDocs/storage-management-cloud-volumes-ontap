@@ -43,7 +43,7 @@ You can activate WORM storage on a Cloud Volumes ONTAP system when you add a new
 
 == Committing files to WORM
 
-You can use an application to commit files to WORM over NFS or CIFS, or use the ONTAP CLI to autocommit files to WORM automatically. You can also use a WORM appendable file to retain data that is written incrementally, like log information.
+You can use an application to commit files to WORM over NFS or CIFS, or use the ONTAP CLI to autocommit files to WORM automatically. You can also use a WORM appendable file to retain data that is written incrementally, like log information. For information, refer to https://docs.netapp.com/us-en/ontap/snaplock/commit-files-worm-state-manual-task.html#commit-files-to-worm-manually[Commit files to WORM using ONTAP SnapLock^].
 
 After you activate WORM storage on a Cloud Volumes ONTAP system, you must use the ONTAP CLI for all management of WORM storage. For instructions, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[ONTAP documentation on SnapLock^].
 
