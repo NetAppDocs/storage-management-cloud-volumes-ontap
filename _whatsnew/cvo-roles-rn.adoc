@@ -1,0 +1,88 @@
+=== Activities you can't perform, by tab
+
+The following table summarizes restricted activities by tab.
+
+[cols="1,4",options="header"]
+|===
+|Tab |Activities you can't perform
+
+|Overview
+a|
+* Add a volume
+* Add an aggregate
+* Open System Manager
+* Use the On/Off button
+* Set a password
+* Update the ONTAP version
+* Remove the system from the workspace
+* Delete the system
+* Use *Upgrade now*
+* Edit *System tags* from the all-features pencil menu
+* Edit *Scheduled downtime* from the all-features pencil menu
+* Edit *Storage classes* from the all-features pencil menu
+* Edit *Instance type* from the all-features pencil menu
+* Edit *Charging method* from the all-features pencil menu
+* Edit *License type* from the all-features pencil menu
+* Edit *Write speed* from the all-features pencil menu
+* Edit *Ransomware protection* from the all-features pencil menu
+* Edit *Support registration* from the all-features pencil menu
+* Edit *WORM* from the all-features pencil menu
+* Edit *Data tiering* from the all-features pencil menu
+* Edit *CIFS setup* from the all-features pencil menu
+* Edit *Route tables* from the all-features pencil menu
+
+|Volumes
+a|
+No volume updates are allowed in this tab, and you can't add volumes.
+
+* Clone a volume
+* Edit volume settings
+* Delete a volume
+* Create a snapshot copy
+* Restore from a snapshot copy
+* Change the disk type (advanced option)
+* Change the tiering policy (advanced option)
+
+|Aggregates
+a|
+* Add an aggregate
+* Add a volume
+* Increase capacity
+* Delete an aggregate
+
+|Replication
+a|
+* Break replication
+* Resync replication
+* Reverse resync replication
+* Edit the schedule
+* Edit the maximum transfer rate
+* Update replication
+* Delete replication
+
+|Main canvas
+a|
+* Add a system
+* Discover a system (for all operators)
+* Use drag-and-drop for *Copy and sync*
+* Use drag-and-drop for *Volume caching*
+* Use drag-and-drop for *Replication*
+* Add a volume
+* Access *Optimized cost and performance*
+* Open System Manager
+* Use *Replication* for Cloud Volumes ONTAP only when the required CVO permission is available (not applicable to FSx for ONTAP or on-premises systems)
+* Use *Volume caching* for Cloud Volumes ONTAP only when the required CVO permission is available (not applicable to FSx for ONTAP or on-premises systems)
+* Enter a system
+* Use the AVS management button
+
+|Without roles
+a|
+When no role is assigned, all actions are disabled.
+
+* Access the working environment
+* Access replication
+* Use the Cloud Volumes ONTAP creation wizard
+* Use the replication creation wizard
+* Discover Cloud Volumes ONTAP
+|===
+
