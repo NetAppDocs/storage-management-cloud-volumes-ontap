@@ -1,4 +1,5 @@
 indexpage:
+  title: Cloud Volumes ONTAP documentation
   lead: Cloud Volumes ONTAP enables you to optimize your cloud storage costs and performance while enhancing data protection, security, and compliance.
   tiles:
     - title: Get started
