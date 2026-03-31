@@ -5,7 +5,7 @@ keywords: Azure, AI, integration, OneLake, analytics, ONTAP S3, Microsoft Fabric
 summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to enable Azure AI services to read data stored in your Cloud Volumes ONTAP systems through Azure OneLake.
 ---
 
-= Integrate Cloud Volumes ONTAP systems with Azure OneLake solution
+= Integrate Cloud Volumes ONTAP systems with Azure OneLake
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -30,17 +30,20 @@ The following diagram shows the Azure OneLake structure used in this integration
 image::screenshot-azure-onelake-structure.png[Diagram showing the Azure OneLake lakehouse structure with the Amazon S3-compatible shortcut connecting to Cloud Volumes ONTAP]
 
 .Before you begin
+
+Ensure that you have configured the following components before starting the integration process:
+
 * An existing or new Cloud Volumes ONTAP cluster
-* Azure OPDG
+* Azure on-premises data gateway
 * A Microsoft Fabric subscription
 * An Azure OneLake lakehouse
 
 == Configure Cloud Volumes ONTAP S3
 
-Configure ONTAP S3 multi-protocol access so that Azure OneLake can read data from your Cloud Volumes ONTAP NAS volumes. Refer to link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[Enable S3 client access to NAS data^] for more information.
+Configure ONTAP S3 multi-protocol access so that Azure OneLake can read data from your Cloud Volumes ONTAP NAS volumes.
 
 .Steps
-. After deploying Cloud Volumes ONTAP, select *Advanced View* > *System Manager* in NetApp Console to configure ONTAP S3 for the SVM.
+. After deploying Cloud Volumes ONTAP, select *Advanced View* > *System Manager* in NetApp Console to configure ONTAP S3 for the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for more information.
 +
 .ONTAP S3 SVM configuration
 image::screenshot-ontap-s3-svm-config.png[Screenshot of System Manager showing the ONTAP S3 configuration settings page for the SVM]
@@ -48,105 +51,54 @@ image::screenshot-ontap-s3-svm-config.png[Screenshot of System Manager showing t
 .ONTAP S3 access key settings
 image::screenshot-ontap-s3-access-keys.png[Screenshot of System Manager showing the ONTAP S3 access key and certificate details for the SVM]
 
-. Record the following details from the S3 configuration:
-** Download the self-signed (system-generated) certificate.
-** Copy the access key and secret access key.
-** Use the same NAS LIF or create a new LIF.
-
-=== Create an S3 NAS bucket with a read-only user
-
-Create an S3 NAS bucket with a read-only S3 user to allow Azure OneLake to securely access your Cloud Volumes ONTAP data. Refer to link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[Create an S3 NAS bucket^] for more information.
-
-.Steps
-. Create the S3 NAS bucket in System Manager.
+. From the S3 configuration:
+.. Download the self-signed (system-generated) certificate.
+.. Copy the access key and secret access key.
+.. Use the same NAS LIF or create a new LIF.
+. Create an S3 NAS bucket with a read-only S3 user to allow Azure OneLake to securely access your Cloud Volumes ONTAP data. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
 +
-.S3 NAS bucket creation
-image::screenshot-s3-nas-bucket-create.png[Screenshot of System Manager showing the S3 NAS bucket creation interface in Cloud Volumes ONTAP]
+[NOTE]
+Ensure to select the correct NAS volume and assign read-only permissions to the S3 user during the S3 NAS bucket creation process to allow Azure OneLake to read the data.
 
-. Select the NAS volume to associate with the S3 bucket.
-+
-.NAS volume selection
-image::screenshot-s3-nas-volume-select.png[Screenshot showing the NAS volume selection step during S3 NAS bucket creation in System Manager]
+== Configure the Azure on-premises data gateway
 
-. Verify the read-only permissions assigned to the S3 user.
-+
-.Cloud Volumes ONTAP S3 read-only permissions
-image::screenshot-cvo-s3-readonly-permissions.png[Screenshot showing the read-only permissions configured for the Cloud Volumes ONTAP S3 user]
-
-. Confirm that the NAS S3 bucket configuration is complete.
-+
-.Completed NAS S3 bucket configuration
-image::screenshot-cvo-nas-s3-bucket-complete.png[Screenshot showing the completed NAS S3 bucket configuration in Cloud Volumes ONTAP]
-
-== Configure the Azure On-Premises Data Gateway
-
-Install and configure an Azure On-Premises Data Gateway (OPDG) on a VM inside your virtual network (vNET) to enable connectivity between Microsoft Fabric OneLake and your Cloud Volumes ONTAP system.
+Install and configure an Azure on-premises data gateway on a VM inside your virtual network (vNET) to enable connectivity between Microsoft Fabric OneLake and your Cloud Volumes ONTAP system.
 
 .Steps
-. Install the Azure On-Premises Data Gateway on a VM inside your vNET.
+. Install the Azure on-premises data gateway on a VM inside your vNET.
 +
-Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway[Download and install a standard gateway^] for installation steps.
+Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway[the Microsoft documentation: Download and install a standard gateway^] for installation steps.
 
-. Configure the Azure On-Premises Data Gateway using the gateway application.
+. Log in to the Azure On-premises data gateway application with your email ID and register the gateway on your system.
 +
-Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-app[Manage the On-Premises Data Gateway app^] for configuration steps.
+Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-app[the Microsoft documentation: Manage the On-premises data gateway app^] for configuration steps.
 +
-.Azure On-Premises Data Gateway configuration step 1
-image::screenshot-azure-opdg-config-1.png[Screenshot showing the first step of configuring the Azure On-Premises Data Gateway application]
-+
-.Azure On-Premises Data Gateway configuration step 2
-image::screenshot-azure-opdg-config-2.png[Screenshot showing the second step of configuring the Azure On-Premises Data Gateway application]
-+
-.Azure On-Premises Data Gateway configuration step 3
-image::screenshot-azure-opdg-config-3.png[Screenshot showing the third step of configuring the Azure On-Premises Data Gateway application]
-+
-.Azure On-Premises Data Gateway configuration step 4
-image::screenshot-azure-opdg-config-4.png[Screenshot showing the fourth step of configuring the Azure On-Premises Data Gateway application settings]
-+
-.Azure On-Premises Data Gateway configuration step 5
-image::screenshot-azure-opdg-config-5.png[Screenshot showing the final step of configuring the Azure On-Premises Data Gateway application]
+.Azure On-premises data gateway configuration
+image::screenshot-azure-opdg-config-5.png[Screenshot showing the final step of configuring the Azure On-premises data gateway application]
 
-== Configure Microsoft Fabric OneLake
+== Configure Microsoft Fabric
 
 Create an Amazon S3-compatible shortcut in your Azure OneLake lakehouse to connect to your Cloud Volumes ONTAP S3 bucket.
 
 .Before you begin
 * If you don't have a lakehouse, create one. Refer to link:https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Create a lakehouse with OneLake^] for steps.
 * Ensure the S3-compatible bucket credentials meet the access and authorization requirements for S3 shortcuts.
-* Verify that the On-Premises Data Gateway is listed in your Microsoft Fabric environment:
-+
-.On-Premises Data Gateway in Microsoft Fabric
-image::screenshot-fabric-opdg-gateway-list.png[Screenshot of the Microsoft Fabric portal showing the On-Premises Data Gateway listed in the gateway management section]
-+
-.On-Premises Data Gateway details
-image::screenshot-fabric-opdg-gateway-details.png[Screenshot showing the On-Premises Data Gateway details confirming it is installed and configured in Microsoft Fabric]
+* Go to *Settings > Resources and Extensions > Manage connections and gateways* and verify that the on-premises data gateway is listed in your Microsoft Fabric environment.
 
 .Steps
 . Open the lakehouse in Microsoft Fabric.
-. Right-click on a directory within the Lake view of the lakehouse.
+. Right-click on a directory within the *Lake* view of the lakehouse.
 . Select *New shortcut*.
-+
-.New shortcut context menu
-image::screenshot-lakehouse-new-shortcut.png[Screenshot showing the New shortcut option in the right-click context menu within the Azure OneLake lakehouse Lake view]
-
-. Under *External sources*, select *Amazon S3 compatible*.
-+
-.Amazon S3 compatible source selection
-image::screenshot-shortcut-s3-compatible-source.png[Screenshot showing the Amazon S3 compatible option selected under External sources in the OneLake shortcut creation wizard]
-
-. Enter the Cloud Volumes ONTAP S3 configuration details, including the On-Premises Data Gateway.
+. For the source of the shortcut, select *External sources > Amazon S3 compatible*.
+. Enter the Cloud Volumes ONTAP S3 configuration details, including the on-premises data gateway.
 +
 .Cloud Volumes ONTAP S3 shortcut connection settings
-image::screenshot-cvo-s3-shortcut-settings.png[Screenshot showing the S3 connection settings form with Cloud Volumes ONTAP S3 details and the On-Premises Data Gateway configured]
+image::screenshot-cvo-s3-shortcut-settings.png[Screenshot showing the S3 connection settings form with Cloud Volumes ONTAP S3 details and the on-premises data gateway configured]
 
 . Select *Next*.
-. Enter a name for the shortcut.
-. Optionally, enter a sub path to select a specific folder in the S3 bucket.
-. Select *Create*.
-+
-The lakehouse automatically refreshes and the shortcut appears under *Files* in the Explorer pane.
-
-. Confirm the Cloud Volumes ONTAP S3 connection in OneLake.
+. Enter a name for the shortcut. Optionally, enter a sub path to select a specific folder in the S3 bucket.
+. Select *Create*. The lakehouse gets automatically refreshed and the shortcut appears under *Explorer > Files*.
+. Confirm that the Cloud Volumes ONTAP S3 connection is established in OneLake.
 +
 .Cloud Volumes ONTAP S3 connection confirmation
 image::screenshot-cvo-s3-onelake-confirm.png[Screenshot showing the confirmed Cloud Volumes ONTAP S3 shortcut connection displayed under Files in the Azure OneLake lakehouse Explorer pane]
@@ -155,4 +107,4 @@ image::screenshot-cvo-s3-onelake-confirm.png[Screenshot showing the confirmed Cl
 
 After connecting Cloud Volumes ONTAP to Azure OneLake, you can connect a volume to Azure AI Search to create a search service.
 
-For additional information, refer to link:https://learn.microsoft.com/en-us/azure/search/search-how-to-index-onelake-files[How to index OneLake files^].
+For additional information, refer to link:https://learn.microsoft.com/en-us/azure/search/search-how-to-index-onelake-files[the Microsoft documentation: How to index OneLake files^].
