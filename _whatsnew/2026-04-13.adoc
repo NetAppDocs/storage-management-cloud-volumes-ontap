@@ -7,5 +7,6 @@ Cloud Volumes ONTAP now has enhanced support for the Google Cloud C3 series VMs,
 * If you select the local SSD (LSSD) variants of the C3 VMs, Flash Cache gets enabled by default. You can't switch between C3 LSSD VM variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
 * You can also add volumes to both new and existing aggregates on these VMs.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-support-for-next-generation-google-cloud-vms[Cloud Volumes ONTAP support for next generation Google Cloud VMs^]
+.Related links
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-support-for-next-generation-google-cloud-vms[Cloud Volumes ONTAP support for next generation Google Cloud VMs^]

@@ -37,7 +37,6 @@ include::_whatsnew/2026-02-17.adoc[]
 == 12 February 2026
 include::_whatsnew/2026-02-12.adoc[]
 
-
 == 10 February 2026
 include::_whatsnew/2026-02-10-918.adoc[]
 
