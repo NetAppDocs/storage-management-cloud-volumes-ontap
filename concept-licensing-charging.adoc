@@ -40,7 +40,7 @@ Your license is always charged first, but you'll be charged from the hourly rate
 ** If you exceed your licensed capacity
 ** If the term of your license expires
 
-* If you have a BYOL license and an annual contract from a marketplace, your consumption and overages are charged based on the billing preference you set. To understand how you are charged, refer to link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages[Billing preferences and overages].
+* If you have a BYOL license and an annual contract from a marketplace, your consumption and overages are charged according to the billing preference you set. To understand how you are charged, refer to link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages[Billing preferences and overages].
 
 * Only single-node systems with BYOL are supported in China regions. China region deployments are exempt from BYOL licensing restrictions.
 
