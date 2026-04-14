@@ -1,0 +1,18 @@
+=== Improved Cloud Volumes ONTAP support with Google Cloud C3 VMs
+ 
+Cloud Volumes ONTAP now has enhanced support for the Google Cloud C3 series VMs, enabling these additional capabilities:
+ 
+* In your Cloud Volumes ONTAP deployments, you can switch instance types among different variants within the C3 family.
+* When changing the instance type, if you select c3-standard-44 or c3-standard-88 and their LSSD variants as the target VM, the Google network service egress network tier Tier-1 is applied automatically. If you switch to any other C3 variant, the egress network tier is set to Standard.
++
+[NOTE]
+Changing the egress network tier to Tier-1 incurs additional costs. Plan the deployment and upgrade accordingly.
++
+* If you select the local SSD (LSSD) variants of C3, Flash Cache gets enabled by default. You can't switch between C3 LSSD variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
+* On your C3 VMs, you can now add volumes to both new and existing aggregates. 
+* You can change the IOPS and throughput settings when adding volumes through the NetApp Console or by using the `PUT /gcp/vsa/aggregates/{workingEnvironmentId}/{aggregateName}` API.
+
+
+.Related links
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-support-for-next-generation-google-cloud-vms[Cloud Volumes ONTAP support for next generation Google Cloud VMs^]
