@@ -5,38 +5,87 @@ keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ
 summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS quickly.
 ---
 
-= Deploy Cloud Volumes ONTAP in AWS using quick deployment
+= Deploy Cloud Volumes ONTAP with quick create
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
+//This task topic was initially written for only AWS. But the quick deployment wizard in CVO is similar for all providers. So making this generic for all. There'll be tabs here, and it will eliminate filtering.
+
 [.lead]
-You can deploy Cloud Volumes ONTAP in AWS using a quick deployment method for both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method. It also offers more clarity in the workflow by automatically setting default values on a single page and minimizing navigation.
+You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS) and Microsoft Azure using quick creat that faster deployment in both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
 
 .Before you begin
 
-You need the following to add a Cloud Volumes ONTAP system in AWS from the NetApp Console.
+You need the following to add a Cloud Volumes ONTAP system from the NetApp Console.
 
 [[licensing]]
-* A Console agent that's up and running.
+|===
+a|Step
 
-** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Console agent that is associated with your project or workspace^].
+a|A Console agent that's up and running. You should have a Console agent that is associated with your project or workspace. You should be prepared to leave the Console agent running at all times.
 
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^].
+a|[role="tabbed-block"]
+====
+.For AWS, refer to
+--
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Console agent that is associated with your project or workspace^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^]
+--
 
-* An understanding of the configuration that you want to use.
-+
-You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, refer to link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration^].
+.For Azure, refer to
+--
+--
 
-* An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
-+
-link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
+====
 
-* DNS and Active Directory for CIFS configurations.
-+
-For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^].
+|An understanding of the configuration that you want to use. You should have prepared by choosing a configuration and by obtaining networking information from your administrator.
+
+a|[role="tabbed-block"]
+====
+.For AWS, refer to
+--
+link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration^]
+--
+
+.For Azure, refer to
+--
+--
+
+====
+
+|An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
+
+a|[role="tabbed-block"]
+====
+.For AWS, refer to
+--
+link:task-set-up-licensing-aws.html[Learn how to set up licensing^]
+--
+
+.For Azure, refer to
+--
+--
+
+====
+
+|DNS and Active Directory for CIFS configurations.
+
+a|[role="tabbed-block"]
+====
+.For AWS, refer to
+--
+link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^]
+--
+
+.For Azure, refer to
+--
+--
+====
+
+|===
 
 .About this task
 
