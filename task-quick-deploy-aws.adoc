@@ -22,12 +22,11 @@ You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS) and Microsoft Az
 You need the following to add a Cloud Volumes ONTAP system from the NetApp Console.
 
 [[licensing]]
-|===
-a|Step
 
-a|A Console agent that's up and running. You should have a Console agent that is associated with your project or workspace. You should be prepared to leave the Console agent running at all times.
 
-a|[role="tabbed-block"]
+. A Console agent that's up and running. You should have a Console agent that is associated with your project or workspace. You should be prepared to leave the Console agent running at all times.
++
+[role="tabbed-block"]
 ====
 .For AWS, refer to
 --
@@ -41,9 +40,9 @@ a|[role="tabbed-block"]
 
 ====
 
-|An understanding of the configuration that you want to use. You should have prepared by choosing a configuration and by obtaining networking information from your administrator.
-
-a|[role="tabbed-block"]
+. An understanding of the configuration that you want to use. You should have prepared by choosing a configuration and by obtaining networking information from your administrator.
++
+[role="tabbed-block"]
 ====
 .For AWS, refer to
 --
@@ -56,9 +55,9 @@ link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configurat
 
 ====
 
-|An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
-
-a|[role="tabbed-block"]
+. An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
++
+[role="tabbed-block"]
 ====
 .For AWS, refer to
 --
@@ -71,9 +70,9 @@ link:task-set-up-licensing-aws.html[Learn how to set up licensing^]
 
 ====
 
-|DNS and Active Directory for CIFS configurations.
-
-a|[role="tabbed-block"]
+. DNS and Active Directory for CIFS configurations.
++
+[role="tabbed-block"]
 ====
 .For AWS, refer to
 --
@@ -85,7 +84,7 @@ link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONT
 --
 ====
 
-|===
+
 
 .About this task
 
