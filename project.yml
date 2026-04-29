@@ -94,7 +94,7 @@ sidebar:
                 - title: Enable VMOrchestratorZonalMultiFD for single availability zones
                   url: /task-saz-feature.html
                 - title: Use quick deployment for Cloud Volumes ONTAP in Azure
-                  url: /task-quick-deploy-aws.html                  
+                  url: /task-quick-deploy-azure.html                  
                 - title: Use advanced deployment for Cloud Volumes ONTAP in Azure
                   url: /task-deploying-otc-azure.html
                 - title: Verify Azure platform image

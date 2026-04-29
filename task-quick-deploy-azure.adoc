@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-quick-deploy-aws.html
+permalink: task-quick-deploy-azure.html
 keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair
 summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS quickly.
 ---
