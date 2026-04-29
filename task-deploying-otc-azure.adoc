@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch a single Cloud Volumes ONTAP system in Azure by creating a Cloud Volumes ONTAP system in NetApp Console.
 ---
 
-= Launch Cloud Volumes ONTAP in Azure
+= Deploy Cloud Volumes ONTAP using advanced options in Azure
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -15,20 +15,20 @@ summary: You can deploy Cloud Volumes ONTAP instances in a single-system configu
 //This task topic was initially written for only AWS. But the quick deployment wizard in CVO is similar for all providers. So making this generic for all. There'll be tabs here, and it will eliminate filtering.
 
 [.lead]
-You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS) and Microsoft Azure using quick creat that faster deployment in both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
+You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS) and Microsoft Azure using `Quick create` for faster deployment in both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
 
 .Before you begin
 
-You need the following to add a Cloud Volumes ONTAP system from the NetApp Console.
+Before getting started, make sure you have the following.
 
 [[licensing]]
 
 
-. A Console agent that's up and running. You should have a Console agent that is associated with your project or workspace. You should be prepared to leave the Console agent running at all times. For information, refer to these links:
+. A Console agent that's up and running and associated with your project or workspace. Keep in mind that the Console agent needs to run at all times. For information, refer to: 
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html[Learn about NetApp Console agents^]
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html[Choose a Console agent deployment method^]
-. An understanding of the configuration that you want to use. You should have prepared by choosing a configuration and by obtaining networking information from your administrator. For information, refer to these links:
+. An understanding of the configuration that you want to use. Before you begin, choose a configuration and obtain networking information from your administrator. For information, refer to:
 +
 [role="tabbed-block"]
 ====
@@ -44,7 +44,7 @@ link:task-planning-your-config-azure.html[Planning your configuration in Azure]
 
 ====
 
-. An understanding of what's required to set up licensing for Cloud Volumes ONTAP. For information, refer to these links:
+. Knowledge of the licensing requirements for Cloud Volumes ONTAP. For information, refer to:
 +
 [role="tabbed-block"]
 ====
@@ -60,7 +60,7 @@ link:task-set-up-licensing-azure.html[Set up licensing in Azure]
 
 ====
 
-. DNS and Active Directory for CIFS configurations. For information, refer to these links:
+. DNS and Active Directory for CIFS configurations. For information, refer to:
 +
 [role="tabbed-block"]
 ====
@@ -70,12 +70,11 @@ link:reference-networking-aws.html[Networking requirements in AWS]
 --
 
 .Azure
+--
 link:reference-networking-azure.html[Networking requirements in Azure]
 --
---
+
 ====
-
-
 
 .About this task
 
@@ -87,16 +86,16 @@ Immediately after you create the Cloud Volumes ONTAP system, the NetApp Console 
 
 . [[subscribe]]On the Canvas page, click *Add System* and follow the prompts.
 
-. Select the provider > *Cloud Volumes ONTAP* > *Add new*. The *Quick create* option is selected by default.
+. Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP* > *Add new*. The *Quick create* option is selected by default.
 
 image:screenshot-aws-quick-create.png[width=800,alt="AWS Quick Create"]
 
 .System details
 
 . *Cloud provider account/credentials*: The account and subscription details are automatically populated based on your Console agent. If you have multiple accounts or subscriptions, select the one you want to use. If a Console agent is unavailable, you'll be prompted to https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html[create a Console agent^].
-. *Name*: The system name. The Console uses the system (cluster) name to name the Cloud Volumes ONTAP system and the VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+. *Name*: Enter a name for your Cloud Volumes ONTAP system (also called the cluster name). The Console uses the system (cluster) name to name the Cloud Volumes ONTAP system and the VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 . *ONTAP credentials* These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. You can keep the default _admin_ user name or change it to a custom user name.
-. *Tags* Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after its created. Note that the API does not limit you to four tags when creating a system.
+. *Tags* Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after it's created. Note that the API does not limit you to four tags when creating a system.
 For information about tags, refer to 
 
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
@@ -107,14 +106,18 @@ For information about tags, refer to
 . *Deployment type*: Select the deployment type that you want to use, single node, high availability (HA) in a single availability zone (AZ), or HA in a multiple AZ. 
 . *Network configuration*: Enter the network information that you recorded in the planning worksheet for regions, VNets, and subnets.
 .. *Region*: By default, the region of the associated cloud account that has VPC with subnet resources is selected. 
-.. *Availability zone*: ##If you select single node deployment, you can select an availability zone. If you select HA in a single AZ, you must select an availability zone. If you select HA in multiple AZs, the availability zones for the nodes are automatically selected based on the VPC and subnet selection.##
+.. *Availability zone*: 
+*** Single node: You can't select an availability zone
+*** HA in single AZ: You must select an availability zone
+*** HA in multiple AZs: Availability zones are automatically selected based on your VPC and subnet.
 .. *VPC*: Enter a VPC for the region with a subnet. If there are no subnets, then the default value for the VPC is selected.
-.. *Subnet*: ##You can select a subnet for the VPC only for a single node deployment or HA deployment in a single AZ.##
+.. *Subnet*: Subnet selection is available for single node deployments and HA deployments in a single AZ.
 
 ifdef::aws[]
+
 .AWS High Availability
 
-If you have selected HA configuration, enter the following information:
+If you selected HA configuration, enter the following information:
 
 [role="tabbed-block"]
 ====

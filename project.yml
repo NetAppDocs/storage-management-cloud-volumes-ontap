@@ -66,9 +66,9 @@ sidebar:
               url: /task-set-up-iam-roles.html
             - title: Set up licensing
               url: /task-set-up-licensing-aws.html
-            - title: Use quick deployment method for Cloud Volumes ONTAP in AWS
+            - title: Use quick deployment for Cloud Volumes ONTAP in AWS
               url: /task-quick-deploy-aws.html
-            - title: Use advanced deployment method for Cloud Volumes ONTAP in AWS
+            - title: Use advanced deployment for Cloud Volumes ONTAP in AWS
               url: /task-deploying-otc-aws.html
             - title: Deploy Cloud Volumes ONTAP in AWS Secret regions
               url: /task-getting-started-aws-c2s.html
@@ -92,8 +92,10 @@ sidebar:
                 - title: Enable high-availability mode
                   url: /task-azure-high-availability-mode.html
                 - title: Enable VMOrchestratorZonalMultiFD for single availability zones
-                  url: /task-saz-feature.html  
-                - title: Launch Cloud Volumes ONTAP in Azure
+                  url: /task-saz-feature.html
+                - title: Use quick deployment for Cloud Volumes ONTAP in Azure
+                  url: /task-quick-deploy-aws.html                  
+                - title: Use advanced deployment for Cloud Volumes ONTAP in Azure
                   url: /task-deploying-otc-azure.html
                 - title: Verify Azure platform image
                   entries:
