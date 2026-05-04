@@ -89,7 +89,7 @@ For information about tags, refer to
 
 . *Deployment type/topology*: Select the deployment type that you want to use, single node, high availability (HA) in a single availability zone (AZ), or HA in a multiple AZ. 
 . *Network configuration*: Enter the network information that you recorded in the planning worksheet for regions, VNets, and subnets.
-.. *Region*: By default, the region of the associated cloud account that has VPC with subnet resources is selected. 
+.. *Region*: By default, the region of the associated cloud account with the resources is selected. 
 .. *Availability zone*: 
 *** Single node: You can't select an availability zone
 *** HA in single AZ: You must select an availability zone
