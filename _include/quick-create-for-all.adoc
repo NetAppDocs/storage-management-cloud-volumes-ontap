@@ -141,6 +141,10 @@ ifdef::aws[]
 In AWS, immediately after you create the Cloud Volumes ONTAP system, the NetApp Console launches a test instance in the specified VPC to verify connectivity. If successful, the Console immediately terminates the instance and then starts deploying the system. If the Console cannot verify connectivity, creation of the system fails. The test instance is either a `t2.nano` (for default VPC tenancy) or a `m3.medium` (for dedicated VPC tenancy).
 endif::aws[]
 
+ifdef::azure[]
+In Azure, the Console displays the resources and disks that will be assigned when the deployment process completes.
+endif::azure[]
+
 
 .After you finish
 
