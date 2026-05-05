@@ -60,10 +60,6 @@ link:reference-networking-azure.html[Networking requirements in Azure]
 
 ====
 
-.About this task
-
-Immediately after you create the Cloud Volumes ONTAP system, the NetApp Console launches a test instance in the specified VPC to verify connectivity. If successful, the Console immediately terminates the instance and then starts deploying the system. If the Console cannot verify connectivity, creation of the system fails. The test instance is either a `t2.nano` (for default VPC tenancy) or a `m3.medium` (for dedicated VPC tenancy).
-
 .Steps
 
 . From the left navigation menu, select *Storage > Management*.
@@ -91,9 +87,9 @@ For information about tags, refer to
 . *Network configuration*: Enter the network information that you recorded in the planning worksheet for regions, VNets, and subnets.
 .. *Region*: By default, the region of the associated cloud account with the resources is selected. 
 .. *Availability zone*: 
-*** Single node: You can't select an availability zone
+*** Single node: You can select a supported availability zone for single node deployments
 *** HA in single AZ: You must select an availability zone
-*** HA in multiple AZs: Availability zones are automatically selected based on your VPC and subnet.
+*** HA in multiple AZs: Availability zones are automatically selected based on your region and subnet.
 .. *Subnet*: Subnet selection is available for single node deployments and HA deployments in a single AZ.
 ifdef::aws[]
 .. *VPC*:For AWS, enter a VPC for the region with a subnet. If there are no subnets, then the default value for the VPC is selected.
@@ -138,8 +134,18 @@ TIP: If you want to utilize WORM and data tiering, you must disable Backup and R
 +
 * *NetApp Support Site account*: If you have multiple accounts, select the one you want to use. 
 
-.Summary
-Check or edit the details you entered, and then click *Create*.
+* Check or edit the details you entered, and then click *Create*.
+
+ifdef::aws[]
+In AWS, Immediately after you create the Cloud Volumes ONTAP system, the NetApp Console launches a test instance in the specified VPC to verify connectivity. If successful, the Console immediately terminates the instance and then starts deploying the system. If the Console cannot verify connectivity, creation of the system fails. The test instance is either a `t2.nano` (for default VPC tenancy) or a `m3.medium` (for dedicated VPC tenancy).
+endif::aws[]
+
+
+.After you finish
+
+The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
+
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
 
 [CAUTION]
 After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS or Azure cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
