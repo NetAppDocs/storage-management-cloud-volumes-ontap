@@ -66,7 +66,7 @@ link:reference-networking-azure.html[Networking requirements in Azure]
 
 . [[subscribe]]On the Canvas page, click *Add System* and follow the prompts.
 
-. Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP* > *Add new*. The *Quick create* option is selected by default. The following shows a sample screen for AWS.
+. Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Add new*. The *Quick create* option is selected by default. The following shows a sample screen for AWS.
 
 image:screenshot-aws-quick-create.png[width=800,alt="AWS Quick Create"]
 
@@ -75,7 +75,7 @@ image:screenshot-aws-quick-create.png[width=800,alt="AWS Quick Create"]
 . *Cloud provider account/credentials*: The account and subscription details are automatically populated based on your Console agent. If you have multiple accounts or subscriptions, select the one you want to use. If a Console agent is unavailable, you'll be prompted to https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html[create a Console agent^].
 . *Name*: Enter a name for your Cloud Volumes ONTAP system (also called the cluster name). The Console uses the system (cluster) name to name the Cloud Volumes ONTAP system and the VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 . *ONTAP credentials*: These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. You can keep the default _admin_ user name or change it to a custom user name.
-. *Tags*: Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after it's created. Note that the API does not limit you to four tags when creating a system.
+. *Tags*: Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after it's created.
 +
 For information about tags, refer to the following: 
 
@@ -87,13 +87,13 @@ For information about tags, refer to the following:
 . *Deployment type/topology*: Select the deployment type that you want to use, single node, high availability (HA) in a single availability zone (AZ), or HA in multiple AZs. 
 . *Network configuration*: Enter the network information that you recorded in the planning worksheet for regions, VNets, and subnets.
 .. *Region*: By default, the region of the associated cloud account with the resources is selected. 
-.. *Availability zone*: 
-*** Single node: You can select a supported availability zone for single node deployments
-*** HA in single AZ: You must select an availability zone
-*** HA in multiple AZs: Availability zones are automatically selected based on your region and subnet.
-.. *Subnet*: Subnet selection is available for single node deployments and HA deployments in a single AZ.
+.. *Availability zone*: You can select the availability zone based on the deployment type you choose, and if the selected region supports the availability zone. 
+.. *Subnet*: Select a subnet for the region.
+ifdef::azure[]
+.. *VNet*: For Azure, select the required VNET.
+endif::azure[]
 ifdef::aws[]
-.. *VPC*: For AWS, enter a VPC for the region with a subnet. If there are no subnets, then the default value for the VPC is selected.
+.. *VPC*: For AWS, enter a VPC for the region with a subnet as per your planned configuration..
 
 .AWS High Availability
 
@@ -125,7 +125,7 @@ ifdef::aws[]
 //video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to the Console from the AWS marketplace"]
 //+
 endif::aws[]
-. *License*: Select the license type you want to use with this Cloud Volumes ONTAP system. You can choose from Professional, Essential, and Premium licenses. For information about different licenses, refer to link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses^].
+. *License*: Select the license type you want to use with this Cloud Volumes ONTAP system. You can choose from Professional, Essential, and Freemium licenses. For information about different licenses, refer to link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses^].
 . *Data services and features*: Keep the services enabled or disable the services you don't want to use with Cloud Volumes ONTAP.
 * https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html[Learn more about NetApp Classification^]
 * https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery^]
@@ -137,20 +137,19 @@ TIP: If you want to utilize WORM and data tiering, you must disable Backup and R
 
 * Check or edit the details you entered, and then click *Create*.
 
+ifdef::azure[]
+In Azure, the *Overview* section displays the resources that will be allocated when the deployment process completes.
+endif::azure[]
+
 ifdef::aws[]
 In AWS, immediately after you create the Cloud Volumes ONTAP system, the NetApp Console launches a test instance in the specified VPC to verify connectivity. If successful, the Console immediately terminates the instance and then starts deploying the system. If the Console cannot verify connectivity, creation of the system fails. The test instance is either a `t2.nano` (for default VPC tenancy) or a `m3.medium` (for dedicated VPC tenancy).
 endif::aws[]
-
-ifdef::azure[]
-In Azure, the Console displays the resources and disks that will be assigned when the deployment process completes.
-endif::azure[]
-
 
 .After you finish
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment* that takes you to the ~Advanced mode~ wizard.
 
 [CAUTION]
 After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS or Azure cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.

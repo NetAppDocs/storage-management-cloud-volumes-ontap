@@ -5,7 +5,7 @@ keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ
 summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS quickly.
 ---
 
-= Deploy Cloud Volumes ONTAP with quick create
+= Deploy Cloud Volumes ONTAP with Quick create
 :hardbreaks:
 :nofooter:
 :icons: font

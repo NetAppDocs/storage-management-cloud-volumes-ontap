@@ -1222,7 +1222,7 @@ NOTE: The maximum system capacity with disks alone remains at 256 TB due to Goog
 
 === New machine types in Google Cloud
 
-Cloud Volumes ONTAP now supports the following machine types:
+Cloud Volumes ONTAP now supports the following machine types with these PAYGO licenses in Google Cloud:
 
 * n2-standard-4 with the Explore license and with BYOL
 * n2-standard-8 with the Standard license and with BYOL
