@@ -1,0 +1,9 @@
+=== Support for capacity-based licensing for private-mode Cloud Volumes ONTAP deployments
+
+You can now optimize costs for your private mode Cloud Volumes ONTAP deployments by using the capacity-based Essentials licensing package.
+In addition, you can transition your existing BYOL node-based licenses to the Essentials package using the license conversion tool in the NetApp Console. This lets you retain the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
+
+
+
+.Related links
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license^]
