@@ -149,7 +149,7 @@ endif::aws[]
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment* that takes you to the ~Advanced mode~ wizard.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select *Re-create environment* on the system to continue with the deployment using the `Advanced` mode wizard.
 
 [CAUTION]
 After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS or Azure cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
