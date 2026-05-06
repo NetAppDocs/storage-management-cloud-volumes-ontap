@@ -5,7 +5,7 @@ keywords: license, licensing, install, updating license, system license, add sys
 summary: Manage your node-based licenses in the NetApp Console to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 ---
 
-= Manage node-based licensing for Cloud Volumes ONTAP
+= Manage node-based licenses for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -23,7 +23,7 @@ _Node-based licenses_ are the previous generation licensing model (and not avail
 * Bring your own license (BYOL) licenses purchased from NetApp
 * Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace
 
-You can manage node-based Cloud Volumes ONTAP licenses licenses from the NetApp Console.
+Marketplace subscriptions are not supported for node-based licensing. You can manage node-based Cloud Volumes ONTAP licenses licenses from the NetApp Console.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 

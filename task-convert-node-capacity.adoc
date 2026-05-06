@@ -19,9 +19,6 @@ For annual or longer-term commitments, NetApp recommends that you contact your N
 
 For information about the EOA and EOS, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
-[NOTE]
-##If you have private mode Cloud Volumes ONTAP deployments, you can transition your existing BYOL node-based licenses to the Essentials package using the license conversion tool in the NetApp Console. This lets you retain the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.##
-
 .About this task
 
 * When you use the license conversion tool, the transition from node-based to capacity-based licensing model is carried out in place and online that eliminates the need for any data migration or provisioning of additional cloud resources.
@@ -30,10 +27,10 @@ For information about the EOA and EOS, refer to link:concept-licensing.html#end-
 * The underlying cloud resources remain unaffected post conversion.
 * The license conversion tool supports all deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, bring your own license (BYOL), and PAYGO.
 * ##For standard mode,## the tool supports all node-based licenses as the source and all capacity-based licenses as the destination. For example, if you have a PAYGO Standard node-based license, you can convert it to any capacity-based license purchased through the marketplace. NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
-* ##For private mode, you can convert any node-based license to the Essentials package. For example, if you have a BYOL Standard node-based license, you can convert it to a BYOL Essentials package. The conversion from node-based licenses to the Professional package is not supported for private mode.## 
 * The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud.
 * Post conversion, the serial number of the node-based license will be replaced by a capacity-based format. This is done as a part of the conversion, and is reflected on your NetApp Support Site (NSS) account. 
 * When you transition to the capacity-based model, your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
+* *Private mode considerations*: If you have private mode Cloud Volumes ONTAP deployments, you can convert your existing BYOL node-based licenses to an Essentials package using the license conversion tool in the NetApp Console. This transition lets you retain the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions. You can convert a node-based license to the corresponding Essentials package, where the capacity remaining in the node-based license continues to be charged through the converted Essentials package. For example, if you have a BYOL Secondary HA node-based license, you can run the conversion only if you have a Essentials Secondary HA package. The conversion from node-based licenses to any other capacity-based license, such as a Professional package, is not supported for private mode.## 
 
 .Before your begin
 

@@ -154,6 +154,8 @@ sidebar:
               url: /task-manage-keystone.html
             - title: Manage node-based licenses
               url: /task-manage-node-licenses.html
+            - title: Convert node-based licenses
+              url: /task-convert-node-capacity.html          
         - title: Volume and LUN administration
           entries:
             - title: Create volumes
@@ -219,8 +221,6 @@ sidebar:
               url: /task-updating-ontap-cloud.html
             - title: Register pay-as-you-go systems
               url: /task-registering.html
-            - title: Convert node-based licenses
-              url: /task-convert-node-capacity.html  
             - title: Stop and start a system
               url: /task-managing-state.html
             - title: Synchronize system time
@@ -283,7 +283,9 @@ sidebar:
             - title: Licensing in Cloud Volumes ONTAP
               url: /concept-licensing.html
             - title: Learn more about capacity-based licenses
-              url: /concept-licensing-charging.html  
+              url: /concept-licensing-charging.html
+            - title: Learn about node-based BYOL licenses
+              url: /concept-license-management.html
         - title: Storage
           entries:
             - title: Client protocols
@@ -320,8 +322,6 @@ sidebar:
           url: /concept-security.html
         - title: Performance
           url: /concept-performance.html
-        - title: Management of node-based BYOL
-          url: /concept-license-management.html
         - title: AutoSupport and Digital Advisor
           url: /concept-active-iq.html
         - title: Default configurations
