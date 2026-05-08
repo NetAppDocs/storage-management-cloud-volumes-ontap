@@ -15,6 +15,19 @@ summary: After you decide which licensing option you want to use for Cloud Volum
 [.lead]
 After you decide which licensing option you want to use with Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when creating a new system.
 
+== Setting preferred billing for standalone AWS listings
+
+If you have a standalone AWS subscription linked to your AWS account, you can pay for Cloud Volumes ONTAP through that subscription. If you also have NetApp Intelligent Services (NIS) subscriptions, you can pay for your data services through the package associated with the NIS subscription. For existing subscriptions, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage. For information, refer to 
+
+.Steps
+. On the left panel of the NetApp Console, select *Administration > Licenses and subscriptions > Billing preferences > Cloud Volumes ONTAP*.
+. On the AWS tab, select the standalone subscription and click the options icon image:screenshot_gallery_options.gif[kabob icon].
+. On the Edit configuration window, select the subscription number of the standalone listing in the *AWS account credentials* field.
+. Click *Configure*. You can see the subscription as the preferred option for your Cloud Volumes ONTAP billing in AWS. 
+. When deploying a new Cloud Volumes ONTAP system, select the Essentials package to bill through the standalone subscription. For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^].
+
+Repeat the same steps for the NIS subscription on the *Data services* tab to use the NIS subscription for your data services. When deploying a new Cloud Volumes ONTAP system, select the Professional package to bill through the NIS subscription.
+
 == Capacity-based license
 
 Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. Capacity-based licensing is available in the form of a _package_: the Essentials package or the Professional package.
