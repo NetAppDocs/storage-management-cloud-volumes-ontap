@@ -1,0 +1,9 @@
+=== Simplified Cloud Volumes ONTAP deployment in Azure
+ 
+You can now use Quick create to deploy Cloud Volumes ONTAP in Azure for both single-node and high-availability (HA) configurations. This streamlined process reduces the number of steps compared to the advanced method, automatically sets default values on a single page, and minimizes navigation, making deployment faster and easier.
+
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP in Azure with Quick create^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options in Azure^]
