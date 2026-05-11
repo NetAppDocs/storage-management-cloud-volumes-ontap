@@ -25,11 +25,12 @@ This is applicable if you are an existing customer with NIS subscriptions associ
 * Link the standalone subscription to your AWS account.
 * Set your billing preference to the standalone subscription for Cloud Volumes ONTAP usage with the Essentials package. Use the *Billing preferences* tab in the NetApp Console to configure this setup.
 * (If applicable) Convert your Professional package to an Essentials package and set the billing preference.
-* Continue billing data services through your NIS subscription
+* Continue billing data services through your NIS subscription.
 
 [NOTE]
 No duplicate metering occurs when you use multiple subscription types or migrate between listings.
 
 .Related link
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Change charging methods for capacity licenses^]
