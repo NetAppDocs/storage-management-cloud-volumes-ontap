@@ -13,10 +13,10 @@ Now you can select the billing method that best suits your needs:
 Depending on your subscription type, you get these scenarios:
 
 .Standalone subscription only (new customers)
-If you have only a standalone AWS subscription linked to your AWS account in the NetApp Console and no NIS subscriptions, you can select only the Essentials license package during deployment. The data services *Backup and Recovery* option is unavailable for you.
+If you have only a standalone AWS subscription associated with your AWS account in the NetApp Console and no NIS subscriptions, you can select only the Essentials license package during deployment. The data services *Backup and Recovery* option is unavailable for you.
 
 .Both standalone and NIS subscriptions (existing customers)
-This is the default option for your existing subscriptions if you have subscribed to the NIS listing for data services or have a Professional licensing package for Cloud Volumes ONTAP, and if you haven't set any billing preferences for your Cloud Volumes ONTAP usage. If you have both NIS subscription and standalone listing associated with your AWS account, you can choose how to bill each service:
+If you have both NIS and standalone subscriptions associated with your AWS account, and you haven't set a billing preference, Cloud Volumes ONTAP usage continues to bill through NIS by default. This is also the default for any Cloud Volumes ONTAP instance running the Professional package, because the standalone listing does not support Professional. When both the subscriptions are associated, you can set a billing preference and choose how to bill each service.
 
 * Set the standalone subscription as the preferred billing account for Cloud Volumes ONTAP (with Essentials package). If you have only the Professional package, you can convert it to an Essentials package and charge your Cloud Volumes ONTAP usage by setting the billing preference. We recommend this approach because it helps you manage your Cloud Volumes ONTAP EDP credits more effectively.
 * Use the NIS subscription for billing data services, or the Cloud Volumes ONTAP usage through the Professional package. During deployment, enable the *Backup and Recovery* data service and select the Professional license package to bill data services through the NIS subscription.
