@@ -15,3 +15,4 @@ summary: You can deploy Cloud Volumes ONTAP instances in a single-system configu
 //This task topic was initially written for only AWS. But the quick deployment wizard in CVO is similar for all providers. So making this generic for all. There'll be tabs here, and it will eliminate filtering.
 
 include::_include/quick-create-for-all.adoc[]
+
