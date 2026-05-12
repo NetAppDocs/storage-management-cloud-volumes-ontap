@@ -121,7 +121,7 @@ The HA mediator instance must have an outbound connection to the AWS EC2 service
 
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
 
-During Cloud Volumes ONTAP deployment, the AWS mediator proxy field accepts a server address. If you enter a fully qualified domain name (FQDN) instead of an IP address, the FQDN will fail to resolve unless the AWS VPC is configured with a custom DNS server. This is because the default AWS-provided DNS only resolves public DNS records and internal AWS hosts and can't resolve external FQDNs such as customer proxy servers. If this situation applies to you, you have two options:
+During Cloud Volumes ONTAP deployment, the AWS mediator proxy field accepts a server address. If you enter a fully qualified domain name (FQDN) instead of an IP address, the FQDN will fail to resolve unless the AWS VPC is configured with a custom DNS server. This is because the default AWS-provided DNS only resolves public DNS records and internal AWS hosts and can't resolve external FQDNs such as customer proxy servers. If this scenario applies to you, you have two options:
 
 * Add the proxy server's IP address directly in the mediator proxy field instead of the FQDN.
 * Configure a DHCP options set in your VPC that includes your custom DNS server addresses. This allows AWS to resolve the FQDN when you enter it in the proxy server field during deployment. Refer to the https://docs.aws.amazon.com/vpc/latest/userguide/DHCPOptionSet.html[AWS documentation^] for details.

@@ -15,17 +15,17 @@ summary: After you decide which licensing option you want to use for Cloud Volum
 [.lead]
 After you decide which licensing option you want to use with Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when creating a new system.
 
-== Setting preferred billing for standalone AWS listings
+== Setting preferred billing for standalone AWS listing
 
 If you have a standalone AWS subscription linked to your AWS account, you can pay for Cloud Volumes ONTAP through that subscription. If you also have NetApp Intelligent Services (NIS) subscriptions, you can pay for your data services through the package associated with the NIS subscription. For existing subscriptions, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage.
 
 .About this task
 
-If you are an existing customer with NIS subscriptions associated with the AWS account,NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage. This is the complete process:
+If you are an existing customer with NIS subscriptions associated with the AWS account, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage. This is the complete process:
 
 . Subscribe to a new standalone listing on the AWS portal.
 . Link the standalone subscription to your AWS account.
-. Set your billing preference to the standalone subscription for Cloud Volumes ONTAP usage with the Essentials package. Use the *Billing preferences* tab in the NetApp Console to configure this setup.
+. Set your billing preference to the standalone subscription for Cloud Volumes ONTAP usage with the Essentials package.
 . (If applicable) Convert your Professional package to an Essentials package and set the billing preference. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Change charging methods for capacity licenses^] for information about converting your Professional package to an Essentials package.
 . Continue billing data services through your NIS subscription.
 
