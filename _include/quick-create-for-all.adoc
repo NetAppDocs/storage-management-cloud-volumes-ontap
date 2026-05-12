@@ -92,15 +92,13 @@ For information about tags, refer to the following:
 .AWS-specific information
 --
 *VPC*: For AWS, enter a VPC for the region with a subnet as per your planned
---
+
 .AWS High Availability
 
 If you selected an HA configuration, enter the following information:
 
-[role="tabbed-block"]
-=====
 .HA in single AZ
---
+
 . *Mediator Access*: Specify the mediator access information. The mediator is a separate instance that monitors the health of the HA pair and provides quorum in case of a failure. Provide the key pair name to enable the mediator instance to connect to the AWS EC2 service, and select the connection method.
 
 .HA in multiple AZ
@@ -109,9 +107,11 @@ If you selected an HA configuration, enter the following information:
 . *Floating IPs*: If you chose multiple AZs, specify the floating IP addresses for the NFS and CIFS services and cluster and SVM management. The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 . *Mediator Access*: Specify the mediator access information. The mediator is a separate instance that monitors the health of the HA pair and provides quorum in case of a failure. Provide the key pair name to enable the mediator instance to connect to the AWS EC2 service, and select the connection method.
 . *Route Tables*: If you chose multiple AZs, select the route tables that include routes to the floating IP addresses. If you have more than one route table, it is important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
+
+.Charging and Services :Marketplace Subscription*
+Select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
 --
-*Charging and Services*: *Marketplace Subscription*: Select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
-=====
+
 .Azure-specific information
 --
 *VNet*: For Azure, select the required VNET.
