@@ -108,8 +108,9 @@ If you selected an HA configuration, enter the following information:
 . *Mediator Access*: Specify the mediator access information. The mediator is a separate instance that monitors the health of the HA pair and provides quorum in case of a failure. Provide the key pair name to enable the mediator instance to connect to the AWS EC2 service, and select the connection method.
 . *Route Tables*: If you chose multiple AZs, select the route tables that include routes to the floating IP addresses. If you have more than one route table, it is important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
 
-.Charging and Services :Marketplace Subscription*
-Select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
+.Charging and Services
+
+*Marketplace Subscription*: Select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
 --
 
 .Azure-specific information
