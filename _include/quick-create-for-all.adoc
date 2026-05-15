@@ -63,9 +63,25 @@ link:reference-networking-azure.html[Networking requirements in Azure]
 
 . [[subscribe]]On the Canvas page, click *Add System* and follow the prompts.
 
-. Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Add new*. The *Quick create* option is selected by default. The following shows a sample screen for AWS.
+. Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Add new*. The *Quick create* option is selected by default. 
 
-image:screenshot-aws-quick-create.png[width=800,alt="AWS Quick Create"]
+// Start snippet: collapsible block (closed on page load)
+.Sample screenshot of the Quick create option
+[%collapsible]
+====
+.AWS
+--
+image:screenshot-aws-quick-create.png[width=500,alt="AWS Quick Create"]
+--
+.Azure
+--
+image:screenshot-azure-quick-create.png[width=500,alt="Azure Quick Create"]
+--
+
+
+====
+// End snippet
+
 
 .System details
 
