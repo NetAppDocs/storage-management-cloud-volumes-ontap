@@ -20,4 +20,4 @@ include::_include/quick-create-for-all.adoc[]
 
 * link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration]
 * 
-* link:task-deploying-otc-aws.html[AWS: Deploy Cloud Volumes ONTAP in AWS using advanced deployment]
+* link:task-deploying-otc-aws.html[Deploy Cloud Volumes ONTAP in AWS using advanced deployment]

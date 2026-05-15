@@ -16,3 +16,7 @@ summary: You can deploy Cloud Volumes ONTAP instances in a single-system configu
 
 include::_include/quick-create-for-all.adoc[]
 
+.Related links
+
+* link:task-planning-your-config-azure.html[Planning your Cloud Volumes ONTAP configuration]
+* link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP in Azure using advanced deployment]
