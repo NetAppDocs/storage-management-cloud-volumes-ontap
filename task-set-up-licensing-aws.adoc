@@ -15,27 +15,29 @@ summary: After you decide which licensing option you want to use for Cloud Volum
 [.lead]
 After you decide which licensing option you want to use with Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when creating a new system.
 
-== Freemium
+== Setting preferred billing for standalone AWS listing
 
-Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up to 500 GiB of provisioned capacity. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials[Learn more about the Freemium offering^].
+If you have a standalone AWS subscription linked to your AWS account, you can pay for Cloud Volumes ONTAP through that subscription. If you also have NetApp Intelligent Services (NIS) subscriptions, you can pay for your data services through the package associated with the NIS subscription. For existing subscriptions, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage.
+
+.About this task
+
+If you are an existing customer with NIS subscriptions associated with the AWS account, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage. This is the complete process:
+
+. Subscribe to a new standalone listing on the AWS portal.
+. Link the standalone subscription to your AWS account.
+. Set your billing preference to the standalone subscription for Cloud Volumes ONTAP usage with the Essentials package.
+. (If applicable) Convert your Professional package to an Essentials package and set the billing preference. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Change charging methods for capacity licenses^] for information about converting your Professional package to an Essentials package.
+. Continue billing data services through your NIS subscription.
+
 
 .Steps
+. On the left panel of the NetApp Console, select *Administration > Licenses and subscriptions > Billing preferences > Cloud Volumes ONTAP*.
+. On the AWS tab, select the standalone subscription and click the options icon image:screenshot_gallery_options.gif[kabob icon].
+. On the Edit configuration window, select the subscription number of the standalone listing in the *AWS account credentials* field.
+. Click *Configure*. You can see the subscription as the preferred option for your Cloud Volumes ONTAP billing in AWS. 
+. When deploying a new Cloud Volumes ONTAP system, select the Essentials package to bill through the standalone subscription. For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^].
 
-. From the left navigation menu of the NetApp Console, select *Storage > Management*.
-
-. On the *Systems* page, click *Add System* and follow the steps.
-
-.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
-+
-You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages[Essentials package^].
-+
-image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP system.]
-
-.. After you return to the Console, select *Freemium* when you reach the charging methods page.
-+
-image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP system.]
-
-link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
+Repeat the same steps for the NIS subscription on the *Data services* tab to use the NIS subscription for your data services. When deploying a new Cloud Volumes ONTAP system, select the Professional package to bill through the NIS subscription.
 
 == Capacity-based license
 
@@ -122,6 +124,28 @@ image:screenshot-aws-annual-subscription.png[A screenshot of the annual contract
 .. After you return to the Console, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP system.]
+
+link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
+
+== Freemium
+
+Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up to 500 GiB of provisioned capacity. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials[Learn more about the Freemium offering^].
+
+.Steps
+
+. From the left navigation menu of the NetApp Console, select *Storage > Management*.
+
+. On the *Systems* page, click *Add System* and follow the steps.
+
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages[Essentials package^].
++
+image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP system.]
+
+.. After you return to the Console, select *Freemium* when you reach the charging methods page.
++
+image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP system.]
 
 link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
 

@@ -1,0 +1,39 @@
+=== Flexible billing for Cloud Volumes ONTAP and data services in AWS
+
+NetApp offers enhanced billing options for your Cloud Volumes ONTAP subscriptions in AWS, giving you more control over how you pay for Cloud Volumes ONTAP capacity and NetApp data services, such as BlueXP backup and recovery.
+Previously, all Cloud Volumes ONTAP and data services usage were billed together through the NetApp Intelligent Services (NIS) listing in the AWS marketplace. 
+
+Due to changes in AWS Enterprise Discount Program (EDP), NetApp has introduced a standalone Cloud Volumes ONTAP subscription in the AWS marketplace that allows you to separate the billing of Cloud Volumes ONTAP capacity from data services. This separation gives you more flexibility in managing your EDP credits and costs. NetApp recommends using the standalone subscription for better cost management of your Cloud Volumes ONTAP usage, while continuing to use the NIS subscription for billing data services after July 31, 2026, when the EDP requirements take effect.
+
+The standalone Cloud Volumes ONTAP subscription in AWS supports only valid capacity-based Essentials or Freemium license packages. The Professional package is not supported. You can select the billing method that best suits your needs:
+
+*	*Standalone Cloud Volumes ONTAP subscription (Recommended)*: Pay for your Cloud Volumes ONTAP usage through the standalone subscription in the AWS marketplace, while continuing to bill data services through the NIS subscription. This is the recommended option for most customers who have both standalone and NIS subscriptions associated with their AWS account in the NetApp Console. 
+*	*Combined NIS subscription*: Pay for both Cloud Volumes ONTAP and data services together through the existing NIS listing. The combined approach will be valid for existing customers who have only NIS subscriptions associated with their AWS account in the NetApp Console. However, NetApp recommends that you set your billing preference for your Cloud Volumes ONTAP usage and switch to the standalone subscription for better cost management.
+
+Depending on your subscription type, you get these scenarios:
+
+.Standalone subscription only (new customers)
+If you have only a standalone AWS subscription associated with your AWS account in the NetApp Console and no NIS subscriptions, you can select only the Essentials license package during deployment. The data services *Backup and Recovery* option is unavailable to you.
+
+.Both standalone and NIS subscriptions (existing customers)
+If you have both NIS and standalone subscriptions associated with your AWS account, and you haven't set a billing preference through the *Billing preferences* tab in the NetApp Console, Cloud Volumes ONTAP usage continues to bill through NIS by default. This is also the default for any Cloud Volumes ONTAP instance running the Professional package, because the standalone listing does not support Professional. You can set a billing preference and choose how to bill each service:
+
+* Set the standalone subscription as the preferred billing account for Cloud Volumes ONTAP (with Essentials package). If you have only the Professional package, you can convert it to an Essentials package and charge your Cloud Volumes ONTAP usage by setting the billing preference. We recommend this approach because it helps you manage your Cloud Volumes ONTAP EDP credits more effectively.
+* Use the NIS subscription for billing data services, or the Cloud Volumes ONTAP usage through the Professional package. During deployment, enable the *Backup and Recovery* data service and select the Professional license package to bill data services through the NIS subscription.
+
+.NIS subscription only (existing customers)
+This is applicable if you are an existing customer with NIS subscriptions associated with the AWS account. You can continue billing both Cloud Volumes ONTAP and data services together as you do now. However, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage:
+
+* Subscribe to a new standalone listing on the AWS portal.
+* Link the standalone subscription to your AWS account.
+* Set your billing preference to the standalone subscription for Cloud Volumes ONTAP usage with the Essentials package. 
+* (If applicable) Convert your Professional package to an Essentials package and set the billing preference.
+* Continue billing data services through your NIS subscription.
+
+[NOTE]
+No duplicate metering occurs when you use multiple subscription types or migrate between listings.
+
+.Related link
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Change charging methods for capacity licenses^]
