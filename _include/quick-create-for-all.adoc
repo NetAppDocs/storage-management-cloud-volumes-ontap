@@ -64,8 +64,7 @@ link:reference-networking-azure.html[Networking requirements in Azure]
 . [[subscribe]]On the Canvas page, click *Add System* and follow the prompts.
 
 . Select your cloud provider (*Amazon Web Services* or *Microsoft Azure*)  > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Add new*. The *Quick create* option is selected by default. 
-
-// Start snippet: collapsible block (closed on page load)
++
 .Sample screenshots of the Quick create option
 [%collapsible]
 ====
@@ -82,7 +81,6 @@ image:screenshot-azure-quick-create.png[width=500,alt="Azure Quick Create"]
 
 =====
 ====
-// End snippet
 
 
 .System details
@@ -128,7 +126,7 @@ If you selected an HA configuration, enter the following information:
 
 .Charging and Services
 
-*Marketplace Subscription*: Select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
+*Marketplace Subscription*: In AWS, select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
 --
 
 .Azure-specific information
