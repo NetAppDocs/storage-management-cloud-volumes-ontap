@@ -4,7 +4,7 @@ settings:
     release_notes_repo: console-relnotes
   harmony_integration: maestro
   internal:
-    pdf_enabled: true
+    pdf_enabled: false
   prod:
     pdf_enabled: true
     harmony_enabled: true
@@ -66,9 +66,9 @@ sidebar:
               url: /task-set-up-iam-roles.html
             - title: Set up licensing
               url: /task-set-up-licensing-aws.html
-            - title: Use quick deployment method for Cloud Volumes ONTAP in AWS
+            - title: Deploy Cloud Volumes ONTAP with default values in AWS
               url: /task-quick-deploy-aws.html
-            - title: Use advanced deployment method for Cloud Volumes ONTAP in AWS
+            - title: Deploy Cloud Volumes ONTAP with advanced options in AWS
               url: /task-deploying-otc-aws.html
             - title: Deploy Cloud Volumes ONTAP in AWS Secret regions
               url: /task-getting-started-aws-c2s.html
@@ -92,8 +92,10 @@ sidebar:
                 - title: Enable high-availability mode
                   url: /task-azure-high-availability-mode.html
                 - title: Enable VMOrchestratorZonalMultiFD for single availability zones
-                  url: /task-saz-feature.html  
-                - title: Launch Cloud Volumes ONTAP in Azure
+                  url: /task-saz-feature.html
+                - title: Deploy Cloud Volumes ONTAP with default values in Azure
+                  url: /task-quick-deploy-azure.html                  
+                - title: Deploy Cloud Volumes ONTAP with advanced options in Azure
                   url: /task-deploying-otc-azure.html
                 - title: Verify Azure platform image
                   entries:
