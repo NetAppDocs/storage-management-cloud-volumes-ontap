@@ -2,6 +2,9 @@
  
 You can now use Quick create to deploy Cloud Volumes ONTAP in Azure for both single-node and high-availability (HA) configurations. This streamlined process reduces the number of steps compared to the advanced method, automatically sets default values on a single page, and minimizes navigation, making deployment faster and easier.
 
+[NOTE]
+If you have multiple subscriptions associated with your Azure account in the NetApp Console, you might not be able to see all the subscriptions in the drop-down menu for selection. Enter the subscription ID manually to proceed with the deployment. This limitation will be addressed in a future release.
+
 
 .Related links
 
