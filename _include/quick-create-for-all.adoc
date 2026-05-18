@@ -114,7 +114,7 @@ https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-res
 +
 [role="tabbed-block"]
 ====
-.AWS-specific field information
+.For AWS
 --
 *VPC*: For AWS, enter a VPC for the region with a subnet as per your planned
 
@@ -137,8 +137,7 @@ If you selected an HA configuration, enter the following information:
 
 *Marketplace Subscription*: In AWS, select the AWS marketplace subscription you want to use with this Cloud Volumes ONTAP system.
 --
-
-.Azure-specific field information
+.For Azure
 --
 *VNET*: For Azure, select the required VNET.
 --
