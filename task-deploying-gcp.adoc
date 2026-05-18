@@ -422,7 +422,6 @@ The Console deploys the Cloud Volumes ONTAP system. You can track the progress o
 
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
 
-For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
