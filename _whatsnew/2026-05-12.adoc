@@ -1,6 +1,6 @@
 === Flexible billing for Cloud Volumes ONTAP and data services in AWS
 
-NetApp offers enhanced billing options for your Cloud Volumes ONTAP subscriptions in AWS, giving you more control over how you pay for Cloud Volumes ONTAP capacity and NetApp data services, such as BlueXP backup and recovery.
+NetApp offers enhanced billing options for your Cloud Volumes ONTAP subscriptions in AWS, giving you more control over how you pay for Cloud Volumes ONTAP capacity and NetApp data services, such as NetApp Backup and Recovery.
 Previously, all Cloud Volumes ONTAP and data services usage were billed together through the NetApp Intelligent Services (NIS) listing in the AWS marketplace. 
 
 Due to changes in AWS Enterprise Discount Program (EDP), NetApp has introduced a standalone Cloud Volumes ONTAP subscription in the AWS marketplace that allows you to separate the billing of Cloud Volumes ONTAP capacity from data services. This separation gives you more flexibility in managing your EDP credits and costs. NetApp recommends using the standalone subscription for better cost management of your Cloud Volumes ONTAP usage, while continuing to use the NIS subscription for billing data services after July 31, 2026, when the EDP requirements take effect.
