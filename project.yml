@@ -41,15 +41,15 @@ sidebar:
           url: /concept-overview-cvo.html
         - title: Security and compliance
           url: /placeholder.html
-        - title: Licensing
+        - title: Licensing in Cloud Volumes ONTAP
           entries:
-            - title: Licensing in Cloud Volumes ONTAP
+            - title: Cloud Volumes ONTAP licenses 
               url: /concept-licensing.html
             - title: Learn more about capacity-based licenses
               url: /concept-licensing-charging.html
             - title: Learn about node-based BYOL
               url: /concept-license-management.html
-        - title: High-availability pairs
+        - title: Cloud Volumes ONTAP HA configuration
           entries:
             - title: HA pairs in AWS
               flavor: aws
@@ -64,7 +64,7 @@ sidebar:
               url: /concept-degraded-ha-pair.html 
             - title: Disaster recovery
               url: /task-manage-svm-dr.html
-        - title: Storage
+        - title: Learn about Cloud Volumes ONTAP storage
           entries:
             - title: Default configurations
               url: /reference-default-configs.html
@@ -82,13 +82,13 @@ sidebar:
               url: /concept-flash-cache.html
             - title: WORM storage
               url: /concept-worm.html
-        - title: Performance
+        - title: Performance monitoring
           url: /concept-performance.html
         - title: AutoSupport and Digital Advisor
           url: /concept-active-iq.html
     - title: Deployment
       entries:
-        - title: Supported Cloud Volumes ONTAP versions for new deployments
+        - title: Supported versions for new deployments
           url: /reference-versions.html          
         - title: Deploy in Amazon Web Services
           flavor: aws

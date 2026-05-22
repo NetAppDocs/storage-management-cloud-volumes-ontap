@@ -5,7 +5,7 @@ keywords: byol, bring your own license, expiration, warning, node-based byol, no
 summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a system license installed with an active subscription. The Console simplifies the process by managing licenses for you and by displaying a warning before they expire.
 ---
 
-= License management for node-based BYOL
+= Learn about Cloud Volumes ONTAP node-based BYOL
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -18,7 +18,7 @@ Each Cloud Volumes ONTAP system that has a node-based bring your own license (BY
 [NOTE]
 A node-based license is the previous generation license for Cloud Volumes ONTAP. A node-based license could be procured from NetApp (BYOL) and is available for license renewals, only in specific cases.
 
-link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing options].
+link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
 
