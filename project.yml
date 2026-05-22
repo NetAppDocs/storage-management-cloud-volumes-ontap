@@ -39,8 +39,6 @@ sidebar:
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
-        - title: Security and compliance
-          url: /placeholder.html
         - title: Licensing in Cloud Volumes ONTAP
           entries:
             - title: Cloud Volumes ONTAP licenses 
@@ -268,7 +266,7 @@ sidebar:
                 - title: Change route tables for HA pairs
                   url: /task-change-route-tables.html
                 - title: Configure placement group creation
-                  url: task-configure-placement-group-failure-aws.html      
+                  url: /task-configure-placement-group-failure-aws.html      
             - title: Azure administration
               flavor: azure
               entries:
