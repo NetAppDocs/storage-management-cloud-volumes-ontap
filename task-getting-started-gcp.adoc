@@ -5,7 +5,7 @@ keywords: google cloud platform, gcp, cloud manager, deploy the Console, launch 
 summary: Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
 ---
 
-= Quick start for Cloud Volumes ONTAP in Google Cloud
+= Learn about Cloud Volumes ONTAP deployment in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Get started with Cloud Volumes ONTAP in Google Cloud in a few steps.
+Learn the key steps required to deploy Cloud Volumes ONTAP in Google Cloud.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Console agent
 
