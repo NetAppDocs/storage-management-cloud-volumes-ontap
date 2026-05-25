@@ -146,20 +146,18 @@ sidebar:
                   url: /task-deploying-otc-azure.html
                 - title: Verify Azure platform image
                   entries:
-                    - title: Overview
+                    - title: Learn about Azure image verification
                       url: /concept-azure-image-verification.html
                     - title: Download the Azure image file
                       url: /task-azure-download-digest-file.html
                     - title: Export the Azure image file
                       url: /task-azure-image-export.html
-                    - title: Verify file signature
-                      entries:
-                        - title: Learn about file signature verification
-                          url: /concept-azure-file-sig-verify.html
-                        - title: Verify file signature on Linux
-                          url: /task-file-verification-linux.html
-                        - title: Verify file signature on macOS 
-                          url: /task-file-verification-mac.html
+                    - title: Learn about file signature verification
+                      url: /concept-azure-file-sig-verify.html
+                    - title: Verify file signature on Linux
+                      url: /task-file-verification-linux.html
+                    - title: Verify file signature on macOS 
+                      url: /task-file-verification-mac.html
             - title: Deploy in Azure Marketplace
               url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Deploy in Google Cloud
@@ -254,7 +252,7 @@ sidebar:
               url: /task-protecting-ransomware.html
             - title: Create tamperproof Snapshot copies for WORM storage
               url: /reference-worm-snaplock.html  
-    - title: Platform administration
+    - title: Cloud infrastructure management
       entries:
             - title: AWS administration
               flavor: aws
@@ -287,7 +285,7 @@ sidebar:
                   url: /task-change-gcp-machine.html
                 - title: Convert existing deployments to Infrastructure Manager
                   url: /task-gcp-dm-im-conv.html
-    - title: System administration
+    - title: Cloud Volumes ONTAP system administration
       entries:
             - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
