@@ -2,53 +2,64 @@ indexpage:
   title: Cloud Volumes ONTAP documentation
   lead: Cloud Volumes ONTAP enables you to optimize your cloud storage costs and performance while enhancing data protection, security, and compliance.
   tiles:
-    - title: Get started
+    - title: Learn about Cloud Volumes ONTAP
       links:
-        - title: Learn about Cloud Volumes ONTAP
+        - title: What's new
+          url: whats-new.html
+        - title: What is Cloud Volumes ONTAP?
           url: concept-overview-cvo.html
-        - title: Quick start for AWS
-          url: task-getting-started-aws.html
-        - title: Quick start for AWS Top Secret/Secret Cloud regions
-          url: task-getting-started-aws-c2s.html
-          flavor: aws
-        - title: Quick start for Azure
-          url: task-getting-started-azure.html
-          flavor: azure
-        - title: Quick start for Google Cloud
-          url: task-getting-started-gcp.html
-          flavor: gcp
-    - title: Licensing
+        - title: Security and compliance
+          url: concept-security.html
+        - title: Cloud provider integrations
+          url: https://docs.netapp.com/us-en/bluexp-family/
+        - title: Supported versions
+          url: reference-versions.html
+        - title: Supported upgrade path
+          url: task-updating-ontap-cloud.html#supported-upgrade-paths
+    - title: "Learn more: Some key concepts"
       links:
-        - title: Licensing overview
+        - title: Licensing
           url: concept-licensing.html
-        - title: Manage capacity-based licenses
-          url: task-manage-capacity-licenses.html
-        - title: Exchange unassigned node-based licenses
-          url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
-        - title: Manage Keystone Subscriptions
-          url: task-manage-keystone.html
-    - title: Storage management
+        - title: Security
+          url: concept-security.html
+        - title: Default configurations
+          url: reference-default-configs.html
+    - title: AWS
       links:
-        - title: Create volumes
-          url: task-create-volumes.html
-        - title: Tier inactive data to object storage
-          url: task-tiering.html
-        - title: Accelerate data access with FlexCache
-          url: task-accelerate-data-access.html
-        - title: ONTAP SAN host configuration
-          url: https://docs.netapp.com/us-en/ontap-sanhost
-    - title: System administration
+        - title: Supported configuration
+          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html
+        - title: Default configurations
+          url: reference-default-configs.html
+        - title: Networking requirement/security requirements in AWS
+          url: reference-networking-aws.html
+        - title: Quick deployment
+          url: task-quick-deploy-aws.html
+        - title: Deploy AWS in secret cloud
+          url: task-getting-started-aws-c2s.html
+        - title: Get started in the marketplace (future)
+          url: task-deploying-otc-aws.html
+    - title: Azure
       links:
-        - title: Upgrade Cloud Volumes ONTAP
-          url: task-updating-ontap-cloud.html
-        - title: Stop and start Cloud Volumes ONTAP
-          url: task-managing-state.html
-    - title: Security
+        - title: Supported configuration
+          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html
+        - title: Default configurations
+          url: reference-default-configs.html
+        - title: Networking requirement/security requirements in Azure
+          url: reference-networking-azure.html
+        - title: Quick deployment
+          url: task-quick-deploy-azure.html
+        - title: Get started in the marketplace
+          url: task-deploy-cvo-azure-mktplc.html
+    - title: Google Cloud
       links:
-        - title: Encrypt volumes with NetApp encryption
-          url: task-encrypting-volumes.html
-        - title: Improve ransomware protection
-          url: task-protecting-ransomware.html
+        - title: Supported configuration
+          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html
+        - title: Default configurations
+          url: reference-default-configs.html
+        - title: Networking requirement/security requirements in Google Cloud
+          url: reference-networking-gcp.html
+        - title: Quick deployment
+          url: task-getting-started-gcp.html
     - title: API
       links:
         - title: Overview of the Cloud Volumes ONTAP API
