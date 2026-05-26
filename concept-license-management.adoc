@@ -66,3 +66,9 @@ Each node-based license is consumed by a single node, that is a single Cloud Vol
 For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
 
 It's important to note that your BYOL license is tied to your company and a specific set of NetApp Support Site credentials.
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]

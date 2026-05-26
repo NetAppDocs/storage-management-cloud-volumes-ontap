@@ -182,3 +182,11 @@ NOTE: FlexClone volumes aren't included in this report because these types of vo
 The usage report downloads. 
 
 . Open the downloaded file to access the reports.
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html[Learn more about capacity-based licenses^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licensing^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/task-convert-node-capacity.html[Convert a node-based license to a capacity-based license^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-keystone.html[Manage Keystone subscriptions^]

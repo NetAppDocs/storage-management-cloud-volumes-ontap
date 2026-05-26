@@ -168,3 +168,10 @@ Another 100 TiB is provisioned on an HA pair with primary volumes. The license y
 
 In this example, the Console charges overages at the marketplace rate for the additional 100 TiB. The overage charges will appear on your monthly bill.
 
+.Related links
+
+* link:concept-licensing.html[Licensing for Cloud Volumes ONTAP]
+* link: task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP]
+* link:task-manage-node-licenses.html[Manage node-based licensing]
+* link:task-convert-node-capacity.html[Convert a node-based license to a capacity-based license]
+* link:task-manage-keystone.html[Manage Keystone subscriptions]
