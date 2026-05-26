@@ -1,6 +1,6 @@
 === ##New EC2 instances supported for Cloud Volumes ONTAP in AWS##
 
-Cloud Volumes ONTAP 9.16.1 and later supports the M6id and M6idn EC2 instance families for both new and existing single-node and high-availability (HA) pair deployments in AWS, across all capacity-based license packages.
+Cloud Volumes ONTAP 9.16.1 and later supports the M6id and M6idn EC2 instance families for both new and existing single-node and high-availability (HA) pair deployments in AWS.
 
 * *M6id instances*: Provide a balance of compute and memory with high-speed, low-latency local NVMe storage. All M6id instance sizes support Flash Cache. These instances are well suited for workloads such as data logging and media processing.
 * *M6idn instances*: Provide the same local NVMe storage capabilities as M6id instances. Flash Cache is supported on the m6idn.16xlarge and m6idn.32xlarge sizes only..
