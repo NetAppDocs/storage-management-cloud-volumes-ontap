@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: reference-issues.html
+keywords: issues, bugs, known issues
+summary: Known issues identify problems that might prevent you from using this release of the product successfully.
+---
+
+= Known issues for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Known issues identify problems that might prevent you from using this release of the product successfully.
+
+There are no known issues in this release specific to Cloud Volumes ONTAP.
+
+You can find known issues for ONTAP software in the https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508[ONTAP Release Notes^].
