@@ -143,6 +143,36 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
+=== Support for Premium SSD v2 Managed Disks in Azure
+Premium SSD v2 Managed Disks are now supported in Cloud Volumes ONTAP systems on Azure. These premium disks provide higher performance with lower latency at a lower cost for both single node and high-availability (HA) pairs, as compared to Premium SSD Managed Disks. Like other managed disks, the maximum disk size is 32 TiB. The performance (capacity, throughput, and IOPS) of a Premium SSD v2 Managed Disks can be configured, allowing workloads to be cost effective, while meeting shifting performance needs.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-storage.html#azure-storage[Learn about Azure storage^].
+
+
+=== Deploy HA pairs in single availability zones in Azure
+Beginning with Cloud Volumes ONTAP 9.15.1, you can deploy virtual machine (VM) instances in HA mode in single availability zones (AZs) in Azure. Unlike the previous non-zonal deployments, Cloud Volumes ONTAP 9.15.1 uses Microsoft Virtual Machines Scale Sets in Flexible orchestration mode to deploy all resources, including separate fault domains within the same AZ, guaranteeing optimal availability. This deployment mode, by default, uses Premium SSD v2 Managed Disks when the following conditions are met:
+
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^]. To know how to add them, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launching a Cloud Volumes ONTAP HA pair in Azure^].
+* The subscription is registered for the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature. 
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-saz-feature.html[Learn how to enable VMOrchestratorZonalMultiFD for single availability zones^].
+
+If any of these criteria is not fulfilled, the previous non-zonal deployment mode for locally-redundant storage (LRS) becomes effective.
+
+=== Support for Virtual Machines Scale Sets to unify all Azure HA types
+Cloud Volumes ONTAP 9.15.1 leverages Virtual Machines Scale Sets in Flexible orchestration mode on Azure for deploying virtual machine (VM) instances in single availability zones for high-availability (HA) pairs. It covers all flavors of the HA mode, page blob, LRS, zone-redundant storage (ZRS) or multi-zonal, and LRS zonal (single AZ). 
+
+* https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets documentation^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-azure.html[Learn about high-availability pairs in Azure^].
+
+=== Support for FlexCache write-back
+Beginning with Cloud Volumes ONTAP 9.15.1, FlexCache write-back is supported as an alternate mode of operation for writing at a cache. 
+
+For more information about this feature, refer to the ONTAP documentation https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-overview.html[FlexCache write-back overview^].
+
+For information about how BlueXP manages FlexCache volumes, refer to the https://docs.netapp.com/us-en/bluexp-volume-caching/index.html[BlueXP volume caching documents^].
+
+
 == 08 August 2024
 
 === Edge Cache licensing packages deprecated
@@ -155,6 +185,7 @@ For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-on
 
 === Free trials for marketplace subscriptions deprecated
 The 30-day automatic free trial or evaluation license for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
+
 
 == 10 June 2024
 
