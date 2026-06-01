@@ -48,10 +48,10 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
 ifdef::azure[]
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
+* link:link:reference-configs-azure.html[Supported configurations in Azure] 
 endif::azure[]
 ifdef::gcp[]
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
+* link:link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
 endif::gcp[]
 
 ==== Freemium

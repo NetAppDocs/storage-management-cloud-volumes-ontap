@@ -10,13 +10,11 @@ indexpage:
           url: concept-overview-cvo.html
         - title: Security and compliance
           url: concept-security.html
-        - title: Cloud provider integrations
-          url: https://docs.netapp.com/us-en/bluexp-family/
         - title: Supported versions
           url: reference-versions.html
         - title: Supported upgrade path
           url: task-updating-ontap-cloud.html#supported-upgrade-paths
-    - title: "Learn more: Some key concepts"
+    - title: "Learn more: Key concepts"
       links:
         - title: Licensing
           url: concept-licensing.html
@@ -24,62 +22,88 @@ indexpage:
           url: concept-security.html
         - title: Default configurations
           url: reference-default-configs.html
+        - title: Learn about encryption
+          url: concept-security.html     
+        - title: Storage management
+          url: concept-storage-management.html
+        - title: Disks and aggregates used for Cloud Volumes ONTAP clusters
+          url: concept-storage.html
+        - title: Performance monitoring for Cloud Volumes ONTAP workloads
+          url: concept-performance.html    
     - title: AWS
       links:
         - title: Supported configuration
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html
-        - title: Default configurations
-          url: reference-default-configs.html
+          url: reference-configs-aws.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in AWS
+          url: concept-ha.html  
         - title: Networking requirement/security requirements in AWS
           url: reference-networking-aws.html
         - title: Quick deployment
           url: task-quick-deploy-aws.html
         - title: Deploy AWS in secret cloud
           url: task-getting-started-aws-c2s.html
-        - title: Get started in the marketplace (future)
-          url: task-deploying-otc-aws.html
+        - title: Manage encryption keys with AWS Key Management Service
+          url: task-aws-key-management.html  
     - title: Azure
       links:
         - title: Supported configuration
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html
-        - title: Default configurations
-          url: reference-default-configs.html
+          url: reference-configs-azure.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in Azure
+          url: concept-ha-azure.html            
         - title: Networking requirement/security requirements in Azure
           url: reference-networking-azure.html
         - title: Quick deployment
           url: task-quick-deploy-azure.html
-        - title: Get started in the marketplace
+        - title: Deploy in the marketplace
           url: task-deploy-cvo-azure-mktplc.html
+        - title: Manage encryption keys with Azure Key Vault
+          url: task-azure-key-vault.html        
     - title: Google Cloud
       links:
         - title: Supported configuration
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html
-        - title: Default configurations
-          url: reference-default-configs.html
+          url: reference-configs-gcp.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in Google Cloud
+          url: concept-ha-google-cloud.html              
         - title: Networking requirement/security requirements in Google Cloud
           url: reference-networking-gcp.html
         - title: Quick deployment
           url: task-getting-started-gcp.html
-    - title: API
+        - title: Manage encryption keys with Google Cloud KMS
+          url: task-google-key-manager.html
+    - title: System and storage administration
       links:
-        - title: Overview of the Cloud Volumes ONTAP API
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html
-        - title: Prepare to use the API
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html
+        - title: Manage capacity-based licensing
+          url: task-manage-capacity-licenses.html
+        - title: Convert a node-based license to capacity based
+          url: task-convert-node-capacity.html          
+        - title: Create a FlexVol volume on a system
+          url: task-create-volumes.html
+        - title: Tier inactive data
+          url: task-tiering.html
+        - title: Manage storage VMs
+          url: task-managing-svms.html
+        - title: Encrypt volumes on Cloud Volumes ONTAP
+          url: task-encrypting-volumes.html
+    - title: API reference (NetApp Console Automation)
+      links:
         - title: API reference
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html
-    - title: Troubleshooting
-      links:
-        - title: NetApp Knowledge Base
-          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+          url: https://docs.netapp.com/us-en/console-automation/cm/overview.html      
+        - title: Overview of the Cloud Volumes ONTAP API
+          url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+        - title: Prepare to use the API
+          url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
     - title: Reference
       links:
-        - title: Supported configurations
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+        - title: Use ONTAP System Manager for Cloud Volumes ONTAP
+          url: task-administer-advanced-view.html
+        - title: Use ONTAP CLI for Cloud Volumes ONTAP
+          url: task-connecting-to-otc.html          
         - title: Supported cloud regions
           url: https://bluexp.netapp.com/cloud-volumes-global-regions
         - title: Calculators
           url: https://www.netapp.com/ontap-cloud/pricing/
+        - title: Troubleshooting
+          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)        
     - title: Blogs & community
       links:
         - title: NetApp Console

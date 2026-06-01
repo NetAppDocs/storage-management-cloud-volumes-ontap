@@ -44,7 +44,7 @@ link:https://docs.aws.amazon.com/local-zones/latest/ug/getting-started.html[AWS 
 
 Cloud Volumes ONTAP supports several instance types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Supported configurations for Cloud Volumes ONTAP in AWS^]
+link:reference-configs-aws.html[Supported configurations for Cloud Volumes ONTAP in AWS]
 
 == Understand storage limits
 

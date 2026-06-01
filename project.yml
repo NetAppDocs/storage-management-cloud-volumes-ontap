@@ -221,13 +221,6 @@ sidebar:
               url: /task-manage-aggregates.html
             - title: Manage capacity settings
               url: /task-manage-capacity-settings.html
-            - title: Manage disk performance in Azure
-              flavor: azure
-              entries:
-              - title: Manage Premium SSD v2 disk performance in Azure
-                url: /task-manage-perf-params-azure.html
-              - title: Upgrade disk performance tier in Azure
-                url: /task-upgrade-disk-perf-azure.html                              
         - title: Storage VM administration
           entries:
             - title: Work with storage VMs
@@ -247,15 +240,6 @@ sidebar:
               url: /concept-security.html
             - title: Encrypt volumes with NetApp encryption
               url: /task-encrypting-volumes.html
-            - title: Manage keys with AWS Key Management Service
-              flavor: aws
-              url: /task-aws-key-management.html
-            - title: Manage keys with Azure Key Vault
-              flavor: azure
-              url: /task-azure-key-vault.html
-            - title: Manage keys with Google Cloud KMS
-              flavor: gcp
-              url: /task-google-key-manager.html
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
             - title: Create tamperproof Snapshot copies for WORM storage
@@ -266,7 +250,9 @@ sidebar:
               flavor: aws
               entries:
                 - title: Supported configurations in AWS
-                  url: /reference-configs-aws.html              
+                  url: /reference-configs-aws.html
+                - title: Manage keys with AWS Key Management Service
+                  url: /task-aws-key-management.html                             
                 - title: Storage limits in AWS
                   url: /reference-limits-aws.html
                 - title: Learn about Elastic Volumes in AWS
@@ -283,7 +269,9 @@ sidebar:
                 - title: Supported configurations in Azure
                   url: /reference-configs-azure.html
                 - title: Storage limits in Azure
-                  url: /reference-limits-azure.html              
+                  url: /reference-limits-azure.html
+                - title: Manage keys with Azure Key Vault
+                  url: /task-azure-key-vault.html                           
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
                 - title: Override CIFS locks
@@ -293,14 +281,20 @@ sidebar:
                 - title: Move resource groups 
                   url: /task-moving-resource-groups-azure.html 
                 - title: Segregate SnapMirror traffic in Azure
-                  url: /task-segregate-snapmirror-azure.html  
+                  url: /task-segregate-snapmirror-azure.html
+                - title: Manage Premium SSD v2 disk performance in Azure
+                  url: /task-manage-perf-params-azure.html
+                - title: Upgrade disk performance tier in Azure
+                  url: /task-upgrade-disk-perf-azure.html                          
             - title: Google Cloud administration
               flavor: gcp
               entries:
                 - title: Supported configurations in Google Cloud
                   url: /reference-configs-gcp.html              
                 - title: Storage limits in Google Cloud
-                  url: /reference-limits-gcp.html              
+                  url: /reference-limits-gcp.html
+                - title: Manage keys with Google Cloud KMS
+                  url: /task-google-key-manager.html                            
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
                 - title: Convert existing deployments to Infrastructure Manager
