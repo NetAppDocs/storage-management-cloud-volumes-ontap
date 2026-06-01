@@ -2,7 +2,7 @@ indexpage:
   title: Cloud Volumes ONTAP documentation
   lead: Cloud Volumes ONTAP enables you to optimize your cloud storage costs and performance while enhancing data protection, security, and compliance.
   tiles:
-    - title: Learn about Cloud Volumes ONTAP
+    - title: Get started
       links:
         - title: What's new
           url: whats-new.html
@@ -14,14 +14,14 @@ indexpage:
           url: reference-versions.html
         - title: Supported upgrade path
           url: task-updating-ontap-cloud.html#supported-upgrade-paths
-    - title: "Learn more: Key concepts"
+        - title: Default configurations
+          url: reference-default-configs.html        
+    - title: Learn about Cloud Volumes ONTAP
       links:
         - title: Licensing
           url: concept-licensing.html
         - title: Security
           url: concept-security.html
-        - title: Default configurations
-          url: reference-default-configs.html
         - title: Learn about encryption
           url: concept-security.html     
         - title: Storage management
@@ -92,23 +92,17 @@ indexpage:
           url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
         - title: Prepare to use the API
           url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
-    - title: Reference
+    - title: More resources
       links:
-        - title: Use ONTAP System Manager for Cloud Volumes ONTAP
-          url: task-administer-advanced-view.html
+        - title: Troubleshooting
+          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)      
+        - title: ONTAP user interfaces
+          url: https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html
         - title: Use ONTAP CLI for Cloud Volumes ONTAP
-          url: task-connecting-to-otc.html          
+          url: https://docs.netapp.com/us-en/ontap-cli/index.html          
         - title: Supported cloud regions
           url: https://bluexp.netapp.com/cloud-volumes-global-regions
         - title: Calculators
           url: https://www.netapp.com/ontap-cloud/pricing/
-        - title: Troubleshooting
-          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)        
-    - title: Blogs & community
-      links:
-        - title: NetApp Console
-          url: https://www.netapp.com/console
-        - title: NetApp Data Services
-          url: https://www.netapp.com/data-services/
         - title: NetApp Community
           url: https://community.netapp.com/
