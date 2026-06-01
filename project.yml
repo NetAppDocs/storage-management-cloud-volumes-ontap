@@ -251,10 +251,10 @@ sidebar:
               entries:
                 - title: Supported configurations in AWS
                   url: /reference-configs-aws.html
-                - title: Manage keys with AWS Key Management Service
-                  url: /task-aws-key-management.html                             
                 - title: Storage limits in AWS
                   url: /reference-limits-aws.html
+                - title: Manage keys with AWS Key Management Service
+                  url: /task-aws-key-management.html                  
                 - title: Learn about Elastic Volumes in AWS
                   url: /concept-aws-elastic-volumes.html
                 - title: Work with EC2 instances in AWS
