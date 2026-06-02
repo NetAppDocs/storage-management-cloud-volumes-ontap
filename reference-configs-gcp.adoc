@@ -15,7 +15,15 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Google Clou
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Google Cloud.
 
-== Supported configurations by license
+include::_include/cvo-default-config.adoc[]
+
+== Google Cloud storage
+
+In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
+
+The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[low-cost object storage].
+
+=== Supported configurations by license
 
 Cloud Volumes ONTAP is available in Google Cloud as a single-node system and as a high-availability (HA) pair of nodes for fault tolerance and nondisruptive operations.
 
@@ -362,3 +370,10 @@ For Google Cloud region support, see https://bluexp.netapp.com/cloud-volumes-glo
 
 
 //BLUEXPDOC-322
+
+.Related links
+
+* https://cloud.google.com/compute/docs/disks/[Google Cloud documentation: Storage Options^]
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Review storage limits for Cloud Volumes ONTAP in Google Cloud^]
+endif::gcp[]

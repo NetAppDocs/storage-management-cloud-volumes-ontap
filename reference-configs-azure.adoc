@@ -15,8 +15,35 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Azure.
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Azure.
 
+include::_include/cvo-default-config.adoc[]
 
-== Supported configurations by license
+== Azure storage
+
+In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single-node system or an HA pair:
+
+Single-node systems::
+Single-node systems can use these types of Azure Managed Disks:
+
+* _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
+
+* _Premium SSD v2 Managed Disks_ provide higher performance with lower latency at a lower cost for both single node and HA pairs, compared to Premium SSD Managed Disks.
+
+* _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
+
+* _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
++
+Each managed disk type has a maximum disk size of 32 TiB.
++
+You can pair a managed disk with Azure Blob storage to link:concept-data-tiering.html[low-cost object storage].
+
+HA pairs::
+HA pairs use two types of disks which provide high performance for I/O-intensive workloads at a higher cost:
+
+* _Premium page blobs_ with a maximum disk size of 8 TiB
+* _Managed disks_ with a maximum disk size of 32 TiB
+
+
+=== Supported configurations by license
 
 Cloud Volumes ONTAP is available in Azure as a single-node system and as a high-availability (HA) pair of nodes for fault tolerance and nondisruptive operations.
 
@@ -1078,11 +1105,11 @@ Notes:
 =====
 
 
-== Supported disk sizes
+=== Supported disk sizes
 
 In Azure, an aggregate can contain up to 12 disks that are all the same type and size.
 
-=== Single-node systems
+==== Single-node systems
 
 Single-node systems use Azure Managed Disks. The following disk sizes are supported:
 
@@ -1124,7 +1151,7 @@ a|
 
 |===
 
-=== HA pairs
+==== HA pairs
 
 HA pairs use Azure Managed Disks. The following disk type and sizes are supported. 
 
@@ -1140,8 +1167,20 @@ HA pairs use Azure Managed Disks. The following disk type and sizes are supporte
 * 16 TiB (managed disks only)
 * 32 TiB (managed disks only)
 
-== Supported regions
+=== Supported regions
 
 For Azure region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 //BLUEXPDOC-322, https://github.com/NetAppDocs/cloud-volumes-ontap-relnotes/issues/147
+
+.Related links
+
+* link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
+
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launch a Cloud Volumes ONTAP HA pair in Azure]
+
+* https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
+
+* https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview[Microsoft Azure documentation: Overview of Azure page blobs^]
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[Review storage limits for Cloud Volumes ONTAP in Azure^]

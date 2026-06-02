@@ -51,25 +51,6 @@ sidebar:
           entries:
             - title: Cloud Volumes ONTAP licenses 
               url: /concept-licensing.html
-            - title: Learn more about capacity-based licenses
-              url: /concept-licensing-charging.html
-            - title: Learn about node-based BYOL
-              url: /concept-license-management.html
-        - title: Cloud Volumes ONTAP HA configuration
-          entries:
-            - title: HA pairs in AWS
-              flavor: aws
-              url: /concept-ha.html
-            - title: HA pairs in Azure
-              flavor: azure
-              url: /concept-ha-azure.html
-            - title: HA pairs in GCP
-              flavor: gcp
-              url: /concept-ha-google-cloud.html
-            - title: Actions during storage takeover
-              url: /concept-degraded-ha-pair.html 
-            - title: Disaster recovery
-              url: /task-manage-svm-dr.html
         - title: Learn about Cloud Volumes ONTAP storage
           entries:
             - title: Default configurations
@@ -92,6 +73,12 @@ sidebar:
           url: /concept-performance.html
         - title: AutoSupport and Digital Advisor
           url: /concept-active-iq.html
+        - title: Cloud Volumes ONTAP HA
+          entries:
+            - title: Learn about actions during storage takeover
+              url: /concept-degraded-ha-pair.html 
+            - title: Learn about disaster recovery
+              url: /task-manage-svm-dr.html          
     - title: Deployment
       entries:
         - title: Supported versions for new deployments
@@ -253,6 +240,8 @@ sidebar:
                   url: /reference-configs-aws.html
                 - title: Storage limits in AWS
                   url: /reference-limits-aws.html
+                - title: Learn about HA pairs in AWS
+                  url: /concept-ha.html                  
                 - title: Manage keys with AWS Key Management Service
                   url: /task-aws-key-management.html                  
                 - title: Learn about Elastic Volumes in AWS
@@ -270,6 +259,8 @@ sidebar:
                   url: /reference-configs-azure.html
                 - title: Storage limits in Azure
                   url: /reference-limits-azure.html
+                - title: Learn about HA pairs in Azure
+                  url: /concept-ha-azure.html                  
                 - title: Manage keys with Azure Key Vault
                   url: /task-azure-key-vault.html                           
                 - title: Change the Azure VM type
@@ -293,6 +284,8 @@ sidebar:
                   url: /reference-configs-gcp.html              
                 - title: Storage limits in Google Cloud
                   url: /reference-limits-gcp.html
+                - title: Learn about HA pairs in Google Cloud              
+                  url: /concept-ha-google-cloud.html                  
                 - title: Manage keys with Google Cloud KMS
                   url: /task-google-key-manager.html                            
                 - title: Change the machine type
@@ -305,14 +298,18 @@ sidebar:
               url: /task-updating-ontap-cloud.html
             - title: Manage licenses
               entries:
+                  - title: Learn more about capacity-based licenses
+                    url: /concept-licensing-charging.html
                   - title: Manage capacity-based licenses
                     url: /task-manage-capacity-licenses.html
-                  - title: Manage Keystone subscriptions
-                    url: /task-manage-keystone.html
+                  - title: Learn about node-based BYOL
+                    url: /concept-license-management.html                    
                   - title: Manage node-based licenses
                     url: /task-manage-node-licenses.html    
                   - title: Convert node-based licenses
                     url: /task-convert-node-capacity.html
+                  - title: Manage Keystone subscriptions
+                    url: /task-manage-keystone.html                    
             - title: Register pay-as-you-go systems
               url: /task-registering.html                    
             - title: Stop and start a system

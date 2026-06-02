@@ -1,4 +1,4 @@
 ---
 permalink: google-cloud.html
-redirect: bluexp-cloud-volumes-ontap/gcp/index.html
+redirect: storage-management-cloud-volumes-ontap/gcp/index.html
 ---
