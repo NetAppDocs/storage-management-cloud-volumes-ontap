@@ -51,12 +51,10 @@ sidebar:
           url: /concept-licensing.html
         - title: Learn about Cloud Volumes ONTAP storage
           entries:
-            - title: Default configurations
-              url: /reference-default-configs.html
+            - title: Cloud Volumes ONTAP configuration
+              url: /reference-default-configs.html          
             - title: Client protocols
               url: /concept-client-protocols.html
-            - title: Disks and aggregates
-              url: /concept-storage.html
             - title: Data tiering
               url: /concept-data-tiering.html
             - title: Storage management
