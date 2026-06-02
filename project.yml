@@ -48,9 +48,7 @@ sidebar:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
         - title: Licensing in Cloud Volumes ONTAP
-          entries:
-            - title: Cloud Volumes ONTAP licenses 
-              url: /concept-licensing.html
+          url: /concept-licensing.html
         - title: Learn about Cloud Volumes ONTAP storage
           entries:
             - title: Default configurations
