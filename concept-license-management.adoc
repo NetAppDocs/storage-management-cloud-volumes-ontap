@@ -67,8 +67,13 @@ For example, you might want to delete an existing licensed system and then use t
 
 It's important to note that your BYOL license is tied to your company and a specific set of NetApp Support Site credentials.
 
+
 .Related links
 
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]
+* link:concept-licensing.html[Licensing for Cloud Volumes ONTAP]
+* link:concept-licensing-charging.html[Learn more about capacity-based licenses]
+* link: task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP]
+* link:task-manage-node-licenses.html[Manage node-based licensing]
+* link:task-convert-node-capacity.html[Convert a node-based license to a capacity-based license]
+* link:task-manage-keystone.html[Manage Keystone subscriptions]
 

@@ -182,3 +182,4 @@ NOTE: FlexClone volumes aren't included in this report because these types of vo
 The usage report downloads. 
 
 . Open the downloaded file to access the reports.
+
