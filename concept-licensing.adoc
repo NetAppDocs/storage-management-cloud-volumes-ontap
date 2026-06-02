@@ -209,7 +209,7 @@ Conversion of a system from capacity-based to node-based licensing is not suppor
 .Related links
 
 * link:concept-licensing-charging.html[Learn more about capacity-based licenses]
-* link: task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP]
+* link:task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP]
 * link:task-manage-node-licenses.html[Manage node-based licensing]
 * link:task-convert-node-capacity.html[Convert a node-based license to a capacity-based license]
 * link:task-manage-keystone.html[Manage Keystone subscriptions]
