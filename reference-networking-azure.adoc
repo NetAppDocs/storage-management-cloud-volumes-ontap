@@ -52,7 +52,7 @@ a|User authentication fails and the following services remain unavailable:
 * Protocols and proxy services
 
 | 
-https://vault.azure.net
+\https://vault.azure.net
 
 | 
 Key Vault
