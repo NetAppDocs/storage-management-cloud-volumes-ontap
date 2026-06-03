@@ -43,7 +43,7 @@ sidebar:
               url: /reference-limitations-gcp.html
         - title: Cloud provider integrations
           url: /reference-provider-integrations.html
-    - title: Learn the basics
+    - title: Get started
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
