@@ -412,7 +412,7 @@ The worker pool must have the following configuration:
 * Disk size: 100 GB
 * Assign external IP: False
 * Network: Default or a private. 
-* The subnet configured to access http://googleapis.com/[Google APIs]. Perform these steps to ensure that the subnet can access Google APIs:
+* The subnet configured to access https://cloud.google.com/apis[Google Cloud APIs^]. Perform these steps to ensure that the subnet can access Google APIs:
 .. Ensure "Private Google Access" is turned on for the subnet.
 .. Go to *VPC Network level > Private Service Access Tab > Allocated IP ranges for services*.
 ..  Select *Allocate IP range* and allocate the internal IP range for the private connection to the Google Compute Service.
