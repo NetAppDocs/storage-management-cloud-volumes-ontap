@@ -1,4 +1,4 @@
-=== New EC2 instances supported for Cloud Volumes ONTAP in AWS
+=== Support for new EC2 instances for Cloud Volumes ONTAP in AWS
 
 Cloud Volumes ONTAP 9.16.1 and later support M6id and M6idn EC2 instance families for both new and existing single-node and high-availability (HA) pair deployments in AWS. These 6th-generation instances offer faster processing power, stronger networking capabilities, and higher performance compared to the 5th generation general purpose systems.
 
