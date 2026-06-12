@@ -59,10 +59,6 @@ sidebar:
               url: /concept-storage-management.html
         - title: Cloud Volumes ONTAP HA configuration
           url: /concept-degraded-ha-pair.html    
-    - title: Deployment
-      entries:
-        - title: Supported versions for new deployments
-          url: /reference-versions.html          
         - title: Deploy in Amazon Web Services
           flavor: aws
           entries:
@@ -284,6 +280,8 @@ sidebar:
                   url: /task-gcp-dm-im-conv.html
     - title: Cloud Volumes ONTAP system administration
       entries:
+            - title: Supported versions for new deployments
+              url: /reference-versions.html         
             - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
             - title: Manage licenses
