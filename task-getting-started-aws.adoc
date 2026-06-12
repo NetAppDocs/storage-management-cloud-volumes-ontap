@@ -5,7 +5,7 @@ keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, pu
 summary: Verify that you have completed the prerequisites for deploying Cloud Volumes ONTAP in AWS.
 ---
 
-= Learn about Cloud Volumes ONTAP deployment in AWS
+= Deployment overview for Cloud Volumes ONTAP in AWS
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -57,7 +57,7 @@ sidebar:
               url: /concept-client-protocols.html
             - title: Storage management
               url: /concept-storage-management.html
-        - title: Learn about Cloud Volumes ONTAP HA configuration
+        - title: Cloud Volumes ONTAP HA configuration
           url: /concept-degraded-ha-pair.html    
     - title: Deployment
       entries:
@@ -66,7 +66,7 @@ sidebar:
         - title: Deploy in Amazon Web Services
           flavor: aws
           entries:
-            - title: Task overview
+            - title: Deployment overview
               url: /task-getting-started-aws.html
             - title: Plan your configuration
               url: /task-planning-your-config.html
@@ -101,7 +101,7 @@ sidebar:
               url: /concept-azure-mktplace-direct.html
             - title: Deploy in NetApp Console
               entries:
-                - title: Task overview
+                - title: Deployment overview
                   url: /task-getting-started-azure.html
                 - title: Plan your configuration
                   url: /task-planning-your-config-azure.html
@@ -138,7 +138,8 @@ sidebar:
         - title: Deploy in Google Cloud
           flavor: gcp
           entries:
-            - title: Task overview
+            - title: Deployment overview
+
               url: /task-getting-started-gcp.html
             - title: Plan your configuration
               url: /task-planning-your-config-gcp.html

@@ -32,7 +32,7 @@ Skip selecting storage efficiency settings when creating a volume from the NetAp
 endif::aws[]
 * Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
 
-.Related topics
+.Related links
 
 * link:reference-configs-aws.html[Supported configurations for Cloud Volumes ONTAP in AWS]
 * link:reference-configs-azure.html[Supported configurations for Cloud Volumes ONTAP in Azure]

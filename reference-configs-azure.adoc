@@ -15,7 +15,67 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Azure.
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Azure.
 
-include::_include/cvo-default-config.adoc[]
+For information about default configurations for Cloud Volumes ONTAP, refer to link:reference-default-configs.html[Supported default configurations for Cloud Volumes ONTAP].
+
+== Internal disks for system data
+
+In addition to the storage for user data, the NetApp Console also purchases cloud storage for system data in Azure.
+
+=== Azure (single node)
+
+* Three Premium SSD disks:
+** One 10 GiB disk for boot data
+** One 140 GiB disk for root data
+** One 512 GiB disk for NVRAM
++
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses a 32 GiB Ultra SSD for NVRAM, rather than a Premium SSD.
+
+* One 1024 GiB Standard HDD disk for saving cores
+
+* One Azure snapshot for each boot disk and root disk
+
+* Every disk by default in Azure is encrypted at rest.
++
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.
+
+=== Azure (HA pair)
+
+.HA pairs with page blob
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 140 GiB Premium Storage page blobs for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD disks for NVRAM (one per node)
+* One Azure snapshot for each boot disk and root disk
++
+NOTE: Snapshots are created automatically upon reboot.
+
+* Every disk by default in Azure is encrypted at rest.
+
+.HA pairs with shared managed disks in multiple availability zones
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium SSD disks for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD disks for NVRAM (one per node)
+* One Azure snapshot for each boot disk and root disk
++
+NOTE: Snapshots are created automatically upon reboot.
+
+* Every disk by default in Azure is encrypted at rest.
+
+.HA pairs with shared managed disks in single availability zones
+
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD Managed disks for NVRAM (one per node)
+
+If your virtual machine supports Premium SSD v2 Managed Disks as data disks, it uses 32 GiB Premium SSD v2 Managed Disks for NVRAM and 512 GiB Premium SSD v2 Shared Managed disks for the root volume.
+
+You can deploy HA pairs in a single single availability zone and use Premium SSD v2 Managed Disks when the following conditions are fulfilled:
+
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
 
 == Azure storage
 

@@ -13,9 +13,31 @@ summary: Several Cloud Volumes ONTAP configurations are supported in AWS.
 :imagesdir: ./media/
 
 [.lead]
-Several Cloud Volumes ONTAP configurations are supported in AWS.
+Several Cloud Volumes ONTAP configurations are supported in AWS. 
 
-include::_include/cvo-default-config.adoc[]
+For information about default configurations for Cloud Volumes ONTAP, refer to link:reference-default-configs.html[Supported default configurations for Cloud Volumes ONTAP].
+
+== Internal disks for system data
+
+In addition to the storage for user data, the NetApp Console also purchases cloud storage for system data in AWS.
+
+* Three disks per node for boot, root, and core data:
+** 47 GiB io1 disk for boot data
+** 140 GiB gp3 disk for root data
+** 540 GiB gp2 disk for core data
+* For HA pairs:
+** Two st1 EBS volumes for the mediator instance, one of approximately 8 GiB as root disk, and one of 4 GiB as data disk
+** One 140 GiB gp3 disk in each node to contain a copy of the root data of the other node
++
+NOTE: In some zones, the available EBS disk type can only be gp2.
++
+* One EBS snapshot for each boot disk and root disk
++
+NOTE: Snapshots are created automatically upon reboot.
++
+* When you enable data encryption in AWS using the Key Management Service (KMS), the boot and root disks for Cloud Volumes ONTAP are encrypted, as well. This includes the boot disk for the mediator instance in an HA pair. The disks are encrypted using the CMK that you select when you add a Cloud Volumes ONTAP system.
+
+TIP: In AWS, NVRAM is on the boot disk.
 
 
 == AWS storage

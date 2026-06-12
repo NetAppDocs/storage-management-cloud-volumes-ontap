@@ -69,7 +69,7 @@ Refer to the following documents for the ONTAP CLI instructions.
 * https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
 
 
-.Related topics
+.Related links
 
 * link:concept-ha.html[Learn about Cloud Volumes ONTAP HA pairs in AWS]
 * link:concept-ha-azure.html[Learn about Cloud Volumes ONTAP HA pairs in Azure]

@@ -15,7 +15,37 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Google Clou
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Google Cloud.
 
-include::_include/cvo-default-config.adoc[]
+For information about default configurations for Cloud Volumes ONTAP, refer to link:reference-default-configs.html[Supported default configurations for Cloud Volumes ONTAP].
+
+== Internal disks for system data
+
+In addition to the storage for user data, the Console also purchases cloud storage for system data in Google Cloud.
+
+=== Google Cloud (single node)
+
+* One 10 GiB SSD persistent disk for boot data
+* One 64 GiB SSD persistent disk for root data
+* One 500 GiB SSD persistent disk for NVRAM
+* One 315 GiB Standard persistent disk for saving cores
+* Snapshots for boot and root data
++
+NOTE: Snapshots are created automatically upon reboot.
+
+* Boot and root disks are encrypted by default.
+
+=== Google Cloud (HA pair)
+
+* Two 10 GiB SSD persistent disks for boot data 
+* Four 64 GiB SSD persistent disk for root data 
+* Two 500 GiB SSD persistent disk for NVRAM
+* Two 315 GiB Standard persistent disk for saving cores 
+* One 10 GiB Standard persistent disk for mediator data
+* One 10 GiB Standard persistent disk for mediator boot data
+* Snapshots for boot and root data
++
+NOTE: Snapshots are created automatically upon reboot.
+
+* Boot and root disks are encrypted by default.
 
 == Google Cloud storage
 
