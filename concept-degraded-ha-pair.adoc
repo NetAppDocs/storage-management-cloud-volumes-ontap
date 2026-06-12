@@ -1,11 +1,12 @@
 ---
 sidebar: sidebar
 permalink: concept-degraded-ha-pair.html
-keywords: storage takeover, storage giveback, degraded, degraded status, degraded state, ha pair, ha takeover, takeover, giveback
-summary: When a node in an HA pair isn't available, the other node serves data for its partner to provide continued data service. This is called storage takeover. Several actions are unavailable until in storage giveback is complete.
+keywords: high-availability (HA) configuration in Cloud Volumes ONTAP, CVO HA, storage takeover, storage giveback, degraded, degraded status, ha takeover, takeover, giveback, disaster recovery, svm disaster recovery, storage vm dr
+summary: A high-availability (HA) configuration in Cloud Volumes ONTAP ensures business continuity and fault tolerance for your enterprise storage. 
 ---
 
-= Operations unavailable when a node in Cloud Volumes ONTAP HA pair is offline
+= Cloud Volumes ONTAP HA configuration
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,6 +14,31 @@ summary: When a node in an HA pair isn't available, the other node serves data f
 :imagesdir: ./media/
 
 [.lead]
+A high-availability (HA) configuration in Cloud Volumes ONTAP ensures business continuity and fault tolerance for your enterprise storage. By deploying two ONTAP nodes across separate fault domains, the system provides non-disruptive operations (NDO) and seamless failover in the event of hardware failures, network outages, or routine maintenance.
+
+Deploy an HA pair when your architecture requires:
+
+* *Mission-critical workloads*: Databases and enterprise applications that cannot tolerate downtime.
+* *Non-disruptive upgrades*: Upgrades to ONTAP versions or changes to underlying cloud compute instances without taking storage offline.
+* *Multi-zone resilience*: Protection against isolated availability zone failures within a cloud region.
+
+== How HA pairs work
+The HA configuration operates as an active-active cluster from a management perspective, while individual data aggregates are owned by a specific node.
+
+* *Synchronous replication*: Data written to the NVRAM of the primary node is synchronously mirrored to the partner node NVRAM before acknowledging the write to the client.
+* *Mediator instance support*: A third-party mediator instance monitors the health of both nodes. If the primary node becomes unresponsive, the mediator orchestrates a storage takeover.
+* *Storage takeover*: The surviving node assumes ownership of the partner's storage aggregates and network interfaces, resuming data serving within seconds.
+
+== HA configuration requirements and limitations
+
+When deploying an HA pair in Cloud Volumes ONTAP, consider the following requirements and limitations:
+
+* *Compute sizing*: Both nodes in an HA pair must use the exact same cloud compute instance type or machine shape.
+* *Protocol support*: SMB/CIFS continuous availability (CA) is supported for Hyper-V and SQL Server workloads, but requires specific ONTAP configuration flags.
+* *Failover time*: While storage takeover is typically measured in seconds, client-side timeout settings (like iSCSI initiator timeouts) must be configured correctly to prevent application disruption.
+
+== Operations unavailable when a node in Cloud Volumes ONTAP HA pair is offline
+
 When a node in an HA pair isn't available, the other node serves data for its partner to provide continued data service. This is called _storage takeover_. Several actions are unavailable until in storage giveback is complete.
 
 TIP: When a node in an HA pair is unavailable, the state of the system in the NetApp Console is _Degraded_.
@@ -29,3 +55,22 @@ The following actions are unavailable from storage takeover:
 * Managing disks and aggregates (advanced allocation)
 
 These actions are available again after storage giveback completes and the state of the system changes back to normal.
+
+
+== Storage VM disaster recovery for Cloud Volumes ONTAP
+
+The NetApp Console does not offer setup or orchestration support for storage VM (SVM) disaster recovery (DR). To set up DR for Cloud Volumes ONTAP, you have to use ONTAP System Manager or the ONTAP CLI to configure SnapMirror SVM replication.
+
+If you set up SnapMirror SVM replication between two Cloud Volumes ONTAP systems, the replication must be between two HA pair systems or two single-node systems. You can't set up SnapMirror SVM replication between an HA pair and a single-node system.
+
+Refer to the following documents for the ONTAP CLI instructions.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
+
+
+.Related topics
+
+* link:concept-ha.html[Learn about Cloud Volumes ONTAP HA pairs in AWS]
+* link:concept-ha-azure.html[Learn about Cloud Volumes ONTAP HA pairs in Azure]
+* link:concept-ha-google-cloud.html[Learn about Cloud Volumes ONTAP HA pairs in GCP]

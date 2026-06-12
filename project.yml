@@ -55,26 +55,10 @@ sidebar:
               url: /reference-default-configs.html          
             - title: Client protocols
               url: /concept-client-protocols.html
-            - title: Data tiering
-              url: /concept-data-tiering.html
             - title: Storage management
               url: /concept-storage-management.html
-            - title: Write speed
-              url: /concept-write-speed.html
-            - title: Flash Cache
-              url: /concept-flash-cache.html
-            - title: WORM storage
-              url: /concept-worm.html
-        - title: Performance monitoring
-          url: /concept-performance.html
-        - title: AutoSupport and Digital Advisor
-          url: /concept-active-iq.html
-        - title: Cloud Volumes ONTAP HA
-          entries:
-            - title: Learn about actions during storage takeover
-              url: /concept-degraded-ha-pair.html 
-            - title: Learn about disaster recovery
-              url: /task-manage-svm-dr.html          
+        - title: Learn about Cloud Volumes ONTAP HA configuration
+          url: /concept-degraded-ha-pair.html    
     - title: Deployment
       entries:
         - title: Supported versions for new deployments
@@ -186,16 +170,25 @@ sidebar:
       entries:
         - title: Volume and LUN administration
           entries:
+        
             - title: Create volumes
               url: /task-create-volumes.html
             - title: Manage existing volumes
               url: /task-manage-volumes.html
+            - title: Connect a LUN to a host
+              url: /task-connect-lun.html              
+            - title: Data tiering
+              url: /concept-data-tiering.html              
             - title: Tier inactive data to object storage
               url: /task-tiering.html
-            - title: Connect a LUN to a host
-              url: /task-connect-lun.html
+            - title: Flash Cache
+              url: /concept-flash-cache.html              
             - title: Accelerate data access with FlexCache
               url: /task-accelerate-data-access.html
+            - title: Write speed
+              url: /concept-write-speed.html
+            - title: WORM storage
+              url: /concept-worm.html
         - title: Aggregate administration
           entries:
             - title: Create aggregates
@@ -330,6 +323,10 @@ sidebar:
               url: /task-connecting-to-otc.html
             - title: System health and events
               entries:
+              - title: Performance monitoring
+                url: /concept-performance.html
+              - title: AutoSupport and Digital Advisor
+                url: /concept-active-iq.html                            
               - title: Verify AutoSupport setup
                 url: /task-verify-autosupport.html
               - title: Configure EMS
