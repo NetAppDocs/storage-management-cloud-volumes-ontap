@@ -37,7 +37,7 @@ When deploying an HA pair in Cloud Volumes ONTAP, consider the following require
 * *Protocol support*: SMB/CIFS continuous availability (CA) is supported for Hyper-V and SQL Server workloads, but requires specific ONTAP configuration flags.
 * *Failover time*: While storage takeover is typically measured in seconds, client-side timeout settings (like iSCSI initiator timeouts) must be configured correctly to prevent application disruption.
 
-== Operations unavailable when a node in Cloud Volumes ONTAP HA pair is offline
+== Operations unavailable when a node in an HA pair is offline
 
 When a node in an HA pair isn't available, the other node serves data for its partner to provide continued data service. This is called _storage takeover_. Several actions are unavailable until in storage giveback is complete.
 
