@@ -1,3 +1,20 @@
+---
+sidebar: sidebar
+permalink: old-release-notes.html
+keywords: old release notes, old enhancements, what's new
+summary: Review the enhancements to Cloud Volumes ONTAP from earlier releases here.
+---
+
+= Older enhancements in CLoud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Review the enhancements to Cloud Volumes ONTAP from earlier releases here.
+
 == 17 May 2024
 
 === Amazon Web Services Local Zones support 

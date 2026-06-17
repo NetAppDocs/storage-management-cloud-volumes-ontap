@@ -200,12 +200,8 @@ BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, a
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9150-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 
-.Older release notes
+== Older release notes
 
 We retain a year of release notes for Cloud Volumes ONTAP in the Console. The older notes are archived.
 
-.Archived notes
-[%collapsible]
-====
-include::_include/extra-whatsnew.adoc[]
-====
+
