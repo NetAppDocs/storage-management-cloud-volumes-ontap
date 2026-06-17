@@ -199,12 +199,13 @@ BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, a
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9150-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-== 17 May 2024
 
-=== Amazon Web Services Local Zones support 
-Support for AWS Local Zones is now available for Cloud Volumes ONTAP HA deployments. AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas.
+.Older release notes
 
-NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode or private mode.
+We retain a year of release notes for Cloud Volumes ONTAP in the Console. The older notes are archived.
 
-For more information on AWS Local Zones with HA Deployments, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].
-
+.Archived notes
+[%collapsible]
+====
+include::_include/extra-whatsnew.adoc[]
+====
