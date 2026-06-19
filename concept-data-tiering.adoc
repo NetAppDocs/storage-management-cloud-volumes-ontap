@@ -105,10 +105,7 @@ When the Console creates the bucket, it uses the following default settings:
 * Protection: None
 * Data encryption: Google-managed key
 
-Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, subsequent inactive data moves directly to the class that you selected.
-+
-[NOTE]
-The existing inactive data maintains the default storage class when you change the storage class. To change the storage class for existing inactive data, refer to https://docs.cloud.google.com/storage/docs/managing-lifecycles[Google Cloud documentation: Managing object lifecycles^].     
+Storage classes:: The default storage class for tiered data is _Standard Storage_. If a set of data is infrequently accessed, you can reduce your storage costs by changing its storage class to _Nearline Storage_ or _Coldline Storage_. Unless manually changed, all inactive data maintains the default storage class. To change the storage class of inactive data, refer to https://docs.cloud.google.com/storage/docs/managing-lifecycles[Google Cloud documentation: Managing object lifecycles^].     
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. To learn more, refer to the https://cloud.google.com/storage/docs/storage-classes[Google Cloud documentation: Storage classes^].
 +
