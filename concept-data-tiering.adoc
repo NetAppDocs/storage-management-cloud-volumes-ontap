@@ -85,7 +85,7 @@ You can select a storage tier when you add a Cloud Volumes ONTAP system and you 
 The storage access tier for data tiering is system wide--it's not per volume.
 endif::azure[]
 
-//ifdef::gcp[]
+ifdef::gcp[]
 == Data tiering in Google Cloud
 
 When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data. You can select a storage tier when you create a system and change it any time afterwards. For information about changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
