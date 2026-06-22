@@ -134,7 +134,7 @@ sidebar:
               url: /task-set-up-licensing-google.html
             - title: Deploy Cloud Volumes ONTAP with default values in Google Cloud
               url: /task-quick-deploy-gcp.html              
-            - title: Launch Cloud Volumes ONTAP in Google Cloud
+            - title: Deploy Cloud Volumes ONTAP using advanced options in Google Cloud
               url: /task-deploying-gcp.html
             - title: Google Cloud Platform Image Verification
               entries:

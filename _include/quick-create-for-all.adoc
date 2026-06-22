@@ -140,7 +140,7 @@ https://docs.cloud.google.com/storage/docs/tags-and-labels[Google Cloud Document
 ====
 .For AWS
 --
-*VPC*: For AWS, enter a VPC for the region with a subnet as per your planned deployment.
+*VPC*: For AWS, enter a Amazon Virtual Private Cloud (VPC) network for the region with a subnet as per your planned deployment.
 
 .AWS High Availability 
 
@@ -163,11 +163,11 @@ If you selected an HA configuration, enter the following information:
 --
 .For Azure
 --
-*VNET*: For Azure, select the required VNET.
+*VNET*: Select the required Azure Virtual Network (VNet). For information about VNet requirements, refer to link:reference-networking-azure.html#networking-for-azure-vnet-encryption[Networking for Azure VNet encryption].
 --
 .For Google Cloud
 --
-*VPC and subnet*: For Google Cloud, enter a VPC for the region with a subnet as per your planned deployment.
+*VPC and subnet*: For Google Cloud, enter a Google Virtual Private Cloud (VPC) network for the region and a subnet as per your planned deployment.
 
 .HA in single AZ or multiple AZs
 If you selected an HA configuration, enter the following information:
