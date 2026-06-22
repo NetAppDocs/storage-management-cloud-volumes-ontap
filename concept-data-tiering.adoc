@@ -88,7 +88,7 @@ endif::azure[]
 ifdef::gcp[]
 == Data tiering in Google Cloud
 
-When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data.
+When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data. You can select a storage tier when you create a system and change it any time afterwards. For information about changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
 
 Performance tier:: The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
 
@@ -105,12 +105,7 @@ When the Console creates the bucket, it uses the following default settings:
 * Protection: None
 * Data encryption: Google-managed key
 
-Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, subsequent inactive data moves directly to the class that you selected.
-NOTE: Any existing inactive data will maintain the default storage class when you change the storage class. To change the storage class for existing inactive data, you must perform the designation manually.     
-+
-The access costs are higher if you do access the data, so take that into consideration before you change the storage class. To learn more, refer to the https://cloud.google.com/storage/docs/storage-classes[Google Cloud documentation: Storage classes^].
-+
-You can select a storage tier when you create the system and you can change it any time afterwards. For details about changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
+Storage classes:: Google Cloud uses https://cloud.google.com/storage/docs/storage-classes[storage classes^] to manage costs and data availability. We recommend that you select a storage class based on your expected data access frequency, because accessing data incurs higher costs. The default storage class for tiered data is _Standard Storage_. Unless manually changed, all inactive data maintains the default storage class. To change the storage class of inactive data, refer to https://docs.cloud.google.com/storage/docs/managing-lifecycles[Google Cloud documentation: Managing object lifecycles^].
 +
 The storage class for data tiering is system wide--it's not per volume.
 endif::gcp[]
