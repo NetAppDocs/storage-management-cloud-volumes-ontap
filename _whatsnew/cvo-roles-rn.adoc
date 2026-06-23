@@ -33,8 +33,9 @@ a|
 
 |Volumes
 a|
-No volume updates are allowed in this tab, and you can't add volumes.
+You can't perform the following volume operations:
 
+* Add a volume
 * Clone a volume
 * Edit volume settings
 * Delete a volume
@@ -77,7 +78,7 @@ a|
 
 |Without roles
 a|
-When no role is assigned, all actions are disabled.
+When no role is assigned, you can't perform any actions, including:
 
 * Access the working environment
 * Access replication

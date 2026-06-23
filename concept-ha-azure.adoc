@@ -116,3 +116,8 @@ Storage takeover, resync, and giveback are all automatic by default. No user act
 == Storage configurations
 
 You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over the storage for the active node.
+[NOTE]
+Cloud Volumes ONTAP uses load balancers in active-passive mode for probes. In Azure, only the active node responds to a probe. The passive node may show up as inactive with an X mark. This is expected behavior and not a cause for concern.
+
+.Related link
+link:task-azure-high-availability-mode.html[Enable high-availability mode for Cloud Volumes ONTAP in Azure^]

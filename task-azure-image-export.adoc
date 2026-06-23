@@ -145,7 +145,7 @@ wget <URL of filename/Containers/vm-images/9150.01000024.05090105.vhd>
 +
 The URL follows a standard format. For automation, you can derive the URL string as shown below. Alternatively, you can use the Azure CLI `az` command to get the URL. 
 Example URL:
-https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd
++https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
  
 . Clean up the managed disk
 +
@@ -256,7 +256,7 @@ wget <URL of file examplesaname/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
 The URL follows a standard format. For automation, you can derive the URL string as shown below. Alternatively, you can use the Azure CLI `az` command to get the URL. 
 Example URL:
-https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd
++https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
 + 
 . Clean up the managed disk
 +

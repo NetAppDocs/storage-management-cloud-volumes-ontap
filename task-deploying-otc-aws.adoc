@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
 ---
 
-= Launch Cloud Volumes ONTAP in AWS
+= Deploy Cloud Volumes ONTAP using advanced options in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -465,7 +465,6 @@ The Console launches the Cloud Volumes ONTAP HA pair. You can track the progress
 
 If you experience any issues launching the HA pair, review the failure message. You can also select the system and click Re-create environment.
 
-For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
