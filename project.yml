@@ -284,9 +284,9 @@ sidebar:
       entries:
             - title: Supported versions for new deployments
               url: /reference-versions.html         
-            - title: Upgrade Cloud Volumes ONTAP
+            - title: Cloud Volumes ONTAP upgrade
               url: /task-updating-ontap-cloud.html
-            - title: Manage licenses
+            - title: License management
               entries:
                   - title: Learn more about capacity-based licenses
                     url: /concept-licensing-charging.html
@@ -310,7 +310,7 @@ sidebar:
               url: /task-modify-write-speed.html
             - title: Change the system password
               url: /task-change-password.html
-            - title: Add, remove, or delete systems
+            - title: System management
               entries:
                 - title: Add an existing system
                   url: /task-adding-systems.html
