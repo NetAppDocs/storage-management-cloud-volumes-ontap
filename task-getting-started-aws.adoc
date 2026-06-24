@@ -54,6 +54,43 @@ If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to 
 [role="quick-margin-para"]
 Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-otc-aws.html[Read step-by-step instructions].
 
+For deploying Cloud Volumes ONTAP, you first need to know about your AWS subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your AWS account. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
+
+[cols=3*,options="header",cols="30,70,70"]
+|===
+a| Task
+a| Description
+a| Reference
+
+a| Create a Console agent
+a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
+a| Refer to the Console setup guide:
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
+
+Refer to the Console setup guide:
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
+
+a| Plan your configuration
+a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+a| Refer to this topic in this document:
+link:task-planning-your-config.html[Plan your configuration]
+
+a| Set up your networking
+a| Ensure your VPC and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. Enable outbound internet access for AutoSupport, and set up a VPC endpoint to Amazon S3 for data tiering.
+a| Refer to this topic in this document:
+link:reference-networking-aws.html[Networking requirements for AWS]
+
+a| Set up the AWS KMS
+a| If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that an active Customer Master Key (CMK) exists and modify the key policy to add the IAM role for the Console agent as a key user.
+a| Refer to this topic in this document:
+link:task-setting-up-kms.html[Set up the AWS KMS]
+
+a| Launch Cloud Volumes ONTAP using the Console
+a| Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard.
+a| Refer to link:task-deploying-otc-aws.html[Launch Cloud Volumes ONTAP in AWS] in the Cloud Volumes ONTAP documentation
+
+|===
+
 .Related links
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html[Create a Console agent for AWS^]
