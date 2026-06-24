@@ -13,64 +13,33 @@ summary: Get started with Cloud Volumes ONTAP for Azure in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Learn the key steps required to deploy Cloud Volumes ONTAP in Azure.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Console agent
-
-[role="quick-margin-para"]
-If you don't have a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Console agent^] yet, you need to create one. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Learn how to create a Console agent in Azure^]
-
-[role="quick-margin-para"]
-Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, then you need to manually install the Console agent and access the NetApp Console that's running on that Console agent. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Learn how to manually install the Console agent in a location without internet access^]
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
-
-[role="quick-margin-para"]
-The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. For information, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
-
-[role="quick-margin-list"]
-.. Ensure that your VNet and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
-
-.. Enable outbound internet access from the target VPC for NetApp AutoSupport.
-+
-This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
-
-[role="quick-margin-para"]
-link:reference-networking-azure.html[Learn more about networking requirements].
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Launch Cloud Volumes ONTAP
-
-[role="quick-margin-para"]
-Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-otc-azure.html[Read step-by-step instructions].
-
 For deploying Cloud Volumes ONTAP, you first need to know about your Azure subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your Azure subscription and organization. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
 
-[cols=3*,options="header",cols="30,70,70"]
+[cols="20,35,25,25",options="header"]
 |===
 a| Task
 a| Description
 a| Reference
+a| Notes for private mode deployments
 
 a| Create a Console agent
-a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
+a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. 
 a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Create a Console agent in Azure^]
 
-Refer to the Console setup guide:
+a| If deploying in a subnet with no internet access, manually install the Console agent on the host. Then access the NetApp Console running on that agent on that host to deploy Cloud Volumes ONTAP. Refer to the Console setup guide:
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
-a| Refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure] in the Cloud Volumes ONTAP documentation
+a| link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure]
+a| You need to have similar planning considerations for private mode deployments.
 
 a| Set up your networking
 a| . Ensure your VNet and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. 
 . Enable outbound internet access from the target VNet for NetApp AutoSupport.
-[NOTE]
-This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
-a| Refer to link:reference-networking-azure.html[Networking requirements for Azure] in the Cloud Volumes ONTAP documentation
+a| link:reference-networking-azure.html[Networking requirements for Azure]
+a| Outbound internet access for AutoSupport is not required. All other networking requirements remain the same.
 
 a| Deploy Cloud Volumes ONTAP from the Console
 a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in Azure.
@@ -78,7 +47,12 @@ a| Refer to:
 
 * link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
+a| Before beginning the deployment, ensure that you have purchased a node-based Cloud Volumes ONTAP license. Private mode licenses are unavailable for purchase on cloud marketplaces, and you must obtain the license file from NetApp. You should also download the file on the local host before uploading it. Refer to:
 
+* link:concept-license-management.html[License management for node-based BYOL]
+* link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
+* link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
 |===
 
