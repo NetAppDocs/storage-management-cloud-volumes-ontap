@@ -65,7 +65,7 @@ a| Refer to:
 
 * link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a node-based Cloud Volumes ONTAP license. Private mode licenses are unavailable for purchase on cloud marketplaces, and you must obtain the license file from NetApp. You should also download the file on the local host before uploading it. Refer to:
+a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, save it to the local host, and upload it during deployment. Refer to: 
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
