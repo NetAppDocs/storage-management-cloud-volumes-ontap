@@ -92,11 +92,17 @@ a| The Console offers preconfigured packages that match your workload requiremen
 a| Refer to link:task-planning-your-config-gcp.html[Plan your configuration] in the Cloud Volumes ONTAP documentation.
 
 a| Set up your networking
-a| Ensure your VPC and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. Configure Private Google Access for data tiering, additional VPCs for HA pairs, and outbound internet access for AutoSupport.
+a|.  Ensure that your VPC and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
+. If you plan to enable data tiering, https://cloud.google.com/vpc/docs/configure-private-google-access[configure the Cloud Volumes ONTAP subnet for Private Google Access^].
+. If you're deploying an HA pair, ensure that you have four VPCs, each with their own subnet.
+. If you're using a shared VPC, provide the _Compute Network User_ role to the Console agent service account.
+. Enable outbound internet access from the target VPC for NetApp AutoSupport.
++
+This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
 a| Refer to link:reference-networking-gcp.html[Networking requirements for Google Cloud] in the Cloud Volumes ONTAP documentation.
 
 a| Set up a service account
-a| Cloud Volumes ONTAP requires a Google Cloud service account with the *Storage Admin* role for data tiering and backup. You can set up one service account and use it for both purposes.
+a| Cloud Volumes ONTAP requires a Google Cloud service account for enabling link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud, and also to enable the https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery^] to back up volumes to low-cost object storage.
 a| Refer to link:task-creating-gcp-service-account.html[Set up a service account] in the Cloud Volumes ONTAP documentation.
 
 a| Enable Google Cloud APIs
@@ -104,9 +110,13 @@ a| Enable the required Google Cloud APIs in your project. You might have already
 a| Refer to the Google Cloud documentation:
 https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable Google Cloud APIs^]
 
-a| Launch Cloud Volumes ONTAP using the Console
-a| Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard.
-a| Refer to link:task-deploying-gcp.html[Launch Cloud Volumes ONTAP in Google Cloud] in the Cloud Volumes ONTAP documentation
+a| Deploy Cloud Volumes ONTAP from the Console
+a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in Google Cloud.
+a| Refer to: 
+
+* link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
+
 
 |===
 

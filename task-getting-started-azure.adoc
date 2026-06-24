@@ -63,17 +63,22 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.h
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
-a| Refer to this topic in this document:
-link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure]
+a| Refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure] in the Cloud Volumes ONTAP documentation
 
 a| Set up your networking
-a| Ensure your VNet and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. Enable outbound internet access from the target VNet for NetApp AutoSupport.
-a| Refer to this topic in this document:
-link:reference-networking-azure.html[Networking requirements for Azure]
+a| . Ensure your VNet and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. 
+. Enable outbound internet access from the target VNet for NetApp AutoSupport.
+[NOTE]
+This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
+a| Refer to link:reference-networking-azure.html[Networking requirements for Azure] in the Cloud Volumes ONTAP documentation
 
-a| Launch Cloud Volumes ONTAP
-a| Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard.
-a| Refer to link:task-deploying-otc-azure.html[Launch Cloud Volumes ONTAP in Azure] in the Cloud Volumes ONTAP documentation
+a| Deploy Cloud Volumes ONTAP from the Console
+a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in Azure.
+a| Refer to: 
+
+* link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
+
 
 |===
 
