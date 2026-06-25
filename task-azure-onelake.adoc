@@ -15,16 +15,6 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 [.lead]
 You can integrate Cloud Volumes ONTAP with Microsoft Azure OneLake to enable Azure AI services, such as Microsoft Copilot and OpenAI, to read data stored in your Cloud Volumes ONTAP systems. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an Azure OneLake lakehouse through an Azure on-premises data gateway (OPDG).
 
-== Architecture overview
-
-The following diagram illustrates the Azure AI integration architecture with Cloud Volumes ONTAP, OneLake, and Azure AI Search:
-
-image::screenshot-azure-ai-architecture.png[Diagram showing the Azure AI integration architecture with Cloud Volumes ONTAP, Microsoft Fabric OneLake, and Azure AI Search]
-
-The following diagram shows the Azure OneLake structure used in this integration:
-
-image::screenshot-azure-onelake-structure.png[Diagram showing the Azure OneLake lakehouse structure with the Amazon S3-compatible shortcut connecting to Cloud Volumes ONTAP]
-
 .Before you begin
 
 Ensure that you have configured the following components before starting the integration process:
