@@ -174,6 +174,8 @@ If you selected an HA configuration, enter the following information:
 *Zone for node 1 and 2, and the mediator*: Add the zones for the two nodes and the mediator. 
 *Connectivity*
 Select four different VPCs for the HA configuration and a subnet in each VPC. For more information on VPC-1, VPC-2, and VPC-3, refer to  link:reference-networking-gcp.html#requirements-specific-to-single-node-systems[Rules for VPC-1, VPC-2, and VPC-3].
+[NOTE]
+Cloud Volumes ONTAP 9.19.1 or later does not require dedicated VPCs for mediators in single AZ HA deployments. For this configuration, add VPCs for the two nodes only.
 --
 ====
 
