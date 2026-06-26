@@ -26,7 +26,7 @@ a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
 a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent in Google Cloud^]
-a| If deploying in a subnet with no internet access, manually install the Console agent on the host. Then access the NetApp Console running on that agent on that host to deploy Cloud Volumes ONTAP. Refer to the Console setup guide:
+a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
 a| Plan your configuration
@@ -65,7 +65,7 @@ a| Refer to:
 
 * link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, save it to the local host, and upload it during deployment. Refer to: 
+a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
@@ -74,7 +74,7 @@ a| Before beginning the deployment, ensure that you have purchased a Cloud Volum
 
 |===
 
-.Related links
+.Related links 
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Creating a Console agent^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Console agent software on a Linux host^]
