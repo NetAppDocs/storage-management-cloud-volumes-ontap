@@ -15,6 +15,15 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
 
+=== Simplified Cloud Volumes ONTAP deployment in Google Cloud
+ 
+You can now use Quick create to deploy Cloud Volumes ONTAP in Google Cloud for both single-node and high-availability (HA) configurations. This streamlined process reduces the number of steps compared to the advanced method, automatically sets default values on a single page, and minimizes navigation, making deployment faster and easier.
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP in Google Cloud with Quick create^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options in Google Cloud^]
+
 === Introducing access roles for Cloud Volumes ONTAP
 
 NetApp is introducing identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for enhanced security and streamlined compliance. You can continue to log in to the NetApp Console using your existing credentials. However, authentication will now be routed through identity federation, enabling the Console administrator to have more granular control over Cloud Volumes ONTAP user operations. The following roles are now available:

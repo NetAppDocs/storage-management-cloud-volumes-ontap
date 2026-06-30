@@ -142,7 +142,7 @@ https://docs.cloud.google.com/storage/docs/tags-and-labels[Google Cloud Document
 --
 *VPC*: For AWS, enter a Amazon Virtual Private Cloud (VPC) network for the region with a subnet as per your planned deployment.
 
-.AWS High Availability 
+.AWS High Availability
 
 If you selected an HA configuration, enter the following information:
 
@@ -175,7 +175,7 @@ If you selected an HA configuration, enter the following information:
 *Connectivity*
 Select four different VPCs for the HA configuration and a subnet in each VPC. For more information on VPC-1, VPC-2, and VPC-3, refer to  link:reference-networking-gcp.html#requirements-specific-to-single-node-systems[Rules for VPC-1, VPC-2, and VPC-3].
 [NOTE]
-Cloud Volumes ONTAP 9.19.1 or later does not require dedicated VPCs for mediators in single AZ HA deployments. For this configuration, add VPCs for the two nodes only.
+Cloud Volumes ONTAP 9.19.1 and later support link:concept-ha-google-cloud.html[shared disks for single AZ HA configurations], making the mediator instance optional or redundant. In this configuration, you don't need a mediator zone, VPC, and subnet for data replication.
 --
 ====
 
