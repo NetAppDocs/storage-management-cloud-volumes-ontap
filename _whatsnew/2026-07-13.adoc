@@ -1,0 +1,33 @@
+=== Cloud Volumes ONTAP support for next generation Google Cloud VMs
+
+With 9.19.1, NetApp transitions Cloud Volumes ONTAP high -availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
+
+[NOTE]
+Cloud Volumes ONTAP HA configuration supports the C3 series only in single availability zone (AZ) deployments.
+
+You can now take advantage of C3-series VMs while deploying Cloud Volumes ONTAP 9.19.1 and later in Google Cloud. The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
+
+If your Cloud Volumes ONTAP system runs 9.19.1 or later, the preconfigured packages that you use for easy single node deployments automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. Additionally, you can select the LSSD variants of the C3 series machines for default Flash Cache support.
+
+You can't change the disk type for C3 VMs when adding volumes to aggregates because C3 supports only Hyperdisk Balanced disks. Similarly, when replicating a system with N2 VM types to a C3 VM, the disk type is set by default to Hyperdisk Balanced.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series[Google documents: C3 machine series^]
+
+=== Introducing access roles for Cloud Volumes ONTAP
+
+NetApp is introducing identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for enhanced security and streamlined compliance. You can continue to log in to the NetApp Console using your existing credentials. However, authentication will now be routed through identity federation, enabling the Console administrator to have more granular control over Cloud Volumes ONTAP user operations. The following roles are now available:
+
+* *Cloud Volumes ONTAP Viewer*: Grants read-only access to Cloud Volumes ONTAP screens and tabs. Certain screens and action buttons are disabled in this role.
+
+* *Cloud Volumes ONTAP Operator*: Enables day-to-day management tasks, including adding volumes, configuring replication, and managing storage.
+
+* *Cloud Volumes ONTAP Administrator*: Provides full access to all Cloud Volumes ONTAP operations.
+
+[NOTE]
+These roles are currently available in preview mode. In a future release, when the Console administrator is granted permissions for Cloud Volumes ONTAP user management and role assignment, these roles will be activated.
+
+The Console admin assigns roles to Cloud Volumes ONTAP users based on their organization from *Administration > Identity*, and the role permissions apply across all Cloud Volumes ONTAP systems within that organization.
+
+Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Azure), and Google Cloud environments.

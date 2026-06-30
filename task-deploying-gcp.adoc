@@ -294,7 +294,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable Backup
 +
 link:concept-ha-google-cloud.html[Learn more about HA deployment models^].
 
-. *Connectivity*: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
+. *Connectivity*: Select VPCs for the HA configuration, three for single AZ, and four for multiple AZ, and a subnet in each VPC, and then choose a firewall policy.
 +
 link:reference-networking-gcp.html[Learn more about networking requirements^].
 +
