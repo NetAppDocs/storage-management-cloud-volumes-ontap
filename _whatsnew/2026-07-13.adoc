@@ -1,3 +1,10 @@
+=== Cloud Volumes ONTAP 9.19.1 RC
+You can now use the NetApp Console to deploy and manage the Release Candidate (RC) version of Cloud Volumes ONTAP 9.19.1 in Google Cloud. This version is unavailable for deployment in Amazon Web Service (AWS)and Microsoft Azure (Azure).
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more about this release of Cloud Volumes ONTAP^].
+
+//The file name contains the major ONTAP-CVO rls number so that it's easy for the writer to change the download path for the next release.
+
 === Cloud Volumes ONTAP support for next generation Google Cloud VMs
 
 With 9.19.1, NetApp transitions Cloud Volumes ONTAP high -availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
@@ -46,7 +53,7 @@ Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Az
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html[NetApp Console access roles^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
 
-== Well-architected configuration analysis for Cloud Volumes ONTAP in Azure
+=== Well-architected configuration analysis for Cloud Volumes ONTAP in Azure
 
 The NetApp Console now supports well-architected configuration analysis for Cloud Volumes ONTAP systems running in Microsoft Azure. The Console analyzes your deployments daily and provides a well-architected status, insights, and recommendations to help you maintain systems that align with NetApp best practices and the well-architected framework.
 
