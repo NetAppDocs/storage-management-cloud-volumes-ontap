@@ -321,10 +321,7 @@ The following table describes fields for which you might need guidance:
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
-If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
-+
-[NOTE]
-##If you select a single AZ deployment for Cloud Volumes ONTAP 9.19.1 or later, you can see preconfigured packages with C3-series machines and Hyperdisk Balanced disks. For earlier versions and multiple AZs, you can still select n2-standard machines and Persistent Disks.##
+If you choose one of the packages, you only need to specify a volume and then review and approve the configuration. ##The preconfigured packages vary with the selected Cloud Volumes ONTAP version and configuration types. For example, if you select a single AZ deployment for Cloud Volumes ONTAP 9.19.1 or later, you can see preconfigured packages with C3-series machines and Hyperdisk Balanced disks. For earlier versions and multiple AZs, you can still select n2-standard machines and Persistent Disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.##
 +
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
