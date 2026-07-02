@@ -1,5 +1,5 @@
 === Cloud Volumes ONTAP 9.19.1 RC
-You can now use the NetApp Console to deploy and manage the Release Candidate (RC) version of Cloud Volumes ONTAP 9.19.1 in Google Cloud. This version is unavailable for deployment in Amazon Web Service (AWS)and Microsoft Azure (Azure).
+You can now use the NetApp Console to deploy and manage the Release Candidate (RC) version of Cloud Volumes ONTAP 9.19.1 in Google Cloud. This version is unavailable for deployment and upgrade in Amazon Web Service (AWS)and Microsoft Azure (Azure).
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more about this release of Cloud Volumes ONTAP^].
 
@@ -10,13 +10,28 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more abou
 With 9.19.1, NetApp transitions Cloud Volumes ONTAP high -availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
 
 [NOTE]
-Cloud Volumes ONTAP HA configuration supports the C3 series only in single availability zone (AZ) deployments.
+Cloud Volumes ONTAP HA configuration supports the C3-series VMS only in single availability zone (AZ) deployments.
 
-You can now take advantage of C3-series VMs while deploying Cloud Volumes ONTAP 9.19.1 and later in Google Cloud. The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
+You can now take advantage of C3-series VMs while deploying Cloud Volumes ONTAP 9.19.1 and later in Google Cloud. These machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
 
-If your Cloud Volumes ONTAP system runs 9.19.1 or later, the preconfigured packages that you use for easy single node deployments automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. Additionally, you can select the LSSD variants of the C3 series machines for default Flash Cache support.
+If your Cloud Volumes ONTAP system runs 9.19.1 or later, the preconfigured packages that you use for easy HA deployments in single AZs automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Zonal Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. Additionally, you can select the LSSD variants of the C3 series machines for default Flash Cache support.
 
-You can't change C3 VMs to N2 series VMs and vice versa. for  when adding volumes to aggregates because C3 supports only Hyperdisk Balanced disks. Similarly, when replicating a system with N2 VM types to a C3 VM, the disk type is set by default to Hyperdisk Balanced.
+Note these points:
+
+* In your Cloud Volumes ONTAP deployments you can't change C3 VMs to N2 series VMs and vice versa. However, you can switch instance types among different variants within the C3 family.
++
+[NOTE]
+Changing the instance type within the C3 family might take considerable time and may impact performance.
++
+* When changing the instance type, if you select c3-standard-44 or c3-standard-88 and their LSSD variants as the target VM, the Google network service egress network tier Tier-1 is applied automatically. If you switch to any other C3 variant, the egress network tier is set to Standard.
++
+[NOTE]
+Changing the egress network tier to Tier-1 incurs additional costs. Plan the deployment and upgrade accordingly.
++
+* If you select the local SSD (LSSD) variants of C3, Flash Cache gets enabled by default. You can't switch between C3 LSSD variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
+* On your C3 VMs, you can add volumes to both new and existing aggregates. 
+* When replicating a system with N2 VM types to a C3 VM, the disk type is set by default to Hyperdisk Balanced.
+* You can change the IOPS and throughput settings when adding volumes through the NetApp Console or by using the `PUT /gcp/vsa/aggregates/{workingEnvironmentId}/{aggregateName}` API.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
 

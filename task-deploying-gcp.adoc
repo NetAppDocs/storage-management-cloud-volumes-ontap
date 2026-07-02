@@ -293,7 +293,7 @@ link:concept-ha-google-cloud.html[Learn more about HA deployment models^].
 . *Network configuration and Connectivity*: Select the relevant regions and zones. Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
 +
 [NOTE]
-##Cloud Volumes ONTAP 9.19.1 and later support link:concept-ha-google-cloud.html[shared disks for single AZ HA configurations], making the mediator instance optional or redundant. In this configuration, you don't need a mediator zone, VPC, and subnet for data replication.##
+##Cloud Volumes ONTAP 9.19.1 and later support link:concept-ha-google-cloud.html[shared disks for single AZ HA configurations], making the mediator instance optional. In this configuration, you don't need to enter a mediator zone, the corresponding VPC, and subnet for data replication.##
 +
 link:reference-networking-gcp.html[Learn more about networking requirements^].
 +

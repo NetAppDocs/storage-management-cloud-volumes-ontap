@@ -101,7 +101,7 @@ In Google Cloud, an aggregate can contain up to 6 disks that are all the same si
 
 The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[low-cost object storage].
 
-##Cloud Volumes ONTAP 9.19.1 supports Zonal Hyperdisk Balanced disks for high-availability configurations in single availability zones.##
+##Cloud Volumes ONTAP 9.19.1 supports Zonal Hyperdisk Balanced disks for high-availability (HA) configurations in single availability zones (AZs).##
 
 *Related links*
 
