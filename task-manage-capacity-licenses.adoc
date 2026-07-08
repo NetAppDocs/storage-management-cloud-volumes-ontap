@@ -130,46 +130,120 @@ image:screenshot-download-usage-report.png[Screenshot shows the Cloud Volumes ON
 
 The following reports are available for download. Capacity values shown are in TiB. 
 
-* *High-level usage*: This report includes the following information: 
+* *High-level usage*: This report summarizes the total capacity consumed across your account and breaks it down by billing method (pre-committed licenses versus pay-as-you-go). It includes the following information:
 +
-** Total consumed capacity 
-** Total precommitted capacity 
-** Total BYOL capacity 
-** Total Marketplace contracts capacity
-** Total PAYGO capacity
+[cols="1,2",options="header"]
+|===
+| Column | Description
 
-* *Cloud Volumes ONTAP package usage*: This report includes the following information for each package: 
-+
-** Total consumed capacity
-** Total precommitted capacity 
-** Total BYOL capacity 
-** Total Marketplace contracts capacity 
-** Total PAYGO capacity
+| Total consumed capacity
+| The total provisioned capacity across all Cloud Volumes ONTAP systems in your account.
 
-* *Storage VMs usage*: This report shows how charged capacity is broken down across Cloud Volumes ONTAP systems and storage virtual machines (SVMs). This information is only available in the report. It contains the following information: 
-+
-** System ID and name (appears as the UUID)
-** Cloud
-** NetApp account ID
-** System configuration
-** SVM name
-** Provisioned capacity
-** Charged capacity roundup
-** Marketplace billing term
-** Cloud Volumes ONTAP package or feature
-** Charging SaaS Marketplace subscription name
-** Charging SaaS Marketplace subscription ID
-** Workload type
+| Total precommitted capacity
+| The total licensed capacity that you purchased from NetApp, including both BYOL licenses and Marketplace contracts. This value is the sum of Total BYOL capacity and Total Marketplace contracts capacity.
 
-* *Volumes usage*: This report shows how charged capacity is broken down by volumes in a Cloud Volumes ONTAP system. This information is not available on any screen in the Console. It includes the following information: 
+| Total BYOL capacity
+| The portion of pre-committed capacity covered by bring your own license (BYOL) licenses that you purchased directly from NetApp.
+
+| Total Marketplace contracts capacity
+| The portion of pre-committed capacity covered by annual marketplace contracts or private offers purchased through your cloud provider's marketplace.
+
+| Total PAYGO capacity
+| The portion of consumed capacity that isn't covered by any pre-committed license and is billed at pay-as-you-go (PAYGO) hourly marketplace rates.
+
+|===
+
+* *Cloud Volumes ONTAP package usage*: This report provides the same capacity breakdown as the High-level usage report, but organized per licensing package. It includes the following information:
 +
-** System ID and name (appears as the UUID)
-** SVN name
-** Volume ID 
-** Volume type
-** Volume provisioned capacity
+[cols="1,2",options="header"]
+|===
+| Column | Description
+
+| Total consumed capacity
+| The total provisioned capacity for this package across all Cloud Volumes ONTAP systems in your account.
+
+| Total precommitted capacity
+| The total licensed capacity for this package that you purchased from NetApp, including both BYOL licenses and Marketplace contracts. This value is the sum of Total BYOL capacity and Total Marketplace contracts capacity.
+
+| Total BYOL capacity
+| The portion of pre-committed capacity for this package covered by bring your own license (BYOL) licenses that you purchased directly from NetApp.
+
+| Total Marketplace contracts capacity
+| The portion of pre-committed capacity for this package covered by annual marketplace contracts or private offers purchased through your cloud provider's marketplace.
+
+| Total PAYGO capacity
+| The portion of consumed capacity for this package that isn't covered by any pre-committed license and is billed at pay-as-you-go (PAYGO) hourly marketplace rates.
+
+|===
+
+* *Storage VMs usage*: This report shows how charged capacity is broken down across Cloud Volumes ONTAP systems and storage virtual machines (SVMs). This information is only available in the report. It contains the following information:
 +
-NOTE: FlexClone volumes aren't included in this report because these types of volumes don't incur charges. 
+[cols="1,2",options="header"]
+|===
+| Column | Description
+
+| System ID and name
+| The unique identifier (UUID) and display name of the Cloud Volumes ONTAP system.
+
+| Cloud
+| The cloud provider where the system is deployed (for example, AWS, Azure, or Google Cloud).
+
+| NetApp account ID
+| The identifier for the NetApp account associated with the system.
+
+| System configuration
+| The deployment configuration of the system (for example, single node or HA pair).
+
+| SVM name
+| The name of the storage virtual machine (SVM) within the Cloud Volumes ONTAP system.
+
+| Provisioned capacity
+| The total capacity provisioned on the SVM.
+
+| Charged capacity roundup
+| _TBD — confirm definition and rounding behavior with engineering._
+
+| Marketplace billing term
+| The billing period for the associated marketplace subscription (for example, hourly or annual).
+
+| Cloud Volumes ONTAP package or feature
+| The licensing package or feature (for example, Essentials or Professional) associated with the SVM.
+
+| Charging SaaS Marketplace subscription name
+| The name of the marketplace subscription used for billing.
+
+| Charging SaaS Marketplace subscription ID
+| The unique identifier of the marketplace subscription used for billing.
+
+| Workload type
+| _TBD — confirm possible values and definition with engineering._
+
+|===
+
+* *Volumes usage*: This report shows how charged capacity is broken down by volumes in a Cloud Volumes ONTAP system. This information is not available on any screen in the Console. It includes the following information:
++
+[cols="1,2",options="header"]
+|===
+| Column | Description
+
+| System ID and name
+| The unique identifier (UUID) and display name of the Cloud Volumes ONTAP system that contains the volume.
+
+| SVM name
+| The name of the storage virtual machine (SVM) that contains the volume.
+
+| Volume ID
+| The unique identifier of the volume.
+
+| Volume type
+| The type of volume (for example, read-write or data protection).
+
+| Volume provisioned capacity
+| The total capacity provisioned for the volume.
+
+|===
++
+NOTE: FlexClone volumes aren't included in this report because these types of volumes don't incur charges.
 
 .Steps
 
