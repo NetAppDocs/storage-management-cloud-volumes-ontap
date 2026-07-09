@@ -201,7 +201,7 @@ The following reports are available for download. Capacity values shown are in T
 | The total capacity provisioned on the SVM.
 
 | Charged capacity roundup
-| _TBD — confirm definition and rounding behavior with engineering._
+| The capacity actually billed for the SVM. Each SVM has a minimum billable capacity (4 TiB by default, though this can vary by account). If the SVM's provisioned capacity is at or below that minimum, this value is rounded up to the minimum; otherwise it equals the provisioned capacity.
 
 | Marketplace billing term
 | The billing period for the associated marketplace subscription (for example, hourly or annual).
@@ -216,7 +216,7 @@ The following reports are available for download. Capacity values shown are in T
 | The unique identifier of the marketplace subscription used for billing.
 
 | Workload type
-| _TBD — confirm possible values and definition with engineering._
+| Indicates whether the SVM's volumes are *Primary* (read/write), actively used for production data, or *Secondary* (DP), data-protection destination volumes such as SnapMirror replicas used for backup and replication.
 
 |===
 
