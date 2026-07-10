@@ -48,7 +48,7 @@ You can now use the *Quick create* wizard to deploy Cloud Volumes ONTAP in Googl
 
 === Introducing access roles for Cloud Volumes ONTAP
 
-NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. You can continue to log in to the NetApp Console using your existing credentials. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over Cloud Volumes ONTAP operations. Every user must have one of these roles for performing any operation on Cloud Volumes ONTAP. Without a role, users can't view or access Cloud Volumes ONTAP instances. The following roles are now available:
+NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. Users can continue to log in to the NetApp Console using their existing credentials. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over Cloud Volumes ONTAP operations. Every user must have one of these roles for performing any operation on Cloud Volumes ONTAP. Without a role, users can't view or access Cloud Volumes ONTAP instances. The following roles are now available:
 
 * *Cloud Volumes ONTAP viewer*: Grants read-only access to Cloud Volumes ONTAP screens and tabs. Certain screens and action buttons are disabled in this role.
 
@@ -56,10 +56,12 @@ NetApp introduces identity and access management (IAM) roles for Cloud Volumes O
 
 * *Cloud Volumes ONTAP admin*: Provides full access to all Cloud Volumes ONTAP operations.
 
-The Console administrator assigns roles to Cloud Volumes ONTAP users from *Administration > Identity*. Role permissions are based on a user's organization and apply across all Cloud Volumes ONTAP systems in that organization. 
+The Console administrator assigns roles to Cloud Volumes ONTAP users from *Administration > Identity*. Role permissions are based on a user's organization and apply across all Cloud Volumes ONTAP systems in that organization.
+
+Cloud Volumes ONTAP enforces RBAC using a local cache of each user's permissions, which is refreshed automatically once every hour. When a user is assigned a new role or their existing role is changed, it may take up to one hour for that change to take effect, after which, all workflows permitted by the roles are enabled.
 
 [NOTE]
-Beginning July 13, 2026, Cloud Volumes ONTAP roles can be assigned to existing users when a Console agent is first deployed or first upgraded in each organization. The seeding process for a new Cloud Volume ONTAP role is around 30 minutes, and once the seeding process completes, users with specific roles can start Cloud Volumes ONTAP workflows.
+When a Console agent is deployed for the first time, or an existing Console agent is upgraded to Console 4.9.0 or later, a one-time seeding process automatically assigns Cloud Volumes ONTAP roles to all existing users in the organization. This process can take up to 30 minutes to complete. And when complete, the Console assigns appropriate roles to the existing users.
 
 Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Azure), and Google Cloud environments.
 
