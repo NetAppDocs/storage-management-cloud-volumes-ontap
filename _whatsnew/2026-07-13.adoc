@@ -1,5 +1,5 @@
 === Cloud Volumes ONTAP 9.19.1 RC
-You can now use the NetApp Console to deploy and manage the Release Candidate (RC) version of Cloud Volumes ONTAP 9.19.1 in Google Cloud. This version is unavailable for deployment and upgrade in Amazon Web Service (AWS)and Microsoft Azure (Azure).
+You can now use the NetApp Console to deploy and manage the Release Candidate (RC) version of Cloud Volumes ONTAP 9.19.1 in Google Cloud. This version is unavailable for deployment and upgrade in Amazon Web Service (AWS) and Microsoft Azure (Azure).
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more about this release of Cloud Volumes ONTAP^].
 
@@ -7,14 +7,14 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more abou
 
 === Cloud Volumes ONTAP support for next generation Google Cloud VMs
 
-With 9.19.1, NetApp transitions Cloud Volumes ONTAP high -availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
+With 9.19.1, NetApp transitions Cloud Volumes ONTAP high-availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
 
 [NOTE]
-Cloud Volumes ONTAP HA configuration supports the C3-series VMs only in single availability zone (AZ) deployments.
+This support applies only to single availability zone (AZ) HA deployments.
 
 You can now take advantage of C3-series VMs while deploying Cloud Volumes ONTAP 9.19.1 and later in Google Cloud. These machines offer improved performance and higher capacity limits. They use Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks for dynamic performance on intensive workloads. 
 
-If your Cloud Volumes ONTAP system runs 9.19.1 or later, the preconfigured packages that you use for easy HA deployments in single AZs automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Zonal Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. Additionally, you can select the LSSD variants of the C3 series machines for default Flash Cache support.
+If your Cloud Volumes ONTAP system runs 9.19.1 or later, the preconfigured packages that you use for easy deployments in single AZs automatically use C3 VMs, while enabling you to customize the IOPS and throughput parameters based on your workload needs. Similarly, while creating aggregates, you can add Zonal Hyperdisk Balanced disks to achieve better performance and scalability in Google Cloud. You can also select the LSSD variants of the C3 series machines for default Flash Cache support.
 
 Note these points:
 
@@ -48,7 +48,7 @@ You can now use the *Quick create* wizard to deploy Cloud Volumes ONTAP in Googl
 
 === Introducing access roles for Cloud Volumes ONTAP
 
-NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. Users can continue to log in to the NetApp Console using their existing credentials. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over Cloud Volumes ONTAP operations. Every user must have one of these roles for performing any operation on Cloud Volumes ONTAP. Without a role, users can't view or access Cloud Volumes ONTAP instances. The following roles are now available:
+NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. Users can continue to log in to the NetApp Console using their existing credentials for Cloud Volumes ONTAP operations. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over these functions. Every user must have one of the following roles for performing any operation on Cloud Volumes ONTAP. Without a role, users can't view or access Cloud Volumes ONTAP instances. 
 
 * *Cloud Volumes ONTAP viewer*: Grants read-only access to Cloud Volumes ONTAP screens and tabs. Certain screens and action buttons are disabled in this role.
 
