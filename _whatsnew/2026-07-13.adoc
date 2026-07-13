@@ -31,7 +31,7 @@ Changing the egress network tier to _Tier-1_ incurs additional costs. Plan the d
 * If you select the LSSD variants of C3, Flash Cache gets enabled by default. You can't switch between C3 LSSD variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
 * On your C3 VMs, you can add volumes to both new and existing aggregates. 
 * When replicating a Cloud Volumes ONTAP system with an N2 VM type to a C3 VM type, the disk type is set by default to Hyperdisk Balanced.
-* You can change the IOPS and throughput settings when adding volumes through the NetApp Console or by using the `PUT /gcp/ha/aggregates/{workingEnvironmentId}/{aggregateName}` API.
+* You can change the IOPS and throughput settings when adding aggregates through the NetApp Console or by using the `PUT /gcp/ha/aggregates/{workingEnvironmentId}/{aggregateName}` API.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
 
