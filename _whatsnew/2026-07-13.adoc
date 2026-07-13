@@ -5,9 +5,9 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more abou
 
 //The file name contains the major ONTAP-CVO rls number so that it's easy for the writer to change the download path for the next release.
 
-=== Cloud Volumes ONTAP support for next generation Google Cloud VMs
+=== Support for next-generation Google Cloud VMs in Cloud Volumes ONTAP HA
 
-With 9.19.1, NetApp transitions Cloud Volumes ONTAP high-availability (HA) deployments off N2 VMs to the next generation Google Cloud C3-series VMs for a faster and more scalable experience.
+With 9.19.1, NetApp transitions Cloud Volumes ONTAP high-availability (HA) deployments off N2 VMs to the next-generation Google Cloud C3-series VMs for a faster and more scalable experience.
 
 [NOTE]
 This support applies only to single availability zone (AZ) HA deployments.
