@@ -20,8 +20,8 @@ The enhancements described on this page are specific to managing Cloud Volumes O
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
 
-== 13 July 2026
-include::_whatsnew/2026-07-13.adoc[]
+== 14 July 2026
+include::_whatsnew/2026-07-14.adoc[]
 
 == 11 June 2026
 include::_whatsnew/2026-06-11.adoc[]
