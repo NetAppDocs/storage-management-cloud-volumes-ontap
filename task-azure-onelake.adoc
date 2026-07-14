@@ -13,7 +13,7 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 :imagesdir: ./media/
 
 [.lead]
-You can integrate Cloud Volumes ONTAP with Microsoft Fabric OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse through an Azure on-premises data gateway (OPDG).
+You can integrate Cloud Volumes ONTAP with Microsoft Fabric OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse through an Azure on-premises data gateway.
 
 .Before you begin
 
@@ -43,16 +43,11 @@ Ensure to select the correct NAS volume when creating the S3 NAS bucket.
 
 == Configure the Azure on-premises data gateway
 
-Install and configure an Azure on-premises data gateway on a VM inside your virtual network (vNET) to enable connectivity between OneLake and your Cloud Volumes ONTAP system.
+Install and configure an Azure on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's virtual network (vNet) to enable connectivity between OneLake and your Cloud Volumes ONTAP system.
 
 .Steps
-. Install the Azure on-premises data gateway on a VM inside your vNET.
-+
-Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
-
-. Configure the Azure on-premises data gateway.
-+
-Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-app[Microsoft documentation: Use the on-premises data gateway app^] for configuration steps.
+. Ensure that there's network connectivity between the VM where you are installing the Azure on-premises data gateway and the Cloud Volumes ONTAP S3 bucket you created in the previous step.
+. Install the Azure on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
 
 == Create a OneLake shortcut
 
