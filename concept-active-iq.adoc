@@ -40,4 +40,4 @@ Digital Advisor displays complete inventory and software and hardware configurat
 
 * https://docs.netapp.com/us-en/active-iq/[NetApp Documentation: Digital Advisor^]
 * https://aiq.netapp.com/custom-dashboard/search[Launch Digital Advisor^]
-* https://www.netapp.com/us/services/support-edge.aspx[SupportEdge Services^]
+* https://www.netapp.com/company/contact-us/support/[NetApp Support^]

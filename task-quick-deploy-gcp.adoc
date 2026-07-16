@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: task-quick-deploy-gcp.html
+keywords: google cloud quick deploy, quick deploy, GCP, single screen deployment Google Cloud, SAZ, MAZ, single node, HA pair
+summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in Google Cloud quickly.
+---
+
+= Deploy Cloud Volumes ONTAP with Quick create
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//This task topic was initially written for only AWS. But the quick deployment wizard in CVO is similar for all providers. So making this generic for all. There'll be tabs here, and it will eliminate filtering.
+
+include::_include/quick-create-for-all.adoc[]
+
+.Related links
+
+* link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration]
+* link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP in Google Cloud using advanced deployment]
