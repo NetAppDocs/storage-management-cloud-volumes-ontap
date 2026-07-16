@@ -1,6 +1,6 @@
-=== Cloud Volumes ONTAP support for next generation Google Cloud VMs
+=== Cloud Volumes ONTAP support for next-generation Google Cloud VMs
 
-With 9.18.1, NetApp transitions new Cloud Volumes ONTAP deployments off N2 VMs to the next generation Google Cloud C3 series VMs for a faster and more scalable experience. You can now take advantage of C3 series VMs while deploying Cloud Volumes ONTAP 9.18.1 and later in Google Cloud. The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
+With 9.18.1, NetApp transitions new Cloud Volumes ONTAP deployments off N2 VMs to the next-generation Google Cloud C3 series VMs for a faster and more scalable experience. You can now take advantage of C3 series VMs while deploying Cloud Volumes ONTAP 9.18.1 and later in Google Cloud. The C3 series machines offer improved performance and higher capacity limits by using Google Virtual NIC (gVNIC) and Hyperdisk Balanced disks that ensure dynamic performance for intensive workloads. 
 
 [NOTE]
 For now, Cloud Volumes ONTAP supports the C3 series only in single-node deployments.

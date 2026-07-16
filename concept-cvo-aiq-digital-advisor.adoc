@@ -13,7 +13,7 @@ summary: Digital Advisor is integrated into the NetApp Console so that you can o
 :imagesdir: ./media/
 
 [.lead]
-https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor] (also known as Digital Advisor) is integrated into the NetApp Console so that you can optimize the operations, security, and performance of your Cloud Volumes ONTAP systems in a single pane of glass.
+https://www.netapp.com/data-services/digital-advisor/[NetApp Active IQ Digital Advisor^] (also known as Digital Advisor) is integrated into the NetApp Console so that you can optimize the operations, security, and performance of your Cloud Volumes ONTAP systems in a single pane of glass.
 
 == Features
 
