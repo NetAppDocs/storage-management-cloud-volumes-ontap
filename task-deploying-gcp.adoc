@@ -26,7 +26,7 @@ You need the following before you begin.
 
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^].
 
-** The service account associated with the Console agent https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
+** The service account associated with the Console agent https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[should have the required permissions^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -251,7 +251,7 @@ Create a system in the Console to launch Cloud Volumes ONTAP in Google Cloud.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP HA*.
 
-. *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
+. *System details*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -260,27 +260,24 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
+| Google Cloud project and Marketplace subscription a| Select the Google project and the subscription that you want to use for this system. This is the service account that you set up for the Console. For information, Refer to the link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Console setup documents^]. The Console uses the project to create the Cloud Volumes ONTAP system and the subscription to determine billing and usage. If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
+
+Click *Add Subscription* to associate the selected credentials with a subscription.
+
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud Marketplace. Refer to the Console setup document: https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a marketplace subscription with Google Cloud credentials^].
+
+
 | System Name | The Console uses the system name to name both the Cloud Volumes ONTAP system and the Google Cloud VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Service Account Name | If you plan to use the link:concept-data-tiering.html[NetApp Cloud Tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Backup and Recovery^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
-| Add Labels |	Labels are metadata for your Google Cloud resources. The Console adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
+| Labels |	Labels are metadata for your Google Cloud resources. The Console adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
 
 You can add up to four labels from the user interface when creating a system, and then you can add more after it's created. Note that the API does not limit you to four labels when creating a system.
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
-
-| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. 
-
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
-
-NOTE: This is the service account that you set up for the Console, link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[as described on this page^].
-
-Click *Add Subscription* to associate the selected credentials with a subscription.
-
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud Marketplace. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a marketplace subscription with Google Cloud credentials^].
+| ONTAP user name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 |===
 //+
@@ -290,11 +287,13 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above. 
 
-. *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zone.
+. *Deployment topology*: Choose multiple availability zones (AZ) (recommended) or a single AZ for the HA configuration. 
 +
 link:concept-ha-google-cloud.html[Learn more about HA deployment models^].
-
-. *Connectivity*: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
+. *Network configuration and Connectivity*: Select the relevant regions and zones. Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
++
+[NOTE]
+Cloud Volumes ONTAP 9.19.1 and later support link:concept-ha-google-cloud.html[shared disks for single AZ HA configurations], making the mediator instance optional. In this configuration, you don't need to enter a mediator zone, the corresponding VPC, and subnet for data replication.
 +
 link:reference-networking-gcp.html[Learn more about networking requirements^].
 +
@@ -322,8 +321,8 @@ The following table describes fields for which you might need guidance:
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
-If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
-
+If you choose one of the packages, you only need to specify a volume and then review and approve the configuration. The preconfigured packages vary with the selected Cloud Volumes ONTAP version and configuration types. For example, if you select a single AZ deployment for Cloud Volumes ONTAP 9.19.1 or later, you can see preconfigured packages with C3-series machines and Hyperdisk Balanced disks. For earlier versions and multiple AZs, you can still select n2-standard machines and Persistent Disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.
++
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then the Console updates the system to that version when creating it. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.

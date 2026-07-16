@@ -207,6 +207,7 @@ includedPermissions:
 - deploymentmanager.manifests.get
 - iam.serviceAccounts.get
 - storage.buckets.create
+- storage.buckets.get
 - storage.objects.create
 - storage.objects.delete
 - storage.objects.get
@@ -368,3 +369,5 @@ dmconvert \
 
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
+
+//BLUEXPDOC-1324: only storage.buckets.get was added. compute.instances.getSerialPortOutput was skipped because the filer didn't give log access that's needed for confirmation.
