@@ -15,12 +15,175 @@ summary: If you want to use Amazon encryption with Cloud Volumes ONTAP, then you
 [.lead]
 If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to set up the AWS Key Management Service (KMS).
 
+A Customer Master Key (CMK) can be managed by AWS or the customer. It can be in the same AWS account as the NetApp Console and Cloud Volumes ONTAP, or in a different AWS account (shared accounts).
+
+
+.Before you begin
+
+* Ensure that you have information about the NetApp Console agent IAM roles for AWS.
+* Ensure that an active CMK exists.
+
+== Set up customer-managed KMS keys for a single account
+
+When the Console agent and Cloud Volumes ONTAP run in the same AWS account, complete the following steps.
+
 .Steps
 
-. Ensure that an active Customer Master Key (CMK) exists.
+. Grant S3 encryption permission to the IAM Role for the Console agent. Add the `s3:PutEncryptionConfiguration` action to the IAM role policy:
 +
-The CMK can be an AWS-managed CMK or a customer-managed CMK. It can be in the same AWS account as the NetApp Console and Cloud Volumes ONTAP or in a different AWS account.
+[source,json]
+{
+  "Sid": "cvoServicePolicy",
+  "Effect": "Allow",
+  "Action": [
+    "s3:PutEncryptionConfiguration"
+  ],
+  "Resource": "*"
+}
 +
+. Enable access for the Console agent to the customer-manager encryption key (CMEK). Use one of the following methods:
+
+[role="tabbed-block"]
+====
+.The Console (recommended)
+--
+. On the AWS Console, go to *KMS > Customer managed keys* and select your CMEK key.
+. On the *Key users* section, select *Add*.
+. Select your Console agent instance role, for example, `occm-role`, and click *Add*.
+. Save your changes.
+--
+.Update the KMS key policy
+--
+. On the AWS Console, go to *KMS*, and search for your key.
+. Select the *Key policy* tab and select *Edit*.
+. Search for the statement that enables access to the key: `Allow Connector to use the key` and append the Console agent role ARN to the `Principal` array. Replace the placeholders in the following example with your values:
+* `YOUR-ACCOUNT-ID`: Your AWS account ID (12 digits)
+* `YOUR-AGENT-ROLE-NAME`: The Console agent's IAM role name
++
+[source,json]
+{
+  "Sid": "Allow Connector to use the key",
+  "Effect": "Allow",
+  "Principal": {
+    "AWS": [
+      "arn:aws:iam::`YOUR-ACCOUNT-ID`:role/`YOUR-AGENT-ROLE-NAME`"
+    ]
+  },
+  "Action": [
+    "kms:Encrypt",
+    "kms:Decrypt",
+    "kms:ReEncrypt*",
+    "kms:GenerateDataKey*",
+    "kms:CreateGrant",
+    "kms:DescribeKey",
+    "kms:ListKeys"
+  ],
+  "Resource": "*"
+}
++
+. Save your changes.
+--
+====
+
+== Set up customer-managed KMS keys for shared accounts
+
+When the Console agent runs in one AWS account (Account A) and Cloud Volumes ONTAP is deployed in another AWS account (Account B), complete all single-account steps first for Account A, and then complete these steps.
+
+.Steps
+
+. Add the `s3:PutEncryptionConfiguration` action to the assumed role for Account B. This is required because the FabricPool bucket encryption call runs under the assumed role for Account B. This permission covers enabling default encryption on the S3 bucket used for tiering.
++
+[source,json]
+{
+  "Sid": "cvoServicePolicy",
+  "Effect": "Allow",
+  "Action": [
+    "s3:PutEncryptionConfiguration"
+  ],
+  "Resource": "*"
+}
++
+. If the CMEK key is stored in Account B, the agent role for Account A needs explicit access to use that key. The KMS key policy in Account B grants that cross-account access.
+.. In the AWS Console for Account B, go to *KMS > Customer managed keys* and select the CMEK key used for Cloud Volumes ONTAP deployment.
+.. Open the *Key policy* tab and select *Edit*.
+.. Add a statement that grants the IAM role for Account A access to the key:
++
+[source,json]
+{
+  "Sid": "Allow use of the key from the agent account",
+  "Effect": "Allow",
+  "Principal": {
+    "AWS": "arn:aws:iam::ACCOUNT-A-ID:role/`YOUR-AGENT-ROLE-NAME`"
+  },
+  "Action": [
+    "kms:Encrypt",
+    "kms:Decrypt",
+    "kms:ReEncrypt*",
+    "kms:GenerateDataKey*",
+    "kms:CreateGrant",
+    "kms:DescribeKey",
+    "kms:ListKeys",
+    "kms:ListAliases"
+  ],
+  "Resource": "*"
+}
++
+[NOTE]
+The key policy for Account B controls whether the Console agent role for Account A can be trusted to use the key. This policy statement is required in addition to the IAM policy for Account A.
+. Update the IAM policy for the Console agent of Account A to allow KMS API calls on keys for Account B.
+.. In the AWS Console for Account A, go to *IAM > Roles* and select the Console agent role, for example, `occm-role` or `NetAppCloudManagerRole`.
+.. Add or update the KMS permissions for Account B keys:
++
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:List*",
+        "kms:Describe*",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:CreateGrant"
+      ],
+      "Resource": [
+        "arn:aws:kms:*:ACCOUNT-B-ID:key/*",
+        "arn:aws:kms:*:ACCOUNT-B-ID:alias/*"
+      ]
+    }
+  ]
+}
++
+[NOTE]
+The key policy in Account B controls access to the key, and the IAM policy in Account A allows the Console agent role to make KMS API calls. If the configuration is missing for either of the accounts, access is restricted.
++
+. Add Account A as an allowed external AWS account on the CMEK in Account B.
+.. In the AWS KMS console for Account B, open the target KMS key and locate the *Other AWS accounts* section.
+.. Select *Add other AWS accounts* and enter the AWS account ID for Account A.
++
+image:screenshot_cmk_add_accounts.gif[This screenshot shows the "Add other AWS accounts" button from the AWS KMS console.]
++
+image:screenshot_cmk_add_accounts_dialog.gif[This screenshot shows the "Other AWS accounts" dialog box from the AWS KMS console.]
+
+
+.Related topics
+
+* Amazon documentation: 
+** https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html[AWS KMS keys^]
+** https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys^]
+* NetApp Console documentation: 
+** https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[Learn about AWS credentials and permissions in NetApp Console^]
+** https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html[Manage AWS credentials and marketplace subscriptions for NetApp Console^]
+
+
+
+
+
+========================================================================
+
 https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys[AWS Documentation: Customer Master Keys (CMKs)^]
 
 . Modify the key policy for each CMK by adding the IAM role that provides permissions to the Console as a _key user_.
@@ -102,141 +265,3 @@ This step is required if you enabled data tiering on Cloud Volumes ONTAP and wan
 You'll need to perform this step _after_ you deploy Cloud Volumes ONTAP because the IAM role is created when you create a Cloud Volumes ONTAP system. (Of course, you do have the option to use an existing Cloud Volumes ONTAP IAM role, so it's possible to perform this step before.)
 
 https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys^]
-
-== Set up customer-managed KMS keys for single account
-
-When the Connector and Cloud Volumes ONTAP run in the same AWS account, complete the following steps.
-
-.Steps
-
-. Add `s3:PutEncryptionConfiguration` to the Connector IAM role.
-+
-Add or confirm the following action in the Connector role policy:
-+
-[source,json]
-{
-  "Sid": "cvoServicePolicy",
-  "Effect": "Allow",
-  "Action": [
-    "s3:PutEncryptionConfiguration"
-  ],
-  "Resource": "*"
-}
-
-. Grant the Connector access to the CMEK key by using one of the following methods:
-
-.. *Option A (recommended):* Add the Connector to Key Users.
-+
-... Go to *KMS* → *Customer managed keys* and select your CMEK key.
-... Scroll to the *Key users* section and click *Add*.
-... Select your Connector instance role (for example, `occm-role`) and click *Add*.
-
-.. *Option B:* Update the KMS key policy directly.
-+
-... Go to *KMS* → your key → *Key policy* tab and click *Edit*.
-... Append the Connector role ARN to the `Principal` array in the "Allow use of the key" statement:
-+
-[source,json]
-{
-  "Sid": "Allow Connector to use the key",
-  "Effect": "Allow",
-  "Principal": {
-    "AWS": [
-      "arn:aws:iam::YOUR-ACCOUNT-ID:role/YOUR-CONNECTOR-ROLE-NAME"
-    ]
-  },
-  "Action": [
-    "kms:Encrypt",
-    "kms:Decrypt",
-    "kms:ReEncrypt*",
-    "kms:GenerateDataKey*",
-    "kms:CreateGrant",
-    "kms:DescribeKey",
-    "kms:ListKeys"
-  ],
-  "Resource": "*"
-}
-... Click *Save changes*.
-
-== Set up customer-managed KMS keys for shared accounts
-
-When the Connector runs in one AWS account (Account A) and Cloud Volumes ONTAP is deployed in another AWS account (Account B), complete all single-account steps first, then complete the following additional steps.
-
-.Steps
-
-. Add `s3:PutEncryptionConfiguration` to the assumed role in Account B.
-+
-The Connector assumes a role in Account B to deploy Cloud Volumes ONTAP. Because the FabricPool bucket encryption call runs under the assumed role, add the same permission in Account B:
-+
-[source,json]
-{
-  "Sid": "cvoServicePolicy",
-  "Effect": "Allow",
-  "Action": [
-    "s3:PutEncryptionConfiguration"
-  ],
-  "Resource": "*"
-}
-
-. Update the KMS key policy in Account B to allow the Connector role from Account A to use the key.
-+
-.. In Account B, go to *AWS Console* → *KMS* → *Customer managed keys* and select the CMEK key.
-.. Open the *Key policy* tab and choose *Edit*.
-.. Add a statement that grants the Connector IAM role from Account A access to the key:
-+
-[source,json]
-{
-  "Sid": "Allow use of the key from Connector account",
-  "Effect": "Allow",
-  "Principal": {
-    "AWS": "arn:aws:iam::ACCOUNT-A-ID:role/CONNECTOR-ROLE-NAME"
-  },
-  "Action": [
-    "kms:Encrypt",
-    "kms:Decrypt",
-    "kms:ReEncrypt*",
-    "kms:GenerateDataKey*",
-    "kms:CreateGrant",
-    "kms:DescribeKey",
-    "kms:ListKeys",
-    "kms:ListAliases"
-  ],
-  "Resource": "*"
-}
-+
-NOTE: The key policy in Account B controls whether the Connector role from Account A is trusted to use the key. The IAM policy in Account A alone is not sufficient.
-
-. Update the Connector IAM policy in Account A to allow KMS calls on keys in Account B.
-+
-.. In Account A, go to *AWS Console* → *IAM* → *Roles* and select the Connector role (for example, `occm-role` or `NetAppCloudManagerRole`).
-.. Add or update the KMS permissions for Account B keys:
-+
-[source,json]
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "kms:List*",
-        "kms:Describe*",
-        "kms:Encrypt",
-        "kms:Decrypt",
-        "kms:ReEncrypt*",
-        "kms:GenerateDataKey*",
-        "kms:CreateGrant"
-      ],
-      "Resource": [
-        "arn:aws:kms:*:ACCOUNT-B-ID:key/*",
-        "arn:aws:kms:*:ACCOUNT-B-ID:alias/*"
-      ]
-    }
-  ]
-}
-+
-NOTE: Both sides are required. The key policy in Account B controls access to the key, and the IAM policy in Account A allows the Connector role to make KMS API calls. If either side is missing, access fails.
-
-. Add Account A as an allowed external AWS account on the CMEK in Account B.
-+
-.. In Account B, open the target KMS key and locate the *Other AWS accounts* section.
-.. Choose *Add other AWS accounts* and enter Account A's AWS account ID.
