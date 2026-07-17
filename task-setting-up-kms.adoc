@@ -41,11 +41,11 @@ When the Console agent and Cloud Volumes ONTAP run in the same AWS account, comp
   "Resource": "*"
 }
 +
-. Enable access for the Console agent to the customer-managed encryption key (CMEK). Use one of the following methods:
+. Enable access for the Console agent to the customer-managed encryption key (CMEK). Use one of the following methods on the AWS Console:
 
 [role="tabbed-block"]
 ====
-.The Console (recommended)
+.Add the role as a key user (recommended)
 --
 . On the AWS Console, go to *KMS > Customer managed keys* and select your CMEK key.
 . On the *Key users* section, select *Add*.
