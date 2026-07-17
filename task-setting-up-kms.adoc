@@ -41,7 +41,7 @@ When the Console agent and Cloud Volumes ONTAP run in the same AWS account, comp
   "Resource": "*"
 }
 +
-. Enable access for the Console agent to the customer-manager encryption key (CMEK). Use one of the following methods:
+. Enable access for the Console agent to the customer-managed encryption key (CMEK). Use one of the following methods:
 
 [role="tabbed-block"]
 ====
@@ -103,7 +103,7 @@ When the Console agent runs in one AWS account (Account A) and Cloud Volumes ONT
   "Resource": "*"
 }
 +
-. If the CMEK key is stored in Account B, the agent role for Account A needs explicit access to use that key. The KMS key policy in Account B grants that cross-account access.
+. If the CMEK key is stored in Account B, the agent role for Account A needs direct access to use that key. The KMS key policy in Account B grants that cross-account access.
 .. In the AWS Console for Account B, go to *KMS > Customer managed keys* and select the CMEK key used for Cloud Volumes ONTAP deployment.
 .. Open the *Key policy* tab and select *Edit*.
 .. Add a statement that grants the IAM role for Account A access to the key:
@@ -158,7 +158,7 @@ The key policy for Account B controls whether the Console agent role for Account
 }
 +
 [NOTE]
-The key policy in Account B controls access to the key, and the IAM policy in Account A allows the Console agent role to make KMS API calls. If the configuration is missing for either of the accounts, access is restricted.
+The key policy in Account B controls access to the key. The IAM policy in Account A allows the Console agent role to make KMS API calls. If either account is missing the configuration, AWS restricts access.
 +
 . Add Account A as an allowed external AWS account on the CMEK in Account B.
 .. In the AWS KMS console for Account B, open the target KMS key and locate the *Other AWS accounts* section.
