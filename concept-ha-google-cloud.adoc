@@ -23,10 +23,10 @@ Cloud Volumes ONTAP HA configurations in Google Cloud include the following comp
 
 * A mediator instance that provides a communication channel between the nodes to assist in storage takeover and giveback processes.
 
-* One zone or three zones (recommended).
+* Single availability zone (AZ) or multiple availability/three zones (recommended).
 +
 If you choose three zones, the two nodes and mediator are in separate Google Cloud zones.
-
++
 * Four Virtual Private Clouds (VPCs).
 +
 The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
@@ -40,6 +40,7 @@ The following conceptual image shows a Cloud Volumes ONTAP HA pair and its compo
 image:diagram_gcp_ha.png[A conceptual image of a Cloud Volumes ONTAP HA pair and its components.]
 
 === Mediator
+Traditionally, Cloud Volumes ONTAP HA configurations in Google Cloud use a non-shared model, where a mediator instance is used to manage failover operations or monitor node health. This needs creating an additional VM in Google Cloud and two sets of disks for each node. 
 
 Here are some key details about the mediator instance in Google Cloud:
 
@@ -49,13 +50,16 @@ Disks:: Two standard persistent disks that are 10 GiB each
 
 Operating system:: Debian 11
 +
-NOTE: For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator.
+NOTE: For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator. 
 
 Upgrades:: When you upgrade Cloud Volumes ONTAP, the NetApp Console also updates the mediator instance as needed.
 
 Access to the instance:: For Debian, the default cloud user is `admin`. Google Cloud creates and adds a certificates for the `admin` user when SSH access is requested through the Google Cloud Console or gcloud command line. You can specify `sudo` to gain root privileges.
 
 Third-party agents:: Third-party agents or VM extensions are not supported on the mediator instance.
+
+=== Shared disks for single AZ HA configurations
+Cloud Volumes ONTAP 9.19.1 and later support shared HA configuration for single AZ. In the shared HA architecture, both the nodes can share a disk, whereby, the method of aggregate creation changes. Instead of creating two disks for two VMs, a single disk is created and attached to the VMs. Shared HA doesn't need the disk mirror.
 
 == Storage takeover and giveback
 
@@ -81,13 +85,14 @@ In the event of an outage, data should be available in 120 seconds or less.
 
 You can ensure the high availability of your data by deploying an HA configuration in multiple zones or in a single zone.
 
-Multiple zones (recommended)::
+Multiple availability zones (recommended)::
 Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it's minimal.
 
-Single zone::
-When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
+Single availability zone::
+When deployed in a single availability zone (AZ), a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
 +
 This deployment model does lower your costs because there are no data egress charges between zones.
++
 
 == How storage works in an HA pair
 

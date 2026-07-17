@@ -42,7 +42,7 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
 
-=== single-node system
+=== Single-node system
 
 Use the following API call to create a storage VM on a single-node system. 
 

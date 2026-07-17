@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch a single Cloud Volumes ONTAP system in Azure by creating a Cloud Volumes ONTAP system in NetApp Console.
 ---
 
-= Launch Cloud Volumes ONTAP in Azure
+= Deploy Cloud Volumes ONTAP using advanced options in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -133,7 +133,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version if required, and select a virtual machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.16.1 P3 and 9.16.1 P4 is available. The update does not occur from one release to another—for example, from 9.15 to 9.16.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Console updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.16.1 P3 and 9.16.1 P4 is available. The update does not occur from one release to another—for example, from 9.15 to 9.16.
 
 . *Subscribe from the Azure Marketplace*: You see this page if the Console could not enable programmatic deployments of Cloud Volumes ONTAP. Follow the steps listed on the screen. refer to https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products[Programmatic deployment of Marketplace products^] for more information.
 
@@ -432,8 +432,6 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
 
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
-
-For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
