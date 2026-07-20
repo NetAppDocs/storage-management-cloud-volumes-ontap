@@ -131,7 +131,7 @@ When the Console agent runs in one AWS account (Account A) and Cloud Volumes ONT
 [NOTE]
 The key policy for Account B controls whether the Console agent role for Account A can be trusted to use the key. This policy statement is required in addition to the IAM policy for Account A.
 . Update the IAM policy for the Console agent of Account A to allow KMS API calls on keys for Account B.
-.. In the AWS Console for Account A, go to *IAM > Roles* and select the Console agent role, for example, `occm-role` or `NetAppCloudManagerRole`.
+.. On the AWS Console for Account A, go to *IAM > Roles* and select the Console agent role, for example, `occm-role` or `NetAppCloudManagerRole`.
 .. Add or update the KMS permissions for Account B keys:
 +
 [source,json]
@@ -161,7 +161,7 @@ The key policy for Account B controls whether the Console agent role for Account
 The key policy in Account B controls access to the key. The IAM policy in Account A allows the Console agent role to make KMS API calls. If either account is missing the configuration, AWS restricts access.
 +
 . Add Account A as an allowed external AWS account on the CMEK in Account B.
-.. In the AWS KMS console for Account B, open the target KMS key and locate the *Other AWS accounts* section.
+.. On the AWS KMS console for Account B, open the target KMS key and locate the *Other AWS accounts* section.
 .. Select *Add other AWS accounts* and enter the AWS account ID for Account A.
 +
 image:screenshot_cmk_add_accounts.gif[This screenshot shows the "Add other AWS accounts" button from the AWS KMS console.]
