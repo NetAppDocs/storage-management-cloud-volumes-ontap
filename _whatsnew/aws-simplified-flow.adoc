@@ -7,7 +7,7 @@ Previously, deploying Cloud Volumes ONTAP from AWS Marketplace required navigati
 The new onboarding flow simplifies your transition from a marketplace subscription to a fully operational Cloud Volumes ONTAP environment with the following features:
 
 . Subscription to the dedicated Cloud Volumes ONTAP listing on AWS Marketplace: You subscribe to the Cloud Volumes ONTAP standalone listing on AWS Marketplace, purchase a subscription, and set up your AWS account (if you don't already have one).
-. Guided path on the NetApp Console: You set up your account in the NetApp Console, and the Console automatically onboards you to the deployment journey, displaying the guided path on the right side.
+. Guided path on the NetApp Console: You set up your account in the NetApp Console, and the Console automatically onboards you to the deployment journey, displaying the guided path on the right side. In case you need to leave the Console, you can resume the guided journey at a later point.
 . Associating your subscription: You can automatically associate your subscription with the Console, avoiding the manual steps of linking it yourself.
 . Console agent deployment with AWS credentials configuration: You can automatically create the required AWS roles. The process deploys an AWS CloudFormation stack in your AWS account with the required roles and policies for you to review, then associates them with the NetApp Console, eliminating manual IAM setup. You then continue through agent configuration, networking, and security group settings to begin the agent deployment.
 . Deploy a new Cloud Volumes ONTAP system in AWS: You navigate directly to the `Quick create` wizard for a faster, simplified Cloud Volumes ONTAP deployment.
