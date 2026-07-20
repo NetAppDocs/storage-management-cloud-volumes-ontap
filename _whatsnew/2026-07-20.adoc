@@ -1,0 +1,40 @@
+=== Introducing simplified onboarding of Cloud Volumes ONTAP from AWS Marketplace
+
+NetApp introduces a simplified onboarding flow for Cloud Volumes ONTAP from AWS Marketplace, reducing manual steps and onboarding friction.
+
+Previously, deploying Cloud Volumes ONTAP from AWS Marketplace required navigating multiple screens and manually configuring roles, policies, and credentials. This made onboarding slow and error-prone.
+
+The new onboarding flow simplifies your transition from a marketplace subscription to a fully operational Cloud Volumes ONTAP environment with the following features:
+
+. Subscription to the dedicated Cloud Volumes ONTAP listing on AWS Marketplace: You subscribe to the Cloud Volumes ONTAP standalone listing on AWS Marketplace, purchase a subscription, and set up your AWS account (if you don't already have one).
+. Guided path on the NetApp Console: You set up your account in the NetApp Console, and the Console automatically onboards you to the deployment journey, displaying the guided path on the right side. In case you need to leave the Console, you can resume the guided journey at a later point.
+. Associating your subscription: You can automatically associate your subscription with the Console, avoiding the manual steps of linking it yourself.
+. Console agent deployment with AWS credentials configuration: You can automatically create the required AWS roles. The process deploys an AWS CloudFormation stack in your AWS account with the required roles and policies for you to review, then associates them with the NetApp Console, eliminating manual IAM setup. You then continue through agent configuration, networking, and security group settings to begin the agent deployment.
+. Deploy a new Cloud Volumes ONTAP system in AWS: You navigate directly to the `Quick create` wizard for a faster, simplified Cloud Volumes ONTAP deployment.
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Flexible billing for Cloud Volumes ONTAP and data services in AWS^]
+
+=== Well-architected configuration analysis for Cloud Volumes ONTAP in Azure
+
+The NetApp Console now supports well-architected configuration analysis for Cloud Volumes ONTAP systems running in Microsoft Azure. The Console analyzes your deployments daily and provides a well-architected status, insights, and recommendations to help you maintain systems that align with NetApp best practices and the well-architected framework.
+
+The well-architected dashboard displays the total number of analyzed systems and categorizes their resources by configuration and severity level. If you are a system administrator, you can view recommendations for any configuration issue within your organization directly from the Console dashboard and download a CSV report of all the recommendations. Configurations are categorized according to:
+
+* *Reliability*: Ensures workloads operate correctly and consistently, even in the event of disruptions.
+* *Security*: Safeguards data, systems, and assets through risk assessments and mitigation.
+* *Operational excellence*: Optimizes architecture to maximize business value.
+* *Cost optimization*: Reduces and optimizes costs for greater business value.
+
+.Related links
+
+* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html[Implement well-architected system configurations^]
+
+
+
+
+
+
