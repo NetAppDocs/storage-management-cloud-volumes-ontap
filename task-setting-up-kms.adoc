@@ -20,16 +20,16 @@ A Customer Master Key (CMK) can be managed by AWS or the customer. It can be in 
 
 .Before you begin
 
-* Ensure that you have information about the NetApp Console agent IAM roles for AWS.
-* Ensure that an active CMK exists. 
+* Ensure that you have information about the NetApp Console agent Identity and Access Management (IAM) roles for AWS.
+* Ensure that there's an active CMK.
 
 == Set up customer-managed KMS keys for a single account
 
-When the Console agent and Cloud Volumes ONTAP run in the same AWS account, complete the following steps.
+When the Console agent and Cloud Volumes ONTAP are in the same AWS account, complete the following steps:
 
 .Steps
 
-. Grant S3 encryption permission to the IAM Role for the Console agent. Add the `s3:PutEncryptionConfiguration` action to the IAM role policy:
+. Grant S3 encryption permission to the IAM role for the Console agent. Add the `s3:PutEncryptionConfiguration` action to the IAM role policy:
 +
 [source,json]
 {
@@ -56,9 +56,9 @@ When the Console agent and Cloud Volumes ONTAP run in the same AWS account, comp
 --
 . On the AWS Console, go to *KMS*, and search for your key.
 . Select the *Key policy* tab and select *Edit*.
-. Search for the statement that enables access to the key: `AllowUseOfTheKey` and append the Console agent role ARN to the `Principal` array. Replace the placeholders in the following example with your values:
-* `YOUR-ACCOUNT-ID`: Your AWS account ID (12 digits)
-* `YOUR-AGENT-ROLE-NAME`: The Console agent's IAM role name
+. Search for the statement that enables access to the key `AllowUseOfTheKey` and append the Console agent role Amazon Resource Name (ARN) to the `Principal` array. Replace the placeholders in the following example with your values:
+* `YOUR-ACCOUNT-ID`: Your 12-digit AWS account ID
+* `YOUR-AGENT-ROLE-NAME`: The name of the Console agent's IAM role
 +
 [source,json]
 {
@@ -104,7 +104,7 @@ When the Console agent runs in one AWS account (Account A) and Cloud Volumes ONT
 }
 +
 . If the CMEK key is stored in Account B, the agent role for Account A needs direct access to use that key. The KMS key policy in Account B grants that cross-account access.
-.. In the AWS Console for Account B, go to *KMS > Customer managed keys* and select the CMEK key used for Cloud Volumes ONTAP deployment.
+.. On the AWS Console for Account B, go to *KMS > Customer managed keys* and select the CMEK key used for Cloud Volumes ONTAP deployment.
 .. Open the *Key policy* tab and select *Edit*.
 .. Add a statement that grants the IAM role for Account A access to the key:
 +
