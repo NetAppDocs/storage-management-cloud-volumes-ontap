@@ -1,0 +1,16 @@
+=== Introducing simplified Cloud Volumes ONTAP onboarding from AWS Marketplace
+
+NetApp introduces a simplified onboarding experience for Cloud Volumes ONTAP from AWS Marketplace to eliminate friction, reduce manual steps, and ensure a smoother onboarding experience.
+
+Deploying Cloud Volumes ONTAP from a cloud marketplace used to require switching between the AWS console and NetApp Console, and manually configuring roles, policies, and credentials, making the onboarding process slow and error-prone. 
+
+The onboarding flow now begins from the standalone Cloud Volumes ONTAP listing or a multi-subscription listing that makes it easier to find the offer, subscribe, and begin deployment. The experience continues in one simplified flow in the Console that guides you through an automatic subscription association in the background, reducing the number of screens and clicks. The workflow also reduces manual setup by automatically creating and assigning the required IAM roles and policies, then storing them during the agent deployment. 
+
+On completing the deployment flow for the Console agent, you directly navigate to the `Quick create` wizard for a simplified and faster Cloud Volumes ONTAP deployment.
+
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^]
+
+
