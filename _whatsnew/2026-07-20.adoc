@@ -12,13 +12,10 @@ The new onboarding flow simplifies your transition from a marketplace subscripti
 . Console agent deployment with AWS credentials configuration: You can automatically create the required AWS roles. The process deploys an AWS CloudFormation stack in your AWS account with the required roles and policies for you to review, then associates them with the NetApp Console, eliminating manual IAM setup. You then continue through agent configuration, networking, and security group settings to begin the agent deployment.
 . Deploy a new Cloud Volumes ONTAP system in AWS: You navigate directly to the `Quick create` wizard for a faster, simplified Cloud Volumes ONTAP deployment.
 
-
-
-
 .Related links
 
-* https:docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^]
-* https:docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[flexible billing for Cloud Volumes ONTAP and data services in AWS^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Flexible billing for Cloud Volumes ONTAP and data services in AWS^]
 
 === Well-architected configuration analysis for Cloud Volumes ONTAP in Azure
 
@@ -33,8 +30,8 @@ The well-architected dashboard displays the total number of analyzed systems and
 
 .Related links
 
-* https:docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
-* https:docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html[Implement well-architected system configurations^]
+* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html[Implement well-architected system configurations^]
 
 
 
