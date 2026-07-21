@@ -322,7 +322,7 @@ sidebar:
                 url: /concept-performance.html
               - title: Configure EMS
                 url: /task-configure-ems.html
-    - title: Use Cloud Volumes ONTAP with other NetApp products
+    - title: Cloud Volumes ONTAP integrations with other products
       entries:
             - title: Administration from System Manager
               url: /task-administer-advanced-view.html

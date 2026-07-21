@@ -27,7 +27,7 @@ indexpage:
         - title: Storage management
           url: concept-storage-management.html
         - title: Disks and aggregates used for Cloud Volumes ONTAP clusters
-          url: concept-storage.html
+          url: reference-default-configs.html
         - title: Performance monitoring for Cloud Volumes ONTAP workloads
           url: concept-performance.html    
     - title: AWS

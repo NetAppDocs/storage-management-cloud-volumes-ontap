@@ -30,39 +30,9 @@ When you create a volume, the Console does one of three things:
 * It places the volume on an existing aggregate that has sufficient free space.
 
 * It places the volume on an existing aggregate by purchasing more disks for that aggregate.
-ifdef::aws[]
-+
-In the case of an aggregate in AWS that supports Elastic Volumes, it also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
-endif::aws[]
-
 * It purchases disks for a new aggregate and places the volume on that aggregate.
 
 The Console determines where to place a new volume by looking at several factors: an aggregate's maximum size, whether thin provisioning is enabled, and free space thresholds for aggregates.
-
-ifdef::aws[]
-==== Disk size selection for aggregates in AWS
-
-When the Console creates new aggregates for Cloud Volumes ONTAP in AWS, it gradually increases disk sizes as aggregate numbers increase to maximize system capacity before reaching AWS data disk limits.
-
-For example, the Console might choose the following disk sizes:
-
-[cols=3*,options="header",width=60%]
-|===
-
-| Aggregate number
-| Disk size
-| Max aggregate capacity
-
-| 1 |	500 GiB | 3 TiB
-| 4 | 1 TiB | 6 TiB
-| 6 | 2 TiB | 12 TiB
-
-|===
-
-NOTE: This behavior does not apply to aggregates that support the Amazon EBS Elastic Volumes feature. Aggregates that have Elastic Volumes enabled are comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
-
-You can choose the disk size yourself by using the advanced allocation option.
-endif::aws[]
 
 === Advanced allocation
 
@@ -81,11 +51,6 @@ The Capacity Management Mode is set to automatic by default. In this mode, the C
 The following examples illustrate how this mode works:
 
 * If an aggregate reaches the capacity threshold and it has room for more disks, the Console automatically purchases new disks for that aggregate so volumes can continue to grow.
-+
-ifdef::aws[]
-In the case of an aggregate in AWS that supports Elastic Volumes, it also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
-endif::aws[]
-+
 * If an aggregate reaches the capacity threshold and it can't support any additional disks, the Console automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.
 +
 If the Console creates a new aggregate for the volume, it chooses a disk size that accommodates the size of that volume.
@@ -102,6 +67,9 @@ The Console's automatic capacity management doesn't apply to LUNs. When it creat
 
 If the organization or account admin sets the *Capacity Management Mode* to manual, the Console informs you to take appropriate actions for capacity decisions. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
 
-=== Learn more
 
-link:task-manage-capacity-settings.html[Learn how to modify the capacity management mode].
+.Related links
+
+* link:task-manage-capacity-settings.html[Learn how to modify the capacity management mode].
+
+* For information provisioning in AWS, refer to link:reference-configs-aws.html[Disk provisioning for aggregates in AWS].

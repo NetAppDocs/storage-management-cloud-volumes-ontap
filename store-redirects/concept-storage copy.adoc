@@ -1,0 +1,5 @@
+---
+permalink: concept-cvo-aiq-digital-advisor.html
+redirect: storage-management-cloud-volumes-ontap/concept-active-iq.html
+---
+

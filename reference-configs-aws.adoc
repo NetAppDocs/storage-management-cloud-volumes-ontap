@@ -98,6 +98,33 @@ a|
 * 16 TiB
 |===
 
+=== Disk provisioning for aggregates in AWS
+
+In the case of an aggregate in AWS that supports Elastic Volumes, it also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+
+==== Disk size selection for aggregates in AWS
+
+When the Console creates new aggregates for Cloud Volumes ONTAP in AWS, it gradually increases disk sizes as aggregate numbers increase to maximize system capacity before reaching AWS data disk limits.
+
+For example, the Console might choose the following disk sizes:
+
+[cols=3*,options="header",width=60%]
+|===
+
+| Aggregate number
+| Disk size
+| Max aggregate capacity
+
+| 1 |	500 GiB | 3 TiB
+| 4 | 1 TiB | 6 TiB
+| 6 | 2 TiB | 12 TiB
+
+|===
+
+NOTE: This behavior does not apply to aggregates that support the Amazon EBS Elastic Volumes feature. Aggregates that have Elastic Volumes enabled are comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+
+You can choose the disk size yourself by using the advanced allocation option.
+
 == Supported number of nodes
 
 Cloud Volumes ONTAP is available in AWS as a single-node system and as a high-availability (HA) pair of nodes for fault tolerance and nondisruptive operations.
