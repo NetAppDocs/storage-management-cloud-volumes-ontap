@@ -297,9 +297,7 @@ sidebar:
                   - title: Manage node-based licenses
                     url: /task-manage-node-licenses.html    
                   - title: Convert node-based licenses
-                    url: /task-convert-node-capacity.html
-                  - title: Manage Keystone subscriptions
-                    url: /task-manage-keystone.html                    
+                    url: /task-convert-node-capacity.html                
             - title: Register pay-as-you-go systems
               url: /task-registering.html                    
             - title: Stop and start a system
@@ -317,21 +315,25 @@ sidebar:
                 - title: Remove a system
                   url: /task-removing.html
                 - title: Delete a system
-                  url: /task-deleting-system.html                  
-            - title: Administration from System Manager
-              url: /task-administer-advanced-view.html
-            - title: Administration from the CLI
-              url: /task-connecting-to-otc.html
+                  url: /task-deleting-system.html
             - title: System health and events
               entries:
               - title: Performance monitoring
                 url: /concept-performance.html
-              - title: AutoSupport and Digital Advisor
-                url: /concept-active-iq.html                            
-              - title: Verify AutoSupport setup
-                url: /task-verify-autosupport.html
               - title: Configure EMS
                 url: /task-configure-ems.html
+    - title: Use Cloud Volumes ONTAP with other NetApp products
+      entries:
+            - title: Administration from System Manager
+              url: /task-administer-advanced-view.html
+            - title: Administration from the CLI
+              url: /task-connecting-to-otc.html    
+            - title: Cloud Volumes ONTAP and AutoSupport-Digital Advisor
+              url: /concept-active-iq.html                            
+            - title: Verify AutoSupport setup
+              url: /task-verify-autosupport.html
+            - title: Manage Keystone subscriptions
+              url: /task-manage-keystone.html      
     - title: Knowledge and support
       entries:
         - title: Register for support
