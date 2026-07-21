@@ -316,12 +316,8 @@ sidebar:
                   url: /task-removing.html
                 - title: Delete a system
                   url: /task-deleting-system.html
-            - title: System health and events
-              entries:
-              - title: Performance monitoring
-                url: /concept-performance.html
-              - title: Configure EMS
-                url: /task-configure-ems.html
+            - title: Configure EMS
+              url: /task-configure-ems.html
     - title: Cloud Volumes ONTAP integrations with other products
       entries:
             - title: Administration from System Manager
