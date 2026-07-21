@@ -41,3 +41,9 @@ Digital Advisor displays complete inventory and software and hardware configurat
 * https://docs.netapp.com/us-en/active-iq/[NetApp Documentation: Digital Advisor^]
 * https://aiq.netapp.com/custom-dashboard/search[Launch Digital Advisor^]
 * https://www.netapp.com/company/contact-us/support/[NetApp Support^]
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-9-12-1[sbc]
+
+https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_cvo-lib-restructuring/whats-new.html#support-for-new-zealand-north-region-in-azure[ss]
+
+
