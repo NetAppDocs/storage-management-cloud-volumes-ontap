@@ -15,13 +15,11 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Google Clou
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Google Cloud.
 
-For information about default configurations for Cloud Volumes ONTAP, refer to link:reference-default-configs.html[Supported default configurations for Cloud Volumes ONTAP].
 
-== Internal disks for system data
+== Supported disk types in Google Cloud
+In addition to the storage for user data, NetApp also purchases cloud storage for system data in Google Cloud.
 
-In addition to the storage for user data, the Console also purchases cloud storage for system data in Google Cloud.
-
-=== Google Cloud (single node)
+=== Internal disks for system data in single node systems
 
 * One 10 GiB SSD persistent disk for boot data
 * One 64 GiB SSD persistent disk for root data
@@ -33,7 +31,7 @@ NOTE: Snapshots are created automatically upon reboot.
 
 * Boot and root disks are encrypted by default.
 
-=== Google Cloud (HA pair)
+=== Internal disks for system data in HA pairs
 
 * Two 10 GiB SSD persistent disks for boot data 
 * Four 64 GiB SSD persistent disk for root data 
@@ -47,13 +45,26 @@ NOTE: Snapshots are created automatically upon reboot.
 
 * Boot and root disks are encrypted by default.
 
-== Google Cloud storage
+=== Google Cloud storage for user data
 
 In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
 
 The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[low-cost object storage].
 
-=== Supported configurations by license
+=== Supported disk sizes
+
+In Google Cloud, an aggregate can contain up to 6 disks that are all the same type and size. The following disk sizes are supported:
+
+* 100 GB
+* 500 GB
+* 1 TB
+* 2 TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 64 TB
+
+== Supported configurations by license
 
 Cloud Volumes ONTAP is available in Google Cloud as a single-node system and as a high-availability (HA) pair of nodes for fault tolerance and nondisruptive operations.
 
@@ -130,7 +141,7 @@ The custom-4-16384 machine type is no longer supported with new Cloud Volumes ON
 link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 . ^3^ Enhanced write performance is enabled when using Balanced persistent disks and Performance (SSD) persistent disks.
 . ^4^ Beginning on August 11, 2025, the Cloud Volumes ONTAP Optimized license is deprecated and will no longer be available for purchase or renewal in the Google Cloud marketplace for pay-as-you-go (PAYGO) subscriptions. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html[What's new in Cloud Volumes ONTAP^].
-. ^5^ You can deploy the next-generation C3 family VMs on Cloud Volumes ONTAP 9.18.1 and later. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
+. ^5^ You can deploy the next-generation C3 family VMs on https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#improved-cloud-volumes-ontap-support-with-google-cloud-c3-vms[Cloud Volumes ONTAP 9.18.1 and later^]. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
 --
 
 .Other licenses 
@@ -183,7 +194,6 @@ a|
 C3 VMs support only Hyperdisk Balanced disks.
 
 |===
-
 Notes:
 
 . ^1^ Disk limits can prevent you from reaching the maximum system capacity limit by using disks alone. You can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^].
@@ -197,7 +207,7 @@ link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems. If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
 
 . ^4^ Enhanced write performance is enabled when using Balanced persistent disks and Performance (SSD) persistent disks.
-. ^5^ You can deploy the next-generation C3 family VMs on Cloud Volumes ONTAP 9.18.1 and later. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
+. ^5^ You can deploy the next-generation C3 family VMs on https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#improved-cloud-volumes-ontap-support-with-google-cloud-c3-vms[Cloud Volumes ONTAP 9.18.1 and later^]. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
 
 The Console shows an additional supported machine type for Standard and BYOL: n1-highmem-4. However, this machine type isn't meant for production environments. We've made it available for a specific lab environment only.
 
@@ -227,6 +237,17 @@ For more information about specific machine types, refer to the Google Cloud doc
 | Supported machine types ^1^
 
 a|
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+
+* n1-standard-32 ^3^
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
 * n1-standard-8 ^1^
 * n1-standard-32 ^1^
 * n2-standard-4
@@ -241,6 +262,11 @@ a|
 * n2-standard-8
 
 a|
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+
 * n1-standard-8 ^1^
 * n1-standard-32 ^1^
 * n2-standard-4
@@ -250,7 +276,7 @@ a|
 * n2-standard-48
 * n2-standard-64
 
-| Supported disk types ^2^ 3+| Balanced persistent disks ^3^, Performance (SSD) persistent disks ^3^, and Standard (HDD) persistent disks.
+| Supported disk types ^2^ 3+| Balanced persistent disks ^3^, Performance (SSD) persistent disks ^3^, and Standard (HDD) persistent disks. C3 VMs support only Hyperdisk Balanced disks.
 
 |===
 
@@ -266,7 +292,7 @@ link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 
 . ^3^ Enhanced write performance is enabled when using Balanced persistent disks and Performance (SSD) persistent disks.
 . ^4^ Beginning on August 11, 2025, the Cloud Volumes ONTAP Optimized license is deprecated and will no longer be available for purchase or renewal in the Google Cloud marketplace for pay-as-you-go (PAYGO) subscriptions. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html[What's new in Cloud Volumes ONTAP^].
-
+. ^5^ You can deploy the next-generation C3-family VMs on https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha[Cloud Volumes ONTAP 9.19.1 and later for single AZ HA deployments^]. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
 --
 
 .Other licenses 
@@ -287,15 +313,27 @@ link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 a|
 * n2-standard-4
 a|
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+
+
 * n1-standard-8 ^3^
 * n2-standard-8
 a|
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+
 * n1-standard-32 ^3^
 * n2-standard-16
 * n2-standard-32
 * n2-standard-48
 * n2-standard-64
 a|
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+
 * n1-standard-8 ^3^
 * n1-standard-32 ^3^
 * n2-standard-4
@@ -305,7 +343,7 @@ a|
 * n2-standard-48
 * n2-standard-64
 
-| Supported disk types 4+| Balanced persistent disks ^4^, Performance (SSD) persistent disks ^4^, and Standard (HDD) persistent disks.
+| Supported disk types 4+| Balanced persistent disks ^4^, Performance (SSD) persistent disks ^4^, and Standard (HDD) persistent disks. C3 VMs support only Hyperdisk Balanced disks.
 
 |===
 
@@ -324,14 +362,9 @@ The custom-4-16384 machine type is no longer supported with new Cloud Volumes ON
 . ^4^ Enhanced write performance is enabled when using Balanced persistent disks and Performance (SSD) persistent disks.
 
 The Console shows an additional supported machine type for Standard and BYOL: n1-highmem-4. However, this machine type isn't meant for production environments. We've made it available for a specific lab environment only.
-
+. ^5^ You can deploy the next-generation C3-family VMs on https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha[Cloud Volumes ONTAP 9.19.1 and later for single AZ HA deployments^]. The c3-standard-44 and c3-standard-88 machines and their LSSD variants support Tier-1 bandwidth in Google Cloud Console by default. Refer to link:reference-configs-gcp.html#flash-cache-support[Flash Cache support] for more information on the LSSD variants.
 --
 ====
-
-For more information about specific machine types, refer to the Google Cloud documentation:
-
-* https://cloud.google.com/compute/docs/general-purpose-machines#n1_machines[n1 series general-purpose machine types^]
-* https://cloud.google.com/compute/docs/general-purpose-machines#n2_series[N2 series general-purpose machine types^]
 
 == Flash Cache support
 
@@ -346,7 +379,7 @@ You can enable _Flash Cache_, and high write speed when deploying an eligible in
 
 NOTE: _Flash Cache_, high write mode, and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance.
 
-In single node deployments, beginning with Cloud Volumes ONTAP 9.18.1, if you select the local SSD (LSSD) variants of the C3 VMs, Flash Cache gets enabled by default. You can't switch between C3 LSSD VM variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
+Local SSD (LSSD) variants of the C3-series VMs are supported in Cloud Volumes ONTAP 9.18.1 and later for single node deployments and in Cloud Volumes ONTAP 9.19.1 and later for HA deployments in single AZ. For these deployments, if you select the local SSD (LSSD) variants of the C3-series VMs, Flash Cache gets enabled by default. You can't switch between C3 LSSD VM variants in your Cloud Volumes ONTAP deployment, even if the target variant supports Flash Cache.
 
 Check this table to understand the VM variant and the number of LSSDs supported by them:
 
@@ -363,35 +396,23 @@ Check this table to understand the VM variant and the number of LSSDs supported 
 
 == Maximum system capacity based on VM type
 
-[cols="3*", options="header"]
+[cols="4*", options="header"]
 |===
-| VM type                | Maximum supported data disks  | Maximum capacity (in TiB)
+| VM type                | Maximum supported data disks for single node deployments | Maximum supported data disks for single AZ HA deployments | Maximum capacity (in TiB)
 
-| n2 (all variants)      | 124                  | 257
-| c3-standard-4          | 12                   | 256
-| c3-standard-8          | 12                   | 256
-| c3-standard-22         | 28                   | 256
-| c3-standard-44         | 28                   | 512
-| c3-standard-88         | 28                   | 512
-| c3-standard-4-lssd     | 12                   | 256
-| c3-standard-8-lssd     | 12                   | 256
-| c3-standard-22-lssd    | 28                   | 256
-| c3-standard-44-lssd    | 28                   | 512
-| c3-standard-88-lssd    | 28                   | 512
+| c3-standard-4          | 12         | N/A      | 256
+| c3-standard-8          | 12         | 11       | 256
+| c3-standard-22         | 28         | 27       | 256
+| c3-standard-44         | 28         | 27       | 512
+| c3-standard-88         | 28         | 27       | 512
+| c3-standard-4-lssd     | 12         | N/A      | 256
+| c3-standard-8-lssd     | 12         | N/A      | 256
+| c3-standard-22-lssd    | 28         | 27       | 256
+| c3-standard-44-lssd    | 28         | 27       | 512
+| c3-standard-88-lssd    | 28         | 27       | 512
+| n2 (all variants)      | 124        |124       | 257
 |===
 
-== Supported disk sizes
-
-In Google Cloud, an aggregate can contain up to 6 disks that are all the same type and size. The following disk sizes are supported:
-
-* 100 GB
-* 500 GB
-* 1 TB
-* 2 TB
-* 4 TB
-* 8 TB
-* 16 TB
-* 64 TB
 
 == Supported regions
 
@@ -404,6 +425,6 @@ For Google Cloud region support, see https://bluexp.netapp.com/cloud-volumes-glo
 .Related links
 
 * https://cloud.google.com/compute/docs/disks/[Google Cloud documentation: Storage Options^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n1_machines[Google Cloud documentation: N1 series general-purpose machine types^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n2_series[Google Cloud documentation: N2 series general-purpose machine types^]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Review storage limits for Cloud Volumes ONTAP in Google Cloud^]
-endif::gcp[]

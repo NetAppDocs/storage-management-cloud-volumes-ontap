@@ -15,13 +15,13 @@ summary: Several Cloud Volumes ONTAP configurations are supported in Azure.
 [.lead]
 Several Cloud Volumes ONTAP configurations are supported in Azure.
 
-For information about default configurations for Cloud Volumes ONTAP, refer to link:reference-default-configs.html[Supported default configurations for Cloud Volumes ONTAP].
 
-== Internal disks for system data
+== Supported disk types 
+In addition to the storage for user data, the NetApp also purchases cloud storage for system data in Azure.
 
-In addition to the storage for user data, the NetApp Console also purchases cloud storage for system data in Azure.
+=== Internal disks for system data Azure (single node)
 
-=== Azure (single node)
+The following internal disks are used for system data in Azure:
 
 * Three Premium SSD disks:
 ** One 10 GiB disk for boot data
@@ -38,7 +38,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 +
 If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.
 
-=== Azure (HA pair)
+=== Internal disks for system data Azure HA pair
 
 .HA pairs with page blob
 * Two 10 GiB Premium SSD disks for the boot volume (one per node)
@@ -77,7 +77,7 @@ You can deploy HA pairs in a single single availability zone and use Premium SSD
 * The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
 * The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
 
-== Azure storage
+=== Azure storage for user data
 
 In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single-node system or an HA pair:
 
@@ -103,7 +103,7 @@ HA pairs use two types of disks which provide high performance for I/O-intensive
 * _Managed disks_ with a maximum disk size of 32 TiB
 
 
-=== Supported configurations by license
+== Supported configurations by license
 
 Cloud Volumes ONTAP is available in Azure as a single-node system and as a high-availability (HA) pair of nodes for fault tolerance and nondisruptive operations.
 
