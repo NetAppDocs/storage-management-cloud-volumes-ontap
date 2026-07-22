@@ -41,8 +41,6 @@ sidebar:
               url: /reference-limitations-azure.html
             - title: Limitations in Google Cloud
               url: /reference-limitations-gcp.html
-        - title: Cloud provider integrations
-          url: /reference-provider-integrations.html
     - title: Get started
       entries:
         - title: Learn about Cloud Volumes ONTAP
@@ -196,7 +194,7 @@ sidebar:
               url: /task-manage-capacity-settings.html
         - title: Storage VM administration
           entries:
-            - title: Work with storage VMs
+            - title: Cloud Volumes ONTAP storage VMs
               url: /task-managing-svms.html
             - title: Manage storage VMs in AWS
               flavor: aws
@@ -318,6 +316,8 @@ sidebar:
               url: /task-configure-ems.html
     - title: Cloud Volumes ONTAP integrations with other products
       entries:
+            - title: Cloud provider integrations
+              url: /reference-provider-integrations.html
             - title: Administration from System Manager
               url: /task-administer-advanced-view.html
             - title: Administration from the CLI
