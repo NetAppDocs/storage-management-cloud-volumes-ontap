@@ -179,9 +179,7 @@ sidebar:
             - title: Data tiering
               url: /concept-data-tiering.html              
             - title: Tier inactive data to object storage
-              url: /task-tiering.html
-            - title: Flash Cache
-              url: /concept-flash-cache.html              
+              url: /task-tiering.html              
             - title: Accelerate data access with FlexCache
               url: /task-accelerate-data-access.html
             - title: Write speed
@@ -323,7 +321,9 @@ sidebar:
             - title: Administration from System Manager
               url: /task-administer-advanced-view.html
             - title: Administration from the CLI
-              url: /task-connecting-to-otc.html    
+              url: /task-connecting-to-otc.html
+            - title: Flash Cache and Cloud Volumes ONTAP
+              url: /concept-flash-cache.html               
             - title: Cloud Volumes ONTAP and AutoSupport-Digital Advisor
               url: /concept-active-iq.html                            
             - title: Verify AutoSupport setup

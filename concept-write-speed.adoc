@@ -5,7 +5,7 @@ keywords: write speed, high write speed, normal write speed, nvfail, writing spe
 summary: NetApp Console enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 ---
 
-= Write speed
+= Learn about write speed on Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

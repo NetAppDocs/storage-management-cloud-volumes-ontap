@@ -5,7 +5,7 @@ keywords: limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disast
 summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 ---
 
-= Known limitations
+= Known limitations in Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -5,7 +5,7 @@ keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databa
 summary: Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
 ---
 
-= Flash Cache
+= Flash Cache and Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
