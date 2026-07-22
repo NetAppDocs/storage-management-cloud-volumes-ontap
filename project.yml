@@ -233,9 +233,7 @@ sidebar:
                 - title: Work with EC2 instances in AWS
                   url: /task-change-ec2-instance.html
                 - title: Change route tables for HA pairs
-                  url: /task-change-route-tables.html
-                - title: Configure placement group creation
-                  url: /task-configure-placement-group-failure-aws.html      
+                  url: /task-change-route-tables.html    
             - title: Azure administration
               flavor: azure
               entries:
