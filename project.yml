@@ -57,8 +57,8 @@ sidebar:
               url: /concept-client-protocols.html
             - title: Storage management
               url: /concept-storage-management.html
-        - title: Cloud Volumes ONTAP HA configuration
-          url: /concept-degraded-ha-pair.html    
+            - title: Cloud Volumes ONTAP HA configuration
+              url: /concept-degraded-ha-pair.html      
         - title: Deploy in Amazon Web Services
           flavor: aws
           entries:
