@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Manage storage VMs for Cloud Volumes ONTAP
+= Cloud Volumes ONTAP storage VMs
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 :imagesdir: ./media/
 
 [.lead]
-A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
+A storage VM (SVM) is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 
 == Supported number of storage VMs
 

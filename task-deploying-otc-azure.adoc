@@ -157,7 +157,7 @@ link:concept-data-tiering.html[Learn more about data tiering^].
 link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
-This option is only available for certain VM types. To find out which VM types are supported, refer to link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs^]. 
+This option is only available for certain VM types. To find out which VM types are supported, refer to link:link:reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
@@ -348,7 +348,7 @@ For help choosing a disk size, refer to link:https://docs.netapp.com/us-en/bluex
 link:concept-data-tiering.html[Learn more about data tiering^].
 * Starting with Cloud Volumes ONTAP 9.15.0P1, Azure page blobs are no longer supported for new high-availability pair deployments. If you currently use Azure page blobs in existing high-availability pair deployments, you can migrate to newer VM instance types in the Edsv4-series VMs and Edsv5-series VMs.
 +
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Learn more about supported configurations in Azure^].
+link:link:reference-configs-azure.html#ha-pairs[Learn more about supported configurations in Azure^].
 
 . *Write Speed & WORM*: 
 .. Choose *Normal* or *High* write speed, if desired.
@@ -356,7 +356,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-config
 link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
-This option is only available for certain VM types. To find out which VM types are supported, refer to link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs^]. 
+This option is only available for certain VM types. To find out which VM types are supported, refer to link:link:reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs^]. 
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +

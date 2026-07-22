@@ -1,0 +1,46 @@
+---
+sidebar: sidebar
+permalink: reference-limitations-aws.html
+keywords: limitations, aws, amazon web services, flashe cache, alarms, cloudwatch, giveback, govcloud, c2s, aws outpost, outposts
+summary: These known limitations are specific to Cloud Volumes ONTAP in Amazon Web Services.
+---
+
+= Known limitations for Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The following known limitations are specific to Cloud Volumes ONTAP in Amazon Web Services. Be sure to also review link:reference-limitations.html[Limitations for Cloud Volumes ONTAP in all cloud providers].
+
+== AWS Outpost limitations
+
+If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC during deployment. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Console agent in your AWS Outpost.
+
+There are a few limitations to point out:
+
+* Only single node Cloud Volumes ONTAP systems are supported at this time
+* The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
+* Only General Purpose SSDs (gp2) are supported at this time
+
+== Flash Cache limitations
+
+C5D and R5D instance types include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_. Note the following limitations:
+
+* Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements up to Cloud Volumes ONTAP 9.12.0. When you deploy or upgrade to Cloud Volumes ONTAP 9.12.1, you don't need to disable compression.
++
+You can choose no storage efficiency when creating a volume from the NetApp Console, or you can create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
+
+* Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
+
+== False alarms reported by Amazon CloudWatch
+
+Cloud Volumes ONTAP does not release CPUs when idle, so https://aws.amazon.com/cloudwatch/[Amazon CloudWatch^] can report a high CPU warning for the EC2 instance because it sees 100% usage. You can ignore this alarm. The ONTAP statistics command displays the true usage of the CPUs.
+
+== Cloud Volumes ONTAP HA pairs do not support immediate storage giveback
+
+After a node reboots, the partner must sync data before it can return the storage. The time that it takes to resync data depends on the amount of data written by clients while the node was down and the data write speed during the time of giveback.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html[Learn how storage works in a Cloud Volumes ONTAP HA pair running in AWS^].
