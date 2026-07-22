@@ -1,0 +1,367 @@
+---
+sidebar: sidebar
+permalink: reference-limits-aws.html
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM, ebs
+summary: Cloud Volumes ONTAP has storage configuration limits in AWS to provide reliable operations. For best performance, do not configure your system at the maximum values.
+---
+
+= Storage limits for Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Volumes ONTAP has storage configuration limits to provide reliable operations. For best performance, do not configure your system at the maximum values.
+
+== Maximum system capacity by license
+
+The maximum system capacity includes disk-based storage plus object storage used for data tiering.
+
+NetApp doesn't support exceeding the system capacity limit. If you reach the licensed capacity limit, the NetApp Console displays an action required message and no longer allows you to add additional disks.
+
+For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to capacity and disk limits below for more details.
+
+[[cap-license-aws]]
+.Capacity limit for capacity-based licenses
+include::_include/capacity-limit.adoc[]
+Refer to the https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html[AWS documentation^] for more information.
+
+Capacity limits for other license types::
+[cols="25,75",width=65%,options="header"]
+|===
+| License
+| Maximum system capacity (disks + object storage)
+
+| Freemium | 500 GiB
+| PAYGO Explore	| 2 TiB (data tiering is not supported with Explore)
+| PAYGO Standard | 10 TiB
+| PAYGO Premium | 368 TiB
+| Node-based license | 2 PiB (requires multiple licenses)
+
+|===
+
+.For HA, is the license capacity limit per node or for the entire HA pair?
+
+The capacity limit is for the entire HA pair. It is not per node. For example, the Premium license allows up to 368 TiB across both nodes.
+
+.For an HA system in AWS, does mirrored data count against the capacity limit?
+
+No, it doesn't. Data in an AWS HA pair is synchronously mirrored between the nodes so that the data is available in the event of failure. For example, if you purchase an 8 TiB disk on node A, the Console also allocates an 8 TiB disk on node B that is used for mirrored data. While 16 TiB of capacity was provisioned, only 8 TiB counts against the license limit.
+
+== Aggregate limits
+
+Cloud Volumes ONTAP uses EBS volumes as disks and groups them into _aggregates_. Aggregates provide storage to volumes.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Parameter
+| Limit
+
+| Maximum number of aggregates |
+Single node: Same as the disk limit
+HA pairs: 18 in a node ^1^
+| Maximum aggregate size ^2^
+a|
+* 96 TiB of raw capacity
+* 128 TiB of raw capacity with Elastic Volumes ^3^
+| Disks per aggregate	^4^
+a|
+* 1-6
+* 4 or 8 with Elastic Volumes ^3^
+| Maximum number of RAID groups per aggregate	| 2
+|===
+
+Notes:
+
+. You cannot create 18 aggregates on both nodes in an HA pair because that would exceed the data disk limit.
+
+. The maximum aggregate size depends on its disks and does not include object storage you use for data tiering.
+
+. If you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks, which provides up to 128 TiB of capacity. By default, Cloud Volumes ONTAP 9.11.0 and later systems have Amazon EBS Elastic Volumes enabled when you use gp3 or io1 disks. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes^]
+
+. All disks in an aggregate must be the same size.
+
+== Disk and tiering limits by EC2 instance
+
+Capacity limits are different depending on the EC2 instance type family that you use and whether you're using a single-node system or an HA pair.
+
+The following notes provide details about the numbers that you’ll see in the tables below:
+
+* The disk limits are specific to disks that contain user data.
++
+The limits do not include the boot disk and root disk.
+
+* A maximum system capacity is listed when using disks alone and when using disks and cold data tiering to object storage.
+
+* Cloud Volumes ONTAP uses EBS volumes as disks, with a maximum disk size of 16 TiB.
+
+=== Limits for different deployment modes of capacity-based licensing
+
+The following disk limits apply to Cloud Volumes ONTAP systems that use a capacity-based licensing package. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn about Cloud Volumes ONTAP licensing options^]
+
+[NOTE]
+For maximum system capacity and data tiering capacity limits for single node and HA configurations, refer to <<cap-license-aws>>.
+
+==== Single node
+
+[cols="18,18,32,width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+| Max system capacity with disks alone
+
+| c5, m5, and r5 instances | 21 | 336 TiB 
+a|
+* m5dn.24xlarge
+* m6id.32xlarge
+| 19 ^1^ | 304 TiB 
+|===
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+==== HA pairs
+
+[cols="18,18,32,width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+| Max system capacity with disks alone
+
+| c5, m5, and r5 instances | 18 | 288 TiB 
+a| 
+* m5dn.24xlarge
+* m6id.32xlarge | 16 ^1^ | 256 TiB 
+
+|===
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+=== Limits for different deployment modes of node-based licensing
+
+The following disk limits apply to Cloud Volumes ONTAP systems that use node-based licensing, which is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. Node-based licensing is still available for existing customers.
+
+You can purchase multiple node-based licenses for a Cloud Volumes ONTAP BYOL single node or HA pair system to allocate more than 368 TiB of capacity, up to the maximum tested and supported system capacity limit of 2 PiB. Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn how to add additional system licenses to Cloud Volumes ONTAP^]. Though Cloud Volumes ONTAP supports up to the maximum tested and supported system capacity of 2 PiB, crossing the 2 PiB limit results in an unsupported system configuration. 
+
+AWS Secret Cloud and Top Secret Cloud regions support purchases of multiple node-based licenses starting with Cloud Volumes ONTAP 9.12.1. 
+
+==== Single node with PAYGO Premium
+
+[cols="18,18,32,32",width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+| Max system capacity with disks alone
+| Max system capacity with disks and data tiering
+
+| c5, m5, and r5 instances | 21 ^1^ | 336 TiB | 368 TiB
+a|
+* m5dn.24xlarge
+* m6id.32xlarge | 19 ^2^ | 304 TiB | 368 TiB
+|===
+
+. 21 data disks is the limit for _new_ deployments of Cloud Volumes ONTAP. If you upgrade a system that was created with version 9.7 or earlier, then the system continues to support 22 disks. One less data disk is supported on new systems that use these instance types because of the addition of a core disk starting with the 9.8 release.
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+==== Single node with BYOL
+
+[cols="18,18,16,16,16,16",width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+2+| Max system capacity with one license
+2+| Max system capacity with multiple licenses
+
+2+| | *Disks alone* | *Disks + data tiering* | *Disks alone* | *Disks + data tiering*
+| c5, m5, and r5 instances | 21 ^1^ | 336 TiB | 368 TiB | 336 TiB | 2 PiB
+a|
+* m5dn.24xlarge
+* m6id.32xlarge | 19 ^2^ | 304 TiB | 368 TiB | 304 TiB | 2 PiB
+|===
+
+. 21 data disks is the limit for _new_ deployments of Cloud Volumes ONTAP. If you upgrade a system that was created with version 9.7 or earlier, then the system continues to support 22 disks. One less data disk is supported on new systems that use these instance types because of the addition of a core disk starting with the 9.8 release.
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+==== HA pairs with PAYGO Premium
+
+[cols="18,18,32,32",width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+| Max system capacity with disks alone
+| Max system capacity with disks and data tiering
+
+| c5, m5, and r5 instances | 18 ^1^ | 288 TiB | 368 TiB
+a|
+* m5dn.24xlarge
+* m6id.32xlarge | 16 ^2^ | 256 TiB | 368 TiB
+|===
+
+. 18 data disks is the limit for _new_ deployments of Cloud Volumes ONTAP. If you upgrade a system that was created with version 9.7 or earlier, then the system continues to support 19 disks. One less data disk is supported on new systems that use these instance types because of the addition of a core disk starting with the 9.8 release.
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+==== HA pairs with BYOL
+
+[cols="18,18,16,16,16,16",width=100%,options="header"]
+|===
+| Instance
+| Max disks per node
+2+| Max system capacity with one license
+2+| Max system capacity with multiple licenses
+
+2+| | *Disks alone* | *Disks + data tiering* | *Disks alone* | *Disks + data tiering*
+
+| c5, m5, and r5 instances | 18 ^1^ | 288 TiB | 368 TiB | 288 TiB | 2 PiB
+a|
+* m5dn.24xlarge
+* m6id.32xlarge | 16 ^2^ | 256 TiB | 368 TiB | 256 TiB | 2 PiB
+|===
+
+. 18 data disks is the limit for _new_ deployments of Cloud Volumes ONTAP. If you upgrade a system that was created with version 9.7 or earlier, then the system continues to support 19 disks. One less data disk is supported on new systems that use these instance types because of the addition of a core disk starting with the 9.8 release.
+
+. This instance type has more local NVMe disks than other instance types, which means a smaller number of data disks are supported.
+
+== Storage VM limits
+
+Some configurations enable you to create additional storage VMs (SVMs) for Cloud Volumes ONTAP.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-aws.html[Learn how to create additional storage VMs^].
+
+[cols="40,60",width=100%,options="header"]
+|===
+| License type
+| Storage VM limit
+
+| *Freemium* a|
+24 storage VMs total ^1,2^
+
+| *Capacity-based PAYGO or BYOL* ^3^ a|
+24 storage VMs total ^1,2^
+
+| *Node-based PAYGO* a|
+* 1 storage VM for serving data
+* 1 storage VM for disaster recovery
+
+| *Node-based BYOL* ^4^ a|
+* 24 storage VMs total ^1,2^
+
+|===
+
+. The limit can be lower, depending on the EC2 instance type that you use. The limits per instance are listed in the section below.
+
+. These 24 storage VMs can serve data or be configured for disaster recovery (DR).
+
+. For capacity-based licensing, there are no extra licensing costs for additional storage VMs, but there is a 4 TiB minimum capacity charge per storage VM. For example, if you create two storage VMs and each has 2 TiB of provisioned capacity, you'll be charged a total of 8 TiB.
+
+. For node-based BYOL, an add-on license is required for each additional _data-serving_ storage VM beyond the first storage VM that comes with Cloud Volumes ONTAP by default. Contact your account team to obtain a storage VM add-on license.
++
+Storage VMs that you configure for disaster recovery (DR) don't require an add-on license (they are free of charge), but they do count against the storage VM limit. For example, if you have 12 data-serving storage VMs and 12 storage VMs configured for disaster recovery, then you've reached the limit and can't create any additional storage VMs.
+
+=== Storage VM limit by EC2 instance type
+
+When you create an additional storage VM, you need to allocate private IP addresses to port e0a. The table below identifies the maximum number of private IPs per interface, as well as the number of IP addresses that are available on port e0a after Cloud Volumes ONTAP has been deployed. The number of available IP addresses directly affects the maximum number of storage VMs for that configuration.
+
+The instances listed below are for the c5, m5, and r5 instance families.
+
+[cols=6*,options="header"]
+|===
+| Configuration
+| Instance type
+| Max private IPs per interface
+| IPs remaining after deployment ^1^
+| Max storage VMs without a mgmt LIF ^2,3^
+| Max storage VMs with a mgmt LIF ^2,3^
+
+.9+| *Single node*
+| *.xlarge | 15 | 9 | 10 | 5
+| *.2xlarge | 15 | 9 | 10 | 5
+| *.4xlarge | 30 | 24 | 24 | 12
+| *.8xlarge | 30 | 24 | 24 | 12
+| *.9xlarge | 30 | 24 | 24 | 12
+| *.12xlarge | 30 | 24 | 24 | 12
+| *.16xlarge | 50 | 44 | 24 | 12
+| *.18xlarge | 50 | 44 | 24 | 12
+| *.24xlarge | 50 | 44 | 24 | 12
+
+.9+| *HA pair in single AZ*
+| *.xlarge | 15 | 10 | 11 | 5
+| *.2xlarge | 15 | 10 | 11 | 5
+| *.4xlarge | 30 | 25 | 24 | 12
+| *.8xlarge | 30 | 25 | 24 | 12
+| *.9xlarge | 30 | 25 | 24 | 12
+| *.12xlarge | 30 | 25 | 24 | 12
+| *.16xlarge | 50 | 45 | 24 | 12
+| *.18xlarge | 50 | 45 | 24 | 12
+| *.24xlarge | 50 | 44 | 24 | 12
+
+.9+| *HA pair in multi AZs*
+| *.xlarge | 15 | 12 | 13 | 13
+| *.2xlarge | 15 | 12 | 13 | 13
+| *.4xlarge | 30 | 27 | 24 | 24
+| *.8xlarge | 30 | 27 | 24 | 24
+| *.9xlarge | 30 | 27 | 24 | 24
+| *.12xlarge | 30 | 27 | 24 | 24
+| *.16xlarge | 50 | 47 | 24 | 24
+| *.18xlarge | 50 | 47 | 24 | 24
+| *.24xlarge | 50 | 44 | 24 | 12
+
+|===
+
+. This number indicates how many _remaining_ private IP addresses are available on port e0a after Cloud Volumes ONTAP is deployed and set up. For example, a *.2xlarge system supports a maximum of 15 IP addresses per network interface. When an HA pair is deployed in a single AZ, 5 private IP addresses are allocated to port e0a. As a result, an HA pair that uses a *.2xlarge instance type has 10 private IP addresses remaining for additional storage VMs.
+
+. The number listed in these columns includes the initial storage VM that the Console creates by default. For example, if 24 is listed in this column, it means that you can create 23 additional storage VMs for a total of 24.
+
+. A management LIF for the storage VM is optional. A management LIF provides a connection to management tools like SnapCenter.
++
+Because it requires a private IP address, it will limit the number of additional storage VMs that you can create. The only exception is an HA pair in multiple AZs. In that case, the IP address for the management LIF is a _floating_ IP address so it doesn't count against the _private_ IP limit.
+
+== File and volume limits
+
+[cols="22,22,56",width=100%,options="header"]
+|===
+| Logical storage
+| Parameter
+| Limit
+
+.2+| *Files*	| Maximum size ^2^ | 128 TB
+| Maximum per volume |	Volume size dependent, up to 2 billion
+| *FlexClone volumes*	| Hierarchical clone depth ^1^ | 499
+.3+| *FlexVol volumes*	| Maximum per node |	500
+| Minimum size |	20 MB
+| Maximum size ^3^ | 300 TiB
+| *Qtrees* |	Maximum per FlexVol volume |	4,995
+| *Snapshot copies* |	Maximum per FlexVol volume |	1,023
+
+|===
+
+. Hierarchical clone depth is the maximum depth of a nested hierarchy of FlexClone volumes that can be created from a single FlexVol volume.
+. Beginning with ONTAP 9.12.1P2, the limit is 128 TB. In ONTAP 9.11.1 and earlier versions, the limit is 16 TB.
+. FlexVol volume creation up to maximum size of 300 TiB is supported using the following tools and minimum versions:  
+* System Manager and the ONTAP CLI starting from Cloud Volumes ONTAP 9.12.1 P2 and 9.13.0 P2
+* Beginning with Cloud Volumes ONTAP 9.13.1
+
+== iSCSI storage limits
+
+[cols=3*,options="header,autowidth"]
+|===
+| iSCSI storage
+| Parameter
+| Limit
+
+.4+| *LUNs*	| Maximum per node |	1,024
+| Maximum number of LUN maps |	1,024
+| Maximum size	| 16 TiB
+| Maximum per volume	| 512
+| *igroups*	| Maximum per node | 256
+.2+| *Initiators*	| Maximum per node |	512
+| Maximum per igroup	| 128
+| *iSCSI sessions* |	Maximum per node | 1,024
+.2+| *LIFs*	| Maximum per port |	32
+| Maximum per portset	| 32
+| *Portsets* |	Maximum per node |	256
+
+|===

@@ -30,7 +30,7 @@ Cloud Volumes ONTAP is supported in most Google Cloud regions. https://bluexp.ne
 
 Cloud Volumes ONTAP supports several machine types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+link:reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in Google Cloud]
 
 == Understand storage limits
 
@@ -43,7 +43,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a machine type, disk type, and disk size:
 
 Machine type::
-Look at the supported machine types in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Cloud Volumes ONTAP Release Notes^] and then review details from Google about each supported machine type. Match your workload requirements to the number of vCPUs and memory for the machine type. Note that each CPU core increases networking performance.
+Look at the supported machine types in the link:reference-configs-gcp.html[Cloud Volumes ONTAP Release Notes^] and then review details from Google about each supported machine type. Match your workload requirements to the number of vCPUs and memory for the machine type. Note that each CPU core increases networking performance.
 +
 Refer to the following for more details:
 +

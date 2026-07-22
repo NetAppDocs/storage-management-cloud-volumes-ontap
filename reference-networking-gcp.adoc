@@ -448,7 +448,7 @@ During the transparent proxy configuration of the Console agent, the administrat
 
 
 
-.Related topics
+.Related link
 
 * link:task-verify-autosupport.html[Verify AutoSupport setup for Cloud Volumes ONTAP]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].

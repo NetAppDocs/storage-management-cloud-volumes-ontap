@@ -142,7 +142,7 @@ For help choosing a disk type and size, refer to  link:task-planning-your-config
 
 .. Enable *Flash Cache* or choose *Normal* or *High* write speed if you need.
 +
-Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#flash-cache-support[Flash Cache^] and link:concept-write-speed.html[write speed].
+Learn more about link:reference-configs-gcp.html#flash-cache-support[Flash Cache] and link:concept-write-speed.html[write speed].
 +
 NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
@@ -338,7 +338,7 @@ For help choosing a disk type and size, refer to  link:task-planning-your-config
 . *Flash Cache, Write Speed & WORM*: 
 .. Enable *Flash Cache* or choose *Normal* or *High* write speed if you need.
 +
-Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#flash-cache-support[Flash Cache^] and link:concept-write-speed.html[write speed].
+Learn more about link:reference-configs-gcp.html#flash-cache-support[Flash Cache^] and link:concept-write-speed.html[write speed].
 +
 NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
