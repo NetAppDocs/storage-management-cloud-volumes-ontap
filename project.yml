@@ -165,33 +165,6 @@ sidebar:
                       url: /task-verify-openssl-gcp.html
     - title: Storage administration
       entries:
-        - title: Volume and LUN administration
-          entries:
-        
-            - title: Create volumes
-              url: /task-create-volumes.html
-            - title: Manage existing volumes
-              url: /task-manage-volumes.html
-            - title: Connect a LUN to a host
-              url: /task-connect-lun.html              
-            - title: Data tiering
-              url: /concept-data-tiering.html              
-            - title: Tier inactive data to object storage
-              url: /task-tiering.html              
-            - title: Accelerate data access with FlexCache
-              url: /task-accelerate-data-access.html
-            - title: Write speed
-              url: /concept-write-speed.html
-            - title: WORM storage
-              url: /concept-worm.html
-        - title: Aggregate administration
-          entries:
-            - title: Create aggregates
-              url: /task-create-aggregates.html
-            - title: Manage existing aggregates
-              url: /task-manage-aggregates.html
-            - title: Manage capacity settings
-              url: /task-manage-capacity-settings.html
         - title: Storage VM administration
           entries:
             - title: Cloud Volumes ONTAP storage VMs
@@ -205,6 +178,32 @@ sidebar:
             - title: Manage storage VMs in Google Cloud
               flavor: gcp
               url: /task-managing-svms-gcp.html
+        - title: Aggregate administration
+          entries:
+            - title: Create aggregates
+              url: /task-create-aggregates.html
+            - title: Manage existing aggregates
+              url: /task-manage-aggregates.html
+            - title: Manage capacity settings
+              url: /task-manage-capacity-settings.html                
+        - title: Volume and LUN administration
+          entries:
+            - title: Data tiering
+              url: /concept-data-tiering.html
+            - title: Write speed
+              url: /concept-write-speed.html
+            - title: WORM storage
+              url: /concept-worm.html                    
+            - title: Create volumes
+              url: /task-create-volumes.html
+            - title: Manage existing volumes
+              url: /task-manage-volumes.html
+            - title: Connect a LUN to a host
+              url: /task-connect-lun.html
+            - title: Tier inactive data to object storage
+              url: /task-tiering.html              
+            - title: Accelerate data access with FlexCache
+              url: /task-accelerate-data-access.html
         - title: Security and data encryption
           entries:
             - title: Learn about encryption
