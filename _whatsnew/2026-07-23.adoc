@@ -1,0 +1,8 @@
+=== Support for Chile Central region in Azure
+You can now deploy Cloud Volumes ONTAP 9.12.1 GA and later in the Chile Central (chilecentral) region in Azure. The following deployment types are supported:
+
+* Single-node
+* HA in a single availability zone using locally-redundant storage (LRS)
+* HA in multiple availability zones using zone-redundant storage (ZRS)
+
+For a list of all supported regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^].
