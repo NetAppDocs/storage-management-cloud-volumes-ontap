@@ -255,8 +255,6 @@ sidebar:
               entries:
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
-                - title: Integrate Cloud Volumes ONTAP systems with Azure OneLake
-                  url: /task-azure-onelake.html 
                 - title: Override CIFS locks
                   url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link or service endpoints
