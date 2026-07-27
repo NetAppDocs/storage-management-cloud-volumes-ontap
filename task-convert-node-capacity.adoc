@@ -15,6 +15,7 @@ summary: After the end of availability (EOA) of your node-based licenses, you sh
 [.lead]
 After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing by using the license conversion tool in the NetApp Console. 
 
+
 For annual or longer-term commitments, NetApp recommends that you contact your NetApp representative prior to the EOA date (11 November, 2024) or license expiration date to ensure that the prerequisites for the transition are in place. If you don't have a long-term contract for a Cloud Volumes ONTAP node and run your system against an on-demand pay-as-you-go (PAYGO) subscription, it is important to plan your conversion before the end of support (EOS) on 31 December, 2024. In both the cases, you should ensure that your system fulfills the requirements before you use the license conversion tool in the NetApp Console for a seamless transition.
 
 For information about the EOA and EOS, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
@@ -30,7 +31,11 @@ For information about the EOA and EOS, refer to link:concept-licensing.html#end-
 * The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud.
 * Post conversion, the serial number of the node-based license will be replaced by a capacity-based format. This is done as a part of the conversion, and is reflected on your NetApp Support Site (NSS) account. 
 * When you transition to the capacity-based model, your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
-* *Private mode deployments*: Private mode Cloud Volumes ONTAP deployments don't support marketplace subscriptions. As a result, you can only convert node-based licenses to capacity-based Essentials packages using BYOL licensing through the license conversion tool in the NetApp Console. This approach allows you to retain the benefits of capacity-based licensing within the BYOL model. Before conversion, you must have a capacity-based Essentials package that corresponds to your node-based license type. For example, to convert a BYOL Secondary HA node-based license, you must first have an Essentials Secondary HA package available in your account. After conversion, the entire capacity of your node-based license is tracked under the Essentials package, and you continue to be billed through your BYOL agreement. Conversion to other capacity-based licenses, such as Professional packages, is not supported in private mode.
+* *Private mode deployments*: Private mode Cloud Volumes ONTAP deployments don't support marketplace subscriptions. As a result, you can only convert node-based licenses to capacity-based Essentials packages using BYOL licensing through the license conversion tool in the NetApp Console. This approach allows you to retain the benefits of capacity-based licensing within the BYOL model. Before conversion, you should have a capacity-based Essentials package that corresponds to your node-based license type. For example, to convert a BYOL Secondary HA node-based license, you should already have an Essentials Secondary HA package available in your account. After conversion, the entire capacity of your node-based license is tracked under the Essentials package, and you continue to be billed through your BYOL agreement. Conversion to other capacity-based licenses, such as Professional packages, is not supported in private mode.
+
+== Conversion in a standard mode deployment
+If you have a standard mode deployment, you can convert your node-based license to a capacity-based license by using the license conversion tool in the NetApp Console. The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud. You can convert your node-based license to any capacity-based license purchased through the marketplace. For example, if you have a PAYGO Standard node-based license, you can convert it to any capacity-based license purchased through the marketplace.
+
 
 .Before your begin
 
@@ -72,6 +77,14 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 .After you finish
 View the new license serial number and verify the changes in the *Licenses and subscriptions* menu of the Console.
 
+
+== Conversion in a private mode deployment
+
+If you have a private mode deployment, you can convert your node-based license to a capacity-based license by using the license conversion tool in the NetApp Console. The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud. 
+
+Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license (BYOL)) package with at least 500 GiB capacity from NetApp. Note that the conversion from node-based licenses to a Professional package is not supported for private mode.
+
+You can also convert your existing BYOL node-based licenses to an Essentials BYOL package by using the license conversion tool in the NetApp Console. You can convert an existing node-based license to an Essentials BYOL package with the same capacity. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
 
 == Pricing in different hyperscalars
 For details on pricing, go to the https://bluexp.netapp.com/pricing/[NetApp Console website^].
