@@ -4,76 +4,105 @@ indexpage:
   tiles:
     - title: Get started
       links:
-        - title: Learn about Cloud Volumes ONTAP
+        - title: What's new
+          url: whats-new.html
+        - title: What is Cloud Volumes ONTAP?
           url: concept-overview-cvo.html
-        - title: Quick start for AWS
-          url: task-getting-started-aws.html
-        - title: Quick start for AWS Top Secret/Secret Cloud regions
-          url: task-getting-started-aws-c2s.html
-          flavor: aws
-        - title: Quick start for Azure
-          url: task-getting-started-azure.html
-          flavor: azure
-        - title: Quick start for Google Cloud
-          url: task-getting-started-gcp.html
-          flavor: gcp
-    - title: Licensing
+        - title: Security and compliance
+          url: concept-security.html
+        - title: Supported versions
+          url: reference-versions.html
+        - title: Supported upgrade path
+          url: task-updating-ontap-cloud.html#supported-upgrade-paths
+        - title: Default configurations
+          url: reference-default-configs.html        
+    - title: Learn about Cloud Volumes ONTAP
       links:
-        - title: Licensing overview
+        - title: Licensing
           url: concept-licensing.html
-        - title: Manage capacity-based licenses
+        - title: Security
+          url: concept-security.html
+        - title: Learn about encryption
+          url: concept-security.html     
+        - title: Storage management
+          url: concept-storage-management.html
+        - title: Disks and aggregates used for Cloud Volumes ONTAP clusters
+          url: reference-default-configs.html
+        - title: Performance monitoring for Cloud Volumes ONTAP workloads
+          url: concept-performance.html    
+    - title: AWS
+      links:
+        - title: Supported configuration
+          url: reference-configs-aws.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in AWS
+          url: concept-ha.html  
+        - title: Networking requirement/security requirements in AWS
+          url: reference-networking-aws.html
+        - title: Quick deployment
+          url: task-quick-deploy-aws.html
+        - title: Deploy AWS in secret cloud
+          url: task-getting-started-aws-c2s.html
+        - title: Manage encryption keys with AWS Key Management Service
+          url: task-aws-key-management.html  
+    - title: Azure
+      links:
+        - title: Supported configuration
+          url: reference-configs-azure.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in Azure
+          url: concept-ha-azure.html            
+        - title: Networking requirement/security requirements in Azure
+          url: reference-networking-azure.html
+        - title: Quick deployment
+          url: task-quick-deploy-azure.html
+        - title: Deploy in the marketplace
+          url: task-deploy-cvo-azure-mktplc.html
+        - title: Manage encryption keys with Azure Key Vault
+          url: task-azure-key-vault.html        
+    - title: Google Cloud
+      links:
+        - title: Supported configuration
+          url: reference-configs-gcp.html
+        - title: Learn about Cloud Volumes ONTAP HA pairs in Google Cloud
+          url: concept-ha-google-cloud.html              
+        - title: Networking requirement/security requirements in Google Cloud
+          url: reference-networking-gcp.html
+        - title: Quick deployment
+          url: task-getting-started-gcp.html
+        - title: Manage encryption keys with Google Cloud KMS
+          url: task-google-key-manager.html
+    - title: System and storage administration
+      links:
+        - title: Manage capacity-based licensing
           url: task-manage-capacity-licenses.html
-        - title: Exchange unassigned node-based licenses
-          url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
-        - title: Manage Keystone Subscriptions
-          url: task-manage-keystone.html
-    - title: Storage management
-      links:
-        - title: Create volumes
+        - title: Convert a node-based license to capacity based
+          url: task-convert-node-capacity.html          
+        - title: Create a FlexVol volume on a system
           url: task-create-volumes.html
-        - title: Tier inactive data to object storage
+        - title: Tier inactive data
           url: task-tiering.html
-        - title: Accelerate data access with FlexCache
-          url: task-accelerate-data-access.html
-        - title: ONTAP SAN host configuration
-          url: https://docs.netapp.com/us-en/ontap-sanhost
-    - title: System administration
-      links:
-        - title: Upgrade Cloud Volumes ONTAP
-          url: task-updating-ontap-cloud.html
-        - title: Stop and start Cloud Volumes ONTAP
-          url: task-managing-state.html
-    - title: Security
-      links:
-        - title: Encrypt volumes with NetApp encryption
+        - title: Manage storage VMs
+          url: task-managing-svms.html
+        - title: Encrypt volumes on Cloud Volumes ONTAP
           url: task-encrypting-volumes.html
-        - title: Improve ransomware protection
-          url: task-protecting-ransomware.html
-    - title: API
+    - title: API reference (NetApp Console Automation)
       links:
-        - title: Overview of the Cloud Volumes ONTAP API
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html
-        - title: Prepare to use the API
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html
         - title: API reference
-          url: https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html
-    - title: Troubleshooting
+          url: https://docs.netapp.com/us-en/console-automation/cm/overview.html      
+        - title: Overview of the Cloud Volumes ONTAP API
+          url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+        - title: Prepare to use the API
+          url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+    - title: More resources
       links:
-        - title: NetApp Knowledge Base
-          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
-    - title: Reference
-      links:
-        - title: Supported configurations
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+        - title: Troubleshooting
+          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)      
+        - title: ONTAP user interfaces
+          url: https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html
+        - title: Use ONTAP CLI for Cloud Volumes ONTAP
+          url: https://docs.netapp.com/us-en/ontap-cli/index.html          
         - title: Supported cloud regions
           url: https://bluexp.netapp.com/cloud-volumes-global-regions
         - title: Calculators
           url: https://www.netapp.com/ontap-cloud/pricing/
-    - title: Blogs & community
-      links:
-        - title: NetApp Console
-          url: https://www.netapp.com/console
-        - title: NetApp Data Services
-          url: https://www.netapp.com/data-services/
         - title: NetApp Community
           url: https://community.netapp.com/

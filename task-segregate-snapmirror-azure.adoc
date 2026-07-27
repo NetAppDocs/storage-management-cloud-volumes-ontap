@@ -5,7 +5,7 @@ keywords: segregate, SnapMirror, SnapMirror traffic, SnapMirror replication, add
 summary: With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic using a different network to enhance the security and performance of the data.
 ---
 
-= Segregate SnapMirror traffic in Azure
+= Segregate SnapMirror traffic in Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font

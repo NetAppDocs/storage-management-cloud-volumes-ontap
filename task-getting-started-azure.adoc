@@ -5,7 +5,7 @@ keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public clo
 summary: Get started with Cloud Volumes ONTAP for Azure in a few steps.
 ---
 
-= Quick start for Cloud Volumes ONTAP in Azure
+= Deployment overview for Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,37 +13,48 @@ summary: Get started with Cloud Volumes ONTAP for Azure in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Get started with Cloud Volumes ONTAP for Azure in a few steps.
+For deploying Cloud Volumes ONTAP, you first need to know about your Azure subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your Azure subscription and organization. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Console agent
+[cols="20,35,25,25",options="header"]
+|===
+a| Task
+a| Description
+a| Reference
+a| Notes for private mode deployments
 
-[role="quick-margin-para"]
-If you don't have a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Console agent^] yet, you need to create one. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Learn how to create a Console agent in Azure^]
+a| Create a Console agent
+a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. 
+a| Refer to the Console setup guide:
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Create a Console agent in Azure^]
 
-[role="quick-margin-para"]
-Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, then you need to manually install the Console agent and access the NetApp Console that's running on that Console agent. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Learn how to manually install the Console agent in a location without internet access^]
+a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
+a| Plan your configuration
+a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+a| link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure]
+a| You need to have similar planning considerations for private mode deployments.
 
-[role="quick-margin-para"]
-The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. For information, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
+a| Set up your networking
+a| . Ensure your VNet and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. 
+. Enable outbound internet access from the target VNet for NetApp AutoSupport.
+a| link:reference-networking-azure.html[Networking requirements for Azure]
+a| Outbound internet access for AutoSupport is not required. All other networking requirements remain the same.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
+a| Deploy Cloud Volumes ONTAP from the Console
+a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in Azure.
+a| Refer to: 
 
-[role="quick-margin-list"]
-.. Ensure that your VNet and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
+* link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
+a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
 
-.. Enable outbound internet access from the target VPC for NetApp AutoSupport.
-+
-This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
+* link:concept-license-management.html[License management for node-based BYOL]
+* link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
+* link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
-[role="quick-margin-para"]
-link:reference-networking-azure.html[Learn more about networking requirements].
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Launch Cloud Volumes ONTAP
-
-[role="quick-margin-para"]
-Click *Add System*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-otc-azure.html[Read step-by-step instructions].
+|===
 
 .Related links
 
