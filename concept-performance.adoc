@@ -20,7 +20,7 @@ You can review performance results to help you decide which workloads are approp
 ifdef::aws[]
 * Cloud Volumes ONTAP for AWS
 +
-link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383pdf.pdf[NetApp Technical Report 4383: Performance Characterization of Cloud Volumes ONTAP in Amazon Web Services with Application Workloads^]
+link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383[NetApp Technical Report 4383: Performance Characterization of Cloud Volumes ONTAP in Amazon Web Services with Application Workloads^]
 endif::aws[]
 
 ifdef::azure[]
@@ -40,3 +40,6 @@ endif::gcp[]
 Cloud Volumes ONTAP nodes show as highly utilized (over 90%) from your cloud provider's monitoring tools. This is because ONTAP reserves all vCPUs presented to the virtual machine so that they are available when needed.
 
 For information, refer to the https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade[NetApp knowledgebase article about how to monitor ONTAP CPU utilization using the CLI^]
+
+
+//This topic is not in the sidebar because these TRs are outdated and not the links are breaking. It will be added back to the sidebar when the TRs are updated and the links are fixed.

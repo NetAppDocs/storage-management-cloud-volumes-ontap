@@ -15,7 +15,3 @@ summary: Manage your Keystone subscriptions by enabling subscriptions for use wi
 [.lead]
 include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-keystone.adoc[lines=15..-1]
 
-.Related links
-
-* link:concept-licensing-charging.html[Learn more about capacity-based licenses]
-

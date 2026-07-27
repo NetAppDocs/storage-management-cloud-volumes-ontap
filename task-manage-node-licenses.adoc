@@ -260,3 +260,8 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-system.ht
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licensing^]
+
+
+//This topic is reused, so the related links are with caret.
+

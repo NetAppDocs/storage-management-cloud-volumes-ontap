@@ -70,19 +70,5 @@ Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Az
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html[NetApp Console access roles^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
 
-//=== Well-architected configuration analysis for Cloud Volumes ONTAP in Azure
 
-//The NetApp Console now supports well-architected configuration analysis for Cloud Volumes ONTAP systems running in Microsoft Azure. The Console analyzes your deployments daily and provides a well-architected status, insights, and recommendations to help you maintain systems that align with NetApp best practices and the well-architected framework.
-
-//The well-architected dashboard displays the total number of analyzed systems and categorizes their resources by configuration and severity level. If you are a system administrator, you can view recommendations for any configuration issue within your organization directly from the Console dashboard and download a CSV report of all the recommendations. Configurations are categorized according to:
-
-//*	*Reliability*: Ensures workloads operate correctly and consistently, even in the event of disruptions.
-//*	*Security*: Safeguards data, systems, and assets through risk assessments and mitigation.
-//*	*Operational excellence*: Optimizes architecture to maximize business value.
-//*	*Cost optimization*: Reduces and optimizes costs for greater business value.
-
-//.Related links
-
-//* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
-//* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html[Implement well-architected system configurations^]
 
