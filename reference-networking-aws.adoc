@@ -298,7 +298,7 @@ If you haven't created a Console agent yet, you should review networking require
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html[Security group rules in AWS^]
 
-.Related topics
+.Related link
 
 * link:task-verify-autosupport.html[Verify AutoSupport setup for Cloud Volumes ONTAP]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].

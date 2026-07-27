@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: reference-limitations-azure.html
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, vm, flash cache; limitations in HA deployment in MAZ, SAZ, multiple availability xone, single availability zone Azure CVO, PSSDv2, premium SSD v2 limitation in CVO, flash cache limitation in CVO
+summary: These known limitations are specific to Cloud Volumes ONTAP in Microsoft Azure.
+---
+
+= Known limitations for Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The following known limitations are specific to Cloud Volumes ONTAP in Microsoft Azure. Be sure to also review link:reference-limitations.html[Limitations for Cloud Volumes ONTAP in all cloud providers].
+
+== Limitations with using Azure VM extensions
+Cloud Volumes ONTAP does not support Azure virtual machine (VM) extensions because they affect the management operations in the NetApp Console. During deployment, the Console prevents the installation of any extensions on your VMs. If extensions are already installed on your existing Cloud Volumes ONTAP VMs, contact Microsoft Azure Support to remove them. For guidance, refer to the knowledge base (KB) article https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Can_Azure_VM_Management_Extensions_be_installed_into_Cloud_Volume_ONTAP[Can Azure VM Management Extensions be installed into Cloud Volume ONTAP?^]
+ 
+Starting July 14, 2025, NetApp will send emails and notify you in the Console if VM extensions are detected on your Cloud Volumes ONTAP VMs.
+
+== Premium SSD v2 disks limitations for HA configurations
+Premium SSD v2 Managed Disks have the following limitations for high-availability (HA) deployments in Azure:
+
+* Not supported in HA deployments in non-zonal regions.
+* Not supported in HA deployments across multiple availability zones.
+* Only supported in HA configurations deployed within single availability zones.
+
+To use Premium SSD v2 Managed Disks with Cloud Volumes ONTAP HA configurations, ensure the following requirements are met:
+
+* Cloud Volumes ONTAP version is 9.15.1 or later.
+* The HA deployment is in an Azure single availability zone.
+* The selected regions and zones support Premium SSD v2 Managed Disks. For information about the supported regions, refer to the https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+
+For more information, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/reference-new.html#support-for-premium-ssd-v2-managed-disks-in-azure[Support for Premium SSD v2 Managed Disks in Azure^].
+
+== Limitations with HA deployments in single availability zones
+Beginning with Cloud Volumes ONTAP 9.15.1, you can deploy virtual machine (VM) instances in HA mode in single availability zones (AZs) in Azure. For information about the criteria supporting this feature, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/reference-new.html#deploy-ha-pairs-in-single-availability-zones-in-azure[Deploy HA pairs in single availability zones in Azure^].
+
+If the Cloud Volumes ONTAP version is earlier than 9.15.1 or if any of these conditions are not met, the previous deployment model utilizing availability sets becomes effective. This applies to only HA configurations.
+
+== Flash Cache limitations
+Cloud Volumes ONTAP uses the local NVMe storage in some VM types as _Flash Cache_. Note this limitation:
+
+* Cache rewarming after a reboot is not supported.
+
+== Limitations with HA deployments
+
+HA pairs aren't supported in some regions.
+
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the list of supported Azure regions^].
+
+
+
+
+
+//https://jira.ngage.netapp.com/browse/BLUEXPDOC-373 

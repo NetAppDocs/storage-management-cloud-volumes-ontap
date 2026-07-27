@@ -30,7 +30,7 @@ Cloud Volumes ONTAP is supported in most Microsoft Azure regions. https://bluexp
 
 Cloud Volumes ONTAP supports several VM types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations for Cloud Volumes ONTAP in Azure^]
+link:reference-configs-azure.html[Supported configurations for Cloud Volumes ONTAP in Azure]
 
 == Understand storage limits
 

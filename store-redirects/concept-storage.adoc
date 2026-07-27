@@ -1,0 +1,5 @@
+---
+permalink: concept-storage.html
+redirect: storage-management-cloud-volumes-ontap/reference-default-configs.html
+---
+
