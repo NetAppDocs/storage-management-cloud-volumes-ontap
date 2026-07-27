@@ -326,7 +326,9 @@ sidebar:
             - title: Verify AutoSupport setup
               url: /task-verify-autosupport.html
             - title: Manage Keystone subscriptions
-              url: /task-manage-keystone.html      
+              url: /task-manage-keystone.html
+            - title: Cloud Volumes ONTAP and Microsoft OneLake
+              url: /task-azure-onelake.html
     - title: Knowledge and support
       entries:
         - title: Register for support
