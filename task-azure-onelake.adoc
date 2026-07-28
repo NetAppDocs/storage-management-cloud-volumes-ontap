@@ -13,41 +13,104 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 :imagesdir: ./media/
 
 [.lead]
-You can integrate Cloud Volumes ONTAP with Microsoft Fabric OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse through an Azure on-premises data gateway.
+You can integrate Cloud Volumes ONTAP with Microsoft OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse.
 
 .Before you begin
 
 Ensure that you have configured the following components before starting the integration process:
 
-* An existing or new Cloud Volumes ONTAP cluster
-* Azure on-premises data gateway
-* A Microsoft Fabric subscription
-* A Microsoft OneLake lakehouse
+* A running Cloud Volumes ONTAP system
+* A lakehouse in your workspace. For information, refer to https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data[Quickstart: Get data into OneLake^]
 
 == Configure Cloud Volumes ONTAP S3
 
 Configure ONTAP S3 multi-protocol access to allow OneLake to read data stored in your Cloud Volumes ONTAP NAS volumes.
 
 .Steps
-. After deploying a Cloud Volumes ONTAP system, select *Advanced View* > *System Manager* in NetApp Console to configure ONTAP S3 for the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for more information.
+. Create a signed digital certificate.
+.. Connect to the Cloud Volumes ONTAP system using SSH through another VM in your virtual network (vNet) or Azure Bastion. 
+.. Create a root CA certificate.
 +
-image::screenshot-ontap-s3-svm-config.png[Screenshot of System Manager showing the ONTAP S3 configuration settings page for the SVM]
-. From the S3 configuration:
-.. Download the self-signed (system-generated) certificate.
-.. Copy the access key and secret access key.
-.. Use the same NAS LIF or create a new LIF.
-. Create an S3 NAS bucket and an S3 user with read-only permissions to enable OneLake to securely access your Cloud Volumes ONTAP data. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
+[source,CLI]
+----
+security certificate create -vserver <svm_cvo> -type root-ca -common-name <svm_cvo_ca>
+----
+For example,
++
+[source,CLI]
+----
+security certificate create -vserver svm_cvopsa2 -type root-ca -common-name svm_cvo_ca
+
+The certificate's generated name for reference: svm_cvo_ca_159D1587CE21E9D4_svm_cvo_ca
+----
++
+.. Create a Certificate Signing Request (CSR) for the S3 endpoint.
++
+[NOTE]
+Ensure that the value for the `s3_server_name` that you select has the same value as the `-dns-name`, for example, `s3.cvo.com`.
++
+[source,CLI]
+----
+security certificate generate-csr -common-name <s3_server_name>  -dns-name <s3_server_name>
+----
++
+.. Copy the CSR and the private key from the output.
+.. Sign the certificate request using the root CA by running the following command.
++
+[source,CLI]
+----
+security certificate sign -vserver svm_name -ca <ca_cert_name> -ca-serial <ca_cert_serial_number>
+----
++
+Enter the command options that you used in previous steps:
+** `-ca`: the common name of the CA that you entered in Step b. 
+** `-ca-serial`: the CA serial number from Step b. For example, if the CA certificate name is `svm_cvo_ca_159D1587CE21E9D4_svm_cvo_ca`, the serial number is `159D1587CE21E9D4`.
+.. Copy the signed certificate content. For more information about creating and installing a CA certificate, refer to https://docs.netapp.com/us-en/ontap/s3-config/create-install-ca-certificate-svm-task.html[Create and install a CA certificate on an ONTAP S3-enabled SVM^].
+. Configure ONTAP S3 for the Cloud Volumes ONTAP system.
+.. On NetApp Console, from the left navigation menu, select *Storage > Management*.
+.. On the *Systems* page, double click the required Cloud Volumes ONTAP system, and click *System Manager*.
+.. Enable S3 protocol access on the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for information.
++
+image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager showing the ONTAP S3 configuration settings page for the SVM]
+. From the S3 configuration, 
+.. Select *Reuse the data interface used for the SMB/CIFS or NFS protocol.* to reuse the existing LIF or create a new LIF.
+.. Copy the access key and the secret access key.
+
+== Create an S3 NAS bucket and an S3 user
+. Create an S3 NAS bucket. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
 +
 [NOTE]
 Ensure to select the correct NAS volume when creating the S3 NAS bucket.
+. Create an S3 user with read-only permissions to enable OneLake to securely access your Cloud Volumes ONTAP data. Refer to:
+** https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html[ONTAP documentation: Create an S3 user^] to create an S3 user.
+** https://docs.netapp.com/us-en/ontap/s3-config/create-modify-groups-task.html[ONTAP documentation: Create and modify groups^] to create a group for that user with read-only permissions.
 
-== Configure the Azure on-premises data gateway
 
-Install and configure an Azure on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's virtual network (vNet) to enable connectivity between OneLake and your Cloud Volumes ONTAP system.
+== Install and configure Microsoft on-premises data gateway
+
+Install and configure an on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's vNet and import a security certificate to enable connectivity between OneLake and your Cloud Volumes ONTAP system.
 
 .Steps
-. Ensure that there's network connectivity between the VM where you are installing the Azure on-premises data gateway and the Cloud Volumes ONTAP S3 bucket you created in the previous step.
-. Install the Azure on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
+. Ensure that there's network connectivity between the VM where you are installing the on-premises data gateway and the Cloud Volumes ONTAP S3 bucket you created in the previous step.
+. Ensure the VM can resolve the FQDN of the ONTAP S3 server.
+. Install the SVM root CA certificate.
+.. Open a new browser and navigate to your S3 server: `\https://<CVO-S3-SERVER-URL>`
+.. Select the lock icon in the address bar, and then select *Certificate details*.
+.. On the *Certificate* window, select the *Details* tab, and then select the first row.
++
+image::screenshot-onelake-dnld-cert.png[width=300 Screenshot showing the export certificate dialog box]
+.. Select *Export...* and save the file locally in the `DER` format.
++
+image::screenshot-onelake-save-cert.png[width=300 Screenshot showing the save certificate dialog box]
+.. Open the certificate file you saved, and select *Install Certificate...* to open the *Certificate Import Wizard*.
+.. Select *Local Machine*, and place the certificate in *Trusted Root Certification Authorities* store.
++
+image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certificate import wizard]
+.. Follow the prompts to complete the installation of the certificate.
+.. After the certificate is installed, verify the installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. You should not see any privacy errors but should see an XML displaying a message as access is denied.
+
+. Install the on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
+
 
 == Create a OneLake shortcut
 
