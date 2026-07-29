@@ -20,7 +20,6 @@ You can integrate Cloud Volumes ONTAP with Microsoft OneLake, enabling existing 
 Ensure that you have configured the following components before starting the integration process:
 
 * A running Cloud Volumes ONTAP system
-* A lakehouse in your workspace. For information, refer to https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data[Quickstart: Get data into OneLake^]
 
 == Configure Cloud Volumes ONTAP S3
 
@@ -47,7 +46,7 @@ The certificate's generated name for reference: svm_cvo_ca_159D1587CE21E9D4_svm_
 .. Create a Certificate Signing Request (CSR) for the S3 endpoint.
 +
 [NOTE]
-Ensure that the value for the `s3_server_name` that you select has the same value as the `-dns-name`, for example, `s3.cvo.com`.
+Choose a value for `s3_server_name` that matches the actual DNS name you'll use to reach your S3 endpoint, for example, `s3.cvo.com`. This same value is used for both the `-common-name` and `-dns-name` options.
 +
 [source,CLI]
 ----
@@ -72,7 +71,7 @@ Enter the command options that you used in previous steps:
 .. Enable S3 protocol access on the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for information.
 +
 image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager showing the ONTAP S3 configuration settings page for the SVM]
-. From the S3 configuration, 
+. Configure the S3 data LIF and retrieve the access keys:
 .. Select *Reuse the data interface used for the SMB/CIFS or NFS protocol.* to reuse the existing LIF or create a new LIF.
 .. Copy the access key and the secret access key.
 
@@ -80,7 +79,7 @@ image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager
 . Create an S3 NAS bucket. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
 +
 [NOTE]
-Ensure to select the correct NAS volume when creating the S3 NAS bucket.
+Ensure that you select the correct NAS volume when creating the S3 NAS bucket.
 . Create an S3 user with read-only permissions to enable OneLake to securely access your Cloud Volumes ONTAP data. Refer to:
 ** https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html[ONTAP documentation: Create an S3 user^] to create an S3 user.
 ** https://docs.netapp.com/us-en/ontap/s3-config/create-modify-groups-task.html[ONTAP documentation: Create and modify groups^] to create a group for that user with read-only permissions.
@@ -107,7 +106,7 @@ image::screenshot-onelake-save-cert.png[width=300 Screenshot showing the save ce
 +
 image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certificate import wizard]
 .. Follow the prompts to complete the installation of the certificate.
-.. After the certificate is installed, verify the installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. You should not see any privacy errors but should see an XML displaying a message as access is denied.
+.. After the certificate is installed, verify the installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. You shouldn't see any privacy errors; instead, you should see an XML response indicating that access is denied.
 
 . Install the on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
 
@@ -137,5 +136,5 @@ For additional information, refer to link:https://learn.microsoft.com/en-us/azur
 .Related links
 
 * https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/[NetApp blog on Cloud Volumes ONTAP and OneLake^]
-* Microsoft documentation: https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[What is OneLake?^]
-* Microsoft documentation: https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts[What is Azure AI Search?^]
+* https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft documentation: What is OneLake?^]
+* https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts[Microsoft documentation: What is Azure AI Search?^]
