@@ -104,6 +104,7 @@ https://login.microsoft.com
 . Verify that users and groups are synchronized to Azure Entra ID. Synced users appear with a UPN suffix matching your tenant domain, for example `user@<tenant>.onmicrosoft.com`.
 
 To learn more about installing and configuring Azure AD Connect, refer to:
+
 * https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts[Azure AD Connect design concepts^]
 * https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-post-installation[Post-installation steps for Azure AD Connect^]
 
@@ -193,6 +194,7 @@ Add a line mapping the ONTAP data LIF IP address to the CIFS server FQDN:
 . Enable remote access to the machine so that it can be accessed from the Entra ID-registered VM.
 
 To learn more about Entra ID device join and Kerberos authentication policies, refer to:
+
 * https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join[Configure hybrid Azure AD join^]
 * https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-allow-pku2u-authentication-requests-to-this-computer-to-use-online-identities[PKU2U authentication policy^]
 * https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current[Troubleshoot hybrid Azure AD join^]
