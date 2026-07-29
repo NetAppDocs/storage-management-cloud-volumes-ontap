@@ -20,7 +20,8 @@ You can integrate Cloud Volumes ONTAP with Microsoft OneLake, enabling existing 
 Ensure that you have configured the following components before starting the integration process:
 
 * A running Cloud Volumes ONTAP system
-* A lakehouse in your workspace. For information, refer to https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data[Quickstart: Get data into OneLake^]
+* A link:https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Microsoft OneLake lakehouse^] in your workspace
+
 
 == Configure Cloud Volumes ONTAP S3
 
@@ -112,17 +113,18 @@ image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certi
 . Install the on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
 
 
-== Create a OneLake shortcut
-
+== Connect to OneLake
 Create an Amazon S3-compatible shortcut in your OneLake lakehouse to connect to your Cloud Volumes ONTAP S3 bucket.
 
 .Before you begin
-* Ensure that you have a link:https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Microsoft OneLake lakehouse^].
+
 * Ensure the S3-compatible bucket credentials meet the access and authorization requirements for S3 shortcuts.
-* Go to *Settings > Resources and Extensions > Manage connections and gateways* and verify that the on-premises data gateway is listed in your Microsoft Fabric environment.
+* Go to *Settings > Manage connections and gateways* and verify that the on-premises data gateway is listed in your OneLake environment.
 
 .Steps
 . Create a OneLake shortcut to your Cloud Volumes ONTAP S3 bucket by using the steps mentioned in https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
++
+image::screenshot-onelake-shortcut1.png[width=500 Screenshot showing the OneLake lakehouse Explorer pane with the Cloud Volumes ONTAP S3 shortcut connection]
 . Under *Explorer > Files*, verify that the lakehouse refreshes automatically and the shortcut appears for the Cloud Volumes ONTAP S3 connection in OneLake.
 +
 image::screenshot-cvo-s3-onelake-confirm.png[Screenshot showing the confirmed Cloud Volumes ONTAP S3 shortcut connection displayed under Files in the OneLake lakehouse Explorer pane]
