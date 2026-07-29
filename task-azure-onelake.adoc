@@ -5,7 +5,7 @@ keywords: Azure, AI, integration, OneLake, analytics, ONTAP S3, Microsoft Fabric
 summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to enable Azure AI services to read data stored in your Cloud Volumes ONTAP systems through Microsoft OneLake.
 ---
 
-= Integrate Cloud Volumes ONTAP systems with Microsoft OneLake for AI and Analytics
+= Integrate Cloud Volumes ONTAP systems with Microsoft OneLake for AI and analytics
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 :imagesdir: ./media/
 
 [.lead]
-You can integrate Cloud Volumes ONTAP with Microsoft OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse.
+You can integrate Cloud Volumes ONTAP with https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse.
 
 .Before you begin
 
-Ensure that you have configured the following components before starting the integration process:
+Verify that you have configured the following components before starting the integration process:
 
 * A running Cloud Volumes ONTAP system
 * A link:https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Microsoft OneLake lakehouse^] in your workspace
@@ -56,7 +56,7 @@ security certificate generate-csr -common-name <s3_server_name>  -dns-name <s3_s
 ----
 +
 .. Copy the CSR and the private key from the output.
-.. Sign the certificate request using the root CA by running the following command.
+.. Run the following command to sign the certificate request using the root CA.
 +
 [source,CLI]
 ----
@@ -69,7 +69,7 @@ Enter the command options that you used in previous steps:
 .. Copy the signed certificate content. For more information about creating and installing a CA certificate, refer to https://docs.netapp.com/us-en/ontap/s3-config/create-install-ca-certificate-svm-task.html[Create and install a CA certificate on an ONTAP S3-enabled SVM^].
 . Configure ONTAP S3 for the Cloud Volumes ONTAP system.
 .. On NetApp Console, from the left navigation menu, select *Storage > Management*.
-.. On the *Systems* page, double click the required Cloud Volumes ONTAP system, and click *System Manager*.
+.. On the *Systems* page, double-click the required Cloud Volumes ONTAP system, and select *System Manager*.
 .. Enable S3 protocol access on the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for information.
 +
 image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager showing the ONTAP S3 configuration settings page for the SVM]
@@ -82,17 +82,17 @@ image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager
 +
 [NOTE]
 Ensure that you select the correct NAS volume when creating the S3 NAS bucket.
-. Create an S3 user with read-only permissions to enable OneLake to securely access your Cloud Volumes ONTAP data. Refer to:
+. Create an S3 user with read-only permissions for OneLake to access your Cloud Volumes ONTAP data. Refer to:
 ** https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html[ONTAP documentation: Create an S3 user^] to create an S3 user.
 ** https://docs.netapp.com/us-en/ontap/s3-config/create-modify-groups-task.html[ONTAP documentation: Create and modify groups^] to create a group for that user with read-only permissions.
 
 
 == Install and configure Microsoft on-premises data gateway
 
-Install and configure an on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's vNet and import a security certificate to enable connectivity between OneLake and your Cloud Volumes ONTAP system.
+Install and configure an on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's vNet. Import a security certificate to connect OneLake to your Cloud Volumes ONTAP system.
 
 .Steps
-. Ensure that there's network connectivity between the VM where you are installing the on-premises data gateway and the Cloud Volumes ONTAP S3 bucket you created in the previous step.
+. Ensure that there is network connectivity between the VM where you install the on-premises data gateway and the Cloud Volumes ONTAP S3 bucket you create in the previous step.
 . Ensure the VM can resolve the FQDN of the ONTAP S3 server.
 . Install the SVM root CA certificate.
 .. Open a new browser and navigate to your S3 server: `\https://<CVO-S3-SERVER-URL>`
@@ -118,8 +118,8 @@ Create an Amazon S3-compatible shortcut in your OneLake lakehouse to connect to 
 
 .Before you begin
 
-* Ensure the S3-compatible bucket credentials meet the access and authorization requirements for S3 shortcuts.
-* Go to *Settings > Manage connections and gateways* and verify that the on-premises data gateway is listed in your OneLake environment.
+* Ensure the S3-compatible bucket credentials have the right access and permissions for S3 shortcuts.
+* Go to *Settings > Manage connections and gateways* and verify that your OneLake environment lists the on-premises data gateway.
 
 .Steps
 . Create a OneLake shortcut to your Cloud Volumes ONTAP S3 bucket by using the steps mentioned in https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
@@ -139,5 +139,5 @@ For additional information, refer to link:https://learn.microsoft.com/en-us/azur
 .Related links
 
 * https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/[NetApp blog on Cloud Volumes ONTAP and OneLake^]
-* https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft documentation: What is OneLake?^]
 * https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts[Microsoft documentation: What is Azure AI Search?^]
+* https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP documentation: ONTAP S3 multi-protocol support^]

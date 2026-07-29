@@ -1,6 +1,6 @@
 === Cloud Volumes ONTAP integration with Microsoft OneLake
 
-Cloud Volumes ONTAP now supports integration with https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] in public preview. You can integrate Cloud Volumes ONTAP with Microsoft Fabric OneLake, enabling existing Cloud Volumes ONTAP NAS data to be used by Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot, without moving or duplicating the data. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse through an Azure on-premises data gateway.
+Cloud Volumes ONTAP now supports integration with https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] in public preview. You can integrate Cloud Volumes ONTAP with Microsoft OneLake to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses ONTAP S3 multi-protocol access to connect Cloud Volumes ONTAP to an existing OneLake lakehouse.
 
 .Related articles and resources:
 
