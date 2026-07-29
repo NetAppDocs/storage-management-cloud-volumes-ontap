@@ -6,7 +6,7 @@ Product: Cloud Volumes ONTAP
 Cloud Volumes ONTAP is a software-only storage appliance that runs ONTAP in public cloud environments and is managed through the *NetApp Console*. This repository documents deployment, networking, storage, security, licensing, and operations across *AWS*, *Microsoft Azure*, and *Google Cloud*.
 
 ### Repository structure
-- `./` – Primary product docs in AsciiDoc (`concept-*.adoc`, `task-*.adoc`, `reference-*.adoc`, `whats-new.adoc`, `legal-notices.adoc`)
+- Primary product docs in AsciiDoc (`concept-*.adoc`, `task-*.adoc`, `reference-*.adoc`, `whats-new.adoc`, `legal-notices.adoc`)
 - `_include/` – Reusable content snippets included by task and reference pages
 - `_whatsnew/` – Date-stamped release-note fragments included into `whats-new.adoc`
 - `media/` – Shared diagrams, screenshots, and architecture visuals referenced by docs pages
