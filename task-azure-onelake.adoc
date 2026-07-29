@@ -20,6 +20,7 @@ You can integrate Cloud Volumes ONTAP with Microsoft OneLake, enabling existing 
 Ensure that you have configured the following components before starting the integration process:
 
 * A running Cloud Volumes ONTAP system
+* A lakehouse in your workspace. For information, refer to https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data[Quickstart: Get data into OneLake^]
 
 == Configure Cloud Volumes ONTAP S3
 
