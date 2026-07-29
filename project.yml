@@ -243,7 +243,9 @@ sidebar:
                 - title: Learn about HA pairs in Azure
                   url: /concept-ha-azure.html                  
                 - title: Manage keys with Azure Key Vault
-                  url: /task-azure-key-vault.html                           
+                  url: /task-azure-key-vault.html
+                - title: Configure Azure Entra ID authentication for SMB
+                  url: /task-azure-entra-id-smb-auth.html
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
                 - title: Override CIFS locks
