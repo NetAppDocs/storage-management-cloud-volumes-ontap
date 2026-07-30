@@ -97,18 +97,22 @@ When creating the bucket, select the NAS volume that contains the data you want 
 
 == Install and configure Microsoft on-premises data gateway
 
-Install and configure an on-premises data gateway on a VM inside your Cloud Volumes ONTAP system's vNet. Import a security certificate to connect OneLake to your Cloud Volumes ONTAP system.
+// CHANGED: intro paragraph reworded per source doc
+Install and configure a Microsoft on-premises data gateway on a VM in the same virtual network (vNet) as your Cloud Volumes ONTAP system. Install the Cloud Volumes ONTAP root CA certificate on the VM to establish trust for HTTPS connections to the ONTAP S3 server.
 
 .Before you begin
-. Ensure that there is network connectivity between the VM where you install the on-premises data gateway and the Cloud Volumes ONTAP S3 server you create in the previous step.
-. Ensure the VM can resolve the FQDN of the ONTAP S3 server.
+// CHANGED: reworded and added detail about the data interface (LIF) resolution
+. Ensure that there is network connectivity between the VM and the ONTAP S3 server you created in the previous section.
+. Ensure that the ONTAP S3 server name configured earlier resolves to the IP address of the data interface (LIF) assigned to the ONTAP S3 server, and that the VM can successfully resolve this name.
 
 .Steps
 
-. Install the root CA certificate on the Cloud Volumes ONTAP SVM.
-.. From a new browser window, go to your S3 server: `\https://<CVO-S3-SERVER-URL>`
+// CHANGED: reworded step to clarify the certificate is installed on the VM, not the SVM
+. Install the CA certificate of Cloud Volumes ONTAP.
+.. Open a browser on the VM and navigate to your S3 server: `\https://<CVO-S3-SERVER-URL>`
 .. Select the lock icon on the address bar, and then select *Certificate details*.
-.. On the *Certificate Viewer* window, select the *Details* tab, and then select the certificate.
+// CHANGED: added detail on which certificate row to select
+.. On the *Certificate Viewer* window, select the *Details* tab, and then select the first row of the root CA in the certificate list.
 +
 image::screenshot-onelake-dnld-cert.png[width=300 Screenshot showing the export certificate dialog box]
 .. Select *Export...* and save the file locally in `DER` format.
@@ -121,18 +125,22 @@ image::screenshot-onelake-install-cert.png[width=300 Screenshot showing the cert
 +
 image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certificate import wizard]
 .. Follow the prompts to complete the certificate installation.
-.. After the certificate is installed, verify it by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. You shouldn't see any privacy errors; instead, you should see an XML response indicating that access is denied.
+// CHANGED: reworded verification step with added detail
+.. Verify the certificate installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. If the certificate is trusted, the browser shouldn't display any certificate or privacy warnings; instead, the ONTAP S3 server should return an XML access denied response, indicating that HTTPS communication is working correctly.
 
-. Install the on-premises data gateway on a VM inside your vNET. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
+// CHANGED: specified "standard mode" gateway and "download and install" wording
+. Download and install the Microsoft on-premises data gateway on the VM in standard mode. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
 
 
 == Connect to OneLake
-Create an Amazon S3 shortcut in your OneLake lakehouse to connect to your Cloud Volumes ONTAP S3 bucket.
+// CHANGED: intro sentence reworded per source doc
+Create an Amazon S3-compatible shortcut in your Microsoft Fabric lakehouse to access data stored in your Cloud Volumes ONTAP S3 bucket.
 
 .Before you begin
 
-* An existing Microsoft Fabric lakehouse in your workspace.
-* In your lakehouse environment, go to *Settings > Manage connections and gateways* and verify that you can see the on-premises data gateway.
+* An existing https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Microsoft Fabric lakehouse^] in your workspace.
+// CHANGED: specified the gateway must be listed and connected
+* In your environment, go to *Settings > Manage connections and gateways* and verify that your on-premises data gateway is listed and connected.
 * The Cloud Volumes ONTAP root CA certificate is installed on the gateway VM.
 * You have the following values from the previous steps: 
 ** ONTAP S3 server name (FQDN)
@@ -141,19 +149,23 @@ Create an Amazon S3 shortcut in your OneLake lakehouse to connect to your Cloud 
 
 
 .Steps
-. Create a OneLake shortcut to your Cloud Volumes ONTAP S3 bucket by using the following details. For the steps of creating the shortcut, refer to https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
-** URL: Use the FQDN of the ONTAP S3 server in the URL
-** Data gateway: Use the on-premises data gateway you configured
-** Access key ID and secret access key: Use the keys of the S3 user you created
+// CHANGED: specified exact URL format and split the access key bullet into two
+. In your lakehouse, create an Amazon S3-compatible shortcut to your Cloud Volumes ONTAP S3 bucket by using the following details. For the steps of creating the shortcut, refer to https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
+** URL: The ONTAP S3 server in the format `\https://<S3-SERVER-FQDN>`
+** Data gateway: The on-premises data gateway you configured earlier
+** Access key ID
+** Secret access key
 +
 image::screenshot-onelake-shortcut1.png[width=500 Screenshot showing the OneLake lakehouse Explorer pane with the Cloud Volumes ONTAP S3 shortcut connection]
-. Under *Explorer > Files*, verify that the lakehouse refreshes automatically and the shortcut appears for the Cloud Volumes ONTAP S3 connection in OneLake.
+// CHANGED: added detail about browsing files through the shortcut
+. After the shortcut is created, verify that it appears under *Explorer > Files* in the lakehouse and that you can browse the files stored in the Cloud Volumes ONTAP volume through the shortcut.
 +
 image::screenshot-cvo-s3-onelake-confirm.png[Screenshot showing the confirmed Cloud Volumes ONTAP S3 shortcut connection displayed under Files in the OneLake lakehouse Explorer pane]
 
-== Connect to Azure AI Search
+// CHANGED: heading renamed from "Connect to Azure AI Search" - confirm before publishing, this affects the permalink anchor
+== Next steps: Index data with Azure AI Search
 
-After creating the OneLake shortcut, you can configure Azure AI Search to index data stored in your Cloud Volumes ONTAP volumes for use with AI applications such as Microsoft Copilot and Azure OpenAI.
+After creating the OneLake shortcut, you can configure Azure AI Search to index the data stored in your Cloud Volumes ONTAP volumes through OneLake. Azure AI Search indexing enables the data to be used by AI applications such as Microsoft Copilot and Azure OpenAI.
 
 For more information, refer to link:https://learn.microsoft.com/en-us/azure/search/search-how-to-index-onelake-files[the Microsoft documentation: How to index OneLake files^].
 
@@ -161,6 +173,7 @@ For more information, refer to link:https://learn.microsoft.com/en-us/azure/sear
 .Related links
 
 * https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/[NetApp blog on Cloud Volumes ONTAP and OneLake^]
+// NOTE: source doc's related links list omits this entry - confirm whether it should stay
 * https://learn.microsoft.com/en-us/fabric/onelake/create-lakehouse-onelake[Microsoft OneLake lakehouse^]
 * https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search?tabs=indexing%2Cquickstarts[Microsoft documentation: What is Azure AI Search?^]
 * https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP documentation: ONTAP S3 multi-protocol support^]
