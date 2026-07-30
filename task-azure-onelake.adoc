@@ -18,7 +18,7 @@ You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.co
 
 .Before you begin
 
-Verify that you have configured a running instance of Cloud Volumes ONTAP before starting the integration process:
+Verify that you have configured a running instance of Cloud Volumes ONTAP before starting the integration process.
 
 == Create a root CA certificate and generate a certificate for the ONTAP S3 server
 A certificate is required to secure HTTPS connections between Microsoft OneLake and the ONTAP S3 server. In this procedure, you create a root CA certificate on Cloud Volumes ONTAP and generate a signed certificate for the ONTAP S3 server.
@@ -56,8 +56,8 @@ security certificate generate-csr -common-name s3.cvo.com  -dns-name s3.cvo.com
 +
 . The command generates a CSR and a private key. Copy and save both the values. You need the CSR in the next step and the private key later when configuring the ONTAP S3 service. Copy the CSR and the private key from the output.
 . Sign the certificate request using the root CA certificate. When prompted, paste the CSR generated in the previous step.
-** <ca_cert_name> - name of the root CA certificate
-** <ca_cert_serial_number> - the CA serial number
+** `ca_cert_name` - name of the root CA certificate
+** `ca_cert_serial_number` - the CA serial number
 +
 [source,CLI]
 ----
@@ -129,7 +129,7 @@ image::screenshot-onelake-install-cert.png[width=300 Screenshot showing the cert
 image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certificate import wizard]
 .. Follow the prompts to complete the certificate installation.
 // CHANGED: reworded verification step with added detail
-.. Verify the certificate installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. If the certificate is trusted, the browser shouldn't display any certificate or privacy warnings; instead, the ONTAP S3 server should return an XML access denied response, indicating that HTTPS communication is working correctly.
+.. Verify the certificate installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. The ONTAP S3 server should return an XML access denied response, indicating that HTTPS communication is working correctly.
 
 // CHANGED: specified "standard mode" gateway and "download and install" wording
 . Download and install the Microsoft on-premises data gateway on the VM in standard mode. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
