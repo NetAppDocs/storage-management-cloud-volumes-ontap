@@ -13,7 +13,8 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 :imagesdir: ./media/
 
 [.lead]
-You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.com/[Microsoft Fabric^] using https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP S3 multi-protocol^] access to connect Cloud Volumes ONTAP to a Microsoft Fabric lakehouse.
+// CHANGED: added "existing" per source doc
+You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.com/[Microsoft Fabric^] using https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP S3 multi-protocol^] access to connect Cloud Volumes ONTAP to an existing Microsoft Fabric lakehouse.
 
 .Before you begin
 
@@ -70,6 +71,7 @@ security certificate sign -vserver svm_name -ca <ca_cert_name> -ca-serial <ca_ce
 
 Configure ONTAP S3 multi-protocol access to allow OneLake read data stored in your Cloud Volumes ONTAP volumes.
 
+// NOTE: source doc lists this navigation in a different order (Storage > Management, then select agent/system, then System Manager) - confirm which sequence matches the current UI
 . Configure ONTAP S3 for the Cloud Volumes ONTAP system.
 .. On NetApp Console select a Console agent.
 .. From the left navigation menu, select *Storage > Management*, and then select the Cloud Volumes ONTAP system.
@@ -83,12 +85,14 @@ image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager
 .. Select *Reuse the data interface used for the SMB/CIFS or NFS protocol.* to reuse the existing LIF or configure a new data LIF.
 . Copy and save the access key and secret access key. You need to use these credentials when creating the OneLake shortcut.
 . Create a read-only group to access the S3 buckets from OneLake.
-.. After configuring the S3 server, select *Groups* and select **Add*.
+// CHANGED: fixed unbalanced bold markup around "Add"
+.. After configuring the S3 server, select *Groups* and select *Add*.
 .. Add a new group with the S3 user that was automatically created in the previous step, and assign it the `ReadOnlyAccess` policy. 
 +
 image::screenshot-onelake-s3-grp.png[width=300 Screenshot showing the ONTAP S3 read-only group configuration settings page for the SVM]
 
-== Create an S3 NAS bucket and an S3 user
+// CHANGED: heading updated to match source doc - this section only covers bucket creation, not S3 user creation
+== Create an S3 NAS bucket
 Create an S3 NAS bucket. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
 +
 [NOTE]
