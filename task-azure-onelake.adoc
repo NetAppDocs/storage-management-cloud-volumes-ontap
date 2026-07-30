@@ -18,7 +18,7 @@ You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.co
 
 .Before you begin
 
-Verify that you have configured a running instance of Cloud Volumes ONTAP before starting the integration process.
+Verify that you have a running Cloud Volumes ONTAP system before starting the integration process.
 
 == Create a root CA certificate and generate a certificate for the ONTAP S3 server
 A certificate is required to secure HTTPS connections between Microsoft OneLake and the ONTAP S3 server. In this procedure, you create a root CA certificate on Cloud Volumes ONTAP and generate a signed certificate for the ONTAP S3 server.
@@ -105,8 +105,8 @@ Install and configure a Microsoft on-premises data gateway on a VM in the same v
 
 .Before you begin
 // CHANGED: reworded and added detail about the data interface (LIF) resolution
-. Ensure that there is network connectivity between the VM and the ONTAP S3 server you created in the previous section.
-. Ensure that the ONTAP S3 server name configured earlier resolves to the IP address of the data interface (LIF) assigned to the ONTAP S3 server, and that the VM can successfully resolve this name.
+* Ensure that there is network connectivity between the VM and the ONTAP S3 server you created in the previous section.
+* Ensure that the ONTAP S3 server name configured earlier resolves to the IP address of the data interface (LIF) assigned to the ONTAP S3 server, and that the VM can successfully resolve this name.
 
 .Steps
 
@@ -130,7 +130,7 @@ image::screenshot-onelake-import-cert.png[width=300 Screenshot showing the certi
 .. Follow the prompts to complete the certificate installation.
 // CHANGED: reworded verification step with added detail
 .. Verify the certificate installation by opening a new browser window and navigating to `\https://<CVO-S3-SERVER-URL>`. The ONTAP S3 server should return an XML access denied response, indicating that HTTPS communication is working correctly.
-
++
 // CHANGED: specified "standard mode" gateway and "download and install" wording
 . Download and install the Microsoft on-premises data gateway on the VM in standard mode. Refer to link:https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install[Microsoft documentation: Install an on-premises data gateway^] for installation steps.
 
