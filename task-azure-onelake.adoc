@@ -56,8 +56,8 @@ security certificate generate-csr -common-name s3.cvo.com  -dns-name s3.cvo.com
 +
 . The command generates a CSR and a private key. Copy and save both the values. You need the CSR in the next step and the private key later when configuring the ONTAP S3 service. Copy the CSR and the private key from the output.
 . Sign the certificate request using the root CA certificate. When prompted, paste the CSR generated in the previous step.
-** `-ca`: the common name of the CA that you entered in Step 2. 
-** `-ca-serial`: the CA serial number from Step 2. For example, if the CA certificate name is `svm_cvo_ca_159D1587CE21E9D4_svm_cvo_ca`, the serial number is `159D1587CE21E9D4`.
+** <ca_cert_name> - name of the root CA certificate
+** <ca_cert_serial_number> - the CA serial number
 +
 [source,CLI]
 ----
@@ -73,9 +73,8 @@ Configure ONTAP S3 multi-protocol access to allow OneLake read data stored in yo
 
 // NOTE: source doc lists this navigation in a different order (Storage > Management, then select agent/system, then System Manager) - confirm which sequence matches the current UI
 . Configure ONTAP S3 for the Cloud Volumes ONTAP system.
-.. On NetApp Console select a Console agent.
-.. From the left navigation menu, select *Storage > Management*, and then select the Cloud Volumes ONTAP system.
-.. From the right menu options select *System Manager*.
+.. On NetApp Console, from the left navigation menu, select *Storage > Management*.
+.. Select a Console agent and then click on the Cloud Volumes ONTAP system, and then, from the right menu options select *System Manager*. 
 .. Enable S3 protocol access on the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for information.
 +
 [NOTE]
@@ -86,7 +85,7 @@ image::screenshot-ontap-s3-svm-config.png[width=300 Screenshot of System Manager
 . Copy and save the access key and secret access key. You need to use these credentials when creating the OneLake shortcut.
 . Create a read-only group to access the S3 buckets from OneLake.
 // CHANGED: fixed unbalanced bold markup around "Add"
-.. After configuring the S3 server, select *Groups* and select *Add*.
+.. After enabling the S3 server, configure the S3 server and add a new group. Select *Groups* and select *Add*.
 .. Add a new group with the S3 user that was automatically created in the previous step, and assign it the `ReadOnlyAccess` policy. 
 +
 image::screenshot-onelake-s3-grp.png[width=300 Screenshot showing the ONTAP S3 read-only group configuration settings page for the SVM]
@@ -94,7 +93,7 @@ image::screenshot-onelake-s3-grp.png[width=300 Screenshot showing the ONTAP S3 r
 // CHANGED: heading updated to match source doc - this section only covers bucket creation, not S3 user creation
 == Create an S3 NAS bucket
 Create an S3 NAS bucket. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/create-nas-bucket-task.html[ONTAP documentation: Create an S3 NAS bucket^] for information.
-+
+
 [NOTE]
 When creating the bucket, select the NAS volume that contains the data you want to make available through OneLake. 
 
