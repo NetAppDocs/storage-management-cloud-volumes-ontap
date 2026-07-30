@@ -18,7 +18,7 @@ You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.co
 
 
 
-== Create a root CA certificate and generate a certificate for the ONTAP S3 server
+== Create a root CA certificate for ONTAP S3 server
 A certificate is required to secure HTTPS connections between Microsoft OneLake and the ONTAP S3 server. In this procedure, you create a root CA certificate on Cloud Volumes ONTAP and generate a signed certificate for the ONTAP S3 server.
 
 For more information about creating and installing a CA certificate, refer to https://docs.netapp.com/us-en/ontap/s3-config/create-install-ca-certificate-svm-task.html[Create and install a CA certificate on an ONTAP S3-enabled SVM^].
