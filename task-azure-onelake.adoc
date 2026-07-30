@@ -16,14 +16,16 @@ summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to en
 // CHANGED: added "existing" per source doc
 You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.com/[Microsoft Fabric^] using https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP S3 multi-protocol^] access to connect Cloud Volumes ONTAP to an existing Microsoft Fabric lakehouse.
 
-.Before you begin
 
-Verify that you have a running Cloud Volumes ONTAP system before starting the integration process.
 
 == Create a root CA certificate and generate a certificate for the ONTAP S3 server
 A certificate is required to secure HTTPS connections between Microsoft OneLake and the ONTAP S3 server. In this procedure, you create a root CA certificate on Cloud Volumes ONTAP and generate a signed certificate for the ONTAP S3 server.
 
 For more information about creating and installing a CA certificate, refer to https://docs.netapp.com/us-en/ontap/s3-config/create-install-ca-certificate-svm-task.html[Create and install a CA certificate on an ONTAP S3-enabled SVM^].
+
+.Before you begin
+
+Verify that you have a running Cloud Volumes ONTAP system before starting the integration process.
 
 
 .Steps
