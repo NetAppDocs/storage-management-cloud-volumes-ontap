@@ -13,5 +13,5 @@ summary: Manage your capacity-based licenses from the NetApp Console to ensure t
 :imagesdir: https://docs.netapp.com/us-en/console-licenses-subscriptions/media/
 
 [.lead]
-include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-capacity-licenses.adoc[lines=15..-1] 
+include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-capacity-licenses.adoc[lines=15..-1]
 
