@@ -1,0 +1,21 @@
+=== Cloud Volumes ONTAP integration with Microsoft OneLake
+
+Cloud Volumes ONTAP now supports integration with https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] in public preview. 
+You can integrate Cloud Volumes ONTAP with https://community.fabric.microsoft.com/[Microsoft Fabric^] using https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview[Microsoft OneLake^] to make existing Cloud Volumes ONTAP NAS data available to Microsoft analytics and AI services such as Power BI, Azure AI Search, OpenAI, and Microsoft Copilot. The integration requires no data movement or duplication. The integration uses https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html[ONTAP S3 multi-protocol^] access to connect Cloud Volumes ONTAP to an existing Microsoft Fabric lakehouse.
+
+.Related articles and resources:
+
+* https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/?utm_content=nativelink&utm_medium=internal&utm_source=linkedin&utm_campaign=b2d-port-all-na-ww-digi-blog-1747859361262&es_id=956c739202[NetApp blog: Optimize AI and analytics with Microsoft OneLake and NetApp Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-onelake.html[Integrate Cloud Volumes ONTAP systems with Microsoft OneLake for AI and analytics^]
+* https://www.netapp.com/media/160786-na-1263-netapp-cloud-volumes-ontap-azure-onelake.pdf[Cloud Volumes ONTAP integration with Microsoft OneLake - Technical brief^]
+
+=== Fix, dismiss, and reactivate configurations for Cloud Volumes ONTAP in Microsoft Azure
+The well-architected dashboard in NetApp Console now allows you to fix configuration recommendations for your Cloud Volumes ONTAP systems.
+
+You can also dismiss one or more configurations from the well-architected analysis. This allows you to ignore specific configurations that don't apply to your environment.
+
+If you want to include a dismissed configuration later, you can reactivate it in the well-architected dashboard. This restores the configuration to the analysis and allows you to get recommendations and fixes for it.
+
+* link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html[Fix, dismiss, and reactivate configurations for Cloud Volumes ONTAP in Microsoft Azure^]
+
+
