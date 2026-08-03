@@ -329,6 +329,8 @@ sidebar:
               url: /task-manage-keystone.html
             - title: Cloud Volumes ONTAP and Microsoft OneLake
               url: /task-azure-onelake.html
+            - title: Cloud Volumes ONTAP and Well-architected dashboard
+              url: /configuration-analysis-cvo.html
     - title: Knowledge and support
       entries:
         - title: Register for support
