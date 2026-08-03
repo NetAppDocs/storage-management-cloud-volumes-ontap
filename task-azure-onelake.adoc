@@ -49,14 +49,14 @@ The certificate's generated name for reference: svm_cvo_ca_159D1587CE21E9D4_svm_
 . Generate a certificate signing request (CSR) and private key.
 +
 [NOTE]
-Choose a fully qualified domain name (FQDN) for the ONTAP S3 endpoint (S3 server name), for example, `s3.cvo.com`, and specify it as the value for both the `-common-name` and `-dns-name` parameters. Note this value because you need it later when configuring the ONTAP S3 server. 
+Choose a fully qualified domain name (FQDN) for the ONTAP S3 endpoint (S3 server name), for example, `s3.cvo.com`, and specify it as the value for both the `-common-name` and `-dns-name` parameters. Note this value because you need it later when you configure the ONTAP S3 server. 
 +
 [source,CLI]
 ----
 security certificate generate-csr -common-name s3.cvo.com  -dns-name s3.cvo.com
 ----
 +
-. The command generates a CSR and a private key. Copy and save both the values. You need the CSR in the next step and the private key later when configuring the ONTAP S3 service. Copy the CSR and the private key from the output.
+. The command generates a CSR and a private key. Copy and save both the values. You need the CSR in the next step and the private key later when you configure the ONTAP S3 service. Copy the CSR and the private key from the output.
 . Sign the certificate request using the root CA certificate. When prompted, paste the CSR generated in the previous step.
 ** `ca_cert_name` - name of the root CA certificate
 ** `ca_cert_serial_number` - the CA serial number
@@ -66,17 +66,17 @@ security certificate generate-csr -common-name s3.cvo.com  -dns-name s3.cvo.com
 security certificate sign -vserver svm_name -ca <ca_cert_name> -ca-serial <ca_cert_serial_number>
 ----
 +
-. The command returns a signed certificate. Copy and save the certificate content. You use this certificate and the private key generated in the previous step when configuring the ONTAP S3 server.
+. The command returns a signed certificate. Copy and save the certificate content. You use this certificate and the private key generated in the previous step when you configure the ONTAP S3 server.
 
 
 == Configure Cloud Volumes ONTAP S3
 
-Configure ONTAP S3 multi-protocol access to allow OneLake read data stored in your Cloud Volumes ONTAP volumes.
+Configure ONTAP S3 multi-protocol access to allow OneLake to read data stored in your Cloud Volumes ONTAP volumes.
 
 // NOTE: source doc lists this navigation in a different order (Storage > Management, then select agent/system, then System Manager) - confirm which sequence matches the current UI
 . Configure ONTAP S3 for the Cloud Volumes ONTAP system.
 .. On NetApp Console, from the left navigation menu, select *Storage > Management*.
-.. Select a Console agent and then click on the Cloud Volumes ONTAP system, and then, from the right menu options select *System Manager*. 
+.. Select a Console agent and then click on the Cloud Volumes ONTAP system, and then, from the right menu options, select *System Manager*. 
 .. Enable S3 protocol access on the SVM. Refer to the link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html[ONTAP documentation: Enable S3 client access to NAS data^] for information.
 +
 [NOTE]
@@ -155,7 +155,7 @@ Create an Amazon S3-compatible shortcut in your Microsoft Fabric lakehouse to ac
 
 .Steps
 // CHANGED: specified exact URL format and split the access key bullet into two
-. In your lakehouse, create an Amazon S3-compatible shortcut to your Cloud Volumes ONTAP S3 bucket by using the following details. For the steps of creating the shortcut, refer to https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
+. In your lakehouse, create an Amazon S3-compatible shortcut to your Cloud Volumes ONTAP S3 bucket by using the following details. For the steps to create the shortcut, refer to https://learn.microsoft.com/en-us/fabric/onelake/create-s3-compatible-shortcut[Microsoft documentation: Create an Amazon S3-compatible shortcut^].
 ** URL: The ONTAP S3 server in the format `\https://<S3-SERVER-FQDN>`
 ** Data gateway: The on-premises data gateway you configured earlier
 ** Access key ID
