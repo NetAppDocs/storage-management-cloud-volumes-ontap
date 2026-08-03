@@ -14,9 +14,8 @@ summary: The well-architected dashboard in NetApp Console analyzes storage syste
 
 
 [.lead]
-include::https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[lines=12..77]
+include::https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[lines=12..-1]
 
 .Related link
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#well-architected-configuration-analysis-for-cloud-volumes-ontap-in-azure[Well-architected configuration analysis for Cloud Volumes ONTAP in Azure^]
-* https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html[Implement well-architected Cloud Volumes ONTAP system configurations^]
