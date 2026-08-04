@@ -15,4 +15,4 @@ summary: Manage your node-based licenses in the NetApp Console to ensure that ea
 [.lead]
 include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/_include/task-manage-node-based-licenses.adoc[]
 
-//https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-node-based-licenses.adoc-include::task-manage-node-based-licenses[lines=15..-1] 
+//https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-node-based-licenses.adoc-include::task-manage-node-based-licenses[lines=15..-1]
