@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, license, well-architected, WAD, CVO
 summary: The well-architected dashboard in NetApp Console analyzes storage system configurations regularly to determine if there are any configuration issues with your Cloud Volumes ONTAP systems. When issues are found, the dashboard shows you what the issues are and explains what needs to change to ensure your storage systems achieve peak performance, cost efficiency, and compliance with best practices.
 ---
 
-= Configuration analysis for Cloud Volumes ONTAP on Well-architected dashboard
+= Configuration analysis for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,6 +15,7 @@ summary: The well-architected dashboard in NetApp Console analyzes storage syste
 
 [.lead]
 include::https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[lines=12..-1]
+
 
 .Related link
 
