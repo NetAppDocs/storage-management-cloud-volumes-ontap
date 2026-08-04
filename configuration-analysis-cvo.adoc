@@ -16,7 +16,7 @@ summary: The well-architected dashboard in NetApp Console analyzes storage syste
 [.lead]
 //include::https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[lines=12..-1]
 
-https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/_include/well-architected-workloads.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/include::_include/well-architected-workloads.adoc[]
 
 .Related link
 
