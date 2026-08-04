@@ -10,7 +10,7 @@ summary: The well-architected dashboard in NetApp Console analyzes storage syste
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: https://docs.netapp.com/us-en/console-well-architected/main/media/
+:imagesdir: https://docs.netapp.com/us-en/console-well-architected/media/
 
 
 [.lead]
