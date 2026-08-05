@@ -2,13 +2,10 @@
 
 You can now optimize costs for your private-mode Cloud Volumes ONTAP deployments by using the capacity-based Essentials package instead of your node-based license.
 Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license (BYOL)) package with at least 500 GiB capacity from NetApp. Note that the conversion from node-based licenses to a Professional package is not supported for private mode.
-You can also convert your existing BYOL node-based licenses to an Essentials BYOL package by using the license conversion tool in the NetApp Console. You can convert an existing node-based license to an Essentials BYOL package with the same capacity. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
-
- 
-
 
 .Related links
 
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment[Conversion in a private mode deployment^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html[Learn about node-based BYOL in Cloud Volumes ONTAP^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses for Cloud Volumes ONTAP^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to a capacity-based license^]
+
