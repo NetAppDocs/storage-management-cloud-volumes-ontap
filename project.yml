@@ -319,7 +319,7 @@ sidebar:
               url: /task-administer-advanced-view.html
             - title: Administration using the ONTAP CLI
               url: /task-connecting-to-otc.html
-            - title: Flash Cache and Cloud Volumes ONTAP
+            - title: Cloud Volumes ONTAP and Flash Cache
               url: /concept-flash-cache.html               
             - title: Cloud Volumes ONTAP and AutoSupport-Digital Advisor
               url: /concept-active-iq.html                            
