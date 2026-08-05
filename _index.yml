@@ -22,8 +22,8 @@ indexpage:
           url: concept-licensing.html
         - title: Convert node-based licenses
           url: /task-convert-node-capacity.html
-        - title: Security
-          url: concept-security.html
+        - title: Cloud Volumes ONTAP storage VMs
+          url: task-managing-svms.html
         - title: Learn about encryption
           url: concept-security.html     
         - title: Storage management
