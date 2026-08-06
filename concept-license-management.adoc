@@ -13,7 +13,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Volumes ONTAP system that has a node-based bring your own license (BYOL) must have a system license installed with an active subscription. The NetApp Console simplifies the process by managing licenses for you and by displaying a warning before they expire.
+Each Cloud Volumes ONTAP system that has a bring your own license (BYOL) must have a system license installed with an active subscription. The NetApp Console simplifies the process by managing licenses for you and by displaying a warning before they expire.
 
 ##The bring your own license (BYOL) model is the standard practice where you can procure a capacity-based license, or earlier, a node-based license file from NetApp for a deployment that does not support marketplace subscriptions, and relies entirely on the license file that you procure from NetApp. The BYOL model is the only option for private mode deployments of Cloud Volumes ONTAP.##
 
@@ -26,10 +26,10 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 
 == BYOL system licenses
 
-##BYOLNode-based licenses could be procured from NetApp. The number of licenses that you can purchase for a single-node system or HA pair is unlimited.
+##You must procure a BYOL license from NetApp. The number of licenses that you can purchase for a single-node system or HA pair is unlimited.
 
 [NOTE]
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].
+##NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^]. You can purchase a capacity-based BYOL license for a private-mode deployment only if you are an existing customer with a valid BYOL license and you are renewing or extending your license.##
 
 A node-based license provides up to 368 TiB of capacity for a single node or HA pair. You might have purchased multiple licenses for a Cloud Volumes ONTAP system to allocate more than 368 TiB of capacity. For example, you might have two licenses to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could have four licenses to get up to 1.4 PiB.
 
