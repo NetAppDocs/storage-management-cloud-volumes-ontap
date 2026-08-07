@@ -15,21 +15,25 @@ summary: Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP 
 [.lead]
 You can configure Cloud Volumes ONTAP to authenticate SMB users through Azure Entra ID (formerly Azure AD), enabling support for hybrid user identities. This capability reduces or eliminates the dependency on on-premises Active Directory for SMB authentication.
 
-NOTE: This feature is available as a public preview starting with ONTAP 9.18.1 and can only be configured using the ONTAP CLI. NetApp Console integration is not yet supported.
+NOTE: Azure Entra ID authentication for SMB is available as a public preview and can only be configured using the ONTAP CLI. NetApp Console integration is not yet supported.
 
 == Overview
+Cloud Volumes ONTAP supports hybrid user authentication with Azure Entra ID, starting with ONTAP 9.19.1. This authentication model allows you to continue using your existing on-premises Active Directory (AD) infrastructure while extending SMB authentication to the cloud through Azure Entra ID.
 
-Cloud Volumes ONTAP supports the following authentication models with Azure Entra ID:
+With hybrid user authentication:
 
-* *Hybrid user authentication*: Users are created in on-premises Active Directory (AD) and synchronized to Azure Entra ID using Entra Connect. ONTAP authenticates these users by communicating with both the on-premises AD and Azure Entra ID. The machine used to access the file share must be Azure Entra hybrid-joined. This model is supported beginning with ONTAP 9.18.1.
+* Users are created in on-premises AD and synchronized to Azure Entra ID using Entra Connect.
+* ONTAP authenticates SMB users by communicating with both the on-premises AD and Azure Entra ID.
+* The machine used to access the file share must be Azure Entra hybrid-joined.
 
-* <##Do we need to document this##> *Cloud-only user authentication*: Users are created directly in Azure Entra ID with no on-premises AD required. Clients must be Azure Entra joined (cloud-joined). Support for this model is planned for a future release.
+Beginning with ONTAP 9.19.1, you can also use the `icacls` command to manage file and folder permissions for Azure Entra ID users on mounted shares.
 
-Beginning with ONTAP 9.19.1, you can use the `icacls` command to manage file and folder permissions for Azure Entra ID users on mounted shares.
+//* <##Do we need to document this##> *Cloud-only user authentication*: Users are created directly in Azure Entra ID with no on-premises AD required. Clients must be Azure Entra joined (cloud-joined). Support for this model is planned for a future release.
+
 
 == Before you begin
 
-* Your Cloud Volumes ONTAP system must be running ONTAP 9.18.1 or later.
+* Your Cloud Volumes ONTAP system must be running ONTAP 9.19.1 or later.
 * You must have an active Azure subscription and a user account with Global Administrator privileges in the Azure Entra ID tenant.
 * You must create an Azure Entra ID app registration whose credentials ONTAP will use to create, modify, and delete application objects during SMB setup. ONTAP requires the following information from this app registration:
 ** *tenant-id*: The unique GUID for your organization's Azure Entra ID instance.
@@ -71,9 +75,8 @@ NOTE: Work with your Azure administrator to assign the minimum permissions requi
 . Select *Grant admin consent* to activate the permissions.
 
 [[on-prem-ad]]
-== Set up on-premises Active Directory (hybrid auth only)
+== Set up on-premises Active Directory 
 
-This section applies to hybrid user authentication only. If you are using cloud-only user identities, skip ahead to <<ontap-config>>.
 
 .Steps
 
@@ -159,7 +162,9 @@ An Entra ID-registered machine is used to log in to and manage the Entra ID-join
 
 The Entra ID-joined client is the machine from which users mount and access the ONTAP file share.
 
-NOTE: After the machine is joined, it can only be logged in to using hybrid or cloud user credentials from an Entra ID-registered machine.
+NOTE: After the machine is joined, access it using hybrid user credentials from an Entra ID-registered machine.
+
+//NOTE: After the machine is joined, it can only be logged in to using hybrid or cloud user credentials from an Entra ID-registered machine.
 
 .Steps
 
@@ -167,7 +172,9 @@ NOTE: After the machine is joined, it can only be logged in to using hybrid or c
 
 . Navigate to *Settings > Accounts > Access work or school > Connect* and select *Join this device to Azure Active Directory*.
 +
-Use a hybrid or cloud user account to complete the join. If the join does not complete successfully, refer to the https://learn.microsoft.com/en-us/answers/questions/1179294/how-to-join-device-as-azure-ad-joined-if-its-added[Microsoft documentation^].
+Use a hybrid to complete the join. If the join does not complete successfully, refer to the https://learn.microsoft.com/en-us/answers/questions/1179294/how-to-join-device-as-azure-ad-joined-if-its-added[Microsoft documentation^].
+
+//Use a hybrid or cloud user account to complete the join. If the join does not complete successfully, refer to the https://learn.microsoft.com/en-us/answers/questions/1179294/how-to-join-device-as-azure-ad-joined-if-its-added[Microsoft documentation^].
 
 . Restart the machine when prompted, then verify it appears as *Azure AD Joined* in the Azure portal under *Entra ID > Devices*.
 
@@ -204,7 +211,8 @@ To learn more about Entra ID device join and Kerberos authentication policies, r
 
 .Steps
 
-. From the Entra ID-registered VM, use remote desktop to log in to the Entra ID-joined client with hybrid or cloud user credentials in the format:
+. From the Entra ID-registered VM, use remote desktop to log in to the Entra ID-joined client with hybrid credentials in the format:
+//From the Entra ID-registered VM, use remote desktop to log in to the Entra ID-joined client with hybrid or cloud user credentials in the format:
 +
 ----
 AzureAD\<username>@<tenant>.onmicrosoft.com
