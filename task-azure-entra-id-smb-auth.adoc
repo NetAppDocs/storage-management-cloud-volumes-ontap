@@ -44,12 +44,12 @@ Beginning with ONTAP 9.19.1, you can also use the `icacls` command to manage fil
 == Configuration process
 
 * <<azure-app,Register an application in Azure Entra ID>>
-* <<on-prem-ad,Set up on-premises Active Directory (hybrid auth only)>>
+* <<on-prem-ad,Set up on-premises Active Directory>>
 * <<ontap-config,Configure ONTAP>>
 * <<client-registered,Set up an Entra ID-registered client VM>>
 * <<client-joined,Set up an Entra ID-joined client VM>>
 * <<mount-share,Mount the file share and verify access>>
-* <<dacl,Manage file permissions with icacls (ONTAP 9.19.1 and later)>>
+* <<dacl,Manage file permissions with icacls>>
 
 [[azure-app]]
 == Register an application in Azure Entra ID
@@ -273,7 +273,7 @@ cifs session show -vserver <svm-name>
 ----
 
 [[dacl]]
-== Manage file permissions with icacls (ONTAP 9.19.1 and later)
+== Manage file permissions with icacls 
 
 Beginning with ONTAP 9.19.1, you can use `icacls` from a mounted share to manage discretionary access control lists (DACLs) for Azure Entra ID users.
 
