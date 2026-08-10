@@ -1,0 +1,21 @@
+=== Cloud Volumes ONTAP 9.19.1
+You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Amazon Web Service (AWS) and Google Cloud. This version is unavailable for deployment and upgrade in Microsoft Azure (Azure).
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more about this release of Cloud Volumes ONTAP^].
+
+//The file name contains the major ONTAP-CVO rls number so that it's easy for the writer to change the download path for the next release.
+
+=== Ability to convert node-based licenses to capacity-based licensing in private mode
+
+NetApp is excited to announce capacity-based licensing for private-mode Cloud Volumes ONTAP deployments. You can now optimize costs for your private-mode Cloud Volumes ONTAP deployments by converting your node-based license to the capacity-based licensing. For your private mode deployments, you can purchase an Essentials (bring your own license (BYOL)) package directly from NetApp with a capacity similar to your existing node-based license. 
+
+This conversion option supports NetApp's phased plan to move away from node-based licensing in favor of capacity-based licensing. Unlike node-based licensing, which allocates a fixed capacity to each system, capacity-based licensing draws from a shared capacity pool across your Cloud Volumes ONTAP systems, giving you greater flexibility to redistribute workloads as your storage needs change.
+
+.Related links
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment[Conversion in a private mode deployment^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses for Cloud Volumes ONTAP^]
+
+
+
