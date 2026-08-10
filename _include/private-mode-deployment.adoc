@@ -1,0 +1,21 @@
+== Deploy Cloud Volumes ONTAP in private mode
+
+You can deploy Cloud Volumes ONTAP in private mode by following a documented, step-by-step conversion process directly inside your existing environment. In the private mode deployment, the Cloud Volumes ONTAP system is deployed in your own virtual private cloud (VPC) or virtual network (VNet) and is not connected to the public internet. You can use the private mode deployment to meet your organization's security and compliance requirements.
+
+Private mode deployments previously used only node-based licenses that you could procure from NetApp. The node-based license is the previous generation license for Cloud Volumes ONTAP. NetApp had restricted the purchase, extension, and renewal of node-based licenses barring exceptions since https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[June 25, 2025]. Effective July 31, 2026, node-based licensing reaches the end of Availability (EOA) for these exceptional cases, such as United States Public Sector (USPS) and other private mode deployments.
+//add China here later.
+
+If you have a private deployment with a node-based license, following this, you:
+
+* Can no longer purchase or renew your node-based license. 
+
+* Cannot access newer capabilities and enhancements. 
+
+* Continue to have increased operational rigidity due to node-based constraints.
+
+* Will be required to move to private mode capacity-based license once the node-based license expires. For instructions, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^].
+
+
+
+
+
