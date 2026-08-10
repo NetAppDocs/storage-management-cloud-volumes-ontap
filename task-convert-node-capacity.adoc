@@ -85,23 +85,24 @@ View the new license serial number and verify the changes in the *Administration
 
 If you have a private mode deployment, you can convert your node-based license to a capacity-based license by using the license conversion tool in the NetApp Console. The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud. 
 
-Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license (BYOL)) package from NetApp. 
+Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license (BYOL)) package from NetApp. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
 [NOTE]
-Note that the conversion from node-based licenses to any package other than Essentials is not supported for private mode.
+The conversion from node-based licenses to any capacity-based license other than Essentials is not supported for private mode.
 
-You can only convert your existing node-based BYOL licenses to capacity-based Essentials BYOL packages using the license conversion tool in the NetApp Console. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
+
 
 .About this task
 
-* After conversion, the entire capacity of your node-based license is tracked under the Essentials package, and you continue to be billed through your BYOL agreement. Conversion to other capacity-based licenses, such as Professional packages, is not supported in private mode.
+* After conversion, the entire capacity of your node-based license is tracked under the Essentials package, and you continue to be billed through your BYOL agreement. 
 * When you use the license conversion tool, the transition from node-based to capacity-based licensing model is carried out in place that eliminates the need for any data migration or provisioning of additional cloud resources.
 * It is a non-disruptive operation: 
 ** No service disruption or application downtime occurs.
 ** The account and application data in your Cloud Volumes ONTAP system remains intact.
 ** The underlying cloud resources remain unaffected post conversion.
-* The license conversion tool supports all deployment types, such as single node, high availability (HA) in single availability zone (AZ), and HA in multiple AZ.
+** Your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
+* The license conversion tool supports all deployment types, such as single node and high availability (HA) configuration in single availability zone (AZ) and multiple AZ.
 * Post conversion, the Cloud Volumes ONTAP systems are updated with new serial numbers.
-* When you transition to the capacity-based model, your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
+
 
 .Before you begin
 
