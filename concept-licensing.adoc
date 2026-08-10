@@ -15,13 +15,13 @@ summary: Several licensing options are available for Cloud Volumes ONTAP. Each o
 [.lead]
 Several licensing models are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs.
 
-You have options to purchase or renew your licenses and subscriptions from cloud marketplaces or through NetApp (BYOL). The marketplace offers you annual subscriptions and pay-as-you-go (PAYGO) options. For information, see link:concept-license-management.html[Learn more about capacity-based licenses for Cloud Volumes ONTAP].  
+You have options to purchase or renew your licenses and subscriptions from cloud marketplaces or through NetApp (bring your own license (BYOL)). The marketplace offers you annual subscriptions and pay-as-you-go (PAYGO) options. For information, see link:concept-license-management.html[Learn more about capacity-based licenses for Cloud Volumes ONTAP].  
 
 BYOL licenses are available for purchase from NetApp and can be used for any cloud provider. For more information about the availability of BYOL licenses, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 == Licensing overview
 
-New customers can opt for charging through capacity-based annual marketplace subscriptions or Keystone subscriptions. Few customers also have the previous generation node-based BYOL licenses.
+New customers can opt for charging through capacity-based annual marketplace subscriptions or Keystone subscriptions. Few deployments, such as those in private mode, also have the previous generation node-based BYOL licenses.
 
 Capacity-based licensing::
 Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services. For more information about consumption models or purchase options in capacity-based licenses, refer to link:concept-licensing-charging.html[Learn more about capacity-based licenses].
@@ -164,7 +164,9 @@ For information, refer to https://mysupport.netapp.com/info/communications/CPC-0
 === End of availability of node-based licenses
 Beginning on 11 November, 2024, the limited availability of node-based licenses has been terminated. The support for node-based licensing ends on 31 December, 2024.
 
-If you have a valid node-based contract that extends beyond the EOA date, you can continue to use the license until the contract expires. Once the contract expires, it will be necessary to transition to the capacity-based licensing model. If you don't have a long-term contract for a Cloud Volumes ONTAP node, it is important to plan your conversion before the EOS date.
+If you have a valid node-based contract that extends beyond the EOA date, you can continue to use the license until the contract expires. Once the contract expires, it will be necessary to transition to the capacity-based licensing model. If you don't have a long-term contract for a Cloud Volumes ONTAP node, it is important to plan your conversion before the EOS date. 
+[NOTE]
+Private-mode deployments of Cloud Volumes ONTAP in private.
 
 Learn more about each license type and the impact of EOA on it from this table:
 
@@ -185,12 +187,8 @@ a| Will cease to receive NetApp support post the EOS date, until you transition 
 |===
 
 
-.Exclusions
-NetApp recognizes that certain situations require special consideration, and EOA and EOS of node-based licensing will not apply to the following cases:
-
-* U.S. Public Sector customers
-* Deployments in private mode 
-* China region deployments of Cloud Volumes ONTAP in AWS
+.Exceptions
+NetApp recognizes that certain situations require special consideration, such as China region deployments of Cloud Volumes ONTAP in AWS, and EOA and EOS of node-based licensing might not apply to the following cases:
 
 For these particular scenarios, NetApp will offer support to address the unique licensing requirements in compliance with contractual obligations and operational needs.
 
