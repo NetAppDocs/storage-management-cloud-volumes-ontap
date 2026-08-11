@@ -21,7 +21,7 @@ For more information about this offering, refer to link:concept-azure-mktplace-d
 The Cloud Volumes ONTAP system deployed by using Azure Marketplace direct deployment has these properties. Note that the features of a standalone instance deployed through the Azure Marketplace change when it is discovered in the NetApp Console.  
 
 * The latest Cloud Volumes ONTAP version (9.16.1 or later).
-* A free license for Cloud Volumes ONTAP is provided for up to 500 GiB of provisioned capacity, with no NetApp support and no expiry date. Capacity beyond 500 GiB requires a valid licensing entitlement and may incur charges. To access the full Cloud Volumes ONTAP experience and advanced management capabilities, connect your Cloud Volumes ONTAP system to NetApp Console. Discovery and management through NetApp Console require a valid Azure Marketplace subscription associated with your NetApp Console account. 
+* A free license for Cloud Volumes ONTAP is provided for up to 500 GiB of provisioned capacity, with no NetApp support and no expiry date. Capacity beyond 500 GiB requires a valid licensing entitlement and may incur charges. To access the full Cloud Volumes ONTAP experience and advanced management capabilities, connect your Cloud Volumes ONTAP system to the Console. Discovery and management through the Console require a valid Azure Marketplace subscription associated with your Console account. 
 * Two nodes configured in a high availability (HA) mode in a single availability zone (AZ), provisioned with default serial numbers. The storage virtual machines (storage VMs) are deployed in a link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[flexible orchestration mode].
 * An aggregate for the instance created by default.
 * A Premium SSD v2 Managed Disk of 500 GiB provisioned capacity, and a root and a data disk.
@@ -35,7 +35,7 @@ The Cloud Volumes ONTAP system deployed by using Azure Marketplace direct deploy
 
 
 .Before you begin
-* If you plan to discover and manage the deployed system in NetApp Console, ensure that the NetApp Console account is associated with a valid Azure Marketplace subscription. Discovery of the system into NetApp Console requires a valid subscription.
+* If you plan to discover and manage the deployed system in the Console, ensure that the Console account is associated with a valid Azure Marketplace subscription. Discovery of the system into the Console requires a valid subscription.
 * Ensure you meet the networking requirements for an link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[HA deployment in a single AZ] in Azure. Refer to link:reference-networking-azure.html[Set up Azure networking for Cloud Volumes ONTAP].
 * You need to be assigned one of these Azure roles to deploy Cloud Volumes ONTAP:
 ** The `contributor` role with the default permissions. For more information, refer to the https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles[Microsoft Azure documentation: Azure built-in roles^].
