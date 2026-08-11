@@ -168,7 +168,7 @@ image::screenshot-onelake-shortcut1.png[width=500 Screenshot showing the OneLake
 image::screenshot-cvo-s3-onelake-confirm.png[Screenshot showing the confirmed Cloud Volumes ONTAP S3 shortcut connection displayed under Files in the OneLake lakehouse Explorer pane]
 
 // CHANGED: heading renamed from "Connect to Azure AI Search" - confirm before publishing, this affects the permalink anchor
-== Next steps: Index data with Azure AI Search
+== Enable Azure AI Search
 
 After creating the OneLake shortcut, you can configure Azure AI Search to index the data stored in your Cloud Volumes ONTAP volumes through OneLake. Azure AI Search indexing enables the data to be used by AI applications such as Microsoft Copilot and Azure OpenAI.
 
