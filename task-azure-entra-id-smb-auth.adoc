@@ -72,7 +72,7 @@ Set up your on-premises AD domain controller, synchronize users and groups to Az
 
 . Create the AD users and groups that are synchronized to Azure Entra ID.
 
-. Configure the _Site to Zone Assignment List_ group policy to allow domain-joined clients to communicate with Azure Entra ID authentication services:
+. Configure the _Site to Zone Assignment List_ group policy to allow domain-joined clients to communicate with Azure Entra ID authentication services.
 +
 Go to:
 *gpedit.msc > Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Site to Zone Assignment List*
@@ -154,7 +154,7 @@ The device is registered with Azure Entra ID.
 [[client-joined]]
 == Step 5: Join a client VM to Azure Entra ID
 
-You can configure a Windows client VM as an Entra ID-joined machine to allow hybrid users to obtain cloud-issued Kerberos tickets and mount the ONTAP SMB share. For more information, refer to https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join[Configure hybrid Azure AD join^] and https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current[troubleshoot hybrid Azure AD join issues^].
+You can configure a Windows client VM as an Entra ID-joined machine to allow hybrid users to obtain cloud-issued Kerberos tickets and mount the ONTAP SMB share. For more information, refer to https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join[Configure hybrid Azure AD join^] and https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current[Troubleshoot hybrid Azure AD join issues^].
 
 NOTE: After joining, this machine can only be accessed using hybrid user credentials from the Entra ID-registered machine configured in <<client-registered,Step 4>>.
 
