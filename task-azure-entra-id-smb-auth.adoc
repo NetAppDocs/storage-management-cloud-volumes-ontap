@@ -18,7 +18,7 @@ You can configure Cloud Volumes ONTAP to authenticate SMB file access through Az
 NOTE: This feature is available as a public preview and can only be configured using the ONTAP CLI. NetApp Console integration is not yet available. In the CLI, SMB operations use the `cifs` command prefix because SMB (Server Message Block) is the modern name for the Common Internet File System (CIFS) protocol.
 
 .About this task
-Cloud Volumes ONTAP 9.19.1 and later supports SMB authentication through Azure Entra ID for hybrid identities synchronized from on-premises Active Directory (AD) using Entra Connect. ONTAP authenticates SMB file access through both on-premises AD and Azure Entra ID, so you can add cloud identity support without replacing your existing AD infrastructure. The machine used to access the file share must be Azure Entra hybrid-joined.
+Cloud Volumes ONTAP 9.19.1 and later supports SMB authentication through Azure Entra ID for hybrid identities synchronized from on-premises Active Directory (AD) using Entra Connect. Cloud Volumes ONTAP authenticates SMB file access through both on-premises AD and Azure Entra ID, so you can add cloud identity support without replacing your existing AD infrastructure. The machine used to access the file share must be Azure Entra hybrid-joined.
 
 Cloud Volumes ONTAP 9.19.1 and later also supports the `icacls` command to manage file and folder permissions for Entra ID identities on mounted shares.
 
