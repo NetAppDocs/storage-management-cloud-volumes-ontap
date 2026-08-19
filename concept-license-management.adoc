@@ -42,7 +42,6 @@ link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 * You can deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity.
 * The allocated capacity of a valid capacity-based license can be shared by multiple Cloud Volumes ONTAP systems.
 * The new serial number of the capacity-based license is assigned to the Cloud Volumes ONTAP system and displayed on the Console.
-* Capacity-based licenses provide greater flexibility compared to node-based licenses.
 
 --
 . Node-based licenses
@@ -57,13 +56,31 @@ link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
 
-== License management for BYOL licenses
+== ##BYOL license management and renewal##
 
-##In a private-mode deployment, if the Console can't access the license file over the secure internet connection, you can obtain the capacity-based license file yourself and then link:task-manage-node-licenses.html[manually upload the file to the Console].##
+If your deployment uses a BYOL license, the Console prompts you for the serial number of your license and your NetApp Support Site account credentials. 
 
-##When you have  a standard-mode system that uses a BYOL, the Console prompts you for the serial number of your license and your NetApp Support Site account credentials. The Console uses the account to download the license file from NetApp and to install it on the Cloud Volumes ONTAP system.
+Node-based licenses::
+The Console uses the account to download the license file from NetApp and to install it on the Cloud Volumes ONTAP system.
+
+Capacity-based licenses::
+If you are using a capacity-based BYOL package, all the systems created under the Console account can share the same license serial number of the BYOL license assigned to the subscribed account.
+
+For renewing your BYOL package, contact a NetApp representative. On renewal, the Console automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
+
+If the Console can't access the license file over the secure internet connection, you can obtain the license file yourself and then link:task-manage-node-licenses.html[manually upload the file to the Console].
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to the Console^].
+
+== ##License transfer to a new system##
+
+*Capacity-based licenses*: Each capacity-based license is associated with a Console account. All systems created under the subscribed account can share the license capacity and serial number. You can see the license serial number in the Console for a system, and assign the same license to multiple systems created under the same Console account. For example, if you have a license of 5 TiB, you can create two systems under that account, each with 2.5 TiB of capacity. You can also create a single system with 5 TiB of capacity.
+
+*Node-based licenses*: Each node-based license is consumed by a single node, that is a Cloud Volumes ONTAP system. However, a node-based BYOL license is transferable between Cloud Volumes ONTAP systems when you delete an existing system and then use the same license to create a new one.
+
+For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
+
+It's important to note that your BYOL license is tied to your company and a specific set of NetApp Support Site credentials.
 
 == License expiration
 
@@ -76,22 +93,6 @@ You can select the system to review the message.
 The Console includes a license expiration warning in the Cloud Volumes ONTAP report that's emailed to you, if you are an organization or account admin and you enabled the option. The emailed report includes the license expiration warning every 2 weeks.
 
 If you don't renew the license in time, the Cloud Volumes ONTAP system shuts itself down. If you restart it, it shuts itself down again.
-
-== License renewal
-
-If you renew a BYOL subscription by contacting a NetApp representative, the Console automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
-
-If the Console can't access the license file over the secure internet connection, you can link:task-manage-node-licenses.html[obtain the file yourself and then manually upload the file to the Console].
-
-== License transfer to a new system
-
-Capacity-based licenses: Each capacity-based license is consumed by a single Cloud Volumes ONTAP system. However, a capacity-based BYOL license is transferable between Cloud Volumes ONTAP systems when you delete an existing system and then create a new one using the same license.
-
-Node-based licenses: Each node-based license is consumed by a single node, that is a single Cloud Volumes ONTAP system. However, a node-based BYOL license is transferable between Cloud Volumes ONTAP systems when you delete an existing system and then create a new one using the same license.
-
-For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
-
-It's important to note that your BYOL license is tied to your company and a specific set of NetApp Support Site credentials.
 
 .Related links
 
