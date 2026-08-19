@@ -155,7 +155,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 == Node-based licensing
-Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above. 
+Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above.
 
 NetApp has planned the end of availability (EOA) and support (EOS) of node-based licensing. After the EOA and EOS, node-based licenses will need to be converted to capacity-based licenses.
 
@@ -196,12 +196,13 @@ For these particular scenarios, NetApp will offer support to address the unique 
 Even in these scenarios, new node-based licenses and license renewals are valid for a maximum of one year from the date of approval.
 
 
-== License conversion
+=== License conversion
 
-The Console enables a seamless conversion of node-based licenses to capacity based through the license conversion tool. For information about EOA of node-based licensing, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
+The Console enables a seamless conversion of node-based licenses to capacity-based licenses through the license conversion tool. For information about EOA of node-based licensing, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
 Before transitioning, it is good to familiarize yourself with the difference between the two licensing models. Node-based licensing includes fixed capacity for each ONTAP instance, which can restrict flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, offering enhanced flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging seamlessly adjusts to changing storage requirements.
 
+##If you have marketplace subscriptions or private deployments with node-based licenses, you can link:task-convert-node-capacity.html[convert your node-based licenses to capacity based] using the license conversion tool in the Console.##
 
 To know how you can perform this conversion, refer to link:task-convert-node-capacity.html[Convert a Cloud Volumes ONTAP node-based license to capacity-based license].
 
