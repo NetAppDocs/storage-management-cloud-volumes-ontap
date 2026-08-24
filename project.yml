@@ -60,6 +60,8 @@ sidebar:
         - title: Deploy in Amazon Web Services
           flavor: aws
           entries:
+            - title: Onboard Cloud Volumes ONTAP from AWS Marketplace
+              url: /task-onboard-cvo-aws-marketplace.html
             - title: Deployment overview
               url: /task-getting-started-aws.html
             - title: Plan your configuration
