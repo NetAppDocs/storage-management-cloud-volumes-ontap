@@ -146,12 +146,12 @@ image:screenshot-stack-creation.png[width=50% Screenshot of the AWS CloudFormati
 --
 .Assume role
 --
-This is a part of the manual role creation workflow. Enter an existing IAM role ARN. For information about editing this role, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-existing-subscription-with-your-organization[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
+This is a part of the manual role assignment workflow. Enter an existing IAM role ARN. For information about editing this role, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-existing-subscription-with-your-organization[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
 --
 
 .AWS keys
 --
-This is a part of the manual role creation workflow. Enter an AWS access key and secret key. For information, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-the-credentials-to-an-existing-agent[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
+This is a part of the manual role assignment workflow. Enter an AWS access key and secret key. For information, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-the-credentials-to-an-existing-agent[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
 --
 
 ====

@@ -14,6 +14,7 @@ The new onboarding flow simplifies your transition from a marketplace subscripti
 
 .Related links
 
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP from AWS Marketplace^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Flexible billing for Cloud Volumes ONTAP and data services in AWS^]
 
