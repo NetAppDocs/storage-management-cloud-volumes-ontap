@@ -15,6 +15,8 @@ summary: Verify that you have completed the prerequisites for deploying Cloud Vo
 [.lead]
 For deploying Cloud Volumes ONTAP, you first need to know about your AWS subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your AWS account. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
 
+You can onboard Cloud Volumes ONTAP in AWS using either the AWS Marketplace or the NetApp Console. The following table provides a high-level overview of the tasks you need to complete to deploy Cloud Volumes ONTAP in AWS. The onboarding from AWS Marketplace is a simplified experience that automates the Console agent deployment and subscription association. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP in AWS Marketplace].
+
 [cols="20,35,25,25",options="header"]
 |===
 a| Task
