@@ -15,7 +15,6 @@ If you have a private deployment with a node-based license, following this, you:
 
 * Will be required to move to private mode capacity-based license once the node-based license expires. For instructions, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^].
 
+== Capacity-based licensing for private mode deployments
 
-
-
-
+You can deploy Cloud Volumes ONTAP systems in private mode with capacity-based licenses, just as you could with node-based licenses. When you deploy a system, NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you purchase an Essentials package from NetApp and assign it to your Cloud Volumes ONTAP systems. You can purchase additional Essentials packages to increase usable capacity as your workload requirements grow. Unlike node-based licensing, which allocates fixed capacity to each system, capacity-based licensing draws from a shared capacity pool across your Cloud Volumes ONTAP systems, giving you flexibility to redistribute workloads as your storage needs change. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available. If you have existing private mode deployments with node-based licenses, you can convert them to capacity-based licensing by purchasing an Essentials package from NetApp.

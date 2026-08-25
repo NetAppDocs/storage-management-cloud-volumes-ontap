@@ -85,7 +85,7 @@ View the new license serial number and verify the changes in the *Administration
 
 If you have a private mode deployment, you can convert your node-based license to a capacity-based license by using the license conversion tool in the NetApp Console. The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud. 
 
-Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license (BYOL)) package from NetApp. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
+Because marketplace subscriptions are not supported in private mode, you need to purchase an Essentials (bring your own license or BYOL) package from NetApp. This lets you keep the benefits of capacity-based licensing within the BYOL model without requiring marketplace subscriptions.
 [NOTE]
 The conversion from node-based licenses to any capacity-based license other than Essentials is not supported for private mode.
 
