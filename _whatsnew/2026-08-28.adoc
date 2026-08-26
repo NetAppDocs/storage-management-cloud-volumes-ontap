@@ -1,8 +1,11 @@
 === Support for private-mode deployments with capacity-based licenses
 
-You can now deploy Cloud Volumes ONTAP systems in private mode with capacity-based licenses in Amazon Web Services (AWS), Microsoft Azure (Azure), and Google Cloud. In private mode, you have two deployment options: purchase a capacity-based _Essentials_ package from NetApp (bring your own license or BYOL) and assign it to your system, or deploy without a license. 
+You can now deploy Cloud Volumes ONTAP systems in private mode with capacity-based licenses in AWS, Azure, and Google Cloud. 
 
-When you deploy without a license, NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you need to purchase an Essentials package from NetApp and assign it to your Cloud Volumes ONTAP system. As your workload requirements grow, you can purchase additional Essentials packages to increase your usable capacity.
+You have two deployment options for licensing your private-mode deployment:
+
+* *With a license:* Purchase a capacity-based Essentials package from NetApp (bring your own license or BYOL) and assign it to your system during deployment.
+* *Without a license:* Deploy without purchasing a license upfront. NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package and assign it to your system. You can purchase additional packages as your workload requirements grow.
 
 NetApp recommends capacity-based licensing for all private-mode Cloud Volumes ONTAP deployments. If you have existing private-mode deployments with node-based licenses, you can convert them to capacity-based licensing by purchasing an Essentials package from NetApp. This new deployment capability, combined with the conversion option, supports NetApp's plan to move away from node-based licensing to capacity-based licensing.
 

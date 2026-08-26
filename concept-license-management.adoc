@@ -5,7 +5,7 @@ keywords: byol, bring your own license, expiration, warning, node-based byol, no
 summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a system license installed with an active subscription. The Console simplifies the process by managing licenses for you and by displaying a warning before they expire.
 ---
 
-= ##Learn about BYOL licensing in Cloud Volumes ONTAP##
+= Learn about BYOL licensing in Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,44 +13,48 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-##The Bring Your Own License (BYOL) is a licensing model where you procure your license from NetApp. BYOL licenses can be both capacity-based or node-based (supported in some existing deployments). The NetApp Console manages your licenses and warns you before your BYOL package expires.##
+Bring Your Own License (BYOL) is a licensing model where you purchase your license from NetApp. BYOL licenses can be capacity-based or node-based (supported in some existing deployments). The NetApp Console manages your licenses and displays a warning before they expire.
 
 .Restricted availability of BYOL licensing for Cloud Volumes ONTAP
-##NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments for customers with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].## 
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^]. 
 
 .Restrictions for node-based BYOL
-##NetApp has a phased plan to transition from node-based licensing to capacity-based licensing. Node-based licensing ties a fixed capacity allocation to each individual system through a dedicated BYOL license, which restricts your ability to reallocate resources across your infrastructure. With capacity-based licensing, in contrast, you purchase a total capacity allocation that can be shared across multiple Cloud Volumes ONTAP systems, allowing you to dynamically adjust how capacity is distributed among your systems as business requirements evolve. ## 
+NetApp has a phased plan to transition from node-based licensing to capacity-based licensing. Node-based licensing ties a fixed capacity allocation to each individual system through a dedicated BYOL license, restricting your ability to reallocate resources across your infrastructure. With capacity-based licensing, you purchase a total capacity allocation that can be shared across multiple Cloud Volumes ONTAP systems, allowing you to dynamically adjust how capacity is distributed as business requirements evolve. 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+
 [NOTE]
-##NetApp supports node-based Cloud Volumes ONTAP BYOL packages for older systems, such as those in private mode. Now, node-based licenses are not available for new deployments, and renewals are available only in specific cases, such as deployments in China. If you have standard or private-mode deployments that are not eligible for marketplace subscriptions, and rely on node-based licenses from NetApp (BYOL), use the license conversion tool in the Console to link:task-convert-node-capacity.html[convert your node-based license to capacity-based].##
+NetApp supports node-based Cloud Volumes ONTAP BYOL licenses for older systems, such as those in private mode. Node-based licenses are not available for new deployments. Renewals are available only in specific cases, such as deployments in China. If you have standard or private-mode deployments that are not eligible for marketplace subscriptions and rely on node-based licenses from NetApp (BYOL), use the license conversion tool in the Console to link:task-convert-node-capacity.html[convert your node-based license to capacity-based].
 
-
-BYOL license for standard deployments::
-##For new standard-mode deployments, NetApp recommends using a marketplace subscription (annual or pay-as-you-go) for capacity-based charging.## 
-BYOL license for private-mode deployments::
-##If your deployment is not eligible for marketplace subscriptions, such as in private mode, you can still use capacity-based (only Essentials) BYOL licensing for new deployments. During a new private-mode deployment, you can buy a capacity-based Essentials package from NetApp for your workload requirement and use it during deployment. You can also choose to deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity as your workload requirement grows.##
+.BYOL licenses for new deployments
+BYOL licensing for standard deployments::
+For new standard-mode deployments, NetApp recommends using a marketplace subscription (annual or pay-as-you-go) for capacity-based charging. 
+BYOL licensing for private-mode deployments::
+If your deployment is not eligible for marketplace subscriptions, such as in private mode, you can use capacity-based (Essentials only) BYOL licensing for new deployments. You have two options:
++
+* *Purchase a license:* Buy a capacity-based Essentials package from NetApp for your workload requirements and assign it during deployment.
+* *Deploy without a license:* Deploy a Cloud Volumes ONTAP system without purchasing a license. You can use up to 500 GiB of capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package to increase your usable capacity.
 
 link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 
 
-== ##BYOL licenses in new private-mode deployments##
+== BYOL licenses in new private-mode deployments
 
-##New private-mode deployments of Cloud Volumes ONTAP support capacity-based (Essentials) BYOL packages only. The number of licenses that you can purchase for a single-node system or HA pair is unlimited. Unlike node-based licensing, which allocates a fixed capacity to each system, capacity-based licensing draws from a shared capacity pool across your Cloud Volumes ONTAP systems, giving you greater flexibility to redistribute workloads as your storage needs change. Review the difference between the previous-generation node-based license and the current capacity-based BYOL license in a new private-mode deployment:##
+New private-mode deployments of Cloud Volumes ONTAP support capacity-based (Essentials) BYOL licenses only. You can purchase an unlimited number of licenses for a single-node system or high-vailability (HA) pair. Unlike node-based licensing, which allocates fixed capacity to each system, capacity-based licensing draws from a shared capacity pool across your Cloud Volumes ONTAP systems, giving you flexibility to redistribute workloads as your storage needs change. Review the difference between the previous-generation node-based license and the current capacity-based BYOL license:
 
 [role="tabbed-block"]
 ====
 .Capacity-based licenses
 --
-* You can deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity.
-* The allocated capacity of a valid capacity-based license can be shared by multiple Cloud Volumes ONTAP systems.
-* The Console assigns the new serial number of the capacity-based license to the Cloud Volumes ONTAP system and displays it.
+* You can deploy a Cloud Volumes ONTAP system without purchasing a license. NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package to increase your usable capacity.
+* The allocated capacity of a valid license can be shared across multiple Cloud Volumes ONTAP systems.
+* The Console assigns a serial number to the Cloud Volumes ONTAP system and displays it.
 
 --
 . Node-based licenses
 --
-* New private-mode deployments do not support node-based licenses, unless you have a deployment in China. 
-* A node-based license provides up to 368 TiB of capacity for a single node or HA pair. You might have purchased multiple licenses for a Cloud Volumes ONTAP system to allocate more than 368 TiB of capacity. For example, you might have two licenses to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you can have four licenses to get up to 1.4 PiB.
+* New private-mode deployments do not support node-based licenses, except for deployments in China. 
+* A node-based license provides up to 368 TiB of capacity for a single node or HA pair. You can purchase multiple licenses for a Cloud Volumes ONTAP system to allocate more than 368 TiB of capacity. For example, two licenses provide up to 736 TiB of capacity, or four licenses provide up to 1.4 PiB.
 
 * Disk limits can prevent you from reaching the capacity limit. You can exceed the disk limit by link:concept-data-tiering.html[tiering inactive data to object storage]. 
 --
@@ -59,27 +63,27 @@ link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
 
-== ##BYOL license management and renewal##
+== BYOL license management and renewal
 
-If your deployment uses a BYOL license, the Console prompts you for the serial number of your license and your NetApp Support Site account credentials. 
+If your deployment uses a BYOL license, the Console prompts you for your license serial number and your NetApp Support Site account credentials. 
 
 Node-based licenses::
-The Console uses the account to download the license file from NetApp and to install it on the Cloud Volumes ONTAP system.
+The Console uses the account to download the license file from NetApp and install it on the Cloud Volumes ONTAP system.
 
 Capacity-based licenses::
-If you are using a capacity-based BYOL package, all the systems created under the Console account can share the same license serial number of the BYOL license assigned to the subscribed account.
+If you use a capacity-based BYOL license, all systems created under the Console account can share the same license serial number.
 
-To renew your BYOL package, contact a NetApp representative. The Console automatically obtains and installs the new license on the Cloud Volumes ONTAP system.
+To renew your BYOL license, contact a NetApp representative. The Console automatically obtains and installs the new license on the Cloud Volumes ONTAP system.
 
 If the Console can't access the license file over a secure internet connection, you can download the license file and then link:task-manage-node-licenses.html[manually upload the file to the Console].
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to the Console^].
 
-== ##License transfer to a new system##
+== License transfer to a new system
 
-*Capacity-based licenses*: Each capacity-based license is associated with a Console account. All systems created under the subscribed account can share the license capacity and serial number. You can see the license serial number in the Console for a system, and assign the same license to multiple systems created under the same Console account. For example, if you have a license of 5 TiB, you can create two systems under that account, each with 2.5 TiB of capacity. You can also create a single system with 5 TiB of capacity.
+*Capacity-based licenses*: Each capacity-based license is associated with a Console account. All systems created under that account can share the license capacity and serial number. You can view the license serial number in the Console and assign the same license to multiple systems under the same Console account. For example, if you have a 5 TiB license, you can create two systems with 2.5 TiB of capacity each, or a single system with 5 TiB of capacity.
 
-*Node-based licenses*: Each node-based license is consumed by a single node, that is a Cloud Volumes ONTAP system. However, a node-based BYOL license is transferable between Cloud Volumes ONTAP systems when you delete an existing system and then use the same license to create a new one.
+*Node-based licenses*: Each node-based license applies to a single Cloud Volumes ONTAP system. However, a node-based BYOL license is transferable between systems when you delete an existing system and use the same license to create a new one.
 
 For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
 
