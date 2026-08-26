@@ -13,20 +13,23 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-##The Bring Your Own License (BYOL) is a licensing model where you procure your license from NetApp. BYOL licenses can be node-based (supported in some existing deployments) or capacity-based. The NetApp Console manages your licenses and warns you before your BYOL package expires.##
+##The Bring Your Own License (BYOL) is a licensing model where you procure your license from NetApp. BYOL licenses can be both capacity-based or node-based (supported in some existing deployments). The NetApp Console manages your licenses and warns you before your BYOL package expires.##
 
 .Restricted availability of BYOL licensing for Cloud Volumes ONTAP
-##NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments of customers with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].## 
+##NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments for customers with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].## 
 
 .Restrictions for node-based BYOL
-##NetApp has a phased plan to transition from node-based licensing to capacity-based licensing. Capacity-based licensing offers greater flexibility to redistribute workloads as your storage needs change. Node-based licensing requires a BYOL license linked to your Cloud Volumes ONTAP system.## 
+##NetApp has a phased plan to transition from node-based licensing to capacity-based licensing. Node-based licensing ties a fixed capacity allocation to each individual system through a dedicated BYOL license, which restricts your ability to reallocate resources across your infrastructure. With capacity-based licensing, in contrast, you purchase a total capacity allocation that can be shared across multiple Cloud Volumes ONTAP systems, allowing you to dynamically adjust how capacity is distributed among your systems as business requirements evolve. ## 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
-
+[NOTE]
 ##NetApp supports node-based Cloud Volumes ONTAP BYOL packages for older systems, such as those in private mode. Now, node-based licenses are not available for new deployments, and renewals are available only in specific cases, such as deployments in China. If you have standard or private-mode deployments that are not eligible for marketplace subscriptions, and rely on node-based licenses from NetApp (BYOL), use the license conversion tool in the Console to link:task-convert-node-capacity.html[convert your node-based license to capacity-based].##
 
-.Licensing for new deployments
-##For new standard-mode deployments, NetApp recommends using a marketplace subscription (annual or pay-as-you-go) for capacity-based charging. If your deployment is not eligible for marketplace subscriptions, such as in private mode, you can still use capacity-based (only Essentials) BYOL licensing for new deployments. During a new private-mode deployment, you can buy a capacity-based Essentials package from NetApp for your workload requirement and use it during deployment. You can also choose to deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity as your workload requirement grows.##
+
+BYOL license for standard deployments::
+##For new standard-mode deployments, NetApp recommends using a marketplace subscription (annual or pay-as-you-go) for capacity-based charging.## 
+BYOL license for private mode deployments::
+##If your deployment is not eligible for marketplace subscriptions, such as in private mode, you can still use capacity-based (only Essentials) BYOL licensing for new deployments. During a new private-mode deployment, you can buy a capacity-based Essentials package from NetApp for your workload requirement and use it during deployment. You can also choose to deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity as your workload requirement grows.##
 
 link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].
 

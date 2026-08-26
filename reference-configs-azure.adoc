@@ -1229,7 +1229,7 @@ HA pairs use Azure Managed Disks. The following disk type and sizes are supporte
 
 === Supported regions
 
-For Azure region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+For Azure region support, refer to https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 //BLUEXPDOC-322, https://github.com/NetAppDocs/cloud-volumes-ontap-relnotes/issues/147
 

@@ -50,7 +50,7 @@ After deployment, you can change the package for a Cloud Volumes ONTAP system th
 
 link:task-manage-capacity-licenses.html[Learn how to change charging methods].
 
-For information about converting node-based licenses to capacity-based, see 
+For information about converting node-based licenses to capacity-based, refer to link:task-convert-node-capacity.html[Convert a node-based license to a capacity-based license]. 
 
 == How you are charged for supported storage types and packages
 
@@ -170,9 +170,10 @@ In this example, the Console charges overages at the marketplace rate for the ad
 
 .Related links
 
-* link:concept-licensing.html[Licensing for Cloud Volumes ONTAP]
-* link:task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP]
-* link:task-manage-node-licenses.html[Manage node-based licensing]
-* link:task-convert-node-capacity.html[Convert a node-based license to a capacity-based license]
-* link:task-manage-keystone.html[Manage Keystone subscriptions]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licensing for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licensing^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert a node-based license to a capacity-based license^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-keystone.html[Manage Keystone subscriptions^]
 
+//The links in licensing topics are made external for cross-documentation linking. 

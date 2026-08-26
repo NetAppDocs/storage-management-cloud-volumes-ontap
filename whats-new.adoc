@@ -200,7 +200,7 @@ Edge Cache capacity-based licensing packages will no longer be available for fut
 === Minimum version support for Flash Cache in Azure
 The minimum Cloud Volumes ONTAP version required for configuring Flash Cache in Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
 
-For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
+For supported configurations, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 
 === Free trials for marketplace subscriptions deprecated
 The 30-day automatic free trial or evaluation license for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.

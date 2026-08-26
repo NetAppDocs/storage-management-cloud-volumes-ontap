@@ -769,7 +769,7 @@ The following notes provide general guidance about supported instance behavior a
 
 === Supported regions
 
-For AWS region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+For AWS region support, refer to https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 //BLUEXPDOC-129, BLUEXPDOC-133
 
