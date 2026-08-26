@@ -20,7 +20,7 @@ For deploying Cloud Volumes ONTAP, you first need to know about your Azure subsc
 a| Task
 a| Description
 a| Reference
-a| Notes for private mode deployments
+a| Notes for private-mode deployments
 
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. 
@@ -33,7 +33,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.h
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 a| link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure]
-a| You need to have similar planning considerations for private mode deployments.
+a| You need to have similar planning considerations for private-mode deployments.
 
 a| Set up your networking
 a| . Ensure your VNet and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. 
@@ -47,7 +47,7 @@ a| Refer to:
 
 * link:task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
+a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private-mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]

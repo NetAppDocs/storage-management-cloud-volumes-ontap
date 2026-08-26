@@ -1,8 +1,8 @@
-=== Support for Google Infrastructure Manager for private mode deployments
+=== Support for Google Infrastructure Manager for private-mode deployments
 
-Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new private mode deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
+Cloud Volumes ONTAP 9.16.1 and later now support https://docs.cloud.google.com/infrastructure-manager/docs/overview[Google Cloud Infrastructure Manager^] (IM) instead of https://docs.cloud.google.com/deployment-manager/docs/deprecations[Cloud Deployment Manager^] (DM) for new private-mode deployments in Google Cloud. Google will deprecate Deployment Manager as an infrastructure service in the near future for the more advanced Infrastructure Manager.
 
-Beginning February 25, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing private mode deployments. This table explains the basic workflows for you:
+Beginning February 25, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for new and existing private-mode deployments. This table explains the basic workflows for you:
 
 [cols="1,4,1,1,1,1",options="header"]
 |===
@@ -29,11 +29,11 @@ a| * \https://cloudbuild.googleapis.com/v1
 |
 | 
 a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent from Google Cloud^]
-*  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Quick start for private mode deployments^]
+*  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Quick start for private-mode deployments^]
 
 |===
 
-In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
+In private-mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private-mode deployments^].
 
 .Related links
 

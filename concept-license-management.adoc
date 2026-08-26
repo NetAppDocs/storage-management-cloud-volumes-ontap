@@ -28,7 +28,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 BYOL license for standard deployments::
 ##For new standard-mode deployments, NetApp recommends using a marketplace subscription (annual or pay-as-you-go) for capacity-based charging.## 
-BYOL license for private mode deployments::
+BYOL license for private-mode deployments::
 ##If your deployment is not eligible for marketplace subscriptions, such as in private mode, you can still use capacity-based (only Essentials) BYOL licensing for new deployments. During a new private-mode deployment, you can buy a capacity-based Essentials package from NetApp for your workload requirement and use it during deployment. You can also choose to deploy a Cloud Volumes ONTAP system without a capacity-based BYOL package, but you can only use up to 500 GiB of capacity. You can purchase additional Essentials packages to increase the amount of usable capacity as your workload requirement grows.##
 
 link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses].

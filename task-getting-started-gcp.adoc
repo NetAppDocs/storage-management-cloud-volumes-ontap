@@ -20,7 +20,7 @@ For deploying Cloud Volumes ONTAP, you first need to know about your Google Clou
 a| Task
 a| Description
 a| Reference
-a| Notes for private mode deployments
+a| Notes for private-mode deployments
 
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
@@ -32,7 +32,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.h
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 a|link:task-planning-your-config-gcp.html[Plan your configuration]
-a| You need to have similar planning considerations for private mode deployments.
+a| You need to have similar planning considerations for private-mode deployments.
 
 a| Set up your networking
 a|.  Ensure that your VPC and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
@@ -51,7 +51,7 @@ a| Cloud Volumes ONTAP requires a Google Cloud service account for enabling data
 a| * link:task-creating-gcp-service-account.html[Set up a service account]
 * link:concept-data-tiering.html[Learn about data tiering]
 * Refer to the https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery documents^]
-a| No additional considerations for private mode deployments.
+a| No additional considerations for private-mode deployments.
 
 a| Enable Google Cloud APIs
 a| Enable the required Google Cloud APIs in your project. You might have already enabled these as part of creating the Console agent.
@@ -65,7 +65,7 @@ a| Refer to:
 
 * link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
+a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private-mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
