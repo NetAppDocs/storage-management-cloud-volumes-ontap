@@ -22,6 +22,9 @@ The enhancements described on this page are specific to managing Cloud Volumes O
 == 28 August 2026
 include::_whatsnew/2026-08-28.adoc[]
 
+== 25 August 2026
+include::_whatsnew/2026-08-25.adoc[]
+
 == 10 August 2026
 include::_whatsnew/2026-08-10-919.adoc[]
 
