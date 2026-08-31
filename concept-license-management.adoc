@@ -13,7 +13,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-Bring Your Own License (BYOL) is a charging model where you bill your capacity consumption through a license purchased directly from NetApp, vis-a-vis charging through marketplace subscriptions. Though NetApp supports BYOL for both standard and private mode deployments and capacity-based and node-based licenses, it is subject to certain restrictions and availability. Your BYOL license is tied to your company and specific NetApp Support Site credentials. You can manage BYOL licenses in the *Licensing and subscriptions* section of NetApp Console under the *Direct licenses* option.
+Bring Your Own License (BYOL) is a Cloud Volumes ONTAP charging model in which you pay for capacity consumption through a license that you purchase directly from NetApp instead of through marketplace subscriptions. NetApp supports BYOL for standard and private mode deployments and for capacity-based and node-based licenses, but BYOL is subject to availability restrictions. Each BYOL license is tied to your company and specific NetApp Support Site credentials, and you can manage BYOL licenses in the *Licensing and subscriptions* section of NetApp Console under *Direct licenses*.
 
 .Restricted availability of BYOL licensing for Cloud Volumes ONTAP
 NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
@@ -32,8 +32,8 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing for
 .Private-mode deployments
 --
 
-* Private mode deployments rely completely on BYOL licenses, because marketplace subscriptions are not available for private mode deployments. For information about uploading BYOL licenses to private mode deployments, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses].
-* NetApp recommends only capacity-based Essentials packages over older node-based licenses for private mode deployments.
+* Private mode deployments rely completely on BYOL licenses because marketplace subscriptions are not available. For information about uploading BYOL licenses in private mode, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses].
+* For private mode deployments, NetApp recommends capacity-based Essentials packages instead of older node-based licenses.
 
 --
 ====
@@ -53,9 +53,9 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing for
 --
 * New private-mode deployments do not support node-based licenses, except for deployments in China. 
 * A node-based license provides up to 368 TiB of capacity for a single node or HA pair. You can purchase multiple licenses for a Cloud Volumes ONTAP system to allocate more than 368 TiB of capacity. For example, two licenses provide up to 736 TiB of capacity, or four licenses provide up to 1.4 PiB.
-* Each node-based license applies to a single Cloud Volumes ONTAP system and allocates fixed capacity to it. However, a node-based BYOL license is transferable between systems when you delete an existing system and use the same license to create a new one. For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
+* Each node-based license applies to a single Cloud Volumes ONTAP system and allocates fixed capacity to that system. However, you can transfer a node-based BYOL license between systems by deleting the existing system and using the same license to create a new one. For example, you might want to delete an existing licensed system and then use the license with a new system in a different VPC/VNet or cloud provider. Note that only _cloud-agnostic_ serial numbers work in any cloud provider. Cloud-agnostic serial numbers start with the _908xxxx_ prefix.
 
-* Node-based licenses are available for older systems and specific cases, such as USPS customers and deployments in China. NetApp has a phased plan to transition from node-based licensing to capacity-based licensing. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+* Node-based licenses are available for older systems and specific cases, such as USPS customers and deployments in China. NetApp is phasing out node-based licensing in favor of capacity-based licensing. For more information, see https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^].
 --
 ====
 
@@ -63,17 +63,17 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing for
 
 To renew your BYOL license, contact a NetApp representative. The Console automatically obtains and installs the new license on the Cloud Volumes ONTAP system. If the Console can't access the license file over a secure internet connection, you can download the license file and then link:task-manage-node-licenses.html[manually upload the file to the Console]. 
 
-https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html[Manage NSS credentials associated with NetApp Console^].
+To manage those credentials, see https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html[Manage NSS credentials associated with NetApp Console^].
 
 == License expiration
 
-The Console displays a warning 30 days before a node-based license expires and again when the license expires. The following image shows a 30-day expiration warning that appears in the user interface:
+The Console displays a warning 30 days before a node-based license expires and again when the license expires. The image shows the 30-day expiration warning in the user interface:
 
 image:screenshot_warning.gif["Screen shot: Shows a Cloud Volumes ONTAP system that includes a warning icon. The icon indicates that an action is required."]
 
 You can select the system to review the message.
 
-If you are an organization or account admin and enabled the option, the Console includes a license expiration warning in the Cloud Volumes ONTAP report and emails it to you.
+If you are an organization admin or account admin and have enabled the option, the Console includes a license expiration warning in the Cloud Volumes ONTAP report and emails it to you.
 
 If you don't renew the license in time, the Cloud Volumes ONTAP system shuts down. If you restart it, it shuts down again.
 
