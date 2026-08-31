@@ -1,4 +1,4 @@
-=== Support for Azure Government for national security (Private Preview)
+=== Cloud Volumes ONTAP support in Azure Secret and Top Secret regions (Private Preview)
 
 Cloud Volumes ONTAP now supports deployment in Azure Government Secret and Top Secret regions in private preview. This capability extends Cloud Volumes ONTAP to Microsoft's classified Azure environments, enabling government and defense customers to use ONTAP for data management, protection, and disaster recovery to support workloads for national security. Contact your NetApp accounts team to participate.
 
