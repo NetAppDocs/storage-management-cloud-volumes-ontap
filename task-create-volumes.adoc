@@ -59,7 +59,7 @@ image:screenshot_add_volume_button.png[A screenshot of the Add Volume button und
 
 .Specific aggregate
 --
-. On the *Aggregates* tab, go to the required the aggregate and click the image:icon-action.png[] icon.
+. On the *Aggregates* tab, go to the required the aggregate and click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon.
 . Select *Add Volume*. 
 image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
 
