@@ -13,7 +13,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-Bring Your Own License (BYOL) is a Cloud Volumes ONTAP charging model in which you pay for capacity consumption through a license that you purchase directly from NetApp instead of through marketplace subscriptions. NetApp supports BYOL for standard and private mode deployments and for capacity-based and node-based licenses, but BYOL is subject to availability restrictions. Each BYOL license is tied to your company and specific NetApp Support Site credentials, and you can manage BYOL licenses in the *Licensing and subscriptions* section of NetApp Console under *Direct licenses*.
+Bring-Your-Own License (BYOL) is a Cloud Volumes ONTAP charging model in which you pay for capacity consumption through a license that you purchase directly from NetApp instead of through marketplace subscriptions. NetApp supports BYOL for standard and private mode deployments and for capacity-based and node-based licenses, but BYOL is subject to availability restrictions. Each BYOL license is tied to your company and specific NetApp Support Site credentials, and you can manage BYOL licenses in the *Licensing and subscriptions* section of NetApp Console under *Direct licenses*.
 
 .Restricted availability of BYOL licensing for Cloud Volumes ONTAP
 NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
@@ -46,7 +46,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing for
 --
 
 * Capacity-based licensing draws from a shared capacity pool across your Cloud Volumes ONTAP systems, giving you flexibility to redistribute workloads as your storage needs change. 
-* NetApp supports only the Essentials package for capacity-based licensing in private mode. Purchase a capacity-based Essentials package from NetApp (bring your own license or BYOL) and assign it to your system during deployment. NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package and assign it to your system. You can purchase additional packages as your workload requirements grow.
+* NetApp supports only the Essentials package for capacity-based licensing in private mode. Purchase a capacity-based Essentials package from NetApp (Bring-Your-Own License or BYOL) and assign it to your system during deployment. NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package and assign it to your system. You can purchase additional packages as your workload requirements grow.
 * Each capacity-based license is associated with a Console account. All systems created under that account can share the license capacity and serial number. You can view the license serial number in the Console and assign the same license to multiple systems under the same Console account. For example, if you have a 5 TiB license, you can create two systems with 2.5 TiB of capacity each, or a single system with 5 TiB of capacity.
 --
 .Node-based licenses

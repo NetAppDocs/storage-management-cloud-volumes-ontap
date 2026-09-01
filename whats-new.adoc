@@ -1090,7 +1090,7 @@ Write once, read many (WORM) storage is no longer in Preview and is now availabl
 
 === Support for m5dn.24xlarge in AWS
 
-Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, Bring-Your-Own License (BYOL), and Freemium.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
 

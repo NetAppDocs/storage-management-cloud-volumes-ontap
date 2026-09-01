@@ -1,13 +1,14 @@
 === Support for private-mode deployments with capacity-based licenses
 
-You can now deploy Cloud Volumes ONTAP systems in private mode with capacity-based licenses in AWS, Azure, and Google Cloud. 
+You can now deploy Cloud Volumes ONTAP systems in private mode with capacity-based licenses in AWS, Azure, and Google Cloud.
 
-NetApp supports only the Essentials package for capacity-based licensing in private mode. Purchase a capacity-based Essentials package from NetApp (bring your own license or BYOL) and assign it to your system during deployment. NetApp provides 500 GiB of usable capacity at no charge. After you exceed 500 GiB, you must purchase an Essentials package and assign it to your system. You can purchase additional packages as your workload requirements grow.
+NetApp supports only the Essentials package for capacity-based licensing in private mode. Purchase a capacity-based Bring-Your-Own License or BYOL Essentials package from NetApp and assign it to your system during deployment. The first 500 GiB of consumed capacity does not count toward your license charges. You can purchase additional packages as your workload requirements grow.
 
 NetApp recommends capacity-based licensing for all private-mode Cloud Volumes ONTAP deployments. If you have existing private-mode deployments with node-based licenses, you can convert them to capacity-based licensing by purchasing an Essentials package from NetApp. This new deployment capability, combined with the conversion option, supports NetApp's plan to move away from node-based licensing to capacity-based licensing.
 
 .Related links
 
+* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html[Cloud Volumes ONTAP licensing^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html[Learn about Cloud Volumes ONTAP BYOL^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses for Cloud Volumes ONTAP^]
