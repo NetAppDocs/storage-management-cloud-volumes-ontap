@@ -38,7 +38,12 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing for
 --
 ====
 
-== BYOL license types and transferability
+
+=== BYOL license types and transferability in private mode
+
+Here are the key differences between capacity-based and node-based licenses in private mode:
+
+
 [cols="25,37,38",options="header"]
 |===
 
@@ -51,7 +56,7 @@ a| New private mode supports only capacity-based licenses, specifically the Esse
 a| New private-mode deployments do not support node-based licenses.
 
 | Purchase
-a| Purchase a capacity-based Bring-Your-Own License or BYOL Essentials package from NetApp and assign it to your system during deployment. 
+a| Purchase a capacity-based Bring-Your-Own License or BYOL Essentials package from NetApp and assign it to your system during a private-mode deployment. 
 a| If you have an existing private-mode deployment with a node-based license, you can convert it to capacity-based licensing by purchasing an Essentials package from NetApp.
 | Capacity
 a| The first 500 GiB of consumed capacity does not count toward your license charges. You can purchase additional packages as your workload requirements grow.
