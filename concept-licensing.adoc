@@ -51,8 +51,8 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
-* link:link:reference-configs-azure.html[Supported configurations in Azure] 
-* link:link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
+* link:reference-configs-azure.html[Supported configurations in Azure] 
+* link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
 
 ==== Freemium
 

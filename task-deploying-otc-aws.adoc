@@ -89,7 +89,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[L
 //+
 //video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to the Console from the AWS marketplace"]
 //+
-TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *select here* link to go to the Console website and complete the process.
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *click here* link to go to the Console website and complete the process.
 image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for the Console for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
@@ -307,7 +307,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[L
 //+
 //video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to the Console from the AWS marketplace"]
 //+
-TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *select here* link to go to the Console website and complete the process.
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *click here* link to go to the Console website and complete the process.
 image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for the Console for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.

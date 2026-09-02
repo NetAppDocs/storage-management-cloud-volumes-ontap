@@ -41,7 +41,7 @@ image:screenshot_features_machine_type.png[A screenshot that shows the Machine t
 
 If you are using a node-based pay-as-you-go (PAYGO) license, you can optionally choose a different license and machine type by clicking the pencil icon next to *License type*.
 
-. Choose an machine type, select the check box to confirm that you understand the implications of the change, and then select *Change*.
+. Choose a machine type, select the check box to confirm that you understand the implications of the change, then select *Change*.
 
 .Result
 

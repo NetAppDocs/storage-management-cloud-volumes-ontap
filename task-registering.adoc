@@ -25,7 +25,7 @@ TIP: A system that isn't registered for support will still receive the software 
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts^].
 
-. On the *Systems* page, double-select the name of the system you want to register..
+. On the *Systems* page, double-click the name of the system you want to register..
 
 . On the Overview tab, select the Features panel and then select the pencil icon next to *Support Registration*. 
 +
