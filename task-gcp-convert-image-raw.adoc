@@ -35,7 +35,7 @@ The user/account must have privileges to access and write to the desired bucket,
 
 *Export Google Cloud image using gcloud*
 
-.Select to display
+.Click to display
 [%collapsible]
 ====
 
