@@ -33,9 +33,9 @@ Snapshots are automatically created only when performing a manual shutdown, as d
 
 .Steps
 
-. On the *Systems* page, double-click the Cloud Volumes ONTAP system.
+. On the *Systems* page, double-select the Cloud Volumes ONTAP system.
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Scheduled Downtime*.
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Scheduled Downtime*.
 +
 image::screenshot_schedule_downtime.png[400,300 Screen shot: Shows the icon that loads the automatic shutdown page.]
 
@@ -51,7 +51,7 @@ The following image shows a schedule that instructs the Console to shut down the
 +
 image:screenshot_schedule_downtime_window.png[Screen shot: Shows the Schedule downtime screen.]
 
-. Click *Save*.
+. Select *Save*.
 
 .Result
 
@@ -69,13 +69,13 @@ When you stop an HA pair, the Console shuts down both nodes.
 
 .Steps
 
-. From the system, click the *Turn off* icon.
+. From the system, select the *Turn off* icon.
 +
 image:screenshot_turn_off_redesign.png[Screen shot: Shows the icon to turn off a Cloud Volumes ONTAP system.]
 
 . Keep the option to create snapshots enabled because the snapshots can enable system recovery.
 
-. Click *Turn Off*.
+. Select *Turn Off*.
 +
 It can take up to a few minutes to stop the system. You can restart systems at a later time from the *Systems* page.
 +

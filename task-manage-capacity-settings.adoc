@@ -24,7 +24,7 @@ You need the organization or account admin privileges of the NetApp Console to m
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
@@ -53,4 +53,4 @@ Defines how much free space is required on the performance tier (disks) when tie
 +
 The ratio is important for disaster recovery scenarios. As data is read from the capacity tier, Cloud Volumes ONTAP moves data to the performance tier to provide better performance. If there isn't sufficient space, then Cloud Volumes ONTAP can't move the data.
 
-. Click *Save*.
+. Select *Save*.

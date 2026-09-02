@@ -73,7 +73,7 @@ link:reference-networking-gcp.html[Networking requirements in Google Cloud]
 
 . From the left navigation menu, select *Storage > Management*.
 
-. [[subscribe]]On the Canvas page, click *Add System* and follow the prompts.
+. [[subscribe]]On the Canvas page, select *Add System* and follow the prompts.
 
 . Select your cloud provider (*Amazon Web Services*, *Microsoft Azure*, or *Google Cloud*)  > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Add new*. The *Quick create* option is selected by default. 
 +
@@ -194,7 +194,7 @@ If you want to utilize WORM and data tiering, you must disable Backup and Recove
 +
 . *NetApp Support Site account*: If you have multiple accounts, select the one you want to use. 
 
-. Check or edit the details you entered, and then click *Create*.
+. Check or edit the details you entered, and then select *Create*.
 
 In _Azure_, the *Overview* section displays the resources that will be allocated when the deployment process completes.
 

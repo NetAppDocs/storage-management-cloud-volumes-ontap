@@ -38,7 +38,7 @@ There's no cost to use this service through the Console.
 
 The Digital Advisor user interface is completely integrated in the Console.
 
-From the left panel, click the *Health > Digital Advisor*.
+From the left panel, select the *Health > Digital Advisor*.
 
 * If you have already registered an existing NSS account in the Console, the Digital Advisor UI appears just like you would see it in a standalone implementation at https://activeiq.netapp.com/.
 +

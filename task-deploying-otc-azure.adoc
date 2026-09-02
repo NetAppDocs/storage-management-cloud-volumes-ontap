@@ -54,7 +54,7 @@ If you want to launch a single-node Cloud Volumes ONTAP system in Azure, you nee
 
 . From the left navigation menu, select *Storage > Management*.
 
-. [[subscribe]]On the *Systems* page, click *Add System* and follow the prompts.
+. [[subscribe]]On the *Systems* page, select *Add System* and follow the prompts.
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node*.
 
@@ -127,7 +127,7 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
 * link:task-set-up-licensing-azure.html[Learn how to set up licensing^].
 
-. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or select *Create my own configuration*.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
@@ -164,7 +164,7 @@ WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versio
 link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -212,17 +212,17 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the Azure resources that the Console will purchase.
+.. Select *More information* to review details about support and the Azure resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and select *Re-create environment*.
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
@@ -245,7 +245,7 @@ If you want to launch a Cloud Volumes ONTAP HA pair in Azure, you need to create
 
 . From the left navigation menu, select *Storage > Management*.
 
-. [[subscribe]]On the *Systems* page, click *Add System* and follow the prompts.
+. [[subscribe]]On the *Systems* page, select *Add System* and follow the prompts.
 
 . If you're prompted, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[create a Console agent^].
 
@@ -324,7 +324,7 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
 * link:task-set-up-licensing-azure.html[Learn how to set up licensing^].
 
-. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Change configuration*.
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or select *Change configuration*.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
@@ -373,7 +373,7 @@ WORM can't be enabled if data tiering was enabled.
 +
 link:concept-worm.html[Learn more about WORM storage^].
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -421,17 +421,17 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the Azure resources that the Console will purchase.
+.. Select *More information* to review details about support and the Azure resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the Audit page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and select *Re-create environment*.
 
 .After you finish
 

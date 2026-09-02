@@ -34,10 +34,10 @@ https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.htm
 
 . Delete the Cloud Volumes ONTAP system.
 
-.. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system that you want to delete.
+.. On the *Systems* page, double-select the name of the Cloud Volumes ONTAP system that you want to delete.
 
-.. On the upper right of the Console, click the image:icon-action.png[] icon, and select *Delete*.
-.. Type the name of the system you want to delete, and then click *Delete*. It can take up to five minutes to delete a system.
+.. On the upper right of the Console, select the image:icon-action.png[] icon, and select *Delete*.
+.. Type the name of the system you want to delete, and then select *Delete*. It can take up to five minutes to delete a system.
 
 [NOTE]
 Backup and Recovery is free only for Cloud Volumes ONTAP Professional licenses. This free benefit does not apply to deleted environments. If backed up copies of the Cloud Volumes ONTAP environment are retained in a Backup and Recovery instance, you will be charged for the backed up copies until they are deleted.

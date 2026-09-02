@@ -58,13 +58,13 @@ If you have a standard mode deployment, you can convert your node-based license 
 
 
 [NOTE]
-If any of these requirements is not fulfilled, the license conversion does not happen. In specific cases, the license might be converted, but cannot be used. Click the information icon to identify the issues and take corrective actions.
+If any of these requirements is not fulfilled, the license conversion does not happen. In specific cases, the license might be converted, but cannot be used. Select the information icon to identify the issues and take corrective actions.
 
 .Steps
 
 . From the left navigation menu, select *Storage > Management*.
-. On the *Systems* page, double-click the name of the system for which you want to modify the license type.
-. On the *Overview* tab, click the *Features* panel.
+. On the *Systems* page, double-select the name of the system for which you want to modify the license type.
+. On the *Overview* tab, select the *Features* panel.
 . Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you can convert it to by-capacity charging. 
 +
 [TIP]
@@ -75,7 +75,7 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 ** Essentials. The default value is `Essentials`.
 ** Professional
 . If you have a BYOL license, you can select the checkbox to delete the node-based license from the Console after the conversion is complete. If the conversion is still in progress, selecting this checkbox will not remove the license from the Console. This option is not available for marketplace subscriptions.
-. Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
+. Select the check box to confirm that you understand the implications of the change, and then select *Proceed*.
 
 .After you finish
 View the new license serial number and verify the changes in the *Administration > Licenses and subscriptions* menu of the Console.
@@ -113,8 +113,8 @@ The conversion from node-based licenses to any capacity-based license other than
 .Steps
 
 . From the left navigation menu, select *Storage > Management*.
-. On the *Systems* page, double-click the name of the system for which you want to modify the license type.
-. On the *Overview* tab, click the *Features* panel.
+. On the *Systems* page, double-select the name of the system for which you want to modify the license type.
+. On the *Overview* tab, select the *Features* panel.
 . Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you can convert it to a capacity-based license. 
 +
 [TIP]
@@ -123,7 +123,7 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 . On the *Convert Node-based licenses to Capacity-based* screen, verify the system name and source license details.
 . Select Essentials as the destination package for converting the existing license:
 . You can select the checkbox to delete the node-based license from the Console after the conversion is complete. If the conversion is still in progress, selecting this checkbox will not remove the license from the Console.
-. Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
+. Select the check box to confirm that you understand the implications of the change, and then select *Proceed*.
 
 .After you finish
 View the new license serial number and verify the changes in the *Administration > Licenses and subscriptions* menu of the Console.

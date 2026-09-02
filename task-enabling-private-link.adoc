@@ -32,16 +32,16 @@ The Console agent should be deployed in the same Azure region as the Cloud Volum
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
 
-.	Under *Azure*, click *Use Azure Private Link*.
+.	Under *Azure*, select *Use Azure Private Link*.
 
 . Deselect *Private Link connection between Cloud Volumes ONTAP and storage accounts*.
 
-.	Click *Save*.
+.	Select *Save*.
 
 .After you finish
 

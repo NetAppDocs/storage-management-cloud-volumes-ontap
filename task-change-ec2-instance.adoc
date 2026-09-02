@@ -41,13 +41,13 @@ If you can't change the instance type from c4, m4, or r4 instances, refer to KB 
 
 . On the *Systems* page, select the system.
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Instance type*.
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Instance type*.
 +
 image::screenshot_features_instance_type.png[400,300 A screenshot that shows the Instance type setting under the Features panel available in the top right of the Overview page when viewing a system.]
 +
 If you are using a node-based pay as you go (PAYGO) license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
 +
-. Choose an instance type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
+. Choose an instance type, select the check box to confirm that you understand the implications of the change, and then select *Change*.
 
 .Result
 

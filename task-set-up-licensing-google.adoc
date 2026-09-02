@@ -23,9 +23,9 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, click *Add System* and follow the steps in the NetApp Console.
+. On the *Systems* page, select *Add System* and follow the steps in the NetApp Console.
 
-.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
 You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#packages[Essentials package].
 
@@ -66,9 +66,9 @@ The Console automatically queries NetApp's licensing service to obtain details a
 +
 Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the Console].
 
-. On the *Systems* page, click *Add System* and follow the steps.
+. On the *Systems* page, select *Add System* and follow the steps.
 
-.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
 The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
 
@@ -88,9 +88,9 @@ When you create a Cloud Volumes ONTAP system, the Console prompts you to subscri
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, click *Add System* and follow the steps.
+. On the *Systems* page, select *Add System* and follow the steps.
 
-.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 
 .. After you return to the Console, select a capacity-based package when you reach the charging methods page.
 +
@@ -112,11 +112,11 @@ The contract is available as a _private_ offer in the Google Cloud Marketplace.
 +
 After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during system creation.
 
-. On the *Systems* page, click *Add System* and follow the steps.
+. On the *Systems* page, select *Add System* and follow the steps.
 
-.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the annual plan in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the annual plan in the Google Cloud Marketplace.
 
-.. In Google Cloud, select the annual plan that was shared with your account and then click *Subscribe*.
+.. In Google Cloud, select the annual plan that was shared with your account and then select *Subscribe*.
 
 .. After you return to the Console, select a capacity-based package when you reach the charging methods page.
 +
@@ -136,7 +136,7 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service. link:co
 
 . After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 
-. On the *Systems* page, click *Add System* and follow the steps.
+. On the *Systems* page, select *Add System* and follow the steps.
 
 .. Select the Keystone Subscription charging method when prompted to choose a charging method.
 +

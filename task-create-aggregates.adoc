@@ -21,9 +21,9 @@ CAUTION: All disks and aggregates must be created and deleted directly from the 
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
+. On the *Systems* page, double-select the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
 
-. On the Aggregates tab, click *Add Aggregate* and then specify details for the aggregate.
+. On the Aggregates tab, select *Add Aggregate* and then specify details for the aggregate.
 +
 [role="tabbed-block"]
 ====
@@ -51,4 +51,4 @@ For help with disk type and disk size, refer to link:task-planning-your-config-g
 
 ====
 
-. Click *Add*, and then click *Approve and Purchase*.
+. Select *Add*, and then select *Approve and Purchase*.

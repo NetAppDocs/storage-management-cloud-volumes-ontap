@@ -87,7 +87,7 @@ The resource has the following ID: `userassignedidentity`.
 .Steps
 . In Azure, go to Azure services and select *Managed Identities*.
 
-. Click *Create*.
+. Select *Create*.
 
 . Provide the following details:
 +
@@ -98,7 +98,7 @@ The resource has the following ID: `userassignedidentity`.
 
 . Optionally, add tags.
 
-. Click *Create*.
+. Select *Create*.
 
 == Create a key vault and generate a key
 
@@ -121,7 +121,7 @@ Note the following requirements for the key vault:
 NOTE: Usage of Azure customer-managed encryption keys is contingent upon having Azure Disk encryption enabled for the key vault.
 * The following option should be enabled if you created a user-assigned managed identity:
 ** *Vault access policy*
-. If you selected Vault access policy, click Create to create an access policy for the key vault. If not, skip to step 3.
+. If you selected Vault access policy, select Create to create an access policy for the key vault. If not, skip to step 3.
 .. Select the following permissions:
 +
 * get

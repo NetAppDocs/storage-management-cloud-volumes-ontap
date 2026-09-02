@@ -53,31 +53,31 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 .Create Azure client secret
 . In the Azure portal for your Azure Key Vault app registration, select the **Certificates & secrets** pane.
 . Select **New client secret**. Enter a meaningful name for your client secret. NetApp recommends a 24-month expiration period; however, your specific cloud governance policies may require a different setting.
-. Click **Add** to create the client secret. Copy the secret string listed in the **Value** column and store it in a secure location for use later in <<ontap>>. The secret value will not be displayed again after you navigate away from the page.
+. Select **Add** to create the client secret. Copy the secret string listed in the **Value** column and store it in a secure location for use later in <<ontap>>. The secret value will not be displayed again after you navigate away from the page.
 
 [[create-akv]]
 .Create an Azure Key Vault
 . If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration; however, you must adapt the access policies to the settings in this process.
 . In the Azure portal, navigate to the **Key Vaults** section.
-. Click **+Create** and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select **Enable purge protection** on the key vault.
+. Select **+Create** and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select **Enable purge protection** on the key vault.
 . Select **Next** to choose an access policy.
 . Select the following options: 
 .. Under **Access configuration**, select the **Vault access policy**.
 .. Under **Resource access**, select **Azure Disk Encryption for volume encryption**.
 . Select **+Create** to add an access policy.
-. Under **Configure from a template**, click the drop-down menu and then select the **Key, Secret, and Certificate Management** template.
+. Under **Configure from a template**, select the drop-down menu and then select the **Key, Secret, and Certificate Management** template.
 . Choose each of the drop-down permissions menus (key, secret, certificate) and then **Select all ** at the top of the menu list to select all the permissions available. You should have:
 ** **Key permissions**: 20 selected
 ** **Secret permissions**: 8 selected
 ** **Certificate permissions**: 16 selected
 +
 image:screenshot-azure-key-secret-cert-all-list.png[screenshot of Create an access policy showing all permissions selections needed to create an access policy]
-. Click **Next** to select the **Principal** Azure registered application you created in <<azure-app>>. Select **Next**.
+. Select **Next** to select the **Principal** Azure registered application you created in <<azure-app>>. Select **Next**.
 +
 NOTE: Only one principal can be assigned per policy.
 +
 image:screenshot-azure-key-secret-cert-principal.png[screenshot of Create an access policy principal tab]
-. Click **Next** two times until you arrive at **Review and create**. Then, click **Create**.
+. Select **Next** two times until you arrive at **Review and create**. Then, select **Create**.
 . Select **Next** to advance to **Networking** options.
 . Choose the appropriate network access method or select **All networks** and **Review + Create** to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)
 . Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the **Vault URI** from the right-hand column. You need this for a later step.

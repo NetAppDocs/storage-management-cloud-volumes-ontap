@@ -30,11 +30,11 @@ You need to create a Console agent before you can change the Console settings. h
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
 
-. Under *Azure*, click *Azure CIFS locks for Azure HA systems*.
+. Under *Azure*, select *Azure CIFS locks for Azure HA systems*.
 
-. Click the checkbox to enable the feature and then click *Save*.
+. Select the checkbox to enable the feature and then select *Save*.

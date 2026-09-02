@@ -25,7 +25,7 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP system runn
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
 [role="quick-margin-list"]
-* For AWS, you'll need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
+* For AWS, you need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
 
 * For Azure, you won't need to do anything as long as the NetApp Console has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
 
@@ -145,13 +145,13 @@ The Console creates an object store for cold data when the system is created, as
 //
 //. On the *Systems* page, select the name of the Cloud Volumes ONTAP instance.
 //
-//. Click the menu icon and select *Enable capacity tiering*.
+//. Select the menu icon and select *Enable capacity tiering*.
 //+
 //NOTE: You'll only see this option if data tiering couldn't be enabled when the Console created the system.
 //+
 //In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
 //
-//. Click *Enable* so the Console can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
+//. Select *Enable* so the Console can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
 NOTE: The ability to enable tiering through the Console will be available in a future Cloud Volumes ONTAP release.
 
@@ -179,11 +179,11 @@ image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows informati
 
 .Steps to enable tiering on an aggregate
 
-. In ONTAP System Manager, click *Storage > Tiers*.
+. In ONTAP System Manager, select *Storage > Tiers*.
 
-. Click the action menu for the aggregate and select *Attach Cloud Tiers*.
+. Select the action menu for the aggregate and select *Attach Cloud Tiers*.
 
-. Select the cloud tier to attach and click *Save*.
+. Select the cloud tier to attach and select *Save*.
 
 .What's next?
 
@@ -203,9 +203,9 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 | Task
 | Action
 
-| Create a new volume	| Click *Add New Volume*.
+| Create a new volume	| Select *Add New Volume*.
 
-| Modify an existing volume | Select the desired volume tile, click *Manage volume* to access the Manage Volumes right-side panel, and then click *Advanced actions* and *Change tiering policy* under the right panel.
+| Modify an existing volume | Select the desired volume tile, select *Manage volume* to access the Manage Volumes right-side panel, and then select *Advanced actions* and *Change tiering policy* under the right panel.
 
 |===
 
@@ -247,9 +247,9 @@ For information about supported storage classes, refer to link:concept-data-tier
 
 .Steps
 
-. On the Cloud Volumes ONTAP system, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
+. On the Cloud Volumes ONTAP system, select the menu icon and then select *Storage Classes* or *Blob Storage Tiering*.
 
-. Choose a storage class and then click *Save*.
+. Choose a storage class and then select *Save*.
 
 == Change the free space ratio for data tiering
 
@@ -264,16 +264,16 @@ The ratio is important for disaster recovery scenarios because as data is read f
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
 
-. Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
+. Under *Capacity*, select *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 +
 image:screenshot-cvo-settings-page.png[An overview of the capacity settings of Cloud Volumes ONTAP.]
 +
-. Change the free space ratio based on your requirements and click *Save*.
+. Change the free space ratio based on your requirements and select *Save*.
 
 == Change the cooling period for the auto tiering policy
 

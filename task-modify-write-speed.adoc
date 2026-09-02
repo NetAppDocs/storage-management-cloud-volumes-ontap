@@ -27,13 +27,13 @@ Before you change the write speed, you should link:concept-write-speed.html[unde
 
 .Steps
 
-. On the *Systems* page, double-click the name of the system you configure to the write speed.
+. On the *Systems* page, double-select the name of the system you configure to the write speed.
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Write Speed*.
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Write Speed*.
 . Select *Normal* or *High*.
 +
 If you choose High, then you'll need to read the "I understand..." statement and confirm by checking the box.
 +
 NOTE: The *High* write speed option is supported with Cloud Volumes ONTAP HA pairs in Google Cloud starting with version 9.13.0.  
 
-. Click *Save*, review the confirmation message, and then click *Approve*.
+. Select *Save*, review the confirmation message, and then select *Approve*.
