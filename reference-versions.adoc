@@ -19,7 +19,6 @@ Cloud Volumes ONTAP versions other than those listed here are not available for 
 
 For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 
-ifdef::aws[]
 == AWS
 
 Single node::
@@ -65,9 +64,7 @@ HA pair::
 * 9.8
 * 9.7 P5
 * 9.5 P6
-endif::aws[]
 
-ifdef::azure[]
 == Azure
 
 Single node::
@@ -92,9 +89,7 @@ HA pair::
 * 9.13.1 P16
 * 9.12.1 P18
 
-endif::azure[]
 
-ifdef::gcp[]
 == Google Cloud
 
 Single node::
@@ -137,4 +132,3 @@ HA pair::
 * 9.10.1
 * 9.9.1 P6
 * 9.8
-endif::gcp[]

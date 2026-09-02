@@ -51,12 +51,8 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
-ifdef::azure[]
 * link:link:reference-configs-azure.html[Supported configurations in Azure] 
-endif::azure[]
-ifdef::gcp[]
 * link:link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
-endif::gcp[]
 
 ==== Freemium
 
@@ -105,15 +101,9 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 
 Learn how to get started with capacity-based licensing:
 
-ifdef::aws[]
 * link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
 * link:task-set-up-licensing-azure.html[Set up licensing for Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
 
 == Keystone Subscription
 
@@ -144,15 +134,9 @@ For information about the capacity limits of each cloud provider, refer to their
 
 Learn how to get started with a Keystone Subscription:
 
-ifdef::aws[]
 * link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
 * link:task-set-up-licensing-azure.html[Set up licensing for Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
 
 == Node-based licensing
 Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above. 

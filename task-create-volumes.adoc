@@ -29,11 +29,9 @@ A few notes about volume provisioning:
 
 * You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
 
-ifdef::aws[]
 * If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
 * If your Cloud Volumes ONTAP configuration supports the Amazon EBS Elastic Volumes feature, you might want to link:concept-aws-elastic-volumes.html[learn more about what happens when you create a volume].
-endif::aws[]
 
 == Create a volume
 
@@ -115,9 +113,7 @@ Permissions and users/groups:: Enables you to control the level of access to an 
 
 DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 +
-ifdef::gcp[]
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
-endif::gcp[]
 
 Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
 
@@ -127,17 +123,11 @@ CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
 
 Organizational Unit:: The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
-ifdef::aws[]
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
-endif::aws[]
-ifdef::azure[]
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
-endif::azure[]
-ifdef::gcp[]
 * To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
 https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
-endif::gcp[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
@@ -162,15 +152,9 @@ Host initiator (IQN):: iSCSI targets connect to the network through standard Eth
 
 .. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
 +
-ifdef::aws[]
 * link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws[Sizing your system in AWS^]
-endif::aws[]
-ifdef::azure[]
 * link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^]
-endif::azure[]
-ifdef::gcp[]
 * link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp[Sizing your system in Google Cloud^]
-endif::gcp[]
 
 .. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].
 +
@@ -213,9 +197,7 @@ image:screenshot_add_aggregate_cvo.png[A screenshot showing the progress of addi
 
 The Console creates the volume on the second node in the HA pair.
 
-ifdef::aws[]
 TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
-endif::aws[]
 
 == After you create a volume
 

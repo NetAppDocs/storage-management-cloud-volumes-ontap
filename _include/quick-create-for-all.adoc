@@ -101,14 +101,10 @@ image:screenshot-quick-start-gcp.png[width=500,alt="Google Cloud Quick Create"]
 .System details
 
 . *Cloud provider account/credentials/Google Cloud project*: The account and subscription details are automatically populated based on your Console agent. If you have multiple accounts or subscriptions, select the one you want to use. If a Console agent is unavailable, you'll be prompted to https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html[create a Console agent^].
-ifdef::gcp[]
 For _Google Cloud_, you need to select a marketplace subscription with the project name.
-endif::gcp[]
 . *Name*: Enter a name for your Cloud Volumes ONTAP system (also called the cluster name). The Console uses the system (cluster) name to name the Cloud Volumes ONTAP system and the VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 . *ONTAP credentials*: These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. You can keep the default _admin_ user name or change it to a custom user name.
-ifdef::gcp[]
 For _Google Cloud_, If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account^]. The service account associated with the Console agent https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[should have the required permissions^].
-endif::gcp[]
 . *Tags/Labels*: Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after it's created. For more information, refer to:
 +
 [role="tabbed-block"]
@@ -188,9 +184,7 @@ Cloud Volumes ONTAP 9.19.1 and later support link:concept-ha-google-cloud.html[s
 //+
 . *License*: Select the license type you want to use with this Cloud Volumes ONTAP system. You can choose from Professional, Essentials, and Freemium licenses. For information about different licenses, refer to link:concept-licensing.html[Learn about Cloud Volumes ONTAP licenses^].
 . *Data services and features*: Keep the services enabled or disable the services you don't want to use with Cloud Volumes ONTAP.
-ifdef::gcp[]
 In _Google Cloud_, In order to select Backup and Recovery, or to use NetApp Cloud Tiering, you must have specified the Service Account. 
-endif::gcp[]
 * https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html[Learn more about NetApp Classification^]
 * https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery^]
 * link:concept-worm.html[Learn about WORM storage on Cloud Volumes ONTAP]
@@ -202,13 +196,9 @@ If you want to utilize WORM and data tiering, you must disable Backup and Recove
 
 . Check or edit the details you entered, and then click *Create*.
 
-ifdef::azure[]
 In _Azure_, the *Overview* section displays the resources that will be allocated when the deployment process completes.
-endif::azure[]
 
-ifdef::aws[]
 In _AWS_, immediately after you create the Cloud Volumes ONTAP system, the NetApp Console launches a test instance in the specified VPC to verify connectivity. If successful, the Console immediately terminates the instance and then starts deploying the system. If the Console cannot verify connectivity, creation of the system fails. The test instance is either a `t2.nano` (for default VPC tenancy) or a `m3.medium` (for dedicated VPC tenancy).
-endif::aws[]
 
 .After you finish
 

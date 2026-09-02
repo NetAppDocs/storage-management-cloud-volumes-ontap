@@ -28,7 +28,6 @@ CAUTION: All disks and aggregates must be created and deleted directly from the 
 [role="tabbed-block"]
 ====
 
-ifdef::aws[]
 .AWS
 --
 * If you're prompted to choose a disk type and disk size, refer to link:task-planning-your-config.html[Plan your Cloud Volumes ONTAP configuration in AWS].
@@ -39,21 +38,16 @@ image:screenshot-aggregate-size-ev.png[A screenshot of the Aggregate Disks scree
 +
 link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 --
-endif::aws[]
 
-ifdef::azure[]
 .Azure
 --
 For help with disk type and disk size, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
 --
-endif::azure[]
 
-ifdef::gcp[]
 .Google Cloud
 --
 For help with disk type and disk size, refer to link:task-planning-your-config-gcp.html[Plan your Cloud Volumes ONTAP configuration in Google Cloud].
 --
-endif::gcp[]
 
 ====
 
