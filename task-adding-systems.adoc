@@ -36,6 +36,8 @@ You must know the password for the Cloud Volumes ONTAP admin user account.
 
 . Select the link to discover an existing system.
 +
+The following screenshot shows this option in AWS.
+
 image:screenshot_discover_redesign.png[A screenshot that shows a link to discover an existing Cloud Volumes ONTAP system.]
 
 . On the Region page, select a region. You can see the systems that are running in the selected region. 

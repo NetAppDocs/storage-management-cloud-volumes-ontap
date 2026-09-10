@@ -29,7 +29,8 @@ A few notes about volume provisioning:
 
 * You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
 
-* If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+* AWS:
+** If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 ** If your Cloud Volumes ONTAP configuration supports the Amazon EBS Elastic Volumes feature, you might want to link:concept-aws-elastic-volumes.html[learn more about what happens when you create a volume].
 
 == Create a volume

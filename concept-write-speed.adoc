@@ -34,35 +34,33 @@ High write speed is a good choice if fast write performance is required for your
 === Recommendations when using high write speed
 
 If you enable high write speed, you should ensure write protection at the application layer, or that the applications can tolerate data loss, if it occurs.
-
-=== High write speed with an HA pair in AWS
-
-If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
-
-link:concept-ha.html[Learn more about HA pairs in AWS].
-
-=== Configurations that support high write speed
-
 Not all Cloud Volumes ONTAP configurations support high write speed. Those configurations use normal write speed by default.
 
-==== AWS
+=== High write speed in AWS
 
+Single-node systems::
 If you use a single-node system, Cloud Volumes ONTAP supports high write speed with all instance types.
 
 Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
 
 link:reference-configs-aws.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports].
 
-==== Azure
+HA pairs::
+If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
 
+link:concept-ha.html[Learn more about HA pairs in AWS].
+
+=== High write speed in Azure
+
+Single-node systems::
 If you use a single-node system, Cloud Volumes ONTAP supports high write speed with all VM types.
-
+HA pairs::
 If you use an HA pair, Cloud Volumes ONTAP supports high write speed with several VM types, starting with the 9.8 release. Go to the link:reference-configs-azure.html[Cloud Volumes ONTAP Release Notes] to view the VM types that support high write speed.
 
-==== Google Cloud
-
+=== High write speed in Google Cloud
+Single-node systems::
 If you use a single-node system, Cloud Volumes ONTAP supports high write speed with all machine types.
-
+HA pairs::
 If you use an HA pair, Cloud Volumes ONTAP supports high write speed with several VM types, starting with the 9.13.0 release. Go to the link:reference-configs-gcp.html#supported-configurations-by-license[Cloud Volumes ONTAP Release Notes^] to view the VM types that support high write speed.
 
 link:reference-configs-gcp.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].

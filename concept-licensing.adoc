@@ -49,10 +49,11 @@ NOTE: While the actual usage and metering for the products and services managed 
 
 The following capacity-based packages are available for Cloud Volumes ONTAP. For more information about capacity-based license packages, refer to link:concept-licensing-charging.html[Learn more about capacity-based licenses].
 
-For a list of supported VM types with the following capacity-based packages, refer to: 
+For storage limits by cloud provider, refer to:
 
-* link:reference-configs-azure.html[Supported configurations in Azure] 
-* link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
+* link:reference-limits-aws[Storage limits for Cloud Volumes ONTAP in AWS]
+* link:reference-limits-azure.html[Storage limits for Cloud Volumes ONTAP in Azure]
+* link:reference-limits-gcp.html[Storage limits for Cloud Volumes ONTAP in Google Cloud]
 
 ==== Freemium
 

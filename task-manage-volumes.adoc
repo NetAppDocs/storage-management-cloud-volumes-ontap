@@ -159,10 +159,12 @@ If you're configuring Google-managed Active Directory, AD can be accessed by def
 | Organizational Unit a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
-* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field. 
-link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
-* To configure Google-managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field. 
-link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
+* Azure: To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
++
+Azure documentation: link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+* Google Cloud: To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
++
+Google Cloud documentation: link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Organizational Units in Google Managed Microsoft AD^]
 
 |===
 

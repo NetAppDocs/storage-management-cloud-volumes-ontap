@@ -28,11 +28,11 @@ The Console provides two ways to upgrade Cloud Volumes ONTAP:
 * By following upgrade notifications that appear on the system
 * By placing the upgrade image at an HTTPS location and then providing the Console with the URL
 
-=== Supported upgrade paths
+== Supported upgrade paths
 
 The Cloud Volumes ONTAP version you can upgrade to depends on the version you are currently running. Each generic or patch version in a release in the following tables represents the base version available for upgrade. For details about the available patches, refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[versioned release notes^] for each release.
 
-==== Supported upgrade paths for AWS
+=== AWS
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -105,7 +105,7 @@ The Cloud Volumes ONTAP version you can upgrade to depends on the version you ar
 |===
 
 
-==== Supported upgrade paths for Azure
+=== Azure
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -138,7 +138,7 @@ If you have a lower version of Cloud Volumes ONTAP in Azure, you must first upgr
 
 
 
-==== Supported upgrade paths for Google Cloud
+=== Google Cloud
 
 [cols=2*,options="header,autowidth"]
 |===
