@@ -41,13 +41,12 @@ Not all Cloud Volumes ONTAP configurations support high write speed. Those confi
 Single-node systems::
 If you use a single-node system, Cloud Volumes ONTAP supports high write speed with all instance types.
 
-Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
-
-link:reference-configs-aws.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports].
-
 HA pairs::
+Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
++
+link:reference-configs-aws.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports].
 If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
-
++
 link:concept-ha.html[Learn more about HA pairs in AWS].
 
 === High write speed in Azure
@@ -62,7 +61,7 @@ Single-node systems::
 If you use a single-node system, Cloud Volumes ONTAP supports high write speed with all machine types.
 HA pairs::
 If you use an HA pair, Cloud Volumes ONTAP supports high write speed with several VM types, starting with the 9.13.0 release. Go to the link:reference-configs-gcp.html#supported-configurations-by-license[Cloud Volumes ONTAP Release Notes^] to view the VM types that support high write speed.
-
++
 link:reference-configs-gcp.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
 
 == How to select a write speed
@@ -91,7 +90,7 @@ If data loss occurs due to high write speed, the Event Management System (EMS) r
 
 When this happens, Cloud Volumes ONTAP should be able to boot up and continue to serve data without user intervention.
 
-== How to stop data access if data loss occurs
+=== How to stop data access if data loss occurs
 
 If you are concerned about data loss, want the applications to stop running upon data loss, and the data access to be resumed after the data loss issue is properly addressed, you can use the NVFAIL option from the CLI to achieve that goal.
 

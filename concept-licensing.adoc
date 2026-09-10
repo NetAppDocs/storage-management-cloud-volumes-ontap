@@ -51,7 +51,7 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 
 For storage limits by cloud provider, refer to:
 
-* link:reference-limits-aws[Storage limits for Cloud Volumes ONTAP in AWS]
+* link:reference-limits-aws.html[Storage limits for Cloud Volumes ONTAP in AWS]
 * link:reference-limits-azure.html[Storage limits for Cloud Volumes ONTAP in Azure]
 * link:reference-limits-gcp.html[Storage limits for Cloud Volumes ONTAP in Google Cloud]
 
