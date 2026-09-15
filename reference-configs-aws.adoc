@@ -18,6 +18,7 @@ Several Cloud Volumes ONTAP configurations are supported in AWS.
 == Supported disks in AWS
 In addition to the storage for user data, the NetApp also purchases cloud storage for system data in AWS.
 
+[[aws]]
 === Internal disks for system data
 
 The following internal disks are used for system data in AWS:

@@ -19,6 +19,7 @@ Several Cloud Volumes ONTAP configurations are supported in Azure.
 == Supported disk types 
 In addition to the storage for user data, the NetApp also purchases cloud storage for system data in Azure.
 
+[[azure-single-node]]
 === Internal disks for system data Azure (single node)
 
 The following internal disks are used for system data in Azure:
@@ -38,6 +39,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 +
 If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.
 
+[[azure-ha-pair]]
 === Internal disks for system data Azure HA pair
 
 .HA pairs with page blob
@@ -323,7 +325,7 @@ If you choose any of these VM types when you deploy a new Cloud Volumes ONTAP sy
 +
 Similarly, if you choose Premium SSD Managed Disks for an environment that fulfils the https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[criteria^] for Premium SSD v2 Managed Disks, the Console automatically deploys Premium SSD v2 Managed Disks. You cannot switch to Premium SSD v1 Managed Disks.
 +
-. ^4^ For information about the supported disk types in single node deployments, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-default-configs.html#azure-single-node[Azure (single node)^]. High write speed is supported with all instance types when using a single-node system. You can enable high write speed from the Console during deployment or any time after. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html[Learn more about choosing a write speed^]. Enhanced write performance is enabled when using SSDs.
+. ^4^ For information about the supported disk types in single node deployments, refer to link:reference-configs-azure.html#azure-single-node[Azure (single node)]. High write speed is supported with all instance types when using a single-node system. You can enable high write speed from the Console during deployment or any time after. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html[Learn more about choosing a write speed^]. Enhanced write performance is enabled when using SSDs.
 . ^5^ Beginning on August 11, 2025, the Cloud Volumes ONTAP Optimized license is deprecated and will no longer be available for purchase or renewal in the Azure marketplace for pay-as-you-go (PAYGO) subscriptions. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#11-august-2025[End of availability of Optimized licenses^].
 . ^6^ Edsv6 VM types are supported for new deployments of Cloud Volumes ONTAP 9.17.1 and later. You cannot switch an existing deployment with any other VM type, for example, from Edsv5 to Edsv6; only size changes among Edsv6 variants (for example E20ds_v6 → E32ds_v6) are supported. For information about this VM type, refer to the https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic[Azure documentation: Edsv6 sizes series^].
 . ^7^ The Ebdsv5 and E104ids_v5 VMs are available for new deployments and upgrade of Cloud Volumes ONTAP 9.18.1 and later. You can change or upgrade your existing Edsv4, Edsv5, or other Ebdsv5 VMs types to Ebdsv5. You can upgrade Ebdsv5 or Eidsv5 VMs to E104ids_v5.
@@ -730,7 +732,7 @@ Notes:
 . ^4^ Multiple availability zone support starts from ONTAP version 9.14.1 RC1.  
 
 . ^5^ This VM type includes local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_. Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It is effective for random read-intensive workloads, including databases, email, and file services. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html[Learn more^].
-. ^6^ If you choose Premium SSD Managed Disks for an environment that fulfils the https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[criteria^] for Premium SSD v2 Managed Disks, the Console automatically deploys Premium SSD v2 Managed Disks. You cannot switch to Premium SSD v1 Managed Disks. For information about the internal disks for system data for HA deployments single and multiple availability zones, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[Azure (HA pair)^].
+. ^6^ If you choose Premium SSD Managed Disks for an environment that fulfils the https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[criteria^] for Premium SSD v2 Managed Disks, the Console automatically deploys Premium SSD v2 Managed Disks. You cannot switch to Premium SSD v1 Managed Disks. For information about the internal disks for system data for HA deployments single and multiple availability zones, refer to link:reference-configs-azure.html#azure-ha-pair[Azure (HA pair)].
 . ^7^ Beginning on August 11, 2025, the Cloud Volumes ONTAP Optimized license is deprecated and will no longer be available for purchase or renewal in the Azure marketplace for pay-as-you-go (PAYGO) subscriptions. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#11-august-2025[End of availability of Optimized licenses^].
 . ^8^ Edsv6 VM types are supported for new deployments of Cloud Volumes ONTAP 9.17.1 and later. You cannot switch an existing deployment with any other VM type, for example, from Edsv5 to Edsv6; only size changes among Edsv6 variants (for example E20ds_v6 → E32ds_v6) are supported. For information about this VM type, refer to the https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic[Azure documentation: Edsv6 sizes series^].
 . ^9^ The Ebdsv5 and E104ids_v5 VMs are available for new deployments and upgrade of Cloud Volumes ONTAP 9.18.1 and later. You can change or upgrade your existing Edsv4, Edsv5, or other Ebdsv5 VMs types to Ebdsv5. You can upgrade Ebdsv5 or Eidsv5 VMs to E104ids_v5.

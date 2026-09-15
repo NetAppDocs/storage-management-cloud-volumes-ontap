@@ -75,7 +75,7 @@ Refer to the following for more details:
 
 In addition to the storage for user data, the Console also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
 
-* link:reference-default-configs.html#google-cloud-single-node[View the default disks for Cloud Volumes ONTAP system data in Google Cloud].
+* link:reference-configs-gcp.html#google-cloud-single-node[View the default disks for Cloud Volumes ONTAP system data in Google Cloud].
 * https://docs.cloud.google.com/docs/quotas/overview[Google Cloud docs: Cloud Quotas overview^]
 +
 Google Cloud Compute Engine enforces quotas on resource usage so you should ensure that you haven't reached your limit before you deploy Cloud Volumes ONTAP.

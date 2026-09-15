@@ -98,7 +98,7 @@ As noted above, choosing a disk size is not supported with Cloud Volumes ONTAP c
 
 In addition to the storage for user data, the Console also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
 
-link:reference-default-configs.html#aws[View the default disks for Cloud Volumes ONTAP system data in AWS].
+link:reference-configs-aws.html#aws[View the default disks for Cloud Volumes ONTAP system data in AWS].
 
 TIP: The Console agent also requires a system disk. https://docs.netapp.com/us-en/console-setup-admin/reference-connector-default-config.html[View details about the Console agent's default configuration^].
 
