@@ -50,7 +50,7 @@ a| Set up a service account
 a| Cloud Volumes ONTAP requires a Google Cloud service account for enabling data tiering to tier cold data to low-cost object storage in Google Cloud, and also to enable NetApp Backup and recovery to back up volumes to low-cost object storage.
 a| * link:task-creating-gcp-service-account.html[Set up a service account]
 * link:concept-data-tiering.html[Learn about data tiering]
-* Refer to the https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery documents^]
+* Refer to the https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery documents^]
 a| No additional considerations for private mode deployments.
 
 a| Enable Google Cloud APIs

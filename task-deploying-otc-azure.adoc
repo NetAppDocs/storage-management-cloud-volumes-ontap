@@ -278,7 +278,7 @@ For information about tags, refer to the https://learn.microsoft.com/en-us/azure
 
 . *Services*: Enable or disable the individual services based on whether you want to use them with Cloud Volumes ONTAP.
 +
-* https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about NetApp Data Classification^]
+* https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html[Learn more about NetApp Data Classification^]
 * https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery ^]
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above. 
