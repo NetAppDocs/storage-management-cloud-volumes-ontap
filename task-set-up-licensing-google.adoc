@@ -64,7 +64,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 +
 The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console adds the licenses.
 +
-Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the Console].
+Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license[manually add the license to the Console].
 
 . On the *Systems* page, click *Add System* and follow the steps.
 
