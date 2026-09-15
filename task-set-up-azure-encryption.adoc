@@ -158,7 +158,7 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 "Microsoft.KeyVault/vaults/accessPolicies/write",
 "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
 
 .Steps
 
@@ -214,4 +214,4 @@ You have a new Cloud Volumes ONTAP system that is configured to use your custome
 .Related links
 
 * https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html[Prepare to use the Cloud Volumes ONTAP API workflows^].
-* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn about the ONTAP management REST APIs^].
+* https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn about the ONTAP management REST APIs^].

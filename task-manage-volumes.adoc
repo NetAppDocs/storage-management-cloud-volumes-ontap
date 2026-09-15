@@ -266,11 +266,11 @@ Moving a volume is necessary to avoid capacity issues; however, the Console cann
 
 . Drag and drop the source system to the target system to perform a one-time data replication of the volume.
 +
-For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data between systems^].
+For information, refer to link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html[Replicating data between systems^].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
+For information, refer to link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
 
 . Configure the volume for data access.
 +

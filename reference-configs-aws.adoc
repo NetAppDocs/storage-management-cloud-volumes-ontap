@@ -59,7 +59,7 @@ Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP us
 
 === Supported disk sizes
 
-In AWS, an aggregate can contain up to 6 disks that are all the same size. But if you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes^]
+In AWS, an aggregate can contain up to 6 disks that are all the same size. But if you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes^]
 
 [cols=3*,options="header"]
 |===
@@ -274,7 +274,7 @@ a| *Cold data tiering to S3* 2+a| Supported |
 |===
 
 . For an HA pair, the capacity limit is for the entire HA pair. It's not per node. For example, if you use the PAYGO Premium license, you can have up to 368 TiB of capacity between both nodes.
-. For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to link:reference-limits-aws.html[storage limits].
+. For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to link:reference-limits-aws.html[storage limits].
 +
 include::_include/capacity-limit.adoc[] 
 . Enhanced write performance is enabled when using SSDs with all Cloud Volumes ONTAP configurations, except for PAYGO Explore.
@@ -565,7 +565,7 @@ a|
 |===
 
 . For an HA pair, the capacity limit is for the entire HA pair. It's not per node. For example, if you use the PAYGO Premium license, you can have up to 368 TiB of capacity between both nodes.
-. For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to link:reference-limits-aws.html[storage limits].
+. For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to link:reference-limits-aws.html[storage limits].
 +
 include::_include/capacity-limit.adoc[]
 . Enhanced write performance is enabled when using SSDs with all Cloud Volumes ONTAP configurations, except for PAYGO Explore.
@@ -587,7 +587,7 @@ Cloud Volumes ONTAP no longer supports the c4, m4, and r4 EC2 instance types in 
 
 If your system runs on a c4, m4, or r4 instance, change it to a c5, m5, or r5 instance before you upgrade to this release.
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html[Learn how to change the EC2 instance type for Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html[Learn how to change the EC2 instance type for Cloud Volumes ONTAP^].
 
 For more information, refer to the following resources:
 
@@ -759,9 +759,9 @@ pass:[*] Flash Cache is supported on m6id.xlarge, m6id.2xlarge, m6idn.xlarge, an
 
 The following notes provide general guidance about supported instance behavior and deployment options.
 
-* Some instance types include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache. Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It's effective for random read-intensive workloads, including databases, email, and file services. Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html[Learn more about Flash Cache^].
+* Some instance types include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache. Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It's effective for random read-intensive workloads, including databases, email, and file services. Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html[Learn more about Flash Cache^].
 
-* Cloud Volumes ONTAP supports high write speed with all supported instance types when using a single-node system. When using an HA pair, high write speed is supported only with supported instance types. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html[Learn more about choosing a write speed^].
+* Cloud Volumes ONTAP supports high write speed with all supported instance types when using a single-node system. When using an HA pair, high write speed is supported only with supported instance types. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html[Learn more about choosing a write speed^].
 
 * When you choose an EC2 instance type, you can specify whether it is a shared instance or a dedicated instance.
 

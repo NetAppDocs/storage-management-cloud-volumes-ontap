@@ -27,7 +27,7 @@ a| If you don't have a Console agent yet, create one before deploying Cloud Volu
 a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html[Create a Console agent in Google Cloud^]
 a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
@@ -76,7 +76,7 @@ a| Before beginning the deployment, ensure that you have purchased a Cloud Volum
 
 .Related links 
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Creating a Console agent^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Console agent software on a Linux host^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[Creating a Console agent^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html[Installing the Console agent software on a Linux host^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[Google Cloud permissions for the Console agent^]
 

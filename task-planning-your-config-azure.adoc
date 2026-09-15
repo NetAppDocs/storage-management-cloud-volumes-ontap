@@ -91,7 +91,7 @@ In addition to the storage for user data, the Console also purchases cloud stora
 
 link:reference-default-configs.html#azure-single-node[View the default disks for Cloud Volumes ONTAP system data in Azure].
 
-TIP: The Console agent also requires a system disk. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html[View details about the Console agent's default configuration^].
+TIP: The Console agent also requires a system disk. https://docs.netapp.com/us-en/console-setup-admin/reference-connector-default-config.html[View details about the Console agent's default configuration^].
 
 == Collect networking information
 

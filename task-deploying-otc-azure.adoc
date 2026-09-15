@@ -22,9 +22,9 @@ You need the following before you begin.
 [[licensing]]
 * A Console agent that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Console agent that is associated with your system^].
+** You should have a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html[Console agent that is associated with your system^].
 
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^].
+** https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html[You should be prepared to leave the Console agent running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -58,7 +58,7 @@ If you want to launch a single-node Cloud Volumes ONTAP system in Azure, you nee
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node*.
 
-. If you're prompted, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[create a Console agent^].
+. If you're prompted, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html[create a Console agent^].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
@@ -79,7 +79,7 @@ For information about tags, refer to the https://learn.microsoft.com/en-us/azure
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Learn how to add credentials^].
+| Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html[Learn how to add credentials^].
 
 |===
 //+
@@ -88,8 +88,8 @@ For information about tags, refer to the https://learn.microsoft.com/en-us/azure
 //video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to the Console from the Azure Marketplace"]
 
 . *Services*: Enable or disable the individual services that you want to or don't want to use with Cloud Volumes ONTAP. 
-* https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about NetApp Data Classification^]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery ^]
+* https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html[Learn more about NetApp Data Classification^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery ^]
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above.
 
@@ -111,14 +111,14 @@ The following table describes fields for which you might need guidance:
 
 a| Create a new resource group for Cloud Volumes ONTAP or use an existing resource group. The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. While it is possible to deploy Cloud Volumes ONTAP in an existing, shared resource group, it's not recommended due to the risk of data loss. See the warning above for more details.
 
-TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[required permissions^], the Console removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
+TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[required permissions^], the Console removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
 
 | Generated security group a| If you let the Console generate the security group for you, you need to choose how you'll allow traffic:
 
 * If you choose *Selected VNet only*, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Console agent resides. This is the recommended option.
 * If you choose *All VNets*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
+| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
 
 |===
 
@@ -145,7 +145,7 @@ Note the following:
 * The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 * The disk size is for all disks in the initial aggregate and for any additional aggregates that the Console creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^].
+For help choosing a disk type and size, refer to link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
@@ -199,14 +199,14 @@ https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-o
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[NetApp Console automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/console-automation/index.html[NetApp Console automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Understanding volume usage profiles^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Understanding volume usage profiles^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -247,7 +247,7 @@ If you want to launch a Cloud Volumes ONTAP HA pair in Azure, you need to create
 
 . [[subscribe]]On the *Systems* page, click *Add System* and follow the prompts.
 
-. If you're prompted, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[create a Console agent^].
+. If you're prompted, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html[create a Console agent^].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
@@ -268,7 +268,7 @@ For information about tags, refer to the https://learn.microsoft.com/en-us/azure
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Learn how to add credentials^].
+| Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html[Learn how to add credentials^].
 
 |===
 //+
@@ -279,7 +279,7 @@ For information about tags, refer to the https://learn.microsoft.com/en-us/azure
 . *Services*: Enable or disable the individual services based on whether you want to use them with Cloud Volumes ONTAP.
 +
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about NetApp Data Classification^]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery ^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn more about NetApp Backup and Recovery ^]
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above. 
 
@@ -308,14 +308,14 @@ a| Create a new resource group for Cloud Volumes ONTAP or use an existing resour
 
 You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group. The Console experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
-TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[required permissions^], the Console removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
+TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[required permissions^], the Console removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
 
 | Generated security group a| If you let the Console generate the security group for you, you need to choose how you'll allow traffic:
 
 * If you choose *Selected VNet only*, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Console agent resides. This is the recommended option.
 * If you choose *All VNets*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
+| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
 
 |===
 
@@ -340,7 +340,7 @@ Note the following:
 +
 * The disk size is for all disks in the initial aggregate and for any additional aggregates that the Console creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk size, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Size your system in Azure^].
+For help choosing a disk size, refer to link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Size your system in Azure^].
 * If the public access to your storage account is disabled within the VNet, you cannot enable data tiering in your Cloud Volumes ONTAP system. For information, refer to link:reference-networking-azure.html#security-group-rules[Security group rules].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates.
@@ -408,14 +408,14 @@ https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-o
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[NetApp Console automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/console-automation/index.html[NetApp Console automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Choose a volume usage profile^], link:concept-data-tiering.html[Data tiering overview^], and https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#[KB: What Inline Storage Efficiency features are supported with CVO?^]
+For more information, refer to link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Choose a volume usage profile^], link:concept-data-tiering.html[Data tiering overview^], and https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#[KB: What Inline Storage Efficiency features are supported with CVO?^]
 
 . *Review & Approve*: Review and confirm your selections.
 

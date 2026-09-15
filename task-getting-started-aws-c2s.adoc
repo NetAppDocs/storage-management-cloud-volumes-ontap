@@ -30,7 +30,7 @@ The Console agent is required to deploy and manage Cloud Volumes ONTAP in AWS. Y
 +
 In AWS Secret Cloud and Top Secret Cloud, the Console operates in _private mode_. In private mode, there is no connectivity to the SaaS layer from the Console. You can access the Console through a local a web-based application that can access the Console agent.
 +
-To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[the private deployment mode in the Console^]. 
+To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#private-mode[the private deployment mode in the Console^]. 
 
 == Step 1: Set up your networking
 Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
