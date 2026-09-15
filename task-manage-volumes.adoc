@@ -198,7 +198,7 @@ For instructions, refer to the link:http://docs.netapp.com/ontap-9/topic/com.net
 
 The Console might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that you need to correct the issue yourself. If this happens, you need to identify how to correct the issue and then move one or more volumes.
 
-TIP: The Console displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering^].
+TIP: The Console displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#change-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering^].
 
 .Steps
 

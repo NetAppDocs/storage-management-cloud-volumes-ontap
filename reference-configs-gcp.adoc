@@ -19,6 +19,7 @@ Several Cloud Volumes ONTAP configurations are supported in Google Cloud.
 == Supported disk types in Google Cloud
 In addition to the storage for user data, NetApp also purchases cloud storage for system data in Google Cloud.
 
+[[google-cloud-single-node]]
 === Internal disks for system data in single node systems
 
 * One 10 GiB SSD persistent disk for boot data
