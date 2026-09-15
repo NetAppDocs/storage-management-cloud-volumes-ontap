@@ -224,7 +224,7 @@ For example, the advanced information should say something similar to the follow
 
 .. In the Cloud Volumes ONTAP system, click the *Aggregates tab*.
 
-.. On the aggregate tile, click the image:icon-action.png[] icon and then click *View aggregate details*.
+.. On the aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then click *View aggregate details*.
 
 .. Under the *Overview* tab of the *Aggregate Details* screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
@@ -300,13 +300,13 @@ Moving two or more volumes is necessary to avoid capacity issues; however, the C
 
 .. On Cloud Volumes ONTAP system, click the *Aggregates tab*.
 
-.. On the required aggregate tile, click the image:icon-action.png[] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
+.. On the required aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
 +
 image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the image:icon-action.png[] icon > *Add Disks*.
+.. Select the aggregate, then click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon > *Add Disks*.
 
 .. Select the number of disks to add, and then click *Add*.
 
