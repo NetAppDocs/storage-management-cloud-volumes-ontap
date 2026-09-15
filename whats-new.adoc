@@ -682,8 +682,6 @@ You can now optimize the cost and performance of a Cloud Volumes ONTAP system di
 
 After you select a working environment, you can choose the *Optimize Cost & Performance* option to change the instance type for Cloud Volumes ONTAP. Choosing a smaller-sized instance can help you reduce costs, while changing to a larger-sized instance can help you optimize performance.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-optimize-cost-performance.png["A screenshot of the Optimize Cost & Performance option that's available from the Canvas after you select a Cloud Volumes ONTAP system."]
-
 === AutoSupport notifications
 
 BlueXP will now generate a notification if a Cloud Volumes ONTAP system is unable to send AutoSupport messages. The notification includes a link to instructions that you can use to troubleshoot networking issues.
@@ -718,8 +716,6 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage
 
 When you create a Cloud Volumes ONTAP working environment, the user interface now enables you to choose whether you want the predefined security group to allow traffic within the selected network only (recommended) or all networks.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-allow-traffic.png["A screenshot that shows the Allow Traffic Within option that's available in the working environment wizard when selecting a security group."]
-
 == 18 July 2022
 
 === New licensing packages in Azure
@@ -739,8 +735,6 @@ The following changes were introduced with the 3.9.20 release of the Connector.
 === Digital Wallet
 
 The Digital Wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
-
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["A screenshot that shows the Digital Wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."]
 
 === Elastic Volumes enhancement
 
@@ -899,8 +893,6 @@ Previously, BlueXP wouldn't display any policies in VPC-1, VPC-2, or VPC-3 that 
 === Enhancement to Google Cloud service accounts
 
 When you select the Google Cloud service account to use with Cloud Volumes ONTAP, BlueXP now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
-
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
 
 == 3 April 2022
 

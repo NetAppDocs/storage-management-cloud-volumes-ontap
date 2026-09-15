@@ -1237,7 +1237,7 @@ For Azure region support, see https://bluexp.netapp.com/cloud-volumes-global-reg
 
 * link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
-* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launch a Cloud Volumes ONTAP HA pair in Azure]
+* link:task-deploying-otc-azure.html#launch-a-cloud-volumes-ontap-ha-pair-in-azure[Launch a Cloud Volumes ONTAP HA pair in Azure]
 
 * https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
 

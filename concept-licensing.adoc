@@ -1,10 +1,9 @@
 ---
 sidebar: sidebar
 permalink: concept-licensing.html
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, license end of support (EOS) node-based, end of availability (EOA) of node-based
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, end of support, eos, end of availability, eoa, node-based
 summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 ---
-
 = Licensing for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
@@ -52,10 +51,10 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
 ifdef::azure[]
-* link:link:reference-configs-azure.html[Supported configurations in Azure] 
+* link:reference-configs-azure.html[Supported configurations in Azure] 
 endif::azure[]
 ifdef::gcp[]
-* link:link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
+* link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
 endif::gcp[]
 
 ==== Freemium

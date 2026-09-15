@@ -148,7 +148,7 @@ If you purchase an Essentials license from NetApp (BYOL) and you exceed the lice
 
 Similarly, if you have an annual marketplace contract or a private offer with multiple Essentials packages, and your usage exceeds the committed capacity for a deployment and volume type of a specific package, the Console charges overages against a higher-priced Essentials package based on its available capacity. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.
 
-For information about Essentials licenses charging, refer to link:concept-licensing-charging.html#essentialscharging[Essentials packages].
+For information about Essentials licenses charging, refer to <<Essentials packages>>.
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
