@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-getting-started-aws-c2s.html
 keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws secret region, the Console
-summary: You can deploy Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud environments. AWS Secret Cloud and Top Secret Cloud regions are closed regions specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Secret Cloud and Top Secret Cloud region users.
+summary: You can deploy Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud environments. AWS Secret Cloud and Top Secret Cloud regions are closed regions specific to the U.S. Intelligence Community. The instructions on this page only apply to AWS Secret Cloud and Top Secret Cloud region users.
 ---
 = Deploy Cloud Volumes ONTAP in AWS Secret Cloud or AWS Top Secret Cloud
 :hardbreaks:
