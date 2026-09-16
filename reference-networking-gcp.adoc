@@ -153,7 +153,7 @@ A shared VPC enables you to configure and centrally manage virtual networks acro
 
 https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Review the required shared VPC permissions covered in Console agent deployment^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[Review the required shared VPC permissions covered in Console agent deployment^]
 
 === Packet mirroring in VPCs
 
@@ -162,7 +162,7 @@ https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be di
 === Outbound internet access
 Cloud Volumes ONTAP systems require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
-The Console agent also contacts several endpoints for day-to-day operations. For information about the endpoints, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Console agent^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the Console^].
+The Console agent also contacts several endpoints for day-to-day operations. For information about the endpoints, refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Console agent^] and https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html[Prepare networking for using the Console^].
 
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP uses these endpoints to communicate with various services.
@@ -260,7 +260,7 @@ Note that two sets of firewall rules are required for an HA configuration:
 * One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP.
 * Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<rules-for-vpc,Learn more>>.
 
-TIP: Looking for information about the Console agent? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-gcp.html[View firewall rules for the Console agent^]
+TIP: Looking for information about the Console agent? https://docs.netapp.com/us-en/console-setup-admin/reference-ports-gcp.html[View firewall rules for the Console agent^]
 
 ==== Inbound rules
 
@@ -426,8 +426,8 @@ The worker pool must have the following configuration:
 
 If you haven't created a Console agent yet, you should review networking requirements.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[View networking requirements for the Console agent^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-gcp.html[Firewall rules in Google Cloud^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[View networking requirements for the Console agent^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-gcp.html[Firewall rules in Google Cloud^]
 
 === Network configurations to support Console agent proxy 
 
@@ -437,7 +437,7 @@ You can use the proxy servers configured for the Console agent to enable outboun
 
 * *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the Console agent proxy. When setting up a transparent proxy, the Console agent administrator needs to provide only a root CA certificate for connectivity from Cloud Volumes ONTAP, not the HTTP address of the proxy server. Make sure that you obtain and upload the same root CA certificate to your Cloud Volumes ONTAP system using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
 
-For information about configuring proxy servers for the Console agent, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Console agent to use a proxy server^]. 
+For information about configuring proxy servers for the Console agent, refer to the https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html[Configure a Console agent to use a proxy server^]. 
 
 .Configure network tags for Cloud Volumes ONTAP in Google Cloud
 During the transparent proxy configuration of the Console agent, the administrator adds a network tag for Google Cloud. You need to obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary for the proxy server to function correctly.

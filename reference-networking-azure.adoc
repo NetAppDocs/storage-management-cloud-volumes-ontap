@@ -22,7 +22,7 @@ The following networking requirements must be met in Azure.
 === Outbound internet access
 Cloud Volumes ONTAP systems require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
-The Console agent also contacts several endpoints for day-to-day operations. For information about endpoints, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Console agent^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the Console^].
+The Console agent also contacts several endpoints for day-to-day operations. For information about endpoints, refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Console agent^] and https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html[Prepare networking for using the Console^].
 
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP uses these endpoints to communicate with various services. 
@@ -258,7 +258,7 @@ You must use a _dedicated_ resource group for each Cloud Volumes ONTAP HA pair t
 The Console experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
 === Security group rules
-The Console creates Azure security groups that include the inbound and outbound rules for Cloud Volumes ONTAP to operate successfully. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html[View security group rules for the Console agent^].
+The Console creates Azure security groups that include the inbound and outbound rules for Cloud Volumes ONTAP to operate successfully. https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html[View security group rules for the Console agent^].
 
 The Azure security groups for Cloud Volumes ONTAP require the appropriate ports to be open for internal communication between the nodes. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].
 
@@ -478,9 +478,9 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 If you haven't created a Console agent yet, you should review networking requirements for the Console agent as well.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[View networking requirements for the Console agent^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html[View networking requirements for the Console agent^]
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html[Security group rules in Azure^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html[Security group rules in Azure^]
 
 .Related link
 

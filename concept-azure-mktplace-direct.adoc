@@ -50,5 +50,5 @@ link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported num
 
 * Azure marketplace direct deployment: link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace]
 * Deployment through the Console: link:task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Azure]
-* https://docs.netapp.com/us-en/bluexp-family/index.html[NetApp Console documentation^]
+* link:https://docs.netapp.com/us-en/console-family/index.html[NetApp Console documentation^]
 

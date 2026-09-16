@@ -20,7 +20,7 @@ For annual or longer-term commitments, NetApp recommends that you contact your N
 
 For information about the EOA and EOS, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 
 == Conversion in a standard mode deployment
