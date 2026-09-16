@@ -267,7 +267,7 @@ In Cloud Volumes ONTAP running versions 9.13.0 and above, you cannot upgrade wit
 c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the disk count per node for the c4, m4, or r4 EC2 instance you're running is below the max disk allowance per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. 
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance[Check disk and tiering limits by EC2 instance^]
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html[Change the EC2 instance type for Cloud Volumes ONTAP^]
+link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html[Change the EC2 instance type for Cloud Volumes ONTAP^]
 
 If you can't change the instance type, follow the steps in <<Enable enhanced networking>>. 
 
@@ -332,7 +332,7 @@ These steps describe how to use ONTAP System Manager for version 9.3 and later.
 
 . On the Cloud Volumes ONTAP system, click the *Aggregates* tab.
 
-. On the required aggregate tile, click the image:icon-action.png[] icon, and then select *View Aggregate details*.
+. On the required aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then select *View Aggregate details*.
 +
 image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field when you view information for an aggregate.]
 
@@ -440,7 +440,7 @@ Two paths are available. The correct path depends on your Console agent version.
 *	`/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. On the system, click the image:icon-action.png[] icon, and then click *Update Cloud Volumes ONTAP*.
+. On the system, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then click *Update Cloud Volumes ONTAP*.
 
 . On the Update Cloud Volumes ONTAP version page, enter the URL, and then click *Change Image*.
 +
@@ -478,5 +478,5 @@ The value for _maxDownloadSessions_ can be 1 or any integer greater than 1. If t
 
 Note that 32 is an example value. The value that you should use depends on your NAT configuration and the number of sessions that you can have simultaneously.
 
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
+https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
 endif::gcp[]

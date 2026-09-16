@@ -25,12 +25,12 @@ CAUTION: This process might be disruptive to CIFS clients. Data that is not comm
 
 .Before you begin
 
-You need to create a Console agent before you can change the Console settings. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
+You need to create a Console agent before you can change the Console settings. https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
 
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]

@@ -25,7 +25,7 @@ You have several ways to create a new volume:
 
 A few notes about volume provisioning:
 
-* When you create an iSCSI volume, the Console automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-connect-lun.html[use the IQN to connect to the LUN from your hosts^].
+* When you create an iSCSI volume, the Console automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-connect-lun.html[use the IQN to connect to the LUN from your hosts^].
 
 * You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
 
@@ -59,7 +59,7 @@ image:screenshot_add_volume_button.png[A screenshot of the Add Volume button und
 
 .Specific aggregate
 --
-. On the *Aggregates* tab, go to the required the aggregate and click the image:icon-action.png[] icon.
+. On the *Aggregates* tab, go to the required the aggregate and click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon.
 . Select *Add Volume*. 
 image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
 
@@ -141,7 +141,7 @@ endif::gcp[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[NetApp Console automation docs^].
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/console-automation/index.html[NetApp Console automation documentation^].
 +
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 
@@ -163,13 +163,13 @@ Host initiator (IQN):: iSCSI targets connect to the network through standard Eth
 .. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
 +
 ifdef::aws[]
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws[Sizing your system in AWS^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws[Sizing your system in AWS^]
 endif::aws[]
 ifdef::azure[]
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^]
 endif::azure[]
 ifdef::gcp[]
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp[Sizing your system in Google Cloud^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp[Sizing your system in Google Cloud^]
 endif::gcp[]
 
 .. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].

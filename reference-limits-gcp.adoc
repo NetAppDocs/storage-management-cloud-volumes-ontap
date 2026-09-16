@@ -21,7 +21,7 @@ The maximum system capacity for a Cloud Volumes ONTAP system is determined by it
 
 NetApp doesn't support exceeding the system capacity limit. If you reach the licensed capacity limit, the NetApp Console displays an action required message and no longer allows you to add additional disks.
 
-For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. You can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to the disk limits below for more details.
+For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. You can reach the capacity limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to the disk limits below for more details.
 
 [[cap-license-gcp]]
 .Capacity limit for capacity-based licenses
@@ -103,7 +103,7 @@ Some configurations enable you to create additional storage VMs (SVMs) for Cloud
 
 These are the tested limits. Configuring more storage VMs is not supported.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create additional storage VMs^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create additional storage VMs^].
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -184,4 +184,4 @@ Storage VMs that you configure for disaster recovery (DR) don't require an add-o
 
 After a node reboots, the partner must sync data before it can return the storage. The time that it takes to resync data depends on the amount of data written by clients while the node was down and the data write speed during the time of giveback.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-google-cloud.html[Learn how storage works in a Cloud Volumes ONTAP HA pair running in Google Cloud^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-google-cloud.html[Learn how storage works in a Cloud Volumes ONTAP HA pair running in Google Cloud^].

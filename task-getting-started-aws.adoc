@@ -34,10 +34,10 @@ a| Verify the roles are correctly configured.
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
 a| Refer to the Console setup guide:
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
 
 a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
@@ -71,7 +71,7 @@ a| Private mode supports only advanced deployment. Before beginning the deployme
 
 .Related links
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html[Create a Console agent for AWS^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html[Create a Console agent from the AWS Marketplace^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Install and set up a Console agent on premises^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[AWS permissions for the Console agent^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html[Create a Console agent for AWS^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-marketplace.html[Create a Console agent from the AWS Marketplace^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html[Install and set up a Console agent on premises^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[AWS permissions for the Console agent^]

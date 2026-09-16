@@ -54,17 +54,17 @@ The following sections describe how to get started with each of these consumptio
 Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes ONTAP systems in any cloud provider.
 
 [NOTE]
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 .Steps
 
 . https://www.netapp.com/forms/sales-contact/[Contact NetApp Sales to obtain a license^]
 
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to the NetApp Console^]
+. https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to the NetApp Console^]
 +
 The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console adds the licenses.
 +
-Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the Console].
+Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license[manually add the license to the Console].
 
 . On the *Systems* page, click *Add System* and follow the steps.
 
@@ -98,7 +98,7 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-gcp.html[View step-by-step instructions to launch Cloud Volumes ONTAP in Google Cloud].
 
-TIP: You can manage the Google Cloud Marketplace subscriptions associated with your accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Learn how to manage your Google Cloud credentials and subscriptions^]
+TIP: You can manage the Google Cloud Marketplace subscriptions associated with your accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html[Learn how to manage your Google Cloud credentials and subscriptions^]
 
 === Annual contract
 

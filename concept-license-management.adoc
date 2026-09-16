@@ -16,7 +16,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 Bring-Your-Own License (BYOL) is a Cloud Volumes ONTAP charging model in which you pay for capacity consumption through a license that you purchase directly from NetApp instead of through marketplace subscriptions. NetApp supports BYOL for standard and private mode deployments and for capacity-based and node-based licenses, but BYOL is subject to availability restrictions. Each BYOL license is tied to your company and specific NetApp Support Site credentials, and you can manage BYOL licenses in the *Licensing and subscriptions* section of NetApp Console under *Direct licenses*.
 
 [NOTE]
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^]. NetApp is phasing out node-based licensing in favor of capacity-based licensing, and they remain available in a few older systems, such as USPS customers and deployments in China. For more information, see https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^].
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing for standard deployments with valid marketplace subscriptions. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^]. NetApp is phasing out node-based licensing in favor of capacity-based licensing, and they remain available in a few older systems, such as USPS customers and deployments in China. For more information, see https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^].
 
 == BYOL deployment modes
 
@@ -92,6 +92,6 @@ If you don't renew the license in time, the Cloud Volumes ONTAP system shuts dow
 .Related links
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]
-For information about uploading BYOL licenses in private mode, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses].
+For information about uploading BYOL licenses in private mode, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses].

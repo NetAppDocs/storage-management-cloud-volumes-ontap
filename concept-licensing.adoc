@@ -1,10 +1,9 @@
 ---
 sidebar: sidebar
 permalink: concept-licensing.html
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, license end of support (EOS) node-based, end of availability (EOA) of node-based
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, end of support, eos, end of availability, eoa, node-based
 summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 ---
-
 = Licensing for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
@@ -17,7 +16,7 @@ Several licensing models are available for Cloud Volumes ONTAP. Each option enab
 
 You have options to purchase or renew your licenses and subscriptions from cloud marketplaces or through NetApp (Bring-Your-Own License or BYOL). The marketplace offers you annual subscriptions and pay-as-you-go (PAYGO) options. For information, refer to link:concept-license-management.html[Learn more about capacity-based licenses for Cloud Volumes ONTAP].  
 
-BYOL licenses are available for purchase from NetApp and can be used for any cloud provider. For more information about the availability of BYOL licenses, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+BYOL licenses are available for purchase from NetApp and can be used for any cloud provider. For more information about the availability of BYOL licenses, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 == Licensing overview
 
@@ -52,10 +51,10 @@ The following capacity-based packages are available for Cloud Volumes ONTAP. For
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
 ifdef::azure[]
-* link:link:reference-configs-azure.html[Supported configurations in Azure] 
+* link:reference-configs-azure.html[Supported configurations in Azure] 
 endif::azure[]
 ifdef::gcp[]
-* link:link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
+* link:reference-configs-gcp.html[Supported configurations in Google Cloud^]
 endif::gcp[]
 
 ==== Freemium
@@ -90,16 +89,16 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
 * Includes unlimited volume backups using NetApp Backup and Recovery, but only for Cloud Volumes ONTAP systems that use the Professional package.
 +
-NOTE: A pay-as-you-go (PAYGO) subscription is required for Backup and Recovery, however no charges will be incurred for using this service. For more information on setting up licensing for Backup and Recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for Backup and Recovery^].
+NOTE: A pay-as-you-go (PAYGO) subscription is required for Backup and Recovery, however no charges will be incurred for using this service. For more information on setting up licensing for Backup and Recovery, refer to https://docs.netapp.com/us-en/data-services-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for Backup and Recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
 === Availability of capacity-based licenses
 The availability of the PAYGO and BYOL licenses for Cloud Volumes ONTAP systems requires the Console agent to be up and running.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap[Learn about Console agents^].
+https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap[Learn about Console agents^].
 
 [NOTE]
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].
 
 === How to get started
 

@@ -30,13 +30,13 @@ Backup and Recovery is independent from Cloud Volumes ONTAP by design. Backup an
 
 . If you enabled Data Classification on this system and no other systems use this service, then you need to delete the instance for the service.
 +
-https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance[Learn more about the Data Classification instance^].
+https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance[Learn more about the Data Classification instance^].
 
 . Delete the Cloud Volumes ONTAP system.
 
 .. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system that you want to delete.
 
-.. On the upper right of the Console, click the image:icon-action.png[] icon, and select *Delete*.
+.. On the upper right of the Console, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and select *Delete*.
 .. Type the name of the system you want to delete, and then click *Delete*. It can take up to five minutes to delete a system.
 
 [NOTE]
