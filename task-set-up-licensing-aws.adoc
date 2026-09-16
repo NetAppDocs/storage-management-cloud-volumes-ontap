@@ -35,7 +35,7 @@ If you are an existing customer with NIS subscriptions associated with the AWS a
 . On the AWS tab, select the standalone subscription and click the options icon image:screenshot_gallery_options.gif[kabob icon].
 . On the Edit configuration window, select the subscription number of the standalone listing in the *AWS account credentials* field.
 . Click *Configure*. You can see the subscription as the preferred option for your Cloud Volumes ONTAP billing in AWS. 
-. When deploying a new Cloud Volumes ONTAP system, select the Essentials package to bill through the standalone subscription. For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP in AWS with Quick create^].
+. When deploying a new Cloud Volumes ONTAP system, select the Essentials package to bill through the standalone subscription. For information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with default values in AWS^].
 
 Repeat the same steps for the NIS subscription on the *Data services* tab to use the NIS subscription for your data services. When deploying a new Cloud Volumes ONTAP system, select the Professional package to bill through the NIS subscription.
 
