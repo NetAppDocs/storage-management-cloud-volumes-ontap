@@ -30,7 +30,7 @@ Backup and Recovery is independent from Cloud Volumes ONTAP by design. Backup an
 
 . If you enabled Data Classification on this system and no other systems use this service, then you need to delete the instance for the service.
 +
-https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance[Learn more about the Data Classification instance^].
+https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance[Learn more about the Data Classification instance^].
 
 . Delete the Cloud Volumes ONTAP system.
 

@@ -47,7 +47,7 @@ image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Vol
 
 If you disabled Azure Private Links and the Console agent uses a proxy server, you must enable direct API traffic.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Console agent^]
+https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Console agent^]
 
 == Work with Azure Private Links
 

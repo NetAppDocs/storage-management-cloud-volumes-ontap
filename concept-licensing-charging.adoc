@@ -21,7 +21,7 @@ Capacity-based licensing packages are available with the following consumption m
 
 * *BYOL*: Bring your own license (BYOL). A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 [NOTE]
-NetApp has restricted the purchase, extension, and renewal of BYOL licensing, and has limited availability in specific scenarios, such as in private mode deployments. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing, and has limited availability in specific scenarios, such as in private mode deployments. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 ifdef::azure[]
 
@@ -56,7 +56,7 @@ For information about converting node-based licenses to capacity-based, see
 
 Charging in Cloud Volumes ONTAP is based on a number of factors, such as packages and volume types. Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
-For details about pricing, go to the https://bluexp.netapp.com/pricing/[NetApp Console website^].
+For details about pricing, go to the link:https://www.netapp.com/pricing/[NetApp pricing website^].
 
 === Storage VMs
 
@@ -148,7 +148,7 @@ If you purchase an Essentials license from NetApp (BYOL) and you exceed the lice
 
 Similarly, if you have an annual marketplace contract or a private offer with multiple Essentials packages, and your usage exceeds the committed capacity for a deployment and volume type of a specific package, the Console charges overages against a higher-priced Essentials package based on its available capacity. After that capacity is exhausted, the remaining overage is billed at marketplace on-demand (PAYGO) hourly rates and added to your monthly bill.
 
-For information about Essentials licenses charging, refer to link:concept-licensing-charging.html#essentialscharging[Essentials packages].
+For information about Essentials licenses charging, refer to <<Essentials packages>>.
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
