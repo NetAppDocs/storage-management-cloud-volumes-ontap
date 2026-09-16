@@ -63,13 +63,13 @@ a| Deploy Cloud Volumes ONTAP from the Console
 a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in Google Cloud.
 a| Refer to: 
 
-* link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with default values in Google Cloud]
+* link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create in Google Cloud]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
 a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
-* link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with default values in Google Cloud]
+* link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create in Google Cloud]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
 |===
