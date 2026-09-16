@@ -4,5 +4,5 @@ You can now use Quick create to deploy Cloud Volumes ONTAP in Azure for both sin
 
 .Related links
 
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP in Azure with Quick create^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html[Deploy Cloud Volumes ONTAP with default values in Azure^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html[Deploy Cloud Volumes ONTAP using advanced options in Azure^]
