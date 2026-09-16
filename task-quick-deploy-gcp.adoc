@@ -5,7 +5,7 @@ keywords: google cloud quick deploy, quick deploy, GCP, single screen deployment
 summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in Google Cloud quickly.
 ---
 
-= Deploy Cloud Volumes ONTAP with Quick create in Google Cloud
+= Deploy Cloud Volumes ONTAP in Google Cloud with Quick create
 :hardbreaks:
 :nofooter:
 :icons: font

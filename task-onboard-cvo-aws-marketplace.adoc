@@ -182,7 +182,7 @@ After the agent is ready, create your first Cloud Volumes ONTAP system in AWS.
 . Start the Cloud Volumes ONTAP system creation workflow.
 . Complete the system configuration.
 
-For detailed system deployment instructions, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS^].
+For detailed system deployment instructions, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP in AWS with Quick create^].
 
 == Troubleshooting and recovery
 
