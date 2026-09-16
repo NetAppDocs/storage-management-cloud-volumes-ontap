@@ -25,7 +25,7 @@ CAUTION: This process might be disruptive to CIFS clients. Data that is not comm
 
 .Before you begin
 
-You need to create a Console agent before you can change the Console settings. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
+You need to create a Console agent before you can change the Console settings. https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
 
 .Steps
 

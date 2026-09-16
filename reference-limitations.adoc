@@ -55,7 +55,7 @@ The maximum number of concurrent SnapMirror or SnapVault transfers for Cloud Vol
 
 You shouldn't use your cloud provider's snapshots as part of your backup and recovery plan for Cloud Volumes ONTAP data. You should always use ONTAP Snapshot copies or third-party backup solutions to back up and restore data hosted on Cloud Volumes ONTAP.
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn how to use NetApp Backup and Recovery to back up and restore ONTAP data^].
+https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[Learn how to use NetApp Backup and Recovery to back up and restore ONTAP data^].
 
 NOTE: ONTAP consistency points in the WAFL file system determine data consistency. Only ONTAP can quiesce the WAFL file system to make a crash-consistent backup.
 
