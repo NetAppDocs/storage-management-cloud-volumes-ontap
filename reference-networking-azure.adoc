@@ -262,7 +262,7 @@ The Console creates Azure security groups that include the inbound and outbound 
 
 The Azure security groups for Cloud Volumes ONTAP require the appropriate ports to be open for internal communication between the nodes. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].
 
-We do not recommend modifying the predefined security groups or using custom security groups. However, if you must, note that the deployment process requires the Cloud Volumes ONTAP system to have full access within its own subnet. After the deployment is complete, if you decide to modify the network security group, ensure to keep the cluster ports and HA network ports open. This ensures seamless communication within the Cloud Volumes ONTAP cluster (any-to-any communication between the nodes).
+We do not recommend modifying the predefined security groups or using custom security groups. However, if you must, note that the deployment process requires the Cloud Volumes ONTAP system to have full access within its own subnet. After the deployment is complete, if you decide to modify the network security group, ensure to keep the cluster ports and HA network ports open, because the HA networking relies on unrestricted communication between the two nodes. Also, the IP addresses of the nodes are automatically defined during deployment. This ensures seamless communication within the Cloud Volumes ONTAP cluster (any-to-any communication between the nodes). 
 
 ==== Inbound rules for single-node systems
 
@@ -486,3 +486,5 @@ If you haven't created a Console agent yet, you should review networking require
 
 * link:task-verify-autosupport.html[Verify AutoSupport setup for Cloud Volumes ONTAP]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].
+
+//BLUEXPDOC-1462

@@ -5,7 +5,7 @@ keywords: azure quick deploy, quick deploy, azure, single screen deployment Azur
 summary: You can deploy Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in Azure quickly.
 ---
 
-= Deploy Cloud Volumes ONTAP with default values in Azure
+= Deploy Cloud Volumes ONTAP with Quick create in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
