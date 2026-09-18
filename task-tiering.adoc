@@ -122,12 +122,12 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Console agent^]
+The custom role includes the permissions by default. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[View Azure permission for the Console agent^]
 
 //=== Requirements to tier data for an Azure tenant
 //You can use the same Console agent to tier data for multiple Azure tenants. To enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP system is created by one tenant and the Console agent is created by another, ensure the following:
 
-//* You have entered the credentials for both the tenants in the Console for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for the Console^].
+//* You have entered the credentials for both the tenants in the Console for cross-validation. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for the Console^].
 //* You have enabled virtual network (VNet) peering between the two tenants https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[on the Azure portal^]. This is required so that the Console agent can access the storage account for the other tenant.
 //* You have link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[disabled Azure Private Links] to use the subnet service endpoint.
 
@@ -253,7 +253,7 @@ Cloud Volumes ONTAP can tier data from a data protection volume to a capacity ti
 +
 image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering option when replicating a volume.]
 +
-For help with replicating data, refer to https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data to and from the cloud^].
+For help with replicating data, refer to https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html[Replicating data to and from the cloud^].
 
 == Change the storage class for tiered data
 
@@ -282,7 +282,7 @@ The ratio is important for disaster recovery scenarios because as data is read f
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]

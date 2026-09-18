@@ -107,7 +107,7 @@ By default, a volume automatically grows to a maximum size when it's out of spac
 If you need to resize your volume, you can do it from ONTAP System Manager in the Console.
 
 .Steps
-. Click the System Manager view to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
+. Select the System Manager view to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#get-started-with-system-manager[Get started with System Manager].
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
 . Click the options icon image:screenshot_gallery_options.gif[kabob icon].
@@ -198,7 +198,7 @@ For instructions, refer to the link:http://docs.netapp.com/ontap-9/topic/com.net
 
 The Console might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that you need to correct the issue yourself. If this happens, you need to identify how to correct the issue and then move one or more volumes.
 
-TIP: The Console displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering^].
+TIP: The Console displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#change-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering^].
 
 .Steps
 
@@ -224,7 +224,7 @@ For example, the advanced information should say something similar to the follow
 
 .. In the Cloud Volumes ONTAP system, click the *Aggregates tab*.
 
-.. On the aggregate tile, click the image:icon-action.png[] icon and then click *View aggregate details*.
+.. On the aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then click *View aggregate details*.
 
 .. Under the *Overview* tab of the *Aggregate Details* screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
@@ -266,11 +266,11 @@ Moving a volume is necessary to avoid capacity issues; however, the Console cann
 
 . Drag and drop the source system to the target system to perform a one-time data replication of the volume.
 +
-For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data between systems^].
+For information, refer to link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html[Replicating data between systems^].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
+For information, refer to link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
 
 . Configure the volume for data access.
 +
@@ -300,13 +300,13 @@ Moving two or more volumes is necessary to avoid capacity issues; however, the C
 
 .. On Cloud Volumes ONTAP system, click the *Aggregates tab*.
 
-.. On the required aggregate tile, click the image:icon-action.png[] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
+.. On the required aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
 +
 image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the image:icon-action.png[] icon > *Add Disks*.
+.. Select the aggregate, then click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon > *Add Disks*.
 
 .. Select the number of disks to add, and then click *Add*.
 

@@ -23,6 +23,6 @@ Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
 
 == Google Private Service Connect limitations
 
-If you leverage https://cloud.google.com/vpc/docs/private-service-connect[Google Private Service Connect^] within the VPC that you are deploying Cloud Volumes ONTAP into, you will need to implement DNS records that forward traffic to the required https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[API Endpoints^].
+If you leverage https://cloud.google.com/vpc/docs/private-service-connect[Google Private Service Connect^] within the VPC that you are deploying Cloud Volumes ONTAP into, you will need to implement DNS records that forward traffic to the required https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[API Endpoints^].
 
 Tiering data from Cloud Volumes ONTAP into a Google Cloud Storage bucket is not currently supported with Private Service Connect.

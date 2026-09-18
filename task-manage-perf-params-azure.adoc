@@ -17,7 +17,7 @@ You can optimize Cloud Volumes ONTAP performance in Azure by configuring the IOP
 
 Premium SSD v2 disks support workloads that need fast, reliable performance with low latency, high IOPS, and high throughput. By adjusting the IOPS and throughput settings, you can tailor the performance of the aggregates in your deployment. For more information about Premium SSD v2 disks, refer to https://learn.microsoft.com/en-us/azure/virtual-machines/disks-deploy-premium-v2?tabs=azure-cli[Deploy a Premium SSD v2 disk].
 
-Use the APIs to automate the process for modifying Premium SSD v2 disk settings. For information about running Cloud Volumes ONTAP API calls, refer to https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
+Use the APIs to automate the process for modifying Premium SSD v2 disk settings. For information about running Cloud Volumes ONTAP API calls, refer to https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
 
 .About this task
 
@@ -62,8 +62,8 @@ After the API returns a response indicating the operation is successful, verify 
 
 .Related information
 
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use REST APIs for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/console-automation/cm/prepare.html[Prepare to use the API^]
+* https://docs.netapp.com/us-en/console-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/console-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/console-automation/platform/use_rest_apis.html[Use REST APIs for Cloud Volumes ONTAP^]
 * https://learn.microsoft.com/en-us/azure/virtual-machines/use-premium-ssd-v2-with-availability-set?tabs=CLI[Use Premium SSD v2 with VMs in availability set^]

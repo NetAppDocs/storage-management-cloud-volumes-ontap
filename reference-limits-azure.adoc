@@ -91,7 +91,7 @@ The limits do not include the root disk, core disk, and VNVRAM.
 * The 896 TiB disk-based limit that's listed for single-node systems with certain VM sizes is the _tested_ limit.
 
 === Limits for different deployment modes of capacity-based licensing
-The following disk limits apply to Cloud Volumes ONTAP systems using a capacity-based licensing package. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn about Cloud Volumes ONTAP licensing options^]. 
+The following disk limits apply to Cloud Volumes ONTAP systems using a capacity-based licensing package. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Learn about Cloud Volumes ONTAP licensing options^]. 
 
 [NOTE]
 For maximum system capacity and data tiering capacity limits for single node, HA pairs in a single availability zone with page blobs, and HA pairs in a single and multiple availability zones with shared managed disks, refer to <<cap-license-azure>>.
@@ -207,7 +207,7 @@ For maximum system capacity and data tiering capacity limits for single node, HA
 
 The following disk limits apply to Cloud Volumes ONTAP systems that use node-based licensing. Node-based licensing is the previous generation model that lets you license Cloud Volumes ONTAP by node. Node-based licensing is still available for existing customers.
 
-You can purchase multiple node-based licenses for a Cloud Volumes ONTAP BYOL single node or HA pair system to allocate more than 368 TiB of capacity, up to the maximum tested and supported system capacity limit of 2 PiB. Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn how to add additional system licenses to Cloud Volumes ONTAP^]. Cloud Volumes ONTAP supports up to the maximum tested and supported system capacity of 2 PiB, and crossing the 2 PiB limit results in an unsupported system configuration. 
+You can purchase multiple node-based licenses for a Cloud Volumes ONTAP BYOL single node or HA pair system to allocate more than 368 TiB of capacity, up to the maximum tested and supported system capacity limit of 2 PiB. Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Learn how to add additional system licenses to Cloud Volumes ONTAP^]. Cloud Volumes ONTAP supports up to the maximum tested and supported system capacity of 2 PiB, and crossing the 2 PiB limit results in an unsupported system configuration. 
 
 ==== Single node 
 Single node has two node-based licensing options: PAYGO Premium and BYOL.
@@ -379,7 +379,7 @@ Some configurations enable you to create additional storage VMs (SVMs) for Cloud
 
 These are the tested limits. Setting up more storage VMs is not supported.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html[Learn how to create additional storage VMs^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-azure.html[Learn how to create additional storage VMs^].
 
 [cols=2*,options="header,autowidth"]
 |===

@@ -15,6 +15,8 @@ summary: Verify that you have completed the prerequisites for deploying Cloud Vo
 [.lead]
 For deploying Cloud Volumes ONTAP, you first need to know about your AWS subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your AWS account. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
 
+You can onboard Cloud Volumes ONTAP in AWS using either the AWS Marketplace or the NetApp Console. The following table provides a high-level overview of the tasks you need to complete to deploy Cloud Volumes ONTAP in AWS. The onboarding from AWS Marketplace is a simplified experience that automates the Console agent deployment and subscription association. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP in AWS Marketplace].
+
 [cols="20,35,25,25",options="header"]
 |===
 a| Task
@@ -25,10 +27,10 @@ a| Notes for private mode deployments
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
 a| Refer to the Console setup guide:
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
 
 a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
@@ -50,20 +52,19 @@ a| Similar steps apply to private mode deployments.
 a| Deploy Cloud Volumes ONTAP from the Console
 a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in AWS.
 a| 
-* link:task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create]
+* link:task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS]
 * link:task-deploying-otc-aws.html[Deploy Cloud Volumes ONTAP using advanced options] 
 a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
 
 * link:concept-license-management.html[License management for node-based BYOL]
 * link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
-* link:task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create]
 * link:task-deploying-otc-aws.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
 |===
 
 .Related links
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html[Create a Console agent for AWS^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html[Create a Console agent from the AWS Marketplace^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Install and set up a Console agent on premises^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[AWS permissions for the Console agent^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html[Create a Console agent for AWS^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-marketplace.html[Create a Console agent from the AWS Marketplace^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html[Install and set up a Console agent on premises^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[AWS permissions for the Console agent^]

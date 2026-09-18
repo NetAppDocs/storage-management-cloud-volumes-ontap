@@ -100,7 +100,7 @@ If the status of the http-https category is `OK` it means that AutoSupport is co
 
 . If the status is still failed after verification, SSH to the Console agent.
 +
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Console agent^]
+https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Console agent^]
 
 . Go to `/opt/application/netapp/cloudmanager/docker_occm/data/`.
 . Open the proxy configuration file `squid.conf`. This is the structure of the file:

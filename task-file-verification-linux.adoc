@@ -19,7 +19,7 @@ Verification of an exported VHD file signature on Linux includes validating the 
 
 . Download the Azure image file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest (.sig) file, public key certificate (.pem) file, and chain certificate (.pem) file.
 +
-Refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure image digest file^] for more information.
+Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure image digest file^] for more information.
 
 . Verify the chain of trust.
 +

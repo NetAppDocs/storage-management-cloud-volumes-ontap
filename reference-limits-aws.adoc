@@ -21,7 +21,7 @@ The maximum system capacity includes disk-based storage plus object storage used
 
 NetApp doesn't support exceeding the system capacity limit. If you reach the licensed capacity limit, the NetApp Console displays an action required message and no longer allows you to add additional disks.
 
-For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to capacity and disk limits below for more details.
+For some configurations, disk limits prevent you from reaching the capacity limit by using disks alone. In those cases, you can reach the capacity limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to capacity and disk limits below for more details.
 
 [[cap-license-aws]]
 .Capacity limit for capacity-based licenses
@@ -79,7 +79,7 @@ Notes:
 
 . The maximum aggregate size depends on its disks and does not include object storage you use for data tiering.
 
-. If you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks, which provides up to 128 TiB of capacity. By default, Cloud Volumes ONTAP 9.11.0 and later systems have Amazon EBS Elastic Volumes enabled when you use gp3 or io1 disks. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes^]
+. If you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks, which provides up to 128 TiB of capacity. By default, Cloud Volumes ONTAP 9.11.0 and later systems have Amazon EBS Elastic Volumes enabled when you use gp3 or io1 disks. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes^]
 
 . All disks in an aggregate must be the same size.
 
@@ -99,7 +99,7 @@ The limits do not include the boot disk and root disk.
 
 === Limits for different deployment modes of capacity-based licensing
 
-The following disk limits apply to Cloud Volumes ONTAP systems that use a capacity-based licensing package. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn about Cloud Volumes ONTAP licensing options^]
+The following disk limits apply to Cloud Volumes ONTAP systems that use a capacity-based licensing package. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Learn about Cloud Volumes ONTAP licensing options^]
 
 [NOTE]
 For maximum system capacity and data tiering capacity limits for single node and HA configurations, refer to <<cap-license-aws>>.
@@ -142,7 +142,7 @@ a|
 
 The following disk limits apply to Cloud Volumes ONTAP systems that use node-based licensing, which is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. Node-based licensing is still available for existing customers.
 
-You can purchase multiple node-based licenses for a Cloud Volumes ONTAP BYOL single node or HA pair system to allocate more than 368 TiB of capacity, up to the maximum tested and supported system capacity limit of 2 PiB. Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn how to add additional system licenses to Cloud Volumes ONTAP^]. Though Cloud Volumes ONTAP supports up to the maximum tested and supported system capacity of 2 PiB, crossing the 2 PiB limit results in an unsupported system configuration. 
+You can purchase multiple node-based licenses for a Cloud Volumes ONTAP BYOL single node or HA pair system to allocate more than 368 TiB of capacity, up to the maximum tested and supported system capacity limit of 2 PiB. Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Learn how to add additional system licenses to Cloud Volumes ONTAP^]. Though Cloud Volumes ONTAP supports up to the maximum tested and supported system capacity of 2 PiB, crossing the 2 PiB limit results in an unsupported system configuration. 
 
 AWS Secret Cloud and Top Secret Cloud regions support purchases of multiple node-based licenses starting with Cloud Volumes ONTAP 9.12.1. 
 
@@ -229,7 +229,7 @@ a|
 
 Some configurations enable you to create additional storage VMs (SVMs) for Cloud Volumes ONTAP.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-aws.html[Learn how to create additional storage VMs^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-aws.html[Learn how to create additional storage VMs^].
 
 [cols="40,60",width=100%,options="header"]
 |===

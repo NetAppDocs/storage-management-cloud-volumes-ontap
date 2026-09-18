@@ -24,7 +24,7 @@ You need the organization or account admin privileges of the NetApp Console to m
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]

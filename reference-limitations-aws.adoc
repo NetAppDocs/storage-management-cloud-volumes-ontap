@@ -43,4 +43,4 @@ Cloud Volumes ONTAP does not release CPUs when idle, so https://aws.amazon.com/c
 
 After a node reboots, the partner must sync data before it can return the storage. The time that it takes to resync data depends on the amount of data written by clients while the node was down and the data write speed during the time of giveback.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html[Learn how storage works in a Cloud Volumes ONTAP HA pair running in AWS^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha.html[Learn how storage works in a Cloud Volumes ONTAP HA pair running in AWS^].

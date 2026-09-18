@@ -17,7 +17,7 @@ A storage VM is a virtual machine running within ONTAP that provides storage and
 
 To create and manage additional data-serving storage VMs in Azure, you should use the APIs. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. When creating the storage VMs, the NetApp Console configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communications from the storage VM.
 
-For information about running Cloud Volumes ONTAP API calls, refer to https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
+For information about running Cloud Volumes ONTAP API calls, refer to https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
 
 == Supported number of storage VMs
 
@@ -40,7 +40,7 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 .Before you begin
 
-The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
+The Console agent requires specific permissions to create storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
 
 === Single-node system
 
@@ -76,7 +76,7 @@ Using the APIs, you can rename and delete storage VMs in both single node and HA
 
 .Before you begin
 
-The Console agent requires specific permissions to manage storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
+The Console agent requires specific permissions to manage storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
 
 === Rename a storage VM
 
@@ -123,7 +123,7 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 
 .Related information
 
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use the REST APIs for NetApp Console^]
+* https://docs.netapp.com/us-en/console-automation/cm/prepare.html[Prepare to use the API^]
+* https://docs.netapp.com/us-en/console-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/console-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/console-automation/platform/use_rest_apis.html[Use the REST APIs for NetApp Console^]

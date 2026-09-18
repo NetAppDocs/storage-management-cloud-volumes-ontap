@@ -61,7 +61,7 @@ You need to be assigned the organization or account admin privileges to modify t
 
 .Steps
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png[] icon for the required Console agent and select *Edit Console agent*.
+. Click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the required Console agent and select *Edit Console agent*.
 . Under *Force user credentials*, select the *Enable/Disable* check box. By default, authentication is disabled.
 +
 [NOTE]

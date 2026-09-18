@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-limitations-azure.html
-keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, vm, flash cache; limitations in HA deployment in MAZ, SAZ, multiple availability xone, single availability zone Azure CVO, PSSDv2, premium SSD v2 limitation in CVO, flash cache limitation in CVO
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, vm, flash cache, limitations in HA deployment in MAZ, SAZ, multiple availability xone, single availability zone Azure CVO, PSSDv2, premium SSD v2 limitation in CVO, flash cache limitation in CVO
 summary: These known limitations are specific to Cloud Volumes ONTAP in Microsoft Azure.
 ---
 
