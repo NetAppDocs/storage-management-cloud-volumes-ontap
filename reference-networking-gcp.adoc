@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference-networking-gcp.html
-keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project
-summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project; private mode or in a project protected by VPC Service Controls
+summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. You learn about networking requirements, private IP addresses, VPCs, subnets, packet mirroring, firewall rules, and HA configurations for CVO and also Console agent requirements.
 ---
 
 = Set up Google Cloud networking for Cloud Volumes ONTAP
@@ -393,7 +393,7 @@ Communication from the HA nodes to the HA mediator takes place over port 3260 (i
 
 NOTE: To enable high write speed for new Google Cloud HA pair deployments, a maximum transmission unit (MTU) of at least 8,896 bytes is required for VPC-1, VPC-2, and VPC-3. If you choose to upgrade existing VPC-1, VPC-2, and VPC-3 to an MTU of 8,896 bytes, you must shutdown all existing HA systems using these VPCs during the configuration process.
 
-=== Infrastructure Manager configuration in private mode or VPC Service Controls deployments
+=== Infrastructure Manager configuration in private mode or protected deployments
 If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode or in a project protected by VPC Service Controls, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
 
 .Before you begin
