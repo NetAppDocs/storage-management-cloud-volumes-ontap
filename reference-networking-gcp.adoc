@@ -393,7 +393,7 @@ Communication from the HA nodes to the HA mediator takes place over port 3260 (i
 
 NOTE: To enable high write speed for new Google Cloud HA pair deployments, a maximum transmission unit (MTU) of at least 8,896 bytes is required for VPC-1, VPC-2, and VPC-3. If you choose to upgrade existing VPC-1, VPC-2, and VPC-3 to an MTU of 8,896 bytes, you must shutdown all existing HA systems using these VPCs during the configuration process.
 
-=== Infrastructure Manager configuration in private-mode and VPC Service Controls-enabled deployments
+=== Infrastructure Manager configuration in private mode or VPC Service Controls-enabled deployments
 If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode or in a project protected by VPC Service Controls, you need to make a few configuration changes so that Cloud Volumes ONTAP can use Google Cloud Infrastructure Manager as the deployment service instead of Deployment Manager, which Google will eventually deprecate.
 
 .Before you begin
@@ -406,7 +406,7 @@ If you want to deploy Cloud Volumes ONTAP 9.16.1 or later in private mode or in 
 .Steps
 . Create a private worker pool with this configuration in the same region as the Cloud Volumes ONTAP deployments. For information about creating a private worker pool, refer to https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool[Google Cloud documentation: Create and manage private pools^] and https://cloud.google.com/build/pricing[Google Cloud Build pricing^].
 +
-If you deploy Cloud Volumes ONTAP in a project protected by VPC Service Controls, create the private worker pool in the same project as the Console agent. The worker pool must remain in the *RUNNING* state. Google Cloud's default public Cloud Build pool can't run inside a service perimeter.
+If you deploy Cloud Volumes ONTAP in a project protected by VPC Service Controls, create the private worker pool in the same project as the Console agent. The worker pool must be in a running state. Google Cloud's default public Cloud Build worker pool can't run inside a service perimeter.
 +
 The worker pool must have the following configuration:
 +
@@ -427,7 +427,7 @@ The worker pool must have the following configuration:
 If you deploy Cloud Volumes ONTAP in a project protected by VPC Service Controls, create the Cloud Volumes ONTAP system by using the API and include the `workerPool` parameter in the create request body.
 +
 [NOTE]
-Passing a worker pool isn't currently supported in the Console UI. For VPC SC-protected projects, the API is the only supported way to deploy Cloud Volumes ONTAP.
+Including a worker pool isn't currently supported when you deploy Cloud Volumes ONTAP using the Console UI. For projects protected by VPC Service Controls, the API is the only supported way to deploy Cloud Volumes ONTAP.
 
 == Requirements for the Console agent
 
