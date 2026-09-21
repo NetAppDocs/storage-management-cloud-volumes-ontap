@@ -13,7 +13,7 @@ summary: Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP 
 :imagesdir: ./media/
 
 [.lead]
-You can configure Cloud Volumes ONTAP to authenticate SMB file access through Azure Entra ID (formerly Azure Active Directory), enabling hybrid identity support and reducing the dependency on on-premises Active Directory.
+You can configure Cloud Volumes ONTAP to authenticate SMB file access through Azure Entra ID, that enables identity support for Cloud Volumes ONTAP users on hybrid cloud. Earlier, this required authentication of domain users from the on-premises Active Directory for identity management, but with Azure Entra ID integration, you can leverage cloud-based identities while maintaining seamless access for hybrid users.
 
 NOTE: This feature is available as a public preview and can only be configured using the ONTAP CLI. NetApp Console integration is not yet available. In the CLI, SMB operations use the `cifs` command prefix because SMB (Server Message Block) is the modern name for the Common Internet File System (CIFS) protocol.
 
@@ -31,6 +31,8 @@ Cloud Volumes ONTAP 9.19.1 and later also supports the `icacls` command to manag
 * You must have an active Azure subscription.
 * You must have a user account with https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-administrator[Global Administrator^] privileges in your Azure Entra ID tenant.
 * You must have an on-premises AD domain controller with connectivity to Azure Entra ID.
+* You must have a storage VM with a data LIF and an aggregate available for the SMB server and share.
+* The storage VM and client VMs must be able to resolve the required Azure Entra ID endpoints and communicate with them over the network.
 
 [[azure-app]]
 == Step 1: Register an application in Azure Entra ID
@@ -99,6 +101,8 @@ Azure AD Connect synchronizes on-premises AD users and groups to Azure Entra ID 
 == Step 3: Configure the SMB server on Cloud Volumes ONTAP
 
 Configure the SMB server on the Cloud Volumes ONTAP storage VM to authenticate SMB file access through Azure Entra ID using the app registration credentials you created in <<azure-app,Step 1>>.
+
+NOTE: The storage VM must have a configured data LIF and access to an aggregate before you create the SMB server. The data LIF is used by clients to access the SMB share.
 
 .Steps
 
@@ -256,6 +260,16 @@ Cached Tickets: (1)
 ----
 +
 The presence of this ticket confirms that the device is joined correctly and can obtain cloud-issued Kerberos tickets.
+
+. Create a volume and SMB share on the Cloud Volumes ONTAP system, or use an existing volume and share:
+
+[source,cli]
+----
+volume create -vserver <svm-name> -volume <volume-name> -aggregate <aggregate-name> -size <size> -junction-path /<volume-name> -security-style ntfs
+cifs share create -vserver <svm-name> -share-name <share-name> -path /<volume-name>
+----
+
+NOTE: The volume must use NTFS security style so that you can manage file and folder permissions for Azure Entra ID identities with `icacls`.
 
 . Verify that the client can obtain a Kerberos service ticket for the SMB server:
 +
