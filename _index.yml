@@ -67,7 +67,7 @@ indexpage:
         - title: Networking requirement/security requirements in Google Cloud
           url: reference-networking-gcp.html
         - title: Quick deployment
-          url: task-getting-started-gcp.html
+          url: task-quick-deploy-gcp.html
         - title: Manage encryption keys with Google Cloud KMS
           url: task-google-key-manager.html
     - title: System and storage administration
