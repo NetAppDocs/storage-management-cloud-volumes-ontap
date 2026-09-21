@@ -297,7 +297,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-If you purchased a license directly from NetApp (bring your own license (BYOL)), then an AWS subscription isn't required. NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+If you purchased a license directly from NetApp (Bring-Your-Own License or BYOL), then an AWS subscription isn't required. NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to the Console^].
 
@@ -476,7 +476,10 @@ Quotas enable you to restrict or track the disk space and number of files used b
 [CAUTION]
 After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the AWS cloud portal, especially the system tags. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
+include::_include/private-mode-deployment.adoc[]
+
 .Related links 
 
+* link:task-onboard-cvo-aws-marketplace.html[Subscribe and deploy Cloud Volumes ONTAP from AWS Marketplace]
 * link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration]
 * link:task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP in AWS using quick deployment]

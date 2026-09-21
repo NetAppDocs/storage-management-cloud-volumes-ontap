@@ -218,7 +218,7 @@ AutoSupport
 | AutoSupport information remains undelivered. 
 
 |
-\https://cloudbuild.googleapis.com/v1 (for only private mode deployments)
+\https://cloudbuild.googleapis.com/v1 (for only private-mode deployments)
 \https://cloudkms.googleapis.com/v1
 \https://cloudresourcemanager.googleapis.com/v1/projects
 \https://compute.googleapis.com/compute/v1
