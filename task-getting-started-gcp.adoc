@@ -58,7 +58,7 @@ a| Cloud Volumes ONTAP requires a Google Cloud service account for enabling data
 a| * link:task-creating-gcp-service-account.html[Set up a service account]
 * link:concept-data-tiering.html[Learn about data tiering]
 * Refer to the https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery documents^]
-a| No additional considerations for private mode deployments.
+a| No additional considerations for private-mode deployments.
 
 a| Enable Google Cloud APIs
 a| Enable the required Google Cloud APIs in your project. You might have already enabled these as part of creating the Console agent.
