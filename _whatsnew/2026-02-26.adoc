@@ -33,7 +33,7 @@ a| * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google
 
 |===
 
-In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments[Infrastructure Manager configuration for private mode deployments^].
+In private mode deployments, you need a few configuration changes for Cloud Volumes ONTAP to start using Infrastructure Manager. Refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments[Infrastructure Manager configuration for private mode deployments^].
 
 .Related links
 
