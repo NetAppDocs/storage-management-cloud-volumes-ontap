@@ -287,7 +287,7 @@ sidebar:
                     url: /concept-licensing-charging.html
                   - title: Manage capacity-based licenses
                     url: /task-manage-capacity-licenses.html
-                  - title: Learn about node-based BYOL
+                  - title: Learn about BYOL licensing
                     url: /concept-license-management.html                    
                   - title: Manage node-based licenses
                     url: /task-manage-node-licenses.html    
