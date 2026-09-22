@@ -1,0 +1,68 @@
+---
+sidebar: sidebar
+permalink: task-enable-cluster-encryption.html
+keywords: cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS
+summary: Enable Cluster Network Encryption to protect Cloud Volumes ONTAP cluster traffic that is not already protected by ONTAP IPsec.
+---
+
+= Enable network encryption on Cloud Volumes ONTAP clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Beginning with 9.19.1, Cloud Volumes ONTAP supports the backend cluster network encryption capability of ONTAP on high-availability (HA) configurations in Azure and Google Cloud. ONTAP 9.18.1 added Cluster Session Management (CSM) over Kernel TLS (kTLS) in the cluster network in the HA networks to secure customer data in transit across backend networks. ONTAP 9.19.1 added software IPsec for remaining non performance-critical cluster traffic. Cloud Volumes ONTAP 9.19.1 and later extends this capability and protection to backend cluster traffic that is not covered by ONTAP IPsec, securing internal east-west communication in shared or strictly regulated environments.
+
+[NOTE]
+Enabling cluster network encryption might impact your cluster's performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
+
+.Before you begin
+
+* You must be running Cloud Volumes ONTAP 9.19.1 or later.
+* You must have cluster administrator privileges.
+* You must verify that your Cloud Volumes ONTAP deployment uses a supported configuration.
+
+
+.Steps
+
+. Connect to the Cloud Volumes ONTAP cluster using ONTAP CLI.
+
+. Verify the current cluster network encryption configuration:
++
+[source,cli]
+----
+security cluster-network show
+----
++
+Confirm that the output shows the current values for `Enabled`, `Mode`, and `Status`. Before you enable the feature, `Enabled` should be `false` and `Status` should be `READY`.
+
+. Enable Cluster Network Encryption in TLS and IPsec mode:
++
+[source,cli]
+----
+security cluster-network modify -enabled true -mode tls_ipsec
+----
+
+. Verify that Cluster Network Encryption is enabled:
++
+[source,cli]
+----
+security cluster-network show
+----
++
+Confirm that the output shows:
+
+* `Enabled: true`
+* `Mode: tls_ipsec`
+* `Status: READY`
+
+NOTE: When you enable the `tls_ipsec` mode, CSM traffic uses TLS and other cluster network traffic uses IPsec. ONTAP generates and manages the certificates and backend IPsec policies required for the cluster network. The `tls_ipsec` mode uses TLS for CSM traffic and IPsec for other cluster network traffic.
+
+.Related information
+
+* https://docs.netapp.com/us-en/ontap/networking/configure-backend-encryption.html[Configure ONTAP backend cluster network encryption^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-show.html[security cluster-network show^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-modify.html[security cluster-network modify^]
+
