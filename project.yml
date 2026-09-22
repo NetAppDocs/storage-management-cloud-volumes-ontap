@@ -215,7 +215,9 @@ sidebar:
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
             - title: Create tamperproof Snapshot copies for WORM storage
-              url: /reference-worm-snaplock.html  
+              url: /reference-worm-snaplock.html 
+            - title: Enable backend cluster network encryption
+              url: /task-enable-cluster-encryption.html
     - title: Cloud infrastructure management
       entries:
             - title: AWS administration

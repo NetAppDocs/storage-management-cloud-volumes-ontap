@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-enable-cluster-encryption.html
-keywords: cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS
+keywords: cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption
 summary: Enable Cluster Network Encryption to protect Cloud Volumes ONTAP cluster traffic that is not already protected by ONTAP IPsec.
 ---
 
-= Enable network encryption on Cloud Volumes ONTAP clusters
+= Enable backend network encryption on Cloud Volumes ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
