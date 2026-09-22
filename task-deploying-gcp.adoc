@@ -433,6 +433,8 @@ Quotas enable you to restrict or track the disk space and number of files used b
 [CAUTION]
 After the deployment process completes, do not modify the system-generated Cloud Volumes ONTAP configurations in the Google Cloud portal, such as the system tags, and the labels set in the Google Cloud resources. Any changes made to these configurations may lead to unexpected behavior or data loss.
 
+include::_include/private-mode-deployment.adoc[]
+
 .Related links
 
 * link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration in Google Cloud]

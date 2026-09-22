@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-getting-started-gcp.html
 keywords: google cloud platform, gcp, cloud manager, deploy the Console, launch the Console, create the Console, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions, cloud backup, the Console
-summary: Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
+summary: Get started with Cloud Volumes ONTAP in Google Cloud in a few steps.
 ---
 
 = Deployment overview for Cloud Volumes ONTAP in Google Cloud
@@ -20,7 +20,14 @@ For deploying Cloud Volumes ONTAP, you first need to know about your Google Clou
 a| Task
 a| Description
 a| Reference
-a| Notes for private mode deployments
+a| Notes for private-mode deployments
+
+a| Verify NetApp Console roles
+a| Before you can create a Console agent and perform other deployment tasks for Cloud Volumes ONTAP, you must verify that the necessary IAM roles and permissions are in place.
+a| Refer to the Console setup guide:
+https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
+https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html[Set up role-based access for Cloud Volumes ONTAP^]
+a| Verify the roles are correctly configured.
 
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
@@ -32,7 +39,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 a|link:task-planning-your-config-gcp.html[Plan your configuration]
-a| You need to have similar planning considerations for private mode deployments.
+a| You need to have similar planning considerations for private-mode deployments.
 
 a| Set up your networking
 a|.  Ensure that your VPC and subnets will support connectivity between the Console agent and Cloud Volumes ONTAP.
@@ -51,7 +58,7 @@ a| Cloud Volumes ONTAP requires a Google Cloud service account for enabling data
 a| * link:task-creating-gcp-service-account.html[Set up a service account]
 * link:concept-data-tiering.html[Learn about data tiering]
 * Refer to the https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery documents^]
-a| No additional considerations for private mode deployments.
+a| No additional considerations for private-mode deployments.
 
 a| Enable Google Cloud APIs
 a| Enable the required Google Cloud APIs in your project. You might have already enabled these as part of creating the Console agent.
@@ -65,10 +72,10 @@ a| Refer to:
 
 * link:task-quick-deploy-gcp.html[Deploy Cloud Volumes ONTAP with Quick create in Google Cloud]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
+a| Private mode supports only advanced deployment. Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private-mode deployments rely on BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to: 
 
-* link:concept-license-management.html[License management for node-based BYOL]
-* link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
+* link:concept-license-management.html[License management]
+* link:task-manage-node-licenses.html[Manage BYOL licenses]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
 |===

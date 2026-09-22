@@ -19,6 +19,9 @@ The enhancements described on this page are specific to managing Cloud Volumes O
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This Cis required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
+== 21 September 2026
+include::_whatsnew/2026-09-21.adoc[]
+
 == 02 September 2026
 include::_whatsnew/2026-09-02.adoc[]
 
@@ -203,7 +206,7 @@ Edge Cache capacity-based licensing packages will no longer be available for fut
 === Minimum version support for Flash Cache in Azure
 The minimum Cloud Volumes ONTAP version required for configuring Flash Cache in Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
 
-For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
+For supported configurations, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 
 === Free trials for marketplace subscriptions deprecated
 The 30-day automatic free trial or evaluation license for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
@@ -1082,7 +1085,7 @@ Write once, read many (WORM) storage is no longer in Preview and is now availabl
 
 === Support for m5dn.24xlarge in AWS
 
-Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, Bring-Your-Own License (BYOL), and Freemium.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
 
