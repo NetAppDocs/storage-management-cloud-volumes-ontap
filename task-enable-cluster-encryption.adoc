@@ -13,7 +13,7 @@ summary: Enable Cluster Network Encryption to protect Cloud Volumes ONTAP cluste
 :imagesdir: ./media/
 
 [.lead]
-Beginning with 9.19.1, Cloud Volumes ONTAP supports the backend cluster network encryption capability of ONTAP on high-availability (HA) configurations in Azure and Google Cloud. ONTAP 9.18.1 added Cluster Session Management (CSM) over Kernel TLS (kTLS) in the cluster network in the HA networks to secure customer data in transit across backend networks. ONTAP 9.19.1 added software IPsec for remaining non performance-critical cluster traffic. Cloud Volumes ONTAP 9.19.1 and later extends this capability and protection to backend cluster traffic that is not covered by ONTAP IPsec, securing internal east-west communication in shared or strictly regulated environments.
+Beginning with 9.19.1, Cloud Volumes ONTAP supports the backend cluster network encryption capability of ONTAP on high-availability (HA) configurations in Azure and Google Cloud. ONTAP has already implemented Cluster Session Management (CSM) over Kernel TLS (kTLS) in the HA clusters and added software IPsec to secure in-transit customer data in backend networks. Cloud Volumes ONTAP 9.19.1 and later extends this capability and protection to backend cluster traffic that is not covered by ONTAP IPsec, securing internal east-west communication in shared or strictly regulated environments.
 
 [NOTE]
 Enabling cluster network encryption might impact your cluster's performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
