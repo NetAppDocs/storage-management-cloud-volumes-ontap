@@ -84,7 +84,7 @@ indexpage:
           url: task-managing-svms.html
         - title: Encrypt volumes on Cloud Volumes ONTAP
           url: task-encrypting-volumes.html
-    - title: API reference (NetApp Console Automation)
+    - title: Cloud Volumes ONTAP automation through NetApp Console
       links:
         - title: API reference
           url: https://docs.netapp.com/us-en/console-automation/cm/overview.html      
@@ -92,6 +92,8 @@ indexpage:
           url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
         - title: Prepare to use the API
           url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+        - title: Learn about Cloud Volumes ONTAP automation options
+          url: /concept-cvo-automation.html  
     - title: Cloud Volumes ONTAP and other NetApp products
       links:
         - title: Cloud Volumes ONTAP roles in NetApp Console
