@@ -1,0 +1,37 @@
+---
+sidebar: sidebar
+permalink: concept-cvo-automation.html
+keywords: automation, infrastructure as code, IaC, Terraform, Ansible, Cloud Volumes ONTAP
+summary: Learn about the automation technologies that NetApp supports for Cloud Volumes ONTAP.
+---
+
+= Learn about Cloud Volumes ONTAP automation options
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+DevOps teams use a variety of tools to automate the setup and administration of their data center runtime environments. NetApp supports several of these technologies for Cloud Volumes ONTAP automation. These tools are commonly based on an Infrastructure as Code (IaC) design. 
+
+== Terraform
+
+Terraform is an open-source orchestration tool that uses declarative configuration files. NetApp provides a Terraform provider that you can use with Cloud Volumes ONTAP to automate and integrate your infrastructure based on IaC. For more information, refer to: 
+
+* https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[NetApp Terraform provider^].
+* https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest/docs[NetApp Cloud Manager Terraform provider documentation^]
+* https://registry.terraform.io/providers/NetApp/netapp-elementsw/latest[NetApp Elements Terraform provider^]
+
+== Ansible
+
+Ansible is an open-source configuration management tool based on procedural configuration files.
+
+* https://docs.ansible.com/ansible/latest/user_guide/index.html[Ansible Documentation^]
+
+.Related information
+
+* https://docs.netapp.com/us-en/console-automation/automate/overview.html[NetApp Console Automation Overview^]
+* https://www.netapp.com/us/info/what-is-infrastructure-as-code-iac.aspx[Infrastructure as Code^]
+* https://www.terraform.io/[Terraform^]
+* https://www.ansible.com/[Ansible^]
