@@ -12,24 +12,20 @@ summary: Subscribe to Cloud Volumes ONTAP in AWS Marketplace and complete setup 
 :linkattrs:
 :imagesdir: ./media/
 
+
 [.lead]
-Subscribe to Cloud Volumes ONTAP from AWS Marketplace and let NetApp Console guide you through onboarding. With a simple path from subscription to deployment, you can quickly get up-and-running with Cloud Volumes ONTAP. The guided experience simplifies the process from AWS Marketplace subscription to deployment, helping you deploy Cloud Volumes ONTAP without requiring extensive cloud or ONTAP expertise.
+Subscribe to the standalone Cloud Volumes ONTAP offering in AWS Marketplace, deploy a Console agent, and create your first system.
 
-Subscription and deployment of Cloud Volumes ONTAP from AWS Marketplace include these steps: 
-
-* Subscription to Cloud Volumes ONTAP in AWS Marketplace.
-* Signup to the Console.
-* Creating your organization (if needed) and associating the marketplace subscription.
-* Deployment of a Console agent in AWS.
-* Adding your first Cloud Volumes ONTAP system.
-
-Simplified onboarding offers automated agent deployment with minimal input from you for subscription association, IAM role configuration, agent provisioning, and system initialization. Backend orchestration automatically handles CloudFormation stack creation, VPC connectivity validation, and resource dependencies. This reduces manual configuration steps and screen transitions, so you can deploy Cloud Volumes ONTAP faster with fewer setup errors and interruptions. As you progress through deployment, you can track your progress in the right panel.
 
 .Before you begin
 
-Review these prerequisites before you start the onboarding workflow.
+Before you begin, make sure you have:
 
-* You need an AWS account with permissions to subscribe in AWS Marketplace. To use the automated IAM setup, you must be an AWS administrator or have the permissions shown below.
+* An AWS account with permission to subscribe to AWS Marketplace. 
+
+* To have NetApp Console create the IAM role automatically, you need AWS administrator permissions or the minimum permissions listed below.
+
+[[aws-iam-role-permissions]]
 +
 [source,json]
 {
@@ -55,6 +51,8 @@ Review these prerequisites before you start the onboarding workflow.
         "lambda:DeleteFunction",
         "lambda:GetFunction",
         "lambda:InvokeFunction"
+      ]
+    }
   ]
 }
 
@@ -63,19 +61,20 @@ Review these prerequisites before you start the onboarding workflow.
 
 For full AWS agent deployment prerequisites, see link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html[Deploy a NetApp Console agent from the AWS Marketplace^].
 
-== Subscribe in AWS Marketplace
+== Subscribe to the standalone Cloud Volumes ONTAP offering in AWS Marketplace
 
-Start the onboarding process by locating the Cloud Volumes ONTAP offering in AWS Marketplace.
+Locate the standalone Cloud Volumes ONTAP offering in AWS Marketplace.
 
 .Steps
-. Go to AWS Marketplace using your AWS account.
-. Locate the NetApp Cloud Volumes ONTAP offering. There are two offerings for Cloud Volumes ONTAP in AWS Marketplace: 
+. Go to AWS Marketplace using your AWS account with the required permissions.
+. Locate the NetApp Cloud Volumes ONTAP standalone offering. AWS Marketplace provides two offerings for Cloud Volumes ONTAP:
 ** The standalone offering for Cloud Volumes ONTAP annual subscriptions 
-** The NetApp Intelligent Service (NIS) combined offering for NetApp data services and Cloud Volumes ONTAP subscriptions. 
-Choose the _standalone_ offering for this onboarding workflow.
+** The NetApp Intelligent Service combined offering for NetApp data services and Cloud Volumes ONTAP subscriptions. 
+
+. Choose the _standalone_ offering. These steps guide you through subscribing to the standalone offering.
 . Review listing details and pricing terms.
 . Subscribe and complete the checkout.
-. After subscribing, AWS redirects you to the Console sign-up or sign-in page.
+. After subscribing, AWS redirects you to the NetApp Console.
 
 == Sign up or sign in to NetApp Console
 
@@ -85,7 +84,7 @@ Access the Console to continue with the setup after you complete the marketplace
 . On the Console page, select one:
 * *Sign up* if you are a new user.
 * *Sign in to NetApp Console* if you already have an account.
-. If you selected *Sign up*, complete the following:
+. If you select *Sign up*, complete the following:
 .. Enter the required fields:
 * Email
 * Password
@@ -127,40 +126,61 @@ After you associate the subscription, the Console automatically opens the agent 
 To learn more about the permissions used during the agent deployment, see link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[AWS permissions reference^].
 
 .Steps
-. You can follow the steps mentioned in the introduction page for minimum permission to deploy an agent, or continue to automatically create a role for agent deployment. 
-. On the *AWS credentials* page, select one of the following options to provide credentials for agent deployment:
+. Choose how to authorize agent deployment and follow the appropriate steps for your chosen method.
+
 +
+
+Create a role for me (recommended)::
+NetApp Console creates the role needed for the agent deployment automatically. Review the role permissions here link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[AWS permissions reference^].
+
++
+NOTE: You need AWS administrator permissions or the minimum permissions in the <<aws-iam-role-permissions,JSON example above>>.
+
+Assume role::
+Specify an existing role ARN that the Console assumes for agent deployment. Ensure that the role has the necessary link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[permissions].
+
+AWS keys::
+Enter your AWS access key and secret key for the agent deployment.
+
 [role="tabbed-block"]
 ====
 
 .Create role for me (recommended)
 --
-Selecting this option opens an AWS CloudFormation Quick Create flow to create the agent deployment role. If you are a user with admin privileges, you can use this option to automatically use a CloudFormation stack to create the policy, role, and authenticate the user to create the agent.
+If you have AWS administrator permissions, use this option and select CloudFormation Quick Create to create the agent policy and role, and authorize deployment.
 
 .. Add the AWS account ID and optionally, the external ID. The Console sets a default role name.
-.. Acknowledge the terms and select *Create stack*.
+
+.. Select *Open CloudFormation Quick Create*.
+.. Within the AWS CloudFormation Quick Create page, acknowledge the terms and select *Create stack*.
 +
 image:screenshot-stack-creation.png[width=50% Screenshot of the AWS CloudFormation stack creation page where you enter the AWS account ID and optionally, the external ID for the agent deployment role.]
 +
-.. When the IAM role is configured in AWS and the ARN is generated, confirm and save the role. 
+.. When AWS configures the IAM role and generates the ARN, confirm and save the role.
 --
 .Assume role
 --
-This is a part of the manual role assignment workflow. Enter an existing IAM role ARN. For information about editing this role, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-existing-subscription-with-your-organization[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
+If you already have a role with the required AWS permissions, provide its ARN so the Console can assume it to deploy the agent. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-console.html#aws-permissions-agent[Learn about creating a role^].
 --
 
 .AWS keys
 --
-This is a part of the manual role assignment workflow. Enter an AWS access key and secret key. For information, refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-the-credentials-to-an-existing-agent[Manage AWS credentials and marketplace subscriptions for NetApp Console^].
+If you want to use access keys to authorize agent deployment, provide your AWS access key and secret key. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-console.html#aws-permissions-agent[Learn about creating a role for a user^].
 --
 
 ====
-+
+
 . Deploy the AWS agent: 
-.. On the *AWS agent details* page, set or confirm the agent instance name and agent role.
-.. On the *Network* page, select VPC, subnet, key pair, public IP behavior, and proxy settings.
-.. Configure *Security group*. Allow inbound HTTP (80), HTTPS (443), and SSH (22) for troubleshooting access to the agent VM.
-. Review the section summaries and select *Add* to deploy.
+.. Configure Agent deployment details by setting or confirming the agent instance name and agent role.
+.. Configure Networking configuration by selecting a VPC, subnet, key pair, public IP behavior, and proxy settings, if needed.
+.. Configure Security group to allow inbound HTTP (80), HTTPS (443), and SSH (22) for troubleshooting access to the agent VM.
+
++ 
+link:https://docs.netapp.com/us-en/console-setup-admin_create-console-agent/reference-ports-aws.html[View security group rules for AWS]
+. Review the section summaries and select Add to deploy.
+
++
+Track the deployment progress until it completes. You can expand the event logs to review detailed activity.
 +
 For full networking and permissions requirements, see:
 +
@@ -168,29 +188,23 @@ For full networking and permissions requirements, see:
 * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-2-set-up-aws-permissions[Set up AWS permissions^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[AWS permissions reference^]
 
-. Track the deployment progress dialog until it finishes. You can expand event logs to review detailed activity.
+
 
 .After you finish
-When deployment completes, you can create your first Cloud Volumes ONTAP system or stay on the Systems page to add a system later.
+The Console installs the Console agent and associates it with your Console organization. You can create your first Cloud Volumes ONTAP system or stay on the Systems page to add a system later.
 
 == Add your first Cloud Volumes ONTAP system
 
-After the agent is ready, create your first Cloud Volumes ONTAP system in AWS.
 
-.Steps
-. From the post-deployment prompt, select *Add system*.
-. Start the Cloud Volumes ONTAP system creation workflow.
-. Complete the system configuration.
-
-For detailed system deployment instructions, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS^].
+After the Console deploys the agent, follow the steps in https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS^] to create your first system.
 
 == Troubleshooting and recovery
 
-Use this section if you leave the onboarding flow before completion or if agent deployment fails. These steps help you resume where you left off or recover and retry deployment.
+Resume onboarding where you left off or retry agent deployment after a failure.
 
 === Resume setup
 
-If you leave before completion, you can resume the setup from the last completed step.
+If you leave before onboarding is complete, continue from the last completed step.
 
 .Steps
 . Go to the NetApp Console home page.
@@ -198,7 +212,7 @@ If you leave before completion, you can resume the setup from the last completed
 
 === Recover from deployment failure
 
-If deployment fails:
+If the Console can't deploy the agent, use these steps to retry:
 
 .Steps
 . Download the deployment report.
@@ -209,9 +223,8 @@ link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.h
 
 .Related links
 
-Use these resources for related setup tasks and troubleshooting.
+For help with agent deployment, AWS subscriptions, or Cloud Volumes ONTAP tasks, see:
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html[Deploy a NetApp Console agent from the AWS Marketplace^]
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#subscribe[Configure an AWS subscription^]
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html[Troubleshoot the NetApp Console agent^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/[Cloud Volumes ONTAP documentation^]
