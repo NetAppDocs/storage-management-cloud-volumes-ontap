@@ -15,6 +15,25 @@ summary: Learn about the automation technologies that NetApp supports for Cloud 
 [.lead]
 DevOps teams use a variety of tools to automate the setup and administration of their data center runtime environments. NetApp supports several of these technologies for Cloud Volumes ONTAP automation. These tools are commonly based on an Infrastructure as Code (IaC) design. 
 
+== NetApp Console APIs
+
+The NetApp Console provides REST APIs that you can use to programmatically administer Cloud Volumes ONTAP resources. The APIs support operations such as creating and administering Cloud Volumes ONTAP systems and adding aggregates and volumes on Amazon Web services (AWS), Microsoft Azure (Azure), and Google Cloud. The available API calls vary by cloud provider and by deployment type, including single-node and high-availability (HA) configurations.
+
+You can use the Cloud Volumes ONTAP API workflows to automate a typical deployment and subsequent storage administration. The workflows include preparation, creating a system, and administering storage, with provider-specific workflows for AWS, Azure, and Google Cloud.
+
+For more information, see:
+
+* https://docs.netapp.com/us-en/console-automation/cm/overview.html[Learn about the ONTAP management REST APIs^]
+* https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html[Prepare to use the Cloud Volumes ONTAP API workflows^]
+* https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html[Your first API call^]
+* https://docs.netapp.com/us-en/console-automation/cm/cvo_deployment.html[Typical Cloud Volumes ONTAP deployment using the REST API^]
+
+== Ansible
+
+Ansible is an open-source configuration management tool based on procedural configuration files.
+
+* https://docs.ansible.com/ansible/latest/user_guide/index.html[Ansible Documentation^]
+
 == Terraform
 
 Terraform is an open-source orchestration tool that uses declarative configuration files. NetApp provides a Terraform provider that you can use with Cloud Volumes ONTAP to automate and integrate your infrastructure based on IaC. For more information, refer to: 
@@ -22,12 +41,6 @@ Terraform is an open-source orchestration tool that uses declarative configurati
 * https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[NetApp Terraform provider^].
 * https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest/docs[NetApp Cloud Manager Terraform provider documentation^]
 * https://registry.terraform.io/providers/NetApp/netapp-elementsw/latest[NetApp Elements Terraform provider^]
-
-== Ansible
-
-Ansible is an open-source configuration management tool based on procedural configuration files.
-
-* https://docs.ansible.com/ansible/latest/user_guide/index.html[Ansible Documentation^]
 
 .Related information
 
