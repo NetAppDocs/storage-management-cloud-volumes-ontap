@@ -21,6 +21,57 @@ The NetApp Console provides REST APIs that you can use to programmatically admin
 
 You can use the Cloud Volumes ONTAP API workflows to automate a typical deployment and subsequent storage administration. The workflows include preparation, creating a system, and administering storage, with provider-specific workflows for AWS, Azure, and Google Cloud.
 
+[%header,cols="2,2,3"]
+|===
+| Activities you can perform using APIs
+| APIs to use
+| Links
+
+| Create Cloud Volumes ONTAP systems. API calls vary by cloud provider and by single-node or HA deployment.
+| NetApp Console REST APIs and Cloud Volumes ONTAP API workflows
+a| * https://docs.netapp.com/us-en/console-automation/cm/wf_aws_cloud_create_we_capacity.html[AWS: create a system^] - `POST /occm/api/vsa/working-environments` or `POST /occm/api/aws/ha/working-environments`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_azure_cloud_create_we_capacity.html[Azure: create a system^] - `POST /occm/api/azure/vsa/working-environments` or `POST /occm/api/azure/ha/working-environments`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_gcp_cloud_create_we_capacity.html[Google Cloud: create a system^] - `POST /occm/api/gcp/vsa/working-environments` or `POST /occm/api/gcp/ha/working-environments`
+
+| Create aggregates for Cloud Volumes ONTAP systems.
+| NetApp Console REST APIs
+a| * https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_create_aggr.html[AWS: create an aggregate^] - `POST /occm/api/vsa/aggregates` or `POST /occm/api/aws/ha/aggregates`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_cloud_add_capacity.html[AWS: add capacity to an Elastic Volume aggregate^] - `POST /occm/api/vsa/aggregates/{workingEnvironmentId}/{aggregateName}/add-capacity` or `POST /occm/api/aws/ha/aggregates/{workingEnvironmentId}/{aggregateName}/add-capacity`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_add_disks_aggr.html[AWS: add disks to an aggregate^] - `POST /occm/api/vsa/aggregates/{workingEnvironmentId}/{aggregateName}/disks` or `POST /occm/api/aws/ha/aggregates/{workingEnvironmentId}/{aggregateName}/disks`
+
+| Configure a CIFS server for a Cloud Volumes ONTAP system.
+| NetApp Console REST APIs
+a| * https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_create_cifs.html[AWS: create a CIFS server configuration^] - `POST /occm/api/vsa/working-environments/{workingEnvironmentId}/cifs` or `POST /occm/api/aws/ha/working-environments/{workingEnvironmentId}/cifs`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_azure_ontap_create_cifs.html[Azure: create a CIFS server configuration^] - `POST /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/cifs` or `POST /occm/api/azure/ha/working-environments/{workingEnvironmentId}/cifs`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_gcp_ontap_create_cifs.html[Google Cloud: create a CIFS server configuration^] - `POST /occm/api/gcp/vsa/working-environments/{workingEnvironmentId}/cifs` or `POST /occm/api/gcp/ha/working-environments/{workingEnvironmentId}/cifs`
+
+| Create and manage additional data-serving storage VMs and configure their required network interfaces in Azure and Google Cloud.
+| Cloud Volumes ONTAP APIs for the NetApp Console
+a| link:task-managing-svms-azure.html[Manage storage VMs in Azure]
+link:task-managing-svms-gcp.html[Manage storage VMs in Google Cloud]
+
+| Create a Cloud Volumes ONTAP system that uses customer-managed encryption keys.
+| NetApp Console API
+a| link:task-set-up-azure-encryption.html[Use customer-managed keys in Azure]
+link:task-setting-up-gcp-encryption.html[Use customer-managed keys in Google Cloud]
+
+| Modify IOPS and throughput settings for Azure Premium SSD v2 disks after deployment.
+| Cloud Volumes ONTAP API
+a| link:task-manage-perf-params-azure.html[Manage Premium SSD v2 disk performance]
+
+| Deploy a Cloud Volumes ONTAP HA pair in an AWS shared subnet.
+| Cloud Volumes ONTAP API
+a| link:task-deploy-aws-shared-vpc.html[Deploy an HA pair in an AWS shared subnet]
+
+| Enable data tiering after the system is created when the object store was not configured during deployment.
+| Cloud Volumes ONTAP API
+| link:task-tiering.html[Enable data tiering]
+
+| Configure an NTP server for an existing Cloud Volumes ONTAP cluster.
+| NetApp Console API
+| link:task-sync-time.html[Configure NTP servers]
+|===
+
 For more information, see:
 
 * https://docs.netapp.com/us-en/console-automation/cm/overview.html[Learn about the ONTAP management REST APIs^]
