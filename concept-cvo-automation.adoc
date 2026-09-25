@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-cvo-automation.html
-keywords: automation, infrastructure as code, IaC, Terraform, Ansible, Cloud Volumes ONTAP
+keywords: automation, infrastructure as code, IaC, Terraform, Ansible, Cloud Volumes ONTAP, API procedures, ONTAP CLI procedures, list of API and CLI procedures in Cloud Volumes ONTAP or CVO
 summary: Learn about the automation technologies that NetApp supports for Cloud Volumes ONTAP.
 ---
 
@@ -13,7 +13,7 @@ summary: Learn about the automation technologies that NetApp supports for Cloud 
 :imagesdir: ./media/
 
 [.lead]
-DevOps teams use a variety of tools to automate the setup and administration of their data center runtime environments. NetApp supports several of these technologies for Cloud Volumes ONTAP automation. These tools are commonly based on an Infrastructure as Code (IaC) design. 
+DevOps teams use a variety of tools to automate the setup and administration of their data center runtime environments. NetApp supports several of these technologies for Cloud Volumes ONTAP automation, including NetApp Console APIs, ONTAP CLI procedures, and automation tools, such as Ansible and Terraform. These tools are commonly based on an Infrastructure as Code (IaC) design.
 
 == NetApp Console APIs
 
@@ -21,6 +21,7 @@ The NetApp Console provides REST APIs that you can use to programmatically admin
 
 You can use the Cloud Volumes ONTAP API workflows to automate a typical deployment and subsequent storage administration. The workflows include preparation, creating a system, and administering storage, with provider-specific workflows for AWS, Azure, and Google Cloud.
 
+.Some procedures you can perform using NetApp Console APIs
 [%header,cols="2,2,3"]
 |===
 | Activities you can perform using APIs
@@ -70,6 +71,53 @@ a| link:task-deploy-aws-shared-vpc.html[Deploy an HA pair in an AWS shared subne
 | Configure an NTP server for an existing Cloud Volumes ONTAP cluster.
 | NetApp Console API
 | link:task-sync-time.html[Configure NTP servers]
+|===
+
+== ONTAP CLI
+
+You can use the ONTAP CLI for several Cloud Volumes ONTAP administration tasks. The available procedures and commands vary by feature and cloud provider. Do not use the ONTAP CLI or ONTAP System Manager to upgrade Cloud Volumes ONTAP; upgrades must be performed from the NetApp Console.
+.Some procedures you can perform using ONTAP CLI
+[%header,cols="2,2,3"]
+|===
+| Activities you can perform using the CLI
+| CLI procedures or commands
+| Links
+
+| Configure encryption key management for Cloud Volumes ONTAP.
+| AWS KMS, Azure Key Vault, or Google Cloud KMS commands in the ONTAP CLI
+a| link:task-aws-key-management.html[Configure AWS KMS key management]
+link:task-azure-key-vault.html[Configure Azure Key Vault key management]
+link:task-google-key-manager.html[Configure Google Cloud KMS key management]
+
+| Configure Event Management System (EMS) event destinations and routes.
+| EMS configuration commands in the ONTAP CLI
+| link:task-configure-ems.html[Configure EMS]
+
+| Configure an NTP server for an existing Cloud Volumes ONTAP cluster.
+| `cluster time-service ntp server create`
+| link:task-sync-time.html[Configure NTP servers]
+
+| Disable data compression when creating a volume with storage efficiency disabled.
+| ONTAP CLI volume efficiency commands
+a| link:concept-flash-cache.html[Review storage efficiency options]
+link:reference-limitations-aws.html[Review the AWS storage efficiency limitation]
+
+| Create additional LUNs.
+| LUN creation commands in the ONTAP CLI
+| link:task-create-volumes.html[Create volumes and additional LUNs]
+
+| Create volumes with WORM disabled or create Snapshot copies for SnapLock volumes, as applicable.
+| Volume and Snapshot management commands in the ONTAP CLI
+a| link:concept-worm.html[Manage WORM storage]
+link:reference-worm-snaplock.html[Create Snapshot copies for WORM storage]
+
+| Configure NVFAIL behavior to help prevent access to data after a data-loss event until the issue is addressed.
+| NVFAIL configuration commands in the ONTAP CLI
+| link:concept-write-speed.html[Configure NVFAIL]
+
+| Segregate SnapMirror replication traffic in an Azure single-node deployment.
+| ONTAP CLI networking and SnapMirror commands
+| link:task-segregate-snapmirror-azure.html[Segregate SnapMirror traffic in Azure]
 |===
 
 For more information, see:
