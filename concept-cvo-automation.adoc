@@ -142,11 +142,11 @@ Terraform is an open-source orchestration tool that uses declarative configurati
 
 * https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[NetApp Terraform provider^].
 * https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest/docs[NetApp Cloud Manager Terraform provider documentation^]
-* https://registry.terraform.io/providers/NetApp/netapp-elementsw/latest[NetApp Elements Terraform provider^]
+
 
 .Related information
 
 * https://docs.netapp.com/us-en/console-automation/automate/overview.html[NetApp Console Automation Overview^]
-* https://www.netapp.com/us/info/what-is-infrastructure-as-code-iac.aspx[Infrastructure as Code^]
+* https://www.netapp.com/devops/what-is-infrastructure-as-code-iac/[Infrastructure as Code^]
 * https://www.terraform.io/[Terraform^]
 * https://www.ansible.com/[Ansible^]
