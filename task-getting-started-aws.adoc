@@ -17,7 +17,7 @@ For deploying Cloud Volumes ONTAP, you first need to know about your AWS subscri
 
 You can onboard Cloud Volumes ONTAP in AWS using either the AWS Marketplace or the NetApp Console. The following table provides a high-level overview of the tasks you need to complete to deploy Cloud Volumes ONTAP in AWS. 
 
-NOTE: If you subscribe to the Cloud Volumes ONTAP standalone offering in AWS Marketplace, the steps differ. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP standalone offering in AWS Marketplace].
+NOTE:If you subscribe to the Cloud Volumes ONTAP standalone offering in AWS Marketplace, the steps differ. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP standalone offering in AWS Marketplace].
 
 [cols="20,35,25,25",options="header"]
 |===
