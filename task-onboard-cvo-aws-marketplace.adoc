@@ -25,7 +25,11 @@ Before you begin, make sure you have:
 * Ensured that the Console agent network meets the requirements. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking[Learn about Console agent networking requirements^]
 * An AWS account and identity with permission to subscribe to AWS Marketplace and accept the offering terms.
 
++
+
 If you choose *Create role for me*, the AWS identity that submits the CloudFormation Quick Create stack needs the permissions below. To use the same identity for subscribing and submitting the stack, attach these permissions before starting. If you use a different identity to submit the stack, attach them to that identity instead. These permissions let CloudFormation create the deployment role; they are not the permissions used by the running agent.
+
++
 
 .Minimum permissions for CloudFormation Quick Create
 [[aws-iam-role-permissions]]
@@ -106,7 +110,7 @@ An organization helps you manage users, roles, permissions, licenses, and system
 
 == Deploy a Console agent in AWS
 
-After you associate your subscription with NetApp Console, deploy a Console agent to manage AWS resources and Cloud Volumes ONTAP systems.
+After  your subscription is associated with NetApp Console, deploy a Console agent to manage AWS resources and Cloud Volumes ONTAP systems.
 
 .Before you begin
 
