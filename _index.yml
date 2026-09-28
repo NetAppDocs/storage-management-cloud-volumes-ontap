@@ -119,7 +119,7 @@ indexpage:
         - title: Use ONTAP CLI for Cloud Volumes ONTAP
           url: https://docs.netapp.com/us-en/ontap-cli/index.html          
         - title: Supported cloud regions
-          url: https://bluexp.netapp.com/cloud-volumes-global-regions
+          url: https://www.netapp.com/cloud-volumes-ontap/supported-regions/
         - title: Calculators
           url: https://www.netapp.com/ontap-cloud/pricing/
         - title: NetApp Community
