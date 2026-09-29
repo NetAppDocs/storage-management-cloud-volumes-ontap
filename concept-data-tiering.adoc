@@ -19,7 +19,6 @@ image:diagram_data_tiering.png[This is a conceptual image that shows hot data go
 
 Data tiering is powered by FabricPool technology. Cloud Volumes ONTAP provides data tiering for all Cloud Volumes ONTAP clusters without an additional license. When you enable data tiering, data tiered to object storage incurs charges. Refer to your cloud provider's documentation for details about object storage costs.
 
-ifdef::aws[]
 == Data tiering in AWS
 
 When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and Amazon Simple Storage Service (Amazon S3) as a capacity tier for inactive data.
@@ -50,9 +49,7 @@ Access costs are higher if you access the data, so consider this before changing
 You can select a storage class when you create the system and you can change it any time afterwards. For instructions on changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
-endif::aws[]
 
-ifdef::azure[]
 == Data tiering in Azure
 
 When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data.
@@ -83,9 +80,7 @@ If you don't plan to access the inactive data in the capacity tier, you can choo
 You can select a storage tier when you add a Cloud Volumes ONTAP system and you can change it any time afterwards. For details about changing the storage tier, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
 +
 The storage access tier for data tiering is system wide--it's not per volume.
-endif::azure[]
 
-ifdef::gcp[]
 == Data tiering in Google Cloud
 
 When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data. You can select a storage tier when you create a system and change it any time afterwards. For information about changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
@@ -108,7 +103,6 @@ When the Console creates the bucket, it uses the following default settings:
 Storage classes:: Google Cloud uses https://cloud.google.com/storage/docs/storage-classes[storage classes^] to manage costs and data availability. We recommend that you select a storage class based on your expected data access frequency, because accessing data incurs higher costs. The default storage class for tiered data is _Standard Storage_. Unless manually changed, all inactive data maintains the default storage class. To change the storage class of inactive data, refer to https://docs.cloud.google.com/storage/docs/managing-lifecycles[Google Cloud documentation: Managing object lifecycles^].
 +
 The storage class for data tiering is system wide--it's not per volume.
-endif::gcp[]
 
 == Data tiering and capacity limits
 
