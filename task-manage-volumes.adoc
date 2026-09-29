@@ -25,7 +25,7 @@ By using the Standard View of the Console, you can manage volumes according to y
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-select the Cloud Volumes ONTAP system on which you want to manage volumes.
+. On the *Systems* page, double-click the Cloud Volumes ONTAP system on which you want to manage volumes.
 
 . Select the *Volumes* tab.
 +
