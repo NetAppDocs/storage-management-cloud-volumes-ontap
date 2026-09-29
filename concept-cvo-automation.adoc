@@ -134,15 +134,12 @@ For more information, refer to https://docs.netapp.com/us-en/ontap-cli/man.html[
 
 Ansible is an open-source configuration management tool based on procedural configuration files.
 
+* https://galaxy.ansible.com/ui/repo/published/netapp/ontap/[Ansible Galaxy^]
 * https://docs.ansible.com/ansible/latest/user_guide/index.html[Ansible Documentation^]
 
 == Terraform
 
-Terraform is an open-source orchestration tool that uses declarative configuration files. NetApp provides a Terraform provider that you can use with Cloud Volumes ONTAP to automate and integrate your infrastructure based on IaC. For more information, refer to: 
-
-* https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[NetApp Terraform provider^].
-* https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest/docs[NetApp Cloud Manager Terraform provider documentation^]
-
+Terraform is an open-source orchestration tool that uses declarative configuration files. NetApp provides a Terraform provider that you can use with Cloud Volumes ONTAP to automate and integrate your infrastructure based on IaC. For more information, refer to https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[NetApp Terraform provider^].
 
 .Related information
 
