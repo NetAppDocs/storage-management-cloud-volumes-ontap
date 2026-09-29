@@ -5,4 +5,4 @@ You can now deploy Cloud Volumes ONTAP 9.12.1 GA and later in single and multipl
 * Japan West (japanwest)
 * Indonesia Central (indonesiacentral)
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^].
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
