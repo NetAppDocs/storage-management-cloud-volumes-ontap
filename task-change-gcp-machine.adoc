@@ -35,13 +35,13 @@ TIP: The NetApp Console changes one node at a time by initiating takeover and wa
 
 . On the *Systems* page, select the system.
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Machine type*.
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Machine type*.
 +
 image:screenshot_features_machine_type.png[A screenshot that shows the Machine type setting under the Features panel available in the top right of the Overview page when viewing a system.] 
 
 If you are using a node-based pay-as-you-go (PAYGO) license, you can optionally choose a different license and machine type by clicking the pencil icon next to *License type*.
 
-. Choose an machine type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
+. Choose a machine type, select the check box to confirm that you understand the implications of the change, then select *Change*.
 
 .Result
 

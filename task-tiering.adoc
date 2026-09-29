@@ -25,17 +25,11 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP system runn
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
 [role="quick-margin-list"]
-ifdef::aws[]
-* For AWS, you'll need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
-endif::aws[]
+* For AWS, you need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
 
-ifdef::azure[]
 * For Azure, you won't need to do anything as long as the NetApp Console has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
-endif::azure[]
 
-ifdef::gcp[]
 * For Google Cloud, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements to tier cold data to a Google Cloud Storage bucket,Learn more>>.
-endif::gcp[]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
 
@@ -65,7 +59,6 @@ The Console creates an object store for cold data when it creates the system, <<
 
 You can enable data tiering when using specific configurations and features.
 
-ifdef::aws[]
 === Support in AWS
 
 * Data tiering is supported in AWS beginning with Cloud Volumes ONTAP 9.2.
@@ -73,9 +66,7 @@ ifdef::aws[]
 +
 NOTE: We do not recommend tiering data to object storage when using Throughput Optimized HDDs (st1).
 * The inactive data is tiered to Amazon S3 buckets. Tiering to other providers is not supported.
-endif::aws[]
 
-ifdef::azure[]
 === Support in Azure
 
 * Data tiering is supported in Azure as follows:
@@ -83,15 +74,12 @@ ifdef::azure[]
 ** Version 9.6 in with HA pairs
 * The performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 * The inactive data is tiered to Microsoft Azure Blob. Tiering to other providers is not supported.
-endif::azure[]
 
-ifdef::gcp[]
 === Support in Google Cloud
 
 * Data tiering is supported in Google Cloud beginning with Cloud Volumes ONTAP 9.6.
 * The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
 * The inactive data is tiered to Google Cloud Storage.  Tiering to other providers is not supported.
-endif::gcp[]
 
 === Feature interoperability
 
@@ -103,7 +91,6 @@ endif::gcp[]
 
 Depending on your cloud provider, certain connections and permissions must be set up so that Cloud Volumes ONTAP can tier cold data to object storage.
 
-ifdef::aws[]
 === Requirements to tier cold data to Amazon S3
 
 Ensure that Cloud Volumes ONTAP has a connection to Amazon S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, refer to the https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
@@ -111,9 +98,7 @@ Ensure that Cloud Volumes ONTAP has a connection to Amazon S3. The best way to p
 When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 
 If you experience any issues, refer to https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^].
-endif::aws[]
 
-ifdef::azure[]
 === Requirements to tier cold data to Azure Blob storage
 
 You don't need to set up a connection between the performance tier and the capacity tier as long as the Console has the required permissions. The Console enables a VNet service endpoint for you if the custom role for the Console agent has these permissions:
@@ -131,9 +116,7 @@ The custom role includes the permissions by default. https://docs.netapp.com/us-
 //* You have enabled virtual network (VNet) peering between the two tenants https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[on the Azure portal^]. This is required so that the Console agent can access the storage account for the other tenant.
 //* You have link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[disabled Azure Private Links] to use the subnet service endpoint.
 
-endif::azure[]
 
-ifdef::gcp[]
 === Requirements to tier cold data to a Google Cloud Storage bucket
 
 * The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
@@ -149,7 +132,6 @@ If you don't select a service account during deployment, you'll need to shut dow
 * To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
 +
 link:task-setting-up-gcp-encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
-endif::gcp[]
 
 === Enable data tiering after implementing the requirements
 
@@ -163,13 +145,13 @@ The Console creates an object store for cold data when the system is created, as
 //
 //. On the *Systems* page, select the name of the Cloud Volumes ONTAP instance.
 //
-//. Click the menu icon and select *Enable capacity tiering*.
+//. Select the menu icon and select *Enable capacity tiering*.
 //+
 //NOTE: You'll only see this option if data tiering couldn't be enabled when the Console created the system.
 //+
 //In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
 //
-//. Click *Enable* so the Console can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
+//. Select *Enable* so the Console can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
 NOTE: The ability to enable tiering through the Console will be available in a future Cloud Volumes ONTAP release.
 
@@ -197,11 +179,11 @@ image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows informati
 
 .Steps to enable tiering on an aggregate
 
-. In ONTAP System Manager, click *Storage > Tiers*.
+. In ONTAP System Manager, select *Storage > Tiers*.
 
-. Click the action menu for the aggregate and select *Attach Cloud Tiers*.
+. Select the action menu for the aggregate and select *Attach Cloud Tiers*.
 
-. Select the cloud tier to attach and click *Save*.
+. Select the cloud tier to attach and select *Save*.
 
 .What's next?
 
@@ -221,9 +203,9 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 | Task
 | Action
 
-| Create a new volume	| Click *Add New Volume*.
+| Create a new volume	| Select *Add New Volume*.
 
-| Modify an existing volume | Select the desired volume tile, click *Manage volume* to access the Manage Volumes right-side panel, and then click *Advanced actions* and *Change tiering policy* under the right panel.
+| Modify an existing volume | Select the desired volume tile, select *Manage volume* to access the Manage Volumes right-side panel, and then select *Advanced actions* and *Change tiering policy* under the right panel.
 
 |===
 
@@ -265,9 +247,9 @@ For information about supported storage classes, refer to link:concept-data-tier
 
 .Steps
 
-. On the Cloud Volumes ONTAP system, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
+. On the Cloud Volumes ONTAP system, select the menu icon and then select *Storage Classes* or *Blob Storage Tiering*.
 
-. Choose a storage class and then click *Save*.
+. Choose a storage class and then select *Save*.
 
 == Change the free space ratio for data tiering
 
@@ -282,16 +264,16 @@ The ratio is important for disaster recovery scenarios because as data is read f
 .Steps
 
 . From the left navigation pane, go to *Administration > Agents*. 
-. Click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the Console agent that manages your Cloud Volumes ONTAP system.
+. Select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon for the Console agent that manages your Cloud Volumes ONTAP system.
 . Select *Cloud Volumes ONTAP Settings*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
 
-. Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
+. Under *Capacity*, select *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 +
 image:screenshot-cvo-settings-page.png[An overview of the capacity settings of Cloud Volumes ONTAP.]
 +
-. Change the free space ratio based on your requirements and click *Save*.
+. Change the free space ratio based on your requirements and select *Save*.
 
 == Change the cooling period for the auto tiering policy
 

@@ -10,19 +10,6 @@ settings:
     harmony_enabled: true
   rss_page: "whats-new.html"
 
-  filter:
-    label: Cloud provider
-    default: All cloud providers
-    options:
-      - name: Amazon Web Services
-        alias: AWS
-        id: aws
-      - name: Google Cloud
-        alias: Google Cloud
-        id: gcp
-      - name: Microsoft Azure
-        alias: Azure
-        id: azure
 sidebar:
   entries:
     - title: Cloud Volumes ONTAP docs
@@ -58,7 +45,6 @@ sidebar:
             - title: Cloud Volumes ONTAP HA configuration
               url: /concept-degraded-ha-pair.html      
         - title: Deploy in Amazon Web Services
-          flavor: aws
           entries:
             - title: Onboard Cloud Volumes ONTAP from AWS Marketplace
               url: /task-onboard-cvo-aws-marketplace.html
@@ -91,7 +77,6 @@ sidebar:
             - title: Deploy Cloud Volumes ONTAP in AWS Secret regions
               url: /task-getting-started-aws-c2s.html
         - title: Deploy in Microsoft Azure
-          flavor: azure
           entries:
             - title: Learn about Cloud Volumes ONTAP deployment options in Azure
               url: /concept-azure-mktplace-direct.html
@@ -132,7 +117,6 @@ sidebar:
             - title: Deploy in Azure Marketplace
               url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Deploy in Google Cloud
-          flavor: gcp
           entries:
             - title: Deployment overview
 
@@ -172,13 +156,10 @@ sidebar:
             - title: Cloud Volumes ONTAP storage VMs
               url: /task-managing-svms.html
             - title: Manage storage VMs in AWS
-              flavor: aws
               url: /task-managing-svms-aws.html
             - title: Manage storage VMs in Azure
-              flavor: azure
               url: /task-managing-svms-azure.html
             - title: Manage storage VMs in Google Cloud
-              flavor: gcp
               url: /task-managing-svms-gcp.html
         - title: Aggregate administration
           entries:
@@ -219,7 +200,6 @@ sidebar:
     - title: Cloud infrastructure management
       entries:
             - title: AWS administration
-              flavor: aws
               entries:
                 - title: Supported configurations in AWS
                   url: /reference-configs-aws.html
@@ -236,7 +216,6 @@ sidebar:
                 - title: Change route tables for HA pairs
                   url: /task-change-route-tables.html    
             - title: Azure administration
-              flavor: azure
               entries:
                 - title: Supported configurations in Azure
                   url: /reference-configs-azure.html
@@ -261,7 +240,6 @@ sidebar:
                 - title: Upgrade disk performance tier in Azure
                   url: /task-upgrade-disk-perf-azure.html                          
             - title: Google Cloud administration
-              flavor: gcp
               entries:
                 - title: Supported configurations in Google Cloud
                   url: /reference-configs-gcp.html              
