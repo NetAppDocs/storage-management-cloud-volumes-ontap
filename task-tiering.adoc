@@ -26,7 +26,7 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP system runn
 
 [role="quick-margin-list"]
 ifdef::aws[]
-* For AWS, you'll need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Learn more>>.
+* For AWS, you'll need a VPC Endpoint to Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to Amazon S3,Learn more>>.
 endif::aws[]
 
 ifdef::azure[]
