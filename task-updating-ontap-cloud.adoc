@@ -28,12 +28,11 @@ The Console provides two ways to upgrade Cloud Volumes ONTAP:
 * By following upgrade notifications that appear on the system
 * By placing the upgrade image at an HTTPS location and then providing the Console with the URL
 
-=== Supported upgrade paths
+== Supported upgrade paths
 
 The Cloud Volumes ONTAP version you can upgrade to depends on the version you are currently running. Each generic or patch version in a release in the following tables represents the base version available for upgrade. For details about the available patches, refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[versioned release notes^] for each release.
 
-ifdef::aws[]
-==== Supported upgrade paths for AWS
+=== AWS
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -104,11 +103,9 @@ ifdef::aws[]
 | 8.3 | 9.0
 
 |===
-endif::aws[]
 
-ifdef::azure[]
 
-==== Supported upgrade paths for Azure
+=== Azure
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -139,11 +136,9 @@ If you have a lower version of Cloud Volumes ONTAP in Azure, you must first upgr
 * 9.9.1 P15 -> 9.10.1 P12
 * 9.10.1 P12 -> 9.11.1 P20
 
-endif::azure[]
 
-ifdef::gcp[]
 
-==== Supported upgrade paths for Google Cloud
+=== Google Cloud
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -216,7 +211,6 @@ ifdef::gcp[]
 | 8.3 | 9.0
 
 |===
-endif::gcp[]
 
 Note the following:
 
@@ -316,9 +310,9 @@ You can log in to System Manager by pointing your web browser to the IP address 
 +
 NOTE: The computer from which you are accessing the Console must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to the Console from a jump host that's in your cloud provider network.
 
-. Click *Protection > Relationships*.
+. Select *Protection > Relationships*.
 
-. Select the relationship and click *Operations > Quiesce*.
+. Select the relationship and select *Operations > Quiesce*.
 
 === Verify that aggregates are online
 
@@ -330,17 +324,17 @@ These steps describe how to use ONTAP System Manager for version 9.3 and later.
 
 .Steps
 
-. On the Cloud Volumes ONTAP system, click the *Aggregates* tab.
+. On the Cloud Volumes ONTAP system, select the *Aggregates* tab.
 
-. On the required aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then select *View Aggregate details*.
+. On the required aggregate tile, select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then select *View Aggregate details*.
 +
 image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field when you view information for an aggregate.]
 
 . If the aggregate is offline, use ONTAP System Manager to bring the aggregate online:
 
-.. Click *Storage > Aggregates & Disks > Aggregates*.
+.. Select *Storage > Aggregates & Disks > Aggregates*.
 
-.. Select the aggregate, and then click *More Actions > Status > Online*.
+.. Select the aggregate, and then select *More Actions > Status > Online*.
 
 === Verify that all LIFs are on home ports 
 
@@ -376,19 +370,19 @@ A notification appears in the Overview tab if a new version is available:
 +
 image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!" link under the Overview tab.]
 
-. If you want to upgrade the installed version of Cloud Volumes ONTAP, click *Upgrade Now!* By default, you see the latest, compatible version for upgrade.
+. If you want to upgrade the installed version of Cloud Volumes ONTAP, select *Upgrade Now!* By default, you see the latest, compatible version for upgrade.
 +
 image:screenshot_upgrade_select_versions.png[A screenshot of the Upgrade Cloud Volumes ONTAP version page.]
 +
-If you want to upgrade to another version, click *Select other versions*. You see the latest Cloud Volumes ONTAP versions listed that are also compatible with the installed version on your system.
+If you want to upgrade to another version, select *Select other versions*. You see the latest Cloud Volumes ONTAP versions listed that are also compatible with the installed version on your system.
 For example, the installed version on your system is 9.12.1P3, and the following compatible versions are available:
 
 * 9.12.1P4 to 9.12.1P14
 * 9.13.1 and 9.13.1P1
 You see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.
 
-. Optionally, you can click *All versions* to enter another version that you want to upgrade to (say, the next patch of the installed version). For a compatible upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
-. Click *Save*, and then *Apply*. 
+. Optionally, you can select *All versions* to enter another version that you want to upgrade to (say, the next patch of the installed version). For a compatible upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
+. Select *Save*, and then *Apply*. 
 image:screenshot_upgrade_other_versions.png[A screenshot displaying the available versions for upgrade.]
 
 . In the Upgrade Cloud Volumes ONTAP page, read the EULA, and then select *I read and approve the EULA*. 
@@ -440,9 +434,9 @@ Two paths are available. The correct path depends on your Console agent version.
 *	`/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. On the system, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then click *Update Cloud Volumes ONTAP*.
+. On the system, select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon, and then select *Update Cloud Volumes ONTAP*.
 
-. On the Update Cloud Volumes ONTAP version page, enter the URL, and then click *Change Image*.
+. On the Update Cloud Volumes ONTAP version page, enter the URL, and then select *Change Image*.
 +
 If you copied the software image to the Console agent in the path shown above, you would enter the following URL:
 +
@@ -450,7 +444,7 @@ If you copied the software image to the Console agent in the path shown above, y
 +
 NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
 
-. Click *Proceed* to confirm.
+. Select *Proceed* to confirm.
 
 .Result
 
@@ -460,7 +454,6 @@ The Console starts the software update. You can perform actions on the system on
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-ifdef::gcp[]
 == Fix download failures when using a Google Cloud NAT gateway
 
 The Console agent automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. You must use the APIs to complete this step.
@@ -479,4 +472,3 @@ The value for _maxDownloadSessions_ can be 1 or any integer greater than 1. If t
 Note that 32 is an example value. The value that you should use depends on your NAT configuration and the number of sessions that you can have simultaneously.
 
 https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
-endif::gcp[]
