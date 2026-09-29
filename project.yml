@@ -311,6 +311,8 @@ sidebar:
               url: /task-azure-onelake.html
             - title: Cloud Volumes ONTAP and well-architected dashboard
               url: /configuration-analysis-cvo.html
+            - title: Learn about Cloud Volumes ONTAP automation options
+              url: /concept-cvo-automation.html
     - title: Knowledge and support
       entries:
         - title: Register for support
