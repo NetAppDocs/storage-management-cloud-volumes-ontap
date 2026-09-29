@@ -63,7 +63,7 @@ If any of these requirements is not fulfilled, the license conversion does not h
 .Steps
 
 . From the left navigation menu, select *Storage > Management*.
-. On the *Systems* page, double-select the name of the system for which you want to modify the license type.
+. On the *Systems* page, double-click the name of the system for which you want to modify the license type.
 . On the *Overview* tab, select the *Features* panel.
 . Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you can convert it to by-capacity charging. 
 +
@@ -113,7 +113,7 @@ The conversion from node-based licenses to any capacity-based license other than
 .Steps
 
 . From the left navigation menu, select *Storage > Management*.
-. On the *Systems* page, double-select the name of the system for which you want to modify the license type.
+. On the *Systems* page, double-click the name of the system for which you want to modify the license type.
 . On the *Overview* tab, select the *Features* panel.
 . Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you can convert it to a capacity-based license. 
 +

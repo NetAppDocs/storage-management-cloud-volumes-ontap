@@ -29,7 +29,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-select the Cloud Volumes ONTAP system on which you want to manage aggregates.
+. On the *Systems* page, double-click the Cloud Volumes ONTAP system on which you want to manage aggregates.
 
 . From the system details, select the *Aggregates* tab.
 

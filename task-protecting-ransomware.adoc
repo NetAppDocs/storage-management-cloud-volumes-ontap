@@ -21,7 +21,7 @@ Available on the Console, the Ransomware Protection setting allows you to utiliz
 
 .Steps
 
-. On the *Systems* page, double-select the name of the Cloud Volumes ONTAP system you configure to use ransomware protection.
+. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system you configure to use ransomware protection.
 
 . On the Overview tab, select the Features panel and then select the pencil icon next to *Ransomware Protection*.
 +

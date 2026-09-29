@@ -25,7 +25,7 @@ Note the following:
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-select the Cloud Volumes ONTAP system on which you want to manage volumes.
+. On the *Systems* page, double-click the Cloud Volumes ONTAP system on which you want to manage volumes.
 
 . In the system, select the *Volumes* tab.
 

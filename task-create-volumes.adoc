@@ -41,7 +41,7 @@ The most common way to create a volume is to specify the type of volume that you
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-select the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
+. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
 +
 You can create a volume by letting the Console handle the disk allocation for you, or choose a specific aggregate for the volume. Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.
 +
@@ -187,7 +187,7 @@ By default, the Console creates volumes on the first node in an HA configuration
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, double-select the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
+. On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
 
 . On the Aggregates tab, select *Add Aggregate*, and create the aggregate.
 +

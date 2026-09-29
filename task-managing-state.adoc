@@ -33,7 +33,7 @@ Snapshots are automatically created only when performing a manual shutdown, as d
 
 .Steps
 
-. On the *Systems* page, double-select the Cloud Volumes ONTAP system.
+. On the *Systems* page, double-click the Cloud Volumes ONTAP system.
 
 . On the Overview tab, select the Features panel and then select the pencil icon next to *Scheduled Downtime*.
 +
