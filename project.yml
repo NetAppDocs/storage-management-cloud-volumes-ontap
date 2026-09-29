@@ -60,9 +60,9 @@ sidebar:
         - title: Deploy in Amazon Web Services
           flavor: aws
           entries:
-            - title: Subscribe and deploy the standalone Cloud Volumes ONTAP offering 
+            - title: Deploy the standalone Cloud Volumes ONTAP from AWS Marketplace
               url: /task-onboard-cvo-aws-marketplace.html
-            - title: Deployment overview for the NetApp Intelligent Service combined offering
+            - title: Deployment overview 
               url: /task-getting-started-aws.html
             - title: Plan your configuration
               url: /task-planning-your-config.html
