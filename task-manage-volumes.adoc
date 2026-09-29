@@ -281,7 +281,7 @@ You can move one or more volumes to another aggregate to avoid capacity issues.
 You can follow the steps in this task to correct the following Action Required message:
 
 [NOTE]
-Moving a volume is necessary to avoid capacity issues; however, the Console cannot perform this action for you if the system reaches the disk limit. 
+Moving two or more volumes is necessary to avoid capacity issues; however, the Console cannot perform this action for you.
 
 .Steps
 
