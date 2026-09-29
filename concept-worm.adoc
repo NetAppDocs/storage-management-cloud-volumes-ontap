@@ -57,7 +57,7 @@ You can enable WORM storage when creating a Cloud Volumes ONTAP system on the Co
 * WORM with backup is supported on ONTAP 9.11.1 and later.
 
 .Steps
-. On the *Systems* page, double-select the name of the system on which you want to enable WORM.
+. On the *Systems* page, double-click the name of the system on which you want to enable WORM.
 . On the Overview tab, select the Features panel and then select the pencil icon next to *WORM*.
 +
 If WORM is already enabled on the system, the pencil icon is disabled.
