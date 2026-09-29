@@ -104,9 +104,9 @@ image:screenshot-quick-start-gcp.png[width=500,alt="Google Cloud Quick Create"]
 For _Google Cloud_, you need to select a marketplace subscription with the project name.
 . *Name*: Enter a name for your Cloud Volumes ONTAP system (also called the cluster name). The Console uses the system (cluster) name to name the Cloud Volumes ONTAP system and the VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 . *ONTAP credentials*: These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. You can keep the default _admin_ user name or change it to a custom user name.
-ifdef::gcp[]
+
 For _Google Cloud_, If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html[NetApp Backup and Recovery^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account^]. The service account associated with the Console agent https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html[should have the required permissions^].
-endif::gcp[]
+
 . *Tags/Labels*: Tags are the metadata for your AWS or Azure resources. The Console adds the tags to the Cloud Volumes ONTAP instance and each resource associated with the instance. You can add up to 15 tags from the user interface when creating a Cloud Volumes ONTAP system, and then you can add more after it's created. For more information, refer to:
 +
 [role="tabbed-block"]

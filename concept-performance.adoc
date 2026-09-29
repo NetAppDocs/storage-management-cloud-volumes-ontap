@@ -24,7 +24,7 @@ link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383.pdf[NetApp Technica
 * Cloud Volumes ONTAP for Microsoft Azure
 +
 link:https://www.netapp.com/pdf.html?item=/media/9089-tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of Cloud Volumes ONTAP in Azure with Application Workloads^]
-endif::azure[]
+
 
 * Cloud Volumes ONTAP for Google Cloud
 +

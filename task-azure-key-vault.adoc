@@ -59,12 +59,12 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 .Create an Azure Key Vault
 . If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration; however, you must adapt the access policies to the settings in this process.
 . In the Azure portal, navigate to the **Key Vaults** section.
-. Select **+Create** and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select **Enable purge protection** on the key vault.
+. Select **Create** and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select **Enable purge protection** on the key vault.
 . Select **Next** to choose an access policy.
 . Select the following options: 
 .. Under **Access configuration**, select the **Vault access policy**.
 .. Under **Resource access**, select **Azure Disk Encryption for volume encryption**.
-. Select **+Create** to add an access policy.
+. Select **Create** to add an access policy.
 . Under **Configure from a template**, select the drop-down menu and then select the **Key, Secret, and Certificate Management** template.
 . Choose each of the drop-down permissions menus (key, secret, certificate) and then **Select all ** at the top of the menu list to select all the permissions available. You should have:
 ** **Key permissions**: 20 selected

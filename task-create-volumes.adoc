@@ -152,15 +152,10 @@ Host initiator (IQN):: iSCSI targets connect to the network through standard Eth
 
 .. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
 +
-ifdef::aws[]
 * link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws[Sizing your system in AWS^]
-endif::aws[]
-ifdef::azure[]
 * link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^]
-endif::azure[]
-ifdef::gcp[]
 * link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp[Sizing your system in Google Cloud^]
-endif::gcp[]
+
 
 .. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].
 +
