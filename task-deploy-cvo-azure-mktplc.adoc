@@ -149,6 +149,7 @@ After the discovery is complete, you can view the systems listed on the  *System
 .Related links
 Refer to the ONTAP documentation for more information about creating storage:
 
+* link:task-onboard-cvo-aws-marketplace.html[Subscribe and deploy Cloud Volumes ONTAP from AWS Marketplace]
 * https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Add a new marketplace subscription^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[Create volumes for NFS^]  
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html[Create LUNs for iSCSI^]
