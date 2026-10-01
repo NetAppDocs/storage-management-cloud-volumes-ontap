@@ -63,9 +63,9 @@ The Console administrator assigns roles to Cloud Volumes ONTAP users from *Admin
 Cloud Volumes ONTAP enforces RBAC using a local cache of each user's permissions, which is refreshed automatically once every hour. When a user is assigned a new role or their existing role is changed, it may take up to one hour for that change to take effect, after which, all workflows permitted by the roles are enabled.
 
 [NOTE]
-When a Console agent is deployed for the first time, or an existing Console agent is upgraded to Console 4.9.0 or later, a one-time seeding process automatically assigns Cloud Volumes ONTAP roles to all existing users in the organization. This process can take up to 30 minutes to complete. And when complete, the Console assigns appropriate roles to the existing users. ##Cloud Volumes ONTAP roles do not apply in private and restricted modes of deployment.##
+When a Console agent is deployed for the first time, or an existing Console agent is upgraded to Console 4.9.0 or later, a one-time seeding process automatically assigns Cloud Volumes ONTAP roles to all existing users in the organization. This process can take up to 30 minutes to complete. And when complete, the Console assigns appropriate roles to the existing users. ##The seeding process doesn't occur unless there's an agent running.##
 
-Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Azure), and Google Cloud environments.
+Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Azure), and Google Cloud environments. ##The roles do not apply to private and restricted modes of deployment.##
 
 .Related links
 
