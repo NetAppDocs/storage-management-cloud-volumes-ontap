@@ -69,8 +69,9 @@ Cloud Volumes ONTAP roles apply to Amazon Web Service (AWS), Microsoft Azure (Az
 
 .Related links
 
-* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html[NetApp Console access roles^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html[Set up role-based access for Cloud Volumes ONTAP in NetApp Console^]
+
 
 
 
