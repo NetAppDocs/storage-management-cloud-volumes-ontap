@@ -48,7 +48,7 @@ You can now use the *Quick create* wizard to deploy Cloud Volumes ONTAP in Googl
 
 === Introducing access roles for Cloud Volumes ONTAP
 
-NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. Users can continue to log in to the NetApp Console using their existing credentials for Cloud Volumes ONTAP operations. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over these functions. ##The Console agent must be running version 4.9.0 or later to enable Cloud Volumes ONTAP roles.##
+NetApp introduces identity and access management (IAM) roles for Cloud Volumes ONTAP, enabling role-based access control (RBAC) for better security and easier compliance. Users can continue to log in to the NetApp Console using their existing credentials for Cloud Volumes ONTAP operations. However, authentication is now routed through identity federation, enabling the Console administrator to have more granular control over these functions. ##The Console agent must be running version 4.9.0 or later before enabling Cloud Volumes ONTAP roles.##
 
 Every user must have one of the following roles for performing any operation on Cloud Volumes ONTAP. Without a role, users can't view or access Cloud Volumes ONTAP instances. 
 
