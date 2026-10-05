@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-enable-cluster-encryption.html
-keywords: cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption
-summary: Enable Cluster Network Encryption to protect Cloud Volumes ONTAP cluster traffic that is not already protected by ONTAP IPsec.
+keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption
+summary: Enable backend cluster network encryption to protect Cloud Volumes ONTAP cluster traffic that is not already protected by ONTAP IPsec.
 ---
 
-= Enable backend network encryption on Cloud Volumes ONTAP clusters
+= Enable backend network encryption on Cloud Volumes ONTAP clusters in Azure and Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -31,35 +31,31 @@ Enabling cluster network encryption might impact your cluster's performance. Exe
 
 . Use the ONTAP CLI to connect to the Cloud Volumes ONTAP cluster.
 
-. Verify the current cluster network encryption configuration:
+. Verify that the configuration for the cluster network encryption is correct:
 +
 [source,cli]
 ----
 security cluster-network show
+    Enabled: false
+    Mode: tls
+    Status: READY
 ----
-+
-Confirm that the output shows the current values for `Enabled`, `Mode`, and `Status`. Before you enable the feature, `Enabled` should be `false` and `Status` should be `READY`.
-
-. Enable Cluster Network Encryption in TLS and IPsec mode:
+. Enable cluster network encryption in TLS and IPsec mode:
 +
 [source,cli]
 ----
 security cluster-network modify -enabled true -mode tls_ipsec
 ----
 
-. Verify that Cluster Network Encryption is enabled:
+. Verify that cluster network encryption is enabled:
 +
 [source,cli]
 ----
 security cluster-network show
+    Enabled: true
+    Mode: tls_ipsec
+    Status: READY
 ----
-+
-Confirm that the output shows:
-
-* `Enabled: true`
-* `Mode: tls_ipsec`
-* `Status: READY`
-
 NOTE: When you enable `tls_ipsec` mode, CSM traffic uses TLS, while other cluster network traffic uses IPsec. ONTAP generates and manages the required certificates and backend IPsec policies.
 
 .Related information
