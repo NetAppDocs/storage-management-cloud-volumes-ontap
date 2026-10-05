@@ -4,7 +4,7 @@ Cloud Volumes ONTAP now supports deployment in Azure Government Secret and Top S
 
 For information, refer to Azure documentation:
 
-* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/[Cloud for US Government Missions^  ]
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/[Cloud for US Government Missions^]
 * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/national-security[Azure Government Secret^]
 * https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions[Azure Government Top Secret^]
 

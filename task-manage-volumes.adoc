@@ -31,7 +31,7 @@ By using the Standard View of the Console, you can manage volumes according to y
 +
 image:screenshot_manage_vol_button.png[A screenshot of the Manage Volume button under the Volumes tab.]
 
-. On the required volume tile, click *Manage volume*.
+. On the required volume tile, select *Manage volume*.
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -39,64 +39,64 @@ image:screenshot_manage_vol_button.png[A screenshot of the Manage Volume button 
 | Task
 | Action
 
-| View information about a volume | Under Volume Actions in the Manage volumes panel, click *View volume details*.
+| View information about a volume | Under Volume Actions in the Manage volumes panel, select *View volume details*.
 
 | Get the NFS mount command
 a|
-.. Under Volume Actions in the Manage volumes panel, click *Mount Command*.
-.. Click *Copy*.
+.. Under Volume Actions in the Manage volumes panel, select *Mount Command*.
+.. Select *Copy*.
 
 | Clone a volume
 a|
-.. Under Volume Actions in the Manage volumes panel, click *Clone the volume*.
-.. Modify the clone name as needed, and then click *Clone*.
+.. Under Volume Actions in the Manage volumes panel, select *Clone the volume*.
+.. Modify the clone name as needed, and then select *Clone*.
 
 This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.
 
-To learn more about FlexClone volumes, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
+To learn more about FlexClone volumes, refer to the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
 | Edit a volume (read-write volumes only)
 a|
-.. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*
-.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Apply*.
+.. Under Volume Actions in the Manage volumes panel, select *Edit volume settings*
+.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then select *Apply*.
 
 NOTE: If you need custom Snapshot policies, you can create them by using ONTAP System Manager.
 
 | Delete a volume
 a|
-.. Under Volume Actions in the Manage volumes panel, click *Delete the volume*.
+.. Under Volume Actions in the Manage volumes panel, select *Delete the volume*.
 .. Under the Delete Volume window, enter the name of the volume you want to delete.
-.. Click *Delete* again to confirm.
+.. Select *Delete* again to confirm.
 
 | Create a Snapshot copy on demand
 a|
-.. Under Protection Actions in the Manage Volumes panel, click *Create a Snapshot copy*. 
-.. Change the name, if needed, and then click *Create*.
+.. Under Protection Actions in the Manage Volumes panel, select *Create a Snapshot copy*. 
+.. Change the name, if needed, and then select *Create*.
 
 | Restore data from a Snapshot copy to a new volume
 a|
-.. Under Protection Actions in the Manage Volumes panel, click *Restore from Snapshot copy*.
-.. Select a Snapshot copy, enter a name for the new volume, and then click *Restore*.
+.. Under Protection Actions in the Manage Volumes panel, select *Restore from Snapshot copy*.
+.. Select a Snapshot copy, enter a name for the new volume, and then select *Restore*.
 
 | Change the underlying disk type
 a|
-.. Under Advanced Actions in the Manage Volumes panel, click *Change Disk Type*.
-.. Select the disk type, and then click *Change*.
+.. Under Advanced Actions in the Manage Volumes panel, select *Change Disk Type*.
+.. Select the disk type, and then select *Change*.
 
 NOTE: The Console moves the volume to an existing aggregate that uses the selected disk type or it creates a new aggregate for the volume.
 
 | Change the tiering policy
 a|
-.. Under Advanced Actions in the Manage Volumes panel, click *Change Tiering Policy*.
-.. Select a different policy and click *Change*.
+.. Under Advanced Actions in the Manage Volumes panel, select *Change Tiering Policy*.
+.. Select a different policy and select *Change*.
 
 NOTE: The Console moves the volume to an existing aggregate that uses the selected disk type with tiering, or it creates a new aggregate for the volume.
 
 | Delete a volume
 a|
-.. Select a volume, and then click *Delete*.
+.. Select a volume, and then select *Delete*.
 .. Type the name of the volume in the dialog.
-.. Click *Delete* again to confirm.
+.. Select *Delete* again to confirm.
 
 |===
 
@@ -110,10 +110,10 @@ If you need to resize your volume, you can do it from ONTAP System Manager in th
 . Select the System Manager view to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#get-started-with-system-manager[Get started with System Manager].
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
-. Click the options icon image:screenshot_gallery_options.gif[kabob icon].
+. Select the options icon image:screenshot_gallery_options.gif[kabob icon].
 . Select *Resize*.
 . On the *Resize Volume* screen, edit the capacity and Snapshot reserve percentage as required. You can compare the existing, available space with the modified capacity.
-. Click *Save*. 
+. Select *Save*. 
 
 image:screenshot-resize-volume.png[Screen displays the modified capacity after volume resize]
 
@@ -127,8 +127,8 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 .Steps
 
-. From the *Overview* tab of the Cloud Volumes ONTAP system, click the *Feature* tab under the right-side panel.
-. Under the CIFS Setup field, click the *pencil icon* to display the CIFS Setup window.
+. From the *Overview* tab of the Cloud Volumes ONTAP system, select the *Feature* tab under the right-side panel.
+. Under the CIFS Setup field, select the *pencil icon* to display the CIFS Setup window.
 
 . Specify settings for the CIFS server:
 +
@@ -148,33 +148,23 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
-ifdef::gcp[]
 
-If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+If you're configuring Google-managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
 
-endif::gcp[]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| CIFS server NetBIOS name | 	A CIFS server name that is unique in the AD domain.
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
 
 | Organizational Unit a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
-ifdef::aws[]
-* To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
-endif::aws[]
-ifdef::azure[]
-* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field. 
-link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
-endif::azure[]
-ifdef::gcp[]
-*	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field. 
-link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
-endif::gcp[]
+* AWS: To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
+* Azure: To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field. Azure documentation: link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+* Google Cloud: To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field. Google Cloud documentation: link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Organizational Units in Google Managed Microsoft AD^]
 
 |===
 
-. Click *Set*.
+. Select *Set*.
 
 .Result
 
@@ -222,9 +212,9 @@ For example, the advanced information should say something similar to the follow
 
 . Identify one or more volumes to move out of the aggregate:
 
-.. In the Cloud Volumes ONTAP system, click the *Aggregates tab*.
+.. In the Cloud Volumes ONTAP system, select the *Aggregates tab*.
 
-.. On the aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then click *View aggregate details*.
+.. On the aggregate tile, select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then select *View aggregate details*.
 
 .. Under the *Overview* tab of the *Aggregate Details* screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
@@ -256,9 +246,9 @@ You can move one or more volumes to another Cloud Volumes ONTAP system to avoid 
 
 You can follow the steps in this task to correct the following Action Required message:
 
-====
-Moving a volume is necessary to avoid capacity issues; however, the Console cannot perform this action for you because the system has reached the disk limit. 
-====
+[NOTE]
+Moving a volume is necessary to avoid capacity issues; however, the Console cannot perform this action for you if the system reaches the disk limit. 
+
 
 .Steps
 
@@ -290,25 +280,24 @@ You can move one or more volumes to another aggregate to avoid capacity issues.
 
 You can follow the steps in this task to correct the following Action Required message:
 
-====
-Moving two or more volumes is necessary to avoid capacity issues; however, the Console cannot perform this action for you. 
-====
+[NOTE]
+Moving two or more volumes is necessary to avoid capacity issues; however, the Console cannot perform this action for you.
 
 .Steps
 
 . Verify whether an existing aggregate has available capacity for the volumes that you need to move:
 
-.. On Cloud Volumes ONTAP system, click the *Aggregates tab*.
+.. On Cloud Volumes ONTAP system, select the *Aggregates tab*.
 
-.. On the required aggregate tile, click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
+.. On the required aggregate tile, select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon and then *View aggregate details* to view the available capacity (provisioned size minus used aggregate capacity).
 +
 image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon > *Add Disks*.
+.. Select the aggregate, then select the image:icon-action.png["An icon that shows three horizontal dots for additional actions"] icon > *Add Disks*.
 
-.. Select the number of disks to add, and then click *Add*.
+.. Select the number of disks to add, and then select *Add*.
 
 . If no aggregates have available capacity, create a new aggregate.
 +

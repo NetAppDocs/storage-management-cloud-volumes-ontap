@@ -29,17 +29,9 @@ Logical space reporting is enabled on the initial storage VM. When space is repo
 ** Multi-tenant Encryption Key Management (MTEKM), starting with Cloud Volumes ONTAP 9.12.1 GA
 ** NetApp Volume Encryption (only for Bring-Your-Own License (BYOL) or registered pay-as-you-go (PAYGO) systems)
 ** NFS
-ifdef::azure,aws[]
-** ONTAP S3
-ifdef::aws[]
-+
-Starting with Cloud Volumes ONTAP 9.11.0 in AWS
-endif::aws[]
-ifdef::azure[]
-+
-Starting with Cloud Volumes ONTAP 9.9.1 in Azure
-endif::azure[]
-endif::azure,aws[]
+** ONTAP S3 
+*** AWS: starting with Cloud Volumes ONTAP 9.11.0
+*** Azure: starting with Cloud Volumes ONTAP 9.9.1
 ** SnapMirror
 ** SnapRestore
 ** SnapVault
@@ -47,20 +39,12 @@ endif::azure,aws[]
 * Several network interfaces are created by default:
 ** A cluster management LIF
 ** An intercluster LIF
-ifdef::azure[]
-** An SVM management LIF on HA systems in Azure
-endif::azure[]
-ifdef::gcp[]
-** An SVM management LIF on HA systems in Google Cloud
-endif::gcp[]
-ifdef::aws[]
-** An SVM management LIF on single-node systems in AWS
-endif::aws[]
+** AWS single-node systems: an SVM management LIF
+** Azure HA systems: an SVM management LIF
+** Google Cloud HA systems: an SVM management LIF
 ** A node management LIF
-ifdef::gcp[]
 +
-In Google Cloud, this LIF is combined with the intercluster LIF.
-endif::gcp[]
+Google Cloud: this LIF is combined with the intercluster LIF.
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
 +

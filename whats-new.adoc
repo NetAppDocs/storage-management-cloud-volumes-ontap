@@ -163,7 +163,7 @@ include::_whatsnew/2024-09-09.adoc[]
 === Canada West region now supported in AWS
 The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
+For a list of all regions, see the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under AWS^].
 
 == 22 August 2024
 
@@ -239,12 +239,12 @@ The following regions now support HA multiple availability zone deployments in A
 * Italy North
 * Canada Central
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
 
 === Johannesburg region now supported in Google Cloud
 The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Google Cloud^].
 
 === Volume templates and tags no longer supported
 
@@ -332,7 +332,7 @@ The following regions now support highly-available multiple availability zone de
 * South Africa North
 * United Arab Emirates North
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
 
 == 10 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
@@ -340,7 +340,7 @@ The following change was introduced with the 3.9.35 release of the Connector.
 === Berlin region now supported in Google Cloud
 The Berlin region is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Google Cloud^].
 
 == 08 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
@@ -348,7 +348,7 @@ The following change was introduced with the 3.9.35 release of the Connector.
 === Tel Aviv region now supported in AWS
 The Tel Aviv region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under AWS^].
 
 == 01 November 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -356,7 +356,7 @@ The following change was introduced with the 3.9.34 release of the Connector.
 === Saudi Arabia region now supported in Google Cloud
 The Saudi Arabia region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Google Cloud^].
 
 == 23 October 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -374,7 +374,7 @@ The following regions in Azure now support highly-available multiple availabilit
 * West Europe
 * West US 2
 
-For a list of all regions that support multiple availability zones, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions that support multiple availability zones, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
 
 == 06 October 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -434,7 +434,7 @@ The following changes were introduced with the 3.9.31 release of the Connector.
 === Support for HA multiple availability zone deployments in Azure
 The Japan East and Korea Central in Azure now supports HA multiple availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions that support multiple availability zones, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions that support multiple availability zones, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
 
 === Autonomous Ransomware Protection support
 Autonomous Ransomware Protection (ARP) is now supported on Cloud Volumes ONTAP. ARP support is available on Cloud Volumes ONTAP version 9.12.1 and higher.
@@ -498,7 +498,7 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in 
 * Single-node systems are supported.
 * Licenses purchased directly from NetApp are supported.
 
-For regional availability, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+For regional availability, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Maps for Cloud Volumes ONTAP^].
 
 == 3 April 2023
 The following changes were introduced with the 3.9.28 release of the Connector. 
@@ -535,7 +535,7 @@ China North 3 region is now supported for single node deployments of Cloud Volum
 [NOTE]
 Fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support.
 
-For regional availability, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+For regional availability, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Maps for Cloud Volumes ONTAP^].
 
 
 == 05 March 2023
@@ -755,7 +755,7 @@ https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP d
 
 Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/[View the full list of supported regions for Cloud Volumes ONTAP^]
 
 === ONTAP S3 license in Azure
 
@@ -877,7 +877,7 @@ Cloud Volumes ONTAP is now supported in the following Google Cloud regions start
 * Milan (europe-west8) - single node only
 * Santiago (southamerica-west1) - single node only
 
-https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/[View the full list of supported regions for Cloud Volumes ONTAP^]
 
 === Support for n2-standard-16 in Google Cloud
 

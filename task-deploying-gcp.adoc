@@ -52,7 +52,7 @@ Create a system in the NetApp Console to launch Cloud Volumes ONTAP in Google Cl
 
 . From the left navigation menu, select *Storage > Management*.
 
-. [[subscribe]]On the *Systems* page, click *Add System* and follow the prompts.
+. [[subscribe]]On the *Systems* page, select *Add System* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
@@ -85,7 +85,7 @@ If you don't see any additional projects in the drop-down list, then you haven't
 
 NOTE: This is the service account that you set up for the Console, link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
-Click *Add Subscription* to associate the selected credentials with a subscription.
+Select *Add Subscription* to associate the selected credentials with a subscription.
 
 To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud marketplace. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html[Associating a marketplace subscription with Google Cloud credentials^].
 
@@ -122,7 +122,7 @@ The following table describes fields for which you might need guidance:
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^]
 * link:task-set-up-licensing-google.html[Learn how to set up licensing^]
 
-. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*. The preconfigured packages vary with the selected Cloud Volumes ONTAP version. For example, for Cloud Volumes ONTAP 9.18.1 and later, the Console shows packages with C3 VMs, including Hyperdisk Balanced disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or select *Create my own configuration*. The preconfigured packages vary with the selected Cloud Volumes ONTAP version. For example, for Cloud Volumes ONTAP 9.18.1 and later, the Console shows packages with C3 VMs, including Hyperdisk Balanced disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
@@ -163,7 +163,7 @@ Note the following:
 +
 link:concept-data-tiering.html[Learn more about data tiering^].
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -214,17 +214,17 @@ For more information, refer to link:task-planning-your-config-gcp.html#choose-a-
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the Google Cloud resources that the Console will purchase.
+.. Select *More information* to review details about support and the Google Cloud resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the *Audit* page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and select *Re-create environment*.
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
@@ -247,7 +247,7 @@ Create a system in the Console to launch Cloud Volumes ONTAP in Google Cloud.
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, click *Storage > System* and follow the prompts.
+. On the *Systems* page, select *Storage > System* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP HA*.
 
@@ -262,7 +262,7 @@ The following table describes fields for which you might need guidance:
 
 | Google Cloud project and Marketplace subscription a| Select the Google project and the subscription that you want to use for this system. This is the service account that you set up for the Console. For information, Refer to the link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html[Console setup documents^]. The Console uses the project to create the Cloud Volumes ONTAP system and the subscription to determine billing and usage. If you don't see any additional projects in the drop-down list, then you haven't yet associated the service account with other projects. Go to the Google Cloud Console, open the IAM service, and select the project. Add the service account with the role that you use for the Console to that project. You'll need to repeat this step for each project.
 
-Click *Add Subscription* to associate the selected credentials with a subscription.
+Select *Add Subscription* to associate the selected credentials with a subscription.
 
 To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud Marketplace. Refer to the Console setup document: https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html[Associating a marketplace subscription with Google Cloud credentials^].
 
@@ -319,7 +319,7 @@ The following table describes fields for which you might need guidance:
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
 * link:task-set-up-licensing-google.html[Learn how to set up licensing^].
 
-. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or select *Create my own configuration*.
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration. The preconfigured packages vary with the selected Cloud Volumes ONTAP version and configuration types. For example, if you select a single AZ deployment for Cloud Volumes ONTAP 9.19.1 or later, you can see preconfigured packages with C3-series machines and Hyperdisk Balanced disks. For earlier versions and multiple AZs, you can still select n2-standard machines and Persistent Disks. You can modify the configurations, such as IOPS and throughput parameters, based on your workload needs.
 +
@@ -358,7 +358,7 @@ Note the following:
 +
 link:concept-data-tiering.html[Learn more about data tiering^].
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -409,17 +409,17 @@ For more information, refer to  link:task-planning-your-config-gcp.html#choose-a
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the Google Cloud resources that the Console will purchase.
+.. Select *More information* to review details about support and the Google Cloud resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console deploys the Cloud Volumes ONTAP system. You can track the progress on the *Audit* page.
 
-If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and click *Re-create environment*.
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the system and select *Re-create environment*.
 
 
 .After you finish
