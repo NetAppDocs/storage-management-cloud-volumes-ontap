@@ -37,7 +37,7 @@ a| After you have created a Console agent, you must verify that the necessary IA
 a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
 https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html[Set up role-based access for Cloud Volumes ONTAP^]
-a| ##In private mode, the Console agent must have the necessary roles and permissions configured correctly. However, Cloud Volumes ONTAP roles don't apply to private mode Cloud Volumes ONTAP deployments. Refer to the Console setup guide: https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#private-mode[NetApp Console in private mode^]##
+a| In private mode, the Console agent must have the necessary roles and permissions configured correctly. However, Cloud Volumes ONTAP roles don't apply to private mode Cloud Volumes ONTAP deployments. Refer to the Console setup guide: https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#private-mode[NetApp Console in private mode^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
