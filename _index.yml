@@ -107,7 +107,7 @@ indexpage:
         - title: Cloud Volumes ONTAP and Microsoft OneLake
           url: /task-azure-onelake.html
         - title: Cloud Volumes ONTAP and well-architected dashboard
-          url: /configuration-analysis-cvo.html         
+          url: /concept-configuration-analysis-cvo.html
         - title: Cloud Volumes ONTAP and Keystone
           url: /task-manage-keystone.html 
     - title: More resources
