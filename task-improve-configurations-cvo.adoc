@@ -39,7 +39,7 @@ Fix operations can cause instance downtimes or service interruptions. Review eac
 The recommendation explains best practices and potential pitfalls of unoptimized configurations.
 . Select resources and then *Fix*.
 +
-Some fix operations are only available for specific operations and not always for more than one resource. For example, you might be able to fix the configuration for a single volume but not for multiple volumes.
+Some fixes are only available for specific configurations and cannot always be applied to more than one resource. For example, you might be able to fix the configuration for a single volume but not for multiple volumes.
 . Review the action items to learn about consequences of this fix such as instance downtimes or service interruptions.
 . Select *Fix* if you want Workload Factory to apply the recommended changes. 
 
