@@ -4,12 +4,12 @@ permalink: concept-configuration-analysis-cvo.html
 keywords: Cloud Volumes ONTAP, configuration issues, issues, improve, analyze, storage configuration, recommendation, recommendations
 summary: "From NetApp Console, Workload Factory analyzes storage system configurations regularly to determine if there are any configuration issues with your Cloud Volumes ONTAP systems."  
 ---
-= Configuration analysis for Cloud Volumes ONTAP in NetApp Console
+= Configuration analysis for Cloud Volumes ONTAP systems in Azure
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-From NetApp Console, Workload Factory analyzes storage system configurations regularly in NetApp Console to determine if there are any configuration issues with your Cloud Volumes ONTAP systems. When issues are found, the well-architected dashboard displays what the issues are and recommendations for what needs to change to ensure your storage systems achieve peak performance, cost efficiency, and compliance with best practices. 
+Workload Factory analyzes storage system configurations regularly from NetApp Console to determine if there are any configuration issues with your Cloud Volumes ONTAP systems in Azure. When issues are found, the well-architected dashboard displays what the issues are and recommendations for what needs to change to ensure your storage systems achieve peak performance, cost efficiency, and compliance with best practices. 
 
 Key capabilities include: 
 
@@ -18,7 +18,7 @@ Key capabilities include:
 * Proactive observability
 * Insights to action
 
-link:https://www.docs.netapp.com/us-en/data-services-workloads/index.html[Learn more about Workload Factory.^]
+link:https://docs.netapp.com/us-en/workload-family/index.html[Learn more about Workload Factory.^]
 
 == How it works 
 
@@ -100,4 +100,4 @@ Enable cold data tiering to move cold data from the SSD storage tier to lower-co
 
 .What's next
 
-link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html[Implement well-architected Cloud Volumes ONTAP system configurations]
+link:task-improve-configurations-cvo.html[Improve Cloud Volumes ONTAP configurations in Azure using Workload Factory]

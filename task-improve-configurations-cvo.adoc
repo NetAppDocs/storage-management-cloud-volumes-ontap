@@ -4,12 +4,12 @@ permalink: task-improve-configurations-cvo.html
 keywords: improve configurations, optimize configurations, implement best practices, well-architected file system, Cloud Volumes ONTAP, Microsoft Azure
 summary: "The well-architected dashboard scans Cloud Volumes ONTAP configurations providing insights and recommendations to help you achieve operational excellence." 
 ---
-= Implement well-architected Cloud Volumes ONTAP system configurations
+= Improve Cloud Volumes ONTAP configurations in Azure using Workload Factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Use NetApp Workload Factory to implement best practices for your Cloud Volumes ONTAP systems from NetApp Console. You can easily review the well-architected status, learn about issues with your configurations, and fix issues to improve the architecture of any systems that aren't optimized for reliability, security, efficiency, performance, and cost.
+Use NetApp Workload Factory to implement best practices for your Cloud Volumes ONTAP systems in Azure from NetApp Console. You can easily review the well-architected status, learn about issues with your configurations, and fix issues to improve the architecture of any systems that aren't optimized for reliability, security, efficiency, performance, and cost.
 
 link:concept-configuration-analysis-cvo.html[Learn about the configuration analysis and well-architected status.]
 
