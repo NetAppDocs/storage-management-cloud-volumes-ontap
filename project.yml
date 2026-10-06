@@ -239,6 +239,12 @@ sidebar:
                   url: /task-manage-perf-params-azure.html
                 - title: Upgrade disk performance tier in Azure
                   url: /task-upgrade-disk-perf-azure.html
+                - title: Configuration analysis and improvements using Workload Factory
+                  entries:
+                    - title: Configuration analysis for Cloud Volumes ONTAP in Azure
+                      url: /concept-configuration-analysis-cvo.html
+                    - title: Improve Cloud Volumes ONTAP configurations in Azure
+                      url: /task-improve-configurations-cvo.html
                 - title: Configuration analysis for Cloud Volumes ONTAP in Azure
                   url: /concept-configuration-analysis-cvo.html
                 - title: Improve Cloud Volumes ONTAP configurations in Azure

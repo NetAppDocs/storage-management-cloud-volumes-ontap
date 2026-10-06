@@ -20,7 +20,7 @@ Because requirements for storage configurations vary, you can dismiss the analys
 
 == Before you begin
 
-* You must link:https://console.netapp.com/add-working-environment/choose-type[add a Cloud Volumes ONTAP system] to NetApp Console to view the well-architected status and recommendations for configuration issues.
+* You must have link:concept-azure-mktplace-direct.html[deployed] a Cloud Volumes ONTAP system in Azure to view the well-architected status and recommendations for configuration issues.
 * Ensure the agent associated with Cloud Volumes ONTAP has access to the following endpoints:
 + 
 ** \https://api.workloads.netapp.com
