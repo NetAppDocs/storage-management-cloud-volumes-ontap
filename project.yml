@@ -238,7 +238,17 @@ sidebar:
                 - title: Manage Premium SSD v2 disk performance in Azure
                   url: /task-manage-perf-params-azure.html
                 - title: Upgrade disk performance tier in Azure
-                  url: /task-upgrade-disk-perf-azure.html                          
+                  url: /task-upgrade-disk-perf-azure.html
+                - title: Configuration analysis and improvements using Workload Factory
+                  entries:
+                    - title: Configuration analysis for Cloud Volumes ONTAP in Azure
+                      url: /concept-configuration-analysis-cvo.html
+                    - title: Improve Cloud Volumes ONTAP configurations in Azure
+                      url: /task-improve-configurations-cvo.html
+                - title: Configuration analysis for Cloud Volumes ONTAP in Azure
+                  url: /concept-configuration-analysis-cvo.html
+                - title: Improve Cloud Volumes ONTAP configurations in Azure
+                  url: /task-improve-configurations-cvo.html                                
             - title: Google Cloud administration
               entries:
                 - title: Supported configurations in Google Cloud
@@ -309,8 +319,6 @@ sidebar:
               url: /task-manage-keystone.html
             - title: Cloud Volumes ONTAP and Microsoft OneLake
               url: /task-azure-onelake.html
-            - title: Cloud Volumes ONTAP and well-architected dashboard
-              url: /configuration-analysis-cvo.html
             - title: Learn about Cloud Volumes ONTAP automation options
               url: /concept-cvo-automation.html
     - title: Knowledge and support
