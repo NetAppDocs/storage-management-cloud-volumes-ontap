@@ -32,7 +32,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws
 a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/task-install-private-mode.html[Deploy the NetApp Console agent in private mode^]
 
-a| Verify NetApp Console roles. 
+a| Verify NetApp Console roles
 a| After you have created a Console agent, you must verify that the necessary IAM roles and Cloud Volumes ONTAP roles and permissions are in place.
 a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
