@@ -104,7 +104,7 @@ Reactivate a dismissed configuration analysis for a Cloud Volumes ONTAP system a
 . Log in to the link:https://console.netapp.com/home[NetApp Console^].
 . From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
 . Select *Dismissed configurations*. 
-. On the configuration page, Select the resource(s) to reactivate.  
+. On the configuration page, select the resources to reactivate.
 
 * For one resource: select the actions menu and then select *Reactivate*.
 * For multiple resources: select the resources and then select *Reactivate* next to Bulk action.
