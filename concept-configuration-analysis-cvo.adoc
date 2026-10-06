@@ -55,7 +55,7 @@ Schedule local snapshots for efficient backup and quick restores. Snapshots are 
 
 * *SSD capacity headroom*
 +
-Keep volume utilization below 80% utilization to prevent potential application read/write and throughput impacts. You can increase capacity manually or automatically.
+Keep SSD storage tier utilization below 80% to prevent potential application read/write and throughput impacts. You can increase capacity manually or automatically.
 
 * *Remote data replication*
 +
