@@ -16,6 +16,6 @@ You can also dismiss one or more configurations from the well-architected analys
 
 If you want to include a dismissed configuration later, you can reactivate it in the well-architected dashboard. This restores the configuration to the analysis and allows you to get recommendations and fixes for it.
 
-* link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html[Fix, dismiss, and reactivate configurations for Cloud Volumes ONTAP in Microsoft Azure^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html[Fix, dismiss, and reactivate configurations for Cloud Volumes ONTAP in Microsoft Azure^]
 
 
