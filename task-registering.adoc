@@ -27,11 +27,11 @@ https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html[
 
 . On the *Systems* page, double-click the name of the system you want to register..
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Support Registration*. 
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Support Registration*. 
 +
 image::screenshot_features_support_registration_2.png[400,300 Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
 
-. Select a NetApp Support Site account and click *Register*. 
+. Select a NetApp Support Site account and select *Register*. 
 
 .Result
 

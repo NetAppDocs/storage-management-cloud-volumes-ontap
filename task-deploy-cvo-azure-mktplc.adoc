@@ -81,7 +81,7 @@ If you have registered the resource provider "Microsoft.storage" to your subscri
 .Steps
 . From the Azure Marketplace site, search for NetApp products.
 . Select *NetApp Cloud Volumes ONTAP direct*.
-. Click *Create* to launch the deployment wizard.
+. Select *Create* to launch the deployment wizard.
 . Select a plan. The *Plan* list typically displays the latest releases of Cloud Volumes ONTAP.
 . In the *Basics* tab, provide these details:
 ** *Subscription*: Select a subscription. The deployment will be linked to the subscription number.

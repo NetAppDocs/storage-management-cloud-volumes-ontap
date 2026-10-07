@@ -1,0 +1,4 @@
+---
+permalink: configuration-analysis-cvo.html
+redirect: storage-management-cloud-volumes-ontap/concept-configuration-analysis-cvo.html
+---

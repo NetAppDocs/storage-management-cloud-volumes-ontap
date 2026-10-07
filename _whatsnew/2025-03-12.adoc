@@ -4,4 +4,4 @@ The following regions now support HA multiple availability zone deployments in A
 * Central US
 * US Gov Virginia (US Government Region - Virginia)    
 
-For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^].
+For a list of all regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].

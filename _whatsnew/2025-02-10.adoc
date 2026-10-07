@@ -12,7 +12,7 @@ link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-a
 Now, you can experience simplified management of Cloud Volumes ONTAP licenses by using improved navigation points within the BlueXP digital wallet:
 
 * Access your Cloud Volumes ONTAP license information easily through the *Administration > 	Licenses and subscriptions > Overview/Direct Licenses* tabs.
-* Click *View* on the Cloud Volume ONTAP panel in the *Overview* tab to gain a comprehensive understanding of your capacity-based licenses. This advanced view offers detailed insight into your licenses and subscriptions.
-* If you prefer the previous interface, you can click the *Switch to legacy view* button to view license details by type and modify charging methods for your licenses.
+* Select *View* on the Cloud Volume ONTAP panel in the *Overview* tab to gain a comprehensive understanding of your capacity-based licenses. This advanced view offers detailed insight into your licenses and subscriptions.
+* If you prefer the previous interface, you can select the *Switch to legacy view* button to view license details by type and modify charging methods for your licenses.
 
 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].

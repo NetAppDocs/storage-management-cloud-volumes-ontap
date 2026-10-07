@@ -50,11 +50,11 @@ Immediately after you create the system, the Console launches a test instance in
 
 . From the left navigation menu, select *Storage > Management*.
 
-. [[subscribe]]On the *Systems* page, click *Add System* and follow the prompts.
+. [[subscribe]]On the *Systems* page, select *Add System* and follow the prompts.
 
 . Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
-. Select *Advanced create*. Because the *Quick create* mode is selected by default, you might see a message for default values. Click *Continue*.
+. Select *Advanced create*. Because the *Quick create* mode is selected by default, you might see a message for default values. Select *Continue*.
 
 . If you're prompted, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html[create a Console agent^].
 
@@ -79,7 +79,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS marketplace subscription to use with this Cloud Volumes ONTAP system.
 
-Click *Add Subscription* to associate the selected credentials with a new AWS marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
+Select *Add Subscription* to associate the selected credentials with a new AWS marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to NetApp Console^].
 
@@ -89,7 +89,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html[
 //+
 //video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to the Console from the AWS marketplace"]
 //+
-TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to the Console website and complete the process.
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *click here* link to go to the Console website and complete the process.
 image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for the Console for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
@@ -134,11 +134,11 @@ link:concept-security.html#encryption-of-data-at-rest[Learn more about supported
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
 * link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
-. *Cloud Volumes ONTAP Configuration* (annual AWS marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
+. *Cloud Volumes ONTAP Configuration* (annual AWS marketplace contract only): Review the default configuration and select *Continue* or select *Change Configuration* to select your own configuration.
 +
 If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
-. *Preconfigured Packages*: Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
+. *Preconfigured Packages*: Select one of the packages to quickly launch Cloud Volumes ONTAP, or select *Change Configuration* to select your own configuration.
 +
 If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
 
@@ -177,7 +177,7 @@ WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versio
 link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -223,17 +223,17 @@ For more information, refer to link:https://docs.netapp.com/us-en/storage-manage
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the AWS resources that the Console will purchase.
+.. Select *More information* to review details about support and the AWS resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console launches the Cloud Volumes ONTAP instance. You can track the progress on the *Audit* page.
 
-If you have any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the system and click *Re-create environment*.
+If you have any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the system and select *Re-create environment*.
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
@@ -264,7 +264,7 @@ Immediately after you create the Cloud Volumes ONTAP system, the Console launche
 
 . From the left navigation menu, select *Storage > Management*.
 
-. On the *Systems* page, click *Add System* and follow the prompts.
+. On the *Systems* page, select *Add System* and follow the prompts.
 
 . Select *Amazon Web Services* and *Cloud Volumes ONTAP HA*.
 +
@@ -295,7 +295,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 | Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
 
-Click *Add Subscription* to associate the selected credentials with a new AWS marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
+Select *Add Subscription* to associate the selected credentials with a new AWS marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
 If you purchased a license directly from NetApp (Bring-Your-Own License or BYOL), then an AWS subscription isn't required. NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
@@ -307,7 +307,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html[
 //+
 //video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to the Console from the AWS marketplace"]
 //+
-TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to the Console website and complete the process.
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, select the *click here* link to go to the Console website and complete the process.
 image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for the Console for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
@@ -364,11 +364,11 @@ link:concept-security.html#encryption-of-data-at-rest[Learn more about supported
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
 * link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
-. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
+. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and select *Continue* or select *Change Configuration* to select your own configuration.
 +
 If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
-. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
+. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or select *Change Configuration* to select your own configuration.
 +
 If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
 
@@ -407,7 +407,7 @@ WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versio
 link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
-. *Create Volume*: Enter details for the new volume or click *Skip*.
+. *Create Volume*: Enter details for the new volume or select *Skip*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
@@ -453,17 +453,17 @@ For more information, refer to link:https://docs.netapp.com/us-en/storage-manage
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the AWS resources that the Console will purchase.
+.. Select *More information* to review details about support and the AWS resources that the Console will purchase.
 
 .. Select the *I understand...* check boxes.
 
-.. Click *Go*.
+.. Select *Go*.
 
 .Result
 
 The Console launches the Cloud Volumes ONTAP HA pair. You can track the progress on the *Audit* page.
 
-If you experience any issues launching the HA pair, review the failure message. You can also select the system and click Re-create environment.
+If you experience any issues launching the HA pair, review the failure message. You can also select the system and select Re-create environment.
 
 
 .After you finish

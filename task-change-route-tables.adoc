@@ -19,8 +19,8 @@ You can modify the AWS route tables that include routes to the floating IP addre
 
 . On the *Systems* page, select the system.
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Route tables*. 
-. Modify the list of selected route tables and then click *Save*.
+. On the Overview tab, select the Features panel and then select the pencil icon next to *Route tables*. 
+. Modify the list of selected route tables and then select *Save*.
 
 .Result
 
