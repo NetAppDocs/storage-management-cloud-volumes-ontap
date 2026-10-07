@@ -1,0 +1,34 @@
+=== Azure encryption at host for Cloud Volumes ONTAP
+
+Beginning with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for all new Azure deployments that meet the required prerequisites. This Azure feature encrypts data on the physical server hosting your VM, including the ephemeral disk, and associated host-level caches, by encrypting data while writing to and reading from the host.
+
+Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
+
+* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Enable encryption at host^] in Microsoft documentation.
+* Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Finding supported VM sizes^] in the Microsoft documentation.
+
+NOTE: If the prerequisites are not met, your Cloud Volumes ONTAP deployment in Azure might fail. 
+
+Note these points:
+
+* Apart from the prerequisites, no additional configurations are required; encryption at host is enabled by default.
+* Applies to Microsoft Azure only, not to AWS or Google Cloud.
+* Supported with both capacity-based and node-based Cloud Volumes ONTAP licenses.
+
+Microsoft documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal[Use the Azure portal to enable end-to-end encryption using encryption at host^]
+
+=== Backend network encryption on Cloud Volumes ONTAP clusters in Azure and Google Cloud
+
+Cloud Volumes ONTAP 9.19.1 and later supports backend cluster network encryption for high-availability (HA) configurations in Azure and Google Cloud.
+
+Enabling cluster network encryption might impact your cluster's performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable-cluster-encryption.html[Enable backend network encryption on Cloud Volumes ONTAP clusters^]
+
+=== Cloud Volumes ONTAP 9.19.1 in Azure
+
+You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. 
+
+The Console already includes support for Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
