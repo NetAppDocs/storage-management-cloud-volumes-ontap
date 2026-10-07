@@ -37,9 +37,6 @@ include::_whatsnew/2026-08-10-919.adoc[]
 == 03 August 2026
 include::_whatsnew/2026-08-03.adoc[]
 
-== 10 October 2026
-include::_whatsnew/2026-10-12.adoc[]
-
 == 23 July 2026
 include::_whatsnew/2026-07-23.adoc[]
 

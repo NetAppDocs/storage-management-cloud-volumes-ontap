@@ -29,6 +29,6 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable
 
 You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. 
 
-The Console already includes support for Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud.
+The Console already supports Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud since August, 2026.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
