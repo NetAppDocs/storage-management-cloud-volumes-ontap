@@ -4,7 +4,7 @@ Beginning with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enable
 
 Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
 
-* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Enable encryption at host^] in the Microsoft documentation.
+* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Enable encryption at host^] in Microsoft documentation.
 * Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Finding supported VM sizes^] in the Microsoft documentation.
 
 NOTE: If the prerequisites are not met, your Cloud Volumes ONTAP deployment in Azure might fail. 
@@ -27,6 +27,8 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable
 
 === Cloud Volumes ONTAP 9.19.1 in Azure
 
-You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. Cloud Volumes ONTAP 9.19.1 support is already available in AWS and Google Cloud.
+You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. 
+
+The Console already includes support for Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
