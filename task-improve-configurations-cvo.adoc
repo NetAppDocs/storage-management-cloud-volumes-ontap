@@ -1,0 +1,117 @@
+---
+sidebar: sidebar
+permalink: task-improve-configurations-cvo.html
+keywords: improve configurations, optimize configurations, implement best practices, well-architected file system, Cloud Volumes ONTAP, Microsoft Azure
+summary: "The well-architected dashboard scans Cloud Volumes ONTAP configurations providing insights and recommendations to help you achieve operational excellence." 
+---
+= Improve Cloud Volumes ONTAP configurations in Azure using Workload Factory
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Use NetApp Workload Factory to implement best practices for your Cloud Volumes ONTAP systems in Azure from NetApp Console. You can easily review the well-architected status, learn about issues with your configurations, and fix issues to improve the architecture of any systems that aren't optimized for reliability, security, efficiency, performance, and cost.
+
+link:concept-configuration-analysis-cvo.html[Learn about the configuration analysis and well-architected status.]
+
+== About this task
+Workload Factory analyzes Cloud Volumes ONTAP system configurations on Microsoft Azure daily.
+
+Because requirements for storage configurations vary, you can dismiss the analysis of specific configurations that don't apply to your storage environment. 
+
+== Before you begin
+
+* You must have link:concept-azure-mktplace-direct.html[deployed] a Cloud Volumes ONTAP system in Azure to view the well-architected status and recommendations for configuration issues.
+* Ensure the agent associated with Cloud Volumes ONTAP has access to the following endpoints:
++ 
+** \https://api.workloads.netapp.com
+** \https://ws.workloads.bluexp.netapp.com
+
+== Fix a configuration issue
+Fix configuration issues for a Cloud Volumes ONTAP system or for selected volumes. You can select one or more configurations to fix.
+
+Fix operations can cause instance downtimes or service interruptions. Review each recommendation carefully before fixing a configuration issue.
+
+.Steps
+. Log in to the link:https://console.netapp.com/home[NetApp Console^].
+. From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. From the Well-architected dashboard, select *View and fix* for any configuration. Make sure you review the recommendation carefully. 
++
+The recommendation explains best practices and potential pitfalls of unoptimized configurations.
+. Select resources and then *Fix*.
++
+Some fixes are only available for specific configurations and cannot always be applied to more than one resource. For example, you might be able to fix the configuration for a single volume but not for multiple volumes.
+. Review the action items to learn about consequences of this fix such as instance downtimes or service interruptions.
+. Select *Fix* if you want Workload Factory to apply the recommended changes. 
+
+.Result
+Workload Factory starts the process to fix the issue. 
+
+== Dismiss a configuration analysis
+Stop a configuration analysis for a Cloud Volumes ONTAP system or for selected volumes. You can restart the analysis when needed.
+
+[role="tabbed-block"]
+====
+
+.Dismiss a configuration analysis for a system
+--
+
+.Steps
+. Log in to the link:https://console.netapp.com/home[NetApp Console^].
+. From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Under Configurations, identify the configuration that doesn't apply to your environment and then select *Dismiss*.  
+. In the Dismiss configuration dialog, select *Dismiss* to stop the configuration analysis.
+--
+
+.Dismiss a configuration analysis for a volume
+--
+
+.Steps
+. Log in to the link:https://console.netapp.com/home[NetApp Console^].
+. From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Under Configurations, identify the configuration to dismiss for your resources and then select *View and fix*. 
+. On the configuration page, select the resource(s) to dismiss from the configuration analysis. 
++
+* For one resource: select the actions menu and then select *Dismiss volume*.
+* For multiple resources: select the resources and then select *Dismiss* next to Bulk action.
+. Select *Dismiss* to stop the analysis for the configuration.
+. In the Dismiss volumes dialog, select *Dismiss* to confirm.
+--
+====
+
+.Result
+Workload Factory stops the configuration analysis for selected configurations. 
+
+== Reactivate a dismissed configuration analysis
+
+Reactivate a dismissed configuration analysis for a Cloud Volumes ONTAP system at any time. You can select one or more configurations to reactivate.
+
+[role="tabbed-block"]
+====
+
+.Reactivate a configuration analysis for your systems
+--
+.Steps
+. Log in to the link:https://console.netapp.com/home[NetApp Console^].
+. From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*. 
+. Select *Dismissed configurations*. 
+. Identify the configuration(s) you want to reactivate and select *Reactivate*.  
+
+--
+.Reactivate a configuration analysis for your resources
+--
+
+.Steps
+. Log in to the link:https://console.netapp.com/home[NetApp Console^].
+. From the NetApp Console menu, select *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Select *Dismissed configurations*. 
+. On the configuration page, select the resources to reactivate.
+
+* For one resource: select the actions menu and then select *Reactivate*.
+* For multiple resources: select the resources and then select *Reactivate* next to Bulk action.
+
+--
+====
+
+.Result
+Workload Factory reactivates the configuration analysis and runs a new analysis every day. 
+
