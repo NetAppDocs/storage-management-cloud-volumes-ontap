@@ -1,3 +1,11 @@
+=== Cloud Volumes ONTAP 9.19.1 in Azure
+
+You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. 
+
+The Console already supports Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud since August, 2026.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
+
 === Azure encryption at host for Cloud Volumes ONTAP
 
 Beginning with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for all new Azure single node and high availability (HA) configurations deployments that meet the required prerequisites. This Azure feature encrypts data on the physical server hosting your VM, including the ephemeral disk, and associated host-level caches, by encrypting data while writing to and reading from the host.
@@ -18,16 +26,23 @@ Microsoft documentation: https://learn.microsoft.com/en-us/azure/virtual-machine
 
 === Backend network encryption on Cloud Volumes ONTAP clusters in Azure and Google Cloud
 
-Cloud Volumes ONTAP 9.19.1 and later supports backend cluster network encryption for high-availability (HA) configurations in Azure and Google Cloud.
+Cloud Volumes ONTAP 9.19.1 and later supports backend cluster network encryption for HA configurations in Azure and Google Cloud.
 
 Enabling cluster network encryption might impact your cluster's performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable-cluster-encryption.html[Enable backend network encryption on Cloud Volumes ONTAP clusters^]
 
-=== Cloud Volumes ONTAP 9.19.1 in Azure
+=== Ability to suppress takeover and giveback during Azure scheduled maintenance
 
-You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure. 
+During scheduled maintenance, Azure can briefly pause a virtual machine. In HA configurations, this pause is detected by ONTAP as a node outage. By default, ONTAP initiates a failover to the partner node, followed by giveback when the VM resumes. This sequence can interrupt active client I/O. You can now configure Cloud Volumes ONTAP to suppress takeover and giveback during these maintenance events.
 
-The Console already supports Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud since August, 2026.
+When you enable maintenance event opt-off, both HA nodes remain active through momentary VM pauses, preventing unnecessary takeover operations.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
+To configure maintenance event opt-off, use this API:
+
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
+[source,json]
+{
+	"enabled": true
+}
