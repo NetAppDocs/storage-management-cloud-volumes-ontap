@@ -1,6 +1,6 @@
 === Azure encryption at host for Cloud Volumes ONTAP
 
-Beginning with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for all new Azure deployments that meet the required prerequisites. This Azure feature encrypts data on the physical server hosting your VM, including the ephemeral disk, and associated host-level caches, by encrypting data while writing to and reading from the host.
+Beginning with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for all new Azure single node and high availability (HA) configurations deployments that meet the required prerequisites. This Azure feature encrypts data on the physical server hosting your VM, including the ephemeral disk, and associated host-level caches, by encrypting data while writing to and reading from the host.
 
 Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
 
@@ -13,7 +13,6 @@ Note these points:
 
 * Apart from the prerequisites, no additional configurations are required; encryption at host is enabled by default.
 * Applies to Microsoft Azure only, not to AWS or Google Cloud.
-* Supported with both capacity-based and node-based Cloud Volumes ONTAP licenses.
 
 Microsoft documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal[Use the Azure portal to enable end-to-end encryption using encryption at host^]
 
