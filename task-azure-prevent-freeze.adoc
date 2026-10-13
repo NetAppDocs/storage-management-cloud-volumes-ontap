@@ -15,13 +15,11 @@ summary: Prevent disruptions during Azure maintenance by opting out of takeover 
 [.lead]
 You can opt out of takeover and giveback during Azure scheduled maintenance for Cloud Volumes ONTAP HA pairs. This optional setting is available with Cloud Volumes ONTAP 9.19.1 and later and is disabled by default.
 
-.About this task
-
 Microsoft Azure can briefly pause a virtual machine during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might interpret the pause as a node outage and move storage operations to the partner node, then move them back when the paused VM resumes (takeover and giveback). In Cloud Volumes ONTAP HA, they can disrupt active client connections.
 
 With Cloud Volumes ONTAP 9.19.1 and later, you can opt out of takeover and giveback specifically during an Azure scheduled-maintenance freeze. When you enable this feature, the HA pair rides through the freeze instead of automatically initiating takeover and giveback. This capability is optional and disabled by default.
 
-Note these points before enabling this feature:
+.About this task
 
 * Client I/O might stall during an Azure VM freeze. ONTAP does not automatically initiate takeover, so client I/O remains on the affected node rather than moving to the HA partner. I/O might stall until the node resumes.
 * The duration of an interruption depends on the Azure VM freeze. A longer freeze can result in a longer I/O interruption.
@@ -31,6 +29,7 @@ Note these points before enabling this feature:
 
 .Before you begin
 
+* Your Cloud Volumes ONTAP system must run 9.19.1 or later.
 * You must have Cloud Volumes ONTAP administrator access for running this procedure.
 * Determine that your workloads can tolerate temporary I/O stalls during an Azure scheduled-maintenance freeze and that riding through the freeze is preferable to the default takeover and giveback response.
 
