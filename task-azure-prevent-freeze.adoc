@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: task-azure-prevent-freeze.html
+keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption
+summary: Prevent disruptions during Azure maintenance by opting out of takeover and giveback for a Cloud Volumes ONTAP HA pair.
+---
+
+= Prevent disruptions during Azure maintenance of Cloud Volumes ONTAP HA
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can opt out of takeover and giveback during Azure scheduled maintenance for Cloud Volumes ONTAP HA pairs. This optional setting is available with Cloud Volumes ONTAP 9.19.1 and later and is disabled by default.
+
+.About this task
+
+Microsoft Azure can briefly pause a virtual machine during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might interpret the pause as a node outage and move storage operations to the partner node, then move them back when the paused VM resumes (takeover and giveback). In Cloud Volumes ONTAP HA, they can disrupt active client connections.
+
+With Cloud Volumes ONTAP 9.19.1 and later, you can opt out of takeover and giveback specifically during an Azure scheduled-maintenance freeze. When you enable this feature, the HA pair rides through the freeze instead of automatically initiating takeover and giveback. This capability is optional and disabled by default.
+
+Note these points before enabling this feature:
+
+* Client I/O might stall during an Azure VM freeze. ONTAP does not automatically initiate takeover, so client I/O remains on the affected node rather than moving to the HA partner. I/O might stall until the node resumes.
+* The duration of an interruption depends on the Azure VM freeze. A longer freeze can result in a longer I/O interruption.
+* Normal HA protection remains active for other failure conditions. The capability suppresses takeover and giveback specifically for an Azure scheduled-maintenance freeze. Other conditions that normally trigger takeover, such as a node failure or panic, continue to do so.
+* The setting applies to the entire HA pair. The maintenance-event behavior is configured on both nodes and cannot be enabled on only one node.
+* The setting persists across reboots and remains in effect until you disable it and restore the default scheduled-maintenance takeover and giveback behavior.
+
+.Before you begin
+
+* You must have Cloud Volumes ONTAP administrator access for running this procedure.
+* Determine that your workloads can tolerate temporary I/O stalls during an Azure scheduled-maintenance freeze and that riding through the freeze is preferable to the default takeover and giveback response.
+
+.Steps
+
+. Identify the working environment ID for the Azure HA pair. For information about identifying resources and making API calls, see https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
+. Send a `PUT` request to the following endpoint, replacing `{id}` with the working environment ID:
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
++
+Set `enabled` to `true` in the request body:
++
+[source,json]
+{
+  "enabled": true
+}
+
+. To restore normal takeover and giveback behavior, send the same request with the following request body:
++
+[source,json]
+{
+  "enabled": false
+}
+
+.Result
+
+A successful request returns HTTP 202 with an empty body.
+[IMPORTANT]
+The API updates the nodes in the HA pair sequentially. If a request fails before the operation completes, verify the setting on both nodes before retrying the request because the nodes might have different settings.
