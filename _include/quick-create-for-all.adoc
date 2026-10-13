@@ -1,4 +1,3 @@
-[.lead]
 You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud using `Quick create` for faster deployment in both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
 
 .Before you begin

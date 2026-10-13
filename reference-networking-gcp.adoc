@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-networking-gcp.html
-keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project; private mode or in a project protected by VPC Service Controls
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project, private mode or in a project protected by VPC Service Controls
 summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. You learn about networking requirements, private IP addresses, VPCs, subnets, packet mirroring, firewall rules, and HA configurations for CVO and also Console agent requirements.
 ---
 
