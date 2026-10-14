@@ -23,7 +23,7 @@ The NetApp Console displays a prompt when you need to enable this feature on an 
 
 * This feature works with ONTAP to reduce application outage time observed by NFS clients during unplanned failovers. Enabling it does not indicate a problem with your Cloud Volumes ONTAP HA pair's availability.
 * Enabling this Azure feature does not disrupt Cloud Volumes ONTAP HA pairs.
-* Enabling this feature on your Azure subscription does not affect other VMs or single nodes within the same subscription.
+* Enabling this feature on your Azure subscription does not affect other VMs in your environment or any single-node system within the same subscription.
 * During failovers, Cloud Volumes ONTAP uses an internal Azure Load Balancer for cluster and SVM management LIFs that serve CIFS and NFS clients.
 * When you enable HA mode, the Console scans the system every 12 hours to update the internal Azure Load Balancer rules.
 
