@@ -66,7 +66,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 +
 The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console automatically adds the licenses to the Console.
 +
-Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#how-licenses-are-added-to-netapp-console[manually add the license to the Console].
+Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html[manually add the license to the Console].
 
 . On the *Systems* page, select *Add System* and follow the steps.
 
@@ -140,7 +140,7 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service. link:co
 
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your user account in the Console with one or more Keystone Subscriptions.
 
-. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html[link your subscriptions for use with Cloud Volumes ONTAP].
 
 . On the *Systems* page, select *Add System* and follow the steps.
 
