@@ -15,7 +15,7 @@ summary: Enable backend cluster network encryption to protect Cloud Volumes ONTA
 [.lead]
 For Cloud Volumes ONTAP 9.19.1 and later, enable backend cluster network encryption to protect internal east-west traffic in high-availability (HA) configurations in Azure and Google Cloud. This setting protects traffic in transit; it does not encrypt volume data at rest.
 
-ONTAP uses Cluster Session Management (CSM) over Kernel TLS (kTLS) and software IPsec to secure traffic on backend networks for HA configurations. Cloud Volumes ONTAP 9.19.1 and later extends this protection to backend cluster traffic.
+ONTAP uses Cluster Session Management (CSM) over Kernel TLS (kTLS) and software IPsec to secure traffic on backend networks for HA configurations. Cloud Volumes ONTAP 9.19.1 and later extend this protection to backend cluster traffic.
 
 [NOTE]
 Enabling cluster network encryption might impact your cluster's performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
