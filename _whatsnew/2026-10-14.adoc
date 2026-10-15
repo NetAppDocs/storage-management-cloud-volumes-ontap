@@ -1,0 +1,42 @@
+=== Cloud Volumes ONTAP 9.19.1 in Azure
+
+You can now use the NetApp Console to deploy and manage the General Availability (GA) version of Cloud Volumes ONTAP 9.19.1 in Azure.
+
+The Console has supported Cloud Volumes ONTAP 9.19.1 in AWS and Google Cloud since August 2026.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cloud Volumes ONTAP 9.19.1 release notes^]
+
+=== Azure encryption at host for Cloud Volumes ONTAP
+
+Starting with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for new Azure single-node and high availability (HA) deployments that meet the prerequisites. This feature encrypts data on the physical server that hosts the VM, including the ephemeral disk and associated host-level caches, as data is written to and read from the host.
+
+Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
+
+* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Microsoft documentation: Enable encryption at host^].
+* Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Microsoft documentation: Finding supported VM sizes^].
+
+Note these points:
+
+* No additional configuration is required.
+* If these prerequisites aren't met, Azure encryption at host is not enabled for your Cloud Volumes ONTAP deployment.
+* Encryption at host applies only to Azure, not to AWS or Google Cloud.
+
+Microsoft documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal[Use the Azure portal to enable end-to-end encryption using encryption at host^]
+
+=== Backend network encryption on Cloud Volumes ONTAP clusters in Azure and Google Cloud
+
+Cloud Volumes ONTAP 9.19.1 and later support backend cluster network encryption for HA configurations in Azure and Google Cloud.
+
+Enabling cluster network encryption might affect cluster performance. Exercise caution and verify that your environment can accommodate the additional overhead before enabling this feature.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable-cluster-encryption.html[Enable backend network encryption on Cloud Volumes ONTAP clusters^]
+
+=== Ability to reduce disruptions during Azure scheduled maintenance
+
+During scheduled maintenance, Azure can briefly pause a VM in a Cloud Volumes ONTAP HA pair. ONTAP might interpret the pause as a node outage and move storage operations to the partner node, then move them back when the VM resumes (takeover and giveback). This process can disrupt active client connections even when there is no node failure.
+
+With Cloud Volumes ONTAP 9.19.1 and later, you can enable an optional setting that lets the HA pair continue operating through an Azure scheduled-maintenance freeze without automatically initiating takeover and giveback.
+
+NOTE: This feature is available as a public preview with Cloud Volumes ONTAP 9.19.1.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-prevent-freeze.html[Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs^]

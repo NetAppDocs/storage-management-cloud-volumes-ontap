@@ -159,7 +159,7 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service. link:co
 
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your user account with one or more Keystone Subscriptions.
 
-. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html[link your subscriptions for use with Cloud Volumes ONTAP].
 
 . On the *Systems* page, select *Add System* and follow the steps.
 

@@ -196,7 +196,9 @@ sidebar:
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
             - title: Create tamperproof Snapshot copies for WORM storage
-              url: /reference-worm-snaplock.html  
+              url: /reference-worm-snaplock.html 
+            - title: Enable backend cluster network encryption
+              url: /task-enable-cluster-encryption.html
     - title: Cloud infrastructure management
       entries:
             - title: AWS administration
@@ -223,6 +225,8 @@ sidebar:
                   url: /reference-limits-azure.html
                 - title: Learn about HA pairs in Azure
                   url: /concept-ha-azure.html                  
+                - title: Prevent disruptions during Azure maintenance of Cloud Volumes ONTAP HA
+                  url: /task-azure-prevent-freeze.html
                 - title: Manage keys with Azure Key Vault
                   url: /task-azure-key-vault.html                           
                 - title: Change the Azure VM type
@@ -244,11 +248,7 @@ sidebar:
                     - title: Configuration analysis for Cloud Volumes ONTAP in Azure
                       url: /concept-configuration-analysis-cvo.html
                     - title: Improve Cloud Volumes ONTAP configurations in Azure
-                      url: /task-improve-configurations-cvo.html
-                - title: Configuration analysis for Cloud Volumes ONTAP in Azure
-                  url: /concept-configuration-analysis-cvo.html
-                - title: Improve Cloud Volumes ONTAP configurations in Azure
-                  url: /task-improve-configurations-cvo.html                                
+                      url: /task-improve-configurations-cvo.html                        
             - title: Google Cloud administration
               entries:
                 - title: Supported configurations in Google Cloud
