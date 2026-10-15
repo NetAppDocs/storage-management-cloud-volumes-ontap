@@ -12,14 +12,13 @@ Starting with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled
 
 Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
 
-* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Enable encryption at host^] in the Microsoft documentation.
-* Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Finding supported VM sizes^] in the Microsoft documentation.
-
-NOTE: If the prerequisites are not met, your Cloud Volumes ONTAP deployment in Azure might fail.
+* The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Microsoft documentation: Enable encryption at host^].
+* Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Microsoft documentation: Finding supported VM sizes^].
 
 Note these points:
 
 * No additional configuration is required.
+* If these prerequisites aren't met, Azure encryption at host is not enabled for your Cloud Volumes ONTAP deployment.
 * Encryption at host applies only to Azure, not to AWS or Google Cloud.
 
 Microsoft documentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal[Use the Azure portal to enable end-to-end encryption using encryption at host^]
