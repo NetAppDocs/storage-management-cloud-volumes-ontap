@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-azure-high-availability-mode.html
 keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4
-summary: Microsoft Azure's high-availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
+summary: Enable Microsoft Azure high-availability mode to reduce unplanned failover times and support NFSv4 for Cloud Volumes ONTAP HA pairs.
 ---
 
 = Enable high-availability mode for Cloud Volumes ONTAP in Azure
@@ -13,7 +13,7 @@ summary: Microsoft Azure's high-availability mode should be enabled to reduce un
 :imagesdir: ./media/
 
 [.lead]
-Enable Microsoft Azure's high-availability (HA) mode for your Cloud Volumes ONTAP HA pair to reduce unplanned failover times and support NFSv4. This mode can provide a 60-second recovery time objective (RTO) for CIFS and NFSv4 clients during unplanned failovers.
+Enable Microsoft Azure high-availability (HA) mode for your Cloud Volumes ONTAP HA pair to reduce unplanned failover times and support NFSv4. This mode can provide a 60-second recovery time objective (RTO) for CIFS and NFSv4 clients during unplanned failovers.
 
 Beginning with Cloud Volumes ONTAP 9.10.1, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the HA feature on your Azure subscription.
 

@@ -8,7 +8,7 @@ Beginning February 25, 2026, Cloud Volumes ONTAP uses Infrastructure Manager for
 |===
 |Scenario |Action |New APIs for the agent |New permissions for the agent |New Google Cloud APIs for Cloud Volumes ONTAP |Doc resources
 |Existing agent and existing deployment in private mode  
-| Upgrade to the latest version of NetApp Console agent by downloading the installer from the NetApp Support Site and then manually installing the agent on your host, so that it can use Infrastructure Manager APIs. Thereafter, convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
+| Upgrade to the latest version of the Console agent by downloading the installer from the NetApp Support Site and then manually installing the agent on your host, so that it can use Infrastructure Manager APIs. Then, convert the existing Cloud Volumes ONTAP systems to use Infrastructure Manager.
 a| * Cloud Infrastructure Manager API 
 * Cloud Quotas API
 * Cloud Build API
