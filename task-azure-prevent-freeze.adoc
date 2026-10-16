@@ -17,7 +17,7 @@ You can configure Cloud Volumes ONTAP HA pairs to suppress automatic takeover an
 
 NOTE: This feature is available as a public preview with Cloud Volumes ONTAP 9.19.1.
 
-Microsoft Azure can briefly pause a VM during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might treat the pause as a node outage, move storage operations to the partner node (takeover), and automatically give them back when the paused VM resumes (giveback). This can disrupt active client connections. If you enable this feature, the HA pair continues operating through an Azure scheduled-maintenance freeze without automatically initiating takeover and giveback.
+Microsoft Azure can briefly pause a VM during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might treat the pause as a node outage and move storage operations to the partner node (takeover). ONTAP then automatically gives the operations back when the paused VM resumes (giveback). This behavior can disrupt active client connections. If you enable this feature, the HA pair continues operating through an Azure scheduled-maintenance freeze without automatically initiating takeover and giveback.
 
 .About this task
 

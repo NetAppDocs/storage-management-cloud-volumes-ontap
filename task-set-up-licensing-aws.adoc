@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-set-up-licensing-aws.html
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet
-summary: Set up capacity-based licenses, AWS Marketplace subscriptions, Freemium, or Keystone Subscription for Cloud Volumes ONTAP before you deploy a system in AWS.
+summary: "Set up capacity-based licenses, AWS Marketplace subscriptions, Freemium, or Keystone Subscription for Cloud Volumes ONTAP before you deploy a system in AWS."
 ---
 
 = Set up licensing for Cloud Volumes ONTAP in AWS
@@ -51,7 +51,7 @@ The Essentials and Professional packages are available with the following consum
 
 link:concept-licensing.html[Learn more about capacity-based licensing].
 
-The following sections describe how to get started with each of these consumption models.
+To get started, follow the steps for the consumption model that you chose.
 
 === BYOL
 
@@ -65,7 +65,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to the Console^]
 +
-The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console automatically adds the licenses to the Console.
+The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console automatically adds the licenses.
 +
 Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license[manually add the license to the Console^].
 

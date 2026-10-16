@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-azure-high-availability-mode.html
 keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4
-summary: Enable Microsoft Azure high-availability mode to reduce unplanned failover times and support NFSv4 for Cloud Volumes ONTAP HA pairs.
+summary: "Enable Microsoft Azure high-availability mode to reduce unplanned failover times and support NFSv4 for Cloud Volumes ONTAP HA pairs."
 ---
 
 = Enable high-availability mode for Cloud Volumes ONTAP in Azure

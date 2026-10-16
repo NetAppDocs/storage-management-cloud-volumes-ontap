@@ -13,11 +13,11 @@ summary: "Upgrade existing Cloud Volumes ONTAP systems in Google Cloud to 9.16.1
 :imagesdir: ./media/
 
 [.lead]
-Beginning on February 9, 2026, new Cloud Volumes ONTAP deployments in Google Cloud can use Google Cloud Infrastructure Manager. Google is deprecating Google Cloud Deployment Manager in favor of Infrastructure Manager. To convert your existing Cloud Volumes ONTAP deployments from Deployment Manager to Infrastructure Manager, manually run a transition tool. This one-time process automatically switches your systems to Infrastructure Manager.
+Beginning on February 9, 2026, new Cloud Volumes ONTAP deployments in Google Cloud can use Google Cloud Infrastructure Manager. Google is deprecating Google Cloud Deployment Manager in favor of Infrastructure Manager. To convert your existing Cloud Volumes ONTAP deployments from Deployment Manager to Infrastructure Manager, manually run the conversion tool. This one-time process automatically switches your systems to Infrastructure Manager.
 
 
 .About this task
-The transition tool is available in the NetApp Support site and creates the following artifacts: 
+The conversion tool is available in the NetApp Support site and creates the following artifacts: 
 
 * Terraform artifacts, saved in `conversion_output/deployment_name`.
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
@@ -35,7 +35,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 
 * Verify that your Cloud Volumes ONTAP system is 9.16.1 or later.
 * Verify that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
-* Ensure that the Google Cloud APIs are enabled. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^]. Ensure that along with the other APIs, you enable the Google Cloud Quotas API.
+* Verify that the Google Cloud APIs are enabled, including the Google Cloud Quotas API. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Verify that the service account for the NetApp Console agent has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
 +
 .For private-mode deployments, ensure these additional prerequisites:

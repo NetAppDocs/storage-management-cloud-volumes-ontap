@@ -49,7 +49,7 @@ The Essentials and Professional packages are available with the following consum
 
 link:concept-licensing.html[Learn more about capacity-based licensing].
 
-The following sections describe how to get started with each of these consumption models.
+To get started, follow the steps for the consumption model that you want to use.
 
 === BYOL
 

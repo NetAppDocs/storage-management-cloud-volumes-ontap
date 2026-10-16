@@ -218,7 +218,7 @@ Note the following:
 
 * If you upgrade by following the notifications that appear in a system, the Console will prompt you to upgrade to a release that follows these supported upgrade paths.
 
-* If you upgrade by placing an upgrade image at an HTTPS location, be sure to follow these supported upgrade paths.
+* If you upgrade by placing an upgrade image at an HTTPS location, follow these supported upgrade paths.
 
 * In some cases, you might need to upgrade a few times to reach your target release.
 +
@@ -255,10 +255,10 @@ The Console also updates the mediator instance as needed during the Cloud Volume
 === Upgrades in AWS with c4, m4, and r4 EC2 instance types
 Cloud Volumes ONTAP no longer supports the c4, m4, and r4 EC2 instance types. You can upgrade existing deployments to Cloud Volumes ONTAP versions 9.8-9.12.1 with these instance types. Before you upgrade, we recommend that you <<Change the instance type,change the instance type>>. If you can't change the instance type, you need to <<Enable enhanced networking,enable enhanced networking>> before you upgrade. 
 
-In Cloud Volumes ONTAP running versions 9.13.0 and above, you cannot upgrade with c4, m4, and r4 EC2 instance types. In this case, you need to reduce the number of disks and then <<Change the instance type,change the instance type>> or deploy a new HA-pair configuration with the c5, m5, and r5 EC2 instance types and migrate the data. 
+In Cloud Volumes ONTAP running versions 9.13.0 and above, you cannot upgrade with c4, m4, and r4 EC2 instance types. In this case, you need to reduce the number of disks and then <<Change the instance type,change the instance type>> or deploy a new HA pair with the c5, m5, and r5 EC2 instance types and migrate the data. 
 
 ==== Change the instance type
-c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the disk count per node for the c4, m4, or r4 EC2 instance you're running is below the maximum disk allowance per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. 
+c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the number of disks per node on your c4, m4, or r4 EC2 instance is below the maximum number of disks per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. 
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance[Check disk and tiering limits by EC2 instance^]
 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html[Change the EC2 instance type for Cloud Volumes ONTAP^]
@@ -294,7 +294,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 
 === Suspend SnapMirror transfers
 
-If a Cloud Volumes ONTAP system has active SnapMirror relationships, it is best to suspend transfers before you update the Cloud Volumes ONTAP software. Suspending the transfers prevents SnapMirror failures. You must suspend the transfers from the destination system.
+If a Cloud Volumes ONTAP system has active SnapMirror relationships, it is best to suspend transfers before you upgrade the Cloud Volumes ONTAP software. Suspending the transfers prevents SnapMirror failures. You must suspend the transfers from the destination system.
 
 NOTE: Even though NetApp Backup and Recovery uses an implementation of SnapMirror to create backup files (called SnapMirror Cloud), backups do not need to be suspended when a system is upgraded.
 
@@ -316,7 +316,7 @@ NOTE: The computer from which you are accessing the Console must have a network 
 
 === Verify that aggregates are online
 
-Aggregates for Cloud Volumes ONTAP must be online before you update the software. Aggregates should be online in most configurations. If they aren't, bring them online.
+Aggregates for Cloud Volumes ONTAP must be online before you upgrade the software. Aggregates should be online in most configurations. If they aren't, bring them online.
 
 .About this task
 
@@ -350,11 +350,11 @@ You can also upgrade the software by using an image on an external URL. This opt
 
 === Upgrade from Console notifications
 
-The Console displays a notification in Cloud Volumes ONTAP systems when a new version of Cloud Volumes ONTAP is available:
+The Console displays a notification in Cloud Volumes ONTAP systems when a new version of Cloud Volumes ONTAP is available.
 
 NOTE: Before you can upgrade Cloud Volumes ONTAP through the notifications, you must have a NetApp Support Site account.
 
-You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.
+You can start the upgrade process from this notification. The Console obtains the software image from an S3 bucket, installs the image, and then restarts the system.
 
 .Before you begin
 
@@ -381,7 +381,7 @@ For example, the installed version on your system is 9.12.1P3, and the following
 * 9.13.1 and 9.13.1P1
 You see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.
 
-. Optionally, you can select *All versions* to enter another version that you want to upgrade to (for example, the next patch of the installed version). For a compatible upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
+. Optional: Select *All versions* to enter another version that you want to upgrade to (for example, the next patch of the installed version). For a compatible upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 . Select *Save*, and then *Apply*. 
 image:screenshot_upgrade_other_versions.png[A screenshot displaying the available versions for upgrade.]
 
@@ -393,7 +393,7 @@ image:screenshot_upgrade_other_versions.png[A screenshot displaying the availabl
 
 .Result
 
-The Console starts the software upgrade. You can perform actions on the system when the software update is complete.
+The Console starts the software upgrade. You can perform actions on the system when the software upgrade is complete.
 
 .After you finish
 
@@ -448,7 +448,7 @@ NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.t
 
 .Result
 
-The Console starts the software update. You can perform actions on the system after the software update is complete.
+The Console starts the software upgrade. You can perform actions on the system after the software upgrade is complete.
 
 .After you finish
 

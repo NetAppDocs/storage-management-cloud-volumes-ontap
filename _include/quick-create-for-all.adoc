@@ -1,4 +1,4 @@
-You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud using `Quick create` for faster deployment in both single node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
+You can deploy Cloud Volumes ONTAP in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud using `Quick create` for faster deployment in both single-node and high availability (HA) configurations. This simplified process reduces deployment steps compared to the advanced method by automatically setting default values on a single page and minimizing navigation.
 
 .Before you begin
 
@@ -127,10 +127,10 @@ https://docs.cloud.google.com/storage/docs/tags-and-labels[Google Cloud Document
 
 .Deployment and configuration
 
-. *Deployment type/topology*: Select the deployment type that you want to use, single node, high availability (HA) in a single availability zone (AZ), or HA in multiple AZs. 
+. *Deployment type/topology*: Select the deployment type that you want to use: single-node, high availability (HA) in a single availability zone (AZ), or HA in multiple AZs. 
 . *Network configuration*: Enter the network information that you recorded in the planning worksheet for regions, VNets, and subnets.
 .. *Region*: By default, the region of the associated cloud account with the resources is selected. 
-.. *Availability zone*: You can select the availability zone based on the deployment type you choose, and if the selected region supports the availability zone. 
+.. *Availability zone*: You can select the availability zone based on the deployment type you choose and whether the selected region supports availability zones. 
 .. *Subnet*: Select a subnet for the region.
 +
 [role="tabbed-block"]
@@ -191,7 +191,7 @@ In _Google Cloud_, to select Backup and Recovery or to use NetApp Cloud Tiering,
 * link:concept-worm.html[Learn about WORM storage on Cloud Volumes ONTAP]
 +
 [TIP]
-If you want to use WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or above.
+If you want to use WORM and data tiering, you must disable Backup and Recovery and deploy a Cloud Volumes ONTAP system with version 9.8 or later.
 +
 . *NetApp Support Site account*: If you have multiple accounts, select the one you want to use. 
 

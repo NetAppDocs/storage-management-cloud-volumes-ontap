@@ -256,8 +256,8 @@ You can no longer create a volume from a template or edit a volume's tags. These
 
 == 08 March 2024
 
-=== Amazon Instant Metadata Service v2 support
-In AWS, Cloud Volumes ONTAP, the Mediator, and the Connector now support Amazon Instant Metadata Service v2 (IMDSv2) for all functions. IMDSv2 provides enhanced protection against vulnerabilities. Only IMDSv1 was previously supported.
+=== Amazon Instance Metadata Service v2 support
+In AWS, Cloud Volumes ONTAP, the Mediator, and the Connector now support Amazon Instance Metadata Service v2 (IMDSv2) for all functions. IMDSv2 provides enhanced protection against vulnerabilities. Only IMDSv1 was previously supported.
 
 If required by your security policies, you can configure your EC2 instances to use IMDSv2. For instructions, refer to https://docs.netapp.com/us-en/console-setup-admin/task-require-imdsv2.html[BlueXP setup and administration documentation for managing existing Connectors^].
 
@@ -710,7 +710,7 @@ BlueXP now automatically configures your Cloud Volumes ONTAP systems to use the 
 
 AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support.
 
-The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+The only requirement is to ensure that the security group for the Connector allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 
 === Change charging method
 
