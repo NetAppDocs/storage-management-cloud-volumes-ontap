@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-set-up-licensing-google.html
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet
-summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
+summary: "Set up Freemium, capacity-based, or Keystone Subscription licensing for Cloud Volumes ONTAP in Google Cloud before you create a system."
 ---
 
 = Set up licensing for Cloud Volumes ONTAP in Google Cloud
@@ -13,7 +13,7 @@ summary: After you decide which licensing option you want to use for Cloud Volum
 :imagesdir: ./media/
 
 [.lead]
-After you decide which licensing option you want to use with Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when creating a new system.
+After you decide which licensing option to use with Cloud Volumes ONTAP in Google Cloud, complete a few setup steps before you choose that option when you create a system.
 
 == Freemium
 
@@ -27,7 +27,7 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 .. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
-You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#packages[Essentials package].
+You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity. If you do, the system is automatically converted to the link:concept-licensing.html#packages[Essentials package].
 
 .. After you return to the Console, select *Freemium* when you reach the charging methods page.
 +
@@ -37,7 +37,7 @@ link:task-deploying-gcp.html[View step-by-step instructions to launch Cloud Volu
 
 == Capacity-based license
 
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. Capacity-based licensing is available in the form of a _package_: the Essentials or Professional package.
+Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. Capacity-based licensing is available as a _package_: Essentials or Professional.
 
 The Essentials and Professional packages are available with the following consumption models or purchase options:
 
@@ -47,7 +47,7 @@ The Essentials and Professional packages are available with the following consum
 
 link:concept-licensing.html#capacity-based-licensing[Learn more about capacity-based licensing].
 
-The following sections describe how to get started with each of these consumption models.
+To get started with each of these consumption models, follow the steps in the next sections.
 
 === BYOL
 
@@ -70,7 +70,7 @@ Your license must be available from the Console before you can use it with Cloud
 
 .. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
-The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
+The license that you purchased from NetApp is always charged first, but you'll be charged the hourly marketplace rate if you exceed your licensed capacity or if your license term expires.
 
 .. After you return to the Console, select a capacity-based package when you reach the charging methods page.
 +
@@ -132,7 +132,7 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service. link:co
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^]
 
-. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your the Console user account with one or more Keystone Subscriptions.
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Console user account with one or more Keystone Subscriptions.
 
 . After NetApp authorizes your account, link:task-manage-keystone.html[link your subscriptions for use with Cloud Volumes ONTAP].
 
@@ -146,7 +146,7 @@ link:task-deploying-gcp.html[View step-by-step instructions to launch Cloud Volu
 
 == Node-based license
 
-A node-based license is the previous generation license for Cloud Volumes ONTAP. A node-based license could be procured from NetApp (BYOL) and is available for license renewals, only in specific cases. For information, refer to:
+A node-based license is the previous-generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL). Node-based licenses are now available for renewal only in specific cases. For information, refer to:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses[End of availability for node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]

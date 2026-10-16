@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-set-up-licensing-aws.html
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet
-summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
+summary: "Set up capacity-based licenses, AWS Marketplace subscriptions, Freemium, or Keystone Subscription for Cloud Volumes ONTAP before you deploy a system in AWS."
 ---
 
 = Set up licensing for Cloud Volumes ONTAP in AWS
@@ -13,9 +13,9 @@ summary: After you decide which licensing option you want to use for Cloud Volum
 :imagesdir: ./media/
 
 [.lead]
-After you decide which licensing option you want to use with Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when creating a new system.
+Complete the setup for your chosen Cloud Volumes ONTAP licensing option in AWS, such as a capacity-based package, Freemium, or Keystone Subscription, so you can select it when you create a new system.
 
-== Setting preferred billing for standalone AWS listing
+== Set preferred billing for standalone AWS listing
 
 If you have a standalone AWS subscription linked to your AWS account, you can pay for Cloud Volumes ONTAP through that subscription. If you also have NetApp Intelligent Services (NIS) subscriptions, you can pay for your data services through the package associated with the NIS subscription. For existing subscriptions, NetApp recommends switching to the standalone subscription approach for better cost management of your Cloud Volumes ONTAP usage.
 
@@ -51,7 +51,7 @@ The Essentials and Professional packages are available with the following consum
 
 link:concept-licensing.html[Learn more about capacity-based licensing].
 
-The following sections describe how to get started with each of these consumption models.
+To get started, follow the steps for the consumption model that you chose.
 
 === BYOL
 
@@ -65,7 +65,7 @@ NetApp has restricted the purchase, extension, and renewal of BYOL licensing. Fo
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to the Console^]
 +
-The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console automatically adds the licenses to the Console.
+The Console automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, the Console automatically adds the licenses.
 +
 Your license must be available from the Console before you can use it with Cloud Volumes ONTAP. If needed, you can link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license[manually add the license to the Console^].
 
@@ -73,7 +73,7 @@ Your license must be available from the Console before you can use it with Cloud
 
 .. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
 +
-The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
+The license that you purchased from NetApp is always charged first, but you'll be charged at the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
 +
 image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP system.]
 
@@ -95,7 +95,7 @@ When you create a Cloud Volumes ONTAP system, the Console prompts you to subscri
 
 . On the *Systems* page, select *Add System* and follow the steps.
 
-.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace
+.. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
 +
 image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP system.]
 
@@ -111,7 +111,7 @@ TIP: You can manage the AWS Marketplace subscriptions associated with your AWS a
 
 Pay annually by purchasing an annual contract from your cloud provider's marketplace.
 
-Similar to an hourly subscription, the Console prompts you to subscribe to the annual contract  that's available in the AWS Marketplace.
+Similar to an hourly subscription, the Console prompts you to subscribe to the annual contract that's available in the AWS Marketplace.
 
 .Steps
 
@@ -171,7 +171,7 @@ link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud 
 
 == Node-based license
 
-A node-based license is the previous generation license for Cloud Volumes ONTAP. A node-based license could be procured from NetApp (BYOL) and is available for license renewals, only in specific cases. For information, refer to:
+A node-based license is the previous generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL), and you can renew it only in specific cases. For information, refer to:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses[End of availability for node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
