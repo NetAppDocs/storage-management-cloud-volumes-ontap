@@ -67,7 +67,7 @@ The zonal deployment uses Premium SSD v2 Managed Disks when the following condit
 If you choose Premium SSD Managed Disks for an environment that fulfils the above criteria, the Console automatically deploys Premium SSD v2 Managed Disks. You cannot switch to Premium SSD v1 Managed Disks.
 
 Disks::
-Customer data resides on locally-redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-configs-azure.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data].
+Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-configs-azure.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data].
 
 Storage accounts::
 Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.

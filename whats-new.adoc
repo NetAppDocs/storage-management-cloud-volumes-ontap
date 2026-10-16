@@ -186,7 +186,7 @@ Beginning with Cloud Volumes ONTAP 9.15.1, you can deploy virtual machine (VM) i
 * The subscription is registered for the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature. 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-saz-feature.html[Learn how to enable VMOrchestratorZonalMultiFD for single availability zones^].
 
-If any of these criteria are not met, the previous non-zonal deployment mode for locally-redundant storage (LRS) applies.
+If any of these criteria are not met, the previous non-zonal deployment mode for locally redundant storage (LRS) applies.
 
 === Support for Virtual Machines Scale Sets to unify all Azure HA types
 Cloud Volumes ONTAP 9.15.1 uses Virtual Machines Scale Sets in Flexible orchestration mode on Azure for deploying virtual machine (VM) instances in single availability zones for high-availability (HA) pairs. This support covers all HA types: page blob, LRS, zone-redundant storage (ZRS) or multi-zonal, and LRS zonal (single AZ). 
