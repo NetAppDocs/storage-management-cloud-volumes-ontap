@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-azure-prevent-freeze.html
 keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption
-summary: Prevent disruptions during Azure maintenance by suppressing automatic takeover and giveback for a Cloud Volumes ONTAP HA pair.
+summary: "Prevent disruptions during Azure maintenance by suppressing automatic takeover and giveback for a Cloud Volumes ONTAP HA pair."
 ---
 
 = Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs
@@ -17,14 +17,14 @@ You can configure Cloud Volumes ONTAP HA pairs to suppress automatic takeover an
 
 NOTE: This feature is available as a public preview with Cloud Volumes ONTAP 9.19.1.
 
-Microsoft Azure can briefly pause a VM during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might treat the pause as a node outage and move storage operations to the partner node, followed by automatically giving them back when the paused VM resumes (takeover and giveback). This can disrupt active client connections. If you enable this feature, the HA pair continues operating through an Azure scheduled-maintenance freeze without automatically initiating takeover and giveback.
+Microsoft Azure can briefly pause a VM during scheduled maintenance. In a Cloud Volumes ONTAP HA configuration, ONTAP might treat the pause as a node outage and move storage operations to the partner node (takeover). ONTAP then automatically gives the operations back when the paused VM resumes (giveback). This behavior can disrupt active client connections. If you enable this feature, the HA pair continues operating through an Azure scheduled-maintenance freeze without automatically initiating takeover and giveback.
 
 .About this task
 
 * Client I/O might stall during an Azure VM freeze. ONTAP does not automatically initiate takeover, so client I/O remains on the affected node rather than moving to the HA partner. I/O might stall until the node resumes.
 * The duration of an interruption depends on the Azure VM freeze. A longer freeze can result in a longer I/O interruption.
-* Normal HA protection remains active for other failure conditions. The feature suppresses takeover and giveback for Azure scheduled-maintenance freeze only. Other conditions that normally trigger takeover, such as a node failure or panic, continue to do so.
-* The feature applies to both the nodes in an HA pair. The maintenance-event behavior is configured on both nodes and cannot be enabled on only one node.
+* Normal HA protection remains active for other failure conditions. The feature suppresses takeover and giveback only during Azure scheduled-maintenance freezes. Other conditions that normally trigger takeover, such as a node failure or panic, continue to do so.
+* The feature applies to both nodes in an HA pair. The maintenance-event behavior is configured on both nodes and cannot be enabled on only one node.
 * The feature persists across reboots and remains in effect until you disable it. Disabling it restores the default scheduled-maintenance takeover and giveback behavior.
 
 .Before you begin

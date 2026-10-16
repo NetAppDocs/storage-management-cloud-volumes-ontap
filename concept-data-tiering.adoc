@@ -65,7 +65,7 @@ The Console creates the storage account with the following settings:
 * Access tier: Hot
 * Performance: Standard
 * Redundancy: Accordingly to Cloud Volume ONTAP Deployment 
-** Single availability zone: Locally-redundant storage (LRS)
+** Single availability zone: locally redundant storage (LRS)
 ** Multiple availability zone: Zone-redundant storage (ZRS) 
 * Account: StorageV2 (general purpose v2)
 * Require secure transfer for REST API operations: Enabled
