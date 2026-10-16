@@ -10,7 +10,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html[Cl
 
 Starting with Cloud Volumes ONTAP 9.19.1 GA, Azure encryption at host is enabled by default for new Azure single-node and high availability (HA) deployments that meet the prerequisites. This feature encrypts data on the physical server that hosts the VM, including the ephemeral disk and associated host-level caches, as data is written to and read from the host.
 
-Before deploying Cloud Volumes ONTAP in Azure, ensure the following prerequisites are met:
+Before deploying Cloud Volumes ONTAP in Azure, confirm that you meet the following prerequisites:
 
 * The `EncryptionAtHost` feature is registered for your Azure subscription. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli[Microsoft documentation: Enable encryption at host^].
 * Your selected VM instance type supports encryption at host in your Azure region. Refer to https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes[Microsoft documentation: Finding supported VM sizes^].
@@ -40,3 +40,9 @@ With Cloud Volumes ONTAP 9.19.1 and later, you can enable an optional setting th
 NOTE: This feature is available as a public preview with Cloud Volumes ONTAP 9.19.1.
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-prevent-freeze.html[Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs^]
+
+=== Separate PAYGO listing for Cloud Volumes ONTAP in AWS Marketplace
+NetApp now offers a separate pay-as-you-go (PAYGO) listing for Cloud Volumes ONTAP in AWS Marketplace through NetApp Standalone Listing (NSL). NetApp previously introduced the Standalone Cloud Volumes ONTAP subscription to accommodate changes to the AWS Enterprise Discount Program (EDP). The PAYGO listing is now available under the same NSL offering alongside the Cloud Volumes ONTAP annual contract, making it easier to track PAYGO usage, monitor spillover charges, and manage consumption costs.
+Both the Cloud Volumes ONTAP annual contract and the PAYGO listing remain separate from the NetApp Intelligence Services (NIS) annual contract and PAYGO listings, enabling separate billing for Cloud Volumes ONTAP capacity and data services.
+
+https://review.docs.netapp.com/us-en/console-licenses-subscriptions_BLUEXPDOC-1388-separate-paygo-annual-subscriptions/task-manage-subscriptions.html#add-a-new-marketplace-subscription[Manage separate PAYGO listing for Cloud Volumes ONTAP in AWS Marketplace^]
