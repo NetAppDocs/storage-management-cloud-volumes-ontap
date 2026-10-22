@@ -225,7 +225,7 @@ sidebar:
                   url: /reference-limits-azure.html
                 - title: Learn about HA pairs in Azure
                   url: /concept-ha-azure.html                  
-                - title: Prevent disruptions during Azure maintenance of Cloud Volumes ONTAP HA
+                - title: Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs
                   url: /task-azure-prevent-freeze.html
                 - title: Manage keys with Azure Key Vault
                   url: /task-azure-key-vault.html                           

@@ -37,7 +37,7 @@ Microsoft Azure can briefly pause a VM during scheduled maintenance. In a Cloud 
 
 .Steps
 
-. Identify the system ID for the Azure HA pair. For information about identifying resources and making API calls, see https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie[Your first API call^].
+. Identify the system ID for the Azure HA pair. For information about identifying resources and making API calls, refer to https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifier[Issue an ONTAP management REST API call^].
 . Send a `PUT` request to the following endpoint, replacing `{id}` with the system ID:
 +
 `PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`

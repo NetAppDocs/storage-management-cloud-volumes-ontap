@@ -66,7 +66,7 @@ The Console creates the storage account with the following settings:
 * Performance: Standard
 * Redundancy: Accordingly to Cloud Volume ONTAP Deployment 
 ** Single availability zone: locally redundant storage (LRS)
-** Multiple availability zone: Zone-redundant storage (ZRS) 
+** Multiple availability zone: zone-redundant storage (ZRS) 
 * Account: StorageV2 (general purpose v2)
 * Require secure transfer for REST API operations: Enabled
 * Storage account key access: Enabled
