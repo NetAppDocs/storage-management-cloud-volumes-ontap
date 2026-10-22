@@ -65,5 +65,3 @@ The Azure CLI should return a result similar to the following:
 
 . https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview[Microsoft Azure documentation: High availability ports overview^]
 . https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest[Microsoft Azure documentation: Get started with Azure CLI^]
-
-//made some improvements WRT BLUEXPDOC-1507

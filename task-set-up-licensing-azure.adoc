@@ -13,7 +13,7 @@ summary: "Set up Freemium, capacity-based (BYOL, PAYGO, annual contract), or Key
 :imagesdir: ./media/
 
 [.lead]
-After you decide which licensing option to use with Cloud Volumes ONTAP in Azure, you must complete a few steps before you can choose that licensing option when you create a new system.
+After you decide which licensing option to use with Cloud Volumes ONTAP in Azure, complete a few setup steps so that you can select that option when you create a new system.
 
 == Freemium
 
@@ -72,7 +72,7 @@ Your license must be available from the Console before you can use it with Cloud
 
 .. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Azure Marketplace.
 +
-The license that you purchased from NetApp is always charged first, but you'll be charged the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
+The license that you purchased from NetApp is always charged first, but you'll be charged at the hourly marketplace rate if you exceed your licensed capacity or if your license term expires.
 +
 image:screenshot-azure-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP system.]
 
@@ -152,7 +152,7 @@ link:task-deploying-otc-azure.html[View step-by-step instructions to launch Clou
 
 == Node-based license
 
-A node-based license is the previous generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL). Node-based licenses are available for renewal only in specific cases. For information, refer to:
+A node-based license is the previous-generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL). Node-based licenses are available for renewal only in specific cases. For information, refer to:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses[End of availability for node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
