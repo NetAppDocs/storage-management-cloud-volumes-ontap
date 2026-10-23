@@ -149,3 +149,5 @@ Terraform is an open-source orchestration tool that uses declarative configurati
 * https://www.netapp.com/devops/what-is-infrastructure-as-code-iac/[Infrastructure as Code^]
 * https://www.terraform.io/[Terraform^]
 * https://www.ansible.com/[Ansible^]
+
+//The links, if momentarily down, still surface on build link checks.
