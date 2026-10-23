@@ -137,7 +137,7 @@ For more information, refer to https://docs.netapp.com/us-en/ontap-cli/man.html[
 Ansible is an open-source configuration management tool based on procedural configuration files.
 
 * https://galaxy.ansible.com/ui/repo/published/netapp/ontap/[Ansible Galaxy^]
-* https://docs.ansible.com/ansible/latest/user_guide/index.html[Ansible Documentation^]
+* https://docs.ansible.com/projects/ansible/latest/getting_started/index.htmll[Ansible Documentation^]
 
 == Terraform
 

@@ -19,5 +19,5 @@ include::_include/quick-create-for-all.adoc[]
 
 .Related links
 
-* link:task-planning-your-config-gcp[Planning your Cloud Volumes ONTAP configuration]
+* link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration]
 * link:task-deploying-gcp.html[Deploy Cloud Volumes ONTAP in Google Cloud using advanced deployment]
