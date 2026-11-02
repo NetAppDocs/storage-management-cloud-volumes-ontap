@@ -8,7 +8,7 @@ NetApp recommends capacity-based licensing for all private-mode Cloud Volumes ON
 
 .Related links
 
-* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html[Cloud Volumes ONTAP licensing^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html[Cloud Volumes ONTAP licensing^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html[Learn about Cloud Volumes ONTAP BYOL^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html[Manage node-based licenses for Cloud Volumes ONTAP^]
