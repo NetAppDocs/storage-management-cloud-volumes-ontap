@@ -13,7 +13,7 @@ summary: "Set up Freemium, capacity-based, or Keystone Subscription licensing fo
 :imagesdir: ./media/
 
 [.lead]
-After you decide which licensing option to use with Cloud Volumes ONTAP in Google Cloud, complete a few setup steps before you choose that option when you create a system.
+After you decide which licensing option to use with Cloud Volumes ONTAP in Google Cloud, complete a few setup steps so that you can select that option when you create a new system.
 
 == Freemium
 
@@ -47,7 +47,7 @@ The Essentials and Professional packages are available with the following consum
 
 link:concept-licensing.html#capacity-based-licensing[Learn more about capacity-based licensing].
 
-To get started with each of these consumption models, follow the steps in the next sections.
+To get started, follow the steps for the consumption model that you want to use.
 
 === BYOL
 
@@ -70,7 +70,7 @@ Your license must be available from the Console before you can use it with Cloud
 
 .. On the *Details and Credentials* page, select *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
-The license that you purchased from NetApp is always charged first, but you'll be charged the hourly marketplace rate if you exceed your licensed capacity or if your license term expires.
+The license that you purchased from NetApp is always charged first, but you'll be charged at the hourly marketplace rate if you exceed your licensed capacity or if your license term expires.
 
 .. After you return to the Console, select a capacity-based package when you reach the charging methods page.
 +
@@ -146,7 +146,7 @@ link:task-deploying-gcp.html[View step-by-step instructions to launch Cloud Volu
 
 == Node-based license
 
-A node-based license is the previous-generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL). Node-based licenses are now available for renewal only in specific cases. For information, refer to:
+A node-based license is the previous-generation license for Cloud Volumes ONTAP. You could purchase a node-based license from NetApp (BYOL). Node-based licenses are available for renewal only in specific cases. For information, refer to:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses[End of availability for node-based licenses^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-gcp-dm-im-conv.html
 keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion
-summary: "Upgrade existing Cloud Volumes ONTAP systems in Google Cloud to 9.16.1 or later, then run the transition tool to convert from Deployment Manager to Infrastructure Manager."
+summary: "Upgrade existing Cloud Volumes ONTAP systems in Google Cloud to 9.16.1 or later, then run the conversion tool to convert from Deployment Manager to Infrastructure Manager."
 ---
 
 = Convert existing Cloud Volumes ONTAP deployments to Infrastructure Manager
@@ -229,7 +229,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 +
 * Machine Type: Google Compute Engine machine type e2-medium
 * OS: Based on your requirement, select either of these images:
-** Ubuntu 25.10 AMD64 Minimal (image: ubuntu-minimal-2510-amd64)
+** Ubuntu 26.04 LTS Minimal (ubuntu-2604-resolute-amd64)
 ** SUSE Linux Enterprise Server 15 SP7 x86_64
 * Networking: Firewall allowing HTTP and HTTPS
 * Disk Size: 20GB
@@ -245,7 +245,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 ** Google Cloud Trace (previously Stackdriver Trace): Write only (default)
 . Connect to the newly created VM using SSH: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
 . Download the conversion tool from the https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download[NetApp Support site^] by using your NSS credentials: `wget <download link from NetApp Support site>`
-. Extract the downloaded TAR file: `unzip <downloaded file name>`
+. Extract the downloaded file: `unzip <downloaded file name>`
 
 [role="tabbed-block"]
 =====
@@ -370,4 +370,4 @@ dmconvert \
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
 
-//BLUEXPDOC-1324: only storage.buckets.get was added. compute.instances.getSerialPortOutput was skipped because the filer didn't give log access that's needed for confirmation.
+//BLUEXPDOC-1324: only storage.buckets.get was added. compute.instances.getSerialPortOutput was skipped because the filer didn't give log access that's needed for confirmation. https://github.com/NetAppDocs/storage-management-cloud-volumes-ontap/issues/78
