@@ -43,12 +43,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a machine type, disk type, and disk size:
 
 Machine type::
-Look at the supported machine types in the link:reference-configs-gcp.html[Cloud Volumes ONTAP Release Notes^] and then review details from Google about each supported machine type. Match your workload requirements to the number of vCPUs and memory for the machine type. Note that each CPU core increases networking performance.
+Look at the link:reference-configs-gcp.html[supported machine types]and then review details from Google about each supported machine type. Match your workload requirements to the number of vCPUs and memory for the machine type. Note that each CPU core increases networking performance.
 +
-Refer to the following for more details:
-+
-** https://cloud.google.com/compute/docs/machine-types#n1_machine_types[Google Cloud documentation: N1 standard machine types^]
-** https://cloud.google.com/docs/compare/data-centers/networking#performance[Google Cloud documentation: Performance^]
+Refer to https://cloud.google.com/compute/docs/machine-types[Google documentation: Machine families resource and comparison guide^] for more details
 
 Disk types::
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses for a disk. The disk type can be any of the following:
