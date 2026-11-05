@@ -37,6 +37,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 * Verify that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
 * Verify that the Google Cloud APIs are enabled, including the Google Cloud Quotas API. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Verify that the service account for the NetApp Console agent has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
+* Before you convert a Cloud Volumes ONTAP system from Deployment Manager to Infrastructure Manager, take a snapshot of its root and boot disks. You can use the snapshot to roll back the conversion if needed.
 +
 .For private-mode deployments, ensure these additional prerequisites:
 [%collapsible]
@@ -225,6 +226,21 @@ If you are running the tool in private mode, also add the `cloudbuild.workerpool
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
 .. Attach the custom role to the service account that you'll use to create the VM.
 .. Add the `roles/iam.serviceAccountUser` role to this service account. Refer to https://docs.cloud.google.com/iam/docs/service-account-overview[Service accounts overview^].
+.. Enable the IAM Service Account Credentials API in the project:
++
+[source,cli]
+----
+gcloud services enable iamcredentials.googleapis.com --project=PROJECT_ID
+----
++
+.. Allow the service account that you created to impersonate the Console agent service account. To do so, grant the service account the Service Account Token Creator role on the Console agent service account:
++
+[source,cli]
+----
+gcloud iam service-accounts add-iam-policy-binding \  
+CONSOLE_AGENT_SA@PROJECT_ID.iam.gserviceaccount.com \ -- member="serviceAccount:CONVERT_VM_SA@PROJECT_ID.iam.gserviceaccount.com" \  -- role="roles/iam.serviceAccountTokenCreator" \  --project=PROJECT_ID
+----
++
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
 +
 * Machine Type: Google Compute Engine machine type e2-medium
@@ -341,7 +357,7 @@ dmconvert \
 
 
 .After you finish
-The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Cloud Console under Infrastructure Manager in a _<system-name-imdeploy>_ format, indicating that the Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
+The tool displays a list of all Cloud Volumes ONTAP systems and SVM details. When it finishes running, you can see the statuses of all the converted systems. Each converted system appears in the Google Cloud Console under Infrastructure Manager in a _<system-name-imdeploy>_ format. This format indicates that the NetApp Console now uses Infrastructure Manager APIs to manage that Cloud Volumes ONTAP system.
 [CAUTION]
 After conversion, do not delete the deployment object for Deployment Manager in the Google Cloud Console. This deployment object contains information that you might need to roll back the converted system.
 
@@ -370,4 +386,4 @@ dmconvert \
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0[NetApp Console Agent 4.2.0 Release Notes^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log[Permissions required for Google Cloud Infrastructure Manager^]
 
-//BLUEXPDOC-1324: only storage.buckets.get was added. compute.instances.getSerialPortOutput was skipped because the filer didn't give log access that's needed for confirmation. https://github.com/NetAppDocs/storage-management-cloud-volumes-ontap/issues/78
+//BLUEXPDOC-1324: only storage.buckets.get was added. compute.instances.getSerialPortOutput was skipped because the filer didn't give log access that's needed for confirmation. https://github.com/NetAppDocs/storage-management-cloud-volumes-ontap/issues/78       BLUEXPDOC-1532
