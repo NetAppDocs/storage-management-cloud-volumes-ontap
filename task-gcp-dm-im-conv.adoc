@@ -37,7 +37,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 * Verify that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
 * Verify that the Google Cloud APIs are enabled, including the Google Cloud Quotas API. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Verify that the service account for the NetApp Console agent has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
-* Before you convert a Cloud Volumes ONTAP system from Deployment Manager to Infrastructure Manager, take a snapshot of its root and boot disks. You can use the snapshot to roll back the conversion if needed.
+* Before you convert a Cloud Volumes ONTAP system from Deployment Manager to Infrastructure Manager, take a snapshot of its root and boot disks.
 +
 .For private-mode deployments, ensure these additional prerequisites:
 [%collapsible]
