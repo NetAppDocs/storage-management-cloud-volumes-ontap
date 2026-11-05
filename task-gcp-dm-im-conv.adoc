@@ -237,8 +237,11 @@ gcloud services enable iamcredentials.googleapis.com --project=PROJECT_ID
 +
 [source,cli]
 ----
-gcloud iam service-accounts add-iam-policy-binding \  
-CONSOLE_AGENT_SA@PROJECT_ID.iam.gserviceaccount.com \ -- member="serviceAccount:CONVERT_VM_SA@PROJECT_ID.iam.gserviceaccount.com" \  -- role="roles/iam.serviceAccountTokenCreator" \  --project=PROJECT_ID
+gcloud iam service-accounts add-iam-policy-binding \ 
+CONSOLE_AGENT_SA@PROJECT_ID.iam.gserviceaccount.com \ -- 
+member="serviceAccount:CONVERT_VM_SA@PROJECT_ID.iam.gserviceaccount.com" \  -- 
+role="roles/iam.serviceAccountTokenCreator" \  --
+project=PROJECT_ID
 ----
 +
 . [[create-vm]]Create a VM with the following configurations. You run the tool on this VM.
