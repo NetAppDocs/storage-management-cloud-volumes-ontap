@@ -233,7 +233,7 @@ For more information, refer to https://cloud.google.com/iam/docs/creating-custom
 gcloud services enable iamcredentials.googleapis.com --project=PROJECT_ID
 ----
 +
-.. Allow the service account that you created to impersonate the Console agent service account. To do so, grant the service account the `Service Account Token Creator` role assigned to the service account of the Console agent:
+.. Allow the service account that you created to impersonate the Console agent service account. To do so, grant the `Service Account Token Creator` role to the service account that you created. 
 +
 [source,cli]
 ----
