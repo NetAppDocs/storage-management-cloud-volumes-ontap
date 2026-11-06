@@ -13,6 +13,8 @@ For details, refer to https://security.netapp.com/advisory/ntap-20261021-0021[NT
 
 For your Cloud Volumes ONTAP systems, you might be prompted to upgrade to these hotfixes in the NetApp Console. However, these hotfixes are supported only when the Console agent version is 4.12.0 or later. If the Console agent version is earlier than 4.12.0, ignore the prompt.
 
+https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-12-0[Console agent 4.12.0^]
+
 //hotfix
 
 
