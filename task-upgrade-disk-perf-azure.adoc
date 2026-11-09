@@ -5,7 +5,7 @@ keywords: azure, premium ssd v2, Premium SSDv2, performance parameters, cloud vo
 summary: Configure performance parameters in Premium SSD v2 disks in Azure.
 ---
 
-= Change the Premium SSD disk performance tier for Cloud Volumes ONTAP
+= Change the Premium SSD disk performance tier for Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
