@@ -5,7 +5,7 @@ keywords:
 summary:
 ---
 
-= Legal notices
+= Legal notices for Cloud Volumes ONTAP
 :icons: font
 :imagesdir: ./media/
 
