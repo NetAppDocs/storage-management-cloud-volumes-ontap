@@ -5,7 +5,7 @@ NetApp adds the *Cloud Volumes ONTAP contributor* role, which has more permissio
 The contributor role includes all operator permissions plus these additional capabilities:
 
 * Create Cloud Volumes ONTAP systems
-* Update system settings, including disruptive updates, such as changing the instance type or upgrading the ONTAP version
+* Update system settings, such as changing the instance type or upgrading the ONTAP version
 * Manage replication, including breaking, resyncing, reverse resyncing, and editing replication schedules and transfer rates
 * Manage storage, such as adding aggregates and increasing capacity
 
