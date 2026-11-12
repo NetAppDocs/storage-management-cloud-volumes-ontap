@@ -23,7 +23,7 @@ The conversion tool is available in the NetApp Support site and creates the foll
 * Summary of the conversion, saved in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
 * Debug logs, saved in the `<gcp project number>-<region>-blueprint-config/<cvo name>` directory. You need these logs for troubleshooting. The `<gcp project number>-<region>-blueprint-config` bucket stores the Terraform logs.
 
-* ##The Cloud Volumes ONTAP project is the Google Cloud project in which you create Cloud Volumes ONTAP resources. Usually, the Console agent and Cloud Volumes ONTAP are in the same project. In a cross-project configuration, you can deploy the Console agent in one project, such as project A, and if the agent's service account has the required permissions, you deploy Cloud Volumes ONTAP systems in other projects, such as project B or C.##
+* ##The Cloud Volumes ONTAP project is the Google Cloud project in which you create Cloud Volumes ONTAP resources. The Console agent and Cloud Volumes ONTAP system can be in the same or different google Cloud projects (cross-project configuration). In a cross-project configuration, you can deploy the Console agent in one project, such as project A, and if the agent's service account has the required permissions, you deploy Cloud Volumes ONTAP systems in another project, such as project B.##
 
 [CAUTION]
 ====
