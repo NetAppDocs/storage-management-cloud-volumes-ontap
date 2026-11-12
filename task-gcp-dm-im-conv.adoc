@@ -39,7 +39,7 @@ Cloud Volumes ONTAP systems using Infrastructure Manager store data and records 
 * Verify that none of the Cloud Volumes ONTAP resources or their properties have been manually edited from the Google Cloud Console.
 * Verify that the Google Cloud APIs are enabled, including the Google Cloud Quotas API. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis[Enable Google Cloud APIs^].
 * Verify that the service account for the NetApp Console agent has all required permissions. Refer to https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions[Google Cloud permissions for the Console agent^].
-* ##If the Console agent and Cloud Volumes ONTAP are in different projects, verify that the service account for the Console agent has all required permissions in the Cloud Volumes ONTAP project. Refer to https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-console-gcloud.html#console-permissions-google[Google Cloud permissions for the Console agent^].##
+* ##If the Console agent and Cloud Volumes ONTAP are in different projects, verify that the service account for the Console agent has all required permissions in the Cloud Volumes ONTAP project. Learn about granting permissions to the Console agent's service account to access other projects in https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-console-gcloud.html#console-permissions-google[Create a Google Cloud service account to use with the agent^].##
 * Before you begin the conversion, we recommend that you take a snapshot of the root and boot disks of the Cloud Volumes ONTAP system.
 +
 .For private-mode or protected-mode deployments, ensure these additional prerequisites:
@@ -182,7 +182,7 @@ Run these steps before running the tool.
 .Steps
 
 . Create a role and attach it to a service account:
-.. Create a YAML file with the following permissions. ##In a cross-project deployment, you create the YAML file in the Console agent's project##.
+.. Create a YAML file with the following permissions. 
 +
 [source,cli]
 ----
@@ -227,7 +227,7 @@ If you are running the tool in private mode or in a protected environment, also 
 .##Include additional permissions for cross-project deployments (Console agent in one project, Cloud Volumes ONTAP in another)##
 [%collapsible]
 ====
-If the Console agent and Cloud Volumes ONTAP are in different projects, create a second YAML file with the following permissions for the project where the Cloud Volumes ONTAP resources reside:
+##In a cross-project deployment, you create the previous YAML file for the Console agent's project. You need to create a second YAML file with the following permissions for the project where the Cloud Volumes ONTAP resources reside:##
 
 [source,cli]
 ----
@@ -248,19 +248,8 @@ includedPermissions:
 - resourcemanager.projects.get
 ----
 
-Then, create a custom role in the Cloud Volumes ONTAP project with the permissions defined in the YAML file, and attach the custom role to the same service account:
-
-[source,cli]
-----
-gcloud iam roles create dmtoim_convert_tool_cross_project_role --project=CVO_PROJECT_ID \
-    --file=YAML_FILE_PATH
-
-gcloud projects add-iam-policy-binding CVO_PROJECT_ID \
-    --member="serviceAccount:CONVERT_VM_SA@PROJECT_ID.iam.gserviceaccount.com" \
-    --role="projects/CVO_PROJECT_ID/roles/dmtoim_convert_tool_cross_project_role"
-----
 ====
-.. Create a custom role in Google Cloud with the permissions defined in the YAML file. 
+.. ##Create a custom role in Google Cloud with the permissions defined in the YAML file in the Console agent's project. In a cross-project setup, you create this role in the project where the Cloud Volumes ONTAP resources reside.##
 `gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
     --file=YAML_FILE_PATH`
 For more information, refer to https://cloud.google.com/iam/docs/creating-custom-roles[Creating and managing custom roles^].
@@ -396,7 +385,6 @@ dmconvert \
 --console-agent-project-id=<the Google Cloud project ID for the Console agent> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
---worker-pool=<worker pool name>
 ----
 ====
 +
@@ -447,7 +435,6 @@ dmconvert \
 --console-agent-project-id=<the Google Cloud project ID for the Console agent> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
---worker-pool=<worker pool name> \
 --rollback
 ----
 +
