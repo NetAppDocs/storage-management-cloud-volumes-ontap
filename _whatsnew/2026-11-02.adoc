@@ -10,7 +10,6 @@ ONTAP has released the following hotfixes compatible with Cloud Volumes ONTAP ve
 * 9.17.1P11HF1
 * 9.18.1P8HF1
 * 9.19.1P3HF1
-* 9.19.1P4
 
 For details, refer to https://security.netapp.com/advisory/ntap-20261021-0021[NTAP Security Advisory 20261021-0021^].
 
