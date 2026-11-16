@@ -32,15 +32,9 @@ When configuring FlexCache on a Cloud Volumes ONTAP system where the origin volu
 
 .Before you begin
 . *Encryption setup*: Ensure that the source volume is fully encrypted and operational. For Cloud Volumes ONTAP systems, this involves integrating with cloud-specific key management services.
-ifdef::aws[]
-For AWS, this typically means using AWS Key Management Service (KMS). For information, refer to link:task-aws-key-management.html[Manage keys with AWS Key Management Service].
-endif::aws[]
-ifdef::azure[]
-For Azure, you need to set up Azure Key Vault for NetApp Volume Encryption (NVE). For information, refer to link:task-azure-key-vault.html[Manage keys with Azure Key Vault].
-endif::azure[]
-ifdef::gcp[]
-For Google Cloud, it is Google Cloud Key Management Service. For information, refer to link:task-google-key-manager.html[Manage keys with Google's Cloud Key Management Service].
-endif::gcp[]
+** *For AWS*, this typically means using AWS Key Management Service (KMS). For information, refer to link:task-aws-key-management.html[Manage keys with AWS Key Management Service].
+** *For Azure*, you need to set up Azure Key Vault for NetApp Volume Encryption (NVE). For information, refer to link:task-azure-key-vault.html[Manage keys with Azure Key Vault].
+** *For Google Cloud*, use Google Cloud Key Management Service. For information, refer to link:task-google-key-manager.html[Manage keys with Google's Cloud Key Management Service].
 . *Key management services*: Before creating a FlexCache volume, verify that the key management services are configured correctly on the Cloud Volumes ONTAP system. This configuration is essential for the FlexCache volume to decrypt the data from the origin volume.
 . *Licensing*: Confirm that a valid FlexCache license is available and activated on the Cloud Volumes ONTAP system.
 . *ONTAP version*: Ensure that the ONTAP version of your Cloud Volumes ONTAP system supports FlexCache with encrypted volumes. Refer to the latest https://docs.netapp.com/us-en/ontap/release-notes/index.html[ONTAP release notes^] or compatibility matrix for more information.

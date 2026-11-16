@@ -23,12 +23,11 @@ CAUTION: All disks and aggregates must be created and deleted directly from the 
 
 . On the *Systems* page, double-click the name of the Cloud Volumes ONTAP system on which you want to manage aggregates.
 
-. On the Aggregates tab, click *Add Aggregate* and then specify details for the aggregate.
+. On the Aggregates tab, select *Add Aggregate* and then specify details for the aggregate.
 +
 [role="tabbed-block"]
 ====
 
-ifdef::aws[]
 .AWS
 --
 * If you're prompted to choose a disk type and disk size, refer to link:task-planning-your-config.html[Plan your Cloud Volumes ONTAP configuration in AWS].
@@ -39,22 +38,17 @@ image:screenshot-aggregate-size-ev.png[A screenshot of the Aggregate Disks scree
 +
 link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 --
-endif::aws[]
 
-ifdef::azure[]
 .Azure
 --
 For help with disk type and disk size, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
 --
-endif::azure[]
 
-ifdef::gcp[]
 .Google Cloud
 --
 For help with disk type and disk size, refer to link:task-planning-your-config-gcp.html[Plan your Cloud Volumes ONTAP configuration in Google Cloud].
 --
-endif::gcp[]
 
 ====
 
-. Click *Add*, and then click *Approve and Purchase*.
+. Select *Add*, and then select *Approve and Purchase*.

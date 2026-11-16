@@ -49,7 +49,7 @@ Cloud Volumes ONTAP uses the local NVMe storage in some VM types as _Flash Cache
 
 HA pairs aren't supported in some regions.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions[View the list of supported Azure regions^].
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/[View the list of supported Azure regions^].
 
 
 

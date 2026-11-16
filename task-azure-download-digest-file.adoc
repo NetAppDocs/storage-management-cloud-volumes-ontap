@@ -21,7 +21,7 @@ The _tar.gz_ file contains the files required for image signature verification. 
 
 . Go to the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[Cloud Volumes ONTAP product page on the NetApp Support Site^] and download the required software version from the *Downloads* section.
 
-. On the Cloud Volumes ONTAP download page, click the downloadable file for the Azure image and download the _tar.gz_ file.
+. On the Cloud Volumes ONTAP download page, select the downloadable file for the Azure image and download the _tar.gz_ file.
 +
 image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image showing the NSS page with digest file tar.gz downloads]
 

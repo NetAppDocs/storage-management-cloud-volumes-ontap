@@ -55,7 +55,7 @@ You need an IAM policy and IAM role for each of the following:
 
 .Steps
 
-. Go to the AWS IAM console and click *Policies*.
+. Go to the AWS IAM console and select *Policies*.
 
 . Create a policy for the instance of the Console agent.
 [NOTE]
@@ -551,9 +551,9 @@ If you purchased a license from NetApp, you need to add it to the Console, so th
 
 . On the *Cloud Volumes ONTAP* tab, select *Licenses > Node Based Licenses*.
 
-. Click *Unassigned*.
+. Select *Unassigned*.
 
-. Click *Add Unassigned Licenses*.
+. Select *Add Unassigned Licenses*.
 
 . Enter the serial number of the license or upload the license file.
 
@@ -561,11 +561,11 @@ If you purchased a license from NetApp, you need to add it to the Console, so th
 
 .. Go to the link:https://register.netapp.com/site/vsnr/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
 
-.. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
+.. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then select *Submit*.
 
 .. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
 
-. Click *Add License*.
+. Select *Add License*.
 
 .Result
 
@@ -580,7 +580,7 @@ For HA pairs, a key pair is required to enable key-based SSH authentication to t
 
 .Steps
 
-. On the *Systems* page, click *Add System*.
+. On the *Systems* page, select *Add System*.
 
 . Under *Create*, select Cloud Volumes ONTAP.
 +

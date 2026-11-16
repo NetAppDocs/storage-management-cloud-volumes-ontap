@@ -45,15 +45,15 @@ Note that an optional management LIF for a storage VM requires a private IP addr
 
 . Log in to AWS and open the EC2 service.
 
-. Select the Cloud Volumes ONTAP instance and click *Networking*.
+. Select the Cloud Volumes ONTAP instance and select *Networking*.
 +
 If you're creating a storage VM on an HA pair, select node 1.
 
-. Scroll down to *Network interfaces* and click the *Interface ID* for port e0a.
+. Scroll down to *Network interfaces* and select the *Interface ID* for port e0a.
 +
 image:screenshot_aws_e0a.gif[A screenshot of the AWS Console that shows port e0a on a network interface.]
 
-. Select the network interface and click *Actions > Manage IP addresses*.
+. Select the network interface and select *Actions > Manage IP addresses*.
 
 . Expand the list of IP addresses for e0a.
 
@@ -67,7 +67,7 @@ You should have identified the maximum number of supported IP addresses per inte
 +
 If an IP address isn't in use, then you can use it with the new storage VM.
 
-. Back in the AWS Console, click *Assign new IP address* to assign additional IP addresses based on the amount that you need for the new storage VM.
+. Back in the AWS Console, select *Assign new IP address* to assign additional IP addresses based on the amount that you need for the new storage VM.
 +
 * single-node system: One unused secondary private IP is required.
 +
@@ -79,7 +79,7 @@ An optional secondary private IP is required if you want to create a management 
 
 . If you're allocating the IP address on an HA pair in a single AZ, enable *Allow secondary private IPv4 addresses to be reassigned*.
 
-. Click *Save*.
+. Select *Save*.
 
 . If you have an HA pair in multiple AZs, then you'll need to repeat these steps for node 2.
 

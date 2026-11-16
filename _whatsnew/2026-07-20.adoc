@@ -31,8 +31,8 @@ The well-architected dashboard displays the total number of analyzed systems and
 
 .Related links
 
-* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
-* https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html[Implement well-architected Cloud Volumes ONTAP system configurations^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-configuration-analysis-cvo.html[Configuration analysis for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html[Improve Cloud Volumes ONTAP configurations in Azure using Workload Factory^]
 
 
 

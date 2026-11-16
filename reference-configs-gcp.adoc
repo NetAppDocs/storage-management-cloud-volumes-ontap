@@ -421,7 +421,7 @@ Check this table to understand the VM variant and the number of LSSDs supported 
 
 == Supported regions
 
-For Google Cloud region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+For Google Cloud region support, see https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Cloud Volumes Global Regions^].
 
 
 

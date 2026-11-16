@@ -32,10 +32,10 @@ The following steps illustrate how to set up a similar configuration.
 . https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html[Create a transit gateway and attach the VPCs to the gateway^].
 
 . Associate the VPCs with the transit gateway route table.
-.. In the *VPC* service, click *Transit Gateway Route Tables*.
+.. In the *VPC* service, select *Transit Gateway Route Tables*.
 .. Select the route table.
-.. Click *Associations* and then select *Create association*.
-.. Choose the attachments (the VPCs) to associate and then click *Create association*.
+.. Select *Associations* and then select *Create association*.
+.. Choose the attachments (the VPCs) to associate and then select *Create association*.
 
 . Create routes in the transit gateway's route table by specifying the HA pair's floating IP addresses.
 +
@@ -64,13 +64,13 @@ The following sample image shows the route table for VPC 1. It includes a route 
 image:screenshot_transit_gateway3.png["A screenshot of the AWS console that shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides."]
 
 . Update the security groups settings to All traffic for the VPC. 
-.. Under Virtual Private Cloud, click *Subnets*.  
-.. Click the *Route table* tab, select the desired environment for one of the floating IP addresses for an HA pair.    
-.. Click *Security groups*. 
+.. Under Virtual Private Cloud, select *Subnets*.  
+.. Select the *Route table* tab, select the desired environment for one of the floating IP addresses for an HA pair.    
+.. Select *Security groups*. 
 .. Select *Edit Inbound Rules*.
-.. Click *Add rule*.
+.. Select *Add rule*.
 .. Under Type, select *All traffic*, and then select the VPC IP address. 
-.. Click *Save Rules* to apply the changes.   
+.. Select *Save Rules* to apply the changes.   
 
 . Mount volumes to clients using the floating IP address.
 +

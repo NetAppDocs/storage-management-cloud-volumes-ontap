@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-getting-started-aws.html
-keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create, console
+keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create, console, console agent
 summary: Verify that you have completed the prerequisites for deploying Cloud Volumes ONTAP in AWS.
 ---
 
@@ -15,14 +15,16 @@ summary: Verify that you have completed the prerequisites for deploying Cloud Vo
 [.lead]
 For deploying Cloud Volumes ONTAP, you first need to know about your AWS subscription and Cloud Volumes ONTAP licenses. You must also verify that you have a NetApp Console agent created for your AWS account. Much of the information in this topic needs to be performed as part of your Console setup before you begin to even deploy Cloud Volumes ONTAP.
 
-You can onboard Cloud Volumes ONTAP in AWS using either the AWS Marketplace or the NetApp Console. The following table provides a high-level overview of the tasks you need to complete to deploy Cloud Volumes ONTAP in AWS. The onboarding from AWS Marketplace is a simplified experience that automates the Console agent deployment and subscription association. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP in AWS Marketplace].
+You can onboard Cloud Volumes ONTAP in AWS using either the AWS Marketplace or the NetApp Console. The following table provides a high-level overview of the tasks you need to complete to deploy Cloud Volumes ONTAP in AWS. 
+
+NOTE: If you subscribe to the Cloud Volumes ONTAP standalone offering in AWS Marketplace, the steps differ. For information about onboarding from AWS Marketplace, see link:task-onboard-cvo-aws-marketplace.html[Onboard Cloud Volumes ONTAP standalone offering in AWS Marketplace].
 
 [cols="20,35,25,25",options="header"]
 |===
 a| Task
 a| Description
 a| Reference
-a| Notes for private mode deployments
+a| Notes for private-mode deployments
 
 a| Create a Console agent
 a| If you don't have a Console agent yet, create one before deploying Cloud Volumes ONTAP. If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console running on that agent.
@@ -30,12 +32,19 @@ a| Refer to the Console setup guide:
 https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html[Create a Console agent in AWS^]
 
 a| If deploying in a subnet with no internet access, manually install the Console agent and access the NetApp Console user interface that's running on that Console agent. Refer to the Console setup guide:
-https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html[Manually install the Console agent without internet access^]
+https://docs.netapp.com/us-en/console-setup-admin/task-install-private-mode.html[Deploy the NetApp Console agent in private mode^]
+
+a| Verify NetApp Console roles
+a| After you have created a Console agent, you must verify that the necessary IAM roles and Cloud Volumes ONTAP roles and permissions are in place.
+a| Refer to the Console setup guide:
+https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
+https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html[Set up role-based access for Cloud Volumes ONTAP^]
+a| In private mode, the Console agent must have the necessary roles and permissions configured correctly. However, Cloud Volumes ONTAP roles don't apply to private mode deployments. Refer to the Console setup guide: https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html[NetApp Console access roles^]
 
 a| Plan your configuration
 a| The Console offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 a| link:task-planning-your-config.html[Plan your configuration]
-a| You need to have similar planning considerations for private mode deployments.
+a| You need to have similar planning considerations for private-mode deployments.
 
 a| Set up your networking
 a| . Ensure your VPC and subnets support connectivity between the Console agent and Cloud Volumes ONTAP. 
@@ -47,17 +56,17 @@ a| Outbound internet access for AutoSupport is not required. All other networkin
 a| Set up the AWS KMS
 a| If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that an active Customer Master Key (CMK) exists and modify the key policy to add the IAM role for the Console agent as a key user.
 a| link:task-setting-up-kms.html[Set up the AWS KMS]
-a| Similar steps apply to private mode deployments.
+a| Similar steps apply to private-mode deployments.
 
 a| Deploy Cloud Volumes ONTAP from the Console
 a| When you have performed all prerequisites, you can complete the steps in the wizard to deploy Cloud Volumes ONTAP in AWS.
 a| 
 * link:task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS]
 * link:task-deploying-otc-aws.html[Deploy Cloud Volumes ONTAP using advanced options] 
-a| Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private mode deployments require a node-based BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
+a| Private mode supports only advanced deployment. Before beginning the deployment, ensure that you have purchased a Cloud Volumes ONTAP license from NetApp. Private-mode deployments rely on BYOL licenses. Marketplace subscriptions are not supported for charging your Cloud Volumes ONTAP usage. Obtain the license file from NetApp, and upload it during deployment. Refer to:
 
-* link:concept-license-management.html[License management for node-based BYOL]
-* link:task-manage-node-licenses.html[Manage node-based BYOL licenses]
+* link:concept-license-management.html[License management]
+* link:task-manage-node-licenses.html[Manage BYOL licenses]
 * link:task-deploying-otc-aws.html[Deploy Cloud Volumes ONTAP using advanced options] 
 
 |===
