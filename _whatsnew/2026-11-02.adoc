@@ -17,7 +17,7 @@ For your Cloud Volumes ONTAP systems, you might be prompted to upgrade to these 
 
 https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-12-0[Console agent 4.12.0^]
 
-//hotfix
+//hotfix. 9.12.1 and 9.13.1 have only the hotfixes documented despite being less than n-2.
 
 
 
