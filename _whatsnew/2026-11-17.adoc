@@ -2,11 +2,10 @@
 
 Cloud Volumes ONTAP now supports hybrid user authentication with Azure Entra ID for SMB, starting with ONTAP 9.19.1.
 
-Previously, Cloud Volumes ONTAP supported SMB authentication only for domain users, requiring a dependency on on-premises Active Directory (AD). With this release, you can extend SMB authentication to the cloud through Azure Entra ID while continuing to use your existing on-premises AD infrastructure.
+Previously, Cloud Volumes ONTAP supported SMB authentication only for domain users, which required on-premises Active Directory (AD). With the support for hybrid user authentication, you can extend SMB authentication to the cloud through Azure Entra ID while continuing to use your existing on-premises AD infrastructure.
 
 With hybrid user authentication, users are created in on-premises AD and synchronized to Azure Entra ID using Entra Connect. ONTAP authenticates SMB users by communicating with both on-premises AD and Azure Entra ID.
 
 This feature is available as a public preview. Configuration is supported through the ONTAP CLI only. NetApp Console integration is not yet available.
 
-.Related links
-* link:task-azure-entra-id-smb-auth.html[Configure Azure Entra ID authentication for SMB^]
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-entra-id-smb-auth.html[Configure Azure Entra ID authentication for SMB^]

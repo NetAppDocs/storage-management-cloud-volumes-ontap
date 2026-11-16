@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-azure-entra-id-smb-auth.html
 keywords: azure, entra id, active directory, smb, cifs, hybrid identity, authentication, kerberos, tenant-id, client-id, client-certificate, hybrid user, cloud user
-summary: Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP to support hybrid user identities and reduce the dependency on on-premises Active Directory.
+summary: "Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP to support hybrid user identities and reduce the dependency on on-premises Active Directory."
 ---
 
 = Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP
@@ -13,7 +13,7 @@ summary: Configure Azure Entra ID authentication for SMB on Cloud Volumes ONTAP 
 :imagesdir: ./media/
 
 [.lead]
-You can configure Cloud Volumes ONTAP to authenticate SMB file access through Azure Entra ID, that enables identity support for Cloud Volumes ONTAP users on hybrid cloud. Earlier, this required authentication of domain users from the on-premises Active Directory for identity management, but with Azure Entra ID integration, you can leverage cloud-based identities while maintaining seamless access for hybrid users.
+You can configure Cloud Volumes ONTAP to authenticate SMB file access through Azure Entra ID, which enables identity support for Cloud Volumes ONTAP users on hybrid cloud. Previously, this required authentication of domain users from the on-premises Active Directory for identity management, but with Azure Entra ID integration, you can use cloud-based identities while maintaining seamless access for hybrid users.
 
 NOTE: This feature is available as a public preview and can only be configured using the ONTAP CLI. NetApp Console integration is not yet available. In the CLI, SMB operations use the `cifs` command prefix because SMB (Server Message Block) is the modern name for the Common Internet File System (CIFS) protocol.
 
@@ -95,14 +95,14 @@ https://login.microsoft.com
 +
 Azure AD Connect synchronizes on-premises AD users and groups to Azure Entra ID and enables hybrid device join.
 
-. Verify that users and groups are synchronized to Azure Entra ID. Synchronized users appear with a UPN suffix matching your tenant domain, for example `user@<tenant>.onmicrosoft.com`. https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-post-installation[Azure AD Connect post-installation steps^] covers additional tasks you can perform after setup.
+. Verify that users and groups are synchronized to Azure Entra ID. Synchronized users appear with a UPN suffix matching your tenant domain, for example `user@<tenant>.onmicrosoft.com`. For additional tasks you can perform after setup, refer to https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-post-installation[Azure AD Connect post-installation steps^].
 
 [[ontap-config]]
 == Step 3: Configure the SMB server on Cloud Volumes ONTAP
 
 Configure the SMB server on the Cloud Volumes ONTAP storage VM to authenticate SMB file access through Azure Entra ID using the app registration credentials you created in <<azure-app,Step 1>>.
 
-NOTE: The storage VM must have a configured data LIF and access to an aggregate before you create the SMB server. The data LIF is used by clients to access the SMB share.
+NOTE: The storage VM must have a configured data LIF and access to an aggregate before you create the SMB server. Clients use the data LIF to access the SMB share.
 
 .Steps
 
@@ -147,7 +147,7 @@ You can set up an Entra ID-registered VM to access the Entra ID-joined client wh
 
 . Sign in to the Windows machine using local administrator credentials.
 
-. Navigate to *Settings > Accounts > Access work or school* and select *Connect*.
+. Go to *Settings > Accounts > Access work or school* and select *Connect*.
 
 . Enter your Global Administrator account credentials and follow the prompts.
 +
@@ -160,7 +160,7 @@ The device is registered with Azure Entra ID.
 
 You can configure a Windows client VM as an Entra ID-joined machine to allow hybrid users to obtain cloud-issued Kerberos tickets and mount the ONTAP SMB share. For more information, refer to https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join[Configure hybrid Azure AD join^] and https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current[Troubleshoot hybrid Azure AD join issues^].
 
-NOTE: After joining, this machine can only be accessed using hybrid user credentials from the Entra ID-registered machine configured in <<client-registered,Step 4>>.
+NOTE: After joining, you can access this machine only with hybrid user credentials from the Entra ID-registered machine configured in <<client-registered,Step 4>>.
 
 .Before you begin
 
