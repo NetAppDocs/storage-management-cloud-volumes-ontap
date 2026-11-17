@@ -76,7 +76,17 @@ Locate the standalone Cloud Volumes ONTAP offering in AWS Marketplace.
 . Choose the _standalone_ offering. These steps guide you through subscribing to the standalone offering.
 . Review listing details and pricing terms.
 . Subscribe and complete the checkout.
-. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment. 
+. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
+
+== Subscribe to the NetApp Intelligent Service offering for data services
+If you want to avail other data services, such as NetApp Backup and Recovery, you need to subscribe to the NetApp Intelligent Service offering in addition to the standalone offering.
+
+.Steps
+. Go to AWS Marketplace using your AWS account with the required permissions.
+. Locate and select the NetApp Intelligent Service offering.
+. Review listing details and pricing terms.
+. Subscribe and complete the checkout.
+. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
 
 == Sign up or sign in to NetApp Console
 
