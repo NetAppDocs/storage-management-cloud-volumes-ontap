@@ -46,7 +46,7 @@ sidebar:
               url: /concept-degraded-ha-pair.html      
         - title: Deploy in Amazon Web Services
           entries:
-            - title: Deploy the standalone Cloud Volumes ONTAP from AWS Marketplace
+            - title: Deploy Cloud Volumes ONTAP using standalone listing on AWS Marketplace
               url: /task-onboard-cvo-aws-marketplace.html
             - title: Deployment overview 
               url: /task-getting-started-aws.html

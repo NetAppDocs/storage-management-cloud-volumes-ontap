@@ -5,7 +5,7 @@ keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy ag
 summary: Subscribe to Cloud Volumes ONTAP in AWS Marketplace and complete setup in NetApp Console, including organization creation, subscription association, agent deployment, and first system creation.
 ---
 
-= Subscribe to and deploy standalone Cloud Volumes ONTAP from AWS Marketplace
+= Deploy Cloud Volumes ONTAP using the standalone listing on AWS Marketplace
 :hardbreaks:
 :nofooter:
 :icons: font
