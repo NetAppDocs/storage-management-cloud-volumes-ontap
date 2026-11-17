@@ -1,3 +1,24 @@
+=== New Cloud Volumes ONTAP contributor role
+
+NetApp adds the *Cloud Volumes ONTAP contributor* role, which has more permissions than the operator role but fewer than the admin role. A user with the operator role can perform several day-to-day workflows, including SnapMirror replication tasks. The admin role covers these workflows but also lets admin users delete Cloud Volumes ONTAP systems, which many organizations don't want for operational users. This role is important because the Console doesn't support multi-admin verification (MAV) at present, without which, an admin user can perform sensitive operations, such as deleting systems, without a second approval. The contributor role lets users perform most critical operations, such as creating systems, managing replication, and managing storage, while preventing sensitive actions, such as deleting systems.
+
+The contributor role includes all operator permissions plus these additional capabilities:
+
+* Create Cloud Volumes ONTAP systems
+* Update system settings, such as changing the instance type or upgrading the ONTAP version
+* Manage replication, including breaking, resyncing, reverse resyncing, and editing replication schedules and transfer rates
+* Manage storage, such as adding aggregates and increasing capacity
+
+The contributor role can't delete systems, volumes, aggregates, or replication relationships. It also can't turn systems on or off, set a password, or open ONTAP System Manager.
+
+You assign the contributor role from *Administration > Identity*, the same way you assign the other Cloud Volumes ONTAP roles.
+
+.Related links
+
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html[Cloud Volumes ONTAP access roles in NetApp Console^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html[Set up role-based access for Cloud Volumes ONTAP in NetApp Console^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html#data-service-roles[NetApp Console access roles^]
+
 === Azure Entra ID hybrid user authentication for SMB (public preview)
 
 Cloud Volumes ONTAP now supports hybrid user authentication with Azure Entra ID for SMB, starting with ONTAP 9.19.1.
