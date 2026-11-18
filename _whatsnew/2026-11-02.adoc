@@ -1,7 +1,9 @@
 === Guidance for upgrading ONTAP hotfixes for specific Cloud Volumes ONTAP versions
 
-ONTAP has released the following hotfixes compatible with Cloud Volumes ONTAP versions 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1, and 9.19.1: 
+ONTAP has released the following hotfixes compatible with Cloud Volumes ONTAP versions 9.12.1, 9.13.1, 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1, and 9.19.1: 
 
+* 9.12.1P20HF1
+* 9.13.1P21HF1
 * 9.14.1P18HF1
 * 9.15.1P20HF1
 * 9.16.1P16HF1
@@ -15,7 +17,7 @@ For your Cloud Volumes ONTAP systems, you might be prompted to upgrade to these 
 
 https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-12-0[Console agent 4.12.0^]
 
-//hotfix
+//hotfix. 9.12.1 and 9.13.1 have only the hotfixes documented despite being less than n-2.
 
 
 
