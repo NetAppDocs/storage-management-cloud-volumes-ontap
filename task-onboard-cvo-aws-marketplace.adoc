@@ -115,8 +115,6 @@ An organization helps you manage users, roles, permissions, licenses, and system
 . Optional: Associate a NetApp Support Site (NSS) account.
 . Select *Create*.
 
-
-
 == Deploy a Console agent in AWS
 
 After your subscription is associated with NetApp Console, deploy a Console agent to manage AWS resources and Cloud Volumes ONTAP systems.
