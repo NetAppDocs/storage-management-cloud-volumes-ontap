@@ -24,7 +24,7 @@ Cloud Volumes ONTAP accepts SMB authentication from both on-premises AD and Micr
 
 Cloud Volumes ONTAP 9.19.1 and later also supports the `icacls` command to manage file and folder permissions for Entra ID identities on mounted shares.
 
-//* <##Do we need to document this##> *Cloud-only user authentication*: Users are created directly in Microsoft Entra ID with no on-premises AD required. Clients must be Azure Entra joined (cloud-joined). Support for this model is planned for a future release.
+//* <Do we need to document this> *Cloud-only user authentication*: Users are created directly in Microsoft Entra ID with no on-premises AD required. Clients must be Azure Entra joined (cloud-joined). Support for this model is planned for a future release.
 
 
 .Before you begin
