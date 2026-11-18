@@ -4,3 +4,4 @@ NetApp now offers a separate pay-as-you-go (PAYGO) listing for Cloud Volumes ONT
 Both the Cloud Volumes ONTAP annual contract and the PAYGO listing remain separate from the NetApp Intelligence Services (NIS) annual contract and PAYGO listings, enabling separate billing for Cloud Volumes ONTAP capacity and data services.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html[Learn more about billing preferences^]
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html[Deploy Cloud Volumes ONTAP using the standalone listing on AWS Marketplace^]
