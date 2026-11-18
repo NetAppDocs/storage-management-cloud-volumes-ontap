@@ -77,7 +77,7 @@ Locate the standalone Cloud Volumes ONTAP offering in AWS Marketplace.
 . Subscribe and complete the checkout.
 . After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
 
-== Subscribe to the NIS offering for data services
+== Subscribe to NetApp Intelligent Service for data services
 If you want to use other data services, such as NetApp Backup and Recovery, you need to subscribe to the NIS offering in addition to the standalone offering.
 
 .Steps
