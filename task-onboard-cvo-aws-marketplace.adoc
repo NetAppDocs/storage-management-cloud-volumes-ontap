@@ -5,7 +5,7 @@ keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy ag
 summary: Subscribe to Cloud Volumes ONTAP in AWS Marketplace and complete setup in NetApp Console, including organization creation, subscription association, agent deployment, and first system creation.
 ---
 
-= Subscribe and deploy Cloud Volumes ONTAP standalone offering from AWS Marketplace
+= Deploy Cloud Volumes ONTAP using the standalone listing on AWS Marketplace
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,10 +19,10 @@ Subscribe to the standalone Cloud Volumes ONTAP offering in AWS Marketplace, dep
 
 .Before you begin
 
-Before you begin, make sure you have:
+Make sure you have:
 
 * A NetApp Console account, or the information needed to create one.
-* Ensured that the Console agent network meets the requirements. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking[Learn about Console agent networking requirements^]
+* A Console agent network that meets the requirements. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking[Learn about Console agent networking requirements^]
 * An AWS account and identity with permission to subscribe to AWS Marketplace and accept the offering terms.
 
 +
@@ -72,11 +72,20 @@ Locate the standalone Cloud Volumes ONTAP offering in AWS Marketplace.
 . Go to AWS Marketplace using your AWS account with the required permissions.
 . Locate the NetApp Cloud Volumes ONTAP standalone offering. AWS Marketplace provides two offerings for Cloud Volumes ONTAP:
 ** The standalone offering for Cloud Volumes ONTAP annual subscription
-** The NetApp Intelligent Service combined offering for NetApp data services and Cloud Volumes ONTAP subscriptions.
-. Choose the _standalone_ offering. These steps guide you through subscribing to the standalone offering.
+** The NetApp Intelligent Service combined offering for NetApp data services and Cloud Volumes ONTAP subscriptions
+. Choose the _standalone_ offering. Review listing details and pricing terms.
+. Subscribe and complete the checkout.
+. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
+
+== Subscribe to the NetApp Intelligent Service offering for data services
+If you want to use other data services, such as NetApp Backup and Recovery, you need to subscribe to the NetApp Intelligent Service offering in addition to the standalone offering.
+
+.Steps
+. Go to AWS Marketplace using your AWS account with the required permissions.
+. Locate and select the NetApp Intelligent Service offering.
 . Review listing details and pricing terms.
 . Subscribe and complete the checkout.
-. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment. 
+. After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
 
 == Sign up or sign in to NetApp Console
 
@@ -103,14 +112,14 @@ An organization helps you manage users, roles, permissions, licenses, and system
 
 .Steps
 . Enter an organization name.
-. Optional: associate a NetApp Support Site (NSS) account.
+. Optional: Associate a NetApp Support Site (NSS) account.
 . Select *Create*.
 
 
 
 == Deploy a Console agent in AWS
 
-After  your subscription is associated with NetApp Console, deploy a Console agent to manage AWS resources and Cloud Volumes ONTAP systems.
+After your subscription is associated with NetApp Console, deploy a Console agent to manage AWS resources and Cloud Volumes ONTAP systems.
 
 .Before you begin
 
@@ -144,7 +153,7 @@ To have the Console create the role with CloudFormation Quick Create, the AWS id
 
 .. Select *Create role for me*.
 
-.. Add the AWS account ID and optionally, the external ID. The Console sets a default role name.
+.. Add the AWS account ID and, optionally, the external ID. The Console sets a default role name.
 
 .. Select *Open CloudFormation Quick Create*.
 .. Within the AWS CloudFormation Quick Create page, acknowledge the terms and select *Create stack*.
@@ -160,7 +169,7 @@ If you already have a role with the required AWS permissions, provide its ARN so
 .. Select *Assume role*. 
 
 + 
-Console creates a name for the assumed role that you can change if you want.
+The Console creates a name for the assumed role that you can change if you want.
 
 .. Enter the ARN of the existing role.
 
@@ -185,7 +194,7 @@ If you want to use access keys to authorize agent deployment, provide your AWS a
 
 + 
 
-When the Console creates the Console agent, it creates an IAM role and a profile for the agent or uses a role that you provide. This role includes permissions that enable the agent to manage AWS resources. Ensure the role is updated as new permissions are added in future releases. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[Learn more about the IAM policy for the Console agent^].
+When the Console creates the Console agent, it creates an IAM role and a profile for the agent or uses a role that you provide. This role includes permissions that enable the agent to manage AWS resources. Keep the role updated with any new permissions that the agent requires. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html[Learn more about the IAM policy for the Console agent^].
 . Configure networking by selecting a VPC, subnet, key pair, public IP behavior, and proxy settings, if needed.
 . Configure your security group rules to allow inbound HTTP (80), HTTPS (443), and SSH (22) for troubleshooting access to the agent VM.
 + 
@@ -212,7 +221,7 @@ For full networking and permissions requirements for the Console agent, see:
 
 After the Console deploys the agent, follow the steps in https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html[Deploy Cloud Volumes ONTAP with Quick create in AWS^] to create your first system.
 
-If you aren't ready to create your Cloud Volumes ONTAP system, you can return to the Systems page at any time to create your system later.
+If you aren't ready to create your Cloud Volumes ONTAP system, you can return to the Systems page at any time to create it.
 
 == Troubleshooting and recovery
 

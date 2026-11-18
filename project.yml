@@ -46,7 +46,7 @@ sidebar:
               url: /concept-degraded-ha-pair.html      
         - title: Deploy in Amazon Web Services
           entries:
-            - title: Deploy the standalone Cloud Volumes ONTAP from AWS Marketplace
+            - title: Deploy Cloud Volumes ONTAP using standalone listing on AWS Marketplace
               url: /task-onboard-cvo-aws-marketplace.html
             - title: Deployment overview 
               url: /task-getting-started-aws.html
@@ -225,16 +225,18 @@ sidebar:
                   url: /reference-limits-azure.html
                 - title: Learn about HA pairs in Azure
                   url: /concept-ha-azure.html                  
-                - title: Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs
+                - title: Prevent disruptions during Azure maintenance for HA pairs
                   url: /task-azure-prevent-freeze.html
                 - title: Manage keys with Azure Key Vault
-                  url: /task-azure-key-vault.html                           
+                  url: /task-azure-key-vault.html
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
                 - title: Override CIFS locks
                   url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link or service endpoints
                   url: /task-enabling-private-link.html
+                - title: Configure Microsoft Entra ID authentication for SMB
+                  url: /task-azure-entra-id-smb-auth.html                  
                 - title: Move resource groups 
                   url: /task-moving-resource-groups-azure.html 
                 - title: Segregate SnapMirror traffic in Azure
