@@ -1,0 +1,323 @@
+---
+sidebar: sidebar
+permalink: task-azure-entra-id-smb-auth.html
+keywords: azure, entra id, active directory, smb, cifs, hybrid identity, authentication, kerberos, tenant-id, client-id, client-certificate, hybrid user, cloud user
+summary: "Configure Microsoft Entra ID authentication for SMB on Cloud Volumes ONTAP to support hybrid user identities and reduce the dependency on on-premises Active Directory."
+---
+
+= Configure Microsoft Entra ID authentication for SMB on Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can configure Cloud Volumes ONTAP to authenticate users accessing SMB shares through https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id[Microsoft Entra ID^], which enables identity support for Cloud Volumes ONTAP users on hybrid cloud. Previously, the authentication required on-premises Active Directory (AD) for the identity management of domain users. With Microsoft Entra ID, you can use cloud-based authentication while maintaining seamless access for hybrid users.
+
+NOTE: This feature is available as a public preview and can only be configured using the ONTAP CLI. NetApp Console integration is not yet available. In the CLI, SMB operations use the `cifs` command prefix because SMB (Server Message Block) is the modern name for the Common Internet File System (CIFS) protocol.
+
+.About this task
+Starting with Cloud Volumes ONTAP 9.19.1, you can use Microsoft Entra ID to authenticate SMB users that use hybrid identities. Hybrid identities are user accounts synchronized from on-premises Active Directory (AD) to Microsoft Entra ID through https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect[Microsoft Entra Connect^].
+
+Cloud Volumes ONTAP accepts SMB authentication from both on-premises AD and Microsoft Entra ID. This lets you add cloud identity support while you keep your existing AD infrastructure.
+
+Cloud Volumes ONTAP 9.19.1 and later also supports the `icacls` command to manage file and folder permissions for Entra ID identities on mounted shares.
+
+//* <##Do we need to document this##> *Cloud-only user authentication*: Users are created directly in Microsoft Entra ID with no on-premises AD required. Clients must be Azure Entra joined (cloud-joined). Support for this model is planned for a future release.
+
+
+.Before you begin
+
+* You must be running Cloud Volumes ONTAP 9.19.1 or later.
+* You must have an active Azure subscription.
+* You must have a user account with https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-administrator[Global Administrator^] privileges in your Microsoft Entra ID tenant.
+* The client machine that accesses the SMB share must be Microsoft Entra hybrid-joined.
+* You must have an on-premises AD domain controller with connectivity to Microsoft Entra ID.
+* You must have a storage VM with a data LIF and an aggregate available for the SMB server and share.
+* The storage VM and client VMs must be able to resolve the required Microsoft Entra ID endpoints and communicate with them over the network.
+
+[[azure-app]]
+== Step 1: Register an application in Microsoft Entra ID
+You must register an application in Microsoft Entra ID so that Cloud Volumes ONTAP can authenticate to the tenant during SMB setup. Cloud Volumes ONTAP uses the credentials from this registration to create, modify, and delete application objects on your behalf. By completing this step, you collect the following credentials for use in <<ontap-config,Step 3>>:
+
+* *tenant-id*: The unique GUID for your organization's Microsoft Entra ID instance.
+* *client-id*: The unique identifier of the Entra ID app.
+* *client-certificate*: The certificate used to authenticate the app.
+
+.Steps
+
+. https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app[Register an application^] in the Azure portal. Select *Accounts in this organizational directory only (Single tenant)* as the supported account type.
+
+. From the *Overview* page of the registered app, copy and save the *Application (client) ID* and *Directory (tenant) ID*.
+
+. Assign the following Microsoft Graph API permissions to the app registration:
++
+* *Application.ReadWrite.OwnedBy*
+* *User.Read*
+* *User.Read.All*
++
+To assign permissions, go to *API permissions > Add a permission > Microsoft Graph > Application permissions*, select each permission, and then select *Grant admin consent for <tenant-name>* to activate them.
++
+NOTE: Work with your Microsoft Azure administrator to confirm the minimum permissions required by your organization's security policy.
+
+. Upload a certificate to authenticate the app registration. Go to *Certificates & secrets > Certificates > Upload certificate* and upload a file in `.cer`, `.pem`, or `.crt` format.
++
+NOTE: Use a certificate signed by a certificate authority. Self-signed certificates are supported but are not recommended for production environments.
+
+. Select *Grant admin consent* to activate the permissions.
+
+[[on-prem-ad]]
+== Step 2: Set up on-premises Active Directory
+Set up your on-premises AD domain controller, synchronize users and groups to Microsoft Entra ID, and configure device join settings so that hybrid identities are available for SMB authentication. Refer to https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts[Microsoft documentation for Entra Connect^].
+
+.Steps
+
+. Set up a Windows server as a domain controller for your on-premises AD domain, for example `contoso.com`.
+
+. Create the AD users and groups that are synchronized to Microsoft Entra ID.
+
+. Configure the _Site to Zone Assignment List_ group policy to allow domain-joined clients to communicate with Microsoft Entra ID authentication services.
++
+Go to:
+*gpedit.msc > Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Site to Zone Assignment List*
+
+. Add each of the following URLs with zone value *1*:
++
+----
+https://enterpriseregistration.windows.net
+https://login.microsoftonline.com
+https://device.login.microsoftonline.com
+https://autologon.microsoftazuread-sso.com
+https://login.microsoft.com
+----
+
+. Install https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/ConnectSync[Microsoft Entra Connect | Connect Sync^] and configure it using your Global Administrator account:
+.. https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-plan[Plan your Microsoft Entra hybrid join implementation^]. Refer to https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control[Microsoft Entra hybrid join targeted deployment^].
+.. Configure the Service Connection Point (SCP) for each https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/understanding-the-active-directory-logical-model[Active Directory Logical Model^] and provide AD administrator credentials.
++
+Azure Microsoft Entra Connect synchronizes on-premises AD users and groups to Microsoft Entra ID and enables hybrid device join.
+
+. Verify that users and groups are synchronized to Microsoft Entra ID. Synchronized users appear with a UPN suffix matching your tenant domain, for example `user@<tenant>.onmicrosoft.com`. For additional tasks you can perform after setup, refer to https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-post-installation[Microsoft documentation: Next steps and how to manage Microsoft Entra Connect^].
+
+[[ontap-config]]
+== Step 3: Configure the SMB server on Cloud Volumes ONTAP
+
+Configure the SMB server on the Cloud Volumes ONTAP storage VM to authenticate SMB file access through Microsoft Entra ID using the app registration credentials you created in <<azure-app,Step 1>>.
+
+NOTE: The storage VM must have a configured data LIF and access to an aggregate before you create the SMB server. Clients use the data LIF to access the SMB share.
+
+.Steps
+
+. Configure DNS on the storage VM so that it can resolve Microsoft Entra ID endpoints:
++
+[source,cli]
+----
+dns create -domains <on-premises-domain> -name-servers <dns-server-ip>
+----
+
+. Create the SMB server and provide the Microsoft Entra ID parameters:
++
+[source,cli]
+----
+cifs create -vserver <svm-name> -cifs-server <netbios-name> -domain <on-premises-domain-name> -auth-user-type hybrid-user -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+
+. Reset the SMB Kerberos password using the Entra ID credentials:
++
+[source,cli]
+----
+cifs password reset -vserver <svm-name> -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+
+. Optionally, remove the SMB server:
++
+[source,cli]
+----
+cifs delete -vserver <svm-name> -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+
+[[client-registered]]
+== Step 4: Register a client VM with Microsoft Entra ID
+
+You can set up an Entra ID-registered VM to access the Entra ID-joined client when a direct Remote Desktop Protocol (RDP) connection is not available in your environment. This VM acts as a jump box from which you remotely sign in to the Entra ID-joined client using hybrid user credentials.
+
+.Before you begin
+
+* You must have a Windows 10 (21H2 or later) or Windows 11 machine. 
+
+.Steps
+
+. Sign in to the Windows machine using local administrator credentials.
+
+. Go to *Settings > Accounts > Access work or school* and select *Connect*.
+
+. Enter your Global Administrator account credentials and follow the prompts.
++
+The device is registered with Microsoft Entra ID.
+
+. Verify that the device appears as *Entra ID Registered* under *Entra ID > Devices > All Devices* in the Azure portal.
+
+[[client-joined]]
+== Step 5: Join a client VM to Microsoft Entra ID
+
+You can configure a Windows client VM as an Entra ID-joined machine to allow hybrid users to obtain cloud-issued Kerberos tickets and mount the ONTAP SMB share. For more information, refer to https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join[Configure Microsoft Entra hybrid join^] and https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current[Troubleshoot Microsoft Entra hybrid joined devices^].
+
+NOTE: After joining, you can access this machine only with hybrid user credentials from the Entra ID-registered machine configured in <<client-registered,Step 4>>.
+
+.Before you begin
+
+* You must have a Windows 10 (21H2 or later) or Windows 11 machine. 
+* You must have a hybrid user account synchronized from your on-premises AD. These accounts are created in <<on-prem-ad,Step 2>>.
+
+.Steps
+
+. Sign in to the Windows machine using local administrator credentials.
+
+. Go to *Settings > Accounts > Access work or school* and select *Connect > Join this device to Azure Active Directory*.
++
+Use a hybrid user account to complete the join. If the join does not complete successfully, refer to the https://learn.microsoft.com/en-us/answers/questions/1179294/how-to-join-device-as-azure-ad-joined-if-its-added[Troubleshoot Microsoft Entra hybrid joined devices^].
+
+. Restart the machine when prompted, then verify it appears as *Entra ID Joined* under *Entra ID > Devices > All Devices* in the Azure portal.
+
+[[client-config]]
+== Step 6: Configure the joined VM for SMB access
+
+After the VM is joined to Microsoft Entra ID, you must configure it to obtain cloud-issued Kerberos tickets, resolve the SMB server hostname, and allow RDP access from the Entra ID-registered machine.
+
+.Steps
+
+. Add a DNS entry to the hosts file on the Entra ID-joined VM so that it can resolve the SMB server hostname:
+.. Open `C:\Windows\System32\drivers\etc\hosts` in a text editor.
+.. Add the following entry, mapping the ONTAP data LIF IP address to the SMB server FQDN:
++
+----
+<lif-ip-address>  <netbios-name>.<on-premises-domain>
+----
+
+. Enable the PKU2U authentication policy:
+.. Go to:
++
+*gpedit.msc > Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options*
+.. Enable *Network security: Allow PKU2U authentication requests to this computer to use online identities*.
++
+For more information, refer to the https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-allow-pku2u-authentication-requests-to-this-computer-to-use-online-identities[PKU2U authentication policy^].
+
+. Enable cloud Kerberos ticket retrieval:
+.. Go to:
++
+*gpedit.msc > Computer Configuration > Administrative Templates > System > Kerberos*
+.. Enable *Allow retrieving the cloud Kerberos ticket during logon*.
+
+. Configure the Kerberos realm mapping for the ONTAP SMB server:
+.. In the same Kerberos policy location, select *Define host name-to-Kerberos realm mappings*.
+.. Add the following mapping:
++
+----
+Value name: KERBEROS.MICROSOFTONLINE.COM
+Value: <netbios-name>.<on-premises-domain>
+----
+
+. Add the hybrid user to the _Remote Desktop Users_ group to allow access from the Entra ID-registered VM:
++
+[source,cmd]
+----
+net localgroup "Remote Desktop Users" /add "AzureAD\<username>@<tenant>.onmicrosoft.com"
+----
+
+[[mount-share]]
+== Step 7: Mount the SMB share and verify access
+
+You can mount the SMB share from the Entra ID-joined client and verify that Kerberos-based authentication with Microsoft Entra ID succeeds end to end.
+
+.Steps
+
+. From the Entra ID-registered VM, use Remote Desktop Connection to sign in to the Entra ID-joined VM with hybrid user credentials in the format:
+//From the Entra ID-registered VM, use remote desktop to log in to the Entra ID-joined client with hybrid or cloud user credentials in the format:
++
+----
+AzureAD\<username>@<tenant>.onmicrosoft.com
+----
++
+If sign-in does not succeed, select *More choices* and enter the credentials manually. If the issue persists, enable *Use a web account* in the *Advanced* tab of the Remote Desktop Connection client. For more information, refer to https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows[Sign in to a Windows VM using Microsoft Entra ID^].
+
+. Verify that a cloud Kerberos ticket was issued at sign-in by running `klist` and confirming that a `krbtgt` ticket for `KERBEROS.MICROSOFTONLINE.COM` is present:
++
+[source,powershell]
+----
+klist
+----
++
+Example output:
++
+----
+Cached Tickets: (1)
+#0>     Client: <username> @ <domain>
+        Server: krbtgt/KERBEROS.MICROSOFTONLINE.COM @ KERBEROS.MICROSOFTONLINE.COM
+        KerbTicket Encryption Type: Unknown (-1)
+        Ticket Flags 0x40810000 -> forwardable renewable name_canonicalize
+        Start Time: <date and time>
+        End Time:   <date and time>
+        Renew Time: <date and time>
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+----
++
+The presence of this ticket confirms that the device is joined correctly and can obtain cloud-issued Kerberos tickets.
+
+. Create a volume and SMB share on the Cloud Volumes ONTAP system, or use an existing volume and share:
+
+[source,cli]
+----
+volume create -vserver <svm-name> -volume <volume-name> -aggregate <aggregate-name> -size <size> -junction-path /<volume-name> -security-style ntfs
+cifs share create -vserver <svm-name> -share-name <share-name> -path /<volume-name>
+----
+
+NOTE: The volume must use NTFS security style so that you can manage file and folder permissions for Microsoft Entra ID identities with `icacls`.
+
+. Verify that the client can obtain a Kerberos service ticket for the SMB server:
++
+[source,powershell]
+----
+klist get CIFS/<netbios-name>.<on-premises-domain>
+----
++
+Confirm that a service ticket is returned and that `KdcCalled` shows `KdcProxy:login.microsoftonline.com`. This confirms that authentication is routed through Microsoft Entra ID.
+
+. Mount the SMB share:
++
+[source,powershell]
+----
+net use * \\<netbios-name>.<on-premises-domain>\<share-name>
+----
+
+. On the Cloud Volumes ONTAP system, verify that an SMB session is established:
++
+[source,cli]
+----
+cifs session show -vserver <svm-name>
+----
++
+The session output shows the connected workstation and the hybrid user in the format `AZUREAD\<username>@<tenant>.onmicrosoft.com`.
+
+[[dacl]]
+== Step 8: Manage file permissions with icacls
+
+Cloud Volumes ONTAP 9.19.1 and later supports the `icacls` command to manage file and folder permissions for Microsoft Entra ID identities on mounted SMB shares.
+
+.Steps
+
+. Run the appropriate `icacls` command depending on the access you want to configure:
++
+To grant access:
++
+[source,cmd]
+----
+icacls <drive>:\<path> /grant "AzureAD\<username>@<tenant>.onmicrosoft.com":(W)
+----
++
+To deny access:
++
+[source,cmd]
+----
+icacls <drive>:\<path> /deny "AzureAD\<username>@<tenant>.onmicrosoft.com":(W)
+----
