@@ -71,9 +71,9 @@ Locate the standalone Cloud Volumes ONTAP offering in AWS Marketplace.
 .Steps
 . Go to AWS Marketplace using your AWS account with the required permissions.
 . Locate the NetApp Cloud Volumes ONTAP standalone offering. AWS Marketplace provides two offerings for Cloud Volumes ONTAP:
-** ##The standalone offering for Cloud Volumes ONTAP, available as an annual subscription or pay-as-you-go (PAYGO).##
-** ##The NetApp Intelligent Service (NIS) offering for NetApp data services and Cloud Volumes ONTAP, also available as an annual subscription or PAYGO.##
-. ##Choose either the annual subscription or PAYGO option for the _standalone_ offering.## Review listing details and pricing terms.
+** The standalone offering for Cloud Volumes ONTAP, available as an annual subscription or pay-as-you-go (PAYGO).
+** The NetApp Intelligent Service (NIS) offering for NetApp data services and Cloud Volumes ONTAP, also available as an annual subscription or PAYGO.
+. Choose either the annual subscription or PAYGO option for the _standalone_ offering. Review listing details and pricing terms.
 . Subscribe and complete the checkout.
 . After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
 
@@ -82,7 +82,7 @@ If you want to use other data services, such as NetApp Backup and Recovery, you 
 
 .Steps
 . Go to AWS Marketplace using your AWS account with the required permissions.
-. ##Locate and select the annual or PAYGO option for the NetApp Intelligent Service (NIS) offering.##
+. Locate and select the annual or PAYGO option for the NetApp Intelligent Service (NIS) offering.
 . Review listing details and pricing terms.
 . Subscribe and complete the checkout.
 . After you subscribe, select *Set up product* to be redirected to the NetApp Console to complete your deployment.
