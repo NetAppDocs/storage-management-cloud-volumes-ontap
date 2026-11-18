@@ -26,9 +26,6 @@ include::_whatsnew/2026-11-18.adoc[]
 == 17 November 2026
 include::_whatsnew/2026-11-17.adoc[]
 
-== 16 November 2026
-include::_whatsnew/2026-11-16.adoc[]
-
 == 02 November 2026
 include::_whatsnew/2026-11-02.adoc[]
 
