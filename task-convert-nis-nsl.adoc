@@ -50,13 +50,13 @@ Review your charging needs to determine which scenario applies to you:
 * The status of your existing marketplace contract
 * The AWS Marketplace listing that is currently associated with your Console account
 
-== Convert Cloud Volumes ONTAP NIS subscriptions with Essentials license
+== Convert Cloud Volumes ONTAP NIS subscriptions with an Essentials license
 
-Use this scenario if you currently have an NIS subscription with Cloud Volumes ONTAP Essentials license and no dependency on Backup and Recovery. After conversion, you have an NSL subscription with Cloud Volumes ONTAP Essentials license.
+Use this scenario if you currently have an NIS subscription with a Cloud Volumes ONTAP Essentials license and no dependency on Backup and Recovery. After conversion, you have an NSL subscription with a Cloud Volumes ONTAP Essentials license.
 
 === Convert a PAYGO subscription
 
-You have a CLoud Volumes ONTAP NIS PAYGO subscription before conversion.
+You have a Cloud Volumes ONTAP NIS PAYGO subscription before conversion.
 
 .Steps
 . From AWS Marketplace, subscribe to Cloud Volumes ONTAP NSL subscription with the PAYGO option, and associate the NSL subscription with your Console account. Refer to link:task-onboard-cvo-aws-marketplace.html[Deploy Cloud Volumes ONTAP using the standalone listing on AWS Marketplace].
@@ -112,7 +112,10 @@ You have a supported https://docs.netapp.com/us-en/console-licenses-subscription
 
 If you have a Cloud Volumes ONTAP NIS subscription with a Professional license and don't actively use or plan to use Backup and Recovery or any other data services, you must convert your charging method from Professional to Essentials. The preferred target state is a Cloud Volumes ONTAP NSL subscription with an Essentials license.
 
-You must complete the conversion from Professional to Essentials before the NIS subscription expires or before you remove it. If you don't convert your charging method:
+[NOTE]
+You must complete the conversion from Professional to Essentials before the NIS subscription expires or before you remove it. 
+
+If you don't convert your charging method:
 
 * Your Cloud Volumes ONTAP system continues to be charged through the existing NIS Professional license.
 * You won't have a valid Professional billing path to continue charging your Cloud Volumes ONTAP usage. 
@@ -127,6 +130,7 @@ You must complete the conversion from Professional to Essentials before the NIS 
 . Associate the NSL subscription with your Console account. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Associate a subscription with a console account^].
 . Verify the subscription preferences and charging. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Licenses and subscriptions: Flexible billing for Cloud Volumes ONTAP and data services in AWS^].
 . Remove the NIS subscription if you no longer need it. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Remove a subscription^].
+
 === Convert an annual contract or private offer
 
 .Steps
@@ -143,8 +147,8 @@ Learn what you need to do if you encounter the following issues:
 
 === You have a Cloud Volumes ONTAP Professional license
 
-Professional to Essentials is the only supported conversion if you have a Cloud Volumes ONTAP subscription and want to convert to an NSL listing.
-You must change the charging method from Professional to Essentials if you don't want to continue using Professional features and want to move to Essentials:
+Professional to Essentials is the only supported conversion option if you have a Cloud Volumes ONTAP subscription and want to convert to an NSL listing.
+To stop using Professional features and move to Essentials, you must change the charging method from Professional to Essentials:
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Licenses and subscriptions: Change charging methods^].
 
@@ -152,9 +156,9 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacit
 
 This behavior is expected. NSL supports only Essentials. Do one of the following:
 
-* Change the charging method from Professional to Essentials.
+* Change the charging method from Professional to Essentials. https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Licenses and subscriptions: Change charging methods^].
 * Continue to use Professional through NIS.
 
-=== You use Backup and want to move to NSL
+=== You use Backup and Recovery or data services and want to move to NSL
 
-Keep Backup on NIS and use the multi-subscription model. Use NSL for Cloud Volumes ONTAP and NIS for Backup. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html[Licenses and subscriptions: Manage billing preferences^].
+Keep using the NIS subscription for Backup and Recovery or data services, and use the NSL subscription for Cloud Volumes ONTAP in a multi-subscription model. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html[Licenses and subscriptions: Manage billing preferences^].
