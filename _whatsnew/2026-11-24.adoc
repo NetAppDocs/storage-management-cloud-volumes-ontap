@@ -4,9 +4,9 @@ You can now deploy Cloud Volumes ONTAP 9.12.1 GA and later in the Denmark East (
 
 * Single-node
 
-* HA in a single availability zone using locally redundant storage (LRS) - For both Denmark East (denmarkeast) and India South Central (indiasouthcentral) regions
+* HA in a single availability zone using locally redundant storage (LRS)
 
-* HA in multiple availability zones using zone-redundant storage (ZRS) - For India South Central (indiasouthcentral) region only
+* HA in multiple availability zones using zone-redundant storage (ZRS) - For India South Central only
 
 For a list of all supported regions, refer to the https://www.netapp.com/cloud-volumes-ontap/supported-regions/[Global Regions Map under Azure^].
 
