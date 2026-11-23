@@ -123,20 +123,19 @@ You must complete the conversion from Professional to Essentials before the NIS 
 
 .Steps
 . Change the charging method from Professional to Essentials. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Licenses and subscriptions: Change charging methods^].
-. Subscribe to NSL.
-. Associate the NSL subscription with your Console account.
-. Verify the subscription preferences and charging.
-. Remove the NIS subscription if you no longer need it.
-
+. Subscribe to the NSL PAYGO offering for Cloud Volumes ONTAP from the AWS Marketplace. Refer to link:task-onboard-cvo-aws-marketplace.html[Deploy Cloud Volumes ONTAP using the standalone listing on AWS Marketplace].
+. Associate the NSL subscription with your Console account. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Associate a subscription with a console account^].
+. Verify the subscription preferences and charging. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Licenses and subscriptions: Flexible billing for Cloud Volumes ONTAP and data services in AWS^].
+. Remove the NIS subscription if you no longer need it. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Remove a subscription^].
 === Convert an annual contract or private offer
 
 .Steps
 . Obtain a replacement or amendment private offer for Cloud Volumes ONTAP Essentials through NSL.
 . Accept the new offer and activate the subscription.
 . Change the charging method from Professional to Essentials. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods[Licenses and subscriptions: Change charging methods^].
-. Associate the NSL subscription with your Console account.
-. Verify the subscription preferences and charging.
-. Remove the NIS subscription if you no longer need it.
+. Associate the NSL subscription with your Console account. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Associate a subscription with a console account^].
+. Verify the subscription preferences and charging. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[Licenses and subscriptions: Flexible billing for Cloud Volumes ONTAP and data services in AWS^].
+. Remove the NIS subscription if you no longer need it. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html[Licenses and subscriptions: Remove a subscription^].
 
 == Troubleshooting
 
@@ -158,4 +157,4 @@ This behavior is expected. NSL supports only Essentials. Do one of the following
 
 === You use Backup and want to move to NSL
 
-Keep Backup on NIS and use the multi-subscription model. Use NSL for Cloud Volumes ONTAP and NIS for Backup.
+Keep Backup on NIS and use the multi-subscription model. Use NSL for Cloud Volumes ONTAP and NIS for Backup. Refer to https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html[Licenses and subscriptions: Manage billing preferences^].
