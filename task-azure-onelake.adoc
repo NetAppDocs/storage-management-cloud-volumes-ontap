@@ -5,7 +5,7 @@ keywords: Azure, AI, integration, OneLake, analytics, ONTAP S3, Microsoft Fabric
 summary: Configure Cloud Volumes ONTAP with ONTAP S3 multi-protocol access to enable Azure AI services to read data stored in your Cloud Volumes ONTAP systems through Microsoft OneLake.
 ---
 
-= Integrate Cloud Volumes ONTAP systems with Microsoft OneLake for AI and analytics
+= Integrate Cloud Volumes ONTAP with Microsoft OneLake for AI and analytics
 :hardbreaks:
 :nofooter:
 :icons: font
