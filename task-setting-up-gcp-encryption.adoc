@@ -5,7 +5,7 @@ keywords: encryption, gcp, encryption key, permissions, customer-managed, gcpenc
 summary: While Google Cloud Storage always encrypts your data before it’s written to disk, you can use the Console APIs to create a Cloud Volumes ONTAP system that uses customer-managed encryption keys. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
 ---
 
-= Using customer-managed encryption keys with Cloud Volumes ONTAP
+= Use customer-managed encryption keys with Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
