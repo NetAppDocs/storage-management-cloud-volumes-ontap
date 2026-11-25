@@ -13,7 +13,7 @@ summary: "Move Cloud Volumes ONTAP billing from NetApp Intelligent Services to t
 [.lead]
 Move your Cloud Volumes ONTAP consumption from the NetApp Intelligent Services (NIS) listing to the Cloud Volumes ONTAP standalone listing (NSL) on AWS Marketplace.
 
-The standalone listing is the preferred procurement path for Cloud Volumes ONTAP from the AWS Marketplace, providing a dedicated subscription model. The standalone listing supports only the Cloud Volumes ONTAP Essentials license. If you want to use the Cloud Volumes ONTAP Professional license, NetApp Backup and Recovery, or other NetApp Data Services, you must continue to use NIS subscriptions for those services. If you want to use Cloud Volumes ONTAP Essentials Primary and Essentials Secondary licenses with data services, you can use both NSL and NIS listings in the supported https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[multiple subscription model in AWS^].
+The standalone listing is the preferred procurement path for Cloud Volumes ONTAP from the AWS Marketplace, providing a dedicated subscription model. The standalone listing supports only the Cloud Volumes ONTAP Essentials license. If you want to use the Cloud Volumes ONTAP Professional license, NetApp Backup and Recovery, or any other NetApp Data Services, such as NetApp Disaster Recovery and NetApp Ransomware Resilience, you must continue to use NIS subscriptions. If you want to use Cloud Volumes ONTAP Essentials Primary or Essentials Secondary licenses with data services, you can use both NSL and NIS listings in the supported https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws[multiple subscription model^].
 
 A single NetApp Console account can have several marketplace subscriptions at a time. If you have an Essentials license for Cloud Volumes ONTAP, the system automatically routes your consumption charges through NSL, unless configured otherwise in your Billing Preferences. You can use these combinations:
 
@@ -22,16 +22,18 @@ A single NetApp Console account can have several marketplace subscriptions at a 
 | Service
 | Listing
 
-a| Cloud Volumes ONTAP Essentials Primary and Essentials Secondary licenses
-a| NSL with pay-as-you-go or PAYGO or annual contract
+a| * Cloud Volumes ONTAP Essentials Primary 
+* Cloud Volumes ONTAP Essentials Secondary
+a| NSL with pay-as-you-go (PAYGO) or annual contract
 
-a| Cloud Volumes ONTAP Professional license 
-NetApp Backup and Recovery
-Disaster Recovery 
-Ransomware Resilience 
+a| * Cloud Volumes ONTAP Professional license 
+* Backup and Recovery
+* Disaster Recovery 
+* Ransomware Resilience 
 a| NIS with PAYGO or annual contract
-a| Cloud Volumes ONTAP Essentials Primary and Backup and Recovery or other data services
-a| NSL for Cloud Volumes ONTAP Essentials Primary, and NIS for Backup and Recovery or data services
+a| Both Cloud Volumes ONTAP Essentials Primary/Essentials Secondary and
+Backup and Recovery or other data services
+a| NSL for Cloud Volumes ONTAP Essentials Primary/Essentials Secondary, and NIS for Backup and Recovery or data services
 
 |===
 
