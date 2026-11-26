@@ -5,7 +5,7 @@ keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption
 summary: "Prevent disruptions during Azure maintenance by suppressing automatic takeover and giveback for a Cloud Volumes ONTAP HA pair."
 ---
 
-= Prevent disruptions during Azure maintenance for Cloud Volumes ONTAP HA pairs
+= Prevent Azure maintenance disruptions for Cloud Volumes ONTAP HA pairs
 :hardbreaks:
 :nofooter:
 :icons: font

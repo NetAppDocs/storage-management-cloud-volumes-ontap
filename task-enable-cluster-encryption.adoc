@@ -5,7 +5,7 @@ keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, 
 summary: Enable backend cluster network encryption to protect Cloud Volumes ONTAP cluster traffic that is not already protected by ONTAP IPsec.
 ---
 
-= Enable backend cluster network encryption for Cloud Volumes ONTAP in Azure and Google Cloud
+= Enable backend cluster network encryption for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

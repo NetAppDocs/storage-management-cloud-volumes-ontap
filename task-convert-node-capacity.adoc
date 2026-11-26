@@ -5,7 +5,7 @@ keywords: license conversion, convert node-based to capacity based, by-node to b
 summary: After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing by using the license conversion tool.
 ---
 
-= Convert a Cloud Volumes ONTAP node-based license to a capacity-based license
+= Convert Cloud Volumes ONTAP node-based licenses to capacity-based
 :hardbreaks:
 :nofooter:
 :icons: font
