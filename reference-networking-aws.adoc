@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, vpc, secur
 summary: The NetApp Console handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 ---
 
-= Set up AWS networking for Cloud Volumes ONTAP
+= AWS networking requirements for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
