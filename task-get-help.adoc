@@ -7,7 +7,7 @@ summary: NetApp provides support in a variety of ways. Extensive free self-suppo
 
 = Get help with Cloud Volumes ONTAP
 :icons: font
-:imagesdir: ./media/
+:imagesdir: https://docs.netapp.com/us-en/console-family/media/
 
 [.lead]
 include::https://raw.githubusercontent.com/NetAppDocs/console-family/main/_include/get-help.adoc[]
