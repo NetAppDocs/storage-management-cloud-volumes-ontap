@@ -282,7 +282,9 @@ sidebar:
                   - title: Manage node-based licenses
                     url: /task-manage-node-licenses.html    
                   - title: Convert node-based licenses
-                    url: /task-convert-node-capacity.html                
+                    url: /task-convert-node-capacity.html
+                  - title: Convert NIS subscriptions to standalone subscriptions in AWS
+                    url: /task-convert-nis-nsl.html
             - title: Register pay-as-you-go systems
               url: /task-registering.html                    
             - title: Stop and start a system
